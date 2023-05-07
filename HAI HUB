@@ -5795,10 +5795,6 @@ function MaterialMon()
 				MPos = CFrame.new(-5999.20458984375, 6.437741279602051, -1290.059326171875)
 				SP = "Graveyard"
 			elseif _G.SelectMaterial == "Conjured Cocoa" then
-                MMon = "Cocoa Warrior [Lv. 2300]"
-                MPos = CFrame.new(231.13571166992188, 24.734268188476562, -12195.1162109375)
-	    		SP = "Chocolate"
-			elseif _G.SelectMaterial == "Conjured Cocoa" then
 				MMon = "Chocolate Bar Battler [Lv. 2325]"
 				MPos = CFrame.new(744.7930908203125, 24.76934242248535, -12637.7255859375)
 				SP = "Chocolate"
