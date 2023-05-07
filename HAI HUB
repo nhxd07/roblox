@@ -11374,12 +11374,34 @@ end)
    
    ------------Fragments--------------
    
-    Shop:Seperator(" Fragments ")
- 
+    Shop:Seperator(" Race & etc ")
+    
     Shop:Button("Buy Refund Stat",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","1")
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","2")
     end)
+
+	Shop:Button("Race Ghoul",function()
+		local args = {
+			[1] = "Ectoplasm",
+			[2] = "BuyCheck",
+			[3] = 4
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+		local args = {
+			[1] = "Ectoplasm",
+			[2] = "Change",
+			[3] = 4
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+	end)
+	Shop:Button("Race Cyborg",function()
+		local args = {
+			[1] = "CyborgTrainer",
+			[2] = "Buy"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+	end)
     Shop:Button("Buy Random Race",function()
     local args = {
         [1] = "BlackbeardReward",
