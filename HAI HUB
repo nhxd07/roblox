@@ -300,7 +300,8 @@ local ThunderImageUI = Instance.new("ImageLabel")
  Logo.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Logo.BackgroundTransparency = 1.000
  Logo.Position = UDim2.new(-0.01, 0,-0.319, 0)
- Logo.Size = UDim2.new(0, 55,0, 45)
+ Logo.Size = UDim2.new(0, 70,0, 70)
+ Logo.Image = "rbxassetid://12979886523"
 
  local Name = Instance.new("TextLabel")
  Name.Name = "Name"
