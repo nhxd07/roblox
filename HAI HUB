@@ -4417,15 +4417,6 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
-Setting:Label("Join My Discord For More Info!")
-
-Setting:Line()
-
-Setting:Button("Copy Discord Link",function()
- 
- setclipboard("https://discord.gg/NnjjAUW6KX")
- end)
-
 Setting:Seperator(" Setting ")
 Setting:Toggle("Auto Set Spawn Points",true,function(value)
  _G.AutoSetSpawn = value
@@ -4850,6 +4841,237 @@ end)
 end) 
 
 
+                Setting:Toggle("Rainbow Haki",false,function(value)
+                    RainbowHaki = value
+                end)
+            
+
+                Setting:Toggle("Rainbow Water",false,function(value)
+                    RainbowWater = value
+                end)
+
+                
+            
+                Setting:Toggle("Auto Observation V2",_G.AutoObservationHakiV2,function(x)
+                    _G.AutoObservationHakiV2 = x
+                end)
+            
+                spawn(function()
+                    while wait() do
+                        if _G.AutoObservationHakiV2 then
+                            if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+                                repeat 
+                                    totarget(CFrame.new(-12444.78515625, 332.40396118164, -7673.1806640625)) 
+                                    wait() 
+                                until _G.StopTween == true or not _G.AutoObservationHakiV2 or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-12444.78515625, 332.40396118164, -7673.1806640625)).Magnitude <= 10
+                                wait(.5)
+                                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CitizenQuestProgress","Citizen")
+                                wait(1)
+                                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest","CitizenQuest",1)
+                            else
+                                if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Defeat 50 Forest Pirates") then
+                                    if game:GetService("Workspace").Enemies:FindFirstChild("Forest Pirate [Lv. 1825]") then
+                                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                            if v.Name == "Forest Pirate [Lv. 1825]" then
+                                                repeat wait()
+                                                    if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+                                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+                                                    end
+                                                    EquipWeapon(_G.SelectWeapon)
+                                                    totarget(v.HumanoidRootPart.CFrame * CFrame.new(1,20,1))
+                                                    PosHee =  v.HumanoidRootPart.CFrame
+                                                    if sethiddenproperty then
+                                                        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                                                    end
+                                                    v.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+                                                    v.HumanoidRootPart.CanCollide = false
+                                                    v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                                    game:GetService'VirtualUser':CaptureController()
+                                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                    StatrMagnet = true
+                                                until _G.AutoObservationHakiV2 == false or v.Humanoid.Health <= 0
+                                                StatrMagnet = false
+                                            end
+                                        end
+                                    else
+                                        repeat 
+                                            totarget(CFrame.new(-13277.568359375, 370.34185791016, -7821.1572265625)) 
+                                            wait() 
+                                        until _G.StopTween == true or not _G.AutoObservationHakiV2 or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-13277.568359375, 370.34185791016, -7821.1572265625)).Magnitude <= 10
+                                    end
+                                elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text ==  "Defeat  Captain Elephant (0/1)" then 
+                                    if game:GetService("Workspace").Enemies:FindFirstChild("Captain Elephant [Lv. 1875] [Boss]") then
+                                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                            if v.Name == "Captain Elephant [Lv. 1875] [Boss]" then
+                                                repeat wait()
+                                                    if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+                                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+                                                    end
+                                                    EquipWeapon(_G.SelectWeapon)
+                                                    totarget(v.HumanoidRootPart.CFrame * CFrame.new(1,20,1))										
+                                                    if sethiddenproperty then
+                                                        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                                                    end
+                                                    v.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+                                                    v.HumanoidRootPart.CanCollide = false
+                                                    v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                                    game:GetService'VirtualUser':CaptureController()
+                                                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                                until _G.AutoObservationHakiV2 == false or v.Humanoid.Health <= 0
+                                            end
+                                        end
+                                    else
+                                        repeat 
+                                            totarget(CFrame.new(-13493.12890625, 318.89553833008, -8373.7919921875)) 
+                                            wait() 
+                                        until _G.StopTween == true or not _G.AutoObservationHakiV2 or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-13493.12890625, 318.89553833008, -8373.7919921875)).Magnitude <= 10
+                                    end        
+                                end
+                            end
+                            if game.Players.LocalPlayer.Backpack:FindFirstChild("Banana") and  game.Players.LocalPlayer.Backpack:FindFirstChild("Apple") and game.Players.LocalPlayer.Backpack:FindFirstChild("Pineapple") then
+                                repeat 
+                                    totarget(CFrame.new(-12444.78515625, 332.40396118164, -7673.1806640625)) 
+                                    wait() 
+                                until _G.StopTween == true or not _G.AutoObservationHakiV2 or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-12444.78515625, 332.40396118164, -7673.1806640625)).Magnitude <= 10
+                                wait(.5)
+                                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CitizenQuestProgress","Citizen")
+                            elseif game.Players.LocalPlayer.Backpack:FindFirstChild("Fruit Bowl") or game.Players.LocalPlayer.Character:FindFirstChild("Fruit Bowl") then
+                                repeat 
+                                    totarget(CFrame.new(-10920.125, 624.20275878906, -10266.995117188)) 
+                                    wait() 
+                                until _G.StopTween == true or not _G.AutoObservationHakiV2 or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-10920.125, 624.20275878906, -10266.995117188)).Magnitude <= 10
+                                wait(.5)
+                                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk2","Start")
+                                wait(1)
+                                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk2","Buy")
+                            else
+                                for i,v in pairs(game.Workspace:GetDescendants()) do
+                                    if v.Name == "Apple" or v.Name == "Banana" or v.Name == "Pineapple" then
+                                        v.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,1,10)
+                                        wait()
+                                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart,v.Handle,0)    
+                                        wait()
+                                    end
+                                end   
+                            end
+                        end
+                    end
+                end)
+            
+                spawn(function()
+                    while wait() do
+                        pcall(function()
+                            if _G.AutoObservationHakiV2 then
+                                if sethiddenproperty then
+                                    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                                end
+                            end
+                        end)
+                        game:GetService("RunService").Heartbeat:Wait()
+                    end
+                end)
+            
+                spawn(function()
+                    game:GetService("RunService").Heartbeat:connect(function()
+                        pcall(function()
+                            if _G.AutoObservationHakiV2 then
+                                if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid") then
+                                    game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(11)
+                                end
+                            end
+                        end)
+                    end)
+                end)
+            
+                spawn(function()
+                    pcall(function()
+                        game:GetService("RunService").Heartbeat:Connect(function()
+                            game:GetService("RunService").Heartbeat:Wait()
+                            if _G.AutoObservationHakiV2 and StatrMagnet then
+                                for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                                    if v.Name == "Forest Pirate [Lv. 1825]" and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                                        if v.Name == "Forest Pirate [Lv. 1825]" then
+                                            v.HumanoidRootPart.CanCollide = false
+                                            v.HumanoidRootPart.Size = Vector3.new(50, 50, 50)
+                                            v.HumanoidRootPart.CFrame = PosHee
+                                        end
+                                    end
+                                end
+                            end
+                        end)
+                    end)
+                end)
+            
+                spawn(function()
+                    game:GetService("RunService").Heartbeat:connect(function()
+                        game:GetService("RunService").Heartbeat:Wait()
+                        pcall(function()
+                            if _G.AutoObservationHakiV2 and StatrMagnet then
+                                CheckQuest()
+                                for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                                    if v.Name == Ms then
+                                        v.Humanoid:ChangeState(11)
+                                    end
+                                end
+                            end
+                        end)
+                        game:GetService("RunService").Heartbeat:Wait()
+                    end)
+                end)
+            
+                spawn(function()
+                    while wait() do
+                        pcall(function()
+                            if _G.AutoObservationHakiV2 and StatrMagnet then
+                                for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+                                    if v.Name == Ms and v:FindFirstChild("HumanoidRootPart") then
+                                        if not v.HumanoidRootPart:FindFirstChild("BringEE") then
+                                            local bv = Instance.new("BodyVelocity")
+                                            bv.Parent = v.HumanoidRootPart
+                                            bv.Name = "BringEE"
+                                            bv.MaxForce = Vector3.new(100000,100000,100000)
+                                            bv.Velocity = Vector3.new(0,0,0)
+                                        end
+                                    end
+                                end
+                            end
+                        end)
+                        wait()
+                    end
+                end)
+
+                ---- [RainbowHaki]
+                spawn(function()
+                    while wait() do
+                        if RainbowHaki then
+                            pcall(function()
+                                if game.Players.LocalPlayer.Character.HasBuso then
+                                    for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
+                                        if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
+                                            v.Color = Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+                                        end
+                                    end
+                                end
+                            end)
+                        end
+                    end
+                end)
+            
+                spawn(function()
+                    while wait() do
+                        if RainbowHaki == false then
+                            pcall(function()
+                                if game.Players.LocalPlayer.Character.HasBuso then
+                                    for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
+                                        if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
+                                            v.Color = Color3.fromRGB(0, 0, 0)
+                                        end
+                                    end
+                                end
+                            end)
+                        end
+                    end
+                end)
 Setting:Toggle("Remove Fog",RemoveFog,function(value)
         RemoveFog = value
         if not RemoveFog then return end
