@@ -1056,7 +1056,7 @@ end
  Posto1.Name = "Posto"
  Posto1.Parent = Dropdown
  Posto1.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
- Posto1.Color = Color3.fromRGB(255,255,255)
+ Posto1.Color = Color3.fromRGB(0, 255, 255)
  Posto1.LineJoinMode = Enum.LineJoinMode.Round
  Posto1.Thickness = 1
  Posto1.Transparency = 0
@@ -1068,7 +1068,7 @@ end
  
  DropTitle.Name = "DropTitle"
  DropTitle.Parent = Dropdown
- DropTitle.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ DropTitle.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  DropTitle.BackgroundTransparency = 1.000
  DropTitle.Size = UDim2.new(0, 310, 0, 31)
  DropTitle.Font = Enum.Font.Gotham
@@ -1106,7 +1106,7 @@ end
  
  DropButton.Name = "DropButton"
  DropButton.Parent = Dropdown
- DropButton.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ DropButton.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  DropButton.BackgroundTransparency = 1.000
  DropButton.Size = UDim2.new(0, 310, 0, 31)
  DropButton.Font = Enum.Font.SourceSans
