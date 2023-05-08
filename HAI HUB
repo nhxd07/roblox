@@ -359,7 +359,7 @@ spawn(function()
  local MainImageFrame = Instance.new("Frame")
  -- MainImage.Name =  "MainImage"
  MainImage.Parent = Main
- MainImage.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ MainImage.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  MainImage.BackgroundTransparency = 1.000
  MainImage.Position = UDim2.new(0, 25, 0, 25)
  MainImage.Size = UDim2.new(0, 100, 0, 170)
@@ -513,7 +513,7 @@ spawn(function()
  ScrollTab.Name = "ScrollTab"
  ScrollTab.Parent = Tab
  ScrollTab.Active = true
- ScrollTab.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ ScrollTab.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  ScrollTab.BackgroundTransparency = 1.000
  ScrollTab.Size = UDim2.new(0, 133, 0, 250)
  ScrollTab.CanvasSize = UDim2.new(0, 0, 0, 0)
@@ -987,7 +987,7 @@ end
  Title.Size = UDim2.new(0, 280, 0, 30)
  Title.Font = Enum.Font.Gotham
  Title.Text = TogInfo or "checkBox Title"
- Title.TextColor3 = Color3.fromRGB(224,224,224)
+ Title.TextColor3 = Color3.fromRGB(0, 255, 255)
  Title.TextSize = 12.000
  Title.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -1297,7 +1297,7 @@ SliderFrame_2.Size = UDim2.new(0, 308, 0, 55)
 UIStroke.Name = "UIStroke"
 UIStroke.Parent = SliderFrame_2
 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke.Color = Color3.fromRGB(224,224,224)
+UIStroke.Color = Color3.fromRGB(0, 255, 255)
 UIStroke.LineJoinMode = Enum.LineJoinMode.Round
 UIStroke.Thickness = 1
 UIStroke.Transparency = 0
@@ -1955,13 +1955,13 @@ function main:Seperator(text)
  
  Sep2.Name = "Sep2"
  Sep2.Parent = Seperator
- Sep2.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Sep2.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  Sep2.BackgroundTransparency = 1.000
  Sep2.Position = UDim2.new(0, 120, 0, 0)
  Sep2.Size = UDim2.new(0, 80, 0, 20)
  Sep2.Font = Enum.Font.Gotham
  Sep2.Text = text
- Sep2.TextColor3 = Color3.fromRGB(224,224,224)
+ Sep2.TextColor3 = Color3.fromRGB(0, 255, 255)
  Sep2.TextSize = 14.000
  
  Sep3.Name = "Sep3"
@@ -1979,7 +1979,7 @@ function main:Seperator(text)
  
  Linee.Name = "Linee"
  Linee.Parent = MainFramePage
- Linee.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Linee.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  Linee.BackgroundTransparency = 1.000
  Linee.Position = UDim2.new(0, 0, 0.119999997, 0)
  Linee.Size = UDim2.new(0, 310, 0, 20)
