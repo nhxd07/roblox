@@ -1673,13 +1673,13 @@ end
  
  HAHA.Name = "HAHA"
  HAHA.Parent = sliderr
- HAHA.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ HAHA.BackgroundColor3 = _G.Color
  HAHA.BackgroundTransparency = 1.000
  HAHA.Size = UDim2.new(0, 290, 0, 29)
  
  AHEHE.Name = "AHEHE"
  AHEHE.Parent = sliderr
- AHEHE.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ AHEHE.BackgroundColor3 = _G.Color
  AHEHE.BackgroundTransparency = 1.000
  AHEHE.Position = UDim2.new(0, 10, 0, 35)
  AHEHE.Size = UDim2.new(0, 290, 0, 5)
@@ -1942,7 +1942,7 @@ function main:Seperator(text)
  
  Seperator.Name = "Seperator"
  Seperator.Parent = MainFramePage
- Seperator.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Seperator.BackgroundColor3 = _G.Color
  Seperator.BackgroundTransparency = 1.000
  Seperator.Size = UDim2.new(0, 290, 0, 20)
  
@@ -1955,7 +1955,7 @@ function main:Seperator(text)
  
  Sep2.Name = "Sep2"
  Sep2.Parent = Seperator
- Sep2.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Sep2.BackgroundColor3 = _G.Color
  Sep2.BackgroundTransparency = 1.000
  Sep2.Position = UDim2.new(0, 120, 0, 0)
  Sep2.Size = UDim2.new(0, 80, 0, 20)
@@ -1979,7 +1979,7 @@ function main:Seperator(text)
  
  Linee.Name = "Linee"
  Linee.Parent = MainFramePage
- Linee.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Linee.BackgroundColor3 = _G.Color
  Linee.BackgroundTransparency = 1.000
  Linee.Position = UDim2.new(0, 0, 0.119999997, 0)
  Linee.Size = UDim2.new(0, 310, 0, 20)
