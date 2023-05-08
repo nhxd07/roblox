@@ -297,7 +297,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
  local Logo = Instance.new("ImageLabel")
  Logo.Name = "Logo"
  Logo.Parent = Top
- Logo.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Logo.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  Logo.BackgroundTransparency = 1.000
  Logo.Position = UDim2.new(-0.01, 0,-0.319, 0)
  Logo.Size = UDim2.new(0, 45, 0, 45)
@@ -312,7 +312,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
  Name.Size = UDim2.new(0, 61, 0, 27)
  Name.Font = Enum.Font.GothamSemibold
  Name.Text = text
- Name.TextColor3 = Color3.fromRGB(0, 255, 255)
+ Name.TextColor3 = Color3.fromRGB(255, 255, 255)
  Name.TextSize = 14.000
  
 local ServerTime = Instance.new("TextLabel")
@@ -359,7 +359,7 @@ spawn(function()
  local MainImageFrame = Instance.new("Frame")
  -- MainImage.Name =  "MainImage"
  MainImage.Parent = Main
- MainImage.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ MainImage.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  MainImage.BackgroundTransparency = 1.000
  MainImage.Position = UDim2.new(0, 25, 0, 25)
  MainImage.Size = UDim2.new(0, 100, 0, 170)
@@ -591,7 +591,7 @@ spawn(function()
  TabButton.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  TabButton.BackgroundTransparency = 1.000
  TabButton.Size = UDim2.new(0, 130, 0, 23)
- TabButton.Font = Enum.Font.GothamSemibold
+ TabButton.Font = Enum.Font.Gotham
  TabButton.TextColor3 = Color3.fromRGB(225, 225, 225)
  TabButton.TextSize = 11.000
  TabButton.TextTransparency = 0.100
@@ -776,7 +776,7 @@ OkayBtnTitle.BackgroundColor3 = _G.SectionColor
 OkayBtnTitle.BackgroundTransparency = 1.000
 OkayBtnTitle.Size = UDim2.new(0, 150, 0, 30)
 OkayBtnTitle.Text = "OK"
-OkayBtnTitle.Font = Enum.Font.GothamSemibold
+OkayBtnTitle.Font = Enum.Font.Gotham
 OkayBtnTitle.TextColor3 = Color3.fromRGB(0, 0, 0)
 OkayBtnTitle.TextSize = 22.000
 
@@ -787,7 +787,7 @@ NotificationTitle.BackgroundTransparency = 1.000
 NotificationTitle.Position = UDim2.new(0, 0, 0, 10)
 NotificationTitle.Size = UDim2.new(0, 400, 0, 25)
 NotificationTitle.ZIndex = 3
-NotificationTitle.Font = Enum.Font.GothamSemibold
+NotificationTitle.Font = Enum.Font.Gotham
 NotificationTitle.Text = "Notification"
 NotificationTitle.TextColor3 = Color3.fromRGB(255, 0, 0)
 NotificationTitle.TextSize = 22.000
@@ -805,7 +805,7 @@ NotificationDesc.BackgroundColor3 = _G.SectionColor
 NotificationDesc.BackgroundTransparency = 1.000
 NotificationDesc.Position = UDim2.new(0, 10, 0, 80)
 NotificationDesc.Size = UDim2.new(0, 380, 0, 200)
-NotificationDesc.Font = Enum.Font.GothamSemibold
+NotificationDesc.Font = Enum.Font.Gotham
 NotificationDesc.Text = textdesc
 NotificationDesc.TextScaled = false
 NotificationDesc.TextColor3 = _G.SectionTextColor
@@ -851,7 +851,7 @@ end
  
  Button.Name = "Button"
  Button.Parent = MainFramePage
- Button.BackgroundColor3 = Color3.fromRGB(0, 225, 225)
+ Button.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
  Button.BackgroundTransparency = 1
  Button.Size = UDim2.new(0, 310, 0, 31)
  
@@ -865,7 +865,7 @@ end
  TextBtn.Position = UDim2.new(0, 1, 0, 1)
  TextBtn.Size = UDim2.new(0, 308, 0, 29)
  TextBtn.AutoButtonColor = false
- TextBtn.Font = Enum.Font.GothamSemibold
+ TextBtn.Font = Enum.Font.Gotham
  TextBtn.Text = text
  TextBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
  TextBtn.TextSize = 12.000
@@ -965,7 +965,7 @@ end
  ImageLabel.Position = UDim2.new(-0.018, 0,-0.252, 0)
  ImageLabel.Size = UDim2.new(0, 45,0, 45)
  ImageLabel.Image = "rbxassetid://12979886523"
- ImageLabel.ImageColor3 = Color3.fromRGB(224,224,224)
+ ImageLabel.ImageColor3 = Color3.fromRGB(0, 255, 255)
  
  Space.Name = "Space"
  Space.Parent = CheckFrame2
@@ -973,7 +973,7 @@ end
  Space.BackgroundTransparency = 1.000
  Space.Position = UDim2.new(0, 30, 0, 0)
  Space.Size = UDim2.new(0, 15, 0, 30)
- Space.Font = Enum.Font.GothamSemibold
+ Space.Font = Enum.Font.Gotham
  Space.Text = ""
  Space.TextSize = 12.000
  Space.TextColor3 = Color3.fromRGB(255,225,225)
@@ -985,21 +985,21 @@ end
  Title.BackgroundTransparency = 1.000
  Title.Position = UDim2.new(0, 50, 0, 0)
  Title.Size = UDim2.new(0, 280, 0, 30)
- Title.Font = Enum.Font.GothamSemibold
+ Title.Font = Enum.Font.Gotham
  Title.Text = TogInfo or "checkBox Title"
- Title.TextColor3 = Color3.fromRGB(224,224,224)
+ Title.TextColor3 = Color3.fromRGB(0, 255, 255)
  Title.TextSize = 12.000
  Title.TextXAlignment = Enum.TextXAlignment.Left
  
  ImageButton.Name = "ImageButton"
  ImageButton.Parent = CheckFrame2
- ImageButton.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ ImageButton.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  ImageButton.BackgroundTransparency = 1.000
  ImageButton.Position = UDim2.new(0, 280, 0, 4)
  ImageButton.Size = UDim2.new(0, 23, 0, 23)
  ImageButton.ZIndex = 2
  ImageButton.Image = "rbxassetid://3926311105"
- ImageButton.ImageColor3 = Color3.fromRGB(224,224,224)
+ ImageButton.ImageColor3 = Color3.fromRGB(0, 255, 255)
  ImageButton.ImageRectOffset = Vector2.new(940, 784)
  ImageButton.ImageRectSize = Vector2.new(48, 48)
  
@@ -1025,7 +1025,7 @@ end
   else
    game.TweenService:Create(ImageButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut),
    {
-    ImageColor3 = Color3.fromRGB(224,224,224)}
+    ImageColor3 = Color3.fromRGB(0, 255, 255)}
   ):Play()
   ImageButton.ImageRectOffset = Vector2.new(940, 784)
   end
@@ -1056,7 +1056,7 @@ end
  Posto1.Name = "Posto"
  Posto1.Parent = Dropdown
  Posto1.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
- Posto1.Color = Color3.fromRGB(0, 255, 255)
+ Posto1.Color = Color3.fromRGB(255,255,255)
  Posto1.LineJoinMode = Enum.LineJoinMode.Round
  Posto1.Thickness = 1
  Posto1.Transparency = 0
@@ -1068,10 +1068,10 @@ end
  
  DropTitle.Name = "DropTitle"
  DropTitle.Parent = Dropdown
- DropTitle.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ DropTitle.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  DropTitle.BackgroundTransparency = 1.000
  DropTitle.Size = UDim2.new(0, 310, 0, 31)
- DropTitle.Font = Enum.Font.GothamSemibold
+ DropTitle.Font = Enum.Font.Gotham
  DropTitle.Text = text.. " : "
  DropTitle.TextColor3 = Color3.fromRGB(225, 225, 225)
  DropTitle.TextSize = 12.000
@@ -1079,7 +1079,7 @@ end
  DropScroll.Name = "DropScroll"
  DropScroll.Parent = DropTitle
  DropScroll.Active = true
- DropScroll.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ DropScroll.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  DropScroll.BackgroundTransparency = 1.000
  DropScroll.BorderSizePixel = 0
  DropScroll.Position = UDim2.new(0, 0, 0, 31)
@@ -1097,7 +1097,7 @@ end
  
  DropImage.Name = "DropImage"
  DropImage.Parent = Dropdown
- DropImage.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ DropImage.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  DropImage.BackgroundTransparency = 1.000
  DropImage.Position = UDim2.new(0, 280, 0, 6)
  DropImage.Rotation = 180.000
@@ -1106,7 +1106,7 @@ end
  
  DropButton.Name = "DropButton"
  DropButton.Parent = Dropdown
- DropButton.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ DropButton.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  DropButton.BackgroundTransparency = 1.000
  DropButton.Size = UDim2.new(0, 310, 0, 31)
  DropButton.Font = Enum.Font.SourceSans
@@ -1119,10 +1119,10 @@ end
  
  Item.Name = "Item"
  Item.Parent = DropScroll
- Item.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Item.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  Item.BackgroundTransparency = 1.000
  Item.Size = UDim2.new(0, 310, 0, 26)
- Item.Font = Enum.Font.GothamSemibold
+ Item.Font = Enum.Font.Gotham
  Item.Text = tostring(v)
  Item.TextColor3 = Color3.fromRGB(225, 225, 225)
  Item.TextSize = 13.000
@@ -1194,10 +1194,10 @@ end
  local Item = Instance.new("TextButton")
  Item.Name = "Item"
  Item.Parent = DropScroll
- Item.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Item.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  Item.BackgroundTransparency = 1.000
  Item.Size = UDim2.new(0, 310, 0, 26)
- Item.Font = Enum.Font.GothamSemibold
+ Item.Font = Enum.Font.Gotham
  Item.Text = tostring(t)
  Item.TextColor3 = Color3.fromRGB(225, 225, 225)
  Item.TextSize = 13.000
@@ -1297,7 +1297,7 @@ SliderFrame_2.Size = UDim2.new(0, 308, 0, 55)
 UIStroke.Name = "UIStroke"
 UIStroke.Parent = SliderFrame_2
 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke.Color = Color3.fromRGB(224,224,224)
+UIStroke.Color = Color3.fromRGB(0, 255, 255)
 UIStroke.LineJoinMode = Enum.LineJoinMode.Round
 UIStroke.Thickness = 1
 UIStroke.Transparency = 0
@@ -1315,7 +1315,7 @@ ImageLabel.BorderSizePixel = 0
 ImageLabel.Position = UDim2.new(0, 5, 0, 5)
 ImageLabel.Size = UDim2.new(0, 18, 0, 18)
 ImageLabel.Image = "rbxassetid://"
-ImageLabel.ImageColor3 = Color3.fromRGB(224,224,224)
+ImageLabel.ImageColor3 = Color3.fromRGB(0, 255, 255)
 
 Space.Name = "Space"
 Space.Parent = SliderFrame_2
@@ -1323,10 +1323,10 @@ Space.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
 Space.BackgroundTransparency = 1.000
 Space.Position = UDim2.new(0, 30, 0, 0)
 Space.Size = UDim2.new(0, 15, 0, 30)
-Space.Font = Enum.Font.GothamSemibold
+Space.Font = Enum.Font.Gotham
 Space.Text = ""
 Space.TextSize = 15.000
-Space.TextColor3 = Color3.fromRGB(224,224,224)
+Space.TextColor3 = Color3.fromRGB(0, 255, 255)
 Space.TextXAlignment = Enum.TextXAlignment.Center
 
 Title.Name = "Title"
@@ -1335,15 +1335,15 @@ Title.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
 Title.BackgroundTransparency = 1.000
 Title.Position = UDim2.new(0, 50, 0, 0)
 Title.Size = UDim2.new(0, 280, 0, 30)
-Title.Font = Enum.Font.GothamSemibold
+Title.Font = Enum.Font.Gotham
 Title.Text = slidertitle or "Slider Title"
-Title.TextColor3 = Color3.fromRGB(224,224,224)
+Title.TextColor3 = Color3.fromRGB(0, 255, 255)
 Title.TextSize = 12.000
 Title.TextXAlignment = Enum.TextXAlignment.Left
 
 SliderInput.Name = "SliderInput"
 SliderInput.Parent = SliderFrame_2
-SliderInput.BackgroundColor3 = Color3.fromRGB(224,224,224)
+SliderInput.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 SliderInput.BackgroundTransparency = 0.7
 SliderInput.BorderSizePixel = 0
 SliderInput.Position = UDim2.new(0, 8, 0, 37)
@@ -1362,7 +1362,7 @@ SliderButton.Size = UDim2.new(0, 290, 0, 25)
 
 SliderCount.Name = "SliderCount"
 SliderCount.Parent = SliderButton
-SliderCount.BackgroundColor3 = Color3.fromRGB(224,224,224)
+SliderCount.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 SliderCount.BackgroundTransparency = 0.3
 SliderCount.BorderSizePixel = 0
 SliderCount.Position = UDim2.new(0,start,0,0)
@@ -1371,14 +1371,14 @@ SliderCount.Size = UDim2.new(0, 18, 0, 18)
 Title_2.Name = "Title_2"
 Title_2.Parent = SliderButton
 Title_2.AnchorPoint = Vector2.new(0, 0)
-Title_2.BackgroundColor3 = Color3.fromRGB(224,224,224)
+Title_2.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 Title_2.AutoButtonColor = false
 Title_2.BackgroundTransparency = 1.000
 Title_2.Position = UDim2.new(0,start,0,0)
 Title_2.Size = UDim2.new(0, 18, 0, 18)
-Title_2.Font = Enum.Font.GothamSemiboldBold
+Title_2.Font = Enum.Font.GothamBold
 Title_2.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
-Title_2.TextColor3 = Color3.fromRGB(224,224,224)
+Title_2.TextColor3 = Color3.fromRGB(0, 255, 255)
 Title_2.TextSize = 8.000
 Title_2.TextXAlignment = Enum.TextXAlignment.Center
 
@@ -1391,7 +1391,7 @@ SliderCorner.Parent = SliderCount
 SliderStroke.Name = "SliderStroke"
 SliderStroke.Parent = BoxFrame
 SliderStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-SliderStroke.Color = Color3.fromRGB(224,224,224)
+SliderStroke.Color = Color3.fromRGB(0, 255, 255)
 SliderStroke.LineJoinMode = Enum.LineJoinMode.Round
 SliderStroke.Thickness = 1
 SliderStroke.Transparency = 0.5
@@ -1412,9 +1412,9 @@ SliderBox.BackgroundTransparency = 1.000
 SliderBox.Position = UDim2.new(0, 0, 0, 1.65)
 SliderBox.Size = UDim2.new(0, 50, 0, 15)
 SliderBox.ClearTextOnFocus = false
-SliderBox.Font = Enum.Font.GothamSemiboldBold
+SliderBox.Font = Enum.Font.GothamBold
 SliderBox.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
-SliderBox.TextColor3 = Color3.fromRGB(224,224,224)
+SliderBox.TextColor3 = Color3.fromRGB(0, 255, 255)
 SliderBox.TextSize = 9.000
 SliderBox.TextTransparency = 0
 SliderBox.TextXAlignment = Enum.TextXAlignment.Center
@@ -1660,26 +1660,26 @@ end
  
  SliderLabel.Name = "SliderLabel"
  SliderLabel.Parent = sliderr
- SliderLabel.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ SliderLabel.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  SliderLabel.BackgroundTransparency = 1.000
  SliderLabel.Position = UDim2.new(0, 15, 0, 0)
  SliderLabel.Size = UDim2.new(0, 180, 0, 26)
- SliderLabel.Font = Enum.Font.GothamSemibold
+ SliderLabel.Font = Enum.Font.Gotham
  SliderLabel.Text = text
- SliderLabel.TextColor3 = Color3.fromRGB(224,224,224)
+ SliderLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
  SliderLabel.TextSize = 12.000
  SliderLabel.TextTransparency = 0
  SliderLabel.TextXAlignment = Enum.TextXAlignment.Left
  
  HAHA.Name = "HAHA"
  HAHA.Parent = sliderr
- HAHA.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ HAHA.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  HAHA.BackgroundTransparency = 1.000
  HAHA.Size = UDim2.new(0, 290, 0, 29)
  
  AHEHE.Name = "AHEHE"
  AHEHE.Parent = sliderr
- AHEHE.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ AHEHE.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  AHEHE.BackgroundTransparency = 1.000
  AHEHE.Position = UDim2.new(0, 10, 0, 35)
  AHEHE.Size = UDim2.new(0, 290, 0, 5)
@@ -1709,7 +1709,7 @@ end
  
  circlebar.Name = "circlebar"
  circlebar.Parent = bar1
- circlebar.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ circlebar.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  circlebar.Position = UDim2.new(1, -2, 0, -3)
  circlebar.Size = UDim2.new(0, 10, 0, 10)
  
@@ -1731,8 +1731,8 @@ end
  TextBox.BackgroundColor3 = _G.BGColor_2
  TextBox.Position = UDim2.new(0, 0, 0, 0)
  TextBox.Size = UDim2.new(0, 60, 0, 20)
- TextBox.Font = Enum.Font.GothamSemibold
- TextBox.TextColor3 = Color3.fromRGB(224,224,224)
+ TextBox.Font = Enum.Font.Gotham
+ TextBox.TextColor3 = Color3.fromRGB(0, 255, 255)
  TextBox.TextSize = 9.000
  TextBox.Text = set
  TextBox.TextTransparency = 0
@@ -1740,7 +1740,7 @@ end
  Posto.Name = "Posto"
  Posto.Parent = TextBox
  Posto.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
- Posto.Color = Color3.fromRGB(224,224,224)
+ Posto.Color = Color3.fromRGB(0, 255, 255)
  Posto.LineJoinMode = Enum.LineJoinMode.Round
  Posto.Thickness = 1
  Posto.Transparency = 0
@@ -1838,12 +1838,12 @@ end
  
  TextboxLabel.Name = "TextboxLabel"
  TextboxLabel.Parent = Textbox
- TextboxLabel.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ TextboxLabel.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  TextboxLabel.BackgroundTransparency = 1.000
  TextboxLabel.Position = UDim2.new(0, 15, 0, 0)
  TextboxLabel.Text = text
  TextboxLabel.Size = UDim2.new(0, 145, 0, 31)
- TextboxLabel.Font = Enum.Font.GothamSemibold
+ TextboxLabel.Font = Enum.Font.Gotham
  TextboxLabel.TextColor3 = Color3.fromRGB(225, 225, 225)
  TextboxLabel.TextSize = 16.000
  TextboxLabel.TextTransparency = 0
@@ -1851,7 +1851,7 @@ end
  
  txtbtn.Name = "txtbtn"
  txtbtn.Parent = Textbox
- txtbtn.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ txtbtn.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  txtbtn.BackgroundTransparency = 1.000
  txtbtn.Position = UDim2.new(0, 1, 0, 1)
  txtbtn.Size = UDim2.new(0, 310, 0, 29)
@@ -1866,7 +1866,7 @@ end
  RealTextbox.BackgroundTransparency = 0
  RealTextbox.Position = UDim2.new(0, 230, 0, 4)
  RealTextbox.Size = UDim2.new(0, 100, 0, 24)
- RealTextbox.Font = Enum.Font.GothamSemibold
+ RealTextbox.Font = Enum.Font.Gotham
  RealTextbox.Text = ""
  RealTextbox.TextColor3 = Color3.fromRGB(225, 225, 225)
  RealTextbox.TextSize = 11.000
@@ -1889,10 +1889,10 @@ end
  
  Label.Name = "Label"
  Label.Parent = MainFramePage
- Label.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Label.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  Label.BackgroundTransparency = 1.000
  Label.Size = UDim2.new(0, 325, 0, 20)
- Label.Font = Enum.Font.GothamSemibold
+ Label.Font = Enum.Font.Gotham
  Label.TextColor3 = Color3.fromRGB(225, 225, 225)
  Label.TextSize = 12.000
  Label.Text = text
@@ -1915,10 +1915,10 @@ end
  
  Label1.Name = "Label1"
  Label1.Parent = MainFramePage
- Label1.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Label1.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  Label1.BackgroundTransparency = 1.000
  Label1.Size = UDim2.new(0, 325, 0, 20)
- Label1.Font = Enum.Font.GothamSemibold
+ Label1.Font = Enum.Font.Gotham
  Label1.TextColor3 = Color3.fromRGB(225, 225, 225)
  Label1.TextSize = 12.000
  Label1.Text = text
@@ -1942,7 +1942,7 @@ function main:Seperator(text)
  
  Seperator.Name = "Seperator"
  Seperator.Parent = MainFramePage
- Seperator.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Seperator.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  Seperator.BackgroundTransparency = 1.000
  Seperator.Size = UDim2.new(0, 290, 0, 20)
  
@@ -1955,13 +1955,13 @@ function main:Seperator(text)
  
  Sep2.Name = "Sep2"
  Sep2.Parent = Seperator
- Sep2.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Sep2.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  Sep2.BackgroundTransparency = 1.000
  Sep2.Position = UDim2.new(0, 120, 0, 0)
  Sep2.Size = UDim2.new(0, 80, 0, 20)
- Sep2.Font = Enum.Font.GothamSemibold
+ Sep2.Font = Enum.Font.Gotham
  Sep2.Text = text
- Sep2.TextColor3 = Color3.fromRGB(224,224,224)
+ Sep2.TextColor3 = Color3.fromRGB(0, 255, 255)
  Sep2.TextSize = 14.000
  
  Sep3.Name = "Sep3"
@@ -1979,7 +1979,7 @@ function main:Seperator(text)
  
  Linee.Name = "Linee"
  Linee.Parent = MainFramePage
- Linee.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Linee.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  Linee.BackgroundTransparency = 1.000
  Linee.Position = UDim2.new(0, 0, 0.119999997, 0)
  Linee.Size = UDim2.new(0, 310, 0, 20)
@@ -10721,7 +10721,7 @@ if World2 then
 						bill.AlwaysOnTop = true
 						local name = Instance.new('TextLabel',bill)
 						name.Font = Enum.Font.GothamSemibold
-						name.FontSize = "Size7"
+						name.FontSize = "Size14"
 						name.TextWrapped = true
 						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
 						name.Size = UDim2.new(1,0,1,0)
