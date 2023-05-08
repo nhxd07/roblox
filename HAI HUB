@@ -546,7 +546,7 @@ spawn(function()
  MainPage.Name = "MainPage"
  MainPage.Parent = Page
  MainPage.ClipsDescendants = true
- MainPage.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ MainPage.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  MainPage.BackgroundTransparency = 1.000
  MainPage.Size = UDim2.new(0, 325, 0, 316)
  
@@ -588,7 +588,7 @@ spawn(function()
  TabButton.Parent = ScrollTab
  TabButton.Name = text.."Server"
  TabButton.Text = text
- TabButton.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ TabButton.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  TabButton.BackgroundTransparency = 1.000
  TabButton.Size = UDim2.new(0, 130, 0, 23)
  TabButton.Font = Enum.Font.Gotham
@@ -621,7 +621,7 @@ spawn(function()
  MainFramePage.Name = text.."_Page"
  MainFramePage.Parent = PageList
  MainFramePage.Active = true
- MainFramePage.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ MainFramePage.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  MainFramePage.BackgroundTransparency = 1.000
  MainFramePage.BorderSizePixel = 0
  MainFramePage.Size = UDim2.new(0, 400, 0, 245)
@@ -947,7 +947,7 @@ end
  UIStroke.Name = "UIStroke"
  UIStroke.Parent = CheckFrame2
  UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
- UIStroke.Color = Color3.fromRGB(224,224,224)
+ UIStroke.Color = Color3.fromRGB(0, 255, 255)
  UIStroke.LineJoinMode = Enum.LineJoinMode.Round
  UIStroke.Thickness = 1
  UIStroke.Transparency = 0
@@ -1673,13 +1673,13 @@ end
  
  HAHA.Name = "HAHA"
  HAHA.Parent = sliderr
- HAHA.BackgroundColor3 = _G.Color
+ HAHA.BackgroundColor3 = Color3.fromRGB(224,224,224)
  HAHA.BackgroundTransparency = 1.000
  HAHA.Size = UDim2.new(0, 290, 0, 29)
  
  AHEHE.Name = "AHEHE"
  AHEHE.Parent = sliderr
- AHEHE.BackgroundColor3 = _G.Color
+ AHEHE.BackgroundColor3 = Color3.fromRGB(224,224,224)
  AHEHE.BackgroundTransparency = 1.000
  AHEHE.Position = UDim2.new(0, 10, 0, 35)
  AHEHE.Size = UDim2.new(0, 290, 0, 5)
@@ -1740,7 +1740,7 @@ end
  Posto.Name = "Posto"
  Posto.Parent = TextBox
  Posto.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
- Posto.Color = _G.Color
+ Posto.Color = Color3.fromRGB(224,224,224)
  Posto.LineJoinMode = Enum.LineJoinMode.Round
  Posto.Thickness = 1
  Posto.Transparency = 0
@@ -1889,7 +1889,7 @@ end
  
  Label.Name = "Label"
  Label.Parent = MainFramePage
- Label.BackgroundColor3 = _G.Color
+ Label.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Label.BackgroundTransparency = 1.000
  Label.Size = UDim2.new(0, 325, 0, 20)
  Label.Font = Enum.Font.Gotham
@@ -1915,7 +1915,7 @@ end
  
  Label1.Name = "Label1"
  Label1.Parent = MainFramePage
- Label1.BackgroundColor3 = _G.Color
+ Label1.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Label1.BackgroundTransparency = 1.000
  Label1.Size = UDim2.new(0, 325, 0, 20)
  Label1.Font = Enum.Font.Gotham
@@ -1942,7 +1942,7 @@ function main:Seperator(text)
  
  Seperator.Name = "Seperator"
  Seperator.Parent = MainFramePage
- Seperator.BackgroundColor3 = _G.Color
+ Seperator.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Seperator.BackgroundTransparency = 1.000
  Seperator.Size = UDim2.new(0, 290, 0, 20)
  
@@ -1955,7 +1955,7 @@ function main:Seperator(text)
  
  Sep2.Name = "Sep2"
  Sep2.Parent = Seperator
- Sep2.BackgroundColor3 = _G.Color
+ Sep2.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Sep2.BackgroundTransparency = 1.000
  Sep2.Position = UDim2.new(0, 120, 0, 0)
  Sep2.Size = UDim2.new(0, 80, 0, 20)
@@ -1979,7 +1979,7 @@ function main:Seperator(text)
  
  Linee.Name = "Linee"
  Linee.Parent = MainFramePage
- Linee.BackgroundColor3 = _G.Color
+ Linee.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Linee.BackgroundTransparency = 1.000
  Linee.Position = UDim2.new(0, 0, 0.119999997, 0)
  Linee.Size = UDim2.new(0, 310, 0, 20)
