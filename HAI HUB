@@ -772,7 +772,7 @@ OkayBtnCorner.Parent = OkayBtn
 
 OkayBtnTitle.Name = "OkayBtnTitle"
 OkayBtnTitle.Parent = OkayBtn
-OkayBtnTitle.BackgroundColor3 = _G.SectionColor
+OkayBtnTitle.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 OkayBtnTitle.BackgroundTransparency = 1.000
 OkayBtnTitle.Size = UDim2.new(0, 150, 0, 30)
 OkayBtnTitle.Text = "OK"
