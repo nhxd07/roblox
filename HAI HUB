@@ -860,7 +860,7 @@ end
  
  TextBtn.Name = "TextBtn"
  TextBtn.Parent = Button
- TextBtn.BackgroundColor3 = Color3.fromRGB(244,244,244)
+ TextBtn.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
  TextBtn.BackgroundTransparency = 0.500
  TextBtn.Position = UDim2.new(0, 1, 0, 1)
  TextBtn.Size = UDim2.new(0, 308, 0, 29)
