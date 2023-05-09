@@ -11395,19 +11395,16 @@ end)
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
     end)
  
- Misc:Seperator(" Joins ")
- 
-    
- Misc:Textbox("Job Id","",true,function(value)
-        if _G.EnabledStat then
-            game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, tonumber(value))
+ Misc:Seperator(" Job-ID")
+ Job_ID = true
+ Misc:Textbox("(This Auto Join) Put Job-Id Here : ","",true,function(value)
+        if Job_ID then
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, value)
         end
     end)
     
- Misc:Button("Teleport Job",_G.EnabledStat,function(value)
-        _G.EnabledStat = value
-    end)
-    
+ Misc:Seperator(" Joins ")
+ 
  Misc:Button("Join Pirates Team",function()
  		local args = {
 			[1] = "SetTeam",
