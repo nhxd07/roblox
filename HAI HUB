@@ -11397,6 +11397,17 @@ end)
  
  Misc:Seperator(" Joins ")
  
+    
+ Misc:Textbox("Job Id","",true,function(value)
+        if _G.EnabledStat then
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, tonumber(value))
+        end
+    end)
+    
+ Misc:Button("Teleport Job",_G.EnabledStat,function(value)
+        _G.EnabledStat = value
+    end)
+    
  Misc:Button("Join Pirates Team",function()
  		local args = {
 			[1] = "SetTeam",
