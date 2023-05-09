@@ -116,7 +116,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
 	local TweenService = game:GetService("TweenService")
 	local Balaraja = Instance.new("ScreenGui")
 	
-		Balaraja.Name = "Balaraja"
+	Balaraja.Name = "Balaraja"
     Balaraja.Parent = game.CoreGui
     Balaraja.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	
@@ -297,7 +297,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
  local Logo = Instance.new("ImageLabel")
  Logo.Name = "Logo"
  Logo.Parent = Top
- Logo.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+ Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
  Logo.BackgroundTransparency = 1.000
  Logo.Position = UDim2.new(-0.01, 0,-0.319, 0)
  Logo.Size = UDim2.new(0, 45, 0, 45)
@@ -306,13 +306,13 @@ local ThunderImageUI = Instance.new("ImageLabel")
  local Name = Instance.new("TextLabel")
  Name.Name = "Name"
  Name.Parent = Top
- Name.BackgroundColor3 = Color3.fromRGB(255,255,255)
+ Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
  Name.BackgroundTransparency = 1.000
  Name.Position = UDim2.new(0.0909756112, 0, 0, 0)
  Name.Size = UDim2.new(0, 61, 0, 27)
  Name.Font = Enum.Font.GothamSemibold
  Name.Text = text
- Name.TextColor3 = Color3.fromRGB(255, 255, 255)
+ Name.TextColor3 = Color3.fromRGB(0, 255, 255)
  Name.TextSize = 14.000
  
 local ServerTime = Instance.new("TextLabel")
@@ -3951,7 +3951,7 @@ end)
 
  
 --------------------------------------------------------------------
-local Library = Update:Window("HAI X HUB ","")
+local Library = Update:Window("HAI HUB ","")
 ------------------------------------------
 
 spawn(function()
@@ -9784,7 +9784,7 @@ if World2 then
 						name.FontSize = "Size14"
 						name.TextWrapped = true
 						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
-						name.Size = UDim2.new(0.5,0,0.5,0)
+						name.Size = UDim2.new(1,0,1,0)
 						name.TextYAlignment = 'Top'
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
