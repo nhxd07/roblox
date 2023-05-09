@@ -365,7 +365,6 @@ spawn(function()
  MainImage.Size = UDim2.new(0, 100, 0, 170)
  MainImage.Image = ""
  
- function _G.Server()
  do  local ui =  game:GetService("CoreGui"):FindFirstChild("Ripple")  if ui then ui:Destroy() end end
 	
 		local Luna = Instance.new("ScreenGui")
@@ -487,7 +486,6 @@ spawn(function()
 				Yedhee2.Text = tempo2
 			end
 		end)
-	end
 	
 		MakeDraggable(ToggleFrameUi,ToggleFrameUi)
  
@@ -4399,10 +4397,6 @@ spawn(function()
   end
   end
   end)
- end)
-
-Setting:Toggle("Time Join Server",true,function(value)
- _G.Server = value
  end)
 
 Setting:Toggle("Anti AFK",true,function(value)
