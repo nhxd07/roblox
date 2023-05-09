@@ -9743,7 +9743,7 @@ function UpdateIslandESP()
  P:Seperator(" ESP ")
   
 if World2 then
-		Dungeon:Toggle("TP Flower Red",function()
+		P:Toggle("TP Flower Red",function()
 			for i,v in pairs(game.Workspace:GetDescendants()) do
 				if v.Name == "Flower2" then
 				    topos(v.CFrame)
@@ -9751,7 +9751,7 @@ if World2 then
 			end
 		end)
 
-		Dungeon:Toggle("TP Flower Blue",function()
+		P:Toggle("TP Flower Blue",function()
 			for i,v in pairs(game.Workspace:GetDescendants()) do
 				if v.Name == "Flower1" then
 					topos(v.CFrame)
