@@ -1,43 +1,38 @@
-local ThunderScreen = Instance.new("ScreenGui")
-local ThunderToggleUI = Instance.new("TextButton")
-local ThunderCornerUI = Instance.new("UICorner")
-local ThunderImageUI = Instance.new("ImageLabel")
+local DINOHUB = Instance.new("ScreenGui")
+local OPENCLOSE = Instance.new("TextButton")
 
-        ThunderScreen.Name = "ThunderScreen"
-        ThunderScreen.Parent = game.CoreGui
-        ThunderScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+DINOHUB.Name = "sazx hub"
+DINOHUB.Parent = game.CoreGui
+DINOHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-        ThunderToggleUI.Name = "ThunderToggleUI"
-        ThunderToggleUI.Parent = ThunderScreen
-        ThunderToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
-        ThunderToggleUI.BorderSizePixel = 0
-        ThunderToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-        ThunderToggleUI.Size = UDim2.new(0, 45, 0, 45)
-        ThunderToggleUI.Font = Enum.Font.SourceSans
-        ThunderToggleUI.Text = ""
-        ThunderToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
-        ThunderToggleUI.TextSize = 14.000
-        ThunderToggleUI.Draggable = true
-        ThunderToggleUI.MouseButton1Click:Connect(function()
-        game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-        game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
-        end)
+OPENCLOSE.Name = "OPENCLOSE"
+OPENCLOSE.Parent = DINOHUB
+OPENCLOSE.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+OPENCLOSE.BorderSizePixel = 0
+OPENCLOSE.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+OPENCLOSE.Size = UDim2.new(0.0447916649, 0, 0.0845824406, 0)
+OPENCLOSE.Font = Enum.Font.DenkOne
+OPENCLOSE.Text = "UI"
+OPENCLOSE.TextColor3 = Color3.fromRGB(96, 255, 16)
+OPENCLOSE.TextScaled = true
+OPENCLOSE.TextSize = 14.000
+OPENCLOSE.TextWrapped = true
+OPENCLOSE.MouseButton1Click:Connect(function()
+    game.CoreGui:FindFirstChild("1xliiUI").Enabled = not game.CoreGui:FindFirstChild("1xliiUI").Enabled
+end)
+do
+    if game:GetService("CoreGui"):FindFirstChild("1xliiui") then
+        game:GetService("CoreGui").DinoUI:Destroy()
+    end
+end
 
-        ThunderCornerUI.Name = "ThunderCornerUI"
-        ThunderCornerUI.Parent = ThunderToggleUI
+do local GUI = game.CoreGui:FindFirstChild("1xliiui");if GUI then GUI:Destroy();end;if _G.Color == nil then
+       _G.Color = Color3.fromRGB(96, 255, 16)
+   end 
+end
 
-        ThunderImageUI.Name = "MODILEMAGE"
-        ThunderImageUI.Parent = ThunderToggleUI
-        ThunderImageUI.BackgroundColor3 = Color3.fromRGB(192,192,192)
-        ThunderImageUI.BackgroundTransparency = 1.000
-        ThunderImageUI.BorderSizePixel = 0
-        ThunderImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
-        ThunderImageUI.Size = UDim2.new(0, 45, 0, 45)
-        ThunderImageUI.Image = "http://www.roblox.com/asset/?id=12979886523"
-        
- 
- local UserInputService = game:GetService("UserInputService")
- local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
 
 local function MakeDraggable(topbarobject, object)
 	local Dragging = nil
