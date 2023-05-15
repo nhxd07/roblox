@@ -1,89 +1,113 @@
-local DINOHUB = Instance.new("ScreenGui")
-local OPENCLOSE = Instance.new("TextButton")
+local ThunderScreen = Instance.new("ScreenGui")
+local ThunderToggleUI = Instance.new("TextButton")
+local ThunderCornerUI = Instance.new("UICorner")
+local ThunderImageUI = Instance.new("ImageLabel")
 
-DINOHUB.Name = "sazx hub"
-DINOHUB.Parent = game.CoreGui
-DINOHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        ThunderScreen.Name = "ThunderScreen"
+        ThunderScreen.Parent = game.CoreGui
+        ThunderScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-OPENCLOSE.Name = "OPENCLOSE"
-OPENCLOSE.Parent = DINOHUB
-OPENCLOSE.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-OPENCLOSE.BorderSizePixel = 0
-OPENCLOSE.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-OPENCLOSE.Size = UDim2.new(0.0447916649, 0, 0.0845824406, 0)
-OPENCLOSE.Font = Enum.Font.DenkOne
-OPENCLOSE.Text = "UI"
-OPENCLOSE.TextColor3 = Color3.fromRGB(96, 255, 16)
-OPENCLOSE.TextScaled = true
-OPENCLOSE.TextSize = 14.000
-OPENCLOSE.TextWrapped = true
-OPENCLOSE.MouseButton1Click:Connect(function()
-    game.CoreGui:FindFirstChild("1xliiUI").Enabled = not game.CoreGui:FindFirstChild("1xliiUI").Enabled
-end)
-do
-    if game:GetService("CoreGui"):FindFirstChild("1xliiui") then
-        game:GetService("CoreGui").DinoUI:Destroy()
-    end
-end
+        ThunderToggleUI.Name = "ThunderToggleUI"
+        ThunderToggleUI.Parent = ThunderScreen
+        ThunderToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
+        ThunderToggleUI.BorderSizePixel = 0
+        ThunderToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+        ThunderToggleUI.Size = UDim2.new(0, 45, 0, 45)
+        ThunderToggleUI.Font = Enum.Font.SourceSans
+        ThunderToggleUI.Text = ""
+        ThunderToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
+        ThunderToggleUI.TextSize = 14.000
+        ThunderToggleUI.Draggable = true
+        ThunderToggleUI.MouseButton1Click:Connect(function()
+        game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+        game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+        end)
 
-do local GUI = game.CoreGui:FindFirstChild("1xliiui");if GUI then GUI:Destroy();end;if _G.Color == nil then
-       _G.Color = Color3.fromRGB(96, 255, 16)
-   end 
-end
+        ThunderCornerUI.Name = "ThunderCornerUI"
+        ThunderCornerUI.Parent = ThunderToggleUI
 
-local UserInputService = game:GetService("UserInputService")
-local TweenService = game:GetService("TweenService")
-
-local function MakeDraggable(topbarobject, object)
-	local Dragging = nil
-	local DragInput = nil
-	local DragStart = nil
-	local StartPosition = nil
-
-	local function Update(input)
-		local Delta = input.Position - DragStart
-		local pos = UDim2.new(StartPosition.X.Scale, StartPosition.X.Offset + Delta.X, StartPosition.Y.Scale, StartPosition.Y.Offset + Delta.Y)
-		local Tween = TweenService:Create(object, TweenInfo.new(0.15), {Position = pos})
-		Tween:Play()
-	end
-
-	topbarobject.InputBegan:Connect(
-		function(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-				Dragging = true
-				DragStart = input.Position
-				StartPosition = object.Position
-
-				input.Changed:Connect(
-					function()
-						if input.UserInputState == Enum.UserInputState.End then
-							Dragging = false
-						end
-					end
-				)
-			end
-		end
-	)
-
-	topbarobject.InputChanged:Connect(
-		function(input)
-			if
-				input.UserInputType == Enum.UserInputType.MouseMovement or
-				input.UserInputType == Enum.UserInputType.Touch
-			then
-				DragInput = input
-			end
-		end
-	)
-
-	UserInputService.InputChanged:Connect(
-		function(input)
-			if input == DragInput and Dragging then
-				Update(input)
-			end
-		end
-	)
-end
+        ThunderImageUI.Name = "MODILEMAGE"
+        ThunderImageUI.Parent = ThunderToggleUI
+        ThunderImageUI.BackgroundColor3 = Color3.fromRGB(192,192,192)
+        ThunderImageUI.BackgroundTransparency = 1.000
+        ThunderImageUI.BorderSizePixel = 0
+        ThunderImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
+        ThunderImageUI.Size = UDim2.new(0, 45, 0, 45)
+        ThunderImageUI.Image = "http://www.roblox.com/asset/?id=12979886523"
+        
+ 
+ local UserInputService = game:GetService("UserInputService")
+ local TweenService = game:GetService("TweenService")
+ 
+ local function MakeDraggable(topbarobject, object)
+ local Dragging = nil
+ local DragInput = nil
+ local DragStart = nil
+ local StartPosition = nil
+ 
+ local function Update(input)
+ local Delta = input.Position - DragStart
+ local pos = UDim2.new(StartPosition.X.Scale, StartPosition.X.Offset + Delta.X, StartPosition.Y.Scale, StartPosition.Y.Offset + Delta.Y)
+ local Tween = TweenService:Create(object, TweenInfo.new(0.15), {
+  Position = pos
+ })
+ Tween:Play()
+ end
+ 
+ topbarobject.InputBegan:Connect(
+  function(input)
+  if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+  Dragging = true
+  DragStart = input.Position
+  StartPosition = object.Position
+ 
+  input.Changed:Connect(
+   function()
+   if input.UserInputState == Enum.UserInputState.End then
+   Dragging = false
+   end
+   end
+  )
+  end
+  end
+ )
+ 
+ topbarobject.InputChanged:Connect(
+  function(input)
+  if
+   input.UserInputType == Enum.UserInputType.MouseMovement or
+  input.UserInputType == Enum.UserInputType.Touch
+  then
+  DragInput = input
+  end
+  end
+ )
+ 
+ UserInputService.InputChanged:Connect(
+  function(input)
+  if input == DragInput and Dragging then
+  Update(input)
+  end
+  end
+ )
+ end
+ _G.BGColor_1 = Color3.fromRGB(30,30,30)
+ _G.BGColor_2 = Color3.fromRGB(20, 20, 20)
+ _G.Color = Color3.fromRGB(0, 255, 255)
+ _G.WindowBackgroundColor = Color3.fromRGB(12,12,12)
+ _G.BackgroundItemColor = Color3.fromRGB(20, 20, 20)
+ _G.TabWindowColor = Color3.fromRGB(30, 30, 30)
+ _G.ContainerColor = Color3.fromRGB(30, 30, 30)
+ _G.TitleTextColor = Color3.fromRGB(150, 150, 150)
+ _G.ImageColor = Color3.fromRGB(150, 150, 150)
+ _G.LineThemeColor = Color3.fromRGB(150, 150, 150)
+ _G.TabTextColor = Color3.fromRGB(150, 150, 150)
+ _G.TabImageColor = Color3.fromRGB(150, 150, 150)
+ _G.TabThemeColor = Color3.fromRGB(250, 0, 0)
+ _G.SectionColor = Color3.fromRGB(150, 150, 150)
+ _G.SectionImageColor = Color3.fromRGB(150, 150, 150)
+ _G.SectionTextColor = Color3.fromRGB(150, 150, 150)
+ _G.SectionOn = Color3.fromRGB(0, 250, 0)
 
 local Update = {}
 
@@ -1062,7 +1086,7 @@ elseif placeId == 7449423635 then
 	Three_World = true
 end
 
-local Library = Update:Window("HAI HUB ","",Enum.KeyCode.RightControl);
+local Library = Update:Window("sazx hub ","",Enum.KeyCode.RightControl);
 local AutoFarm = Library:Tab("AutoFarm")
 local Auto = Library:Tab("Auto")
 local Stats = Library:Tab("Stats")
