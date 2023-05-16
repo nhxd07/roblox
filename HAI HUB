@@ -116,7 +116,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
 	local TweenService = game:GetService("TweenService")
 	local Balaraja = Instance.new("ScreenGui")
 	
-    Balaraja.Name = "Balaraja"
+		Balaraja.Name = "Balaraja"
     Balaraja.Parent = game.CoreGui
     Balaraja.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	
@@ -164,7 +164,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
         imagenoti.AnchorPoint = Vector2.new(0.5, 0.5)
         imagenoti.Position = UDim2.new(0.9, 0, 0.5, 0)
         imagenoti.Size = UDim2.new(0, 90, 0, 90)
-        imagenoti.Image = "rbxassetid://"
+      imagenoti.Image = "rbxassetid://"
     
         local txdlid = Instance.new("TextLabel")
     
@@ -172,7 +172,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
         txdlid.Name = "TextLabel_Tap"
         txdlid.BackgroundColor3 = Color3.fromRGB(50,50,50)
         txdlid.Size =UDim2.new(0, 160, 0,25 )
-        txdlid.Font = Enum.Font.GothamSemibold
+        txdlid.Font = Enum.Font.Code
         txdlid.Text = titel
         txdlid.TextColor3 = Color3.fromRGB(30,30,30)
         txdlid.TextSize = 17.000
@@ -199,7 +199,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
         TextNoti.Name = "TextLabel_Tap"
         TextNoti.BackgroundColor3 = Color3.fromRGB(30,30,30)
         TextNoti.Size =UDim2.new(0, 260, 0,25 )
-        TextNoti.Font = Enum.Font.GothamSemibold
+        TextNoti.Font = Enum.Font.Code
         TextNoti.Text = text
         TextNoti.TextColor3 = Color3.fromRGB(255,255,255)
         TextNoti.TextSize = 15.000
@@ -214,7 +214,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
         local Time = Instance.new("Frame")
         Time.Name = "Time"
         Time.Parent = TitleFrame
-        --Time.AnchorPoint = Vector2.new(0.5, 0.5)
+    --Time.AnchorPoint = Vector2.new(0.5, 0.5)
         Time.BackgroundColor3 =  Color3.fromRGB(255,255,255)
         Time.BorderSizePixel = 0
         Time.Position =  UDim2.new(0, 0, 0.,0)
@@ -249,7 +249,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
     )
     end
  
- do  local ui =  game:GetService("CoreGui").RobloxGui.Modules:FindFirstChild("NGNHHAI")  if ui then ui:Destroy() end end
+ do  local ui =  game:GetService("CoreGui").RobloxGui.Modules:FindFirstChild("ZENHUB")  if ui then ui:Destroy() end end
  
  function Update:Window(text,logo,keybind)
  local osfunc = {}
@@ -260,17 +260,17 @@ local ThunderImageUI = Instance.new("ImageLabel")
  local keybind = keybind or Enum.KeyCode.RightControl
  local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
  
- local NGNHHAI = Instance.new("ScreenGui")
- NGNHHAI.Name = "NGNHHAI"
- NGNHHAI.Parent = game.CoreGui
- NGNHHAI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ local ZENHUB = Instance.new("ScreenGui")
+ ZENHUB.Name = "ZENHUB"
+ ZENHUB.Parent = game.CoreGui
+ ZENHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
  
  local Main = Instance.new("Frame")
  Main.Name = "Main"
- Main.Parent = NGNHHAI
+ Main.Parent = ZENHUB
  Main.ClipsDescendants = true
  Main.AnchorPoint = Vector2.new(0.5,0.5)
- Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+ Main.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
  Main.Position = UDim2.new(0.5, 0, 0.5, 0)
  Main.Size = UDim2.new(0, 0, 0, 0)
  
@@ -297,31 +297,30 @@ local ThunderImageUI = Instance.new("ImageLabel")
  local Logo = Instance.new("ImageLabel")
  Logo.Name = "Logo"
  Logo.Parent = Top
- Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ Logo.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Logo.BackgroundTransparency = 1.000
  Logo.Position = UDim2.new(-0.01, 0,-0.319, 0)
  Logo.Size = UDim2.new(0, 55,0, 45)
- Logo.Image = "rbxassetid://"..tostring(logo)
+ --Logo.Image = "rbxassetid://13438920682"
  
  local Name = Instance.new("TextLabel")
  Name.Name = "Name"
  Name.Parent = Top
- Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ Name.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Name.BackgroundTransparency = 1.000
  Name.Position = UDim2.new(0.0909756112, 0, 0, 0)
  Name.Size = UDim2.new(0, 61, 0, 27)
- Name.Font = Enum.Font.GothamSemibold
+ Name.Font = Enum.Font.Code
  Name.Text = text
  Name.TextColor3 = Color3.fromRGB(255, 255, 255)
  Name.TextSize = 14.000
  
- 
-local ServerTime = Instance.new("TextLabel")
+ local ServerTime = Instance.new("TextLabel")
 ServerTime.Name = "ServerTime"
 ServerTime.Parent = Top
 ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
 ServerTime.BackgroundTransparency = 1.000
-ServerTime.Position = UDim2.new(0.65, 0,0.074, 0)
+ServerTime.Position = UDim2.new(0.60, 0,0.074, 0)
 ServerTime.Size = UDim2.new(0, 225, 0, 25)
 ServerTime.Font = Enum.Font.GothamSemibold
 ServerTime.Text = ""
@@ -412,7 +411,7 @@ spawn(function()
  local Page = Instance.new("Frame")
  Page.Name = "Page"
  Page.Parent = Main
- Page.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+ Page.BackgroundColor3 = Color3.fromRGB(30,30,30)
  Page.Position = UDim2.new(0.295726834, 0, 0.144050003, 0)
  Page.Size = UDim2.new(0, 330, 0, 280)
  
@@ -424,7 +423,7 @@ spawn(function()
  MainPage.Name = "MainPage"
  MainPage.Parent = Page
  MainPage.ClipsDescendants = true
- MainPage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ MainPage.BackgroundColor3 = Color3.fromRGB(224,224,224)
  MainPage.BackgroundTransparency = 1.000
  MainPage.Size = UDim2.new(0, 325, 0, 316)
  
@@ -466,10 +465,10 @@ spawn(function()
  TabButton.Parent = ScrollTab
  TabButton.Name = text.."Server"
  TabButton.Text = text
- TabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ TabButton.BackgroundColor3 = Color3.fromRGB(224,224,224)
  TabButton.BackgroundTransparency = 1.000
  TabButton.Size = UDim2.new(0, 130, 0, 23)
- TabButton.Font = Enum.Font.GothamSemibold
+ TabButton.Font = Enum.Font.Gotham
  TabButton.TextColor3 = Color3.fromRGB(225, 225, 225)
  TabButton.TextSize = 11.000
  TabButton.TextTransparency = 0.100
@@ -492,14 +491,14 @@ spawn(function()
  TabImage.BackgroundTransparency = 1.000
  TabImage.Position = UDim2.new(0, 0, 0, 0)
  TabImage.Size = UDim2.new(0, 20, 0, 20)
- TabImage.Image = img or "rbxassetid://13438920682"
+ TabImage.Image = img or "rbxassetid://8666601749"
  TabImage.ImageColor3 = _G.Color
  
  local MainFramePage = Instance.new("ScrollingFrame")
  MainFramePage.Name = text.."_Page"
  MainFramePage.Parent = PageList
  MainFramePage.Active = true
- MainFramePage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ MainFramePage.BackgroundColor3 = Color3.fromRGB(224,224,224)
  MainFramePage.BackgroundTransparency = 1.000
  MainFramePage.BorderSizePixel = 0
  MainFramePage.Size = UDim2.new(0, 400, 0, 245)
@@ -588,7 +587,7 @@ local NotifHolderUIStroke = Instance.new("UIStroke")
 local Line = Instance.new("Frame")
 
 NotificationHold.Name = "NotificationHold"
-NotificationHold.Parent = NGNHHAI
+NotificationHold.Parent = ZENHUB
 NotificationHold.BackgroundColor3 = _G.WindowBackgroundColor
 NotificationHold.BackgroundTransparency = 1
 NotificationHold.BorderSizePixel = 0
@@ -654,7 +653,7 @@ OkayBtnTitle.BackgroundColor3 = _G.SectionColor
 OkayBtnTitle.BackgroundTransparency = 1.000
 OkayBtnTitle.Size = UDim2.new(0, 150, 0, 30)
 OkayBtnTitle.Text = "OK"
-OkayBtnTitle.Font = Enum.Font.GothamSemibold
+OkayBtnTitle.Font = Enum.Font.Gotham
 OkayBtnTitle.TextColor3 = Color3.fromRGB(0, 0, 0)
 OkayBtnTitle.TextSize = 22.000
 
@@ -665,7 +664,7 @@ NotificationTitle.BackgroundTransparency = 1.000
 NotificationTitle.Position = UDim2.new(0, 0, 0, 10)
 NotificationTitle.Size = UDim2.new(0, 400, 0, 25)
 NotificationTitle.ZIndex = 3
-NotificationTitle.Font = Enum.Font.GothamSemibold
+NotificationTitle.Font = Enum.Font.Gotham
 NotificationTitle.Text = "Notification"
 NotificationTitle.TextColor3 = Color3.fromRGB(255, 0, 0)
 NotificationTitle.TextSize = 22.000
@@ -683,7 +682,7 @@ NotificationDesc.BackgroundColor3 = _G.SectionColor
 NotificationDesc.BackgroundTransparency = 1.000
 NotificationDesc.Position = UDim2.new(0, 10, 0, 80)
 NotificationDesc.Size = UDim2.new(0, 380, 0, 200)
-NotificationDesc.Font = Enum.Font.GothamSemibold
+NotificationDesc.Font = Enum.Font.Gotham
 NotificationDesc.Text = textdesc
 NotificationDesc.TextScaled = false
 NotificationDesc.TextColor3 = _G.SectionTextColor
@@ -743,7 +742,7 @@ end
  TextBtn.Position = UDim2.new(0, 1, 0, 1)
  TextBtn.Size = UDim2.new(0, 308, 0, 29)
  TextBtn.AutoButtonColor = false
- TextBtn.Font = Enum.Font.GothamSemibold
+ TextBtn.Font = Enum.Font.Gotham
  TextBtn.Text = text
  TextBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
  TextBtn.TextSize = 12.000
@@ -816,7 +815,7 @@ end
  
  CheckFrame2.Name = "CheckFrame2"
  CheckFrame2.Parent = CheckFrame
- CheckFrame2.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+ CheckFrame2.BackgroundColor3 = Color3.fromRGB(30,30,30)
  CheckFrame2.BackgroundTransparency = 1
  CheckFrame2.BorderSizePixel = 0
  CheckFrame2.Position = UDim2.new(0, 3, 0, 0)
@@ -851,7 +850,7 @@ end
  Space.BackgroundTransparency = 1.000
  Space.Position = UDim2.new(0, 30, 0, 0)
  Space.Size = UDim2.new(0, 15, 0, 30)
- Space.Font = Enum.Font.GothamSemibold
+ Space.Font = Enum.Font.Gotham
  Space.Text = ""
  Space.TextSize = 12.000
  Space.TextColor3 = Color3.fromRGB(255,225,225)
@@ -863,7 +862,7 @@ end
  Title.BackgroundTransparency = 1.000
  Title.Position = UDim2.new(0, 50, 0, 0)
  Title.Size = UDim2.new(0, 280, 0, 30)
- Title.Font = Enum.Font.GothamSemibold
+ Title.Font = Enum.Font.Gotham
  Title.Text = TogInfo or "checkBox Title"
  Title.TextColor3 = Color3.fromRGB(224,224,224)
  Title.TextSize = 12.000
@@ -876,7 +875,7 @@ end
  ImageButton.Position = UDim2.new(0, 280, 0, 4)
  ImageButton.Size = UDim2.new(0, 23, 0, 23)
  ImageButton.ZIndex = 2
- ImageButton.Image = "rbxassetid://13438920682"
+ ImageButton.Image = "rbxassetid://3926311105"
  ImageButton.ImageColor3 = Color3.fromRGB(224,224,224)
  ImageButton.ImageRectOffset = Vector2.new(940, 784)
  ImageButton.ImageRectSize = Vector2.new(48, 48)
@@ -949,7 +948,7 @@ end
  DropTitle.BackgroundColor3 = Color3.fromRGB(224,224,224)
  DropTitle.BackgroundTransparency = 1.000
  DropTitle.Size = UDim2.new(0, 310, 0, 31)
- DropTitle.Font = Enum.Font.GothamSemibold
+ DropTitle.Font = Enum.Font.Gotham
  DropTitle.Text = text.. " : "
  DropTitle.TextColor3 = Color3.fromRGB(225, 225, 225)
  DropTitle.TextSize = 12.000
@@ -980,7 +979,7 @@ end
  DropImage.Position = UDim2.new(0, 280, 0, 6)
  DropImage.Rotation = 180.000
  DropImage.Size = UDim2.new(0, 20, 0, 20)
- DropImage.Image = "rbxassetid://13438920682"
+ DropImage.Image = "rbxassetid://6031090990"
  
  DropButton.Name = "DropButton"
  DropButton.Parent = Dropdown
@@ -1000,7 +999,7 @@ end
  Item.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Item.BackgroundTransparency = 1.000
  Item.Size = UDim2.new(0, 310, 0, 26)
- Item.Font = Enum.Font.GothamSemibold
+ Item.Font = Enum.Font.Gotham
  Item.Text = tostring(v)
  Item.TextColor3 = Color3.fromRGB(225, 225, 225)
  Item.TextSize = 13.000
@@ -1075,7 +1074,7 @@ end
  Item.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Item.BackgroundTransparency = 1.000
  Item.Size = UDim2.new(0, 310, 0, 26)
- Item.Font = Enum.Font.GothamSemibold
+ Item.Font = Enum.Font.Gotham
  Item.Text = tostring(t)
  Item.TextColor3 = Color3.fromRGB(225, 225, 225)
  Item.TextSize = 13.000
@@ -1201,7 +1200,7 @@ Space.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
 Space.BackgroundTransparency = 1.000
 Space.Position = UDim2.new(0, 30, 0, 0)
 Space.Size = UDim2.new(0, 15, 0, 30)
-Space.Font = Enum.Font.GothamSemibold
+Space.Font = Enum.Font.Gotham
 Space.Text = ""
 Space.TextSize = 15.000
 Space.TextColor3 = Color3.fromRGB(224,224,224)
@@ -1213,7 +1212,7 @@ Title.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
 Title.BackgroundTransparency = 1.000
 Title.Position = UDim2.new(0, 50, 0, 0)
 Title.Size = UDim2.new(0, 280, 0, 30)
-Title.Font = Enum.Font.GothamSemibold
+Title.Font = Enum.Font.Gotham
 Title.Text = slidertitle or "Slider Title"
 Title.TextColor3 = Color3.fromRGB(224,224,224)
 Title.TextSize = 12.000
@@ -1254,7 +1253,7 @@ Title_2.AutoButtonColor = false
 Title_2.BackgroundTransparency = 1.000
 Title_2.Position = UDim2.new(0,start,0,0)
 Title_2.Size = UDim2.new(0, 18, 0, 18)
-Title_2.Font = Enum.Font.GothamSemibold
+Title_2.Font = Enum.Font.GothamBold
 Title_2.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
 Title_2.TextColor3 = Color3.fromRGB(224,224,224)
 Title_2.TextSize = 8.000
@@ -1290,7 +1289,7 @@ SliderBox.BackgroundTransparency = 1.000
 SliderBox.Position = UDim2.new(0, 0, 0, 1.65)
 SliderBox.Size = UDim2.new(0, 50, 0, 15)
 SliderBox.ClearTextOnFocus = false
-SliderBox.Font = Enum.Font.GothamSemibold
+SliderBox.Font = Enum.Font.GothamBold
 SliderBox.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
 SliderBox.TextColor3 = Color3.fromRGB(224,224,224)
 SliderBox.TextSize = 9.000
@@ -1542,7 +1541,7 @@ end
  SliderLabel.BackgroundTransparency = 1.000
  SliderLabel.Position = UDim2.new(0, 15, 0, 0)
  SliderLabel.Size = UDim2.new(0, 180, 0, 26)
- SliderLabel.Font = Enum.Font.GothamSemibold
+ SliderLabel.Font = Enum.Font.Gotham
  SliderLabel.Text = text
  SliderLabel.TextColor3 = Color3.fromRGB(224,224,224)
  SliderLabel.TextSize = 12.000
@@ -1609,7 +1608,7 @@ end
  TextBox.BackgroundColor3 = _G.BGColor_2
  TextBox.Position = UDim2.new(0, 0, 0, 0)
  TextBox.Size = UDim2.new(0, 60, 0, 20)
- TextBox.Font = Enum.Font.GothamSemibold
+ TextBox.Font = Enum.Font.Gotham
  TextBox.TextColor3 = Color3.fromRGB(224,224,224)
  TextBox.TextSize = 9.000
  TextBox.Text = set
@@ -1721,7 +1720,7 @@ end
  TextboxLabel.Position = UDim2.new(0, 15, 0, 0)
  TextboxLabel.Text = text
  TextboxLabel.Size = UDim2.new(0, 145, 0, 31)
- TextboxLabel.Font = Enum.Font.GothamSemibold
+ TextboxLabel.Font = Enum.Font.Gotham
  TextboxLabel.TextColor3 = Color3.fromRGB(225, 225, 225)
  TextboxLabel.TextSize = 16.000
  TextboxLabel.TextTransparency = 0
@@ -1744,7 +1743,7 @@ end
  RealTextbox.BackgroundTransparency = 0
  RealTextbox.Position = UDim2.new(0, 230, 0, 4)
  RealTextbox.Size = UDim2.new(0, 100, 0, 24)
- RealTextbox.Font = Enum.Font.GothamSemibold
+ RealTextbox.Font = Enum.Font.Gotham
  RealTextbox.Text = ""
  RealTextbox.TextColor3 = Color3.fromRGB(225, 225, 225)
  RealTextbox.TextSize = 11.000
@@ -1770,7 +1769,7 @@ end
  Label.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Label.BackgroundTransparency = 1.000
  Label.Size = UDim2.new(0, 325, 0, 20)
- Label.Font = Enum.Font.GothamSemibold
+ Label.Font = Enum.Font.Gotham
  Label.TextColor3 = Color3.fromRGB(225, 225, 225)
  Label.TextSize = 12.000
  Label.Text = text
@@ -1796,7 +1795,7 @@ end
  Label1.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Label1.BackgroundTransparency = 1.000
  Label1.Size = UDim2.new(0, 325, 0, 20)
- Label1.Font = Enum.Font.GothamSemibold
+ Label1.Font = Enum.Font.Gotham
  Label1.TextColor3 = Color3.fromRGB(225, 225, 225)
  Label1.TextSize = 12.000
  Label1.Text = text
@@ -1837,7 +1836,7 @@ function main:Seperator(text)
  Sep2.BackgroundTransparency = 1.000
  Sep2.Position = UDim2.new(0, 120, 0, 0)
  Sep2.Size = UDim2.new(0, 80, 0, 20)
- Sep2.Font = Enum.Font.GothamSemibold
+ Sep2.Font = Enum.Font.Gotham
  Sep2.Text = text
  Sep2.TextColor3 = Color3.fromRGB(224,224,224)
  Sep2.TextSize = 14.000
