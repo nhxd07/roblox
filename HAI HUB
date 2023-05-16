@@ -11789,7 +11789,7 @@ spawn(function()
 				end)
 			end
 		end)
-    Misc:Toggle("Fly",false,function(value)
+    Misc:Toggle("Fly",false,function(Fly)
     local Fly loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/Fly'))()
     end)
             
