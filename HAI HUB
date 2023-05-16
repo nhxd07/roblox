@@ -9,7 +9,6 @@ local ThunderImageUI = Instance.new("ImageLabel")
 
         ThunderToggleUI.Name = "ThunderToggleUI"
         ThunderToggleUI.Parent = ThunderScreen
-        --ThunderToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
         ThunderToggleUI.BorderSizePixel = 0
         ThunderToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
         ThunderToggleUI.Size = UDim2.new(0, 45, 0, 45)
@@ -28,7 +27,6 @@ local ThunderImageUI = Instance.new("ImageLabel")
 
         ThunderImageUI.Name = "MODILEMAGE"
         ThunderImageUI.Parent = ThunderToggleUI
-        --ThunderImageUI.BackgroundColor3 = Color3.fromRGB(192,192,192)
         ThunderImageUI.BackgroundTransparency = 1.000
         ThunderImageUI.BorderSizePixel = 0
         ThunderImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
@@ -11793,8 +11791,6 @@ spawn(function()
 		end)
     Misc:Toggle("Fly",false,function(value)
     local Fly loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/Fly'))()
-    Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/Fly"))()
     end)
             
     Misc:Button("Unlock FPS",function()
