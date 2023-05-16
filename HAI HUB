@@ -11792,7 +11792,9 @@ spawn(function()
 			end
 		end)
     Misc:Toggle("Fly",false,function(value)
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/fly'))()
+    local Fly loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/Fly'))()
+    Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/Fly"))()
     end)
             
     Misc:Button("Unlock FPS",function()
