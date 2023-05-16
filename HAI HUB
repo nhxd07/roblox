@@ -9,7 +9,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
 
         ThunderToggleUI.Name = "ThunderToggleUI"
         ThunderToggleUI.Parent = ThunderScreen
-        ThunderToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
+        --ThunderToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
         ThunderToggleUI.BorderSizePixel = 0
         ThunderToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
         ThunderToggleUI.Size = UDim2.new(0, 45, 0, 45)
