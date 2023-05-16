@@ -33,7 +33,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
         ThunderImageUI.BorderSizePixel = 0
         ThunderImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
         ThunderImageUI.Size = UDim2.new(0, 45, 0, 45)
-        ThunderImageUI.Image = "http://www.roblox.com/asset/?id=12979886523"
+        ThunderImageUI.Image = "http://www.roblox.com/asset/?id=13438920682"
         
  
  local UserInputService = game:GetService("UserInputService")
@@ -255,7 +255,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
  local osfunc = {}
  local uihide = false
  local abc = false
- local logo = logo or 12979886523
+ local logo = logo or 13438920682
  local currentpage = ""
  local keybind = keybind or Enum.KeyCode.RightControl
  local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
@@ -301,7 +301,7 @@ local ThunderImageUI = Instance.new("ImageLabel")
  Logo.BackgroundTransparency = 1.000
  Logo.Position = UDim2.new(-0.01, 0,-0.319, 0)
  Logo.Size = UDim2.new(0, 45, 0, 45)
- --Logo.Image = "rbxassetid://12979886523"
+ --Logo.Image = "rbxassetid://13438920682"
 
  local Name = Instance.new("TextLabel")
  Name.Name = "Name"
@@ -491,7 +491,7 @@ spawn(function()
  TabImage.BackgroundTransparency = 1.000
  TabImage.Position = UDim2.new(0, 0, 0, 0)
  TabImage.Size = UDim2.new(0, 20, 0, 20)
- TabImage.Image = img or "rbxassetid://12979886523"
+ TabImage.Image = img or "rbxassetid://13438920682"
  TabImage.ImageColor3 = _G.Color
  
  local MainFramePage = Instance.new("ScrollingFrame")
@@ -841,7 +841,7 @@ end
  ImageLabel.BorderSizePixel = 0
  ImageLabel.Position = UDim2.new(-0.018, 0,-0.252, 0)
  ImageLabel.Size = UDim2.new(0, 45, 0, 45)
- ImageLabel.Image = "rbxassetid://12979886523"
+ ImageLabel.Image = "rbxassetid://13438920682"
  ImageLabel.ImageColor3 = Color3.fromRGB(224, 224, 224)
  
  Space.Name = "Space"
@@ -5991,7 +5991,7 @@ wait(1)
 Notification:Notify(
    {Title = "HAI X HUB", Description = "You Have Max Observation"},
    {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "option"},
-   {Image = "http://www.roblox.com/asset/?id=12979886523", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
+   {Image = "http://www.roblox.com/asset/?id=13438920682", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
 )
                     else
                         if World2 then
@@ -7809,7 +7809,7 @@ end)
 							game.StarterGui:SetCore("SendNotification", {
 								Title = "Notification", 
 								Text = "Not Have Enough Material" ,
-								Icon = "http://www.roblox.com/asset/?id=12979886523",
+								Icon = "http://www.roblox.com/asset/?id=13438920682",
 								Duration = 2.5
 							})
 						else
@@ -9079,7 +9079,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Superhuman" ,
-							Icon = "http://www.roblox.com/asset/?id=12979886523",
+							Icon = "http://www.roblox.com/asset/?id=13438920682",
 							Duration = 2.5
 						})
 					end
@@ -9091,7 +9091,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Death Step" ,
-							Icon = "http://www.roblox.com/asset/?id=12979886523",
+							Icon = "http://www.roblox.com/asset/?id=13438920682",
 							Duration = 2.5
 						})
 					end
@@ -9103,7 +9103,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have SharkMan Karate" ,
-							Icon = "http://www.roblox.com/asset/?id=12979886523",
+							Icon = "http://www.roblox.com/asset/?id=13438920682",
 							Duration = 2.5
 						})
 					end
@@ -9115,7 +9115,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Electric Claw" ,
-							Icon = "http://www.roblox.com/asset/?id=12979886523",
+							Icon = "http://www.roblox.com/asset/?id=13438920682",
 							Duration = 2.5
 						})
 					end
@@ -9125,7 +9125,7 @@ spawn(function()
 								game.StarterGui:SetCore("SendNotification", {
 									Title = "Notification", 
 									Text = "Not Have Enough Material" ,
-									Icon = "http://www.roblox.com/asset/?id=12979886523",
+									Icon = "http://www.roblox.com/asset/?id=13438920682",
 									Duration = 2.5
 								})
 							else
@@ -9136,7 +9136,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Dragon Talon" ,
-							Icon = "http://www.roblox.com/asset/?id=12979886523",
+							Icon = "http://www.roblox.com/asset/?id=13438920682",
 							Duration = 2.5
 						})
 					end
@@ -11792,20 +11792,9 @@ spawn(function()
 			end
 		end)
     Misc:Toggle("Fly",false,function(value)
-        Fly = value
+    local Fly = loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/fly'))()
     end)
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                if Fly then
-                    fly()
-                end
-            end)
-        end
-    end)
-    
-        
+            
     Misc:Button("Unlock FPS",function()
         setfpscap(100)
     end)
