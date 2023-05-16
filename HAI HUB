@@ -315,15 +315,6 @@ local ThunderImageUI = Instance.new("ImageLabel")
  Name.Text = text
  Name.TextColor3 = Color3.fromRGB(255, 255, 255)
  Name.TextSize = 14.000
- 
-closebutton.Name = "Close"
-closebutton.Parent = main.Frame
-closebutton.BackgroundColor3 = Color3.fromRGB(225, 0, 0)
-closebutton.Font = "SourceSans"
-closebutton.Size = UDim2.new(0, 45, 0, 28)
-closebutton.Text = "X"
-closebutton.TextSize = 30
-closebutton.Position =  UDim2.new(440, 0, 0.074, 0)
 
 local ServerTime = Instance.new("TextLabel")
 ServerTime.Name = "ServerTime"
@@ -578,10 +569,6 @@ spawn(function()
  abc = true
  end
  
- closebutton.MouseButton1Click:Connect(function()
-	main:Destroy()
-end)
-
  game:GetService("RunService").Stepped:Connect(function()
   pcall(function()
    MainFramePage.CanvasSize = UDim2.new(0,0,0,UIListLayout.AbsoluteContentSize.Y + 20)
