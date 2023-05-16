@@ -816,7 +816,7 @@ end
  
  CheckFrame2.Name = "CheckFrame2"
  CheckFrame2.Parent = CheckFrame
- CheckFrame2.BackgroundColor3 = Color3.fromRGB(30,30,30)
+ CheckFrame2.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
  CheckFrame2.BackgroundTransparency = 1
  CheckFrame2.BorderSizePixel = 0
  CheckFrame2.Position = UDim2.new(0, 3, 0, 0)
