@@ -259,7 +259,6 @@ local ThunderImageUI = Instance.new("ImageLabel")
  local currentpage = ""
  local keybind = keybind or Enum.KeyCode.RightControl
  local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
- local closebutton = Instance.new("TextButton")
  
  local ZENHUB = Instance.new("ScreenGui")
  ZENHUB.Name = "ZENHUB"
