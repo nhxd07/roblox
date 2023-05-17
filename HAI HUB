@@ -6066,7 +6066,7 @@ Main:Seperator(" Fake Race V4 ")
 
 
 Main:Button("Mink Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Mink V4!"):Display();
+ require(game:GetService("ReplicatedStorage").Notification).new(""):Display();
  wait()
  setthreadcontext(5)
 
@@ -6090,7 +6090,7 @@ Main:Button("Mink Fake Transform",function()
 
  end)
 Main:Button("Fishman Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Fishman V4!"):Display();
+ require(game:GetService("ReplicatedStorage").Notification).new(""):Display();
  wait()
  setthreadcontext(5)
 
@@ -6114,7 +6114,7 @@ Main:Button("Fishman Fake Transform",function()
 
  end)
 Main:Button("Skypeian Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Skypeian V4!"):Display();
+ require(game:GetService("ReplicatedStorage").Notification).new(""):Display();
  wait()
  setthreadcontext(5)
 
@@ -6138,7 +6138,7 @@ Main:Button("Skypeian Fake Transform",function()
 
  end)
 Main:Button("Ghoul Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Ghoul V4!"):Display();
+ require(game:GetService("ReplicatedStorage").Notification).new(""):Display();
  wait()
  setthreadcontext(5)
 
@@ -6163,7 +6163,7 @@ Main:Button("Ghoul Fake Transform",function()
 
  end)
 Main:Button("Cyborg Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Cyborg V4!"):Display();
+ require(game:GetService("ReplicatedStorage").Notification).new(""):Display();
  wait()
  setthreadcontext(5)
 
@@ -6187,7 +6187,7 @@ Main:Button("Cyborg Fake Transform",function()
 
  end)
 Main:Button("Human Fake Transform",function()
- require(game:GetService("ReplicatedStorage").Notification).new("Human V4!"):Display();
+ require(game:GetService("ReplicatedStorage").Notification).new(""):Display();
  wait()
  setthreadcontext(5)
 
