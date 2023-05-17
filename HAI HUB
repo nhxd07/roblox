@@ -890,7 +890,7 @@ end
  
  Item.MouseButton1Click:Connect(function()
   isdropping = false
-  Dropdown:TweenSize(UDim2.new(0,310,0,31),"Out","Quad",0.3,true)
+  Dropdown:TweenSize(UDim2.new(0,470,0,31),"Out","Quad",0.3,true)
   TweenService:Create(
    DropImage,
    TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -908,7 +908,7 @@ end
  DropButton.MouseButton1Click:Connect(function()
   if isdropping == false then
   isdropping = true
-  Dropdown:TweenSize(UDim2.new(0,310,0,131),"Out","Quad",0.3,true)
+  Dropdown:TweenSize(UDim2.new(0,470,0,131),"Out","Quad",0.3,true)
   TweenService:Create(
    DropImage,
    TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -918,7 +918,7 @@ end
   ):Play()
   else
    isdropping = false
-  Dropdown:TweenSize(UDim2.new(0,310,0,31),"Out","Quad",0.3,true)
+  Dropdown:TweenSize(UDim2.new(0,470,0,31),"Out","Quad",0.3,true)
   TweenService:Create(
    DropImage,
    TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -965,7 +965,7 @@ end
  
  Item.MouseButton1Click:Connect(function()
   isdropping = false
-  Dropdown:TweenSize(UDim2.new(0,310,0,31),"Out","Quad",0.3,true)
+  Dropdown:TweenSize(UDim2.new(0,470,0,31),"Out","Quad",0.3,true)
   TweenService:Create(
    DropImage,
    TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -980,7 +980,7 @@ end
  function dropfunc:Clear()
  DropTitle.Text = tostring(text).." : "
  isdropping = false
- Dropdown:TweenSize(UDim2.new(0,310,0,31),"Out","Quad",0.3,true)
+ Dropdown:TweenSize(UDim2.new(0,470,0,31),"Out","Quad",0.3,true)
  TweenService:Create(
   DropImage,
   TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -1143,7 +1143,7 @@ BoxFrame.Parent = SliderFrame_2
 BoxFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 BoxFrame.BackgroundTransparency = 1.000
 BoxFrame.Size = UDim2.new(0, 50, 0, 15)
-BoxFrame.Position = UDim2.new(0, 240, 0, 8)
+BoxFrame.Position = UDim2.new(0, 395, 0, 5)
 
 SliderBox.Name = "SliderBox"
 SliderBox.Parent = BoxFrame
