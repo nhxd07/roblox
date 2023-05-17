@@ -4144,11 +4144,8 @@ Home:Button("Copy You Job-Id",function()
     setclipboard(tostring(game.JobId))
     end)
     
-    Home:TextBox("Web Hook",". . .",function(jobids)
-		game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, jobids, game.Players.LocalPlayer)
-	end)
     --_G.Job = nil
-	Home:Textbox("Paste Your Job-Id Here","JobID",function(job)
+	Home:Textbox("Paste Your Job-Id Here","",function(job)
         _G.Job = job
         end)
         Home:Button("Join Job-Id",function()
