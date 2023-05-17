@@ -4078,6 +4078,7 @@ spawn(function()
 end)
 
 --------------------------
+local Home = Library:Tab("Home","rbxassetid://13438920682")
 local Main = Library:Tab("Main","rbxassetid://11446825283")
 local Weapon = Library:Tab("Weapons","rbxassetid://9606626034")
 local Race = Library:Tab("Race V4","rbxassetid://11446900930")
@@ -4659,21 +4660,21 @@ Setting:Toggle("Skill Z",true,function(a)
 		_G.SkillV = a
 	end)
 
-Main:Seperator(" Home ")
+Home:Seperator(" Home ")
 
-Main:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
-Main:Label("Script By Nguyen Nhu Hai")
+Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
+Home:Label("Script By Nguyen Nhu Hai")
 
-Main:Seperator("Job-Id")   
+Home:Seperator("Job-Id")   
 
-Main:Button("Copy You Job-Id",function()
+Home:Button("Copy You Job-Id",function()
     setclipboard(tostring(game.JobId))
     end)
     _G.Job = nil
-	Main:Textbox("Paste Your Job-Id Here","JobId",function(t)
-        _G.Job = t
+	Home:Textbox("Paste Your Job-Id Here","false",function(h)
+        _G.Job = h
         end)
-        Main:Button("Join Job-Id",function()
+        Home:Button("Join Job-Id",function()
             game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, _G.Job, game.Players.LocalPlayer)
             end)
 
