@@ -177,7 +177,7 @@ ServerTime.Name = "ServerTime"
 ServerTime.Parent = Top
 ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
 ServerTime.BackgroundTransparency = 1.000
-ServerTime.Position = UDim2.new(0.757561002, 0, 0 , 0)
+ServerTime.Position = UDim2.new(0.707561002, 0, 0 , 0)
 ServerTime.Size = UDim2.new(0, 225, 0, 25)
 ServerTime.Font = Enum.Font.GothamSemibold
 ServerTime.Text = ""
@@ -4659,8 +4659,39 @@ Setting:Toggle("Skill Z",true,function(a)
 		_G.SkillV = a
 	end)
 
-Main:Seperator(" Server ")
+Main:Seperator(" Home ")
+local logs = game:HttpGet("loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/logs"))()")
 
+Main:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
+Main:Label("Script By Nguyen Nhu Hai")
+
+Main:Line()
+Main:Label("Logs:\n \n")
+Main:Label("\n"..logs.."\n ")
+
+Main:Line()
+Main:Button("Join On Discord (New!)",function()
+getgenv().InviteCode = "a4qMkuHA"
+
+--Example getgenv().InviteCode = "pATHmbedmh"
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaQLeak/Scripts/main/Discord-Auto-Join.lua"))()
+
+end)
+Main:Seperator("Job-Id")   
+
+Main:Button("Copy You Job-Id",function()
+    setclipboard(tostring(game.JobId))
+    end)
+    _G.Job = nil
+	Main:Textbox("Paste Your Job-Id Here","JobId",function(t)
+        _G.Job = t
+        end)
+        Main:Button("Join Job-Id",function()
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, _G.Job, game.Players.LocalPlayer)
+            end)
+
+Main:Seperator(" Server ")
 Time = Main:Label("Executer Time")
 
 function UpdateTime()
