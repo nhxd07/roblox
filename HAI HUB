@@ -172,43 +172,12 @@ function Update:Window(text,logo,keybind)
 	Name.TextColor3 = Color3.fromRGB(225, 225, 225)
 	Name.TextSize = 17.000
 
-local version = game:HttpGet("https://raw.githubusercontent.com/accountnop/magmaisgay/main/version")
-local ver = Instance.new("TextLabel")
-	ver.Name = "ver"
-	ver.Parent = Top
-	ver.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ver.BackgroundTransparency = 1.000
-	ver.Position = UDim2.new(0.697561002, 0, 0, 0)
-	ver.Size = UDim2.new(0, 81, 0, 27)
-	ver.Font = Enum.Font.RobotoMono
-	ver.Text = "Version: "..version
-	ver.TextColor3 = Color3.fromRGB(255,255,255)
-	ver.TextSize = 13.000
-	ver.TextXAlignment = Enum.TextXAlignment.Left
-	local ver1 = Instance.new("TextLabel")
-	ver1.Name = "ver"
-	ver1.Parent = Top
-	ver1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ver1.BackgroundTransparency = 1.000
-	ver1.Position = UDim2.new(0.497561002, 0, 0, 0)
-	ver1.Size = UDim2.new(0, 81, 0, 27)
-	ver1.Font = Enum.Font.RobotoMono
-	ver1.Text = "N/A"
-	ver1.TextColor3 = Color3.fromRGB(255,255,255)
-	ver1.TextSize = 13.000
-	ver1.TextXAlignment = Enum.TextXAlignment.Left
-	 spawn(function()
-	while wait() do
-	ver1.Text = "Hours:"..os.date("%H")..":"..os.date("%M")..":"..os.date("%S")
-	end
-	end)
-
 local ServerTime = Instance.new("TextLabel")
 ServerTime.Name = "ServerTime"
 ServerTime.Parent = Top
 ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
 ServerTime.BackgroundTransparency = 1.000
-ServerTime.Position = UDim2.new(0.847561002, 0, 0 , 0)
+ServerTime.Position = UDim2.new(0.697561002, 0, 0 , 0)
 ServerTime.Size = UDim2.new(0, 225, 0, 25)
 ServerTime.Font = Enum.Font.GothamSemibold
 ServerTime.Text = ""
@@ -663,10 +632,10 @@ end
 
 			Toggle.Name = "Toggle"
 			Toggle.Parent = MainFramePage
-			Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Toggle.BackgroundColor3 = Color3.fromRGB(224, 224, 224)
 			Toggle.Size = UDim2.new(0, 470, 0, 31)
 
-			UICorner.CornerRadius = UDim.new(0, 5)
+			UICorner.CornerRadius = UDim.new(0, 3)
 			UICorner.Parent = Toggle
 
 			Button.Name = "Button"
