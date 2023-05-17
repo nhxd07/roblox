@@ -4093,6 +4093,64 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
+Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
+Home:Label("Script By Nguyen Nhu Hai")
+
+Home:Seperator(" Server ")
+Time = Home:Label("Executer Time")
+
+function UpdateTime()
+local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+local Hour = math.floor(GameTime/(60^2))%24
+local Minute = math.floor(GameTime/(60^1))%60
+local Second = math.floor(GameTime/(60^0))%60
+Time:Set("[GameTime] : Hours : "..Hour.." Minutes : "..Minute.." Seconds : "..Second)
+end
+
+spawn(function()
+ while task.wait() do
+ pcall(function()
+  UpdateTime()
+  end)
+ end
+ end)
+
+PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+spawn(function()
+    while wait() do
+        PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+        wait(5)
+    end
+end)
+
+Client = Home:Label1("Client")
+
+function UpdateClient()
+local Fps = workspace:GetRealPhysicsFPS()
+Client:Refresh("[Fps] : "..Fps)
+end
+
+spawn(function()
+ while true do wait(.1)
+ UpdateClient()
+ end
+ end)
+
+Home:Line()
+
+Home:Seperator("Job-Id")   
+
+Home:Button("Copy You Job-Id",function()
+    setclipboard(tostring(game.JobId))
+    end)
+    _G.Job = nil
+	Home:Textbox("Paste Your Job-Id Here","false",function(h)
+        _G.Job = h
+        end)
+        Home:Button("Join Job-Id",function()
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, _G.Job, game.Players.LocalPlayer)
+            end)
+
 Setting:Seperator(" Setting ")
 Setting:Toggle("Auto Set Spawn Points",true,function(value)
  _G.AutoSetSpawn = value
@@ -4659,66 +4717,6 @@ Setting:Toggle("Skill Z",true,function(a)
 	Setting:Toggle("Skill V",true,function(a)
 		_G.SkillV = a
 	end)
-
-Home:Seperator(" Home ")
-
-Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
-Home:Label("Script By Nguyen Nhu Hai")
-
-Home:Seperator("Job-Id")   
-
-Home:Button("Copy You Job-Id",function()
-    setclipboard(tostring(game.JobId))
-    end)
-    _G.Job = nil
-	Home:Textbox("Paste Your Job-Id Here","false",function(h)
-        _G.Job = h
-        end)
-        Home:Button("Join Job-Id",function()
-            game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, _G.Job, game.Players.LocalPlayer)
-            end)
-
-Main:Seperator(" Server ")
-Time = Main:Label("Executer Time")
-
-function UpdateTime()
-local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-local Hour = math.floor(GameTime/(60^2))%24
-local Minute = math.floor(GameTime/(60^1))%60
-local Second = math.floor(GameTime/(60^0))%60
-Time:Set("[GameTime] : Hours : "..Hour.." Minutes : "..Minute.." Seconds : "..Second)
-end
-
-spawn(function()
- while task.wait() do
- pcall(function()
-  UpdateTime()
-  end)
- end
- end)
-
-PlayerServer = Main:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
-spawn(function()
-    while wait() do
-        PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
-        wait(5)
-    end
-end)
-
-Client = Main:Label1("Client")
-
-function UpdateClient()
-local Fps = workspace:GetRealPhysicsFPS()
-Client:Refresh("[Fps] : "..Fps)
-end
-
-spawn(function()
- while true do wait(.1)
- UpdateClient()
- end
- end)
-
-Main:Line()
 
 function EquipWeapon(ToolSe)
 if not _G.NotAutoEquip then
