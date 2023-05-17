@@ -4078,7 +4078,7 @@ spawn(function()
 end)
 
 --------------------------
-local Home = Library:Tab("Home","rbxassetid://11446825283")
+local Home = Library:Tab("Home","rbxassetid://13438920682")
 local Main = Library:Tab("Main","rbxassetid://11446825283")
 local Weapon = Library:Tab("Weapons","rbxassetid://9606626034")
 local Race = Library:Tab("Race V4","rbxassetid://11446900930")
@@ -4115,7 +4115,7 @@ spawn(function()
  end
  end)
 
-PlayerServer = Main:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
 spawn(function()
     while wait() do
         PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
@@ -4135,8 +4135,6 @@ spawn(function()
  UpdateClient()
  end
  end)
-
-Home:Line()
 
 Home:Line()
 Home:Label("Logs:\n \n")
@@ -11252,14 +11250,6 @@ end)
     }
     
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-    end)
- 
- Misc:Seperator(" Job-ID")
- Job_ID = true
- Misc:Textbox("(This Auto Join) Put Job-Id Here : ","",true,function(value)
-        if Job_ID then
-            game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, value)
-        end
     end)
     
  Misc:Seperator(" Joins ")
