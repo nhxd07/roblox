@@ -109,13 +109,13 @@ local ThunderImageUI = Instance.new("ImageLabel")
  _G.SectionTextColor = Color3.fromRGB(150, 150, 150)
  _G.SectionOn = Color3.fromRGB(0, 250, 0)
  
- local Update = {}
+local Update = {}
 local pfp = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
 
 function Update:Window(text,logo,keybind)
 	local uihide = false
 	local abc = false
-	local logo = logo or 7072707647
+	local logo = logo or 13438920682
 	local currentpage = ""
 	local keybind = keybind or Enum.KeyCode.RightControl
 	local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
@@ -157,7 +157,7 @@ function Update:Window(text,logo,keybind)
 	Logo.BackgroundTransparency = 1.000
 	Logo.Position = UDim2.new(0, 10, 0, 1)
 	Logo.Size = UDim2.new(0, 25, 0, 25)
-	Logo.Image = "rbxassetid://7072707647"
+	Logo.Image = "rbxassetid://13438920682"
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
@@ -170,19 +170,6 @@ function Update:Window(text,logo,keybind)
 	Name.Text = text
 	Name.TextColor3 = Color3.fromRGB(225, 225, 225)
 	Name.TextSize = 17.000
-
-	local Hub = Instance.new("TextLabel")
-	Hub.Name = "Hub"
-	Hub.Parent = Top
-	Hub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Hub.BackgroundTransparency = 1.000
-	Hub.Position = UDim2.new(0, 086, 0, 0)
-	Hub.Size = UDim2.new(0, 81, 0, 27)
-	Hub.Font = Enum.Font.GothamSemibold
-	Hub.Text = ".xyz"
-	Hub.TextColor3 = Color3.fromRGB(255, 20, 0)
-	Hub.TextSize = 17.000
-	Hub.TextXAlignment = Enum.TextXAlignment.Left
 
 local version = game:HttpGet("https://raw.githubusercontent.com/accountnop/magmaisgay/main/version")
 local ver = Instance.new("TextLabel")
@@ -333,29 +320,17 @@ local ver = Instance.new("TextLabel")
  TabButton.Size = UDim2.new(0, 130, 0, 23)
  TabButton.Font = Enum.Font.Gotham
  TabButton.TextColor3 = Color3.fromRGB(225, 225, 225)
- TabButton.TextSize = 11.000
- TabButton.TextTransparency = 0.100
+ TabButton.TextSize = 15.000
+ TabButton.TextTransparency = 0.500
  
- local TabFrame = Instance.new("Frame")
- local UICornerFrame = Instance.new("UICorner")
- TabFrame.Name = "TabFrame"
- TabFrame.Parent = TabButton
- TabFrame.ClipsDescendants = true
- --TabFrame.Position = UDim2.new(0, 1, 0.1, 2)
- TabFrame.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
- TabFrame.BackgroundTransparency = 0.500
- TabFrame.Size = UDim2.new(0, 120, 0.1, 23)
- UICornerFrame.CornerRadius = UDim.new(0, 5)
- UICornerFrame.Parent = TabFrame
- 
- TabImage.Name = text or "TabImage"
- TabImage.Parent = TabFrame
- TabImage.BackgroundColor3 = _G.Color
- TabImage.BackgroundTransparency = 1.000
- TabImage.Position = UDim2.new(0, 0, 0, 0)
- TabImage.Size = UDim2.new(0, 20, 0, 20)
- TabImage.Image = img or "rbxassetid://8666601749"
- TabImage.ImageColor3 = _G.Color
+ local PageImage = Instance.new("ImageLabel")
+ PageImage.Name = "PageImage"
+ PageImage.Parent = TabButton
+ PageImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ PageImage.BackgroundTransparency = 1.000
+ PageImage.Position = UDim2.new(0, 5, 0, 5)
+ PageImage.Size = UDim2.new(0, 19, 0, 19)
+ PageImage.Image = "rbxassetid://"..tostring(icon)
  
  local MainFramePage = Instance.new("ScrollingFrame")
  MainFramePage.Name = text.."_Page"
@@ -608,7 +583,7 @@ end
  TextBtn.Font = Enum.Font.Gotham
  TextBtn.Text = text
  TextBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
- TextBtn.TextSize = 12.000
+ TextBtn.TextSize = 15.000
  
  UICorner_2.CornerRadius = UDim.new(0, 5)
  UICorner_2.Parent = TextBtn
@@ -711,11 +686,11 @@ end
  Space.Parent = CheckFrame2
  Space.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
  Space.BackgroundTransparency = 1.000
- Space.Position = UDim2.new(0, 30, 0, 0)
- Space.Size = UDim2.new(0, 15, 0, 30)
+ Space.Position = UDim2.new(0, 1, 0, 1)
+ Space.Size = UDim2.new(0, 468, 0, 29)
  Space.Font = Enum.Font.Gotham
  Space.Text = ""
- Space.TextSize = 12.000
+ Space.TextSize = 15.000
  Space.TextColor3 = Color3.fromRGB(255,225,225)
  Space.TextXAlignment = Enum.TextXAlignment.Center
  
@@ -723,12 +698,12 @@ end
  Title.Parent = CheckFrame2
  Title.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
  Title.BackgroundTransparency = 1.000
- Title.Position = UDim2.new(0, 50, 0, 0)
+ Title.Position = UDim2.new(0, 1, 0, 1)
  Title.Size = UDim2.new(0, 468, 0, 29)
  Title.Font = Enum.Font.Gotham
  Title.Text = TogInfo or "checkBox Title"
  Title.TextColor3 = Color3.fromRGB(224,224,224)
- Title.TextSize = 12.000
+ Title.TextSize = 15.000
  Title.TextXAlignment = Enum.TextXAlignment.Left
  
  ImageButton.Name = "ImageButton"
