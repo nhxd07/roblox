@@ -646,7 +646,7 @@ end
 
 			Toggle.Name = "Toggle"
 			Toggle.Parent = MainFramePage
-			Toggle.BackgroundColor3 = Color3.fromRGB(224, 224, 224)
+			Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
 			Toggle.Size = UDim2.new(0, 470, 0, 31)
 
 			UICorner.CornerRadius = UDim.new(0, 5)
@@ -738,7 +738,6 @@ account_circle.ImageRectSize = Vector2.new(36, 36)
 				):Play()
 				pcall(callback,toggled)
 			end
-		end
 		end
  
  function main:Dropdown(text,option,callback)
