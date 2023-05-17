@@ -4660,24 +4660,10 @@ Setting:Toggle("Skill Z",true,function(a)
 	end)
 
 Main:Seperator(" Home ")
-local logs = game:HttpGet("loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/logs"))()")
 
 Main:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
 Main:Label("Script By Nguyen Nhu Hai")
 
-Main:Line()
-Main:Label("Logs:\n \n")
-Main:Label("\n"..logs.."\n ")
-
-Main:Line()
-Main:Button("Join On Discord (New!)",function()
-getgenv().InviteCode = "a4qMkuHA"
-
---Example getgenv().InviteCode = "pATHmbedmh"
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaQLeak/Scripts/main/Discord-Auto-Join.lua"))()
-
-end)
 Main:Seperator("Job-Id")   
 
 Main:Button("Copy You Job-Id",function()
