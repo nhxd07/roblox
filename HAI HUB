@@ -1460,7 +1460,7 @@ end
  slidervalue.Parent = sliderr
  slidervalue.BackgroundColor3 = _G.Color
  slidervalue.BackgroundTransparency = 1
- slidervalue.Position = UDim2.new(0, 245, 0, 5)
+ slidervalue.Position = UDim2.new(0, 395, 0, 5)
  slidervalue.Size = UDim2.new(0, 65, 0, 18)
  
  valuecorner.CornerRadius = UDim.new(0, 5)
