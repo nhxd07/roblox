@@ -113,6 +113,7 @@ local Update = {}
 local pfp = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
 
 function Update:Window(text,logo,keybind)
+    local osfunc = {}
 	local uihide = false
 	local abc = false
 	local logo = logo or 13438920682
@@ -202,28 +203,44 @@ local ver = Instance.new("TextLabel")
 	end
 	end)
 
-	local BindButton = Instance.new("TextButton")
-	BindButton.Name = "BindButton"
-	BindButton.Parent = Top
-	BindButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	BindButton.BackgroundTransparency = 1.000
-	BindButton.Position = UDim2.new(0.847561002, 0, 0, 0)
-	BindButton.Size = UDim2.new(0, 100, 0, 27)
-	BindButton.Font = Enum.Font.GothamSemibold
-	BindButton.Text = "[ "..string.gsub(tostring(keybind),"Enum.KeyCode.","").." ]"
-	BindButton.TextColor3 = Color3.fromRGB(100, 100, 100)
-	BindButton.TextSize = 11.000
-	
-	BindButton.MouseButton1Click:Connect(function ()
-		BindButton.Text = "[ ... ]"
-		local inputwait = game:GetService("UserInputService").InputBegan:wait()
-		local shiba = inputwait.KeyCode == Enum.KeyCode.Unknown and inputwait.UserInputType or inputwait.KeyCode
+local ServerTime = Instance.new("TextLabel")
+ServerTime.Name = "ServerTime"
+ServerTime.Parent = Top
+ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
+ServerTime.BackgroundTransparency = 1.000
+ServerTime.Position = UDim2.new(0.847561002, 0, 0 , 0)
+ServerTime.Size = UDim2.new(0, 225, 0, 25)
+ServerTime.Font = Enum.Font.GothamSemibold
+ServerTime.Text = ""
+ServerTime.TextSize = 11.000
+ServerTime.TextColor3 = Color3.fromRGB(255,255,255)
+ServerTime.TextXAlignment = Enum.TextXAlignment.Left
 
-		if shiba.Name ~= "Focus" and shiba.Name ~= "MouseMovement" then
-			BindButton.Text = "[ "..shiba.Name.." ]"
-			yoo = shiba.Name
-		end
-	end)
+function osfunc:Set(textadd)
+ServerTime.Text = textadd
+end
+
+local function UpdateOS()
+local date = os.date("*t")
+local hour = (date.hour) % 24
+local ampm = hour < 12 and "AM" or "PM"
+local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
+local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
+local LocalizationService = game:GetService("LocalizationService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local name = player.Name
+local result, code = pcall(function()
+ return LocalizationService:GetCountryRegionForPlayerAsync(player)
+ end)
+osfunc:Set(datetime.." - "..timezone.." [ " .. code .. " ]")
+end
+spawn(function()
+ while true do
+ UpdateOS()
+ game:GetService("RunService").RenderStepped:Wait()
+ end
+ end)
 
 	local Tab = Instance.new("Frame")
 	Tab.Name = "Tab"
@@ -646,7 +663,7 @@ end
 
 			Toggle.Name = "Toggle"
 			Toggle.Parent = MainFramePage
-			Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
+			Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Toggle.Size = UDim2.new(0, 470, 0, 31)
 
 			UICorner.CornerRadius = UDim.new(0, 5)
