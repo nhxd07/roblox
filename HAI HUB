@@ -4078,7 +4078,6 @@ spawn(function()
 end)
 
 --------------------------
-local Home = Library:Tab("Home","rbxassetid://13438920682")
 local Main = Library:Tab("Main","rbxassetid://11446825283")
 local Weapon = Library:Tab("Weapons","rbxassetid://9606626034")
 local Race = Library:Tab("Race V4","rbxassetid://11446900930")
@@ -4093,76 +4092,6 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
 local logs = game:HttpGet("loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/logs"))()")
 --------------------------------------------------------------------
-
-Home:Seperator(" Server ")
-
-Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
-Home:Label("Script By Nguyen Nhu Hai")
-
-Time = Home:Label("Server Time")
-
-function UpdateTime()
-local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-local Hour = math.floor(GameTime/(60^2))%24
-local Minute = math.floor(GameTime/(60^1))%60
-local Second = math.floor(GameTime/(60^0))%60
-Time:Set("[GameTime] : Hours : "..Hour.." Minutes : "..Minute.." Seconds : "..Second)
-end
-
-spawn(function()
- while task.wait() do
- pcall(function()
-  UpdateTime()
-  end)
- end
- end)
-
-PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
-spawn(function()
-    while wait() do
-        PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
-        wait(5)
-    end
-end)
-
-Client = Home:Label1("Client")
-
-function UpdateClient()
-local Fps = workspace:GetRealPhysicsFPS()
-Client:Refresh("[Fps] : "..Fps)
-end
-
-spawn(function()
- while true do wait(.1)
- UpdateClient()
- end
- end)
-
-Home:Line()
-Home:Label("Logs:\n \n")
-Home:Label("\n"..logs.."\n ")
-
-Home:Line()
-Home:Button("Join On Discord (New!)",function()
-getgenv().InviteCode = "a4qMkuHA"
-
---Example getgenv().InviteCode = "pATHmbedmh"
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaQLeak/Scripts/main/Discord-Auto-Join.lua"))()
-
-end)
-Home:Seperator("Job-Id")   
-
-Home:Button("Copy You Job-Id",function()
-    setclipboard(tostring(game.JobId))
-    end)
-    _G.Job = nil
-	Home:Textbox("Paste Your Job-Id Here","JobId",function(t)
-        _G.Job = t
-        end)
-        Home:Button("Join Job-Id",function()
-            game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, _G.Job, game.Players.LocalPlayer)
-            end)
 
 Setting:Seperator(" Setting ")
 Setting:Toggle("Auto Set Spawn Points",true,function(value)
@@ -4731,6 +4660,76 @@ Setting:Toggle("Skill Z",true,function(a)
 		_G.SkillV = a
 	end)
 
+
+Main:Seperator(" Server ")
+
+Main:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
+Main:Label("Script By Nguyen Nhu Hai")
+
+Time = Main:Label("Server Time")
+
+function UpdateTime()
+local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+local Hour = math.floor(GameTime/(60^2))%24
+local Minute = math.floor(GameTime/(60^1))%60
+local Second = math.floor(GameTime/(60^0))%60
+Time:Set("[GameTime] : Hours : "..Hour.." Minutes : "..Minute.." Seconds : "..Second)
+end
+
+spawn(function()
+ while task.wait() do
+ pcall(function()
+  UpdateTime()
+  end)
+ end
+ end)
+
+PlayerServer = Main:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+spawn(function()
+    while wait() do
+        PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+        wait(5)
+    end
+end)
+
+Client = Main:Label1("Client")
+
+function UpdateClient()
+local Fps = workspace:GetRealPhysicsFPS()
+Client:Refresh("[Fps] : "..Fps)
+end
+
+spawn(function()
+ while true do wait(.1)
+ UpdateClient()
+ end
+ end)
+
+Main:Line()
+Main:Label("Logs:\n \n")
+Main:Label("\n"..logs.."\n ")
+
+Main:Line()
+Main:Button("Join On Discord (New!)",function()
+getgenv().InviteCode = "a4qMkuHA"
+
+--Example getgenv().InviteCode = "pATHmbedmh"
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaQLeak/Scripts/main/Discord-Auto-Join.lua"))()
+
+end)
+Main:Seperator("Job-Id")   
+
+Main:Button("Copy You Job-Id",function()
+    setclipboard(tostring(game.JobId))
+    end)
+    _G.Job = nil
+	Main:Textbox("Paste Your Job-Id Here","JobId",function(t)
+        _G.Job = t
+        end)
+        Main:Button("Join Job-Id",function()
+            game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, _G.Job, game.Players.LocalPlayer)
+            end)
 
 function EquipWeapon(ToolSe)
 if not _G.NotAutoEquip then
