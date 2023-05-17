@@ -4145,7 +4145,7 @@ Home:Button("Copy You Job-Id",function()
     end)
     
     _G.Job = nil
-	Home:Textbox("Paste Your Job-Id Here : ","",false,function(job)
+	Home:Textbox("Paste Your Job-Id Here : ","",jobid,function(job)
         _G.Job = job
         end)
         Home:Button("Join Job-Id",function()
