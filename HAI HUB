@@ -4097,7 +4097,7 @@ local logs = game:HttpGet("loadstring(game:HttpGetAsync("https://raw.githubuserc
 Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
 Home:Label("Script By Nguyen Nhu Hai")
 
-Time = Main:Label("Server")
+Time = Home:Label("Server")
 
 function UpdateTime()
 local GameTime = math.floor(workspace.DistributedGameTime+0.5)
@@ -4123,7 +4123,7 @@ spawn(function()
     end
 end)
 
-Client = Main:Label1("Client")
+Client = Home:Label1("Client")
 
 function UpdateClient()
 local Fps = workspace:GetRealPhysicsFPS()
@@ -4136,7 +4136,7 @@ spawn(function()
  end
  end)
 
-Main:Line()
+Home:Line()
 
 Home:Line()
 Home:Label("Logs:\n \n")
