@@ -624,6 +624,7 @@ end
 			local UICorner = Instance.new("UICorner")
 			local Button = Instance.new("TextButton")
 			local UICorner_2 = Instance.new("UICorner")
+			local UIStroke = Instance.new("UIStroke")
 			local Label = Instance.new("TextLabel")
 			local ToggleImage = Instance.new("Frame")
 			local UICorner_3 = Instance.new("UICorner")
@@ -632,15 +633,14 @@ end
 
 			Toggle.Name = "Toggle"
 			Toggle.Parent = MainFramePage
-			Toggle.BackgroundColor3 = Color3.fromRGB(224, 224, 224)
-			Toggle.Size = UDim2.new(0, 470, 0, 31)
-
-			UICorner.CornerRadius = UDim.new(0, 3)
-			UICorner.Parent = Toggle
+			Toggle.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+			Toggle.BackgroundTransparency = 1.000
+            Toggle.BorderSizePixel = 0
+            Toggle.Size = UDim2.new(0, 38, 0, 30)
 
 			Button.Name = "Button"
 			Button.Parent = Toggle
-			Button.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			Button.BackgroundColor3 = Color3.fromRGB(30,30,30)
 			Button.Position = UDim2.new(0, 1, 0, 1)
 			Button.Size = UDim2.new(0, 468, 0, 29)
 			Button.AutoButtonColor = false
@@ -648,9 +648,19 @@ end
 			Button.Text = ""
 			Button.TextColor3 = Color3.fromRGB(0, 0, 0)
 			Button.TextSize = 11.000
-
-			UICorner_2.CornerRadius = UDim.new(0, 5)
-			UICorner_2.Parent = Button
+			
+			UIStroke.Name = "UIStroke"
+            UIStroke.Parent = Button
+            UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+            UIStroke.Color = Color3.fromRGB(224,224,224)
+            UIStroke.LineJoinMode = Enum.LineJoinMode.Round
+            UIStroke.Thickness = 1
+            UIStroke.Transparency = 0
+            UIStroke.Enabled = true 
+            UIStroke.Archivable = true
+ 
+            UICorner.Parent = Button
+            UICorner.CornerRadius = UDim.new(0, 3)
 
 			Label.Name = "Label"
 			Label.Parent = Toggle
