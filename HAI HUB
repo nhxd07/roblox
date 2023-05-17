@@ -4090,7 +4090,6 @@ local DevilFruit = Library:Tab("Fruit","rbxassetid://11446965348")
 local Shop = Library:Tab("Shop","rbxassetid://6031265976")
 local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
-local logs = game:HttpGet("loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/logs"))()")
 --------------------------------------------------------------------
 
 Setting:Seperator(" Setting ")
@@ -4660,13 +4659,9 @@ Setting:Toggle("Skill Z",true,function(a)
 		_G.SkillV = a
 	end)
 
-
 Main:Seperator(" Server ")
 
-Main:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
-Main:Label("Script By Nguyen Nhu Hai")
-
-Time = Main:Label("Server Time")
+Time = Main:Label("Executer Time")
 
 function UpdateTime()
 local GameTime = math.floor(workspace.DistributedGameTime+0.5)
@@ -4706,30 +4701,6 @@ spawn(function()
  end)
 
 Main:Line()
-Main:Label("Logs:\n \n")
-Main:Label("\n"..logs.."\n ")
-
-Main:Line()
-Main:Button("Join On Discord (New!)",function()
-getgenv().InviteCode = "a4qMkuHA"
-
---Example getgenv().InviteCode = "pATHmbedmh"
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaQLeak/Scripts/main/Discord-Auto-Join.lua"))()
-
-end)
-Main:Seperator("Job-Id")   
-
-Main:Button("Copy You Job-Id",function()
-    setclipboard(tostring(game.JobId))
-    end)
-    _G.Job = nil
-	Main:Textbox("Paste Your Job-Id Here","JobId",function(t)
-        _G.Job = t
-        end)
-        Main:Button("Join Job-Id",function()
-            game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, _G.Job, game.Players.LocalPlayer)
-            end)
 
 function EquipWeapon(ToolSe)
 if not _G.NotAutoEquip then
