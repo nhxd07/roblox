@@ -1873,6 +1873,13 @@ function main:Seperator(text)
  return uitab
  end
 
+game.StarterGui:SetCore("SendNotification", {
+	Title = "HAI HUB", 
+	Text = "Welcome to HAI HUB",
+	Icon = "http://www.roblox.com/asset/?id=13438920682",
+	Duration = 8
+})
+
 if game.PlaceId == 2753915549 then
 	World1 = true
 elseif game.PlaceId == 4442272183 then
