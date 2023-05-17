@@ -643,6 +643,7 @@ end
 			local UICorner_3 = Instance.new("UICorner")
 			local Circle = Instance.new("Frame")
 			local UICorner_4 = Instance.new("UICorner")
+			local ImageButton = Instance.new("ImageButton")
 
 			Toggle.Name = "Toggle"
 			Toggle.Parent = MainFramePage
@@ -677,17 +678,17 @@ end
 			Label.TextColor3 = Color3.fromRGB(225, 225, 225)
 			Label.TextSize = 15.000
 
-			local account_circle = Instance.new("ImageLabel")
-
-account_circle.Name = "account_circle"
-account_circle.Parent = Toggle
-account_circle.BackgroundTransparency = 1.000
-account_circle.Position = UDim2.new(0, 5, 0, 4)
-account_circle.Size = UDim2.new(0, 24, 0, 21)
-account_circle.ZIndex = 2
-account_circle.Image = "rbxassetid://13438920682"
-account_circle.ImageRectOffset = Vector2.new(124, 204)
-account_circle.ImageRectSize = Vector2.new(36, 36)
+			ImageButton.Name = "ImageButton"
+            ImageButton.Parent = Toggle
+            ImageButton.BackgroundColor3 = Color3.fromRGB(224,224,224)
+            ImageButton.BackgroundTransparency = 1.000
+            ImageButton.Position = UDim2.new(0, 5, 0, 4)
+            ImageButton.Size = UDim2.new(0, 24, 0, 21)
+            ImageButton.ZIndex = 2
+            ImageButton.Image = "rbxassetid://3926311105"
+            ImageButton.ImageColor3 = Color3.fromRGB(224,224,224)
+            ImageButton.ImageRectOffset = Vector2.new(124, 204)
+            ImageButton.ImageRectSize = Vector2.new(36, 36)
 
 			ToggleImage.Name = "ToggleImage"
 			ToggleImage.Parent = Toggle
@@ -700,8 +701,8 @@ account_circle.ImageRectSize = Vector2.new(36, 36)
 
 			Circle.Name = "Circle"
 			Circle.Parent = ToggleImage
-			Circle.BackgroundColor3 = Color3.fromRGB(227, 60, 60)
-			Circle.Position = UDim2.new(0, 2, 0, 2)
+			Circle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+			Circle.Position = UDim2.new(0, 3, 0, 0)
 			Circle.Size = UDim2.new(0, 16, 0, 16)
 
 			UICorner_4.CornerRadius = UDim.new(0, 10)
