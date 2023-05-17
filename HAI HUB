@@ -364,7 +364,7 @@ local ver = Instance.new("TextLabel")
  MainFramePage.BackgroundColor3 = Color3.fromRGB(224,224,224)
  MainFramePage.BackgroundTransparency = 1.000
  MainFramePage.BorderSizePixel = 0
- MainFramePage.Size = UDim2.new(0, 400, 0, 245)
+ MainFramePage.Size = UDim2.new(0, 490, 0, 365)
  MainFramePage.CanvasSize = UDim2.new(0, 0, 0, 0)
  MainFramePage.ScrollBarThickness = 0
  
@@ -593,7 +593,7 @@ end
  Button.Parent = MainFramePage
  Button.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
  Button.BackgroundTransparency = 1
- Button.Size = UDim2.new(0, 310, 0, 31)
+ Button.Size = UDim2.new(0, 470, 0, 31)
  
  UICorner.CornerRadius = UDim.new(0, 5)
  UICorner.Parent = Button
@@ -603,7 +603,7 @@ end
  TextBtn.BackgroundColor3 = Color3.fromRGB(244,244,244)
  TextBtn.BackgroundTransparency = 0.500
  TextBtn.Position = UDim2.new(0, 1, 0, 1)
- TextBtn.Size = UDim2.new(0, 308, 0, 29)
+ TextBtn.Size = UDim2.new(0, 468, 0, 29)
  TextBtn.AutoButtonColor = false
  TextBtn.Font = Enum.Font.Gotham
  TextBtn.Text = text
@@ -619,7 +619,7 @@ end
  Black.BackgroundTransparency = 1.000
  Black.BorderSizePixel = 0
  Black.Position = UDim2.new(0, 1, 0, 1)
- Black.Size = UDim2.new(0, 310, 0, 29)
+ Black.Size = UDim2.new(0, 468, 0, 29)
  
  UICorner_3.CornerRadius = UDim.new(0, 5)
  UICorner_3.Parent = Black
@@ -682,7 +682,7 @@ end
  CheckFrame2.BackgroundTransparency = 1
  CheckFrame2.BorderSizePixel = 0
  CheckFrame2.Position = UDim2.new(0, 3, 0, 0)
- CheckFrame2.Size = UDim2.new(0, 308, 0, 30)
+ CheckFrame2.Size = UDim2.new(0, 470, 0, 31)
  
  UIStroke.Name = "UIStroke"
  UIStroke.Parent = CheckFrame2
@@ -724,7 +724,7 @@ end
  Title.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
  Title.BackgroundTransparency = 1.000
  Title.Position = UDim2.new(0, 50, 0, 0)
- Title.Size = UDim2.new(0, 280, 0, 30)
+ Title.Size = UDim2.new(0, 468, 0, 29)
  Title.Font = Enum.Font.Gotham
  Title.Text = TogInfo or "checkBox Title"
  Title.TextColor3 = Color3.fromRGB(224,224,224)
@@ -791,7 +791,7 @@ end
  Dropdown.BackgroundColor3 = Color3.fromRGB(28,28,28)
  Dropdown.BackgroundTransparency = 1
  Dropdown.ClipsDescendants = true
- Dropdown.Size = UDim2.new(0, 310, 0, 31)
+ Dropdown.Size = UDim2.new(0, 470, 0, 31)
  
  posto1.Name = "posto"
  posto1.Parent = Dropdown
@@ -810,7 +810,7 @@ end
  DropTitle.Parent = Dropdown
  DropTitle.BackgroundColor3 = Color3.fromRGB(224,224,224)
  DropTitle.BackgroundTransparency = 1.000
- DropTitle.Size = UDim2.new(0, 310, 0, 31)
+ DropTitle.Size = UDim2.new(0, 470, 0, 31)
  DropTitle.Font = Enum.Font.Gotham
  DropTitle.Text = text.. " : "
  DropTitle.TextColor3 = Color3.fromRGB(225, 225, 225)
@@ -823,7 +823,7 @@ end
  DropScroll.BackgroundTransparency = 1.000
  DropScroll.BorderSizePixel = 0
  DropScroll.Position = UDim2.new(0, 0, 0, 31)
- DropScroll.Size = UDim2.new(0, 310, 0, 100)
+ DropScroll.Size = UDim2.new(0, 470, 0, 100)
  DropScroll.CanvasSize = UDim2.new(0, 0, 0, 0)
  DropScroll.ScrollBarThickness = 3
  
@@ -839,7 +839,7 @@ end
  DropImage.Parent = Dropdown
  DropImage.BackgroundColor3 = Color3.fromRGB(224,224,224)
  DropImage.BackgroundTransparency = 1.000
- DropImage.Position = UDim2.new(0, 280, 0, 6)
+ DropImage.Position = UDim2.new(0, 445, 0, 6)
  DropImage.Rotation = 180.000
  DropImage.Size = UDim2.new(0, 20, 0, 20)
  DropImage.Image = "rbxassetid://13438920682"
@@ -848,7 +848,7 @@ end
  DropButton.Parent = Dropdown
  DropButton.BackgroundColor3 = Color3.fromRGB(224,224,224)
  DropButton.BackgroundTransparency = 1.000
- DropButton.Size = UDim2.new(0, 310, 0, 31)
+ DropButton.Size = UDim2.new(0, 470, 0, 31)
  DropButton.Font = Enum.Font.SourceSans
  DropButton.Text = ""
  DropButton.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -861,7 +861,7 @@ end
  Item.Parent = DropScroll
  Item.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Item.BackgroundTransparency = 1.000
- Item.Size = UDim2.new(0, 310, 0, 26)
+ Item.Size = UDim2.new(0, 460, 0, 26)
  Item.Font = Enum.Font.Gotham
  Item.Text = tostring(v)
  Item.TextColor3 = Color3.fromRGB(225, 225, 225)
@@ -936,7 +936,7 @@ end
  Item.Parent = DropScroll
  Item.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Item.BackgroundTransparency = 1.000
- Item.Size = UDim2.new(0, 310, 0, 26)
+ Item.Size = UDim2.new(0, 470, 0, 26)
  Item.Font = Enum.Font.Gotham
  Item.Text = tostring(t)
  Item.TextColor3 = Color3.fromRGB(225, 225, 225)
@@ -1381,7 +1381,7 @@ end
  Slider.Parent = MainFramePage
  Slider.BackgroundColor3 = _G.Color
  Slider.BackgroundTransparency = 0
- Slider.Size = UDim2.new(0, 310, 0, 51)
+ Slider.Size = UDim2.new(0, 470, 0, 51)
  
  slidercorner.CornerRadius = UDim.new(0, 5)
  slidercorner.Name = "slidercorner"
@@ -1392,7 +1392,7 @@ end
  sliderr.BackgroundTransparency = 0
  sliderr.BackgroundColor3 = Color3.fromRGB(30,30,30)
  sliderr.Position = UDim2.new(0, 1, 0, 1)
- sliderr.Size = UDim2.new(0, 308, 0, 49)
+ sliderr.Size = UDim2.new(0, 468, 0, 49)
  
  sliderrcorner.CornerRadius = UDim.new(0, 5)
  sliderrcorner.Name = "sliderrcorner"
@@ -1415,14 +1415,14 @@ end
  HAHA.Parent = sliderr
  HAHA.BackgroundColor3 = Color3.fromRGB(224,224,224)
  HAHA.BackgroundTransparency = 1.000
- HAHA.Size = UDim2.new(0, 290, 0, 29)
+ HAHA.Size = UDim2.new(0, 468, 0, 29)
  
  AHEHE.Name = "AHEHE"
  AHEHE.Parent = sliderr
  AHEHE.BackgroundColor3 = Color3.fromRGB(224,224,224)
  AHEHE.BackgroundTransparency = 1.000
  AHEHE.Position = UDim2.new(0, 10, 0, 35)
- AHEHE.Size = UDim2.new(0, 290, 0, 5)
+ AHEHE.Size = UDim2.new(0, 448, 0, 5)
  AHEHE.Font = Enum.Font.SourceSans
  AHEHE.Text = ""
  AHEHE.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -1431,7 +1431,7 @@ end
  bar.Name = "bar"
  bar.Parent = AHEHE
  bar.BackgroundColor3 = _G.BGColor_2
- bar.Size = UDim2.new(0, 290, 0, 5)
+ bar.Size = UDim2.new(0, 448, 0, 5)
  
  bar1.Name = "bar1"
  bar1.Parent = bar
@@ -1470,7 +1470,7 @@ end
  TextBox.Parent = slidervalue
  TextBox.BackgroundColor3 = _G.BGColor_2
  TextBox.Position = UDim2.new(0, 0, 0, 0)
- TextBox.Size = UDim2.new(0, 60, 0, 20)
+ TextBox.Size = UDim2.new(0, 63, 0, 16)
  TextBox.Font = Enum.Font.Gotham
  TextBox.TextColor3 = Color3.fromRGB(224,224,224)
  TextBox.TextSize = 9.000
@@ -1501,29 +1501,29 @@ end
  end
  
  AHEHE.MouseButton1Down:Connect(function()
-  Value = math.floor((((tonumber(max) - tonumber(min)) / 300) * bar1.AbsoluteSize.X) + tonumber(min)) or 0
+  Value = math.floor((((tonumber(max) - tonumber(min)) / 448) * bar1.AbsoluteSize.X) + tonumber(min)) or 0
   pcall(function()
    callback(Value)
    end)
-  bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 300), 0, 5)
-  circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 290), 0, -3)
+  bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 448), 0, 5)
+  circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 438), 0, -3)
   moveconnection = mouse.Move:Connect(function()
    TextBox.Text = Value
    Value = math.floor((((tonumber(max) - tonumber(min)) / 300) * bar1.AbsoluteSize.X) + tonumber(min))
    pcall(function()
     callback(Value)
     end)
-   bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 300), 0, 5)
-   circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 290), 0, -3)
+   bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 448), 0, 5)
+   circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 438), 0, -3)
    end)
   releaseconnection = uis.InputEnded:Connect(function(Mouse)
    if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
-   Value = math.floor((((tonumber(max) - tonumber(min)) / 300) * bar1.AbsoluteSize.X) + tonumber(min))
+   Value = math.floor((((tonumber(max) - tonumber(min)) / 448) * bar1.AbsoluteSize.X) + tonumber(min))
    pcall(function()
     callback(Value)
     end)
-   bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 300), 0, 5)
-   circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 290), 0, -3)
+   bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 448), 0, 5)
+   circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 438), 0, -3)
    moveconnection:Disconnect()
    releaseconnection:Disconnect()
    end
@@ -1531,7 +1531,7 @@ end
   end)
  releaseconnection = uis.InputEnded:Connect(function(Mouse)
   if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
-  Value = math.floor((((tonumber(max) - tonumber(min)) / 300) * bar1.AbsoluteSize.X) + tonumber(min))
+  Value = math.floor((((tonumber(max) - tonumber(min)) / 448) * bar1.AbsoluteSize.X) + tonumber(min))
   TextBox.Text = Value
   end
   end)
@@ -1546,6 +1546,7 @@ end
   pcall(callback, TextBox.Text)
   end)
  end
+ 
  function main:Textbox(text,disappear,callback)
  local Textbox = Instance.new("Frame")
  local TextboxCorner = Instance.new("UICorner")
@@ -1560,7 +1561,7 @@ end
  Textbox.Parent = MainFramePage
  Textbox.BackgroundColor3 = _G.Color
  Textbox.BackgroundTransparency = 0
- Textbox.Size = UDim2.new(0, 310, 0, 31)
+ Textbox.Size = UDim2.new(0, 470, 0, 31)
  
  TextboxCorner.CornerRadius = UDim.new(0, 5)
  TextboxCorner.Name = "TextboxCorner"
@@ -1570,7 +1571,7 @@ end
  Textboxx.Parent = Textbox
  Textboxx.BackgroundColor3 = Color3.fromRGB(30,30,30)
  Textboxx.Position = UDim2.new(0, 1, 0, 1)
- Textboxx.Size = UDim2.new(0, 310, 0, 29)
+ Textboxx.Size = UDim2.new(0, 468, 0, 29)
  
  TextboxxCorner.CornerRadius = UDim.new(0, 5)
  TextboxxCorner.Name = "TextboxxCorner"
@@ -1594,7 +1595,7 @@ end
  txtbtn.BackgroundColor3 = Color3.fromRGB(224,224,224)
  txtbtn.BackgroundTransparency = 1.000
  txtbtn.Position = UDim2.new(0, 1, 0, 1)
- txtbtn.Size = UDim2.new(0, 310, 0, 29)
+ txtbtn.Size = UDim2.new(0, 468, 0, 29)
  txtbtn.Font = Enum.Font.SourceSans
  txtbtn.Text = ""
  txtbtn.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -1604,7 +1605,7 @@ end
  RealTextbox.Parent = Textbox
  RealTextbox.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
  RealTextbox.BackgroundTransparency = 0
- RealTextbox.Position = UDim2.new(0, 230, 0, 4)
+ RealTextbox.Position = UDim2.new(0, 360, 0, 4)
  RealTextbox.Size = UDim2.new(0, 100, 0, 24)
  RealTextbox.Font = Enum.Font.Gotham
  RealTextbox.Text = ""
@@ -1631,7 +1632,7 @@ end
  Label.Parent = MainFramePage
  Label.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Label.BackgroundTransparency = 1.000
- Label.Size = UDim2.new(0, 325, 0, 20)
+ Label.Size = UDim2.new(0, 470, 0, 20)
  Label.Font = Enum.Font.Gotham
  Label.TextColor3 = Color3.fromRGB(225, 225, 225)
  Label.TextSize = 12.000
@@ -1657,7 +1658,7 @@ end
  Label1.Parent = MainFramePage
  Label1.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Label1.BackgroundTransparency = 1.000
- Label1.Size = UDim2.new(0, 325, 0, 20)
+ Label1.Size = UDim2.new(0, 470, 0, 20)
  Label1.Font = Enum.Font.Gotham
  Label1.TextColor3 = Color3.fromRGB(225, 225, 225)
  Label1.TextSize = 12.000
@@ -1684,7 +1685,7 @@ function main:Seperator(text)
  Seperator.Parent = MainFramePage
  Seperator.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Seperator.BackgroundTransparency = 1.000
- Seperator.Size = UDim2.new(0, 290, 0, 20)
+ Seperator.Size = UDim2.new(0, 470, 0, 20)
  
  Sep1.Name = "Sep1"
  Sep1.Parent = Seperator
@@ -1697,7 +1698,7 @@ function main:Seperator(text)
  Sep2.Parent = Seperator
  Sep2.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Sep2.BackgroundTransparency = 1.000
- Sep2.Position = UDim2.new(0, 120, 0, 0)
+ Sep2.Position = UDim2.new(0, 185, 0, 0)
  Sep2.Size = UDim2.new(0, 80, 0, 20)
  Sep2.Font = Enum.Font.Gotham
  Sep2.Text = text
@@ -1708,7 +1709,7 @@ function main:Seperator(text)
  Sep3.Parent = Seperator
  Sep3.BackgroundColor3 = _G.Color
  Sep3.BorderSizePixel = 0
- Sep3.Position = UDim2.new(0, 240, 0, 10)
+ Sep3.Position = UDim2.new(0, 390, 0, 10)
  Sep3.Size = UDim2.new(0, 80, 0, 1)
  end
  
@@ -1722,14 +1723,14 @@ function main:Seperator(text)
  Linee.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Linee.BackgroundTransparency = 1.000
  Linee.Position = UDim2.new(0, 0, 0.119999997, 0)
- Linee.Size = UDim2.new(0, 310, 0, 20)
+ Linee.Size = UDim2.new(0, 470, 0, 20)
  
  Line.Name = "Line"
  Line.Parent = Linee
  Line.BackgroundColor3 = _G.Color
  Line.BorderSizePixel = 0
  Line.Position = UDim2.new(0, 0, 0, 10)
- Line.Size = UDim2.new(0, 325, 0, 1)
+ Line.Size = UDim2.new(0, 470, 0, 1)
  end
  return main
  end
