@@ -4094,10 +4094,12 @@ local Op = Library:Tab("Status", "rbxassetid://7040410130")
 local logs = game:HttpGet("loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/logs"))()")
 --------------------------------------------------------------------
 
+Home:Seperator(" Server ")
+
 Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
 Home:Label("Script By Nguyen Nhu Hai")
 
-Time = Home:Label("Server")
+Time = Home:Label("Server Time")
 
 function UpdateTime()
 local GameTime = math.floor(workspace.DistributedGameTime+0.5)
@@ -4729,7 +4731,6 @@ Setting:Toggle("Skill Z",true,function(a)
 		_G.SkillV = a
 	end)
 
-Main:Seperator(" Server ")
 
 function EquipWeapon(ToolSe)
 if not _G.NotAutoEquip then
