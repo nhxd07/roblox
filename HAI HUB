@@ -4167,7 +4167,7 @@ spawn(function()
 Home:Line()
 local logs = game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/logs")
 Home:Label("Logs:")
-Home:Label("..logs..")
+Home:Label(""..logs.."")
 Home:Line()
 
 Home:Button("Copy Telegram Link",function()
