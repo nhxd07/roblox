@@ -1729,7 +1729,7 @@ function main:Seperator(text)
 
 game.StarterGui:SetCore("SendNotification", {
 	Title = "HAI HUB", 
-	Text = "Welcome "..game.Players.LocalPlayer.DisplayName" to HAI HUB",
+	Text = "Welcome to HAI HUB",
 	Icon = "http://www.roblox.com/asset/?id=13438920682",
 	Duration = 8
 })
@@ -4124,22 +4124,44 @@ local Op = Library:Tab("Status", "rbxassetid://7040410130")
 
 Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
 Home:Label("Script By Nguyen Nhu Hai")
-Time = Home:Label("servertime")
+Time = Home:Label("Executer Time")
 
 function UpdateTime()
-    local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-    local Hour = math.floor(GameTime/(60^2))%24
-    local Minute = math.floor(GameTime/(60^1))%60
-    local Second = math.floor(GameTime/(60^0))%60
-    Time:Set("Hour : "..Hour.." Minute : "..Minute.." Second : "..Second)
+local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+local Hour = math.floor(GameTime/(60^2))%24
+local Minute = math.floor(GameTime/(60^1))%60
+local Second = math.floor(GameTime/(60^0))%60
+Time:Set("[GameTime] : Hours : "..Hour.." Minutes : "..Minute.." Seconds : "..Second)
 end
 
 spawn(function()
-    while true do
-        UpdateTime()
-        wait()
+ while task.wait() do
+ pcall(function()
+  UpdateTime()
+  end)
+ end
+ end)
+
+PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+spawn(function()
+    while wait() do
+        PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+        wait(5)
     end
 end)
+
+Client = Home:Label1("Client")
+
+function UpdateClient()
+local Fps = workspace:GetRealPhysicsFPS()
+Client:Refresh("[Fps] : "..Fps)
+end
+
+spawn(function()
+ while true do wait(.1)
+ UpdateClient()
+ end
+ end)
 
 Home:Line()
 Home:Label("Join My Telegram For More Info!")
