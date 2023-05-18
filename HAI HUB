@@ -4165,7 +4165,7 @@ spawn(function()
  end)
 
 Home:Line()
-
+local logs = game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/logs")
 Home:Button("Copy Telegram Link",function()
  
  setclipboard("https://t.me/NHCheats")
