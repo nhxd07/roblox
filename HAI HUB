@@ -1734,6 +1734,42 @@ game.StarterGui:SetCore("SendNotification", {
 	Duration = 8
 })
 
+repeat wait() until game:IsLoaded()
+xwd = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
+Gamename = xwd.Name
+local games = {
+   [game.PlaceId] = {
+      Title = "Blox Fruits",
+      Icons = "rbxassetid://13438920682",
+      Welcome = function()
+            return tostring(
+              " "
+                   ..
+
+                        Gamename.. "!" .. " \Hai Hub Loadded"  .."\n Welcome "..game.Players.LocalPlayer.DisplayName
+            )
+      end
+   }
+}
+
+
+if games[game.PlaceId] then
+   if games[game.PlaceId].Title == "Blox Fruits" then
+      local function notify(types, ...)
+            if types == "Notify" then
+               require(game.ReplicatedStorage.Notification).new(...):Display()
+            end
+      end
+      notify("Notify", games[game.PlaceId].Welcome())
+   end
+end
+
+ local function Text( ...)
+         --   if types == "Notify" then
+               require(game.ReplicatedStorage.Notification).new(...):Display()
+        --    end
+      end
+
 if game.PlaceId == 2753915549 then
 	World1 = true
 elseif game.PlaceId == 4442272183 then
@@ -4123,47 +4159,37 @@ local Op = Library:Tab("Status", "rbxassetid://7040410130")
 
 Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
 Home:Label("Script By Nguyen Nhu Hai")
-
-Home:Seperator(" Server ")
-Time = Home:Label("Executer Time")
+Time = Home:Label("servertime")
 
 function UpdateTime()
-local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-local Hour = math.floor(GameTime/(60^2))%24
-local Minute = math.floor(GameTime/(60^1))%60
-local Second = math.floor(GameTime/(60^0))%60
-Time:Set("[GameTime] : Hours : "..Hour.." Minutes : "..Minute.." Seconds : "..Second)
+    local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+    local Hour = math.floor(GameTime/(60^2))%24
+    local Minute = math.floor(GameTime/(60^1))%60
+    local Second = math.floor(GameTime/(60^0))%60
+    Time:Set("Hour : "..Hour.." Minute : "..Minute.." Second : "..Second)
 end
 
 spawn(function()
- while task.wait() do
- pcall(function()
-  UpdateTime()
-  end)
- end
- end)
-
-PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
-spawn(function()
-    while wait() do
-        PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
-        wait(5)
+    while true do
+        UpdateTime()
+        wait()
     end
 end)
 
-Client = Home:Label1("Client")
+local logs = loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/logs"))()
+Home:Line()
+Home:Label("Logs:\n \n")
+Home:Label("\n"..logs.."\n ")
 
-function UpdateClient()
-local Fps = workspace:GetRealPhysicsFPS()
-Client:Refresh("[Fps] : "..Fps)
-end
+Home:Line()
+Home:Label("Join My Telegram For More Info!")
 
-spawn(function()
- while true do wait(.1)
- UpdateClient()
- end
- end)
+Home:Line()
 
+Home:Button("Copy Telegram Link",function()
+ 
+ setclipboard("https://t.me/NHCheats")
+ end)"
 Home:Line()
 
 Home:Seperator("Job-Id")   
