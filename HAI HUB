@@ -182,7 +182,7 @@ ServerTime.Name = "ServerTime"
 ServerTime.Parent = Top
 ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
 ServerTime.BackgroundTransparency = 1.000
-ServerTime.Position = UDim2.new(0.707561002, 0, 0 , 0)
+ServerTime.Position = UDim2.new(0.747561002, 0, 0 , 0)
 ServerTime.Size = UDim2.new(0, 225, 0, 25)
 ServerTime.Font = Enum.Font.GothamSemibold
 ServerTime.Text = ""
@@ -4169,6 +4169,7 @@ local logs = game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/l
 Home:Label("Logs:")
 Home:Label("..logs..")
 Home:Line()
+
 Home:Button("Copy Telegram Link",function()
  
  setclipboard("https://t.me/NHCheats")
