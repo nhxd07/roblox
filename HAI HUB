@@ -4149,8 +4149,8 @@ Home:Button("Copy You Job-Id",function()
     setclipboard(tostring(game.JobId))
     end)
     _G.Job = nil
-	Home:Textbox("Paste Your Job-Id Here","",true,function(t)
-        _G.Job = t
+	Home:Textbox("Paste Your Job-Id Here","Jobid",function(l)
+        _G.Job = l
         end)
         Home:Button("Join Job-Id",function()
             game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, _G.Job, game.Players.LocalPlayer)
