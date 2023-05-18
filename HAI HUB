@@ -215,29 +215,6 @@ spawn(function()
  game:GetService("RunService").RenderStepped:Wait()
  end
  end)
- 
- local BindButton = Instance.new("TextButton")
-	BindButton.Name = "BindButton"
-	BindButton.Parent = Top
-	BindButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	BindButton.BackgroundTransparency = 1.000
-	BindButton.Position = UDim2.new(0, 099, 0, 0)
-	BindButton.Size = UDim2.new(0, 100, 0, 27)
-	BindButton.Font = Enum.Font.GothamSemibold
-	BindButton.Text = "[ "..string.gsub(tostring(keybind),"Enum.KeyCode.","").." ]"
-	BindButton.TextColor3 = Color3.fromRGB(100, 100, 100)
-	BindButton.TextSize = 11.000
-	
-	BindButton.MouseButton1Click:Connect(function ()
-		BindButton.Text = "[ ... ]"
-		local inputwait = game:GetService("UserInputService").InputBegan:wait()
-		local shiba = inputwait.KeyCode == Enum.KeyCode.Unknown and inputwait.UserInputType or inputwait.KeyCode
-
-		if shiba.Name ~= "Focus" and shiba.Name ~= "MouseMovement" then
-			BindButton.Text = "[ "..shiba.Name.." ]"
-			yoo = shiba.Name
-		end
-	end)
 
 	local Tab = Instance.new("Frame")
 	Tab.Name = "Tab"
@@ -4142,14 +4119,6 @@ spawn(function()
  end
  end)
 
-PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
-spawn(function()
-    while wait() do
-        PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
-        wait(5)
-    end
-end)
-
 Client = Home:Label1("Client")
 
 function UpdateClient()
@@ -4162,16 +4131,15 @@ spawn(function()
  UpdateClient()
  end
  end)
-
-Home:Line()
-Home:Label("Join My Telegram For More Info!")
-
-Home:Line()
-
-Home:Button("Copy Telegram Link",function()
  
- setclipboard("https://t.me/NHCheats")
- end)"
+PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+spawn(function()
+    while wait() do
+        PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+        wait(5)
+    end
+end)
+
 Home:Line()
 
 Home:Seperator("Job-Id")   
