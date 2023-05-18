@@ -1729,46 +1729,11 @@ function main:Seperator(text)
 
 game.StarterGui:SetCore("SendNotification", {
 	Title = "HAI HUB", 
-	Text = "Welcome to HAI HUB",
+	Text = "Welcome "..game.Players.LocalPlayer.DisplayName" to HAI HUB",
 	Icon = "http://www.roblox.com/asset/?id=13438920682",
 	Duration = 8
 })
 
-repeat wait() until game:IsLoaded()
-xwd = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
-Gamename = xwd.Name
-local games = {
-   [game.PlaceId] = {
-      Title = "Blox Fruits",
-      Icons = "rbxassetid://13438920682",
-      Welcome = function()
-            return tostring(
-              " "
-                   ..
-
-                        Gamename.. "!" .. " \Hai Hub Loadded"  .."\n Welcome "..game.Players.LocalPlayer.DisplayName
-            )
-      end
-   }
-}
-
-
-if games[game.PlaceId] then
-   if games[game.PlaceId].Title == "Blox Fruits" then
-      local function notify(types, ...)
-            if types == "Notify" then
-               require(game.ReplicatedStorage.Notification).new(...):Display()
-            end
-      end
-      notify("Notify", games[game.PlaceId].Welcome())
-   end
-end
-
- local function Text( ...)
-         --   if types == "Notify" then
-               require(game.ReplicatedStorage.Notification).new(...):Display()
-        --    end
-      end
 
 if game.PlaceId == 2753915549 then
 	World1 = true
