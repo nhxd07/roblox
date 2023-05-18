@@ -4176,11 +4176,6 @@ spawn(function()
     end
 end)
 
-local logs = loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/logs"))()
-Home:Line()
-Home:Label("Logs:\n \n")
-Home:Label("\n"..logs.."\n ")
-
 Home:Line()
 Home:Label("Join My Telegram For More Info!")
 
