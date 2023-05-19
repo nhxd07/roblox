@@ -423,8 +423,11 @@ function library:CreateWindow(text,maincolor,text2,logo)
     ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
     ImageButton.Size = UDim2.new(0, 50, 0, 50)
     ImageButton.BorderSizePixel = 0
-    ImageButton.Image = "rbxassetid://10509313657" -- LOGO
+    ImageButton.Image = "rbxassetid://13438920682" -- LOGO
     ImageButton.MouseButton1Down:connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+    game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+    end)
         if uihide == false then
             uihide = true
             Tab.Visible = false
@@ -459,7 +462,6 @@ function library:CreateWindow(text,maincolor,text2,logo)
             Tab.Visible = true
             Page.Visible = true
         end
-    end)
 
     local uitab = {}
     function uitab:AddTab(text)
