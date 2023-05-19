@@ -154,6 +154,15 @@ tweenObject(Main, 0.25, {
 wait(0.25);
 Core:Destroy()
 
+repeat wait(1) until game:IsLoaded()
+
+do
+    local gui = game:GetService("CoreGui"):FindFirstChild("HovxrzGui")
+    if gui then
+        gui:Destroy()
+    end
+end
+
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 
@@ -376,6 +385,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     ImageButton.MouseButton1Down:connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
     game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+    end)
         if uihide == false then
             uihide = true
             Tab.Visible = false
@@ -410,6 +420,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
             Tab.Visible = true
             Page.Visible = true
         end
+    end)
 
     local uitab = {}
     function uitab:AddTab(text)
