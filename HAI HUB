@@ -270,9 +270,9 @@ _G.Setting_table = {
 	SkillZ = true,
 }
 
-local library = {}
+local Update = {}
 
-function library:CreateWindow(text,maincolor,text2,logo)
+function Update:CreateWindow(text,maincolor,text2,logo)
     logo = logo or 13438920682
     maincolor = maincolor or Color3.fromRGB(63,233,233)
     local isselected = false
