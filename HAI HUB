@@ -1,11 +1,3 @@
-game.StarterGui:SetCore("SendNotification", {
-	Title = "HAI HUB", 
-	Text = "Welcome to HAI HUB",
-	Icon = "http://www.roblox.com/asset/?id=13438920682",
-})
-
-wait(1.0)
-
 shared.LoaderTitle = 'Hai Hub Load✅' -- ใส่ชื่อ
 shared.LoaderKeyFrames = {
    [1] = {1, 30}, -- [Time (s), Percentage] 
@@ -276,7 +268,6 @@ local ThunderImageUI = Instance.new("ImageLabel")
  
 _G.Setting_table = {
 	SkillZ = true,
-	K_MAX = 50,
 }
 
 local Update = {}
@@ -1891,6 +1882,14 @@ function main:Seperator(text)
  end
  return uitab
  end
+
+game.StarterGui:SetCore("SendNotification", {
+	Title = "HAI HUB", 
+	Text = "Welcome to HAI HUB",
+	Icon = "http://www.roblox.com/asset/?id=13438920682",
+	Duration = 8
+})
+
 
 if game.PlaceId == 2753915549 then
 	World1 = true
@@ -3685,7 +3684,7 @@ end
 spawn(function()
 	pcall(function()
 		game:GetService("RunService").Stepped:Connect(function()
-		  	if _G.Auto_Farm_Level or _G.Auto_New_World or _G.AutoSeaBeats or _G.AutoSeaking or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.TeleportIsland or _G.TeleportNPC or _G.Auto_Farm_Boss or _G.AutoDarkDagger or _G.AutoFarmBossHallow or _G.Autotushita or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or Grab_Chest or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.d or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.AutoFarmMaterial or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.autoraid or AutoNextIsland or _G.Auto_Farm_Sword or _G.MeleeFarm or _G.AutoFarmSelectMonster or _G.AutoFarmKenHakivor or _G.AutoObservationHakiV2 or _G.GunMastery or _G.AutoFactory or _G.Mastery or _G.Auto_Kill_Law then
+		  	if _G.Auto_Farm_Level or _G.Auto_New_World or _G.AutoSeaBeats or _G.AutoSeaking or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.TeleportIsland or _G.TeleportNPC or _G.Auto_Farm_Boss or _G.AutoDarkDagger or _G.AutoFarmBossHallow or _G.Autotushita or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.d or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.AutoFarmMaterial or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.autoraid or AutoNextIsland or _G.Auto_Farm_Sword or _G.MeleeFarm or _G.AutoFarmSelectMonster or _G.AutoFarmKenHakivor or _G.AutoObservationHakiV2 or _G.GunMastery or _G.AutoFactory or _G.Mastery or _G.Auto_Kill_Law then
 			 	if not game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
 					local Noclip = Instance.new("BodyVelocity")
 					Noclip.Name = "BodyClip"
@@ -4652,239 +4651,6 @@ end)
 Setting:Toggle("Auto Click",false,function(value)
  _G.click = value
 end)
-
-Setting:Toggle("Disabled Damage Text",_G.DisableDamage,function(value)
- _G.DisableDamage = value
-end)
-
-spawn(function()
- while wait() do
- if _G.WhiteScreen then
- for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
- if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "DamageCounter" or v.Name == "SwordSlash" or v.Name == "SlashTail" or v.Name == "Sounds" then
- v:Destroy()
- end
- end
- end
- end
- end)
-
-Setting:Toggle("White Screen [ Booster FPS ]",_G.WhiteScreen,function(value)
- _G.WhiteScreen = value
-
- if _G.WhiteScreen == true then
- game:GetService("RunService"):Set3dRenderingEnabled(false)
- elseif _G.WhiteScreen == false then
- game:GetService("RunService"):Set3dRenderingEnabled(true)
- end
-end)
-
-
-
-local a = game.Lighting
-local c = Instance.new("ColorCorrectionEffect", a)
-local e = Instance.new("ColorCorrectionEffect", a)
-OldAmbient = a.Ambient
-OldBrightness = a.Brightness
-OldColorShift_Top = a.ColorShift_Top
-OldBrightnessc = c.Brightness
-OldContrastc = c.Contrast
-OldTintColorc = c.TintColor
-OldTintColore = e.TintColor
-Setting:Toggle("RTX Mode",_G.RTXMode,function(value)
-_G.RTXMode = value
-if not _G.RTXMode then return end
-while _G.RTXMode do wait()
-a.Ambient = Color3.fromRGB(33, 33, 33)
-a.Brightness = 0.3
-c.Brightness = 0.176
-c.Contrast = 0.39
-c.TintColor = Color3.fromRGB(217, 145, 57)
-game.Lighting.FogEnd = 999
-if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight") then
-local a2 = Instance.new("PointLight")
-a2.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-a2.Range = 15
-a2.Color = Color3.fromRGB(217, 145, 57)
-end
-if not _G.RTXMode then
-a.Ambient = OldAmbient
-a.Brightness = OldBrightness
-a.ColorShift_Top = OldColorShift_Top
-c.Contrast = OldContrastc
-c.Brightness = OldBrightnessc
-c.TintColor = OldTintColorc
-e.TintColor = OldTintColore
-game.Lighting.FogEnd = 2500
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight"):Destroy()
-end
-end
-end)
-
-Setting:Toggle("Remove Attack Animation",true,function(value)
-    getgenv().A = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).wrapAttackAnimationAsync 
-getgenv().B = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.Particle).play
-spawn(function()
-
-    while wait() do
-            pcall(function()
-                require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).wrapAttackAnimationAsync =function(a1,a2,a3,a4,a5)
-                    local GetBladeHits = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).getBladeHits(a2,a3,a4)
-                    if GetBladeHits then
-                         require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).play = function() end
-                        a1:Play(0.2, 0.2, 0.2)
-                        a5(GetBladeHits)
-                         require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).play = getgenv().B 
-                        wait(.5)
-                        a1:Stop()
-                    end
-                end
-            end)
-        
-    end
-end)
-end)
-  
-Setting:Toggle("Delete Attack FIx",nil,function(d)
-    _G.DeleteAttackFx = d
-    if _G.DeleteAttackFx == true then
-    while _G.DeleteAttackFx do wait()
-        for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
-            if v.Name == "CurvedRing" or v.Name == "DamageCounter" or v.Name == "SwordSlash" or v.Name == "Damage" or v.Name == "Mon" or v.Name == "Sounds" then
-                v:Destroy() 
-            end
-        end
-    end
-    end
-end)
-    
-    spawn(function()
-      while wait() do
-      if _G.WhiteScreen then
-        for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
-            if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "DamageCounter" or v.Name == "SwordSlash" or v.Name == "SlashTail" or v.Name == "Sounds" then
-                v:Destroy() 
-            end
-        end
-    end
-    end
-end) 
-
-
-Setting:Toggle("Rainbow Haki",false,function(value)
-RainbowHaki = value
-end)
-                ---- [RainbowHaki]
-                spawn(function()
-                    while wait() do
-                        if RainbowHaki then
-                            pcall(function()
-                                if game.Players.LocalPlayer.Character.HasBuso then
-                                    for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
-                                        if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
-                                            v.Color = Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
-                                        end
-                                    end
-                                end
-                            end)
-                        end
-                    end
-                end)
-            
-                spawn(function()
-                    while wait() do
-                        if RainbowHaki == false then
-                            pcall(function()
-                                if game.Players.LocalPlayer.Character.HasBuso then
-                                    for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
-                                        if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
-                                            v.Color = Color3.fromRGB(0, 0, 0)
-                                        end
-                                    end
-                                end
-                            end)
-                        end
-                    end
-                end)
-Setting:Toggle("No Fog",function()
-                    spawn(function()
-                        pcall(function()
-                            game.Lighting.FogEnd = math.huge
-                            game:GetService("Lighting").FantasySky:Destroy()
-                        end)
-                    end)
-                end)
-   
-    
-    Setting:Toggle("Hide Ui (Reduce Lag)",false,function(value)
-        if value == true then
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Beli.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.HP.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Energy.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.StatsButton.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.ShopButton.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Skills.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Level.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.MenuButton.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Code.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Settings.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Mute.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = false
-        else
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Beli.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.HP.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Energy.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.StatsButton.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.ShopButton.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Skills.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Level.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.MenuButton.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Code.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Settings.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Mute.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = true
-        end
-    end)
-
-Setting:Button("FPS Boost",function()
-		local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
-		local g = game
-		local w = g.Workspace
-		local l = g.Lighting
-		local t = w.Terrain
-		t.WaterWaveSize = 0
-		t.WaterWaveSpeed = 0
-		t.WaterReflectance = 0
-		t.WaterTransparency = 0
-		l.GlobalShadows = false
-		l.FogEnd = 9e9
-		l.Brightness = 0
-		settings().Rendering.QualityLevel = "Level01"
-		for i, v in pairs(g:GetDescendants()) do
-			if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then 
-				v.Material = "Plastic"
-				v.Reflectance = 0
-			elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
-				v.Transparency = 1
-			elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-				v.Lifetime = NumberRange.new(0)
-			elseif v:IsA("Explosion") then
-				v.BlastPressure = 1
-				v.BlastRadius = 1
-			elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
-				v.Enabled = false
-			elseif v:IsA("MeshPart") then
-				v.Material = "Plastic"
-				v.Reflectance = 0
-				v.TextureID = 10385902758728957
-			end
-		end
-		for i, e in pairs(l:GetChildren()) do
-			if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-				e.Enabled = false
-			end
-		end
-	end)
 
 
 Setting:Seperator(" Settings Mastery ")
@@ -5882,395 +5648,50 @@ spawn(function()
 			end
 end)
 
-Main:Seperator(" Mirage Island ")
-
-Main:Toggle("Auto Mirage Island",false,function(value)
- if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-                           topos(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
-                    else
-if _G.Mystichop then
-hop()
-end
-end
-end)
-
-Main:Toggle("Auto Mirage Island Hop",false,function(value)
- _G.Mystichop = value
-end)
-
 Main:Seperator(" Chest ")
 
-Main:Toggle("Auto Grab Chest","9606294253",_G.Setting_table.Grab_Chest,function(vu)
-	Grab_Chest = vu
+Main:Toggle("Auto Chest Fast",false,function(vu)
+_G.ChestBypass = vu
 end)
-Main:Toggle("Hop Chest Lock","9606294253",Hop_Chest,function(vu)
-	Hop_Chest = vu
-end)
-Main:Toggle("Chest Lock",1,100,K_MAX,function(vu)
-	K_MAX = vu
-end)
-local K_C = Main:Label('Chest Lock : 0')
-if  Grab_Chest then
-	Grab_Chest = true
-end
-spawn(function()
-	while wait(2) do
-		pcall(function()
-			if Hop_Chest then
-				if K_CH >= K_MAX and not H_F then
-					if game.Players.LocalPlayer.Backpack:FindFirstChild("Fist of Darkness") or game.Players.LocalPlayer.Character:FindFirstChild("Fist of Darkness") then
-						H_F = true
-					else
-						HopServer()
-						wait(50)
+
+	_G.MagnitudeAdd = 0
+	spawn(function()
+		while wait() do 
+			pcall(function()
+				if _G.ChestBypass then
+					for i,v in pairs(game:GetService("Workspace"):GetChildren()) do 
+						if v.Name:find("Chest") then
+							if game:GetService("Workspace"):FindFirstChild(v.Name) then
+								if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000+_G.MagnitudeAdd then
+									repeat wait()
+										if game:GetService("Workspace"):FindFirstChild(v.Name) then
+											SlowtoTarget(v.CFrame)
+										end
+									until _G.ChestBypass == false or not v.Parent
+									_G.MagnitudeAdd = _G.MagnitudeAdd+1500
+								end
+							end
+						end
 					end
 				end
-			end
-		end)
-	end
-end)
-K_CH = 0
-K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
+			end)
+		end
+	end)
+
 spawn(function()
-    while wait(.2) do
-        pcall(function()
-            if Grab_Chest then
-                if T_P_H then
-                    if game.Players.LocalPlayer.Backpack:FindFirstChild("Fist of Darkness") or game.Players.LocalPlayer.Character:FindFirstChild("Fist of Darkness") then
-                        TP2(CFrame.new(-379.70889282227, 73.0458984375, 304.84692382813))
-                        H_F = true
-						game:GetService'VirtualUser':Button1Down(Vector2.new(1280,600))
-                        wait(3)
-                    else
-						_G.Chest_100 = nil
-						_G.Chest_500 = nil
-						_G.Chest_1000 = nil
-						_G.Chest_1500 = nil
-						_G.Chest_2000 = nil
-						_G.Chest_2500 = nil
-						_G.Chest_3500 = nil
-						_G.Chest_4500 = nil
-						_G.Chest_5500 = nil
-						_G.Chest_6500 = nil
-						_G.Chest_7500 = nil
-						_G.Chest_9500 = nil
-						_G.Chest_10500 = nil
-						_G.Chest_12500 = nil
-						_G.Chest_15500 = nil
-						_G.Chest_17500 = nil
-						Chest_100()
-						Chest_500()
-						Chest_1000()
-						Chest_1500()
-						Chest_2000()
-						Chest_2500()
-						Chest_3500()
-						Chest_4500()
-						Chest_5500()
-						Chest_6500()
-						Chest_7500()
-						Chest_9500()
-						Chest_10500()
-						Chest_12500()
-						Chest_15500()
-						Chest_17500()
-						if _G.Chest_100 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_100.CFrame)
-							until not _G.Chest_100.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_500.CFrame)
-							until not _G.Chest_500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_1000 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_1000.CFrame)
-							until not _G.Chest_1000.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_1500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_1500.CFrame)
-							until not _G.Chest_1500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_2000 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_2000.CFrame)
-							until not _G.Chest_2000.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_2500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_2500.CFrame)
-							until not _G.Chest_2500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_3500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_3500.CFrame)
-							until not _G.Chest_3500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_4500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_4500.CFrame)
-							until not _G.Chest_4500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_5500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_5500.CFrame)
-							until not _G.Chest_5500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_6500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_6500.CFrame)
-							until not _G.Chest_6500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_7500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_7500.CFrame)
-							until not _G.Chest_7500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_9500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_9500.CFrame)
-							until not _G.Chest_9500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_10500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_10500.CFrame)
-							until not _G.Chest_10500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_12500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_12500.CFrame)
-							until not _G.Chest_12500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_15500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_15500.CFrame)
-							until not _G.Chest_15500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_17500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_17500.CFrame)
-							until not _G.Chest_17500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						end
-                    end
-                else
-					
-                    _G.Chest_100 = nil
-						_G.Chest_500 = nil
-						_G.Chest_1000 = nil
-						_G.Chest_1500 = nil
-						_G.Chest_2000 = nil
-						_G.Chest_2500 = nil
-						_G.Chest_3500 = nil
-						_G.Chest_4500 = nil
-						_G.Chest_5500 = nil
-						_G.Chest_6500 = nil
-						_G.Chest_7500 = nil
-						_G.Chest_9500 = nil
-						_G.Chest_10500 = nil
-						_G.Chest_12500 = nil
-						_G.Chest_15500 = nil
-						_G.Chest_17500 = nil
-						Chest_100()
-						Chest_500()
-						Chest_1000()
-						Chest_1500()
-						Chest_2000()
-						Chest_2500()
-						Chest_3500()
-						Chest_4500()
-						Chest_5500()
-						Chest_6500()
-						Chest_7500()
-						Chest_9500()
-						Chest_10500()
-						Chest_12500()
-						Chest_15500()
-						Chest_17500()
-						if _G.Chest_100 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_100.CFrame)
-							until not _G.Chest_100.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_500.CFrame)
-							until not _G.Chest_500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_1000 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_1000.CFrame)
-							until not _G.Chest_1000.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_1500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_1500.CFrame)
-							until not _G.Chest_1500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_2000 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_2000.CFrame)
-							until not _G.Chest_2000.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_2500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_2500.CFrame)
-							until not _G.Chest_2500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_3500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_3500.CFrame)
-							until not _G.Chest_3500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_4500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_4500.CFrame)
-							until not _G.Chest_4500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_5500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_5500.CFrame)
-							until not _G.Chest_5500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_6500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_6500.CFrame)
-							until not _G.Chest_6500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_7500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_7500.CFrame)
-							until not _G.Chest_7500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_9500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_9500.CFrame)
-							until not _G.Chest_9500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_10500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_10500.CFrame)
-							until not _G.Chest_10500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_12500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_12500.CFrame)
-							until not _G.Chest_12500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_15500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_15500.CFrame)
-							until not _G.Chest_15500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						elseif _G.Chest_17500 ~= nil then
-							repeat wait(.3)
-								TP(_G.Chest_17500.CFrame)
-							until not _G.Chest_17500.Parent or not Grab_Chest
-							if Grab_Chest then
-								K_CH = K_CH + 1
-								K_C:Set('Chest : '..tostring(K_CH).."/"..K_MAX)
-							end
-						end
-                end
-            end
-        end)
-    end
+while task.wait() do
+if _G.ChestBypass then
+        local ohString1 = "SetTeam"
+        local ohString2 = "Pirates"
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(ohString1, ohString2)
+     end
+end
+end)
+
+Main:Toggle("Auto Chest Tween",_G.Grab_Chest,function(vu)
+	Grab_Chest = vu
+    StopTween(Grab_Chest)
+	_G.Grab_Chest = vu
 end)
 
 Main:Button("Instant Tp Chest (Risk)",function()
@@ -9696,18 +9117,191 @@ if World1 or World2 then
 end
 
 if World3 then
+
+Race:Seperator(" Mirage Island ")
+
+local FM = Main:Label('...')
+local Mirragecheck = Main:Label('...')
+
+task.spawn(function()
+            while task.wait() do
+                pcall(function()
+                    if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+                        FM:Set("🌑 : Full Moon 100%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
+                        FM:Set("🌒 : Full Moon 75%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
+                        FM:Set("🌓 : Full Moon 50%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
+                        FM:Set("🌗 : Full Moon 25%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
+                        FM:Set("🌖 : Full Moon 15%")
+                    else
+                        FM:Set("🌚 : Full Moon 0%")
+                    end
+                end)
+            end
+end)
+      
+spawn(function()
+        pcall(function()
+            while wait() do
+    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
+    Mirragecheck:Set('🏝️ : Mirage Island is Spawning')
+    else
+      Mirragecheck:Set('🏝️ : Mirage Island Not Found ❌')
+    end
+            end
+        end)
+end)
+
+Race:Toggle("Auto Mirage Island",false,function(value)
+  _G.Mirage = value
+StopTween(_G.Mirage)
+  end)
+
+Race:Toggle("Auto Mirage Island [HOP]",false,function(value)
+  _G.MirageHop = value
+  end)
+Race:Toggle("Teleport To Gear",false,function(value)
+  TP(game:GetService("Workspace").Map.MysticIsland:FindFirstChildOfClass("MeshPart").CFrame)
+end)
+
+spawn(function()
+        pcall(function()
+            while wait() do
+             if _G.Mirage then
+              if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/250,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace.Map.MysticIsland.PrimaryPart.CFrame*CFrame.new(0,250,0))
+                else
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Hai Hub"; -- the title (ofc)
+        Text = "Mirage not Found!"; -- what the text says (ofc)
+        Icon = "rbxassetid://11931759373"; -- the image if u want. 
+        Duration = 3; -- how long the notification should in secounds
+        })
+                if _G.MirageHop then
+                wait(6)
+                Hop()
+                end          
+            end
+end
+end
+end)
+end)
+
+if World3 then
+local Moon = {
+['8'] = "http://www.roblox.com/asset/?id=9709149431", -- 🌕
+['7'] = "http://www.roblox.com/asset/?id=9709149052", -- 🌖
+['6'] = "http://www.roblox.com/asset/?id=9709143733", -- 🌗
+['5'] = "http://www.roblox.com/asset/?id=9709150401", -- 🌘
+['4'] = "http://www.roblox.com/asset/?id=9709135895",  -- 🌑
+['3'] = "http://www.roblox.com/asset/?id=9709139597", -- 🌒
+['2'] = "http://www.roblox.com/asset/?id=9709150086", -- 🌓
+['1'] = "http://www.roblox.com/asset/?id=9709149680", -- 🌔
+};
+for i,v in pairs(Moon) do
+	if game:GetService("Lighting").Sky.MoonTextureId == v then
+		MoonPercent = i / 8 * 100
+	end
+end
+
+for i,v in pairs(game.Players:GetPlayers()) do
+	PlayersMin = i
+end
+
+if game:GetService("Lighting").Sky.MoonTextureId == Moon['1'] then
+	MoonIcon = '🌔'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['2'] then
+	MoonIcon = '🌓'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['3'] then
+	MoonIcon = '🌒'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['4'] then
+	MoonIcon = '🌑'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['5'] then
+	MoonIcon = '🌘'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['6'] then
+	MoonIcon = '🌗'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['7'] then
+	MoonIcon = '🌖'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['8'] then
+	MoonIcon = '🌕'
+end
+if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
+	MirageMessage = '```Mirage is spawing : ✔```'
+else
+	MirageMessage = '```Mirage isn\'t spawn : ❌```'
+end
+
+MoonMessage = '```'..tostring(MoonPercent..'%'..' : '..MoonIcon)..'```'
+JoinServer = 'game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,'..'\''..tostring(game.JobId)..'\''..')'
+print('\n'..MoonMessage..'\n'..MirageMessage..'\n'..JoinServer)
+
+local url = "https://discord.com/api/webhooks/1050996834413334549/0-iPYRJpF87gn27kW9vqV3a633zI4c432K0OVrfqEX8KghhQxVdL5DiuMMjxF-XgOVWi" -- ur webhook url
+local data = {
+	["username"] = 'FIEND HUB', -- Webhook name here
+	['content'] = '<@&1068889841091219498>', -- ping everyone if you want to ping role use this <@&1007291553074647132> 
+	["avatar_url"] = "https://cdn.discordapp.com/attachments/1046327225626140693/1068018151452844053/IMG_20221023_070551.png", -- ur discord logo url
+	["embeds"] = {
+		{
+			["description"] = "**__Moon and Mirage Webhook__**",
+			["color"] = tonumber(0xff0000), -- color id		
+			["type"] = "rich",
+			["fields"] =  {
+				{
+					["name"] = "[👥] Players Active",
+					["value"] = '```'..tostring(PlayersMin)..'/12```'
+				},
+				{
+					["name"] = "[📃] JobID",
+					["value"] = '```'..tostring(game.JobId)..'```'
+				},
+				{
+					["name"] = "[📁] Join Server",
+					["value"] = '```'..JoinServer..'```',
+				},
+				{
+					["name"] = "[🕑] Moon Check",
+					["value"] = MoonMessage,
+					["inline"] = true
+				},
+				{
+					["name"] = "[🌲] Mirage Check",
+					["value"] = MirageMessage,
+					["inline"] = true
+				}
+			},
+			["footer"] = {
+				["text"] = "Webhook By", -- you can remove this but it will hurt
+			},
+			["timestamp"] = DateTime.now():ToIsoDate(),
+		}
+	},
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+local headers = {["content-type"] = "application/json"}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+end
+
 Race:Seperator("Race V4")
+    
+Race:Button("Teleport To Top Of GreatTree",function()
+  TP(CFrame.new(2947.556884765625, 2281.630615234375, -7213.54931640625))
+    end)
     
     Race:Button("Teleport To Timple Of Time",function()
   Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
     end)
     
 Race:Button("Teleport To Lever Pull",function()
-  topos(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
+  TP(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
 end)
 
 Race:Button("Teleport To Acient One (Must Be in Temple Of Time!)",function()
-  topos(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
+  TP(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
 end)
    
    Race:Button("Unlock Lever.", function()
@@ -9774,39 +9368,51 @@ end)
    Race:Line()
  
   Race:Button("Teleport Cyborg Door (Must Be in Temple Of Time!)",function()
-  topos(CFrame.new(28492.4140625, 14894.4267578125, -422.1100158691406))
+  TP(CFrame.new(28492.4140625, 14894.4267578125, -422.1100158691406))
   end)
   
   Race:Button("Teleport Fish Door (Must Be in Temple Of Time!)",function()
-  topos(CFrame.new(28224.056640625, 14889.4267578125, -210.5872039794922))
+  TP(CFrame.new(28224.056640625, 14889.4267578125, -210.5872039794922))
   end)
   
   Race:Button("Teleport Ghoul Door (Must Be in Temple Of Time!)",function()
-  topos(CFrame.new(28672.720703125, 14889.1279296875, 454.5961608886719))
+  TP(CFrame.new(28672.720703125, 14889.1279296875, 454.5961608886719))
   end)
   
   Race:Button("Teleport Human Door (Must Be in Temple Of Time!)",function()
-  topos(CFrame.new(29237.294921875, 14889.4267578125, -206.94955444335938))
+  TP(CFrame.new(29237.294921875, 14889.4267578125, -206.94955444335938))
   end)
   
   Race:Button("Teleport Mink Door (Must Be in Temple Of Time!)",function()
-  topos(CFrame.new(29020.66015625, 14889.4267578125, -379.2682800292969))
+  TP(CFrame.new(29020.66015625, 14889.4267578125, -379.2682800292969))
   end)
   
   Race:Button("Teleport Sky Door (Must Be in Temple Of Time!)",function()
-  topos(CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188))
+  TP(CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188))
   end)
+  
+  Race:Seperator("Auto Trials")
+Race:Button("Auto Complete Angel Trial",function(t)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame
+        end)
+
+        Race:Button("Auto Complete Rabbit Trial",function(t)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.MinkTrial.Ceiling.CFrame * CFrame.new(0,-5,0)
+        end)
+
+        Race:Button("Auto Complete Cyborg Trial",function(t)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,300,0)
+        end)
   
   Race:Line()
   
   Race:Button("Teleport To Safe Zone When Pvp (Must Be in Temple Of Time!)",function()
-  topos(CFrame.new(28273.0859375, 14896.5078125, 157.42063903808594))
+  TP(CFrame.new(28273.0859375, 14896.5078125, 157.42063903808594))
   end)
   
   Race:Button("Teleport Pvp Zone (Must Be in Temple Of Time!)",function()
-  topos(CFrame.new(28766.681640625, 14967.1455078125, -164.13290405273438))
+  TP(CFrame.new(28766.681640625, 14967.1455078125, -164.13290405273438))
   end)
-  end
 
 Stats:Seperator(" Auto Stats ")
 
@@ -11310,6 +10916,39 @@ function UpdateChestChams()
 		end)
 	end
 end
+    function UpdateSeaBeastsESP() 
+        for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
+            pcall(function()
+                if SeaBeastsESP then 
+                    if v.Name ~= "SeaBeast" then
+                        if not v:FindFirstChild('NameEsp') then
+                            local bill = Instance.new('BillboardGui',v)
+                            bill.Name = 'NameEsp'
+                            bill.ExtentsOffset = Vector3.new(0, 1, 0)
+                            bill.Size = UDim2.new(1,200,1,30)
+                            bill.Adornee = v
+                            bill.AlwaysOnTop = true
+                            local name = Instance.new('TextLabel',bill)
+                            name.Font = "Code"
+                            name.FontSize = "Size14"
+                            name.TextWrapped = true
+                            name.Size = UDim2.new(1,0,1,0)
+                            name.TextYAlignment = 'Top'
+                            name.BackgroundTransparency = 1
+                            name.TextStrokeTransparency = 0.5
+                            name.TextColor3 = Color3.fromRGB(80, 245, 245)
+                        else
+                            v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
+                        end
+                    end
+                else
+                    if v:FindFirstChild('NameEsp') then
+                        v:FindFirstChild('NameEsp'):Destroy()
+                    end
+                end
+            end)
+        end
+    end
 	function UpdateDevilChams() 
 	for i,v in pairs(game.Workspace:GetChildren()) do
 		pcall(function()
@@ -11481,6 +11120,12 @@ end
 		ESPPlayer = a
 		while ESPPlayer do wait()
 			UpdatePlayerChams()
+		end
+	end)
+	Dungeon:Toggle("ESP Sea Beast",false,function(a)
+		SeaBeastsESP = a
+		while SeaBeastsESP do wait()
+			UpdateSeaBeastsESP()
 		end
 	end)
 	Dungeon:Toggle("ESP Chest",false,function(a)
@@ -12130,6 +11775,246 @@ Misc:Seperator(" Player Misc ")
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",5)
         end
     end)
+    
+    Misc:Seperator(" Boost FPS ")
+	
+	Misc:Toggle("White Screen [ Booster FPS ]",_G.WhiteScreen,function(value)
+ _G.WhiteScreen = value
+
+ if _G.WhiteScreen == true then
+ game:GetService("RunService"):Set3dRenderingEnabled(false)
+ elseif _G.WhiteScreen == false then
+ game:GetService("RunService"):Set3dRenderingEnabled(true)
+ end
+end)
+    
+    local a = game.Lighting
+    local c = Instance.new("ColorCorrectionEffect", a)
+    local e = Instance.new("ColorCorrectionEffect", a)
+    OldAmbient = a.Ambient
+    OldBrightness = a.Brightness
+    OldColorShift_Top = a.ColorShift_Top
+    OldBrightnessc = c.Brightness
+    OldContrastc = c.Contrast
+    OldTintColorc = c.TintColor
+    OldTintColore = e.TintColor
+
+    Misc:Toggle("RTX Mode",_G.RTXMode,function(value)
+        _G.RTXMode = value
+        if not _G.RTXMode then return end
+        while _G.RTXMode do wait()
+            a.Ambient = Color3.fromRGB(33, 33, 33)
+            a.Brightness = 0.3
+            c.Brightness = 0.176
+            c.Contrast = 0.39
+            c.TintColor = Color3.fromRGB(217, 145, 57)
+            game.Lighting.FogEnd = 999
+            if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight") then
+                local a2 = Instance.new("PointLight")
+                a2.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                a2.Range = 15
+                a2.Color = Color3.fromRGB(217, 145, 57)
+            end
+            if not _G.RTXMode then
+                a.Ambient = OldAmbient
+                a.Brightness = OldBrightness
+                a.ColorShift_Top = OldColorShift_Top
+                c.Contrast = OldContrastc
+                c.Brightness = OldBrightnessc
+                c.TintColor = OldTintColorc
+                e.TintColor = OldTintColore
+                game.Lighting.FogEnd = 2500
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight"):Destroy()
+            end
+        end
+    end)
+    
+    Misc:Toggle("Remove Fog",RemoveFog,function(value)
+        RemoveFog = value
+        if not RemoveFog then return end
+        while RemoveFog do wait()
+            game.Lighting.FogEnd = 9e9
+            if not RemoveFog then
+                game.Lighting.FogEnd = 2500
+            end
+        end
+    end)
+    
+Misc:Toggle("Super FPS boost",false,function(value)
+		 _G.SuperFPSboost = value
+	end)
+
+	spawn(function()
+		while wait() do
+	   if _G.SuperFPSboost then
+		for i,v in pairs(game.Workspace.Map:GetDescendants()) do
+			if v.Name == "Tavern" or v.Name == "SmileFactory" or v.Name == "Tree" or v.Name == "Rocks" or v.Name == "PartHouse" or v.Name == "Hotel" or v.Name == "WallPiece" or v.Name == "MiddlePillars" or v.Name == "Cloud" or v.Name == "PluginGrass" or v.Name == "BigHouse" or v.Name == "SmallHouse" or v.Name == "Detail" then
+				v:Destroy()
+			end
+		end 
+		for i,v in pairs(game.ReplicatedStorage.Unloaded:GetDescendants()) do
+			if v.Name == "Tavern" or v.Name == "SmileFactory" or v.Name == "Tree" or v.Name == "Rocks" or v.Name == "PartHouse" or v.Name == "Hotel" or v.Name == "WallPiece" or v.Name == "MiddlePillars" or v.Name == "Cloud" or v.Name == "PluginGrass" or v.Name == "BigHouse" or v.Name == "SmallHouse" or v.Name == "Detail" then
+				v:Destroy()
+			end
+		end
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v:IsA("Accessory") or v.Name == "Pants" or v.Name == "Shirt" then
+				v:Destroy()
+			end
+		end
+		local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+		local g = game
+		local w = g.Workspace
+		local l = g.Lighting
+		local t = w.Terrain
+		t.WaterWaveSize = 0
+		t.WaterWaveSpeed = 0
+		t.WaterReflectance = 0
+		t.WaterTransparency = 0
+		l.GlobalShadows = false
+		l.FogEnd = 9e9
+		l.Brightness = 0
+		settings().Rendering.QualityLevel = "Level01"
+		for i, v in pairs(g:GetDescendants()) do
+			if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+				v.Material = "Plastic"
+				v.Reflectance = 0
+			elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+				v.Transparency = 1
+			elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+				v.Lifetime = NumberRange.new(0)
+			elseif v:IsA("Explosion") then
+				v.BlastPressure = 1
+				v.BlastRadius = 1
+			elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+				v.Enabled = false
+			elseif v:IsA("MeshPart") then
+				v.Material = "Plastic"
+				v.Reflectance = 0
+				v.TextureID = 10385902758728957
+			end
+		end
+		for i, e in pairs(l:GetChildren()) do
+			if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+				e.Enabled = false
+			end
+		end
+	end
+end
+end)
+  
+    Misc:Button("FPS Boost",function()
+        pcall(function()
+            game:GetService("Lighting").FantasySky:Destroy()
+            local g = game
+            local w = g.Workspace
+            local l = g.Lighting
+            local t = w.Terrain
+            t.WaterWaveSize = 0
+            t.WaterWaveSpeed = 0
+            t.WaterReflectance = 0
+            t.WaterTransparency = 0
+            l.GlobalShadows = false
+            l.FogEnd = 9e9
+            l.Brightness = 0
+            settings().Rendering.QualityLevel = "Level01"
+            for i, v in pairs(g:GetDescendants()) do
+                if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then 
+                    v.Material = "Plastic"
+                    v.Reflectance = 0
+                elseif v:IsA("Decal") or v:IsA("Texture") then
+                    v.Transparency = 1
+                elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+                    v.Lifetime = NumberRange.new(0)
+                elseif v:IsA("Explosion") then
+                    v.BlastPressure = 1
+                    v.BlastRadius = 1
+                elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+                    v.Enabled = false
+                elseif v:IsA("MeshPart") then
+                    v.Material = "Plastic"
+                    v.Reflectance = 0
+                    v.TextureID = 10385902758728957
+                end
+            end
+            for i, e in pairs(l:GetChildren()) do
+                if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+                    e.Enabled = false
+                end
+            end
+            for i, v in pairs(game:GetService("Workspace").Camera:GetDescendants()) do
+                if v.Name == ("Water;") then
+                    v.Transparency = 1
+                    v.Material = "Plastic"
+                end
+            end
+        end)
+    end)
+    
+    Misc:Toggle("Rainbow Haki",false,function(value)
+RainbowHaki = value
+end)
+                ---- [RainbowHaki]
+                spawn(function()
+                    while wait() do
+                        if RainbowHaki then
+                            pcall(function()
+                                if game.Players.LocalPlayer.Character.HasBuso then
+                                    for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
+                                        if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
+                                            v.Color = Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+                                        end
+                                    end
+                                end
+                            end)
+                        end
+                    end
+                end)
+            
+                spawn(function()
+                    while wait() do
+                        if RainbowHaki == false then
+                            pcall(function()
+                                if game.Players.LocalPlayer.Character.HasBuso then
+                                    for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
+                                        if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
+                                            v.Color = Color3.fromRGB(0, 0, 0)
+                                        end
+                                    end
+                                end
+                            end)
+                        end
+                    end
+                end)
+    
+    Misc:Button("Unlock FPS",function()
+        setfpscap(500)
+    end)
+
+    Misc:Button("FPS delete color",function()
+for _,v in pairs(workspace:GetDescendants()) do
+if v.ClassName == "Part"
+or v.ClassName == "SpawnLocation"
+or v.ClassName == "WedgePart"
+or v.ClassName == "Terrain"
+or v.ClassName == "MeshPart" then
+v.BrickColor = BrickColor.new(155, 155, 155)
+v.Material = "Plastic"
+end
+end
+end)
+
+    Misc:Button("FPS Fast Mode",function()
+for _,v in pairs(workspace:GetDescendants()) do
+if v.ClassName == "Part"
+or v.ClassName == "SpawnLocation"
+or v.ClassName == "WedgePart"
+or v.ClassName == "Terrain"
+or v.ClassName == "MeshPart" then
+v.Material = "Plastic"
+end
+end
+end)
 
 Misc:Toggle("No Clip",_G.No_clip,function(value)
  _G.No_clip = value
