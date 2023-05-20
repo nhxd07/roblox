@@ -9423,6 +9423,7 @@ end
 end)
 end)
 
+if World3 then
 local Moon = {
 ['8'] = "http://www.roblox.com/asset/?id=9709149431", -- 🌕
 ['7'] = "http://www.roblox.com/asset/?id=9709149052", -- 🌖
