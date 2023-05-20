@@ -106,7 +106,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Main.Parent = HovxrzGui
     Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
     Main.BorderColor3 = Color3.fromRGB(25, 25, 25)
-    Main.Position = UDim2.new(0.5, 0,0.499, 0)
+    Main.Position = UDim2.new(0.5, 0,0.299, 0)
     -- Main.Size = UDim2.new(0, 575, 0, 360)
     Main.AnchorPoint = Vector2.new(0.5,0.5)
 
@@ -167,8 +167,8 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Description.Parent = Top
     Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Description.BackgroundTransparency = 1.000
-    Description.Position = UDim2.new(0, 125, 0, 0)
-    Description.Size = UDim2.new(0, 250, 0, 20)
+    Description.Position = UDim2.new(0, 325, 0, 0)
+    Description.Size = UDim2.new(0, 450, 0, 20)
     Description.Font = Enum.Font.GothamSemibold
     Description.Text = text2
     Description.TextColor3 = Color3.fromRGB(225, 225, 225)
@@ -484,7 +484,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
             ToggleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ToggleLabel.BackgroundTransparency = 1.000
             ToggleLabel.Position = UDim2.new(0.0447761193, 0, 0, 0)
-            ToggleLabel.Size = UDim2.new(0, 276, 0, 25)
+            ToggleLabel.Size = UDim2.new(0, 476, 0, 25)
             ToggleLabel.Font = Enum.Font.GothamSemibold
             ToggleLabel.Text = text
             ToggleLabel.TextColor3 = Color3.fromRGB(225, 225, 225)
@@ -495,7 +495,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
             ToggleImage.Name = "ToggleImage"
             ToggleImage.Parent = ToggleFrame
             ToggleImage.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
-            ToggleImage.Position = UDim2.new(0, 290, 0, 1)
+            ToggleImage.Position = UDim2.new(0, 490, 0, 1)
             ToggleImage.Size = UDim2.new(0, 46, 0, 21)
 
             local UICorner = Instance.new("UICorner")
@@ -666,7 +666,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 
 				Item.MouseButton1Click:Connect(function()
 					isdropping = false
-					Dropdown:TweenSize(UDim2.new(0,335,0,30),"Out","Quad",0.3,true)
+					Dropdown:TweenSize(UDim2.new(0,535,0,30),"Out","Quad",0.3,true)
 					TweenService:Create(
 						DropImage,
 						TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -682,7 +682,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			DropButton.MouseButton1Click:Connect(function()
 				if isdropping == false then
 					isdropping = true
-					Dropdown:TweenSize(UDim2.new(0,335,0,100),"Out","Quad",0.3,true)
+					Dropdown:TweenSize(UDim2.new(0,535,0,100),"Out","Quad",0.3,true)
 					TweenService:Create(
 						DropImage,
 						TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -690,7 +690,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 					):Play()
 				else
 					isdropping = false
-					Dropdown:TweenSize(UDim2.new(0,335,0,30),"Out","Quad",0.3,true)
+					Dropdown:TweenSize(UDim2.new(0,535,0,30),"Out","Quad",0.3,true)
 					TweenService:Create(
 						DropImage,
 						TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -731,7 +731,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 
 				Item.MouseButton1Click:Connect(function()
 					isdropping = false
-					Dropdown:TweenSize(UDim2.new(0,335,0,30),"Out","Quad",0.3,true)
+					Dropdown:TweenSize(UDim2.new(0,535,0,30),"Out","Quad",0.3,true)
 					TweenService:Create(
 						DropImage,
 						TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -744,7 +744,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			function dropfunc:Clear()
 				DropTitle.Text = tostring(text).." : "
 				isdropping = false
-				Dropdown:TweenSize(UDim2.new(0,335,0,30),"Out","Quad",0.3,true)
+				Dropdown:TweenSize(UDim2.new(0,535,0,30),"Out","Quad",0.3,true)
 				TweenService:Create(
 					DropImage,
 					TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
@@ -802,7 +802,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			SliderLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			SliderLabel.BackgroundTransparency = 1.000
 			SliderLabel.Position = UDim2.new(0, 15, 0, 0)
-			SliderLabel.Size = UDim2.new(0, 180, 0, 26)
+			SliderLabel.Size = UDim2.new(0, 380, 0, 26)
 			SliderLabel.Font = Enum.Font.GothamSemibold
 			SliderLabel.Text = text
 			SliderLabel.TextColor3 = Color3.fromRGB(225, 225, 225)
@@ -814,7 +814,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			HAHA.Parent = sliderr
 			HAHA.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			HAHA.BackgroundTransparency = 1.000
-			HAHA.Size = UDim2.new(0, 333, 0, 29)
+			HAHA.Size = UDim2.new(0, 533, 0, 29)
 
 			AHEHE.Name = "AHEHE"
 			AHEHE.Parent = sliderr
@@ -890,29 +890,29 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			end
 			
 			AHEHE.MouseButton1Down:Connect(function()
-				Value = math.floor((((tonumber(max) - tonumber(min)) / 315) * bar1.AbsoluteSize.X) + tonumber(min)) or 0
+				Value = math.floor((((tonumber(max) - tonumber(min)) / 515) * bar1.AbsoluteSize.X) + tonumber(min)) or 0
 				pcall(function()
 					callback(Value)
 				end)
-				bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 315), 0, 5)
-				circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 305), 0, -3)
+				bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 515), 0, 5)
+				circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 505), 0, -3)
 				moveconnection = mouse.Move:Connect(function()
 					TextBox.Text = Value
-					Value = math.floor((((tonumber(max) - tonumber(min)) / 315) * bar1.AbsoluteSize.X) + tonumber(min))
+					Value = math.floor((((tonumber(max) - tonumber(min)) / 515) * bar1.AbsoluteSize.X) + tonumber(min))
 					pcall(function()
 						callback(Value)
 					end)
-					bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 315), 0, 5)
-					circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 305), 0, -3)
+					bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 515), 0, 5)
+					circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 505), 0, -3)
 				end)
 				releaseconnection = uis.InputEnded:Connect(function(Mouse)
 					if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
-						Value = math.floor((((tonumber(max) - tonumber(min)) / 315) * bar1.AbsoluteSize.X) + tonumber(min))
+						Value = math.floor((((tonumber(max) - tonumber(min)) / 515) * bar1.AbsoluteSize.X) + tonumber(min))
 						pcall(function()
 							callback(Value)
 						end)
-						bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 315), 0, 5)
-						circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 305), 0, -3)
+						bar1.Size = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X, 0, 515), 0, 5)
+						circlebar.Position = UDim2.new(0, math.clamp(mouse.X - bar1.AbsolutePosition.X - 2, 0, 505), 0, -3)
 						moveconnection:Disconnect()
 						releaseconnection:Disconnect()
 					end
@@ -920,7 +920,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			end)
 			releaseconnection = uis.InputEnded:Connect(function(Mouse)
 				if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
-					Value = math.floor((((tonumber(max) - tonumber(min)) / 315) * bar1.AbsoluteSize.X) + tonumber(min))
+					Value = math.floor((((tonumber(max) - tonumber(min)) / 515) * bar1.AbsoluteSize.X) + tonumber(min))
 					TextBox.Text = Value
 				end
 			end)
@@ -972,7 +972,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			TextboxLabel.BackgroundTransparency = 1.000
 			TextboxLabel.Position = UDim2.new(0, 15, 0, 0)
 			TextboxLabel.Text = text
-			TextboxLabel.Size = UDim2.new(0, 145, 0, 31)
+			TextboxLabel.Size = UDim2.new(0, 345, 0, 31)
 			TextboxLabel.Font = Enum.Font.GothamSemibold
 			TextboxLabel.TextColor3 = Color3.fromRGB(225, 225, 225)
 			TextboxLabel.TextSize = 16.000
@@ -1062,7 +1062,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			Sep2.Parent = Seperator
 			Sep2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Sep2.BackgroundTransparency = 1.000
-			Sep2.Position = UDim2.new(0, 120, 0, 0)
+			Sep2.Position = UDim2.new(0, 320, 0, 0)
 			Sep2.Size = UDim2.new(0, 100, 0, 20)
 			Sep2.Font = Enum.Font.GothamSemibold
 			Sep2.Text = text
