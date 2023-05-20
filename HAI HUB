@@ -9118,77 +9118,7 @@ end
 
 if World3 then
 
-Race:Seperator(" Mirage Island ")
 
-local FM = Main:Label('...')
-local Mirragecheck = Main:Label('...')
-
-spawn(function()
-            while wait() do
-                pcall(function()
-                    if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
-                        FM:Set("🌑 : Full Moon 100%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
-                        FM:Set("🌒 : Full Moon 75%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
-                        FM:Set("🌓 : Full Moon 50%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
-                        FM:Set("🌗 : Full Moon 25%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
-                        FM:Set("🌖 : Full Moon 15%")
-                    else
-                        FM:Set("🌚 : Full Moon 0%")
-                    end
-                end)
-            end
-end)
-      
-spawn(function()
-        pcall(function()
-            while wait() do
-    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-    Mirragecheck:Set('🏝️ : Mirage Island is Spawning')
-    else
-      Mirragecheck:Set('🏝️ : Mirage Island Not Found ❌')
-    end
-            end
-        end)
-end)
-
-Race:Toggle("Auto Mirage Island",false,function(value)
-  _G.Mirage = value
-StopTween(_G.Mirage)
-  end)
-
-Race:Toggle("Auto Mirage Island [HOP]",false,function(value)
-  _G.MirageHop = value
-  end)
-Race:Toggle("Teleport To Gear",false,function(value)
-  TP(game:GetService("Workspace").Map.MysticIsland:FindFirstChildOfClass("MeshPart").CFrame)
-end)
-
-spawn(function()
-        pcall(function()
-            while wait() do
-             if _G.Mirage then
-              if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/250,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace.Map.MysticIsland.PrimaryPart.CFrame*CFrame.new(0,250,0))
-                else
-game.StarterGui:SetCore("SendNotification", {
-        Title = "Hai Hub"; -- the title (ofc)
-        Text = "Mirage not Found!"; -- what the text says (ofc)
-        Icon = "rbxassetid://11931759373"; -- the image if u want. 
-        Duration = 3; -- how long the notification should in secounds
-        })
-                if _G.MirageHop then
-                wait(6)
-                Hop()
-                end          
-            end
-end
-end
-end)
-end)
 
 Race:Seperator("Race V4")
     
