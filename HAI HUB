@@ -4652,6 +4652,239 @@ Setting:Toggle("Auto Click",false,function(value)
  _G.click = value
 end)
 
+Setting:Toggle("Disabled Damage Text",_G.DisableDamage,function(value)
+ _G.DisableDamage = value
+end)
+
+spawn(function()
+ while wait() do
+ if _G.WhiteScreen then
+ for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+ if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "DamageCounter" or v.Name == "SwordSlash" or v.Name == "SlashTail" or v.Name == "Sounds" then
+ v:Destroy()
+ end
+ end
+ end
+ end
+ end)
+
+Setting:Toggle("White Screen [ Booster FPS ]",_G.WhiteScreen,function(value)
+ _G.WhiteScreen = value
+
+ if _G.WhiteScreen == true then
+ game:GetService("RunService"):Set3dRenderingEnabled(false)
+ elseif _G.WhiteScreen == false then
+ game:GetService("RunService"):Set3dRenderingEnabled(true)
+ end
+end)
+
+
+
+local a = game.Lighting
+local c = Instance.new("ColorCorrectionEffect", a)
+local e = Instance.new("ColorCorrectionEffect", a)
+OldAmbient = a.Ambient
+OldBrightness = a.Brightness
+OldColorShift_Top = a.ColorShift_Top
+OldBrightnessc = c.Brightness
+OldContrastc = c.Contrast
+OldTintColorc = c.TintColor
+OldTintColore = e.TintColor
+Setting:Toggle("RTX Mode",_G.RTXMode,function(value)
+_G.RTXMode = value
+if not _G.RTXMode then return end
+while _G.RTXMode do wait()
+a.Ambient = Color3.fromRGB(33, 33, 33)
+a.Brightness = 0.3
+c.Brightness = 0.176
+c.Contrast = 0.39
+c.TintColor = Color3.fromRGB(217, 145, 57)
+game.Lighting.FogEnd = 999
+if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight") then
+local a2 = Instance.new("PointLight")
+a2.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+a2.Range = 15
+a2.Color = Color3.fromRGB(217, 145, 57)
+end
+if not _G.RTXMode then
+a.Ambient = OldAmbient
+a.Brightness = OldBrightness
+a.ColorShift_Top = OldColorShift_Top
+c.Contrast = OldContrastc
+c.Brightness = OldBrightnessc
+c.TintColor = OldTintColorc
+e.TintColor = OldTintColore
+game.Lighting.FogEnd = 2500
+game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight"):Destroy()
+end
+end
+end)
+
+Setting:Toggle("Remove Attack Animation",true,function(value)
+    getgenv().A = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).wrapAttackAnimationAsync 
+getgenv().B = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.Particle).play
+spawn(function()
+
+    while wait() do
+            pcall(function()
+                require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).wrapAttackAnimationAsync =function(a1,a2,a3,a4,a5)
+                    local GetBladeHits = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).getBladeHits(a2,a3,a4)
+                    if GetBladeHits then
+                         require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).play = function() end
+                        a1:Play(0.2, 0.2, 0.2)
+                        a5(GetBladeHits)
+                         require(game:GetService("ReplicatedStorage").CombatFramework.RigLib).play = getgenv().B 
+                        wait(.5)
+                        a1:Stop()
+                    end
+                end
+            end)
+        
+    end
+end)
+end)
+  
+Setting:Toggle("Delete Attack FIx",nil,function(d)
+    _G.DeleteAttackFx = d
+    if _G.DeleteAttackFx == true then
+    while _G.DeleteAttackFx do wait()
+        for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+            if v.Name == "CurvedRing" or v.Name == "DamageCounter" or v.Name == "SwordSlash" or v.Name == "Damage" or v.Name == "Mon" or v.Name == "Sounds" then
+                v:Destroy() 
+            end
+        end
+    end
+    end
+end)
+    
+    spawn(function()
+      while wait() do
+      if _G.WhiteScreen then
+        for i, v in pairs(game.Workspace["_WorldOrigin"]:GetChildren()) do
+            if v.Name == "CurvedRing" or v.Name == "SlashHit" or v.Name == "DamageCounter" or v.Name == "SwordSlash" or v.Name == "SlashTail" or v.Name == "Sounds" then
+                v:Destroy() 
+            end
+        end
+    end
+    end
+end) 
+
+
+Setting:Toggle("Rainbow Haki",false,function(value)
+RainbowHaki = value
+end)
+                ---- [RainbowHaki]
+                spawn(function()
+                    while wait() do
+                        if RainbowHaki then
+                            pcall(function()
+                                if game.Players.LocalPlayer.Character.HasBuso then
+                                    for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
+                                        if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
+                                            v.Color = Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+                                        end
+                                    end
+                                end
+                            end)
+                        end
+                    end
+                end)
+            
+                spawn(function()
+                    while wait() do
+                        if RainbowHaki == false then
+                            pcall(function()
+                                if game.Players.LocalPlayer.Character.HasBuso then
+                                    for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
+                                        if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
+                                            v.Color = Color3.fromRGB(0, 0, 0)
+                                        end
+                                    end
+                                end
+                            end)
+                        end
+                    end
+                end)
+Setting:Toggle("No Fog",function()
+                    spawn(function()
+                        pcall(function()
+                            game.Lighting.FogEnd = math.huge
+                            game:GetService("Lighting").FantasySky:Destroy()
+                        end)
+                    end)
+                end)
+   
+    
+    Setting:Toggle("Hide Ui (Reduce Lag)",false,function(value)
+        if value == true then
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Beli.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.HP.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Energy.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.StatsButton.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.ShopButton.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Skills.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Level.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.MenuButton.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Code.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Settings.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Mute.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = false
+        else
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Beli.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.HP.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Energy.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.StatsButton.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.ShopButton.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Skills.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Level.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.MenuButton.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Code.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Settings.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Mute.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = true
+        end
+    end)
+
+Setting:Button("FPS Boost",function()
+		local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+		local g = game
+		local w = g.Workspace
+		local l = g.Lighting
+		local t = w.Terrain
+		t.WaterWaveSize = 0
+		t.WaterWaveSpeed = 0
+		t.WaterReflectance = 0
+		t.WaterTransparency = 0
+		l.GlobalShadows = false
+		l.FogEnd = 9e9
+		l.Brightness = 0
+		settings().Rendering.QualityLevel = "Level01"
+		for i, v in pairs(g:GetDescendants()) do
+			if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then 
+				v.Material = "Plastic"
+				v.Reflectance = 0
+			elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+				v.Transparency = 1
+			elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+				v.Lifetime = NumberRange.new(0)
+			elseif v:IsA("Explosion") then
+				v.BlastPressure = 1
+				v.BlastRadius = 1
+			elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+				v.Enabled = false
+			elseif v:IsA("MeshPart") then
+				v.Material = "Plastic"
+				v.Reflectance = 0
+				v.TextureID = 10385902758728957
+			end
+		end
+		for i, e in pairs(l:GetChildren()) do
+			if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+				e.Enabled = false
+			end
+		end
+	end)
+
 
 Setting:Seperator(" Settings Mastery ")
 
@@ -5646,6 +5879,78 @@ spawn(function()
 					end)
 				end
 			end
+end)
+
+Main:Seperator(" Mirage Island ")
+
+local FM = Main:Label('...')
+local Mirragecheck = Main:Label('...')
+
+spawn(function()
+            while wait() do
+                pcall(function()
+                    if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+                        FM:Set("🌑 : Full Moon 100%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
+                        FM:Set("🌒 : Full Moon 75%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
+                        FM:Set("🌓 : Full Moon 50%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
+                        FM:Set("🌗 : Full Moon 25%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
+                        FM:Set("🌖 : Full Moon 15%")
+                    else
+                        FM:Set("🌚 : Full Moon 0%")
+                    end
+                end)
+            end
+end)
+      
+spawn(function()
+        pcall(function()
+            while wait() do
+    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
+    Mirragecheck:Set('🏝️ : Mirage Island is Spawning')
+    else
+      Mirragecheck:Set('🏝️ : Mirage Island Not Found ❌')
+    end
+            end
+        end)
+end)
+
+Main:Toggle("Auto Mirage Island",false,function(value)
+  _G.Mirage = value
+StopTween(_G.Mirage)
+  end)
+
+Main:Toggle("Auto Mirage Island [HOP]",false,function(value)
+  _G.MirageHop = value
+  end)
+Main:Toggle("Teleport To Gear",false,function(value)
+  TP(game:GetService("Workspace").Map.MysticIsland:FindFirstChildOfClass("MeshPart").CFrame)
+end)
+
+spawn(function()
+        pcall(function()
+            while wait() do
+             if _G.Mirage then
+              if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/250,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace.Map.MysticIsland.PrimaryPart.CFrame*CFrame.new(0,250,0))
+                else
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Hai Hub"; -- the title (ofc)
+        Text = "Mirage not Found!"; -- what the text says (ofc)
+        Icon = "rbxassetid://11931759373"; -- the image if u want. 
+        Duration = 3; -- how long the notification should in secounds
+        })
+                if _G.MirageHop then
+                wait(6)
+                Hop()
+                end          
+            end
+end
+end
+end)
 end)
 
 Main:Seperator(" Chest ")
@@ -9117,25 +9422,18 @@ if World1 or World2 then
 end
 
 if World3 then
-
-
-
 Race:Seperator("Race V4")
-    
-Race:Button("Teleport To Top Of GreatTree",function()
-  TP(CFrame.new(2947.556884765625, 2281.630615234375, -7213.54931640625))
-    end)
     
     Race:Button("Teleport To Timple Of Time",function()
   Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
     end)
     
 Race:Button("Teleport To Lever Pull",function()
-  TP(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
+  topos(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
 end)
 
 Race:Button("Teleport To Acient One (Must Be in Temple Of Time!)",function()
-  TP(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
+  topos(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
 end)
    
    Race:Button("Unlock Lever.", function()
@@ -9202,51 +9500,39 @@ end)
    Race:Line()
  
   Race:Button("Teleport Cyborg Door (Must Be in Temple Of Time!)",function()
-  TP(CFrame.new(28492.4140625, 14894.4267578125, -422.1100158691406))
+  topos(CFrame.new(28492.4140625, 14894.4267578125, -422.1100158691406))
   end)
   
   Race:Button("Teleport Fish Door (Must Be in Temple Of Time!)",function()
-  TP(CFrame.new(28224.056640625, 14889.4267578125, -210.5872039794922))
+  topos(CFrame.new(28224.056640625, 14889.4267578125, -210.5872039794922))
   end)
   
   Race:Button("Teleport Ghoul Door (Must Be in Temple Of Time!)",function()
-  TP(CFrame.new(28672.720703125, 14889.1279296875, 454.5961608886719))
+  topos(CFrame.new(28672.720703125, 14889.1279296875, 454.5961608886719))
   end)
   
   Race:Button("Teleport Human Door (Must Be in Temple Of Time!)",function()
-  TP(CFrame.new(29237.294921875, 14889.4267578125, -206.94955444335938))
+  topos(CFrame.new(29237.294921875, 14889.4267578125, -206.94955444335938))
   end)
   
   Race:Button("Teleport Mink Door (Must Be in Temple Of Time!)",function()
-  TP(CFrame.new(29020.66015625, 14889.4267578125, -379.2682800292969))
+  topos(CFrame.new(29020.66015625, 14889.4267578125, -379.2682800292969))
   end)
   
   Race:Button("Teleport Sky Door (Must Be in Temple Of Time!)",function()
-  TP(CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188))
+  topos(CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188))
   end)
-  
-  Race:Seperator("Auto Trials")
-Race:Button("Auto Complete Angel Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame
-        end)
-
-        Race:Button("Auto Complete Rabbit Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.MinkTrial.Ceiling.CFrame * CFrame.new(0,-5,0)
-        end)
-
-        Race:Button("Auto Complete Cyborg Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,300,0)
-        end)
   
   Race:Line()
   
   Race:Button("Teleport To Safe Zone When Pvp (Must Be in Temple Of Time!)",function()
-  TP(CFrame.new(28273.0859375, 14896.5078125, 157.42063903808594))
+  topos(CFrame.new(28273.0859375, 14896.5078125, 157.42063903808594))
   end)
   
   Race:Button("Teleport Pvp Zone (Must Be in Temple Of Time!)",function()
-  TP(CFrame.new(28766.681640625, 14967.1455078125, -164.13290405273438))
+  topos(CFrame.new(28766.681640625, 14967.1455078125, -164.13290405273438))
   end)
+  end
 
 Stats:Seperator(" Auto Stats ")
 
@@ -11570,246 +11856,6 @@ Misc:Seperator(" Player Misc ")
             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",5)
         end
     end)
-    
-    Misc:Seperator(" Boost FPS ")
-	
-	Misc:Toggle("White Screen [ Booster FPS ]",_G.WhiteScreen,function(value)
- _G.WhiteScreen = value
-
- if _G.WhiteScreen == true then
- game:GetService("RunService"):Set3dRenderingEnabled(false)
- elseif _G.WhiteScreen == false then
- game:GetService("RunService"):Set3dRenderingEnabled(true)
- end
-end)
-    
-    local a = game.Lighting
-    local c = Instance.new("ColorCorrectionEffect", a)
-    local e = Instance.new("ColorCorrectionEffect", a)
-    OldAmbient = a.Ambient
-    OldBrightness = a.Brightness
-    OldColorShift_Top = a.ColorShift_Top
-    OldBrightnessc = c.Brightness
-    OldContrastc = c.Contrast
-    OldTintColorc = c.TintColor
-    OldTintColore = e.TintColor
-
-    Misc:Toggle("RTX Mode",_G.RTXMode,function(value)
-        _G.RTXMode = value
-        if not _G.RTXMode then return end
-        while _G.RTXMode do wait()
-            a.Ambient = Color3.fromRGB(33, 33, 33)
-            a.Brightness = 0.3
-            c.Brightness = 0.176
-            c.Contrast = 0.39
-            c.TintColor = Color3.fromRGB(217, 145, 57)
-            game.Lighting.FogEnd = 999
-            if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight") then
-                local a2 = Instance.new("PointLight")
-                a2.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-                a2.Range = 15
-                a2.Color = Color3.fromRGB(217, 145, 57)
-            end
-            if not _G.RTXMode then
-                a.Ambient = OldAmbient
-                a.Brightness = OldBrightness
-                a.ColorShift_Top = OldColorShift_Top
-                c.Contrast = OldContrastc
-                c.Brightness = OldBrightnessc
-                c.TintColor = OldTintColorc
-                e.TintColor = OldTintColore
-                game.Lighting.FogEnd = 2500
-                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight"):Destroy()
-            end
-        end
-    end)
-    
-    Misc:Toggle("Remove Fog",RemoveFog,function(value)
-        RemoveFog = value
-        if not RemoveFog then return end
-        while RemoveFog do wait()
-            game.Lighting.FogEnd = 9e9
-            if not RemoveFog then
-                game.Lighting.FogEnd = 2500
-            end
-        end
-    end)
-    
-Misc:Toggle("Super FPS boost",false,function(value)
-		 _G.SuperFPSboost = value
-	end)
-
-	spawn(function()
-		while wait() do
-	   if _G.SuperFPSboost then
-		for i,v in pairs(game.Workspace.Map:GetDescendants()) do
-			if v.Name == "Tavern" or v.Name == "SmileFactory" or v.Name == "Tree" or v.Name == "Rocks" or v.Name == "PartHouse" or v.Name == "Hotel" or v.Name == "WallPiece" or v.Name == "MiddlePillars" or v.Name == "Cloud" or v.Name == "PluginGrass" or v.Name == "BigHouse" or v.Name == "SmallHouse" or v.Name == "Detail" then
-				v:Destroy()
-			end
-		end 
-		for i,v in pairs(game.ReplicatedStorage.Unloaded:GetDescendants()) do
-			if v.Name == "Tavern" or v.Name == "SmileFactory" or v.Name == "Tree" or v.Name == "Rocks" or v.Name == "PartHouse" or v.Name == "Hotel" or v.Name == "WallPiece" or v.Name == "MiddlePillars" or v.Name == "Cloud" or v.Name == "PluginGrass" or v.Name == "BigHouse" or v.Name == "SmallHouse" or v.Name == "Detail" then
-				v:Destroy()
-			end
-		end
-		for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-			if v:IsA("Accessory") or v.Name == "Pants" or v.Name == "Shirt" then
-				v:Destroy()
-			end
-		end
-		local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
-		local g = game
-		local w = g.Workspace
-		local l = g.Lighting
-		local t = w.Terrain
-		t.WaterWaveSize = 0
-		t.WaterWaveSpeed = 0
-		t.WaterReflectance = 0
-		t.WaterTransparency = 0
-		l.GlobalShadows = false
-		l.FogEnd = 9e9
-		l.Brightness = 0
-		settings().Rendering.QualityLevel = "Level01"
-		for i, v in pairs(g:GetDescendants()) do
-			if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
-				v.Material = "Plastic"
-				v.Reflectance = 0
-			elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
-				v.Transparency = 1
-			elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-				v.Lifetime = NumberRange.new(0)
-			elseif v:IsA("Explosion") then
-				v.BlastPressure = 1
-				v.BlastRadius = 1
-			elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
-				v.Enabled = false
-			elseif v:IsA("MeshPart") then
-				v.Material = "Plastic"
-				v.Reflectance = 0
-				v.TextureID = 10385902758728957
-			end
-		end
-		for i, e in pairs(l:GetChildren()) do
-			if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-				e.Enabled = false
-			end
-		end
-	end
-end
-end)
-  
-    Misc:Button("FPS Boost",function()
-        pcall(function()
-            game:GetService("Lighting").FantasySky:Destroy()
-            local g = game
-            local w = g.Workspace
-            local l = g.Lighting
-            local t = w.Terrain
-            t.WaterWaveSize = 0
-            t.WaterWaveSpeed = 0
-            t.WaterReflectance = 0
-            t.WaterTransparency = 0
-            l.GlobalShadows = false
-            l.FogEnd = 9e9
-            l.Brightness = 0
-            settings().Rendering.QualityLevel = "Level01"
-            for i, v in pairs(g:GetDescendants()) do
-                if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then 
-                    v.Material = "Plastic"
-                    v.Reflectance = 0
-                elseif v:IsA("Decal") or v:IsA("Texture") then
-                    v.Transparency = 1
-                elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-                    v.Lifetime = NumberRange.new(0)
-                elseif v:IsA("Explosion") then
-                    v.BlastPressure = 1
-                    v.BlastRadius = 1
-                elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
-                    v.Enabled = false
-                elseif v:IsA("MeshPart") then
-                    v.Material = "Plastic"
-                    v.Reflectance = 0
-                    v.TextureID = 10385902758728957
-                end
-            end
-            for i, e in pairs(l:GetChildren()) do
-                if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-                    e.Enabled = false
-                end
-            end
-            for i, v in pairs(game:GetService("Workspace").Camera:GetDescendants()) do
-                if v.Name == ("Water;") then
-                    v.Transparency = 1
-                    v.Material = "Plastic"
-                end
-            end
-        end)
-    end)
-    
-    Misc:Toggle("Rainbow Haki",false,function(value)
-RainbowHaki = value
-end)
-                ---- [RainbowHaki]
-                spawn(function()
-                    while wait() do
-                        if RainbowHaki then
-                            pcall(function()
-                                if game.Players.LocalPlayer.Character.HasBuso then
-                                    for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
-                                        if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
-                                            v.Color = Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
-                                        end
-                                    end
-                                end
-                            end)
-                        end
-                    end
-                end)
-            
-                spawn(function()
-                    while wait() do
-                        if RainbowHaki == false then
-                            pcall(function()
-                                if game.Players.LocalPlayer.Character.HasBuso then
-                                    for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
-                                        if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
-                                            v.Color = Color3.fromRGB(0, 0, 0)
-                                        end
-                                    end
-                                end
-                            end)
-                        end
-                    end
-                end)
-    
-    Misc:Button("Unlock FPS",function()
-        setfpscap(500)
-    end)
-
-    Misc:Button("FPS delete color",function()
-for _,v in pairs(workspace:GetDescendants()) do
-if v.ClassName == "Part"
-or v.ClassName == "SpawnLocation"
-or v.ClassName == "WedgePart"
-or v.ClassName == "Terrain"
-or v.ClassName == "MeshPart" then
-v.BrickColor = BrickColor.new(155, 155, 155)
-v.Material = "Plastic"
-end
-end
-end)
-
-    Misc:Button("FPS Fast Mode",function()
-for _,v in pairs(workspace:GetDescendants()) do
-if v.ClassName == "Part"
-or v.ClassName == "SpawnLocation"
-or v.ClassName == "WedgePart"
-or v.ClassName == "Terrain"
-or v.ClassName == "MeshPart" then
-v.Material = "Plastic"
-end
-end
-end)
 
 Misc:Toggle("No Clip",_G.No_clip,function(value)
  _G.No_clip = value
