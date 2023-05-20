@@ -344,7 +344,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Main.BackgroundTransparency = 1
     Tab.Visible = false
     Page.Visible = false
-    Main.Size = UDim2.new(0,375,0,0)
+    Main.Size = UDim2.new(0,400,0,0)
     Top.Size = UDim2.new(0,0,0,20)
     TweenService:Create(
         Top,
@@ -358,7 +358,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
         TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
         {Size = UDim2.new(0, 375, 0, 460)}
     ):Play()
-    repeat wait() until Main.Size == UDim2.new(0, 375, 0, 460)
+    repeat wait() until Main.Size == UDim2.new(0, 400, 0, 560)
     Tab.Visible = true
     Page.Visible = true
 
@@ -384,7 +384,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
                 TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
                 {Size = UDim2.new(0,375,0,0)}
             ):Play()
-            repeat wait() until Main.Size == UDim2.new(0,375,0,0)
+            repeat wait() until Main.Size == UDim2.new(0,5,0,0)
             Main.BackgroundTransparency = 1
             TweenService:Create(
                 Top,
@@ -405,7 +405,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
                 TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
                 {Size = UDim2.new(0, 375, 0, 460)}
             ):Play()
-            repeat wait() until Main.Size == UDim2.new(0, 375, 0, 460)
+            repeat wait() until Main.Size == UDim2.new(0, 400, 0, 560)
             Tab.Visible = true
             Page.Visible = true
         end
