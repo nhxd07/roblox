@@ -107,7 +107,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
     Main.BorderColor3 = Color3.fromRGB(25, 25, 25)
     Main.Position = UDim2.new(0.5, 0,0.499, 0)
-    -- Main.Size = UDim2.new(0, 600, 0, 460)
+    -- Main.Size = UDim2.new(0, 575, 0, 360)
     Main.AnchorPoint = Vector2.new(0.5,0.5)
 
     local Top = Instance.new("Frame")
@@ -115,7 +115,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Top.Parent = Main
     Top.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
     Top.BorderSizePixel = 0
-    -- Top.Size = UDim2.new(0, 600, 0, 20)
+    -- Top.Size = UDim2.new(0, 575, 0, 20)
     Top.ClipsDescendants = true
     
     local NameHub = Instance.new("TextLabel")
@@ -181,7 +181,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Tab.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
     Tab.BorderSizePixel = 0
     Tab.Position = UDim2.new(0, 5, 0, 25)
-    Tab.Size = UDim2.new(0, 365, 0, 25)
+    Tab.Size = UDim2.new(0, 565, 0, 25)
 
     local ScrollTab = Instance.new("ScrollingFrame")
     ScrollTab.Name = "ScrollTab"
@@ -207,7 +207,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Page.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
     Page.BorderSizePixel = 0
     Page.Position = UDim2.new(0.0133333337, 0, 0.130434781, 0)
-    Page.Size = UDim2.new(0, 365, 0, 395)
+    Page.Size = UDim2.new(0, 565, 0, 495)
 
     local pagesFolder = Instance.new("Folder")
     pagesFolder.Name = "pagesFolder"
@@ -218,21 +218,21 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Main.BackgroundTransparency = 1
     Tab.Visible = false
     Page.Visible = false
-    Main.Size = UDim2.new(0,600,0,0)
+    Main.Size = UDim2.new(0,575,0,0)
     Top.Size = UDim2.new(0,0,0,20)
     TweenService:Create(
         Top,
         TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-        {Size = UDim2.new(0, 600, 0, 20)}
+        {Size = UDim2.new(0, 575, 0, 20)}
     ):Play()
-    repeat wait() until Top.Size == UDim2.new(0, 600, 0, 20)
+    repeat wait() until Top.Size == UDim2.new(0, 575, 0, 20)
     Main.BackgroundTransparency = 0
     TweenService:Create(
         Main,
         TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-        {Size = UDim2.new(0, 600, 0, 460)}
+        {Size = UDim2.new(0, 575, 0, 360)}
     ):Play()
-    repeat wait() until Main.Size == UDim2.new(0, 600, 0, 460)
+    repeat wait() until Main.Size == UDim2.new(0, 575, 0, 360)
     Tab.Visible = true
     Page.Visible = true
 
@@ -256,9 +256,9 @@ function library:CreateWindow(text,maincolor,text2,logo)
             TweenService:Create(
                 Main,
                 TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                {Size = UDim2.new(0,600,0,0)}
+                {Size = UDim2.new(0,575,0,0)}
             ):Play()
-            repeat wait() until Main.Size == UDim2.new(0,600,0,0)
+            repeat wait() until Main.Size == UDim2.new(0,575,0,0)
             Main.BackgroundTransparency = 1
             TweenService:Create(
                 Top,
@@ -270,16 +270,16 @@ function library:CreateWindow(text,maincolor,text2,logo)
             TweenService:Create(
                 Top,
                 TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                {Size = UDim2.new(0, 600, 0, 20)}
+                {Size = UDim2.new(0, 575, 0, 20)}
             ):Play()
-            repeat wait() until Top.Size == UDim2.new(0, 600, 0, 20)
+            repeat wait() until Top.Size == UDim2.new(0, 575, 0, 20)
             Main.BackgroundTransparency = 0
             TweenService:Create(
                 Main,
                 TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                {Size = UDim2.new(0, 600, 0, 460)}
+                {Size = UDim2.new(0, 575, 0, 360)}
             ):Play()
-            repeat wait() until Main.Size == UDim2.new(0, 600, 0, 460)
+            repeat wait() until Main.Size == UDim2.new(0, 575, 0, 360)
             Tab.Visible = true
             Page.Visible = true
         end
@@ -304,7 +304,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
         MainPage.Parent = pagesFolder
         MainPage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         MainPage.BackgroundTransparency = 1.000
-        MainPage.Size = UDim2.new(0, 365, 0, 395)
+        MainPage.Size = UDim2.new(0, 565, 0, 495)
         MainPage.Visible = false
 
         local MainFramePage = Instance.new("ScrollingFrame")
@@ -314,7 +314,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
         MainFramePage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         MainFramePage.BackgroundTransparency = 1.000
         MainFramePage.BorderSizePixel = 0
-        MainFramePage.Size = UDim2.new(0, 365, 0, 395)
+        MainFramePage.Size = UDim2.new(0, 565, 0, 495)
         MainFramePage.CanvasSize = UDim2.new(0, 0, 0, 0)
         MainFramePage.ScrollBarThickness = 0
 
@@ -389,7 +389,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
             ButtonFrame.Parent = MainFramePage
             ButtonFrame.BackgroundColor3 = maincolor
             ButtonFrame.BorderSizePixel = 0
-            ButtonFrame.Size = UDim2.new(0, 335, 0, 30)
+            ButtonFrame.Size = UDim2.new(0, 535, 0, 30)
             
             local UICorner = Instance.new("UICorner")
             UICorner.Parent = ButtonFrame
@@ -401,7 +401,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
             Button.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
             Button.BorderSizePixel = 0
             Button.Position = UDim2.new(0, 1, 0, 1)
-            Button.Size = UDim2.new(0, 333, 0, 28)
+            Button.Size = UDim2.new(0, 533, 0, 28)
             Button.AutoButtonColor = false
             Button.Font = Enum.Font.GothamSemibold
             Button.Text = text
@@ -417,7 +417,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
             Black.Parent = Button
             Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
             Black.BackgroundTransparency = 1.000
-            Black.Size = UDim2.new(0, 335, 0, 28)
+            Black.Size = UDim2.new(0, 535, 0, 28)
 
             Button.MouseEnter:Connect(function()
                 TweenService:Create(
@@ -465,14 +465,14 @@ function library:CreateWindow(text,maincolor,text2,logo)
             ToggleFrame.Parent = MainFramePage
             ToggleFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ToggleFrame.BackgroundTransparency = 1.000
-            ToggleFrame.Size = UDim2.new(0, 335, 0, 25)
+            ToggleFrame.Size = UDim2.new(0, 535, 0, 25)
 
             local ToggleButton = Instance.new("TextButton")
             ToggleButton.Name = "ToggleButton"
             ToggleButton.Parent = ToggleFrame
             ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ToggleButton.BackgroundTransparency = 1.000
-            ToggleButton.Size = UDim2.new(0, 335, 0, 25)
+            ToggleButton.Size = UDim2.new(0, 535, 0, 25)
             ToggleButton.Font = Enum.Font.SourceSans
             ToggleButton.Text = ""
             ToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -575,7 +575,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			Dropdown.Parent = MainFramePage
 			Dropdown.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 			Dropdown.ClipsDescendants = true
-			Dropdown.Size = UDim2.new(0, 335, 0, 30)
+			Dropdown.Size = UDim2.new(0, 535, 0, 30)
 			
 			UICorner.CornerRadius = UDim.new(0, 5)
 			UICorner.Parent = Dropdown
@@ -584,7 +584,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			DropTitle.Parent = Dropdown
 			DropTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			DropTitle.BackgroundTransparency = 1.000
-			DropTitle.Size = UDim2.new(0, 335, 0, 30)
+			DropTitle.Size = UDim2.new(0, 535, 0, 30)
 			DropTitle.Font = Enum.Font.GothamSemibold
 			DropTitle.Text = text.. " : "
 			DropTitle.TextColor3 = Color3.fromRGB(225, 225, 225)
@@ -603,7 +603,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			DropScroll.BackgroundTransparency = 1.000
 			DropScroll.BorderSizePixel = 0
 			DropScroll.Position = UDim2.new(0, 0, 0, 31)
-			DropScroll.Size = UDim2.new(0, 335, 0, 70)
+			DropScroll.Size = UDim2.new(0, 535, 0, 70)
 			DropScroll.CanvasSize = UDim2.new(0, 0, 0, 0)
 			DropScroll.ScrollBarThickness = 3
 			
@@ -619,7 +619,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			DropImage.Parent = Dropdown
 			DropImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			DropImage.BackgroundTransparency = 1.000
-			DropImage.Position = UDim2.new(0, 305, 0, 5)
+			DropImage.Position = UDim2.new(0, 505, 0, 5)
 			DropImage.Rotation = 180.000
 			DropImage.Size = UDim2.new(0, 20, 0, 20)
 			DropImage.Image = "rbxassetid://6031090990"
@@ -628,7 +628,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			DropButton.Parent = Dropdown
 			DropButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			DropButton.BackgroundTransparency = 1.000
-			DropButton.Size = UDim2.new(0, 335, 0, 30)
+			DropButton.Size = UDim2.new(0, 535, 0, 30)
 			DropButton.Font = Enum.Font.SourceSans
 			DropButton.Text = ""
 			DropButton.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -641,7 +641,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 				Item.Parent = DropScroll
 				Item.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				Item.BackgroundTransparency = 1.000
-				Item.Size = UDim2.new(0, 335, 0, 26)
+				Item.Size = UDim2.new(0, 535, 0, 26)
 				Item.Font = Enum.Font.GothamSemibold
 				Item.Text = tostring(v)
 				Item.TextColor3 = Color3.fromRGB(225, 225, 225)
@@ -706,7 +706,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 				Item.Parent = DropScroll
 				Item.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				Item.BackgroundTransparency = 1.000
-				Item.Size = UDim2.new(0, 335, 0, 26)
+				Item.Size = UDim2.new(0, 535, 0, 26)
 				Item.Font = Enum.Font.GothamSemibold
 				Item.Text = tostring(t)
 				Item.TextColor3 = Color3.fromRGB(225, 225, 225)
@@ -781,7 +781,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			Slider.Parent = MainFramePage
 			Slider.BackgroundColor3 = maincolor
 			Slider.BackgroundTransparency = 0
-			Slider.Size = UDim2.new(0, 335, 0, 51)
+			Slider.Size = UDim2.new(0, 535, 0, 51)
 
 			slidercorner.CornerRadius = UDim.new(0, 5)
 			slidercorner.Name = "slidercorner"
@@ -791,7 +791,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			sliderr.Parent = Slider
 			sliderr.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 			sliderr.Position = UDim2.new(0, 1, 0, 1)
-			sliderr.Size = UDim2.new(0, 333, 0, 49)
+			sliderr.Size = UDim2.new(0, 533, 0, 49)
 
 			sliderrcorner.CornerRadius = UDim.new(0, 5)
 			sliderrcorner.Name = "sliderrcorner"
@@ -821,7 +821,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			AHEHE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			AHEHE.BackgroundTransparency = 1.000
 			AHEHE.Position = UDim2.new(0, 10, 0, 35)
-			AHEHE.Size = UDim2.new(0, 313, 0, 5)
+			AHEHE.Size = UDim2.new(0, 513, 0, 5)
 			AHEHE.Font = Enum.Font.SourceSans
 			AHEHE.Text = ""
 			AHEHE.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -830,7 +830,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			bar.Name = "bar"
 			bar.Parent = AHEHE
 			bar.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-			bar.Size = UDim2.new(0, 313, 0, 5)
+			bar.Size = UDim2.new(0, 513, 0, 5)
 
 			bar1.Name = "bar1"
 			bar1.Parent = bar
@@ -859,7 +859,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			slidervalue.Parent = sliderr
 			slidervalue.BackgroundColor3 = maincolor
 			slidervalue.BackgroundTransparency = 0
-			slidervalue.Position = UDim2.new(0, 265, 0, 5)
+			slidervalue.Position = UDim2.new(0, 465, 0, 5)
 			slidervalue.Size = UDim2.new(0, 65, 0, 18)
 
 			valuecorner.CornerRadius = UDim.new(0, 5)
@@ -950,7 +950,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			Textbox.Parent = MainFramePage
 			Textbox.BackgroundColor3 = maincolor
 			Textbox.BackgroundTransparency = 0
-			Textbox.Size = UDim2.new(0, 335, 0, 31)
+			Textbox.Size = UDim2.new(0, 535, 0, 31)
 
 			TextboxCorner.CornerRadius = UDim.new(0, 5)
 			TextboxCorner.Name = "TextboxCorner"
@@ -960,7 +960,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			Textboxx.Parent = Textbox
 			Textboxx.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 			Textboxx.Position = UDim2.new(0, 1, 0, 1)
-			Textboxx.Size = UDim2.new(0, 333, 0, 29)
+			Textboxx.Size = UDim2.new(0, 533, 0, 29)
 
 			TextboxxCorner.CornerRadius = UDim.new(0, 5)
 			TextboxxCorner.Name = "TextboxxCorner"
@@ -984,7 +984,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			txtbtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			txtbtn.BackgroundTransparency = 1.000
 			txtbtn.Position = UDim2.new(0, 1, 0, 1)
-			txtbtn.Size = UDim2.new(0, 333, 0, 29)
+			txtbtn.Size = UDim2.new(0, 533, 0, 29)
 			txtbtn.Font = Enum.Font.SourceSans
 			txtbtn.Text = ""
 			txtbtn.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -995,7 +995,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
             RealTextbox.ClipsDescendants = true
 			RealTextbox.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 			RealTextbox.BackgroundTransparency = 0
-			RealTextbox.Position = UDim2.new(0, 255, 0, 6)
+			RealTextbox.Position = UDim2.new(0, 455, 0, 6)
 			RealTextbox.Size = UDim2.new(0, 75, 0, 20)
 			RealTextbox.Font = Enum.Font.GothamSemibold
 			RealTextbox.Text = ""
@@ -1022,7 +1022,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			Label.Parent = MainFramePage
 			Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Label.BackgroundTransparency = 1.000
-			Label.Size = UDim2.new(0, 335, 0, 20)
+			Label.Size = UDim2.new(0, 535, 0, 20)
 			Label.Font = Enum.Font.GothamSemibold
 			Label.TextColor3 = Color3.fromRGB(225, 225, 225)
 			Label.TextSize = 16.000
@@ -1049,7 +1049,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			Seperator.Parent = MainFramePage
 			Seperator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Seperator.BackgroundTransparency = 1.000
-			Seperator.Size = UDim2.new(0, 335, 0, 20)
+			Seperator.Size = UDim2.new(0, 535, 0, 20)
 			
 			Sep1.Name = "Sep1"
 			Sep1.Parent = Seperator
@@ -1073,7 +1073,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			Sep3.Parent = Seperator
 			Sep3.BackgroundColor3 = maincolor
 			Sep3.BorderSizePixel = 0
-			Sep3.Position = UDim2.new(0, 255, 0, 10)
+			Sep3.Position = UDim2.new(0, 455, 0, 10)
 			Sep3.Size = UDim2.new(0, 80, 0, 1)
 		end
 
@@ -1086,14 +1086,14 @@ function library:CreateWindow(text,maincolor,text2,logo)
 			Linee.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Linee.BackgroundTransparency = 1.000
 			Linee.Position = UDim2.new(0, 0, 0.119999997, 0)
-			Linee.Size = UDim2.new(0, 335, 0, 20)
+			Linee.Size = UDim2.new(0, 535, 0, 20)
 			
 			Line.Name = "Line"
 			Line.Parent = Linee
 			Line.BackgroundColor3 = maincolor
 			Line.BorderSizePixel = 0
 			Line.Position = UDim2.new(0, 0, 0, 10)
-			Line.Size = UDim2.new(0, 335, 0, 1)
+			Line.Size = UDim2.new(0, 535, 0, 1)
 		end
         return main
     end
