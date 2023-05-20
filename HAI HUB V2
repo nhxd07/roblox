@@ -1,159 +1,33 @@
-shared.LoaderTitle = 'Hai Hub Load✅' -- ใส่ชื่อ
-shared.LoaderKeyFrames = {
-   [1] = {1, 30}, -- [Time (s), Percentage] 
-   [2] = {3, 100} -- [เวลา, เปอร์เซ็น]
-}
+game.StarterGui:SetCore("SendNotification", {
+    Icon = "rbxassetid://10509313657";
+    Title = "Chiba HuB", 
+    Text = "Welecome To Chiba HuB"
+})
 
-local Metadata = {
-	LoaderData = {
-		Name = (shared.LoaderTitle or 'A Loader'),
-		Colors = shared.LoaderColors or {
-			Main = Color3.fromRGB(24, 24, 24),
-			Topic = Color3.fromRGB(0, 135, 251),
-			Title = Color3.fromRGB(0, 135, 251),
-			LoaderBackground = Color3.fromRGB(30, 30, 30),
-			LoaderSplash = Color3.fromRGB(255, 255, 255)
-		}
-	},
-	Keyframes = shared.LoaderKeyFrames or {
-		[1] = {1, 10}, -- [Time (s), Percentage]
-		[2] = {2, 30},
-		[3] = {3, 60},
-		[4] = {2, 100}
-	}
-}
+wait(1.0)
 
---
-local function tweenObject(object, speed, info)
-	game.TweenService:Create(object, TweenInfo.new(speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), info):Play()
+game.StarterGui:SetCore("SendNotification", {
+    Icon = "rbxassetid://10509313657";
+    Title = "Chiba HuB", 
+    Text = "Chiba HuB[V 0.0.3]"
+})
+
+wait(1.0)
+
+game.StarterGui:SetCore("SendNotification", {
+    Icon = "rbxassetid://10509313657";
+    Title = "Chiba HuB Come Back", 
+    Text = "Chiba Love You"
+})
+
+repeat wait(1) until game:IsLoaded()
+
+do
+    local gui = game:GetService("CoreGui"):FindFirstChild("HovxrzGui")
+    if gui then
+        gui:Destroy()
+    end
 end
-local function createObject(className, properties)
-	local instance = Instance.new(className)
-	local parent
-	for propertyName, propertyValue in pairs(properties) do
-		if propertyName ~= "Parent" then
-			instance[propertyName] = propertyValue
-		else
-			parent = propertyValue
-		end
-	end
-	instance.Parent = parent
-	return instance
-end
-
-
-local Core = createObject("ScreenGui", {
-	Name = "Core",
-	Parent = game.CoreGui
-})
-local Main = createObject("Frame", {
-	Name = "Main",
-	Parent = Core,
-	BackgroundColor3 = Metadata.LoaderData.Colors.Main,
-	BorderSizePixel = 0,
-	ClipsDescendants = true,
-	Position = UDim2.new(0.5, 0, 0.5, 0),
-	AnchorPoint = Vector2.new(0.5, 0.5),
-	Size = UDim2.new(0, 0, 0, 0),
-})
-local Top = createObject("TextLabel", {
-	Name = "Top",
-	TextTransparency = 1,
-	Parent = Main,
-	BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-	BackgroundTransparency = 1,
-	Position = UDim2.new(0, 30, 0, 8),
-	Size = UDim2.new(0, 301, 0, 50),
-	Font = Enum.Font.Gotham,
-	Text = "Loader",
-	TextColor3 = Metadata.LoaderData.Colors.Topic,
-	TextSize = 10,
-	TextXAlignment = Enum.TextXAlignment.Left,
-})
-local Title = createObject("TextLabel", {
-	Name = "Title",
-	Parent = Main,
-	TextTransparency = 1,
-	BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-	BackgroundTransparency = 1,
-	Position = UDim2.new(0, 30, 0, 27),
-	Size = UDim2.new(0, 301, 0, 46),
-	Font = Enum.Font.Gotham,
-	RichText = true,
-	Text = "<b>" .. Metadata.LoaderData.Name .. "</b>",
-	TextColor3 = Metadata.LoaderData.Colors.Title,
-	TextSize = 14,
-	TextXAlignment = Enum.TextXAlignment.Left,
-})
-local BG = createObject("Frame", {
-	Name = "BG",
-	Parent = Main,
-	AnchorPoint = Vector2.new(0.5, 0),
-	BackgroundTransparency = 1,
-	BackgroundColor3 = Metadata.LoaderData.Colors.LoaderBackground,
-	BorderSizePixel = 0,
-	Position = UDim2.new(0.5, 0, 0, 70),
-	Size = UDim2.new(0.8500000238418579, 0, 0, 24),
-})
-local Progress = createObject("Frame", {
-	Name = "Progress",
-	Parent = BG,
-	BackgroundColor3 = Metadata.LoaderData.Colors.LoaderSplash,
-	BackgroundTransparency = 1,
-	BorderSizePixel = 0,
-	Size = UDim2.new(0, 0, 0, 24),
-})
-
-local function updatePercentage(percentage)
-	tweenObject(Progress, 0.5, {
-		Size = UDim2.new((percentage / 100), 0, 0, 24)
-	})
-end
-
-
--- Loader itself
-tweenObject(Main, 0.25, {
-	Size = UDim2.new(0, 346, 0, 121)
-})
-wait(0.25)
-tweenObject(Top, 0.5, {
-	TextTransparency = 0
-})
-tweenObject(Title, 0.5, {
-	TextTransparency = 0
-})
-tweenObject(BG, 0.5, {
-	BackgroundTransparency = 0
-})
-tweenObject(Progress, 0.5, {
-	BackgroundTransparency = 0
-})
-
-for i, v in pairs(Metadata.Keyframes) do
-	wait(v[1]);
-	updatePercentage(v[2])
-end
-updatePercentage(100)
-
-tweenObject(Top, 0.5, {
-	TextTransparency = 1
-})
-tweenObject(Title, 0.5, {
-	TextTransparency = 1
-})
-tweenObject(BG, 0.5, {
-	BackgroundTransparency = 1
-})
-tweenObject(Progress, 0.5, {
-	BackgroundTransparency = 1
-})
-wait(0.5)
-tweenObject(Main, 0.25, {
-	Size = UDim2.new(0, 0, 0, 0)
-})
-wait(0.25);
-Core:Destroy()
-
 
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -218,7 +92,7 @@ end
 local library = {}
 
 function library:CreateWindow(text,maincolor,text2,logo)
-    logo = logo or 13438920682
+    logo = logo or 0
     maincolor = maincolor or Color3.fromRGB(63,233,233)
     local isselected = false
 
@@ -233,7 +107,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
     Main.BorderColor3 = Color3.fromRGB(25, 25, 25)
     Main.Position = UDim2.new(0.5, 0,0.499, 0)
-    -- Main.Size = UDim2.new(0, 375, 0, 460)
+    -- Main.Size = UDim2.new(0, 600, 0, 460)
     Main.AnchorPoint = Vector2.new(0.5,0.5)
 
     local Top = Instance.new("Frame")
@@ -241,7 +115,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Top.Parent = Main
     Top.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
     Top.BorderSizePixel = 0
-    -- Top.Size = UDim2.new(0, 375, 0, 20)
+    -- Top.Size = UDim2.new(0, 600, 0, 20)
     Top.ClipsDescendants = true
     
     local NameHub = Instance.new("TextLabel")
@@ -344,21 +218,21 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Main.BackgroundTransparency = 1
     Tab.Visible = false
     Page.Visible = false
-    Main.Size = UDim2.new(0,400,0,0)
+    Main.Size = UDim2.new(0,600,0,0)
     Top.Size = UDim2.new(0,0,0,20)
     TweenService:Create(
         Top,
         TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-        {Size = UDim2.new(0, 375, 0, 20)}
+        {Size = UDim2.new(0, 600, 0, 20)}
     ):Play()
-    repeat wait() until Top.Size == UDim2.new(0, 375, 0, 20)
+    repeat wait() until Top.Size == UDim2.new(0, 600, 0, 20)
     Main.BackgroundTransparency = 0
     TweenService:Create(
         Main,
         TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-        {Size = UDim2.new(0, 375, 0, 460)}
+        {Size = UDim2.new(0, 600, 0, 460)}
     ):Play()
-    repeat wait() until Main.Size == UDim2.new(0, 400, 0, 560)
+    repeat wait() until Main.Size == UDim2.new(0, 600, 0, 460)
     Tab.Visible = true
     Page.Visible = true
 
@@ -373,7 +247,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
     ImageButton.Size = UDim2.new(0, 50, 0, 50)
     ImageButton.BorderSizePixel = 0
-    ImageButton.Image = "rbxassetid://13438920682" -- LOGO
+    ImageButton.Image = "rbxassetid://10509313657" -- LOGO
     ImageButton.MouseButton1Down:connect(function()
         if uihide == false then
             uihide = true
@@ -382,9 +256,9 @@ function library:CreateWindow(text,maincolor,text2,logo)
             TweenService:Create(
                 Main,
                 TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                {Size = UDim2.new(0,375,0,0)}
+                {Size = UDim2.new(0,600,0,0)}
             ):Play()
-            repeat wait() until Main.Size == UDim2.new(0,5,0,0)
+            repeat wait() until Main.Size == UDim2.new(0,600,0,0)
             Main.BackgroundTransparency = 1
             TweenService:Create(
                 Top,
@@ -396,16 +270,16 @@ function library:CreateWindow(text,maincolor,text2,logo)
             TweenService:Create(
                 Top,
                 TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                {Size = UDim2.new(0, 375, 0, 20)}
+                {Size = UDim2.new(0, 600, 0, 20)}
             ):Play()
-            repeat wait() until Top.Size == UDim2.new(0, 375, 0, 20)
+            repeat wait() until Top.Size == UDim2.new(0, 600, 0, 20)
             Main.BackgroundTransparency = 0
             TweenService:Create(
                 Main,
                 TweenInfo.new(1,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-                {Size = UDim2.new(0, 375, 0, 460)}
+                {Size = UDim2.new(0, 600, 0, 460)}
             ):Play()
-            repeat wait() until Main.Size == UDim2.new(0, 400, 0, 560)
+            repeat wait() until Main.Size == UDim2.new(0, 600, 0, 460)
             Tab.Visible = true
             Page.Visible = true
         end
@@ -2738,7 +2612,7 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
 --------------------------------------------------------------------
-local RenUi = library:CreateWindow("HAI  ",Color3.fromRGB(175,238,238),"Blox Fruits")
+local RenUi = library:CreateWindow("Chiba  ",Color3.fromRGB(175,238,238),"Blox Fruits")
 --------------------------------------------------------------------
 local Main = RenUi:AddTab("Main")
 local Combat = RenUi:AddTab("Combat")
@@ -2909,7 +2783,7 @@ while task.wait() do
 end
 end)
 
-Main:AddToggle("WhiteScreen",false,function(value)
+Main:AddToggle("WhiteScreen",true,function(value)
     _G.WhiteScreen = value
     if _G.WhiteScreen  then
         game:GetService("RunService"):Set3dRenderingEnabled(false)
