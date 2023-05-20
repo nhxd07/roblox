@@ -207,7 +207,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
     Page.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
     Page.BorderSizePixel = 0
     Page.Position = UDim2.new(0.0133333337, 0, 0.130434781, 0)
-    Page.Size = UDim2.new(0, 565, 0, 495)
+    Page.Size = UDim2.new(0, 565, 0, 295)
 
     local pagesFolder = Instance.new("Folder")
     pagesFolder.Name = "pagesFolder"
@@ -304,7 +304,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
         MainPage.Parent = pagesFolder
         MainPage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         MainPage.BackgroundTransparency = 1.000
-        MainPage.Size = UDim2.new(0, 565, 0, 495)
+        MainPage.Size = UDim2.new(0, 565, 0, 295)
         MainPage.Visible = false
 
         local MainFramePage = Instance.new("ScrollingFrame")
@@ -314,7 +314,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
         MainFramePage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         MainFramePage.BackgroundTransparency = 1.000
         MainFramePage.BorderSizePixel = 0
-        MainFramePage.Size = UDim2.new(0, 565, 0, 495)
+        MainFramePage.Size = UDim2.new(0, 565, 0, 295)
         MainFramePage.CanvasSize = UDim2.new(0, 0, 0, 0)
         MainFramePage.ScrollBarThickness = 0
 
