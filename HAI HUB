@@ -11129,9 +11129,10 @@ end
 				if v.Handle:FindFirstChild('NameEsp'..Number) then
 					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
 				end
-			end 
-		end
+			end
+		end)
 	end
+end
 
 function UpdateChestChams() 
 	for i,v in pairs(game.Workspace:GetChildren()) do
@@ -11184,7 +11185,7 @@ end
 	for i,v in pairs(game.Workspace:GetChildren()) do
 		pcall(function()
 			if DevilFruitESP then
-				if string.find(v.Name, "MysticIsland") then   
+				if string.find(v.Name, "Fruit") then   
 					if not v.Handle:FindFirstChild('NameEsp'..Number) then
 						local bill = Instance.new('BillboardGui',v.Handle)
 						bill.Name = 'NameEsp'..Number
