@@ -11063,43 +11063,99 @@ if World2 then
 	end
 	Number = math.random(1, 1000000)
 	function UpdatePlayerChams()
-	for i,v in pairs(game:GetService'Players':GetChildren()) do
-		pcall(function()
-			if not isnil(v.Character) then
-				if ESPPlayer then
-					if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
-						local bill = Instance.new('BillboardGui',v.Character.Head)
-						bill.Name = 'NameEsp'..Number
-						bill.ExtentsOffset = Vector3.new(0, 1, 0)
-						bill.Size = UDim2.new(1,200,1,30)
-						bill.Adornee = v.Character.Head
-						bill.AlwaysOnTop = true
-						local name = Instance.new('TextLabel',bill)
-						name.Font = Enum.Font.Gotham
-						name.FontSize = "Size14"
-						name.TextWrapped = true
-						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
-						name.Size = UDim2.new(1,0,1,0)
-						name.TextYAlignment = 'Top'
-						name.BackgroundTransparency = 1
-						name.TextStrokeTransparency = 0.5
-						if v.Team == game.Players.LocalPlayer.Team then
-							name.TextColor3 = Color3.new(0,255,0)
-						else
-							name.TextColor3 = Color3.new(255,0,0)
-						end
-					else
-						v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..' | '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M\nHealth : ' .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. '%')
-					end
-				else
-					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
-						v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
-					end
-				end
-			end
-		end)
-	end
+    if ESPPlayer then
+        for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+            if not isnil(v.Character) then
+                if not v.Character.Head:FindFirstChild('NameEsp'..v.Name) then
+                    local BillboardGui = Instance.new("BillboardGui")
+                    local ESP = Instance.new("TextLabel")
+                    local HealthESP = Instance.new("TextLabel")
+                    BillboardGui.Parent = v.Character.Head
+                    BillboardGui.Name = 'NameEsp'..v.Name
+                    BillboardGui.ExtentsOffset = Vector3.new(0, 1, 0)
+                    BillboardGui.Size = UDim2.new(1,200,1,30)
+                    BillboardGui.Adornee = v.Character.Head
+                    BillboardGui.AlwaysOnTop = true
+                    ESP.Name = "ESP"
+                    ESP.Parent = BillboardGui
+                    ESP.TextTransparency = 0
+                    ESP.BackgroundTransparency = 1
+                    ESP.Size = UDim2.new(0, 200, 0, 30)
+                    ESP.Position = UDim2.new(0,25,0,0)
+                    ESP.Font = Enum.Font.Gotham
+                    ESP.Text = (v.Name ..' '.."[ "..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M'.." ]")
+                    if v.Team == game:GetService("Players").LocalPlayer.Team then
+                        ESP.TextColor3 = Color3.new(0, 255, 255)
+                    else
+                        ESP.TextColor3 = Color3.new(255, 0, 0)
+                    end
+                    ESP.TextSize = 14
+                    ESP.TextStrokeTransparency = 0.500
+                    ESP.TextWrapped = true
+                    HealthESP.Name = "HealthESP"
+                    HealthESP.Parent = ESP
+                    HealthESP.TextTransparency = 0
+                    HealthESP.BackgroundTransparency = 1
+                    HealthESP.Position = ESP.Position + UDim2.new(0, -25, 0, 15)
+                    HealthESP.Size = UDim2.new(0, 200, 0, 30)
+                    HealthESP.Font = Enum.Font.Gotham
+                    HealthESP.TextColor3 = Color3.fromRGB(255, 0, 0)
+                    HealthESP.TextSize = 14
+                    HealthESP.TextStrokeTransparency = 0.500
+                    HealthESP.TextWrapped = true
+                    HealthESP.Text = "Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth)
+                else
+                    v.Character.Head['NameEsp'..v.Name].ESP.Text = (v.Name ..' '..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
+                    v.Character.Head['NameEsp'..v.Name].ESP.HealthESP.Text = "Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth)
+                    v.Character.Head:FindFirstChild('NameEsp'..v.Name).ESP.TextTransparency = 0
+                    v.Character.Head:FindFirstChild('NameEsp'..v.Name).ESP.HealthESP.TextTransparency = 0
+                end
+            end
+        end
+    else
+        for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+            if v.Character.Head:FindFirstChild('NameEsp'..v.Name) then
+                v.Character.Head:FindFirstChild('NameEsp'..v.Name).ESP.TextTransparency = 1
+                v.Character.Head:FindFirstChild('NameEsp'..v.Name).ESP.HealthESP.TextTransparency = 1
+            end
+        end
+    end     
 end
+
+    function UpdateSeaBeastsESP() 
+        for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
+            pcall(function()
+                if SeaBeastsESP then 
+                    if v.Name ~= "SeaBeast" then
+                        if not v:FindFirstChild('NameEsp') then
+                            local bill = Instance.new('BillboardGui',v)
+                            bill.Name = 'NameEsp'
+                            bill.ExtentsOffset = Vector3.new(0, 1, 0)
+                            bill.Size = UDim2.new(1,200,1,30)
+                            bill.Adornee = v
+                            bill.AlwaysOnTop = true
+                            local name = Instance.new('TextLabel',bill)
+                            name.Font = "Code"
+                            name.FontSize = "Size14"
+                            name.TextWrapped = true
+                            name.Size = UDim2.new(1,0,1,0)
+                            name.TextYAlignment = 'Top'
+                            name.BackgroundTransparency = 1
+                            name.TextStrokeTransparency = 0.5
+                            name.TextColor3 = Color3.fromRGB(80, 245, 245)
+                        else
+                            v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
+                        end
+                    end
+                else
+                    if v:FindFirstChild('NameEsp') then
+                        v:FindFirstChild('NameEsp'):Destroy()
+                    end
+                end
+            end)
+        end
+    end
+
 function UpdateChestChams() 
 	for i,v in pairs(game.Workspace:GetChildren()) do
 		pcall(function()
@@ -11146,6 +11202,7 @@ function UpdateChestChams()
 		end)
 	end
 end
+
 	function UpdateDevilChams() 
 	for i,v in pairs(game.Workspace:GetChildren()) do
 		pcall(function()
@@ -11180,6 +11237,7 @@ end
 		end)
 	end
 end
+
 function UpdateFlowerChams() 
 	for i,v in pairs(game.Workspace:GetChildren()) do
 		pcall(function()
@@ -11221,6 +11279,7 @@ function UpdateFlowerChams()
 		end)
 	end
 end
+
 function UpdateRealFruitChams() 
 	for i,v in pairs(game.Workspace.AppleSpawner:GetChildren()) do
 		if v:IsA("Tool") then
@@ -11317,6 +11376,12 @@ end
 		ESPPlayer = a
 		while ESPPlayer do wait()
 			UpdatePlayerChams()
+		end
+	end)
+	Dungeon:Toggle("ESP Sea Beast",false,function(a)
+		SeaBeastsESP = a
+		while SeaBeastsESP do wait()
+			UpdateSeaBeastsESP()
 		end
 	end)
 	Dungeon:Toggle("ESP Chest",false,function(a)
@@ -12278,13 +12343,6 @@ Misc:Toggle("Super FPS boost",false,function(value)
 	end
 end
 end)
-if not game:GetService("UserInputService").TouchEnabled and not game:GetService("UserInputService").KeyboardEnabled == false then
-    Misc:Slider("FPS Lock",0,499,60,function(K)setfpscap(tonumber(K));
-    end)
-    else
-Misc:Slider1("FPS Lock",0,499,60,function(K)setfpscap(tonumber(K));
-    end)
-end
   
     Misc:Button("FPS Boost",function()
         pcall(function()
@@ -12332,55 +12390,6 @@ end
                 end
             end
         end)
-    end)
-
-     Misc:Button("Unlock Portal",function()
-        _G.UnlockPortal = true
-    end)
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                if _G.UnlockPortal == true then
-                    for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Notifications:GetChildren()) do
-                        if v.Name == "NotificationTemplate" then
-                            if string.find(v.Text,"cannot") then
-                                v:Destroy()
-                            end
-                        end
-                    end
-                end
-            end)
-        end
-    end)
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                if _G.UnlockPortal == true then
-                    CastlePostoMansion = CFrame.new(-5084.8447265625, 316.48101806641, -3145.3752441406)
-                    MansiontoCastlePos = CFrame.new(-12464.596679688, 376.30590820312, -7567.2626953125)
-                    Castletophydra = CFrame.new(-5095.33984375, 316.48101806641, -3168.3134765625)
-                    HydratoCastle = CFrame.new(5741.869140625, 611.94750976562, -282.61154174805)
-                    if (CastlePostoMansion.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-12471.169921875, 374.94024658203, -7551.677734375))
-                    end
-                    if (MansiontoCastlePos.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5072.08984375, 314.5412902832, -3151.1098632812))
-                    end
-                    if (Castletophydra.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(5748.7587890625, 610.44982910156, -267.81704711914))
-                    end
-                    if (HydratoCastle.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5072.08984375, 314.5412902832, -3151.1098632812))
-                    end
-                end
-            end)
-        end
-    end)
-    
-    Misc:Button("Unlock FPS",function()
-        setfpscap(500)
     end)
 
     Misc:Button("FPS delete color",function()
