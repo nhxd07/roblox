@@ -384,7 +384,7 @@ spawn(function()
 mainDiscord.Parent = Top
 mainDiscord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 mainDiscord.BackgroundTransparency = 1.000
-mainDiscord.Position = UDim2.new(0.707561002, 0, 0 , 0)
+mainDiscord.Position = UDim2.new(0, 620, 0 , 0)
 mainDiscord.Size = UDim2.new(0, 30, 0, 30)
 mainDiscord.Image = "http://www.roblox.com/asset/?id=12058969086"
 mainDiscord.ImageColor3 = Color3.fromRGB(200, 200, 200)
