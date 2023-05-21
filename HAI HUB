@@ -11103,8 +11103,9 @@ end
 
     function UpdateNpcChams() 
 	for i,v in pairs(game.Workspace.NPCs:GetChildren()) do
-		if v:IsA("Tool") then
-			if NpcsESP then 
+      pcall(function()
+		if NpcsESP then 
+			if v.Name ~= "NPCs" then
 				if not v.Handle:FindFirstChild('NameEsp'..Number) then
 					local bill = Instance.new('BillboardGui',v.Handle)
 					bill.Name = 'NameEsp'..Number
@@ -11125,7 +11126,8 @@ end
 				else
 					v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..' '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' M')
 				end
-			else
+			end
+		else
 				if v.Handle:FindFirstChild('NameEsp'..Number) then
 					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
 				end
