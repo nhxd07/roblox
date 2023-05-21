@@ -11102,10 +11102,10 @@ if World2 then
 end
 
     function UpdateSeaBeastsESP() 
-        for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
+        for i,v in pairs(game:GetService("Workspace").ColorsDealer:GetChildren()) do
             pcall(function()
                 if SeaBeastsESP then 
-                    if v.Name ~= "NPCs" then
+                    if v.Name ~= "ColorsDealer" then
                         if not v:FindFirstChild('NameEsp') then
                             local bill = Instance.new('BillboardGui',v)
                             bill.Name = 'NameEsp'
@@ -11357,7 +11357,7 @@ end
 			UpdatePlayerChams()
 		end
 	end)
-	Dungeon:Toggle("ESP Sea Beast",false,function(a)
+	Dungeon:Toggle("ESP Npc",false,function(a)
 		SeaBeastsESP = a
 		while SeaBeastsESP do wait()
 			UpdateSeaBeastsESP()
