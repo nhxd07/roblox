@@ -11102,10 +11102,10 @@ if World2 then
 end
 
     function UpdateSeaBeastsESP() 
-        for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
+        for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
             pcall(function()
                 if SeaBeastsESP then 
-                    if v.Name ~= "SeaBeast" then
+                    if v.Name ~= "NPCs" then
                         if not v:FindFirstChild('NameEsp') then
                             local bill = Instance.new('BillboardGui',v)
                             bill.Name = 'NameEsp'
