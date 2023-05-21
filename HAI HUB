@@ -11102,8 +11102,8 @@ if World2 then
 end
 
     function UpdateNpcChams() 
-	for i,v in pairs(game.Workspace.NPCs:GetChildren()) do
-      pcall(function()
+	for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
+        pcall(function()
 		if NpcsESP then 
 			if v.Name ~= "NPCs" then
 				if not v.Handle:FindFirstChild('NameEsp'..Number) then
