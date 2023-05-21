@@ -384,7 +384,7 @@ mainDiscord.Name = "mainDiscord"
 mainDiscord.Parent = Top
 mainDiscord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 mainDiscord.BackgroundTransparency = 1.000
-mainDiscord.Position = UDim2.new(0.807561002, 0, 0 , 0)
+mainDiscord.Position = UDim2.new(0.907561002, 0, 0 , 0)
 mainDiscord.Size = UDim2.new(0, 30, 0, 30)
 mainDiscord.Image = "http://www.roblox.com/asset/?id=12058969086"
 mainDiscord.ImageColor3 = Color3.fromRGB(200, 200, 200)
@@ -4305,6 +4305,7 @@ local Race = Library:Tab("Race V4","rbxassetid://11446900930")
 local Setting = Library:Tab("Settings","rbxassetid://11446835336")
 local Stats = Library:Tab("Stats","rbxassetid://11447069304")
 local P = Library:Tab("Player","rbxassetid://11446900930")
+Local HaiEsp = Libarary:Tab("Menu Esp","rbxassetid://13438920682")
 local Teleport = Library:Tab("Teleport","rbxassetid://11446920523")
 local Dungeon = Library:Tab("Raid+Esp","rbxassetid://11446957539")
 local DevilFruit = Library:Tab("Fruit","rbxassetid://11446965348")
@@ -9927,6 +9928,318 @@ spawn(function()
 	end
 end)
 
+HaiEsp:Seperator(" Menu Esp ")
+HaiEsp:Toggle('Chest ESP', false, function(ce)
+    ChestESP = ce
+end)
+spawn(function()
+    while wait() do
+        pcall(function()
+            if ChestESP then
+                for i,v in pairs(game.Workspace:GetChildren()) do
+                    if v.Name == "Chest1" or v.Name == "Chest2" or v.Name == "Chest3" then
+                        if not v:FindFirstChild("ChestESP") then
+                            local BillboardGui = Instance.new("BillboardGui")
+                            local TextLabel = Instance.new("TextLabel")
+
+                            BillboardGui.Parent = v
+                            BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                            BillboardGui.Active = true
+                            BillboardGui.Name = "ChestESP"
+                            BillboardGui.AlwaysOnTop = true
+                            BillboardGui.LightInfluence = 1.000
+                            BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                            BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+                            
+                            TextLabel.Parent = BillboardGui
+                            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                            TextLabel.BackgroundTransparency = 1.000
+                            TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                            TextLabel.Font = Enum.Font.GothamBold
+                            TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                            TextLabel.Text.Size = 35
+                            TextLabel.TextStrokeTransparency = 0.000
+                            TextLabel.TextWrapped = true
+                        end
+                        local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Position).Magnitude)
+                        v.ChestESP.TextLabel.Text = v.Name.."\n"..Dis.." M."
+                        if v.Name == "Chest1" then
+                            v:FindFirstChild("ChestESP").TextLabel.TextColor3 = Color3.new(255, 255, 255)
+                        elseif v.Name == "Chest2" then
+                            v:FindFirstChild("ChestESP").TextLabel.TextColor3 = Color3.new(255, 255, 255)
+                        elseif v.Name == "Chest3" then
+                            v:FindFirstChild("ChestESP").TextLabel.TextColor3 = Color3.new(255, 255, 255)
+                        end
+                    end
+                end
+            else
+                for i,v in pairs(game.Workspace:GetChildren()) do
+                    if v.Name == "Chest1" or v.Name == "Chest2" or v.Name == "Chest3" then
+                        if v:FindFirstChild("ChestESP") then
+                            v.ChestESP:Destroy()
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+HaiEsp:Toggle('Player ESP', false, function(pe)
+    PlayerESP = pe
+end)
+spawn(function()
+    while wait() do
+        pcall(function()
+            if PlayerESP then
+                for i,v in pairs(game.Players:GetChildren()) do
+                    if v.Name ~= game.Players.LocalPlayer.Name then
+                        if not v.Character.HumanoidRootPart:FindFirstChild("PlayerESP") then
+                            local BillboardGui = Instance.new("BillboardGui")
+                            local TextLabel = Instance.new("TextLabel")
+
+                            BillboardGui.Parent = v.Character.HumanoidRootPart
+                            BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                            BillboardGui.Active = true
+                            BillboardGui.Name = "PlayerESP"
+                            BillboardGui.AlwaysOnTop = true
+                            BillboardGui.LightInfluence = 1.000
+                            BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                            BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+
+                            TextLabel.Parent = BillboardGui
+                            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                            TextLabel.BackgroundTransparency = 1.000
+                            TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                            TextLabel.Font = Enum.Font.GothamBold
+                            TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                            TextLabel.Text.Size = 35
+                            TextLabel.TextStrokeTransparency = 0.000
+                            TextLabel.TextWrapped = true
+                        end
+                        local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude)
+                        v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.Text = v.Name.."\n\n"..Dis.." M."
+                        if v.Team == game.Players.LocalPlayer.Team then
+                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(255,0,0)
+                        else
+                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(0,255,0)
+                        end
+                    end
+                end
+            else
+                for i,v in pairs(game.Players:GetChildren()) do
+                    if v.Name ~= game.Players.LocalPlayer.Name then
+                        if v.Character.HumanoidRootPart:FindFirstChild("PlayerESP") then
+                            v.Character.HumanoidRootPart.PlayerESP:Destroy()
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+HaiEsp:Toggle('Devil Fruit ESP', _G.ESPDF, function(dfespf)
+    _G.ESPDF = dfespf
+end)
+spawn(function()
+    while wait(.1) do
+        if _G.ESPDF then
+            pcall(function()
+                for i,v in pairs(game.Workspace:GetChildren()) do
+                    if v:IsA("Tool") and v:FindFirstChild("Handle") then
+                        if not v.Handle:FindFirstChild("DFESP") then
+                            local BillboardGui = Instance.new("BillboardGui")
+                            local TextLabel = Instance.new("TextLabel")
+
+                            BillboardGui.Parent = v.Handle
+                            BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                            BillboardGui.Active = true
+                            BillboardGui.Name = "DFESP"
+                            BillboardGui.AlwaysOnTop = true
+                            BillboardGui.LightInfluence = 1.000
+                            BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                            BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+                            
+                            TextLabel.Parent = BillboardGui
+                            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                            TextLabel.BackgroundTransparency = 1.000
+                            TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                            TextLabel.Font = Enum.Font.GothamBold
+                            TextLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+                            TextLabel.Text.Size = 35
+                            TextLabel.TextStrokeTransparency = 0.000
+                            TextLabel.TextWrapped = true
+                        end
+                        Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Handle.Position).Magnitude)
+                        v.Handle.DFESP.TextLabel.Text = v.Name.."\n"..Dis.." M."
+                    end
+                end
+            end)
+        else
+            for i,v in pairs(game.Workspace:GetChildren()) do
+                if v:IsA("Tool") and v:FindFirstChild("Handle") then
+                    if v.Handle:FindFirstChild("DFESP") then
+                        v:Destroy()
+                    end
+                end
+            end
+        end
+    end
+end)
+
+HaiEsp:Toggle('Fruit ESP', false, function(fec)
+    FruitESPe = fec
+end)
+spawn(function()
+    while task.wait() do
+        pcall(function()
+            if FruitESPe then
+                for a,b in pairs(game.Workspace:GetChildren()) do
+                    if b.Name == 'PineappleSpawner' or b.Name == 'BananaSpawner' or b.Name == 'AppleSpawner' then
+                        for i,v in pairs(b:GetChildren()) do
+                            if v:IsA('Tool') then
+                                if v:FindFirstChild("Handle") then
+                                    repeat task.wait()
+                                        if not v.Handle:FindFirstChild("FruitESP") then
+                                            local BillboardGui = Instance.new("BillboardGui")
+                                            local TextLabel = Instance.new("TextLabel")
+
+                                            BillboardGui.Parent = v.Handle
+                                            BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                                            BillboardGui.Active = true
+                                            BillboardGui.Name = "FruitESP"
+                                            BillboardGui.AlwaysOnTop = true
+                                            BillboardGui.LightInfluence = 1.000
+                                            BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                                            BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+
+                                            TextLabel.Parent = BillboardGui
+                                            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                                            TextLabel.BackgroundTransparency = 1.000
+                                            TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                                            TextLabel.Font = Enum.Font.GothamBold
+                                            TextLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+                                            TextLabel.Text.Size = 35
+                                            TextLabel.TextStrokeTransparency = 0.000
+                                            TextLabel.TextWrapped = true
+                                        end
+                                        local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Handle.Position).Magnitude)
+                                        v.Handle.FruitESP.TextLabel.Text = v.Name.."\n"..Dis.." M."
+                                    until not FruitESPe
+                                end
+                            end
+                        end
+                    end
+                end
+            else
+                for a,b in pairs(game.Workspace:GetChildren()) do
+                    if b.Name == 'PineappleSpawner' or b.Name == 'BananaSpawner' or b.Name == 'AppleSpawner' then
+                        for i,v in pairs(b:GetChildren()) do
+                            if v:IsA('Tool') then
+                                if v:FindFirstChild("Handle") then
+                                    if v.Handle:FindFirstChild("FruitESP") then
+                                        v.Handle.FruitESP:Destroy()
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+HaiEsp:Toggle('Island ESP', false, function(ies)
+    IslandESP = ies
+end)
+spawn(function()
+    while wait() do
+        pcall(function()
+            if IslandESP then
+                for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].Locations:GetChildren()) do
+                    if not v:FindFirstChild("IslandEsp") then
+                        local BillboardGui = Instance.new("BillboardGui")
+                        local TextLabel = Instance.new("TextLabel")
+
+                        BillboardGui.Parent = v
+                        BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                        BillboardGui.Active = true
+                        BillboardGui.Name = "IslandEsp"
+                        BillboardGui.AlwaysOnTop = true
+                        BillboardGui.LightInfluence = 1.000
+                        BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                        BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+
+                        TextLabel.Parent = BillboardGui
+                        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        TextLabel.BackgroundTransparency = 1.000
+                        TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                        TextLabel.Font = Enum.Font.GothamBold
+                        TextLabel.TextColor3 = Color3.fromRGB(255, 0, 255)
+                        TextLabel.Text.Size = 75
+                        TextLabel.TextStrokeTransparency = 0.000
+                        TextLabel.TextWrapped = true
+                    end
+                    local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Position).Magnitude / 10)
+                    v.IslandEsp.TextLabel.Text = v.Name.."\n".."["..Dis.."]"
+                end
+            else
+                for i,v in pairs (game:GetService("Workspace")["_WorldOrigin"].Locations:GetChildren()) do
+                    if v:FindFirstChild("IslandEsp") then
+                        v.IslandEsp:Destroy()
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+HaiEsp:Toggle('Npc ESP', false, function(nec)
+    NpcESP = nec
+end)
+spawn(function()
+    while wait() do
+        pcall(function()
+            if NpcESP then
+                for i,v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
+                    if v:FindFirstChild('HumanoidRootPart') then
+                        if not v:FindFirstChild("NpcEspes") then
+                            local BillboardGui = Instance.new("BillboardGui")
+                            local TextLabel = Instance.new("TextLabel")
+
+                            BillboardGui.Parent = v
+                            BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                            BillboardGui.Active = true
+                            BillboardGui.Name = "NpcEspes"
+                            BillboardGui.AlwaysOnTop = true
+                            BillboardGui.LightInfluence = 1.000
+                            BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+                            BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
+
+                            TextLabel.Parent = BillboardGui
+                            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                            TextLabel.BackgroundTransparency = 1.000
+                            TextLabel.Size = UDim2.new(0, 200, 0, 50)
+                            TextLabel.Font = Enum.Font.GothamBold
+                            TextLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
+                            TextLabel.Text.Size = 35
+                        end
+                        local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude)
+                        v.NpcEspes.TextLabel.Text = v.Name.." - ["..Dis.." M]"
+                    end
+                end
+            else
+                for i,v in pairs (game:GetService("Workspace").NPCs:GetChildren()) do
+                    if v:FindFirstChild("NpcEspes") then
+                        v.NpcEspes:Destroy()
+                    end
+                end
+            end
+        end)
+    end
+end)
 
 Teleport:Seperator(" WORLD ")
  
@@ -11357,12 +11670,6 @@ end
 		ESPPlayer = a
 		while ESPPlayer do wait()
 			UpdatePlayerChams()
-		end
-	end)
-	Dungeon:Toggle("ESP Npc",false,function(a)
-		NpcESP = a
-		while NpcESP do wait()
-			UpdateNpcChams()
 		end
 	end)
 	Dungeon:Toggle("ESP Chest",false,function(a)
