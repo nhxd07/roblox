@@ -11102,10 +11102,10 @@ if World2 then
 end
 
     function UpdateNpcChams() 
-	for i,v in pairs(game:GetService("Workspace").ColorsDealer:GetChildren()) do
+	for i,v in pairs(game:GetService("Workspace").MysticIsland:GetChildren()) do
         pcall(function()
 		if NpcsESP then 
-			if v.Name ~= "ColorsDealer" then
+			if v.Name ~= "MysticIsland" then
 				if not v:FindFirstChild('NameEsp'..Number) then
 					local bill = Instance.new('BillboardGui',v)
 					bill.Name = 'NameEsp'..Number
