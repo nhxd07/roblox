@@ -379,40 +379,6 @@ spawn(function()
  end
  end)
  
- local mainDiscord = Instance.new("ImageButton")
- mainDiscord.Name = "mainDiscord"
-mainDiscord.Parent = Top
-mainDiscord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-mainDiscord.BackgroundTransparency = 1.000
-mainDiscord.Position = UDim2.new(0.757561002, 0, 0 , 0)
-mainDiscord.Size = UDim2.new(0, 30, 0, 30)
-mainDiscord.Image = "http://www.roblox.com/asset/?id=12058969086"
-mainDiscord.ImageColor3 = Color3.fromRGB(200, 200, 200)
-
-game:GetService("TweenService"):Create(mainDiscord, TweenInfo.new(5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut, -1, true, 0), { Rotation = 360 }):Play()
-
-mainDiscord.MouseLeave:Connect(function()
-  Utility:TweenObject(mainDiscord, {
-    BackgroundTransparency = 1
-  }, 0.1)
-  end)
-
-mainDiscord.MouseEnter:Connect(function()
-  Utility:TweenObject(mainDiscord, {
-    BackgroundTransparency = 0.5
-  }, 0.1)
-  end)
-
-mainDiscord.MouseButton1Click:Connect(function()
-  setclipboard("https://discord.gg/af2FwhR6")
-  wait(.1)
-  game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Discord",
-    Text = "Discord copied on your clipboard",
-    Button1 = "Okay",
-    Duration = 20
-  })
-  end)
  local BindButton = Instance.new("TextButton")
 	BindButton.Name = "BindButton"
 	BindButton.Parent = Top
