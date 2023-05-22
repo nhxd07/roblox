@@ -169,11 +169,11 @@ local TeleportService = game:GetService("TeleportService")
 PCToggleButton.MouseButton1Click:Connect(function()
 	if pcsupported then
 		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/HAI%20HUB"))()
-end)
+end
 MobileToggleButton.MouseButton1Click:Connect(function()
 	if mobilesupported then
 		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/HAI%20HUB"))()
-end)
+end
 LoadText.MouseButton1Click:Connect(function()
 	for _, sodi in pairs(SazaMain:GetChildren()) do
 		sodi:Destroy()
