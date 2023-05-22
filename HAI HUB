@@ -3881,7 +3881,7 @@ end)
 
  
 --------------------------------------------------------------------
-local Library = Update:Window("HAI HUB ","")
+local Library = Update:Window("HAI ",Color3.fromRGB(255,51,51),"HUB")
 ------------------------------------------
 
 spawn(function()

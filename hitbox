@@ -530,8 +530,8 @@ B.BorderSizePixel = 0
 B.Position = UDim2.new(0.614285707, 0, 0.336322874, 0)
 B.Size = UDim2.new(0, 43, 0, 28)
 B.Font = Enum.Font.SourceSans
-B.Text = "Blue"
-B.TextColor3 = Color3.fromRGB(0, 0, 255)
+B.Text = "Pink"
+B.TextColor3 = Color3.fromRGB(255, 0, 255)
 B.TextSize = 14.000
 
 ONoff.Name = "ON/off"
