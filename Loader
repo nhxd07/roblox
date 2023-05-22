@@ -168,21 +168,11 @@ local player = game.Players.LocalPlayer
 local TeleportService = game:GetService("TeleportService")
 PCToggleButton.MouseButton1Click:Connect(function()
 	if pcsupported then
-		game:GetService("TweenService"):Create(PCToggleButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {BackgroundTransparency = 0.8}):Play()
-		pcsupported = false
-	else
-		game:GetService("TweenService"):Create(PCToggleButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {BackgroundTransparency = 0}):Play()
-		pcsupported = true
-	end
+		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/HAI%20HUB"))()
 end)
 MobileToggleButton.MouseButton1Click:Connect(function()
 	if mobilesupported then
-		game:GetService("TweenService"):Create(MobileToggleButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {BackgroundTransparency = 0.8}):Play()
-		mobilesupported = false
-	else
-		game:GetService("TweenService"):Create(MobileToggleButton, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {BackgroundTransparency = 0}):Play()
-		mobilesupported = true
-	end
+		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/HAI%20HUB"))()
 end)
 LoadText.MouseButton1Click:Connect(function()
 	for _, sodi in pairs(SazaMain:GetChildren()) do
