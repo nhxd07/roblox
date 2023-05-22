@@ -204,7 +204,7 @@ MAIN.Parent = ZENHUB
 MAIN.AnchorPoint = Vector2.new(0.5, 0.5)
 MAIN.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 MAIN.Position = UDim2.new(0.5, 0, 0.5, 0)
-MAIN.Size = UDim2.new(0, 395, 0, 216)
+MAIN.Size = UDim2.new(0, 395, 0, 186)
 MAIN.SizeConstraint = Enum.SizeConstraint.RelativeXX
 MAIN.Active = true
 MAIN.Draggable = true
@@ -321,7 +321,7 @@ confirm.TextColor3 = Color3.fromRGB(255, 255, 255)
 confirm.TextSize = 14.000
 confirm.MouseButton1Click:Connect(function()
 DiscordLib:Notification("Key System" , "Key Check, Executing Script..." , 3)
-if keyhere.Text == "keyhere" then
+if keyhere.Text == "HaiXHub" then
 wait(3)
 ZENHUB:Destroy()
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/HAI%20HUB"))()
@@ -332,44 +332,6 @@ end)
 
 UICorner_4.CornerRadius = UDim.new(0, 4)
 UICorner_4.Parent       = confirm
-
-old.Name = "old"
-old.Parent = MAIN
-old.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-old.BorderColor3 = Color3.fromRGB(27, 42, 53)
-old.Position = UDim2.new(0.288607597, 0, 0.782407403, 0)
-old.Size = UDim2.new(0, 178, 0, 32)
-old.Font = Enum.Font.Gotham
-old.Text = "Join Discord"
-old.TextColor3 = Color3.fromRGB(255, 255, 255)
-old.TextSize = 14.000
-old.MouseButton1Click:Connect(function()
-setclipboard("https://discord.gg/af2FwhR6")
-end)
-
-
-UICorner_5.CornerRadius = UDim.new(0, 4)
-UICorner_5.Parent = old
-
-TextLabel_2.Parent = old
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(-0.0505618006, 0, 0, 0)
-TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
-TextLabel_2.Font = Enum.Font.Gotham
-TextLabel_2.Text = ""
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 10.000
-
-TextLabel_3.Parent = old
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.Position = UDim2.new(-0.050999999, 0, -0.400000006, 0)
-TextLabel_3.Size = UDim2.new(0, 200, 0, 50)
-TextLabel_3.Font = Enum.Font.Gotham
-TextLabel_3.Text = ""
-TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextSize = 14.000
 
 X.Name = "X"
 X.Parent = MAIN
