@@ -378,7 +378,7 @@ spawn(function()
  game:GetService("RunService").RenderStepped:Wait()
  end
  end)
-   
+ 
  local mainDiscord = Instance.new("ImageButton")
 mainDiscord.Name = "mainDiscord"
 mainDiscord.Parent = Top
