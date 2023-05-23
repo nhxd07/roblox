@@ -413,9 +413,7 @@ spawn(function()
 		ToggleImgUi.Position = UDim2.new(0.0454545468, 0, 0.125000313, 0)
 		ToggleImgUi.Size = UDim2.new(0, 35, 0, 43)
 		ToggleImgUi.Image = "rbxassetid://12979886523"
-		
-		game:GetService("TweenService"):Create(ToggleFrameUi, TweenInfo.new(5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut, -1, true, 0), { Rotation = 360 }):Play()
-	
+
 		MakeDraggable(ToggleFrameUi,ToggleFrameUi)
  local mainDiscord = Instance.new("ImageButton")
 mainDiscord.Name = "mainDiscord"
