@@ -378,7 +378,35 @@ spawn(function()
  game:GetService("RunService").RenderStepped:Wait()
  end
  end)
- 
+   local ui =  game:GetService("CoreGui"):FindFirstChild("Ripple")  if ui then ui:Destroy() end end
+	
+		local Luna = Instance.new("ScreenGui")
+		local ToggleFrameUi = Instance.new("Frame")
+		local UICorner = Instance.new("UICorner")
+		local ToggleImgUi = Instance.new("ImageLabel")
+		
+		Luna.Name = "Ripple"
+		Luna.Parent = game.CoreGui
+		Luna.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+		
+		ToggleFrameUi.Name = "ToggleFrameUi"
+		ToggleFrameUi.Parent = Luna
+		ToggleFrameUi.Position = UDim2.new(0.883, -60,0.282, 0)
+	
+		UICorner.CornerRadius = UDim.new(0, 4)
+		UICorner.Parent = ToggleFrameUi
+		
+		ToggleImgUi.Name = "ToggleImgUi"
+		ToggleImgUi.Parent = ToggleFrameUi
+		ToggleImgUi.BackgroundColor3 = Color3.fromRGB(5, 5, 5)
+		ToggleImgUi.BackgroundTransparency = 1
+		ToggleImgUi.Position = UDim2.new(0.0454545468, 0, 0.125000313, 0)
+		ToggleImgUi.Size = UDim2.new(0, 35, 0, 43)
+		ToggleImgUi.Image = "rbxassetid://12979886523"
+		
+		game:GetService("TweenService"):Create(ToggleFrameUi, TweenInfo.new(5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut, -1, true, 0), { Rotation = 360 }):Play()
+	
+		MakeDraggable(ToggleFrameUi,ToggleFrameUi)
  local mainDiscord = Instance.new("ImageButton")
 mainDiscord.Name = "mainDiscord"
 mainDiscord.Parent = Top
