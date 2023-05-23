@@ -204,7 +204,7 @@ MAIN.Parent = ZENHUB
 MAIN.AnchorPoint = Vector2.new(0.5, 0.5)
 MAIN.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 MAIN.Position = UDim2.new(0.5, 0, 0.5, 0)
-MAIN.Size = UDim2.new(0, 395, 0, 186)
+MAIN.Size = UDim2.new(0, 395, 0, 176)
 MAIN.SizeConstraint = Enum.SizeConstraint.RelativeXX
 MAIN.Active = true
 MAIN.Draggable = true
@@ -270,8 +270,8 @@ keyhere.Name = "keyhere"
 keyhere.Parent = MAIN
 keyhere.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 keyhere.BorderSizePixel = 0
-keyhere.Position = UDim2.new(0.151898727, 0, 0.236111104, 0)
-keyhere.Size = UDim2.new(0, 289, 0, 35)
+keyhere.Position = UDim2.new(0.501898727, 0, 0.236111104, 0)
+keyhere.Size = UDim2.new(0, 159, 0, 35)
 keyhere.Font = Enum.Font.SourceSans
 keyhere.PlaceholderText = "Key here..."
 keyhere.Text = ""
@@ -288,7 +288,7 @@ TextLabel.Position = UDim2.new(0.518987358, 0, 0.0725925565, 0)
 TextLabel.Size = UDim2.new(0, 174, 0, 25)
 TextLabel.ZIndex = 5
 TextLabel.Font = Enum.Font.Gotham
-TextLabel.Text = "HAI HUB | KEY SYSTEM"
+TextLabel.Text = "HAI HUB KEY SYSTEM"
 TextLabel.TextColor3 = Color3.fromRGB(130, 130, 130)
 TextLabel.TextSize = 20.000
 
@@ -298,7 +298,7 @@ getkey.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 getkey.Position = UDim2.new(0.0405063294, 0, 0.532407403, 0)
 getkey.Size = UDim2.new(0, 178, 0, 32)
 getkey.Font = Enum.Font.Gotham
-getkey.Text = "GET KEY"
+getkey.Text = "GetKey"
 getkey.TextColor3 = Color3.fromRGB(255, 255, 255)
 getkey.TextSize = 14.000
 getkey.MouseButton1Click:Connect(function()
@@ -314,14 +314,14 @@ confirm.Name = "confirm"
 confirm.Parent = MAIN
 confirm.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 confirm.Position = UDim2.new(0.529113948, 0, 0.532407403, 0)
-confirm.Size = UDim2.new(0, 172, 0, 32)
+confirm.Size = UDim2.new(0, 178, 0, 32)
 confirm.Font = Enum.Font.Gotham
-confirm.Text = "CONFIRM"
+confirm.Text = "Submit"
 confirm.TextColor3 = Color3.fromRGB(255, 255, 255)
 confirm.TextSize = 14.000
 confirm.MouseButton1Click:Connect(function()
 DiscordLib:Notification("Key System" , "Key Check, Executing Script..." , 3)
-if keyhere.Text == "HaiXHub" then
+if keyhere.Text == "HaiXHub-10auw32a6300e30" then
 wait(3)
 ZENHUB:Destroy()
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/HAI%20HUB"))()
