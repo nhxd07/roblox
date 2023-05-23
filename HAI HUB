@@ -391,8 +391,18 @@ spawn(function()
 		
 		ToggleFrameUi.Name = "ToggleFrameUi"
 		ToggleFrameUi.Parent = Luna
+		ToggleFrameUi.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 		ToggleFrameUi.Position = UDim2.new(0.883, -60,0.282, 0)
-	
+		ToggleFrameUi.Size = UDim2.new(0, 140, 0, 58)
+		
+		SearchStroke.Thickness = 1
+		SearchStroke.Name = ""
+		SearchStroke.Parent = ToggleFrameUi
+		SearchStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		SearchStroke.LineJoinMode = Enum.LineJoinMode.Round
+		SearchStroke.Color = _G.Color
+		SearchStroke.Transparency = 0
+		
 		UICorner.CornerRadius = UDim.new(0, 4)
 		UICorner.Parent = ToggleFrameUi
 		
