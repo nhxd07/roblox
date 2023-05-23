@@ -327,6 +327,8 @@ function Update:Window(text,logo,keybind)
 	Logo.Position = UDim2.new(0, 10, 0, 1)
 	Logo.Size = UDim2.new(0, 25, 0, 25)
 	Logo.Image = "rbxassetid://13438920682"
+	
+    game:GetService("TweenService"):Create(Logo, TweenInfo.new(5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut, -1, true, 0), { Rotation = 360 }):Play()
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
