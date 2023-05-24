@@ -214,7 +214,7 @@ Logo.Name = "Logo"
 Logo.Parent = MAIN
 Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Logo.BackgroundTransparency = 1.000
-Logo.Position = UDim2.new(0, 50, 0, 45)
+Logo.Position = UDim2.new(0, 45, 0, 40)
 Logo.Size = UDim2.new(0, 100, 0, 100)
 Logo.Image = "rbxassetid://13438920682"
 
@@ -313,7 +313,7 @@ getkey.Text = "GetKey"
 getkey.TextColor3 = Color3.fromRGB(255, 255, 255)
 getkey.TextSize = 14.000
 getkey.MouseButton1Click:Connect(function()
-setclipboard("https://solo.to/ngnhhai")
+setclipboard("https://link1s.com/MKmzxUY8")
             DiscordLib:Notification("Key System" , "Key Copied to Your Clipboard\n& Paste on Your Browser" , 3)
 end)
 
