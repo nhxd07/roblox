@@ -9397,17 +9397,17 @@ spawn(function()
             while wait() do
                 pcall(function()
                     if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
-                        FM:Set("🌑 : Full Moon 100%")
+                        FM:Set("🌑 : Full Moon 5/5 (100%)")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
-                        FM:Set("🌒 : Full Moon 75%")
+                        FM:Set("🌒 : Full Moon 4/5 (75%)")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
-                        FM:Set("🌓 : Full Moon 50%")
+                        FM:Set("🌓 : Full Moon 3/5 (50%)")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
-                        FM:Set("🌗 : Full Moon 25%")
+                        FM:Set("🌗 : Full Moon 2/5 (25%)")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
-                        FM:Set("🌖 : Full Moon 15%")
+                        FM:Set("🌖 : Full Moon 1/5 (15%)")
                     else
-                        FM:Set("🌚 : Full Moon 0%")
+                        FM:Set("🌚 : Full Moon 0/5 (0%)")
                     end
                 end)
             end
@@ -9417,9 +9417,9 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-    Mirragecheck:Set('🏝️ : Mirage Island is Spawning')
+    Mirragecheck:Set('🏝️ : Mirage Island : Spawning ✅️')
     else
-      Mirragecheck:Set('🏝️ : Mirage Island Not Found ❌')
+      Mirragecheck:Set('🏝️ : Mirage Island : Not Found ❎️')
     end
             end
         end)
