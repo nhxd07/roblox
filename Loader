@@ -214,8 +214,8 @@ Logo.Name = "Logo"
 Logo.Parent = MAIN
 Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Logo.BackgroundTransparency = 1.000
-Logo.Position = UDim2.new(0, 10, 0, 1)
-Logo.Size = UDim2.new(0, 25, 0, 25)
+Logo.Position = UDim2.new(0, 50, 0, 88)
+Logo.Size = UDim2.new(0, 90, 0, 90)
 Logo.Image = "rbxassetid://13438920682"
 	
 posto.Name = "posto"
