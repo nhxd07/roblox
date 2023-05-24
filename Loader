@@ -313,7 +313,7 @@ getkey.Text = "GetKey"
 getkey.TextColor3 = Color3.fromRGB(255, 255, 255)
 getkey.TextSize = 14.000
 getkey.MouseButton1Click:Connect(function()
-setclipboard("https://gitlab.com/HaixD/roblox/-/raw/main/Key")
+setclipboard("https://solo.to/ngnhhai")
             DiscordLib:Notification("Key System" , "Key Copied to Your Clipboard\n& Paste on Your Browser" , 3)
 end)
 
