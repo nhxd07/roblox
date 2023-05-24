@@ -214,9 +214,11 @@ Logo.Name = "Logo"
 Logo.Parent = MAIN
 Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Logo.BackgroundTransparency = 1.000
-Logo.Position = UDim2.new(0, 50, 0, 88)
+Logo.Position = UDim2.new(0, 50, 0, 50)
 Logo.Size = UDim2.new(0, 90, 0, 90)
 Logo.Image = "rbxassetid://13438920682"
+
+game:GetService("TweenService"):Create(Logo, TweenInfo.new(5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut, -1, true, 0), { Rotation = 360 }):Play()
 	
 posto.Name = "posto"
 posto.Parent = MAIN
