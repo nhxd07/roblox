@@ -4,12 +4,24 @@ end
 
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
+
+if game.PlaceId == 2753915549 then
+    BInfo = "🎮 Game : Blox Fruits | Old World"
+elseif game.PlaceId == 4442272183 then
+    BInfo = "🎮 Game : Blox Fruits | Second Sea"
+elseif game.PlaceId == 7449423635 then
+    BInfo = "🎮 Game : Blox Fruits | Third Sea"
+    else
+BInfo = "🎮 Game : Blox Fruits | Old World"
+end
+
 local LocalizationService = game:GetService("LocalizationService")
 local player = game.Players.LocalPlayer
  
 local result, code = pcall(function()
     return LocalizationService:GetCountryRegionForPlayerAsync(player)
 end)
+
 local DiscordLib = {}
 	local TweenService = game:GetService("TweenService")
 	local Balaraja = Instance.new("ScreenGui")
@@ -330,7 +342,7 @@ UICorner_3.Parent = getkey
 AutoChest.Name = "AutoChest"
 AutoChest.Parent = MAIN
 AutoChest.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-AutoChest.Position = UDim2.new(0.601898727, 0, 0.752407403, 0)
+AutoChest.Position = UDim2.new(0.651898727, 0, 0.752407403, 0)
 AutoChest.Size = UDim2.new(0, 75, 0, 32)
 AutoChest.Font = Enum.Font.Gotham
 AutoChest.Text = "Auto Chest"
@@ -379,7 +391,7 @@ Logo:Destroy()
     wait(1)
     LoadingTXT.Text = "Hello " ..game.Players.LocalPlayer.DisplayName.. " From: ".. code
 	wait(1)
-	LoadingTXT.Text = "Game Blox Fruits!"
+	LoadingTXT.Text = "Game Blox Fruits : "..BInfo
 	wait(1)
 	LoadingTXT.Text = "Your Device is: Mobile"
     wait(1)
