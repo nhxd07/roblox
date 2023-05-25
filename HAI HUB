@@ -341,6 +341,18 @@ function Update:Window(text,logo,keybind)
 	Name.Text = text
 	Name.TextColor3 = Color3.fromRGB(225, 225, 225)
 	Name.TextSize = 17.000
+	
+	local GName = Instance.new("TextLabel")
+	GName.Name = "GName"
+	GName.Parent = Top
+	HName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	GName.BackgroundTransparency = 1.000
+	GName.Position = UDim2.new(0.309756112, 0, 0, 0)
+	GName.Size = UDim2.new(0, 61, 0, 27)
+	GName.Font = Enum.Font.GothamBold
+	GName.Text = BInfo
+	GName.TextColor3 = Color3.fromRGB(225, 225, 225)
+	GName.TextSize = 17.000
 
 local ServerTime = Instance.new("TextLabel")
 ServerTime.Name = "ServerTime"
@@ -4299,6 +4311,16 @@ spawn(function()
  end
 end)
 
+
+if game.PlaceId == 2753915549 then
+    BInfo = "🎮 Game : Blox Fruits | Old World"
+elseif game.PlaceId == 4442272183 then
+    BInfo = "🎮 Game : Blox Fruits | Second Sea"
+elseif game.PlaceId == 7449423635 then
+    BInfo = "🎮 Game : Blox Fruits | Third Sea"
+    else
+BInfo = "🎮 Game : Blox Fruits | Old World"
+end
 --------------------------
 local Home = Library:Tab("Home","rbxassetid://13438920682")
 local Main = Library:Tab("Main","rbxassetid://11446825283")
