@@ -1939,6 +1939,16 @@ elseif placeId == 7449423635 then
 World3 = true
 end
  
+if game.PlaceId == 2753915549 then
+    BInfo = "🎮 Game : Blox Fruits | Old World"
+elseif game.PlaceId == 4442272183 then
+    BInfo = "🎮 Game : Blox Fruits | Second Sea"
+elseif game.PlaceId == 7449423635 then
+    BInfo = "🎮 Game : Blox Fruits | Third Sea"
+    else
+BInfo = "🎮 Game : Blox Fruits | Old World"
+end
+
 function CheckQuest() 
 	local MyLevel = game.Players.LocalPlayer.Data.Level.Value
     if World1 then
