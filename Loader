@@ -349,7 +349,7 @@ Logo:Destroy()
 	LoadingTXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	LoadingTXT.BackgroundTransparency = 1.000
 	LoadingTXT.BorderSizePixel = 0
-	LoadingTXT.Position = UDim2.new(0.439113948, 0, 0.532407403, 0)
+	LoadingTXT.Position = UDim2.new(0.1039113948, 0, 0.432407403, 0)
 	LoadingTXT.Size = UDim2.new(0.666666687, 0, 0.166666672, 0)
 	LoadingTXT.Font = Enum.Font.GothamSemibold
 	LoadingTXT.Text = "Loading..."
