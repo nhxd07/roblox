@@ -1214,7 +1214,7 @@ SliderFrame.Parent = MainFramePage
 SliderFrame.BackgroundColor3 = Color3.fromRGB(28,28,28)
 SliderFrame.BackgroundTransparency = 1.000
 SliderFrame.BorderSizePixel = 0
-SliderFrame.Size = UDim2.new(0, 300, 0, 55)
+SliderFrame.Size = UDim2.new(0, 470, 0, 55)
 
 SliderFrame_2.Name = "SliderFrame_2"
 SliderFrame_2.Parent = SliderFrame
@@ -1222,7 +1222,7 @@ SliderFrame_2.BackgroundColor3 = Color3.fromRGB(28,28,28)
 SliderFrame_2.BackgroundTransparency = 1
 SliderFrame_2.BorderSizePixel = 0
 SliderFrame_2.Position = UDim2.new(0, 3, 0, 0)
-SliderFrame_2.Size = UDim2.new(0, 308, 0, 55)
+SliderFrame_2.Size = UDim2.new(0, 468, 0, 55)
 
 UIStroke.Name = "UIStroke"
 UIStroke.Parent = SliderFrame_2
@@ -1333,7 +1333,7 @@ BoxFrame.Parent = SliderFrame_2
 BoxFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 BoxFrame.BackgroundTransparency = 1.000
 BoxFrame.Size = UDim2.new(0, 50, 0, 15)
-BoxFrame.Position = UDim2.new(0, 395, 0, 5)
+BoxFrame.Position = UDim2.new(0, 448, 0, 5)
 
 SliderBox.Name = "SliderBox"
 SliderBox.Parent = BoxFrame
