@@ -386,7 +386,7 @@ mainDiscord.Name = "mainDiscord"
 mainDiscord.Parent = Top
 mainDiscord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 mainDiscord.BackgroundTransparency = 1.000
-mainDiscord.Position = UDim2.new(0.907561002, 0, 0 , 0)
+mainDiscord.Position = UDim2.new(0.957561002, 0, 0 , 0)
 mainDiscord.Size = UDim2.new(0, 30, 0, 30)
 mainDiscord.Image = "http://www.roblox.com/asset/?id=12058969086"
 mainDiscord.ImageColor3 = Color3.fromRGB(200, 200, 200)
@@ -4376,18 +4376,18 @@ Home:Label("Logs:")
 Home:Label(""..logs.."")
 Home:Line()
 
-Home:Textbox("Speed Hack","speed",function(speed)
+Home:Textbox("Speed Hack",true,function(speed)
   game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
   end)
   
-Home:Textbox("Jump Hack","jump",true,function(jump)
+Home:Textbox("Jump Hack",true,function(jump)
   game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
   end)
 Home:Line()
 
-Home:Button("Copy Telegram Link",function()
+Home:Button("Copy Discord Link",function()
  
- setclipboard("https://t.me/NHCheats")
+ setclipboard("https://discord.gg/af2FwhR6")
  end)
   
 Home:Line()
@@ -6072,8 +6072,8 @@ end)
             while wait() do
                 if _G.AutoObservation then
                     if game:GetService("Players").LocalPlayer.VisionRadius.Value >= 3000 then
-local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
-local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/Module"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/Client"))()
 wait(1)
 Notification:Notify(
    {Title = "HAI X HUB", Description = "You Have Max Observation"},
