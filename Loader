@@ -321,6 +321,8 @@ TextLabel.Text = "HAI HUB KEY SYSTEM"
 TextLabel.TextColor3 = Color3.fromRGB(130, 130, 130)
 TextLabel.TextSize = 20.000
 
+UICorner_2.Parent = TextLabel
+
 getkey.Name = "getkey"
 getkey.Parent = MAIN
 getkey.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
