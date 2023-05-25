@@ -161,42 +161,42 @@ tweenObject(Main, 0.25, {
 wait(0.25);
 Core:Destroy()
 
-local ThunderScreen = Instance.new("ScreenGui")
-local ThunderToggleUI = Instance.new("TextButton")
-local ThunderCornerUI = Instance.new("UICorner")
-local ThunderImageUI = Instance.new("ImageLabel")
+local HaiHubScreen = Instance.new("ScreenGui")
+local HaiHubToggleUI = Instance.new("TextButton")
+local HaiHubCornerUI = Instance.new("UICorner")
+local HaiHubImageUI = Instance.new("ImageLabel")
 
-        ThunderScreen.Name = "ThunderScreen"
-        ThunderScreen.Parent = game.CoreGui
-        ThunderScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+        HaiHubScreen.Name = "HaiHubScreen"
+        HaiHubScreen.Parent = game.CoreGui
+        HaiHubScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-        ThunderToggleUI.Name = "ThunderToggleUI"
-        ThunderToggleUI.Parent = ThunderScreen
-        ThunderToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
-        ThunderToggleUI.BorderSizePixel = 0
-        ThunderToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-        ThunderToggleUI.Size = UDim2.new(0, 45, 0, 45)
-        ThunderToggleUI.Font = Enum.Font.SourceSans
-        ThunderToggleUI.Text = ""
-        ThunderToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
-        ThunderToggleUI.TextSize = 14.000
-        ThunderToggleUI.Draggable = true
-        ThunderToggleUI.MouseButton1Click:Connect(function()
+        HaiHubToggleUI.Name = "HaiHubToggleUI"
+        HaiHubToggleUI.Parent = HaiHubScreen
+        HaiHubToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
+        HaiHubToggleUI.BorderSizePixel = 0
+        HaiHubToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+        HaiHubToggleUI.Size = UDim2.new(0, 45, 0, 45)
+        HaiHubToggleUI.Font = Enum.Font.SourceSans
+        HaiHubToggleUI.Text = ""
+        HaiHubToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
+        HaiHubToggleUI.TextSize = 14.000
+        HaiHubToggleUI.Draggable = true
+        HaiHubToggleUI.MouseButton1Click:Connect(function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
         game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
         end)
 
-        ThunderCornerUI.Name = "ThunderCornerUI"
-        ThunderCornerUI.Parent = ThunderToggleUI
+        HaiHubCornerUI.Name = "HaiHubCornerUI"
+        HaiHubCornerUI.Parent = HaiHubToggleUI
 
-        ThunderImageUI.Name = "MODILEMAGE"
-        ThunderImageUI.Parent = ThunderToggleUI
-        ThunderImageUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        ThunderImageUI.BackgroundTransparency = 1.000
-        ThunderImageUI.BorderSizePixel = 0
-        ThunderImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
-        ThunderImageUI.Size = UDim2.new(0, 45, 0, 45)
-        ThunderImageUI.Image = "http://www.roblox.com/asset/?id=13438920682"
+        HaiHubImageUI.Name = "MODILEMAGE"
+        HaiHubImageUI.Parent = HaiHubToggleUI
+        HaiHubImageUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        HaiHubImageUI.BackgroundTransparency = 1.000
+        HaiHubImageUI.BorderSizePixel = 0
+        HaiHubImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
+        HaiHubImageUI.Size = UDim2.new(0, 45, 0, 45)
+        HaiHubImageUI.Image = "http://www.roblox.com/asset/?id=13438920682"
         
  
  local UserInputService = game:GetService("UserInputService")
@@ -272,7 +272,16 @@ local ThunderImageUI = Instance.new("ImageLabel")
  _G.SectionTextColor = Color3.fromRGB(150, 150, 150)
  _G.SectionOn = Color3.fromRGB(0, 250, 0)
  
- 
+if game.PlaceId == 2753915549 then
+    BInfo = "🎮 Game : Blox Fruits | Old World"
+elseif game.PlaceId == 4442272183 then
+    BInfo = "🎮 Game : Blox Fruits | Second Sea"
+elseif game.PlaceId == 7449423635 then
+    BInfo = "🎮 Game : Blox Fruits | Third Sea"
+    else
+BInfo = "🎮 Game : Blox Fruits | Old World"
+end
+
 _G.Setting_table = {
 	SkillZ = true,
 }
@@ -341,6 +350,18 @@ function Update:Window(text,logo,keybind)
 	Name.Text = text
 	Name.TextColor3 = Color3.fromRGB(225, 225, 225)
 	Name.TextSize = 17.000
+	
+	local Name1 = Instance.new("TextLabel")
+	Name1.Name = "Name1"
+	Name1.Parent = Top
+	Name1.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+	Name1.BackgroundTransparency = 1.000
+	Name1.Position = UDim2.new(0.447561002, 0, 0, 0)
+	Name1.Size = UDim2.new(0, 61, 0, 27)
+	Name1.Font = Enum.Font.GothamBold
+	Name1.Text = BInfo
+	Name1.TextColor3 = Color3.fromRGB(225, 225, 225)
+	Name1.TextSize = 17.000
 
 local ServerTime = Instance.new("TextLabel")
 ServerTime.Name = "ServerTime"
@@ -381,7 +402,7 @@ spawn(function()
  end
  end)
  
- local mainDiscord = Instance.new("ImageButton")
+local mainDiscord = Instance.new("ImageButton")
 mainDiscord.Name = "mainDiscord"
 mainDiscord.Parent = Top
 mainDiscord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
