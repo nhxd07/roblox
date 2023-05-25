@@ -334,6 +334,26 @@ confirm.MouseButton1Click:Connect(function()
 DiscordLib:Notification("Key System" , "Key Check, Executing Script..." , 3)
 if keyhere.Text == "HaiXHub-10auw32a6300e30" then
 wait(3)
+local LoadingTXT = Instance.new("TextLabel")
+    LoadingTXT.Name = "LoadingTXT"
+	LoadingTXT.Parent = SazaMain
+	LoadingTXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LoadingTXT.BackgroundTransparency = 1.000
+	LoadingTXT.BorderSizePixel = 0
+	LoadingTXT.Position = UDim2.new(0.159999996, 0, 0.406666666, 0)
+	LoadingTXT.Size = UDim2.new(0.666666687, 0, 0.166666672, 0)
+	LoadingTXT.Font = Enum.Font.GothamSemibold
+	LoadingTXT.Text = "Loading..."
+	LoadingTXT.TextColor3 = Color3.fromRGB(180, 180, 180)
+	LoadingTXT.TextSize = 14.000
+	LoadingTXT.TextScaled = true
+    wait(1)
+    LoadingTXT.Text = "Getting Data..."
+    wait(1)
+    LoadingTXT.Text = "Hello " ..game.Players.LocalPlayer.DisplayName.. " From: ".. code
+	wait(1)
+	LoadingTXT.Text = "Game Support!"
+	wait(1)
 ZENHUB:Destroy()
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/HAI%20HUB"))()
 else
