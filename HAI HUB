@@ -4376,17 +4376,11 @@ Home:Label("Logs:")
 Home:Label(""..logs.."")
 Home:Line()
 
-Home:Slider("Speed Hack", 0, 150, 150, function(speed)
-  game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
-  end)
-Home:Slider1("Speed Hack", 0, 150, 150, function(speed)
+Home:Textbox("Speed Hack","",true,function(speed)
   game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
   end)
   
-Home:Slider("Jump Hack", 0, 150, 150, function(jump)
-  game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
-  end)
-Home:Slider1("Jump Hack", 0, 150, 150, function(jump)
+Home:Textbox("Jump Hack","",true,function(jump)
   game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
   end)
 Home:Line()
