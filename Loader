@@ -250,7 +250,50 @@ posto.Archivable = true
 
 UICorner.Parent = MAIN
 
+shadowHolder.Name = "shadowHolder"
+shadowHolder.Parent = MAIN
+shadowHolder.BackgroundTransparency = 1.000
+shadowHolder.Size = UDim2.new(1, 0, 1, 0)
+shadowHolder.ZIndex = 0
 
+umbraShadow.Name = "umbraShadow"
+umbraShadow.Parent = shadowHolder
+umbraShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+umbraShadow.BackgroundTransparency = 1.000
+umbraShadow.Position = UDim2.new(0.5, 0, 0.479999989, 16)
+umbraShadow.Size = UDim2.new(1, 24, 0.959999979, 24)
+umbraShadow.ZIndex = 0
+umbraShadow.Image = "rbxassetid://1316045217"
+umbraShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+umbraShadow.ImageTransparency = 0.860
+umbraShadow.ScaleType = Enum.ScaleType.Slice
+umbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+
+penumbraShadow.Name = "penumbraShadow"
+penumbraShadow.Parent = shadowHolder
+penumbraShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+penumbraShadow.BackgroundTransparency = 1.000
+penumbraShadow.Position = UDim2.new(0.5, 0, 0.479999989, 16)
+penumbraShadow.Size = UDim2.new(1, 24, 0.959999979, 24)
+penumbraShadow.ZIndex = 0
+penumbraShadow.Image = "rbxassetid://1316045217"
+penumbraShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+penumbraShadow.ImageTransparency = 0.880
+penumbraShadow.ScaleType = Enum.ScaleType.Slice
+penumbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+
+ambientShadow.Name = "ambientShadow"
+ambientShadow.Parent = shadowHolder
+ambientShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+ambientShadow.BackgroundTransparency = 1.000
+ambientShadow.Position = UDim2.new(0.5, 0, 0.479999989, 16)
+ambientShadow.Size = UDim2.new(1, 24, 0.959999979, 24)
+ambientShadow.ZIndex = 0
+ambientShadow.Image = "rbxassetid://1316045217"
+ambientShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+ambientShadow.ImageTransparency = 0.880
+ambientShadow.ScaleType = Enum.ScaleType.Slice
+ambientShadow.SliceCenter = Rect.new(10, 10, 118, 118)
 
 keyhere.Name = "keyhere"
 keyhere.Parent = MAIN
