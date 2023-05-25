@@ -342,7 +342,7 @@ UICorner_3.Parent = getkey
 AutoChest.Name = "AutoChest"
 AutoChest.Parent = MAIN
 AutoChest.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-AutoChest.Position = UDim2.new(0.651898727, 0, 0.752407403, 0)
+AutoChest.Position = UDim2.new(0.621898727, 0, 0.752407403, 0)
 AutoChest.Size = UDim2.new(0, 75, 0, 32)
 AutoChest.Font = Enum.Font.Gotham
 AutoChest.Text = "Auto Chest"
@@ -373,6 +373,7 @@ confirm:Destroy()
 keyhere:Destroy()
 getkey:Destroy()
 Logo:Destroy()
+AutoChest:Destroy()
     local LoadingTXT = Instance.new("TextLabel")
     LoadingTXT.Name = "LoadingTXT"
 	LoadingTXT.Parent = MAIN
@@ -391,7 +392,7 @@ Logo:Destroy()
     wait(1)
     LoadingTXT.Text = "Hello " ..game.Players.LocalPlayer.DisplayName.. " From: ".. code
 	wait(1)
-	LoadingTXT.Text = "Game Blox Fruits : "..BInfo
+	LoadingTXT.Text = ""..BInfo
 	wait(1)
 	LoadingTXT.Text = "Your Device is: Mobile"
     wait(1)
