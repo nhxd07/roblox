@@ -296,7 +296,7 @@ ambientShadow.ScaleType = Enum.ScaleType.Slice
 ambientShadow.SliceCenter = Rect.new(10, 10, 118, 118)
 
 KeyHere.Name = "KeyHere"
-Confirm.Parent = MAIN
+KeyHere.Parent = MAIN
 KeyHere.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 KeyHere.BorderSizePixel = 0
 KeyHere.Position = UDim2.new(0.501898727, 0, 0.236111104, 0)
