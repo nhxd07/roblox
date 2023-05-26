@@ -58,6 +58,7 @@ local HO = Instance.new("Frame")
 local Rejoin = Instance.new("TextButton")
 local Good = Instance.new("TextLabel")
 local Name1 = Instance.new("TextLabel")
+local CC = Instance.new("TextLabel")
 local Hit = Instance.new("Frame")
 local Hitb = Instance.new("TextBox")
 local SI = Instance.new("TextLabel")
@@ -313,6 +314,19 @@ Name1.TextWrapped = true
 pcall(function()
 	Name1.Text = game.Players:GetPlayerFromCharacter(game.Workspace.CurrentCamera.CameraSubject.Parent).Name
 end)
+
+CC.Name = "CC"
+CC.Parent = Frame
+CC.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+CC.BorderSizePixel = 0
+CC.Position = UDim2.new(0, 0, -0.124000005, 0)
+CC.Size = UDim2.new(0, 388, 0, 31)
+CC.Font = Enum.Font.SourceSans
+CC.Text = "Script Made by WarriorRoberr"
+CC.TextColor3 = Color3.fromRGB(0, 0, 0)
+CC.TextScaled = true
+CC.TextSize = 14.000
+CC.TextWrapped = true
 
 Hit.Name = "Hit"
 Hit.Parent = Frame
@@ -815,15 +829,16 @@ spawn(function()
                             TextLabel.Font = Enum.Font.Gotham
                             TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
                             TextLabel.Text.Size = 30
+                            TextLabel.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
                             TextLabel.TextStrokeTransparency = 0.000
                             TextLabel.TextWrapped = true
                         end
                         local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude)
-                        v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.Text = v.Name.."\n\n"..Dis.." M."
+                        v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.Text = = (v.Name ..' | '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M\nHealth : ' .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. '%')
                         if v.Team == game.Players.LocalPlayer.Team then
-                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(0, 255, 0)
+                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(0,255,0)
                         else
-                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(255, 0, 0)
+                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(255,0,0)
                         end
                     end
                 end
