@@ -356,7 +356,7 @@ function Update:Window(text,logo,keybind)
 	Name1.Parent = Top
 	Name1.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
 	Name1.BackgroundTransparency = 1.000
-	Name1.Position = UDim2.new(0.447561002, 0, 0, 0)
+	Name1.Position = UDim2.new(0.347561002, 0, 0, 0)
 	Name1.Size = UDim2.new(0, 61, 0, 27)
 	Name1.Font = Enum.Font.GothamBold
 	Name1.Text = BInfo
@@ -368,7 +368,7 @@ ServerTime.Name = "ServerTime"
 ServerTime.Parent = Top
 ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
 ServerTime.BackgroundTransparency = 1.000
-ServerTime.Position = UDim2.new(0.657561002, 0, 0 , 0)
+ServerTime.Position = UDim2.new(0.687561002, 0, 0 , 0)
 ServerTime.Size = UDim2.new(0, 225, 0, 25)
 ServerTime.Font = Enum.Font.GothamSemibold
 ServerTime.Text = ""
@@ -436,29 +436,6 @@ mainDiscord.MouseButton1Click:Connect(function()
     Duration = 20
   })
   end)
- 
- local BindButton = Instance.new("TextButton")
-	BindButton.Name = "BindButton"
-	BindButton.Parent = Top
-	BindButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	BindButton.BackgroundTransparency = 1.000
-	BindButton.Position = UDim2.new(0.247561002, 0, 0, 0)
-	BindButton.Size = UDim2.new(0, 100, 0, 27)
-	BindButton.Font = Enum.Font.GothamSemibold
-	BindButton.Text = "[ "..string.gsub(tostring(keybind),"Enum.KeyCode.","").." ]"
-	BindButton.TextColor3 = Color3.fromRGB(100, 100, 100)
-	BindButton.TextSize = 11.000
-	
-	BindButton.MouseButton1Click:Connect(function ()
-		BindButton.Text = "[ ... ]"
-		local inputwait = game:GetService("UserInputService").InputBegan:wait()
-		local shiba = inputwait.KeyCode == Enum.KeyCode.Unknown and inputwait.UserInputType or inputwait.KeyCode
-
-		if shiba.Name ~= "Focus" and shiba.Name ~= "MouseMovement" then
-			BindButton.Text = "[ "..shiba.Name.." ]"
-			yoo = shiba.Name
-		end
-	end)
 
 	local Tab = Instance.new("Frame")
 	Tab.Name = "Tab"
