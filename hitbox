@@ -815,16 +815,15 @@ spawn(function()
                             TextLabel.Font = Enum.Font.Gotham
                             TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
                             TextLabel.Text.Size = 30
-                            TextLabel.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
                             TextLabel.TextStrokeTransparency = 0.000
                             TextLabel.TextWrapped = true
                         end
                         local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude)
-                        v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.Text = = (v.Name ..' | '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M\nHealth : ' .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. '%')
+                        v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.Text = v.Name.."\n\n"..Dis.." M."
                         if v.Team == game.Players.LocalPlayer.Team then
-                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(0,255,0)
+                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(0, 255, 0)
                         else
-                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(255,0,0)
+                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(255, 0, 0)
                         end
                     end
                 end
