@@ -821,12 +821,13 @@ spawn(function()
 				else
 					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
 						v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
-					end
-				end
-			end
-		end)
-	end
-end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
 
 Target.Name = "Target"
 Target.Parent = Pla
