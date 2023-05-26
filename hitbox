@@ -826,7 +826,7 @@ spawn(function()
 			end
 		end)
 	end
-end)
+end
 
 Target.Name = "Target"
 Target.Parent = Pla
