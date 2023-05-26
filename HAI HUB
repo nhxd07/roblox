@@ -9515,6 +9515,29 @@ end)
   end)
   
   Race:Seperator("Auto Trials")
+  Race:Toggle("Auto Complete Ghoul/Human Trial",AutoCom,function(value)
+ AutoCom = value  
+end)
+
+spawn(function()
+    while wait() do
+        if AutoCom then
+            for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
+                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                    pcall(function()
+                        repeat wait(.1)
+                            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                            v.Humanoid.Health = 0
+                            v.HumanoidRootPart.CanCollide = false
+                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                            v.HumanoidRootPart.Transparency = 0.8
+                        until not AutoCom  or not v.Parent or v.Humanoid.Health <= 0
+                    end)
+                end
+            end
+        end
+    end
+end)
   Race:Button("Auto Complete Angel Trial",function(t)
   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame
   end)
@@ -10564,9 +10587,11 @@ spawn(function()
                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                     pcall(function()
                         repeat wait(.1)
+                            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
                             v.Humanoid.Health = 0
                             v.HumanoidRootPart.CanCollide = false
-							sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                            v.HumanoidRootPart.Transparency = 0.8
                         until not _G.Kill_Aura  or not v.Parent or v.Humanoid.Health <= 0
                     end)
                 end
