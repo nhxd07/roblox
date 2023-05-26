@@ -58,7 +58,6 @@ local HO = Instance.new("Frame")
 local Rejoin = Instance.new("TextButton")
 local Good = Instance.new("TextLabel")
 local Name1 = Instance.new("TextLabel")
-local CC = Instance.new("TextLabel")
 local Hit = Instance.new("Frame")
 local Hitb = Instance.new("TextBox")
 local SI = Instance.new("TextLabel")
@@ -315,19 +314,6 @@ pcall(function()
 	Name1.Text = game.Players:GetPlayerFromCharacter(game.Workspace.CurrentCamera.CameraSubject.Parent).Name
 end)
 
-CC.Name = "CC"
-CC.Parent = Frame
-CC.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-CC.BorderSizePixel = 0
-CC.Position = UDim2.new(0, 0, -0.124000005, 0)
-CC.Size = UDim2.new(0, 388, 0, 31)
-CC.Font = Enum.Font.SourceSans
-CC.Text = "Script Made by WarriorRoberr"
-CC.TextColor3 = Color3.fromRGB(0, 0, 0)
-CC.TextScaled = true
-CC.TextSize = 14.000
-CC.TextWrapped = true
-
 Hit.Name = "Hit"
 Hit.Parent = Frame
 Hit.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
@@ -513,7 +499,7 @@ G.TextSize = 14.000
 
 Blue.Name = "Blue"
 Blue.Parent = Hit
-Blue.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+Blue.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
 Blue.Position = UDim2.new(0.614285707, 0, 0.461883426, 0)
 Blue.Size = UDim2.new(0, 43, 0, 43)
 Blue.Font = Enum.Font.SourceSans
@@ -751,7 +737,7 @@ G1.TextSize = 14.000
 
 Blue1.Name = "Blue1"
 Blue1.Parent = Pla
-Blue1.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+Blue1.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
 Blue1.Position = UDim2.new(0.614285707, 0, 0.461883426, 0)
 Blue1.Size = UDim2.new(0, 43, 0, 43)
 Blue1.Font = Enum.Font.SourceSans
@@ -768,8 +754,8 @@ B1.BorderSizePixel = 0
 B1.Position = UDim2.new(0.614285707, 0, 0.336322874, 0)
 B1.Size = UDim2.new(0, 43, 0, 28)
 B1.Font = Enum.Font.SourceSans
-B1.Text = "Blue"
-B1.TextColor3 = Color3.fromRGB(0, 0, 255)
+B1.Text = "Pink"
+B1.TextColor3 = Color3.fromRGB(255, 0, 255)
 B1.TextSize = 14.000
 
 ONoff1.Name = "ON/off1"
@@ -806,52 +792,40 @@ end)
 spawn(function()
     while wait() do
         pcall(function()
-            if _G.Disabled1 then
-                for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name then
-                        if not v.Character.HumanoidRootPart:FindFirstChild("PlayerESP") then
-                            local BillboardGui = Instance.new("BillboardGui")
-                            local TextLabel = Instance.new("TextLabel")
-
-                            BillboardGui.Parent = v.Character.HumanoidRootPart
-                            BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-                            BillboardGui.Active = true
-                            BillboardGui.Name = "PlayerESP"
-                            BillboardGui.AlwaysOnTop = true
-                            BillboardGui.LightInfluence = 1.000
-                            BillboardGui.Size = UDim2.new(0, 200, 0, 50)
-                            BillboardGui.StudsOffset = Vector3.new(0, 2.5, 0)
-
-                            TextLabel.Parent = BillboardGui
-                            TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                            TextLabel.BackgroundTransparency = 1.000
-                            TextLabel.Size = UDim2.new(0, 200, 0, 50)
-                            TextLabel.Font = Enum.Font.GothamBold
-                            TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-                            TextLabel.Text.Size = 35
-                            TextLabel.TextStrokeTransparency = 0.000
-                            TextLabel.TextWrapped = true
-                        end
-                        local Dis = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude)
-                        v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.Text = v.Name.."\n\n"..Dis.." M."
-                        if v.Team == game.Players.LocalPlayer.Team then
-                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(255,0,0)
-                        else
-                            v.Character.HumanoidRootPart:FindFirstChild("PlayerESP").TextLabel.TextColor3 = Color3.new(0,255,0)
-                        end
-                    end
-                end
-            else
-                for i,v in pairs(game.Players:GetChildren()) do
-                    if v.Name ~= game.Players.LocalPlayer.Name then
-                        if v.Character.HumanoidRootPart:FindFirstChild("PlayerESP") then
-                            v.Character.HumanoidRootPart.PlayerESP:Destroy()
-                        end
-                    end
-                end
-            end
-        end)
-    end
+			if not isnil(v.Character) then
+				if _G.Disabled1 then
+					if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
+						local bill = Instance.new('BillboardGui',v.Character.Head)
+						bill.Name = 'NameEsp'..Number
+						bill.ExtentsOffset = Vector3.new(0, 1, 0)
+						bill.Size = UDim2.new(1,200,1,30)
+						bill.Adornee = v.Character.Head
+						bill.AlwaysOnTop = true
+						local name = Instance.new('TextLabel',bill)
+						name.Font = Enum.Font.Gotham
+						name.FontSize = "Size14"
+						name.TextWrapped = true
+						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
+						name.Size = 30
+						name.TextYAlignment = 'Top'
+						name.BackgroundTransparency = 1
+						name.TextStrokeTransparency = 0.5
+						if v.Team == game.Players.LocalPlayer.Team then
+							name.TextColor3 = Color3.new(0,255,0)
+						else
+							name.TextColor3 = Color3.new(255,0,0)
+						end
+					else
+						v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..' | '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M\nHealth : ' .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. '%')
+					end
+				else
+					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
+						v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
+					end
+				end
+			end
+		end)
+	end
 end)
 
 Target.Name = "Target"
@@ -1054,7 +1028,7 @@ G2.TextSize = 14.000
 
 blue2.Name = "blue2"
 blue2.Parent = Team
-blue2.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+blue2.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
 blue2.Position = UDim2.new(0.614285707, 0, 0.461883426, 0)
 blue2.Size = UDim2.new(0, 43, 0, 43)
 blue2.Font = Enum.Font.SourceSans
@@ -1071,8 +1045,8 @@ B2.BorderSizePixel = 0
 B2.Position = UDim2.new(0.614285707, 0, 0.336322874, 0)
 B2.Size = UDim2.new(0, 43, 0, 28)
 B2.Font = Enum.Font.SourceSans
-B2.Text = "Blue"
-B2.TextColor3 = Color3.fromRGB(0, 0, 255)
+B2.Text = "Pink"
+B2.TextColor3 = Color3.fromRGB(255, 0, 255)
 B2.TextSize = 14.000
 
 ONoff2.Name = "ON/off2"
