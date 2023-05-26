@@ -346,11 +346,11 @@ AutoChest.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 AutoChest.Position = UDim2.new(0.621898727, 0, 0.752407403, 0)
 AutoChest.Size = UDim2.new(0, 75, 0, 32)
 AutoChest.Font = Enum.Font.Gotham
-AutoChest.Text = "Auto Chest"
+AutoChest.Text = "HitBox"
 AutoChest.TextColor3 = Color3.fromRGB(255, 255, 255)
 AutoChest.TextSize = 14.000
 AutoChest.MouseButton1Click:Connect(function()
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/autochest"))()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/hitbox"))()
 DiscordLib:Notification("Key System" , "On Auto Chest" , 3)
 end)
 
@@ -369,7 +369,7 @@ Confirm.TextColor3 = Color3.fromRGB(255, 255, 255)
 Confirm.TextSize = 14.000
 Confirm.MouseButton1Click:Connect(function()
 DiscordLib:Notification("Key System" , "Key Check, Executing Script..." , 3)
-if KeyHere.Text == "HaiXHub-745086acb9c8a7a434b3228ecbdc" then
+if KeyHere.Text == "HaiXHub-10auw32a6300e30" then
 wait(3)
 Confirm:Destroy()
 KeyHere:Destroy()
