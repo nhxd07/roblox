@@ -1,6 +1,7 @@
 local HaiHubScreen = Instance.new("ScreenGui")
 local HaiHubToggleUI = Instance.new("TextButton")
 local HaiHubImageUI = Instance.new("ImageLabel")
+local SoundClick = Instance.new("Sound")
 
         HaiHubScreen.Name = "HaiHubScreen"
         HaiHubScreen.Parent = game.CoreGui
@@ -24,12 +25,16 @@ local HaiHubImageUI = Instance.new("ImageLabel")
 
         HaiHubImageUI.Name = "MODILEMAGE"
         HaiHubImageUI.Parent = HaiHubToggleUI
-        HaiHubImageUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         HaiHubImageUI.BackgroundTransparency = 1.000
         HaiHubImageUI.BorderSizePixel = 0
         HaiHubImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
         HaiHubImageUI.Size = UDim2.new(0, 35, 0, 35)
         HaiHubImageUI.Image = "http://www.roblox.com/asset/?id=13438920682"
+
+        SoundClick.Name = "Sound Effect"
+        SoundClick.Parent = Load
+        SoundClick.SoundId = "rbxassetid://130785805"
+        SoundClick.Volume = 1
         
  
  local UserInputService = game:GetService("UserInputService")
@@ -9807,7 +9812,7 @@ end)
 
 
 
-Teleport:Seperator(" WORLD ")
+Teleport:Seperator(" World ")
  
  Teleport:Button("Teleport To Old World",function()
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
@@ -9975,7 +9980,7 @@ Teleport:Seperator(" WORLD ")
   elseif _G.SelectIsland == "Great Tree" then
   topos(CFrame.new(2681.2736816406, 1682.8092041016, -7190.9853515625))
   elseif _G.SelectIsland == "Castle On The Sea" then
-  topos(CFrame.new(-5074.45556640625, 314.5155334472656, -2991.054443359375))
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5074.45556640625, 314.5155334472656, -2991.054443359375))
   elseif _G.SelectIsland == "MiniSky" then
   topos(CFrame.new(-260.65557861328, 49325.8046875, -35253.5703125))
   elseif _G.SelectIsland == "Port Town" then
