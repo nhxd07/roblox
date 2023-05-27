@@ -3743,7 +3743,7 @@ spawn(function()
    v.HumanoidRootPart.CanCollide = false
    v.HumanoidRootPart.Size = Vector3.new(50,50,50)
    if v.Humanoid:FindFirstChild("Animator") then
-   v.Humanoid.Animator:Destroy()
+   
    end
    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
    end
@@ -3798,7 +3798,7 @@ spawn(function()
    v.HumanoidRootPart.CanCollide = false
    v.HumanoidRootPart.Size = Vector3.new(50,50,50)
    if v.Humanoid:FindFirstChild("Animator") then
-   v.Humanoid.Animator:Destroy()
+   
    end
    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
    end
@@ -3858,7 +3858,7 @@ spawn(function()
 					v.HumanoidRootPart.CanCollide = false
 					v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 					if v.Humanoid:FindFirstChild("Animator") then
-						v.Humanoid.Animator:Destroy()
+						
 					end
 					sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 				end
@@ -3876,7 +3876,7 @@ spawn(function()
 					v.HumanoidRootPart.CanCollide = false
 					v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 					if v.Humanoid:FindFirstChild("Animator") then
-						v.Humanoid.Animator:Destroy()
+						
 					end
 					sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 				end
@@ -4308,7 +4308,7 @@ spawn(function()
 						v.Head.CanCollide = false
 						v.HumanoidRootPart.CFrame = FarmPos
 						if v.Humanoid:FindFirstChild('Animator') then
-							v.Humanoid.Animator:Destroy()
+							
 						end
 						v.Humanoid:ChangeState(11)
 						v.Humanoid:ChangeState(14)
@@ -4333,7 +4333,7 @@ spawn(function()
 						v.Head.CanCollide = false
 						v.HumanoidRootPart.CFrame = FarmPos
 						if v.Humanoid:FindFirstChild('Animator') then
-							v.Humanoid.Animator:Destroy()
+							
 						end
 						v.Humanoid:ChangeState(11)
 						v.Humanoid:ChangeState(14)
@@ -4358,7 +4358,7 @@ spawn(function()
 						v.Head.CanCollide = false
 						v.HumanoidRootPart.CFrame = FarmPos
 						if v.Humanoid:FindFirstChild('Animator') then
-							v.Humanoid.Animator:Destroy()
+							
 						end
 						v.Humanoid:ChangeState(11)
 						v.Humanoid:ChangeState(14)
@@ -4383,7 +4383,7 @@ spawn(function()
 						v.Head.CanCollide = false
 						v.HumanoidRootPart.CFrame = FarmPos
 						if v.Humanoid:FindFirstChild('Animator') then
-							v.Humanoid.Animator:Destroy()
+							
 						end
 						v.Humanoid:ChangeState(11)
 						v.Humanoid:ChangeState(14)
@@ -4454,7 +4454,7 @@ spawn(function()
    v.HumanoidRootPart.CanCollide = false
    v.HumanoidRootPart.Size = Vector3.new(60,60,60)
    if v.Humanoid:FindFirstChild("Animator") then
-   v.Humanoid.Animator:Destroy()
+   
    end
    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
    end
@@ -5738,7 +5738,7 @@ spawn(function()
 								v.Head.CanCollide = false
 								v.HumanoidRootPart.CFrame = PosMon
 								if v.Humanoid:FindFirstChild("Animator") then
-									v.Humanoid.Animator:Destroy()
+									
 								end
 								v.Humanoid:ChangeState(11)
 								v.Humanoid:ChangeState(14)
@@ -5763,7 +5763,7 @@ spawn(function()
 								v.Head.CanCollide = false
 								v.HumanoidRootPart.CFrame = PosMon
 								if v.Humanoid:FindFirstChild("Animator") then
-									v.Humanoid.Animator:Destroy()
+									
 								end
 								v.Humanoid:ChangeState(11)
 								v.Humanoid:ChangeState(14)
@@ -6276,7 +6276,7 @@ end)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							v.Humanoid.Animator:Destroy()
+							
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
@@ -6294,7 +6294,7 @@ end)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							v.Humanoid.Animator:Destroy()
+							
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
@@ -7398,7 +7398,7 @@ end)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							v.Humanoid.Animator:Destroy()
+							
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
@@ -7704,7 +7704,7 @@ end)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							v.Humanoid.Animator:Destroy()
+							
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
@@ -8579,7 +8579,7 @@ Weapon:Toggle("Auto Observation Haki V2",_G.AutoObservationHakiV2,function(x)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							v.Humanoid.Animator:Destroy()
+							
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
@@ -8693,7 +8693,7 @@ end)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							v.Humanoid.Animator:Destroy()
+							
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
