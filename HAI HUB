@@ -1,7 +1,6 @@
 local HaiHubScreen = Instance.new("ScreenGui")
 local HaiHubToggleUI = Instance.new("TextButton")
 local HaiHubImageUI = Instance.new("ImageLabel")
-local Sound = SoundClick or 130785805
 
         local SoundClick = Instance.new("Sound")
 		SoundClick.Name = "SoundClick"
