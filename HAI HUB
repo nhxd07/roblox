@@ -25,6 +25,7 @@ local Sound = options.SoundEffect or 130785805
         HaiHubToggleUI.TextSize = 14.000
         HaiHubToggleUI.Draggable = true
         HaiHubToggleUI.MouseButton1Click:Connect(function()
+        SoundClick:Play()
         game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
         game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
         end)
