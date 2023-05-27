@@ -1,6 +1,5 @@
 local HaiHubScreen = Instance.new("ScreenGui")
 local HaiHubToggleUI = Instance.new("TextButton")
-local HaiHubCornerUI = Instance.new("UICorner")
 local HaiHubImageUI = Instance.new("ImageLabel")
 
         HaiHubScreen.Name = "HaiHubScreen"
@@ -12,7 +11,7 @@ local HaiHubImageUI = Instance.new("ImageLabel")
         HaiHubToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
         HaiHubToggleUI.BorderSizePixel = 0
         HaiHubToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-        HaiHubToggleUI.Size = UDim2.new(0, 45, 0, 45)
+        HaiHubToggleUI.Size = UDim2.new(0, 35, 0, 35)
         HaiHubToggleUI.Font = Enum.Font.SourceSans
         HaiHubToggleUI.Text = ""
         HaiHubToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -23,16 +22,13 @@ local HaiHubImageUI = Instance.new("ImageLabel")
         game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
         end)
 
-        HaiHubCornerUI.Name = "HaiHubCornerUI"
-        HaiHubCornerUI.Parent = HaiHubToggleUI
-
         HaiHubImageUI.Name = "MODILEMAGE"
         HaiHubImageUI.Parent = HaiHubToggleUI
         HaiHubImageUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         HaiHubImageUI.BackgroundTransparency = 1.000
         HaiHubImageUI.BorderSizePixel = 0
         HaiHubImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
-        HaiHubImageUI.Size = UDim2.new(0, 45, 0, 45)
+        HaiHubImageUI.Size = UDim2.new(0, 35, 0, 35)
         HaiHubImageUI.Image = "http://www.roblox.com/asset/?id=13438920682"
         
  
@@ -3743,7 +3739,7 @@ spawn(function()
    v.HumanoidRootPart.CanCollide = false
    v.HumanoidRootPart.Size = Vector3.new(50,50,50)
    if v.Humanoid:FindFirstChild("Animator") then
-   
+   v.Humanoid.Animator:Destroy()
    end
    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
    end
@@ -3798,7 +3794,7 @@ spawn(function()
    v.HumanoidRootPart.CanCollide = false
    v.HumanoidRootPart.Size = Vector3.new(50,50,50)
    if v.Humanoid:FindFirstChild("Animator") then
-   
+   v.Humanoid.Animator:Destroy()
    end
    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
    end
@@ -3858,7 +3854,7 @@ spawn(function()
 					v.HumanoidRootPart.CanCollide = false
 					v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 					if v.Humanoid:FindFirstChild("Animator") then
-						
+						v.Humanoid.Animator:Destroy()
 					end
 					sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 				end
@@ -3876,7 +3872,7 @@ spawn(function()
 					v.HumanoidRootPart.CanCollide = false
 					v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 					if v.Humanoid:FindFirstChild("Animator") then
-						
+						v.Humanoid.Animator:Destroy()
 					end
 					sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 				end
@@ -4308,7 +4304,7 @@ spawn(function()
 						v.Head.CanCollide = false
 						v.HumanoidRootPart.CFrame = FarmPos
 						if v.Humanoid:FindFirstChild('Animator') then
-							
+							v.Humanoid.Animator:Destroy()
 						end
 						v.Humanoid:ChangeState(11)
 						v.Humanoid:ChangeState(14)
@@ -4333,7 +4329,7 @@ spawn(function()
 						v.Head.CanCollide = false
 						v.HumanoidRootPart.CFrame = FarmPos
 						if v.Humanoid:FindFirstChild('Animator') then
-							
+							v.Humanoid.Animator:Destroy()
 						end
 						v.Humanoid:ChangeState(11)
 						v.Humanoid:ChangeState(14)
@@ -4358,7 +4354,7 @@ spawn(function()
 						v.Head.CanCollide = false
 						v.HumanoidRootPart.CFrame = FarmPos
 						if v.Humanoid:FindFirstChild('Animator') then
-							
+							v.Humanoid.Animator:Destroy()
 						end
 						v.Humanoid:ChangeState(11)
 						v.Humanoid:ChangeState(14)
@@ -4383,7 +4379,7 @@ spawn(function()
 						v.Head.CanCollide = false
 						v.HumanoidRootPart.CFrame = FarmPos
 						if v.Humanoid:FindFirstChild('Animator') then
-							
+							v.Humanoid.Animator:Destroy()
 						end
 						v.Humanoid:ChangeState(11)
 						v.Humanoid:ChangeState(14)
@@ -4454,7 +4450,7 @@ spawn(function()
    v.HumanoidRootPart.CanCollide = false
    v.HumanoidRootPart.Size = Vector3.new(60,60,60)
    if v.Humanoid:FindFirstChild("Animator") then
-   
+   v.Humanoid.Animator:Destroy()
    end
    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
    end
@@ -5738,7 +5734,7 @@ spawn(function()
 								v.Head.CanCollide = false
 								v.HumanoidRootPart.CFrame = PosMon
 								if v.Humanoid:FindFirstChild("Animator") then
-									
+									v.Humanoid.Animator:Destroy()
 								end
 								v.Humanoid:ChangeState(11)
 								v.Humanoid:ChangeState(14)
@@ -5763,7 +5759,7 @@ spawn(function()
 								v.Head.CanCollide = false
 								v.HumanoidRootPart.CFrame = PosMon
 								if v.Humanoid:FindFirstChild("Animator") then
-									
+									v.Humanoid.Animator:Destroy()
 								end
 								v.Humanoid:ChangeState(11)
 								v.Humanoid:ChangeState(14)
@@ -6276,7 +6272,7 @@ end)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							
+							v.Humanoid.Animator:Destroy()
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
@@ -6294,7 +6290,7 @@ end)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							
+							v.Humanoid.Animator:Destroy()
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
@@ -7398,7 +7394,7 @@ end)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							
+							v.Humanoid.Animator:Destroy()
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
@@ -7704,7 +7700,7 @@ end)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							
+							v.Humanoid.Animator:Destroy()
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
@@ -8579,7 +8575,7 @@ Weapon:Toggle("Auto Observation Haki V2",_G.AutoObservationHakiV2,function(x)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							
+							v.Humanoid.Animator:Destroy()
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
@@ -8693,7 +8689,7 @@ end)
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
-							
+							v.Humanoid.Animator:Destroy()
 						end
 						sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
 					end
