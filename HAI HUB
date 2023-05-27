@@ -1,11 +1,11 @@
 local HaiHubScreen = Instance.new("ScreenGui")
 local HaiHubToggleUI = Instance.new("TextButton")
 local HaiHubImageUI = Instance.new("ImageLabel")
+local Sound = SoundClick or 130785805
 
         local SoundClick = Instance.new("Sound")
-
-		SoundClick.Name = "Sound Effect"
-		SoundClick.Parent = Load
+		SoundClick.Name = "SoundClick"
+		SoundClick.Parent = HaiHubScreen
 		SoundClick.SoundId = "rbxassetid://130785805"
 		SoundClick.Volume = 1
 		
@@ -24,8 +24,8 @@ local HaiHubImageUI = Instance.new("ImageLabel")
         HaiHubToggleUI.TextSize = 14.000
         HaiHubToggleUI.Draggable = true
         HaiHubToggleUI.MouseButton1Click:Connect(function()
-        SoundClick:Play()
         game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+        SoundClick:Play()
         game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
         end)
 
@@ -4166,20 +4166,6 @@ local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
 Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
-Home:Label("Script By Nguyen Nhu Hai")
-
-Client = Home:Label1("Client")
-
-function UpdateClient()
-local Fps = workspace:GetRealPhysicsFPS()
-Client:Refresh("[Fps] : "..Fps)
-end
-
-spawn(function()
- while true do wait(.1)
- UpdateClient()
- end
- end)
  
 PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
 spawn(function()
@@ -4207,10 +4193,6 @@ spawn(function()
  end
  end)
 
-Home:Line()
-local logs = game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/logs")
-Home:Label("Logs:")
-Home:Label(""..logs.."")
 Home:Line()
 
 Home:Textbox("Speed Hack",true,function(speed)
@@ -4264,16 +4246,10 @@ Setting:Toggle("Anti AFK",true,function(value)
  end)
 
 if not game:GetService("UserInputService").TouchEnabled and not game:GetService("UserInputService").KeyboardEnabled == false then
-_G.DistanceMob = 20
-Setting:Slider("Farm Distance",1,100,20,function(value)
- _G.DistanceMob = value
- end)
-else
  _G.DistanceMob = 20
-Setting:Slider1("Farm Distance",1,100,20,function(value)
+Setting:Textbox("Farm Distance",true,function(value)
  _G.DistanceMob = value
  end)
-end
 
 Setting:Dropdown("Select Farm Method", {
  "Behind","Below","Upper"
@@ -4786,15 +4762,9 @@ Setting:Seperator(" Settings Mastery ")
 
 if not game:GetService("UserInputService").TouchEnabled and not game:GetService("UserInputService").KeyboardEnabled == false then
 _G.Kill_At = 25
-Setting:Slider("Kill Health [For Mastery]",1,100,25,function(value)
+Setting:Textbox("Kill Health [For Mastery]",true,function(value)
  _G.Kill_At = value
-end)
-else
-_G.Kill_At = 25
-Setting:Slider1("Kill Health [For Mastery]",1,100,25,function(value)
- _G.Kill_At = value
-end)
-end
+ end)
 
 Setting:Toggle("Skill Z",true,function(a)
 		_G.SkillZ = a
@@ -9663,14 +9633,14 @@ Stats:Button("Stat Refund",function()
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,2)
   end)
 
-Stats:Slider("Select Point",1,100,1,function(value)
+Stats:TextBox("Select Point",true,function(value)
 _G.Point = value
 return "Point : " .. tostring(value)
 end)
 
 P:Seperator(" Combats ")
 
-P:Slider("Select Size Fov",1,1000,200,function(value)
+P:TextBox("Select Size Fov",true,function(value)
 _G.Select_Size_Fov = value
 return "Size Fov : " .. tostring(value)
 end)
