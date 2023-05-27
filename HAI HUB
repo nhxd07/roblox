@@ -1,13 +1,12 @@
 local HaiHubScreen = Instance.new("ScreenGui")
 local HaiHubToggleUI = Instance.new("TextButton")
 local HaiHubImageUI = Instance.new("ImageLabel")
-local Sound = options.SoundEffect or 130785805
 
         local SoundClick = Instance.new("Sound")
 
 		SoundClick.Name = "Sound Effect"
 		SoundClick.Parent = Load
-		SoundClick.SoundId = "rbxassetid://"..tonumber(Sound)
+		SoundClick.SoundId = "rbxassetid://130785805"
 		SoundClick.Volume = 1
 		
         HaiHubScreen.Name = "HaiHubScreen"
