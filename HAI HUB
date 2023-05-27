@@ -9901,7 +9901,7 @@ Teleport:Button('Stop Tween', function()
     _G.Clip2 = false
 end)
 Teleport:Button('Sea Beast', function()
-    TP2(game:GetService("Workspace")["_WorldOrigin"].Locations["Sea of Treats"].CFrame)
+    topos(game:GetService("Workspace")["_WorldOrigin"].Locations["Sea of Treats"].CFrame)
 end)
 
 if World1 then
@@ -9909,7 +9909,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(1071.2832, 16.3085976, 1426.86792))
         else
-            TP2(CFrame.new(1071.2832, 16.3085976, 1426.86792))
+            topos(CFrame.new(1071.2832, 16.3085976, 1426.86792))
         end
         
     end)
@@ -9917,7 +9917,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-2573.3374, 6.88881969, 2046.99817))
         else
-            TP2(CFrame.new(-2573.3374, 6.88881969, 2046.99817))
+            topos(CFrame.new(-2573.3374, 6.88881969, 2046.99817))
         end
         
     end)
@@ -9925,7 +9925,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-655.824158, 7.88708115, 1436.67908))
         else
-            TP2(CFrame.new(-655.824158, 7.88708115, 1436.67908))
+            topos(CFrame.new(-655.824158, 7.88708115, 1436.67908))
         end
         
     end)
@@ -9933,7 +9933,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-1249.77222, 11.8870859, 341.356476))
         else
-            TP2(CFrame.new(-1249.77222, 11.8870859, 341.356476))
+            topos(CFrame.new(-1249.77222, 11.8870859, 341.356476))
         end
         
     end)
@@ -9941,7 +9941,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-1122.34998, 4.78708982, 3855.91992))
         else
-            TP2(CFrame.new(-1122.34998, 4.78708982, 3855.91992))
+            topos(CFrame.new(-1122.34998, 4.78708982, 3855.91992))
         end
         
     end)
@@ -9949,7 +9949,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(1094.14587, 6.47350502, 4192.88721))
         else
-            TP2(CFrame.new(1094.14587, 6.47350502, 4192.88721))
+            topos(CFrame.new(1094.14587, 6.47350502, 4192.88721))
         end
         
     end)
@@ -9957,7 +9957,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(1198.00928, 27.0074959, -1211.73376))
         else
-            TP2(CFrame.new(1198.00928, 27.0074959, -1211.73376))
+            topos(CFrame.new(1198.00928, 27.0074959, -1211.73376))
         end
         
     end)
@@ -9965,7 +9965,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-4505.375, 20.687294, 4260.55908))
         else
-            TP2(CFrame.new(-4505.375, 20.687294, 4260.55908))
+            topos(CFrame.new(-4505.375, 20.687294, 4260.55908))
         end
         
     end)
@@ -9973,7 +9973,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-1428.35474, 7.38933945, -3014.37305))
         else
-            TP2(CFrame.new(-1428.35474, 7.38933945, -3014.37305))
+            topos(CFrame.new(-1428.35474, 7.38933945, -3014.37305))
         end
         
     end)
@@ -9981,7 +9981,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-4970.21875, 717.707275, -2622.35449))
         else
-            TP2(CFrame.new(-4970.21875, 717.707275, -2622.35449))
+            topos(CFrame.new(-4970.21875, 717.707275, -2622.35449))
         end
         
     end)
@@ -9989,7 +9989,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-4813.0249, 903.708557, -1912.69055))
         else
-            TP2(CFrame.new(-4813.0249, 903.708557, -1912.69055))
+            topos(CFrame.new(-4813.0249, 903.708557, -1912.69055))
         end
         
     end)
@@ -9997,7 +9997,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-7952.31006, 5545.52832, -320.704956))
         else
-            TP2(CFrame.new(-7952.31006, 5545.52832, -320.704956))
+            topos(CFrame.new(-7952.31006, 5545.52832, -320.704956))
         end
         
     end)
@@ -10005,7 +10005,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-7793.43896, 5607.22168, -2016.58362))
         else
-            TP2(CFrame.new(-7793.43896, 5607.22168, -2016.58362))
+            topos(CFrame.new(-7793.43896, 5607.22168, -2016.58362))
         end
         
     end)
@@ -10013,7 +10013,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(4854.16455, 5.68742752, 740.194641))
         else
-            TP2(CFrame.new(4854.16455, 5.68742752, 740.194641))
+            topos(CFrame.new(4854.16455, 5.68742752, 740.194641))
         end
         
     end)
@@ -10021,7 +10021,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-5231.75879, 8.61593437, 8467.87695))
         else
-            TP2(CFrame.new(-5231.75879, 8.61593437, 8467.87695))
+            topos(CFrame.new(-5231.75879, 8.61593437, 8467.87695))
         end
     
     end)
@@ -10029,15 +10029,15 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(61163.8516, 11.7796879, 1819.78418))
         else
-            TP2(CFrame.new(61163.8516, 11.7796879, 1819.78418))
+            topos(CFrame.new(61163.8516, 11.7796879, 1819.78418))
         end
         
     end)
     Teleport:Button("Fountain City",function()
         if BypassTP then
-            TP2(CFrame.new(5132.7124, 4.53632832, 4037.8562))
+            topos(CFrame.new(5132.7124, 4.53632832, 4037.8562))
         else
-            TP2(CFrame.new(5132.7124, 4.53632832, 4037.8562))
+            topos(CFrame.new(5132.7124, 4.53632832, 4037.8562))
         end
         
     end)
@@ -10045,7 +10045,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(6262.72559, 71.3003616, 3998.23047))
         else
-            TP2(CFrame.new(6262.72559, 71.3003616, 3998.23047))
+            topos(CFrame.new(6262.72559, 71.3003616, 3998.23047))
         end
         
     end)
@@ -10053,7 +10053,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-1442.16553, 29.8788261, -28.3547478))
         else
-            TP2(CFrame.new(-1442.16553, 29.8788261, -28.3547478))
+            topos(CFrame.new(-1442.16553, 29.8788261, -28.3547478))
         end
         
     end)
@@ -10061,7 +10061,7 @@ if World1 then
         if BypassTP then
             BTP(CFrame.new(-2850.20068, 7.39224768, 5354.99268))
         else
-            TP2(CFrame.new(-2850.20068, 7.39224768, 5354.99268))
+            topos(CFrame.new(-2850.20068, 7.39224768, 5354.99268))
         end
         
     end)
@@ -10071,7 +10071,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(-385.250916, 73.0458984, 297.388397))
         else
-            TP2(CFrame.new(-385.250916, 73.0458984, 297.388397))
+            topos(CFrame.new(-385.250916, 73.0458984, 297.388397))
         end
         
     end)
@@ -10079,7 +10079,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(82.9490662, 18.0710983, 2834.98779))
         else
-            TP2(CFrame.new(82.9490662, 18.0710983, 2834.98779))
+            topos(CFrame.new(82.9490662, 18.0710983, 2834.98779))
         end
         
     end)
@@ -10087,7 +10087,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(-394.983521, 118.503128, 1245.8446))
         else
-            TP2(CFrame.new(-394.983521, 118.503128, 1245.8446))
+            topos(CFrame.new(-394.983521, 118.503128, 1245.8446))
         end
         
     end)
@@ -10095,7 +10095,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(-390.096313, 331.886475, 673.464966))
         else
-            TP2(CFrame.new(-390.096313, 331.886475, 673.464966))
+            topos(CFrame.new(-390.096313, 331.886475, 673.464966))
         end
         
     end)
@@ -10103,7 +10103,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(2302.19019, 15.1778421, 663.811035))
         else
-            TP2(CFrame.new(2302.19019, 15.1778421, 663.811035))
+            topos(CFrame.new(2302.19019, 15.1778421, 663.811035))
         end
         
     end)
@@ -10111,7 +10111,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(-2372.14697, 72.9919434, -3166.51416))
         else
-            TP2(CFrame.new(-2372.14697, 72.9919434, -3166.51416))
+            topos(CFrame.new(-2372.14697, 72.9919434, -3166.51416))
         end
         
     end)
@@ -10119,7 +10119,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(430.42569, 210.019623, -432.504791))
         else
-            TP2(CFrame.new(430.42569, 210.019623, -432.504791))
+            topos(CFrame.new(430.42569, 210.019623, -432.504791))
         end
         
     end)
@@ -10127,7 +10127,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(-1836.58191, 44.5890656, 1360.30652))
         else
-            TP2(CFrame.new(-1836.58191, 44.5890656, 1360.30652))
+            topos(CFrame.new(-1836.58191, 44.5890656, 1360.30652))
         end
         
     end)
@@ -10135,7 +10135,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(-5411.47607, 48.8234024, -721.272522))
         else
-            TP2(CFrame.new(-5411.47607, 48.8234024, -721.272522))
+            topos(CFrame.new(-5411.47607, 48.8234024, -721.272522))
         end
         
     end)
@@ -10143,7 +10143,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(511.825226, 401.765198, -5380.396))
         else
-            TP2(CFrame.new(511.825226, 401.765198, -5380.396))
+            topos(CFrame.new(511.825226, 401.765198, -5380.396))
         end
         
     end)
@@ -10151,7 +10151,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(-6026.96484, 14.7461271, -5071.96338))
         else
-            TP2(CFrame.new(-6026.96484, 14.7461271, -5071.96338))
+            topos(CFrame.new(-6026.96484, 14.7461271, -5071.96338))
         end
         
     end)
@@ -10159,7 +10159,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(-5478.39209, 15.9775667, -5246.9126))
         else
-            TP2(CFrame.new(-5478.39209, 15.9775667, -5246.9126))
+            topos(CFrame.new(-5478.39209, 15.9775667, -5246.9126))
         end
         
     end)
@@ -10167,7 +10167,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(902.059143, 124.752518, 33071.8125))
         else
-            TP2(CFrame.new(902.059143, 124.752518, 33071.8125))
+            topos(CFrame.new(902.059143, 124.752518, 33071.8125))
         end
         
     end)
@@ -10175,7 +10175,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(5400.40381, 28.21698, -6236.99219))
         else
-            TP2(CFrame.new(5400.40381, 28.21698, -6236.99219))
+            topos(CFrame.new(5400.40381, 28.21698, -6236.99219))
         end
         
     end)
@@ -10183,7 +10183,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(-3043.31543, 238.881271, -10191.5791))
         else
-            TP2(CFrame.new(-3043.31543, 238.881271, -10191.5791))
+            topos(CFrame.new(-3043.31543, 238.881271, -10191.5791))
         end
         
     end)
@@ -10191,7 +10191,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(4748.78857, 8.35370827, 2849.57959))
         else
-            TP2(CFrame.new(4748.78857, 8.35370827, 2849.57959))
+            topos(CFrame.new(4748.78857, 8.35370827, 2849.57959))
         end
         
     end)
@@ -10199,7 +10199,7 @@ elseif World2 then
         if BypassTP then
             BTP(CFrame.new(-260.358917, 49325.7031, -35259.3008))
         else
-            TP2(CFrame.new(-260.358917, 49325.7031, -35259.3008))
+            topos(CFrame.new(-260.358917, 49325.7031, -35259.3008))
         end
         
     end)
@@ -10209,7 +10209,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-12553.8125, 332.403961, -7621.91748))
         else
-            TP2(CFrame.new(-12553.8125, 332.403961, -7621.91748))
+            topos(CFrame.new(-12553.8125, 332.403961, -7621.91748))
         end
         
     end)
@@ -10217,7 +10217,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-610.309692, 57.8323097, 6436.33594))
         else
-            TP2(CFrame.new(-610.309692, 57.8323097, 6436.33594))
+            topos(CFrame.new(-610.309692, 57.8323097, 6436.33594))
         end
         
     end)
@@ -10225,7 +10225,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(5229.99561, 603.916565, 345.154022))
         else
-            TP2(CFrame.new(5229.99561, 603.916565, 345.154022))
+            World1Frame.new(5229.99561, 603.916565, 345.154022))
         end
         
     end)
@@ -10233,7 +10233,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(2174.94873, 28.7312393, -6728.83154))
         else
-            TP2(CFrame.new(2174.94873, 28.7312393, -6728.83154))
+            topos(CFrame.new(2174.94873, 28.7312393, -6728.83154))
         end
         
     end)
@@ -10241,7 +10241,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-5477.62842, 313.794739, -2808.4585))
         else
-            TP2(CFrame.new(-5477.62842, 313.794739, -2808.4585))
+            topos(CFrame.new(-5477.62842, 313.794739, -2808.4585))
         end
         
     end)
@@ -10249,7 +10249,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-10919.2998, 331.788452, -8637.57227))
         else
-            TP2(CFrame.new(-10919.2998, 331.788452, -8637.57227))
+            topos(CFrame.new(-10919.2998, 331.788452, -8637.57227))
         end
         
     end)
@@ -10257,7 +10257,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(5217.35693, 6.56511116, 1100.88159))
         else
-            TP2(CFrame.new(5217.35693, 6.56511116, 1100.88159))
+            topos(CFrame.new(5217.35693, 6.56511116, 1100.88159))
         end
         
     end)
@@ -10265,7 +10265,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(5220.28955, 72.8193436, -1450.86304))
         else
-            TP2(CFrame.new(5220.28955, 72.8193436, -1450.86304))
+            topos(CFrame.new(5220.28955, 72.8193436, -1450.86304))
         end
         
     end)
@@ -10273,7 +10273,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(5310.8095703125, 21.594484329224, 129.39053344727))
         else
-            TP2(CFrame.new(5310.8095703125, 21.594484329224, 129.39053344727))
+            topos(CFrame.new(5310.8095703125, 21.594484329224, 129.39053344727))
         end
         
     end)
@@ -10281,7 +10281,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-9512.3623046875, 142.13258361816, 5548.845703125))
         else
-            TP2(CFrame.new(-9512.3623046875, 142.13258361816, 5548.845703125))
+            topos(CFrame.new(-9512.3623046875, 142.13258361816, 5548.845703125))
         end
         
     end)
@@ -10289,7 +10289,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-2142, 48, -10031))
         else
-            TP2(CFrame.new(-2142, 48, -10031))
+            topos(CFrame.new(-2142, 48, -10031))
         end
         
     end)
@@ -10297,7 +10297,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(156.896484, 30.5935211, -12662.7031, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219))
         else
-            TP2(CFrame.new(156.896484, 30.5935211, -12662.7031, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219))
+            topos(CFrame.new(156.896484, 30.5935211, -12662.7031, -0.573599219, 0, 0.81913656, 0, 1, 0, -0.81913656, 0, -0.573599219))
         end
         
     end)
@@ -10305,7 +10305,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-949, 59, -10907))
         else
-            TP2(CFrame.new(-949, 59, -10907))
+            topos(CFrame.new(-949, 59, -10907))
         end
         
     end)
@@ -10313,7 +10313,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-9530.61035, -132.860657, 5763.13477))
         else
-            TP2(CFrame.new(-9530.61035, -132.860657, 5763.13477))
+            topos(CFrame.new(-9530.61035, -132.860657, 5763.13477))
         end
         
     end)
@@ -10321,7 +10321,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-2099.33154, 66.9970703, -12128.585, 0.997561574, 0, 0.0697919354, 0, 1, 0, -0.0697919354, 0, 0.997561574))
         else
-            TP2(CFrame.new(-2099.33154, 66.9970703, -12128.585, 0.997561574, 0, 0.0697919354, 0, 1, 0, -0.0697919354, 0, 0.997561574))
+            topos(CFrame.new(-2099.33154, 66.9970703, -12128.585, 0.997561574, 0, 0.0697919354, 0, 1, 0, -0.0697919354, 0, 0.997561574))
         end
         
     end)
@@ -10329,7 +10329,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-1530.97144, 13.728817, -14770.0889, 0.898790359, -0, -0.438378751, 0, 1, -0, 0.438378751, 0, 0.898790359))
         else
-            TP2(CFrame.new(-1530.97144, 13.728817, -14770.0889, 0.898790359, -0, -0.438378751, 0, 1, -0, 0.438378751, 0, 0.898790359))
+            topos(CFrame.new(-1530.97144, 13.728817, -14770.0889, 0.898790359, -0, -0.438378751, 0, 1, -0, 0.438378751, 0, 0.898790359))
         end
         
     end)
@@ -10337,7 +10337,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-5057.146484375, 314.54132080078, -2934.7995605469))
         else
-            TP2(CFrame.new(-5057.146484375, 314.54132080078, -2934.7995605469))
+            topos(CFrame.new(-5057.146484375, 314.54132080078, -2934.7995605469))
         end
         
     end)
@@ -10345,7 +10345,7 @@ elseif World3 then
         if BypassTP then
             BTP(CFrame.new(-263.66668701172, 49325.49609375, -35260))
         else
-            TP2(CFrame.new(-263.66668701172, 49325.49609375, -35260))
+            topos(CFrame.new(-263.66668701172, 49325.49609375, -35260))
         end
         
     end)
