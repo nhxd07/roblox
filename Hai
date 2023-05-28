@@ -1,0 +1,50 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/main/source'))()
+getgenv().SecureMode = true
+
+local Window = Rayfield:CreateWindow({
+	Name = "HAI HUB - Blox Fruits",
+	LoadingTitle = "HAI HUB - Blox Fruits",
+	LoadingSubtitle = "Join Discord",
+})
+local Tab = Window:CreateTab("Pvp")
+local Section = Tab:CreateSection("Blox Fruits Pvp")
+
+local Label = Tab:CreateLabel("Hai Hub")
+
+local Button = Tab:CreateButton({
+	Name = "Aim",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/AIM"))()
+	end,
+})
+local Button = Tab:CreateButton({
+	Name = "Esp",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/ESP"))()
+	end,
+})
+local Button = Tab:CreateButton({
+	Name = "Fly",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/Fly'))()
+	end,
+})
+local Button = Tab:CreateButton({
+	Name = "HitBox",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/hitbox'))()
+	end,
+})
+local Button = Tab:CreateButton({
+	Name = "HitBox V2",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/hitboxv2"))()
+	end,
+})
+local Button = Tab:CreateButton({
+	Name = "Infinite",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/Infinity"))()
+	end,
+})
+
