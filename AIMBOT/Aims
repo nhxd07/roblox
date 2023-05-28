@@ -1,43 +1,28 @@
-local HaiHubScreen = Instance.new("ScreenGui")
-local HaiHubToggleUI = Instance.new("TextButton")
-local HaiHubCornerUI = Instance.new("UICorner")
-local HaiHubImageUI = Instance.new("ImageLabel")
+local openshit = Instance.new("ScreenGui")
+local mainopen = Instance.new("TextButton")
+local mainopens = Instance.new("UICorner")
+local loki = Instance.new("ImageLabel")
+local posto = Instance.new("UIStroke")
 
-        HaiHubScreen.Name = "HaiHubScreen"
-        HaiHubScreen.Parent = game.CoreGui
-        HaiHubScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+openshit.Name = "openshit"
+openshit.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+openshit.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-        HaiHubToggleUI.Name = "HaiHubToggleUI"
-        HaiHubToggleUI.Parent = HaiHubScreen
-        HaiHubToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
-        HaiHubToggleUI.BorderSizePixel = 0
-        HaiHubToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-        HaiHubToggleUI.Size = UDim2.new(0, 45, 0, 45)
-        HaiHubToggleUI.Font = Enum.Font.SourceSans
-        HaiHubToggleUI.Text = ""
-        HaiHubToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
-        HaiHubToggleUI.TextSize = 14.000
-        HaiHubToggleUI.Draggable = true
-        HaiHubToggleUI.MouseButton1Click:Connect(function()
-        game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-        game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
-        end)
+mainopen.Name = "mainopen"
+mainopen.Parent = openshit
+mainopen.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+mainopen.Position = UDim2.new(0.101969875, 0, 0.110441767, 0)
+mainopen.Size = UDim2.new(0, 64, 0, 42)
+mainopen.Text = ""
+mainopen.Visible = true
+mainopen.MouseButton1Click:Connect(function()
+	game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+	game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+end)
+
 local placeId = game.PlaceId
 if placeId == 2753915549 or placeId == 4442272183 or placeId == 7449423635 then
     BF = true
-elseif placeId == 3237168 then
-    OPL = true
-elseif placeId == 914010731 then
-    RO = true
-elseif placeId == 6299805723 then
-    AFS = true
-elseif placeId == 4520749081 or placeId == 6381829480 or placeId == 5931540094 then
-	KL = true
-elseif placeId == 4042427666 then
-    ANS = true
-elseif placeId == 2809202155 then
-    YBA = true
-    print("\n game not support")
 end
 
 if BF then
