@@ -12,7 +12,7 @@ local HaiHubImageUI = Instance.new("ImageLabel")
         HaiHubToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
         HaiHubToggleUI.BorderSizePixel = 0
         HaiHubToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-        HaiHubToggleUI.Size = UDim2.new(0, 35, 0, 35)
+        HaiHubToggleUI.Size = UDim2.new(0, 45, 0, 45)
         HaiHubToggleUI.Font = Enum.Font.SourceSans
         HaiHubToggleUI.Text = ""
         HaiHubToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -32,7 +32,7 @@ local HaiHubImageUI = Instance.new("ImageLabel")
         HaiHubImageUI.BackgroundTransparency = 1.000
         HaiHubImageUI.BorderSizePixel = 0
         HaiHubImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
-        HaiHubImageUI.Size = UDim2.new(0, 35, 0, 35)
+        HaiHubImageUI.Size = UDim2.new(0, 45, 0, 45)
         HaiHubImageUI.Image = "http://www.roblox.com/asset/?id=13438920682"
         
  
@@ -88,7 +88,8 @@ local HaiHubImageUI = Instance.new("ImageLabel")
   if input == DragInput and Dragging then
   Update(input)
   end
-  end)
+  end
+ )
  end
  _G.BGColor_1 = Color3.fromRGB(30,30,30)
  _G.BGColor_2 = Color3.fromRGB(20, 20, 20)
@@ -3552,7 +3553,7 @@ end
                 inf.VelocityInheritance = 0
                 inf.ZOffset = 2
                 inf.Transparency = NumberSequence.new(0)
-                inf.Color = ColorSequence.new(Color3.fromRGB(255, 255, 255),Color3.fromRGB(255, 255, 255))
+                inf.Color = ColorSequence.new(Color3.fromRGB(0,0,0),Color3.fromRGB(0,0,0))
                 inf.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
             end
         else
@@ -3568,7 +3569,7 @@ end
 spawn(function()
 	pcall(function()
 		game:GetService("RunService").Stepped:Connect(function()
-		  	if _G.Auto_Farm_Level or _G.Auto_New_World or _G.AutoSeaBeats or _G.AutoSeaking or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.TeleportIsland or _G.TeleportNPC or _G.Auto_Farm_Boss or _G.AutoDarkDagger or _G.AutoFarmBossHallow or _G.Autotushita or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.AutoFarmBounty or _G.Safe_Mode or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.d or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.AutoFarmMaterial or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.autoraid or AutoNextIsland or _G.Auto_Farm_Sword or _G.MeleeFarm or _G.AutoFarmSelectMonster or _G.AutoFarmKenHakivor or _G.AutoObservationHakiV2 or _G.GunMastery or _G.AutoFactory or _G.Mastery or _G.Auto_Kill_Law then
+		  	if _G.Auto_Farm_Level or _G.Auto_New_World or _G.AutoSeaBeats or _G.AutoSeaking or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.TeleportIsland or _G.TeleportNPC or _G.Auto_Farm_Boss or _G.AutoDarkDagger or _G.AutoFarmBossHallow or _G.Autotushita or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.d or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.AutoFarmMaterial or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.autoraid or AutoNextIsland or _G.Auto_Farm_Sword or _G.MeleeFarm or _G.AutoFarmSelectMonster or _G.AutoFarmKenHakivor or _G.AutoObservationHakiV2 or _G.GunMastery or _G.AutoFactory or _G.Mastery or _G.Auto_Kill_Law then
 			 	if not game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
 					local Noclip = Instance.new("BodyVelocity")
 					Noclip.Name = "BodyClip"
@@ -3588,7 +3589,7 @@ end)
 spawn(function()
 	pcall(function()
 		game:GetService("RunService").Stepped:Connect(function()
-			if _G.Auto_Farm_Level or _G.Auto_New_World or _G.AutoSeaBeats or _G.AutoSeaking or _G.AutoDarkDagger or _G.AutoFarmBossHallow or _G.TeleportIsland or _G.TeleportNPC or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.GunMastery or _G.Mastery or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.Auto_Elite_Hunter or _G.AutoFarmKenHaki or _G.AutoFactory or _G.AutoFarmSelectMonster or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.AutoFarmBounty or _G.Safe_Mode or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.d or _G.Auto_Rengoku or _G.Autotushita or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.AutoFarmMaterial or _G.autoraid or _G.Auto_Twin_Hook or AutoNextIsland or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.AutoObservationHakiV2 or _G.d or _G.Auto_Next_Island or _G.Auto_Farm_Sword or _G.MeleeFarm or _G.Auto_Kill_Law then
+			if _G.Auto_Farm_Level or _G.Auto_New_World or _G.AutoSeaBeats or _G.AutoSeaking or _G.AutoDarkDagger or _G.AutoFarmBossHallow or _G.TeleportIsland or _G.TeleportNPC or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.GunMastery or _G.Mastery or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.Auto_Elite_Hunter or _G.AutoFarmKenHaki or _G.AutoFactory or _G.AutoFarmSelectMonster or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.d or _G.Auto_Rengoku or _G.Autotushita or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.AutoFarmMaterial or _G.autoraid or _G.Auto_Twin_Hook or AutoNextIsland or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.AutoObservationHakiV2 or _G.d or _G.Auto_Next_Island or _G.Auto_Farm_Sword or _G.MeleeFarm or _G.Auto_Kill_Law then
 				for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
 					if v:IsA("BasePart") then
 						v.CanCollide = false    
@@ -3728,17 +3729,6 @@ spawn(function()
 	end)
 end)
 
-local lp = game:GetService('Players').LocalPlayer
-local mouse = lp:GetMouse()
-mouse.Button1Down:Connect(function()
-    if SelectToolWeaponGun ~= nil then
-        if game:GetService("Players").LocalPlayer.Character:FindFirstChild(SelectToolWeaponGun) and game:GetService("Players").LocalPlayer.Character:FindFirstChild(SelectToolWeaponGun):FindFirstChild("RemoteFunctionShoot") then
-            tool = game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun]
-            v17 = workspace:FindPartOnRayWithIgnoreList(Ray.new(tool.Handle.CFrame.p, (_G.Mon.HumanoidRootPart.Position - tool.Handle.CFrame.p).unit * 100), { game.Players.LocalPlayer.Character, workspace._WorldOrigin });
-            game:GetService("Players").LocalPlayer.Character:FindFirstChild(SelectToolWeaponGun).RemoteFunctionShoot:InvokeServer(_G.Mon.HumanoidRootPart.Position, (ReplicatedStorage_Util.Other.hrpFromPart(v17)));
-        end
-    end
-end)
  
 --------------------------------------------------------------------
 local Library = Update:Window("HAI HUB ","")
@@ -3924,8 +3914,6 @@ spawn(function()
 												EquipWeapon(_G.Select_Weapon)
 												AutoHaki()
 												PosMon = v.HumanoidRootPart.CFrame
-												OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                                                topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
 												v.HumanoidRootPart.CanCollide = false
 												v.Humanoid.WalkSpeed = 0
 												v.Head.CanCollide = false
@@ -4176,6 +4164,20 @@ local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
 Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
+Home:Label("Script By Nguyen Nhu Hai")
+
+Client = Home:Label1("Client")
+
+function UpdateClient()
+local Fps = workspace:GetRealPhysicsFPS()
+Client:Refresh("[Fps] : "..Fps)
+end
+
+spawn(function()
+ while true do wait(.1)
+ UpdateClient()
+ end
+ end)
  
 PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
 spawn(function()
@@ -4202,7 +4204,11 @@ spawn(function()
   end)
  end
  end)
- 
+
+Home:Line()
+local logs = game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/logs")
+Home:Label("Logs:")
+Home:Label(""..logs.."")
 Home:Line()
 
 Home:Textbox("Speed Hack",true,function(speed)
@@ -4505,63 +4511,6 @@ spawn(function()
         end
     end)
 end)
-
-Setting:Toggle("Fast Attack [1]",_G.FastAttack1,function(abc)
-	_G.FastAttack1 = abc
-end)
-
-local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-local CombatFramework = debug.getupvalues(Module)[2]
-local CameraShakerR = require(game.ReplicatedStorage.Util.CameraShaker)
-
-spawn(function()
-    while true do
-        if _G.FastAttack1 then
-            pcall(function()
-                CameraShakerR:Stop()
-                CombatFramework.activeController.attacking = false
-                CombatFramework.activeController.timeToNextAttack = 0
-                CombatFramework.activeController.increment = 3
-                CombatFramework.activeController.hitboxMagnitude = 100
-                CombatFramework.activeController.blocking = false
-                CombatFramework.activeController.timeToNextBlock = 0
-                CombatFramework.activeController.focusStart = 0
-                CombatFramework.activeController.humanoid.AutoRotate = true
-            end)
-        end
-        task.wait()
-    end
-end)
-
-    Setting:Toggle("Fast Attack [2]",_G.FastAttack2,function(value)
-        _G.FastAttack2 = value
-    end)   
-    
-    local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
-CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
-y = debug.getupvalues(CombatFrameworkR)[2]
-spawn(function()
-    game:GetService("RunService").RenderStepped:Connect(function()
-        if _G.FastAttack2 then
-            if typeof(y) == "table" then
-                pcall(function()
-                    CameraShaker:Stop()
-                    y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
-                    y.activeController.timeToNextAttack = 0
-                    y.activeController.hitboxMagnitude = 9999
-                    y.activeController.active = false
-                    y.activeController.timeToNextBlock = 0
-                    y.activeController.focusStart = 0
-                    y.activeController.increment = 4
-                    y.activeController.blocking = false
-                    y.activeController.attacking = false
-                    y.activeController.humanoid.AutoRotate = true
-                end)
-            end
-        end
-    end)
-end)
-
 
 Setting:Toggle("Auto Haki",true,function(d)
 _G.AUTOHAKI = d
@@ -9719,39 +9668,18 @@ end)
 
 P:Seperator(" Combats ")
 
-	P:Toggle("Aimbot Gun","9606294253",false,function(vu)
-		Aimbot = vu
-	end)
-	
-	P:Toggle("Aimbot Skill","9606294253",false,function(vu)
-		Skillaimbot = vu
-	end)
-	
-	spawn(function()
-	while task.wait() do
-		pcall(function()
-		if Skillaimbot then
-			if game.Players:FindFirstChild(_G.Select_Player) and game.Players:FindFirstChild(_G.Select_Player).Character:FindFirstChild("HumanoidRootPart") and game.Players:FindFirstChild(_G.Select_Player).Character:FindFirstChild("Humanoid") and game.Players:FindFirstChild(_G.Select_Player).Character.Humanoid.Health > 0 then
-				AimBotSkillPosition = game.Players:FindFirstChild(_G.Select_Player).Character:FindFirstChild("HumanoidRootPart").Position
-					end
-				end
-			end
-		end)
-	end
+P:Slider("Select Size Fov",1,1000,200,function(value)
+_G.Select_Size_Fov = value
+return "Size Fov : " .. tostring(value)
 end)
-  
-	local lp = game:GetService('Players').LocalPlayer
-	spawn(function()
-  pcall(function()
-   while wait(.1) do
-if Aimbot and game.Players.LocalPlayer.Character:FindFirstChild(SelectToolWeaponGun) and game:GetService("Players"):FindFirstChild(_G.Select_Player) then
-			tool = game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun]
-			v17 = workspace:FindPartOnRayWithIgnoreList(Ray.new(tool.Handle.CFrame.p, (game:GetService("Players"):FindFirstChild(_G.Select_Player).Character.HumanoidRootPart.Position - tool.Handle.CFrame.p).unit * 100), { game.Players.LocalPlayer.Character, workspace._WorldOrigin });
-			game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun].RemoteFunctionShoot:InvokeServer(game:GetService("Players"):FindFirstChild(_G.Select_Player).Character.HumanoidRootPart.Position, (require(game.ReplicatedStorage.Util).Other.hrpFromPart(v17)));
-		end
-   end
-   end)
-  end)
+
+P:Toggle("Show Fov",_G.Show_Fov,function(value)
+ _G.Show_Fov = value
+end)
+
+P:Toggle("Aimbot Skill Fov",_G.Aimbot_Skill_Fov,function(value)
+ _G.Aimbot_Skill_Fov = value
+end)
 
 P:Seperator(" Kill Player ")
 
@@ -9773,9 +9701,7 @@ Playerslist = {}
             SelectedPly:Add(v.Name)
         end
     end)
-P:Button("HitBox",function(HitBox)
-    local HitBox loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/hitbox'))()
-end)
+
 P:Toggle("Spectate Player",_G.Spectate_Player,function(value)
  _G.Spectate_Player = value
 end)
@@ -12288,6 +12214,9 @@ end
 end)
     Misc:Button("Auto Chest",function(Chest)
         local Chest loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/autochest'))()
+    end)
+    Misc:Button("HitBox",function(HitBox)
+        local HitBox loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/hitbox'))()
     end)
     Misc:Button("Fly",function(Fly)
         local Fly loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/Fly'))()
