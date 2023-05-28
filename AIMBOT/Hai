@@ -1,5 +1,5 @@
 local HaiHubLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/HaixD/roblox/main/source')))()
-local Window = HaiHubLib:MakeWindow({IntroText = "Hai Hub",Name = "Hai Hub Menu", HidePremium = false, SaveConfig = true, ConfigFolder = "ProjectBlox"})
+local Window = HaiHubLib:MakeWindow({IntroText = "Hai Hub",Name = "Hai Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "ProjectBlox"})
 
 -- Tabs
 local MainTab = Window:MakeTab({
