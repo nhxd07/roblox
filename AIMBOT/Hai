@@ -1,4 +1,4 @@
-local HaiHubLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local HaiHubLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/HaixD/roblox/main/source')))()
 local Window = HaiHubLib:MakeWindow({IntroText = "Hai Hub",Name = "Hai Hub Menu", HidePremium = false, SaveConfig = true, ConfigFolder = "ProjectBlox"})
 
 -- Tabs
