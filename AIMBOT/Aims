@@ -1,3 +1,27 @@
+local HaiHubScreen = Instance.new("ScreenGui")
+local HaiHubToggleUI = Instance.new("TextButton")
+local HaiHubCornerUI = Instance.new("UICorner")
+local HaiHubImageUI = Instance.new("ImageLabel")
+
+        HaiHubScreen.Name = "HaiHubScreen"
+        HaiHubScreen.Parent = game.CoreGui
+        HaiHubScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+        HaiHubToggleUI.Name = "HaiHubToggleUI"
+        HaiHubToggleUI.Parent = HaiHubScreen
+        HaiHubToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
+        HaiHubToggleUI.BorderSizePixel = 0
+        HaiHubToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+        HaiHubToggleUI.Size = UDim2.new(0, 45, 0, 45)
+        HaiHubToggleUI.Font = Enum.Font.SourceSans
+        HaiHubToggleUI.Text = ""
+        HaiHubToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
+        HaiHubToggleUI.TextSize = 14.000
+        HaiHubToggleUI.Draggable = true
+        HaiHubToggleUI.MouseButton1Click:Connect(function()
+        game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+        game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+        end)
 local placeId = game.PlaceId
 if placeId == 2753915549 or placeId == 4442272183 or placeId == 7449423635 then
     BF = true
@@ -110,69 +134,7 @@ if BF then
 		end
 	)()
 	
-	
-	local function RippleEffect(object)
-		spawn(function()
-			local Ripple = Instance.new("ImageLabel")
-			Ripple.Name = "Ripple"
-			Ripple.Parent = object
-			Ripple.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			Ripple.BackgroundTransparency = 1.000
-			Ripple.ZIndex = 8
-			Ripple.Image = "rbxassetid://2708891598"
-			Ripple.ImageTransparency = 0.800
-			Ripple.ScaleType = Enum.ScaleType.Fit
-			Ripple.Position = UDim2.new((Mouse.X - Ripple.AbsolutePosition.X) / object.AbsoluteSize.X, 0, (Mouse.Y - Ripple.AbsolutePosition.Y) / object.AbsoluteSize.Y, 0)
-			TweenService:Create(Ripple, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Position = UDim2.new(-5.5, 0, -15, 0), Size = UDim2.new(12, 0, 30, 0)}):Play()
-			wait(0.5)
-			TweenService:Create(Ripple, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {ImageTransparency = 1}):Play()
-			wait(0.5)
-			Ripple:Destroy()
-		end)
-	end
-	
-local HaiHubScreen = Instance.new("ScreenGui")
-local HaiHubToggleUI = Instance.new("TextButton")
-local HaiHubCornerUI = Instance.new("UICorner")
-local HaiHubImageUI = Instance.new("ImageLabel")
-
-        HaiHubScreen.Name = "HaiHubScreen"
-        HaiHubScreen.Parent = game.CoreGui
-        HaiHubScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-        HaiHubToggleUI.Name = "HaiHubToggleUI"
-        HaiHubToggleUI.Parent = HaiHubScreen
-        HaiHubToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
-        HaiHubToggleUI.BorderSizePixel = 0
-        HaiHubToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-        HaiHubToggleUI.Size = UDim2.new(0, 45, 0, 45)
-        HaiHubToggleUI.Font = Enum.Font.SourceSans
-        HaiHubToggleUI.Text = ""
-        HaiHubToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
-        HaiHubToggleUI.TextSize = 14.000
-        HaiHubToggleUI.Draggable = true
-        HaiHubToggleUI.MouseButton1Click:Connect(function()
-        game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-        game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
-        end)
-
-        HaiHubCornerUI.Name = "HaiHubCornerUI"
-        HaiHubCornerUI.Parent = HaiHubToggleUI
-
-        HaiHubImageUI.Name = "MODILEMAGE"
-        HaiHubImageUI.Parent = HaiHubToggleUI
-        HaiHubImageUI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        HaiHubImageUI.BackgroundTransparency = 1.000
-        HaiHubImageUI.BorderSizePixel = 0
-        HaiHubImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
-        HaiHubImageUI.Size = UDim2.new(0, 45, 0, 45)
-        HaiHubImageUI.Image = "http://www.roblox.com/asset/?id=13438920682"
-        
- 
- local UserInputService = game:GetService("UserInputService")
- local TweenService = game:GetService("TweenService")
- 
- local function MakeDraggable(topbarobject, object)
+	local function MakeDraggable(topbarobject, object)
 		local Dragging = nil
 		local DragInput = nil
 		local DragStart = nil
@@ -226,6 +188,26 @@ local HaiHubImageUI = Instance.new("ImageLabel")
 				end
 			end
 		)
+	end
+	
+	local function RippleEffect(object)
+		spawn(function()
+			local Ripple = Instance.new("ImageLabel")
+			Ripple.Name = "Ripple"
+			Ripple.Parent = object
+			Ripple.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Ripple.BackgroundTransparency = 1.000
+			Ripple.ZIndex = 8
+			Ripple.Image = "rbxassetid://2708891598"
+			Ripple.ImageTransparency = 0.800
+			Ripple.ScaleType = Enum.ScaleType.Fit
+			Ripple.Position = UDim2.new((Mouse.X - Ripple.AbsolutePosition.X) / object.AbsoluteSize.X, 0, (Mouse.Y - Ripple.AbsolutePosition.Y) / object.AbsoluteSize.Y, 0)
+			TweenService:Create(Ripple, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Position = UDim2.new(-5.5, 0, -15, 0), Size = UDim2.new(12, 0, 30, 0)}):Play()
+			wait(0.5)
+			TweenService:Create(Ripple, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {ImageTransparency = 1}):Play()
+			wait(0.5)
+			Ripple:Destroy()
+		end)
 	end
 	
 	function library:Window(name,game)
