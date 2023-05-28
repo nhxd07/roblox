@@ -110,7 +110,28 @@ if BF then
 		end
 	)()
 	
-	local HaiHubScreen = Instance.new("ScreenGui")
+	
+	local function RippleEffect(object)
+		spawn(function()
+			local Ripple = Instance.new("ImageLabel")
+			Ripple.Name = "Ripple"
+			Ripple.Parent = object
+			Ripple.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Ripple.BackgroundTransparency = 1.000
+			Ripple.ZIndex = 8
+			Ripple.Image = "rbxassetid://2708891598"
+			Ripple.ImageTransparency = 0.800
+			Ripple.ScaleType = Enum.ScaleType.Fit
+			Ripple.Position = UDim2.new((Mouse.X - Ripple.AbsolutePosition.X) / object.AbsoluteSize.X, 0, (Mouse.Y - Ripple.AbsolutePosition.Y) / object.AbsoluteSize.Y, 0)
+			TweenService:Create(Ripple, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Position = UDim2.new(-5.5, 0, -15, 0), Size = UDim2.new(12, 0, 30, 0)}):Play()
+			wait(0.5)
+			TweenService:Create(Ripple, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {ImageTransparency = 1}):Play()
+			wait(0.5)
+			Ripple:Destroy()
+		end)
+	end
+	
+local HaiHubScreen = Instance.new("ScreenGui")
 local HaiHubToggleUI = Instance.new("TextButton")
 local HaiHubCornerUI = Instance.new("UICorner")
 local HaiHubImageUI = Instance.new("ImageLabel")
@@ -152,103 +173,59 @@ local HaiHubImageUI = Instance.new("ImageLabel")
  local TweenService = game:GetService("TweenService")
  
  local function MakeDraggable(topbarobject, object)
- local Dragging = nil
- local DragInput = nil
- local DragStart = nil
- local StartPosition = nil
- 
- local function Update(input)
- local Delta = input.Position - DragStart
- local pos = UDim2.new(StartPosition.X.Scale, StartPosition.X.Offset + Delta.X, StartPosition.Y.Scale, StartPosition.Y.Offset + Delta.Y)
- local Tween = TweenService:Create(object, TweenInfo.new(0.15), {
-  Position = pos
- })
- Tween:Play()
- end
- 
- topbarobject.InputBegan:Connect(
-  function(input)
-  if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-  Dragging = true
-  DragStart = input.Position
-  StartPosition = object.Position
- 
-  input.Changed:Connect(
-   function()
-   if input.UserInputState == Enum.UserInputState.End then
-   Dragging = false
-   end
-   end
-  )
-  end
-  end
- )
- 
- topbarobject.InputChanged:Connect(
-  function(input)
-  if
-   input.UserInputType == Enum.UserInputType.MouseMovement or
-  input.UserInputType == Enum.UserInputType.Touch
-  then
-  DragInput = input
-  end
-  end
- )
- 
- UserInputService.InputChanged:Connect(
-  function(input)
-  if input == DragInput and Dragging then
-  Update(input)
-  end
-  end
- )
- end
- _G.BGColor_1 = Color3.fromRGB(30,30,30)
- _G.BGColor_2 = Color3.fromRGB(20, 20, 20)
- _G.Color = Color3.fromRGB(224,224,224)
- _G.WindowBackgroundColor = Color3.fromRGB(12,12,12)
- _G.BackgroundItemColor = Color3.fromRGB(20, 20, 20)
- _G.TabWindowColor = Color3.fromRGB(30, 30, 30)
- _G.ContainerColor = Color3.fromRGB(30, 30, 30)
- _G.TitleTextColor = Color3.fromRGB(150, 150, 150)
- _G.ImageColor = Color3.fromRGB(150, 150, 150)
- _G.LineThemeColor = Color3.fromRGB(150, 150, 150)
- _G.TabTextColor = Color3.fromRGB(150, 150, 150)
- _G.TabImageColor = Color3.fromRGB(150, 150, 150)
- _G.TabThemeColor = Color3.fromRGB(250, 0, 0)
- _G.SectionColor = Color3.fromRGB(150, 150, 150)
- _G.SectionImageColor = Color3.fromRGB(150, 150, 150)
- _G.SectionTextColor = Color3.fromRGB(150, 150, 150)
- _G.SectionOn = Color3.fromRGB(0, 250, 0)
- 
-if game.PlaceId == 2753915549 then
-    BInfo = "🎮 Game : Blox Fruits | Old World"
-elseif game.PlaceId == 4442272183 then
-    BInfo = "🎮 Game : Blox Fruits | Second Sea"
-elseif game.PlaceId == 7449423635 then
-    BInfo = "🎮 Game : Blox Fruits | Third Sea"
-    else
-BInfo = "🎮 Game : Blox Fruits | Old World"
-end
+		local Dragging = nil
+		local DragInput = nil
+		local DragStart = nil
+		local StartPosition = nil
 	
-	local function RippleEffect(object)
-		spawn(function()
-			local Ripple = Instance.new("ImageLabel")
-			Ripple.Name = "Ripple"
-			Ripple.Parent = object
-			Ripple.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			Ripple.BackgroundTransparency = 1.000
-			Ripple.ZIndex = 8
-			Ripple.Image = "rbxassetid://2708891598"
-			Ripple.ImageTransparency = 0.800
-			Ripple.ScaleType = Enum.ScaleType.Fit
-			Ripple.Position = UDim2.new((Mouse.X - Ripple.AbsolutePosition.X) / object.AbsoluteSize.X, 0, (Mouse.Y - Ripple.AbsolutePosition.Y) / object.AbsoluteSize.Y, 0)
-			TweenService:Create(Ripple, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Position = UDim2.new(-5.5, 0, -15, 0), Size = UDim2.new(12, 0, 30, 0)}):Play()
-			wait(0.5)
-			TweenService:Create(Ripple, TweenInfo.new(0.5, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {ImageTransparency = 1}):Play()
-			wait(0.5)
-			Ripple:Destroy()
-		end)
+		local function Update(input)
+			local Delta = input.Position - DragStart
+			local pos =
+				UDim2.new(
+					StartPosition.X.Scale,
+					StartPosition.X.Offset + Delta.X,
+					StartPosition.Y.Scale,
+					StartPosition.Y.Offset + Delta.Y
+				)
+			object.Position = pos
+		end
+	
+		topbarobject.InputBegan:Connect(
+			function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+					Dragging = true
+					DragStart = input.Position
+					StartPosition = object.Position
+	
+					input.Changed:Connect(
+						function()
+							if input.UserInputState == Enum.UserInputState.End then
+								Dragging = false
+							end
+						end
+					)
+				end
+			end
+		)
+	
+		topbarobject.InputChanged:Connect(
+			function(input)
+				if
+					input.UserInputType == Enum.UserInputType.MouseMovement or
+					input.UserInputType == Enum.UserInputType.Touch
+				then
+					DragInput = input
+				end
+			end
+		)
+	
+		UserInputService.InputChanged:Connect(
+			function(input)
+				if input == DragInput and Dragging then
+					Update(input)
+				end
+			end
+		)
 	end
 	
 	function library:Window(name,game)
