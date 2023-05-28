@@ -1,63 +1,54 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
-local Window = OrionLib:MakeWindow({IntroText = "Yotube Hòa Poy Tv",Name = "Hòa Poy Tv - Hack Cày beli + Lấy Key Râu Con Cặc", HidePremium = false, SaveConfig = true, ConfigFolder = "ProjectBlox"})
+local HaiHubLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = HaiHubLib:MakeWindow({IntroText = "Hai Hub",Name = "Hai Hub Menu", HidePremium = false, SaveConfig = true, ConfigFolder = "ProjectBlox"})
 
 -- Tabs
-
 local MainTab = Window:MakeTab({
-
-	Name = "Chức Năng",	Icon = "rbxassetid://4483345998",
-
+	Name = "Pvp",
+	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
-
 })
 
 -- Button
 
 MainTab:AddButton({
-
-	Name = "Nếu Bạn Muốn Có các Bản Hack Ngon Anti Ban",
-
-	Callback = function()   
-
-  	end    
-
+	Name = "Aim",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/AIM"))()
+	end,
 })
-
 MainTab:AddButton({
-
-	Name = "Hãy Đăng Kí Kênh Yotube Hòa Poy Tv Nhé",
-
-	Callback = function()   
-
-  	end    
-
+	Name = "Esp",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/ESP"))()
+	end,
 })
-
 MainTab:AddButton({
-
-	Name = "Bật Bản HACK",
-
-	Callback = function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/Padupo/scrnohop/main/subautochest"))();
-
-  	end    
-
+	Name = "Fly",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/Fly'))()
+	end,
 })
-
-local CreditsTab = Window:MakeTab({
-
-	Name = "Sex 😏",
-
-	Icon = "rbxassetid://4483345998",
-
-	PremiumOnly = false
-
+MainTab:AddButton({
+	Name = "HitBox",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/hitbox'))()
+	end,
 })
-
-CreditsTab:AddParagraph("Sao bạn lại bấm vào đây ,ở đây làm chó gì có sex đâu","haha")
+MainTab:AddButton({
+	Name = "HitBox V2",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/hitboxv2"))()
+	end,
+})
+MainTab:AddButton({
+	Name = "Infinite",
+	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/Infinity"))()
+	end,
+})
 
 coroutine.resume(NotificationCoroutine)
 
-OrionLib:Init()
+HaiHubLib:Init()
 
 task.wait(2)
