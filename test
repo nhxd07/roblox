@@ -64,7 +64,7 @@ if BF then
 	
 	wait(1)
 	
-if game.CoreGui.RobloxGui:FindFirstChild("Voice Chat Ui") then game.CoreGui.RobloxGui:FindFirstChild("Voice Chat Ui"):Destroy() end
+	if game.CoreGui.RobloxGui:FindFirstChild("Voice Chat Ui") then game.CoreGui.RobloxGui:FindFirstChild("Voice Chat Ui"):Destroy() end
 	local library = {RainbowColorValue = 0, HueSelectionPosition = 0}
 	local PresetColor = Color3.fromRGB(255, 0, 0)
 	local UserInputService = game:GetService("UserInputService")
@@ -288,6 +288,17 @@ if game.CoreGui.RobloxGui:FindFirstChild("Voice Chat Ui") then game.CoreGui.Robl
 		NameHub.TextColor3 = Color3.fromRGB(255, 255, 255)
 		NameHub.TextSize = 25.000
 		NameHub.TextXAlignment = Enum.TextXAlignment.Left
+	
+		Toggleui.Name = "Toggleui"
+		Toggleui.Parent = TopMain
+		Toggleui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Toggleui.BackgroundTransparency = 1.000
+		Toggleui.Position = UDim2.new(0.803076923, 0, 0, 0)
+		Toggleui.Size = UDim2.new(0, 120, 0, 30)
+		Toggleui.Font = Enum.Font.SourceSansSemibold
+		Toggleui.Text = "[ Right Control ]"
+		Toggleui.TextColor3 = Color3.fromRGB(255, 0, 0)
+		Toggleui.TextSize = 20.000
 	
 		HideTab.Name = "HideTab"
 		HideTab.Parent = TopMain
