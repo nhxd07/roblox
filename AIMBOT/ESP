@@ -1,5 +1,5 @@
-
---loadstring(game:HttpGet("https://pastebin.com/raw/uw2P2fbY", true))
+-- press v to use aimbot and press q to disable aimbot
+loadstring(game:HttpGet("https://pastebin.com/raw/uw2P2fbY", true))()
 
 PLAYER  = game.Players.LocalPlayer
 MOUSE   = PLAYER:GetMouse()
