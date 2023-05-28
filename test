@@ -1738,7 +1738,7 @@ end
  UICorner.CornerRadius = UDim.new(0, 5)
  UICorner.Parent = RealTextbox
  end
- function main:Label(text)
+ function main:AddLabel(text)
  local Label = Instance.new("TextLabel")
  local PaddingLabel = Instance.new("UIPadding")
  local labelfunc = {}
@@ -1764,7 +1764,7 @@ end
  return labelfunc
  end
  
- function main:Label1(text)
+ function main:AddLabel1(text)
  local Label1 = Instance.new("TextLabel")
  local PaddingLabel1 = Instance.new("UIPadding")
  local Label1func = {}
@@ -1829,7 +1829,7 @@ function main:AddSeperator(text)
  end
  
  
- function main:Line()
+ function main:AddLine()
  local Linee = Instance.new("Frame")
  local Line = Instance.new("Frame")
  
@@ -3364,17 +3364,17 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
 --------------------------------------------------------------------
-local RenUi = library:CreateWindow("HAI ",Color3.fromRGB(175,238,238),"Blox Fruits")
+local Library = Update:Window("BLCK HUB ","")
 --------------------------------------------------------------------
-local Main = RenUi:AddTab("Main")
-local Combat = RenUi:AddTab("Combat")
-local Stats = RenUi:AddTab("Stats")
-local Teleport = RenUi:AddTab("Teleport")
-local Dungeon = RenUi:AddTab("Dungeon")
-local DevilFruit = RenUi:AddTab("Devil Fruit")
-local Shop = RenUi:AddTab("Shop")
-local Misc = RenUi:AddTab("Misc")
-local Op = RenUi:AddTab("Check")
+local Main = Library:AddTab("Main")
+local Combat = Library:AddTab("Combat")
+local Stats = Library:AddTab("Stats")
+local Teleport = Library:AddTab("Teleport")
+local Dungeon = Library:AddTab("Dungeon")
+local DevilFruit = Library:AddTab("Devil Fruit")
+local Shop = Library:AddTab("Shop")
+local Misc = Library:AddTab("Misc")
+local Op = Library:AddTab("Check")
 --------------------------------------------------------------------
 Main:AddSeperator("Settings")
 
