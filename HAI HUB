@@ -9721,41 +9721,37 @@ P:Seperator(" Combats ")
 
 	P:Toggle("Aimbot Gun","9606294253",false,function(vu)
 		Aimbot = vu
-		if vu then
-			for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
-				if v:IsA("Tool") then
-					if v:FindFirstChild("RemoteFunctionShoot") then 
-						SelectToolWeaponGun = v.Name
-					end
-				end
-			end
-			for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do  
-				if v:IsA("Tool") then
-					if v:FindFirstChild("RemoteFunctionShoot") then 
-						SelectToolWeaponGun = v.Name
-					end
-				end
-			end
-		end
 	end)
+	
 	P:Toggle("Aimbot Skill","9606294253",false,function(vu)
 		Skillaimbot = vu
+	end)
+	
+	spawn(function()
+	while task.wait() do
+		pcall(function()
 		if Skillaimbot then
 			if game.Players:FindFirstChild(_G.Select_Player) and game.Players:FindFirstChild(_G.Select_Player).Character:FindFirstChild("HumanoidRootPart") and game.Players:FindFirstChild(_G.Select_Player).Character:FindFirstChild("Humanoid") and game.Players:FindFirstChild(_G.Select_Player).Character.Humanoid.Health > 0 then
 				AimBotSkillPosition = game.Players:FindFirstChild(_G.Select_Player).Character:FindFirstChild("HumanoidRootPart").Position
+					end
+				end
 			end
-		end
-	end)
+		end)
+	end
+end)
+  
 	local lp = game:GetService('Players').LocalPlayer
-	local mouse = lp:GetMouse()
-	mouse.Button1Down:Connect(function()
-		if Aimbot and game.Players.LocalPlayer.Character:FindFirstChild(SelectToolWeaponGun) and game:GetService("Players"):FindFirstChild(_G.Select_Player) then
+	spawn(function()
+  pcall(function()
+   while wait(.1) do
+if Aimbot and game.Players.LocalPlayer.Character:FindFirstChild(SelectToolWeaponGun) and game:GetService("Players"):FindFirstChild(_G.Select_Player) then
 			tool = game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun]
 			v17 = workspace:FindPartOnRayWithIgnoreList(Ray.new(tool.Handle.CFrame.p, (game:GetService("Players"):FindFirstChild(_G.Select_Player).Character.HumanoidRootPart.Position - tool.Handle.CFrame.p).unit * 100), { game.Players.LocalPlayer.Character, workspace._WorldOrigin });
 			game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun].RemoteFunctionShoot:InvokeServer(game:GetService("Players"):FindFirstChild(_G.Select_Player).Character.HumanoidRootPart.Position, (require(game.ReplicatedStorage.Util).Other.hrpFromPart(v17)));
 		end
-	end)
-end)
+   end
+   end)
+  end)
 
 P:Seperator(" Kill Player ")
 
