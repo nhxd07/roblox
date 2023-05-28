@@ -3553,7 +3553,7 @@ end
                 inf.VelocityInheritance = 0
                 inf.ZOffset = 2
                 inf.Transparency = NumberSequence.new(0)
-                inf.Color = ColorSequence.new(Color3.fromRGB(0,0,0),Color3.fromRGB(0,0,0))
+                inf.Color = ColorSequence.new(Color3.fromRGB(255, 255, 255),Color3.fromRGB(255, 255, 255))
                 inf.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
             end
         else
@@ -3914,6 +3914,8 @@ spawn(function()
 												EquipWeapon(_G.Select_Weapon)
 												AutoHaki()
 												PosMon = v.HumanoidRootPart.CFrame
+												OldPos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                                                topos(v.HumanoidRootPart.CFrame * CFrame.new(0,35,0))
 												v.HumanoidRootPart.CanCollide = false
 												v.Humanoid.WalkSpeed = 0
 												v.Head.CanCollide = false
@@ -4494,8 +4496,8 @@ spawn(function()
     end)
 end)
 
-Setting:Toggle("Fast Attack [1]",false,function(Fast)
-    _G.FastAttack1 = Fast
+Setting:Toggle("Fast Attack [1]",_G.FastAttack1,function(abc)
+	_G.FastAttack1 = abc
 end)
 
 local Module = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
@@ -4510,7 +4512,7 @@ spawn(function()
                 CombatFramework.activeController.attacking = false
                 CombatFramework.activeController.timeToNextAttack = 0
                 CombatFramework.activeController.increment = 3
-                CombatFramework.activeController.hitboxMagnitude = 9999
+                CombatFramework.activeController.hitboxMagnitude = 100
                 CombatFramework.activeController.blocking = false
                 CombatFramework.activeController.timeToNextBlock = 0
                 CombatFramework.activeController.focusStart = 0
@@ -4521,7 +4523,7 @@ spawn(function()
     end
 end)
 
-    Setting:Toggle("Fast Attack [2]",nil,function(value)
+    Setting:Toggle("Fast Attack [2]",_G.FastAttack2,function(value)
         _G.FastAttack2 = value
     end)   
     
@@ -4550,15 +4552,6 @@ spawn(function()
     end)
 end)
 
-spawn(function()
-    game:GetService("RunService").RenderStepped:Connect(function()
-        if _G.FastAttack1 == true then
-            game.Players.LocalPlayer.Character.Stun.Value = 0
-            game.Players.LocalPlayer.Character.Humanoid.Sit = false
-            game.Players.LocalPlayer.Character.Busy.Value = false        
-        end
-    end)
-end)
 
 Setting:Toggle("Auto Haki",true,function(d)
 _G.AUTOHAKI = d
