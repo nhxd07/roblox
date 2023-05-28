@@ -256,7 +256,7 @@ mainopens.Parent = mainopen
  
  do  local ui =  game:GetService("CoreGui").RobloxGui.Modules:FindFirstChild("ZENHUB")  if ui then ui:Destroy() end end
  
- function library:CreateWindow(text,logo,keybind)
+ function Update:Window(text,logo,keybind)
  local osfunc = {}
  local uihide = false
  local abc = false
