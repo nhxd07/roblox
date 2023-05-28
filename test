@@ -1198,11 +1198,67 @@ spawn(function()
     end)
 end)
 
+spawn(function()
+		local gg = getrawmetatable(game)
+		local old = gg.__namecall
+		setreadonly(gg,false)
+		gg.__namecall = newcclosure(function(...)
+			local method = getnamecallmethod()
+			local args = {...}
+			if tostring(method) == "FireServer" then
+				if tostring(args[1]) == "RemoteEvent" then
+					if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
+						if UseSkillMasteryDevilFruit then
+							args[2] = PositionSkillMasteryDevilFruit
+							return old(unpack(args))
+						elseif Skillaimbot then
+							args[2] = AimBotSkillPosition
+							return old(unpack(args))
+						end
+					end
+				end
+			end
+			return old(...)
+		end)
+	end)
+
 game:GetService("Players").LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
     wait(1)
     game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
+
+local lp = game:FindService("Players").LocalPlayer
+
+local function gplr(String)
+	local Found = {}
+	local strl = String:lower()
+	if strl == "all" then
+		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+			table.insert(Found,v)
+		end
+	elseif strl == "others" then
+		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+			if v.Name ~= lp.Name then
+				table.insert(Found,v)
+			end
+		end 
+	elseif strl == "me" then
+		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+			if v.Name == lp.Name then
+				table.insert(Found,v)
+			end
+		end 
+	else
+		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
+			if v.Name:lower():sub(1, #String) == String:lower() then
+				table.insert(Found,v)
+			end
+		end 
+	end
+	return Found 
+end
+
 --------------------------------------------------------------------
 local RenUi = library:CreateWindow("Chiba  ",Color3.fromRGB(175,238,238),"Blox Fruits")
 --------------------------------------------------------------------
@@ -1265,32 +1321,62 @@ Combat:AddToggle("Teleport",false,function(value)
     end)
 end)
 
+Combat:AddSeperator("Hit Box")
+Combat:AddToggle("Enable Hit Box",false,function(bool)
+  _G.Disabled = bool
+  end)
+	
+Combat:AddTextBox("Size Hitbox",true,function(size)
+  size = _G.HeadSize
+  end)
+  
+Combat:AddTextBox("Transter",true,function(tr)
+  tr = Trans
+  end)
+  
+  game:GetService('RunService').RenderStepped:connect(function()
+		if _G.Disabled then
+			for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+						v.Character.HumanoidRootPart.Transparency = Trans
+						v.Character.HumanoidRootPart.Color = Color3.new(255, 255, 255)
+						v.Character.HumanoidRootPart.Material = Mat.Text
+						v.Character.HumanoidRootPart.CanCollide = false
+					end)
+				end
+			end
+		end
+	end)
+end)
+
 Combat:AddSeperator("Aimbot")
 
-Combat:AddToggle("Aimbot Gun",false,function(value)
-    _G.Aimbot_Gun = value
-end)
-
-spawn(function()
-    while task.wait() do
-        if _G.Aimbot_Gun and game:GetService("Players").LocalPlayer.Character:FindFirstChild(SelectWeaponGun) and game.Players:FindFirstChild(_G.SelectPly) then
-            pcall(function()
-                game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].Cooldown.Value = 0
-                local args = {
-                    [1] = game:GetService("Players"):FindFirstChild(_G.SelectPly).Character.HumanoidRootPart.Position,
-                    [2] = game:GetService("Players"):FindFirstChild(_G.SelectPly).Character.HumanoidRootPart
-                }
-                game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
-                game:GetService'VirtualUser':CaptureController()
-                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-            end)
-        end
-    end
-end)
-
-Combat:AddToggle("Aimbot Skill",false,function(value)
-    _G.Aimbot_Skill = value
-end)
+Combat:AddToggle("Aimbot Gun",false,function(bool)
+	Aimbot = bool
+	end)
+	local lp = game:GetService('Players').LocalPlayer
+	local mouse = lp:GetMouse()
+	mouse.Button1Down:Connect(function()
+		if Aimbot and game.Players.LocalPlayer.Character:FindFirstChild(SelectToolWeaponGun) and game:GetService("Players"):FindFirstChild(_G.SelectPly) then
+			tool = game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun]
+			v17 = workspace:FindPartOnRayWithIgnoreList(Ray.new(tool.Handle.CFrame.p, (game:GetService("Players"):FindFirstChild(_G.SelectPly).Character.HumanoidRootPart.Position - tool.Handle.CFrame.p).unit * 100), { game.Players.LocalPlayer.Character, workspace._WorldOrigin });
+			game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun].RemoteFunctionShoot:InvokeServer(game:GetService("Players"):FindFirstChild(_G.SelectPly).Character.HumanoidRootPart.Position, (require(game.ReplicatedStorage.Util).Other.hrpFromPart(v17)));
+		end 
+	end)
+	
+	
+	Combat:AddToggle("Aimbot Skill",false,function(bool)
+	Skillaimbot = bool
+	end)
+			if Skillaimbot then
+				if game.Players:FindFirstChild(_G.SelectPly) and game.Players:FindFirstChild(_G.SelectPly).Character:FindFirstChild("HumanoidRootPart") and game.Players:FindFirstChild(_G.SelectPly).Character:FindFirstChild("Humanoid") and game.Players:FindFirstChild(_G.SelectPly).Character.Humanoid.Health > 0 then
+					AimBotSkillPosition = game.Players:FindFirstChild(_G.SelectPly).Character:FindFirstChild("HumanoidRootPart").Position
+				end
+			end
+		end
+	end)
 
 Combat:AddSeperator("PvP")
 
