@@ -1339,38 +1339,6 @@ Combat:AddToggle("Teleport",false,function(value)
     end)
 end)
 
-Combat:AddSeperator("Hit Box")
-Combat:AddToggle("Enable Hit Box",false,function(bool)
-  _G.Disabled = bool
-  end)
-	
-Combat:AddTextBox("Size Hitbox",true,function(size)
-  _G.HeadSize = size
-  end)
-  
-Combat:AddTextBox("Transter",true,function(tr)
-  Trans = tr
-  end)
-  
-  spawn(function()
-    pcall(function()
-        while wait() do
-            game:GetService('RunService').RenderStepped:connect(function()
-		if _G.Disabled then
-			for i,v in next, game:GetService('Players'):GetPlayers() do
-				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
-					pcall(function()
-						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
-						v.Character.HumanoidRootPart.Transparency = Trans
-						v.Character.HumanoidRootPart.Color = Color3.new(255, 255, 255)
-						v.Character.HumanoidRootPart.Material = Mat.Text
-						v.Character.HumanoidRootPart.CanCollide = false
-                end
-            end
-        end
-    end)
-end)
-
 Combat:AddSeperator("Aimbot")
 
 Combat:AddToggle("Aimbot Gun",false,function(bool)
