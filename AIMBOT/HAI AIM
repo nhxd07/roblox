@@ -176,6 +176,44 @@ local HaiHubImageUI = Instance.new("ImageLabel")
  Name.TextColor3 = Color3.fromRGB(255, 255, 255)
  Name.TextSize = 14.000
  
+ local ServerTime = Instance.new("TextLabel")
+ServerTime.Name = "ServerTime"
+ServerTime.Parent = Top
+ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
+ServerTime.BackgroundTransparency = 1.000
+ServerTime.Position = UDim2.new(0.387561002, 0, 0 , 0)
+ServerTime.Size = UDim2.new(0, 225, 0, 25)
+ServerTime.Font = Enum.Font.GothamSemibold
+ServerTime.Text = ""
+ServerTime.TextSize = 11.000
+ServerTime.TextColor3 = Color3.fromRGB(255,255,255)
+ServerTime.TextXAlignment = Enum.TextXAlignment.Left
+
+function osfunc:Set(textadd)
+ServerTime.Text = textadd
+end
+
+local function UpdateOS()
+local date = os.date("*t")
+local hour = (date.hour) % 24
+local ampm = hour < 12 and "AM" or "PM"
+local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
+local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
+local LocalizationService = game:GetService("LocalizationService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local name = player.Name
+local result, code = pcall(function()
+ return LocalizationService:GetCountryRegionForPlayerAsync(player)
+ end)
+osfunc:Set(datetime.." - "..timezone.." [ " .. code .. " ]")
+end
+spawn(function()
+ while true do
+ UpdateOS()
+ game:GetService("RunService").RenderStepped:Wait()
+ end
+ end)
  
  local MainImage = Instance.new("ImageLabel")
  local MainImageFrame = Instance.new("Frame")
