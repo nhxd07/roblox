@@ -1672,6 +1672,25 @@ function main:Seperator(text)
  Sep3.Size = UDim2.new(0, 80, 0, 1)
  end
  
+ local FOVCircle = Drawing.new("Circle")
+	FOVCircle.Thickness = 2
+	FOVCircle.NumSides = 460
+	FOVCircle.Filled = false
+	FOVCircle.Transparency = 0.5
+	FOVCircle.Radius = 200
+	FOVCircle.Color = Color3.fromRGB(255, 0, 0)
+	
+	game:GetService("RunService").Stepped:Connect(function()
+		FOVCircle.Radius = _G.FOVSize
+		FOVCircle.Thickness = _G.Thickness
+		FOVCircle.NumSides = 11
+		FOVCircle.Position = game:GetService('UserInputService'):GetMouseLocation()
+		if ShowFov then
+			FOVCircle.Visible = true
+		else
+			FOVCircle.Visible = false
+		end
+	end)
  
  function main:Line()
  local Linee = Instance.new("Frame")
@@ -1841,17 +1860,11 @@ HAim:Toggle("Aim Bot Skill And Gun",false,function(a)
 HAim:Toggle("Show Fov",false,function(a)
 		ShowFov = a
 	end)
-	
-	_G.FOVSize = 200
-	
-HAim:Slider("Fov Size",1,700,_G.FOVSize,nil,function(v)
-		_G.FOVSize = v
-	end)
 
-HAim:Slider("Thick Ness",1,100,_G.Thickness,nil,function(v)
-		_G.Thickness = v
-	end)
-
+HAim:Slider("Select Size Fov",1,1000,200,function(value)
+_G.FOVSize = value
+return "Size Fov : " .. tostring(value)
+end)
 
 HAim:Textbox("Jump Hack",true,function(jump)
   game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
