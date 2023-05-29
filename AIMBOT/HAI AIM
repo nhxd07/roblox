@@ -1674,7 +1674,7 @@ local FOVCircle = Drawing.new("Circle")
 FOVCircle.Thickness = 2
 FOVCircle.NumSides = 460
 FOVCircle.Filled = false
-FOVCircle.Transparency = 0.5
+FOVCircle.Transparency = 0.9
 FOVCircle.Radius = 200
 FOVCircle.Color = Color3.fromRGB(255, 0, 0)
 	
