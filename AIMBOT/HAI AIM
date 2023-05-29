@@ -1766,134 +1766,78 @@ end
 
 
 ---------------------------------------------------------------
-
-spawn(function()
-	while wait() do
-		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
-			if v:IsA("Tool") then
-				if v:FindFirstChild("RemoteFunctionShoot") then 
-					SelectToolWeaponGun = v.Name
-				end
-			end
-		end
-		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do  
-			if v:IsA("Tool") then
-				if v:FindFirstChild("RemoteFunctionShoot") then 
-					SelectToolWeaponGun = v.Name
-				end
-			end
-		end
-	end
-end)
-
-spawn(function()
-	local gg = getrawmetatable(game)
-	local old = gg.__namecall
-	setreadonly(gg,false)
-	gg.__namecall = newcclosure(function(...)
-		local method = getnamecallmethod()
-		local args = {...}
-		if tostring(method) == "FireServer" then
-			if tostring(args[1]) == "RemoteEvent" then
-				if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
-					if UseSkillMasteryDevilFruit then
-						args[2] = PositionSkillMasteryDevilFruit
-						return old(unpack(args))
-					elseif AimSkillNearest then
-						args[2] = AimBotSkillPosition
-						return old(unpack(args))
-					end
-				end
-			end
-		end
-		return old(...)
-	end)
-end)
-
-spawn(function()
-	game:GetService("RunService").RenderStepped:Connect(function()
-        if UseGun then
-			pcall(function()
-                for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                    if v.Name == Ms then
-						local args = {
-							[1] = "TAP",
-							[2] = v.HumanoidRootPart.Position
-						}
-						
-						game:GetService("Players").LocalPlayer.Character.Humanoid:FindFirstChild("Soul Guitar"):InvokeServer(unpack(args))
-                        local args = {
-                            [1] = v.HumanoidRootPart.Position,
-                            [2] = v.HumanoidRootPart
-                        }
-                        game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
-                    end
-                end
-            end)
-        end
-    end)
-end)
-
-spawn(function()
-	game:GetService("RunService").RenderStepped:Connect(function()
-        if UseGunKillPlayer then
-			pcall(function()
-                for i,v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
-                    if v.Name == _G.Select_Player then
-                        local args = {
-                            [1] = v.HumanoidRootPart.Position,
-                            [2] = v.HumanoidRootPart
-                        }
-                        game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
-                    end
-                end
-            end)
-        end
-    end)
-end)
-
 local lp = game:GetService('Players').LocalPlayer
-local mouse = lp:GetMouse()
-spawn(function()
-	while wait() do
-		if _G.Aimbot_Skill_Fov then
-			pcall(function()
-				local MaxDist, Closest = math.huge
-				for i,v in pairs(game:GetService("Players"):GetChildren()) do 
-					local Head = v.Character:FindFirstChild("HumanoidRootPart")
-					local Pos, Vis = game.Workspace.CurrentCamera.WorldToScreenPoint(game.Workspace.CurrentCamera, Head.Position)
-					local MousePos, TheirPos = Vector2.new(mouse.X, mouse.Y), Vector2.new(Pos.X, Pos.Y)
-					local Dist = (TheirPos - MousePos).Magnitude
-					if Dist < MaxDist and Dist <= _G.Select_Size_Fov and v.Name ~= game.Players.LocalPlayer.Name then
-						MaxDist = Dist
-						_G.Aim_Players = v
+	local mouse = lp:GetMouse()
+	spawn(function()
+		while wait() do
+			if AimBotFullFunction then
+				pcall(function()
+					local MaxDist, Closest = math.huge
+					for i,v in pairs(game:GetService("Players"):GetChildren()) do 
+						local Head = v.Character:FindFirstChild("HumanoidRootPart")
+						local Pos, Vis = game.Workspace.CurrentCamera.WorldToScreenPoint(game.Workspace.CurrentCamera, Head.Position)
+						local MousePos, TheirPos = Vector2.new(mouse.X, mouse.Y), Vector2.new(Pos.X, Pos.Y)
+						local Dist = (TheirPos - MousePos).Magnitude
+						if Dist < MaxDist and Dist <= _G.Select_Size_Fov and v.Name ~= game.Players.LocalPlayer.Name then
+							MaxDist = Dist
+							_G.CharacterAimBot = v
+						end
+					end
+				end)
+			end
+		end
+	end)
+	
+	spawn(function()
+		local gg = getrawmetatable(game)
+		local old = gg.__namecall
+		setreadonly(gg,false)
+		gg.__namecall = newcclosure(function(...)
+			local method = getnamecallmethod()
+			local args = {...}
+			if tostring(method) == "FireServer" then
+				if tostring(args[1]) == "RemoteEvent" then
+					if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
+						if AimBotFullFunction then
+							args[2] = _G.CharacterAimBot.Character.HumanoidRootPart.Position
+							return old(unpack(args))
+						end
 					end
 				end
-			end)
-		end
-	end
-end)
-
-spawn(function()
-	local gg = getrawmetatable(game)
-	local old = gg.__namecall
-	setreadonly(gg,false)
-	gg.__namecall = newcclosure(function(...)
-		local method = getnamecallmethod()
-		local args = {...}
-		if tostring(method) == "FireServer" then
-			if tostring(args[1]) == "RemoteEvent" then
-				if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
-					if _G.Aimbot_Skill_Fov then
-						args[2] = _G.Aim_Players.Character.HumanoidRootPart.Position
-						return old(unpack(args))
+			end
+			return old(...)
+		end)
+	end)
+	spawn(function()
+		while wait() do
+			for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do  
+				if v:IsA("Tool") then
+					if v:FindFirstChild("RemoteFunctionShoot") then 
+						SelectToolWeaponGun = v.Name
+					end
+				end
+			end
+			for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do  
+				if v:IsA("Tool") then
+					if v:FindFirstChild("RemoteFunctionShoot") then 
+						SelectToolWeaponGun = v.Name
 					end
 				end
 			end
 		end
-		return old(...)
 	end)
-end)
+	
+	spawn(function()
+		mouse.Button1Down:Connect(function()
+			if SelectToolWeaponGun ~= nil then
+				if AimBotFullFunction and game.Players.LocalPlayer.Character:FindFirstChild(SelectToolWeaponGun) and game:GetService("Players"):FindFirstChild(_G.CharacterAimBot.Name) then
+					tool = game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun]
+					v17 = workspace:FindPartOnRayWithIgnoreList(Ray.new(tool.Handle.CFrame.p, (game:GetService("Players"):FindFirstChild(_G.CharacterAimBot.Name).Character.HumanoidRootPart.Position - tool.Handle.CFrame.p).unit * 100), { game.Players.LocalPlayer.Character, workspace._WorldOrigin });
+					game:GetService("Players").LocalPlayer.Character[SelectToolWeaponGun].RemoteFunctionShoot:InvokeServer(game:GetService("Players"):FindFirstChild(_G.CharacterAimBot.Name).Character.HumanoidRootPart.Position, (require(game.ReplicatedStorage.Util).Other.hrpFromPart(v17)));
+				end 
+			end
+		end)
+	end)
 
 --------------------------------------------------------------------
 local Library = Update:Window("HAI HUB AIMBOT ","")
@@ -1911,7 +1855,7 @@ HAim:Toggle("Show Fov",_G.Show_Fov,function(value)
 end)
 
 HAim:Toggle("Aimbot Skill And Gun",_G.Aimbot_Skill_Fov,function(value)
- _G.Aimbot_Skill_Fov = value
+ AimBotFullFunction = value
 end)
 
 HAim:Slider1("Select Size Fov",1,1000,200,function(value)
