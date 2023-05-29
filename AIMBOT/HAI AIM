@@ -1682,7 +1682,7 @@ function main:Seperator(text)
 	
 	game:GetService("RunService").Stepped:Connect(function()
 		FOVCircle.Radius = _G.FOVSize
-		FOVCircle.Thickness = _G.Thickness
+		FOVCircle.Thickness = 1
 		FOVCircle.NumSides = 11
 		FOVCircle.Position = game:GetService('UserInputService'):GetMouseLocation()
 		if ShowFov then
@@ -1826,7 +1826,9 @@ HAim:Toggle("Aim Bot Skill And Gun",false,function(a)
 		AimBotFullFunction = a
 	end)
 	
-
+HAim:Toggle("Show Fov",false,function(a)
+		ShowFov = a
+	end)
 
 HAim:Textbox("Jump Hack",true,function(jump)
   game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
