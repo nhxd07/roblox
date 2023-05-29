@@ -1840,24 +1840,6 @@ local lp = game:GetService('Players').LocalPlayer
 			end
 		end)
 	end)
-spawn(function()
-	while wait() do
-		game:GetService('RunService').RenderStepped:connect(function()
-		if _G.Disabled then
-			for i,v in next, game:GetService('Players'):GetPlayers() do
-				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
-					pcall(function()
-						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
-						v.Character.HumanoidRootPart.Transparency = 0.7
-						v.Character.HumanoidRootPart.Color = Color3.new(255, 255, 255)
-						v.Character.HumanoidRootPart.Material = Neon
-						v.Character.HumanoidRootPart.CanCollide = false
-						end
-					end
-				end)
-			end
-		end
-	end)
 --------------------------------------------------------------------
 local Library = Update:Window("HAI HUB AIMBOT ","")
 --------------------------------------------------------------------
@@ -1929,15 +1911,6 @@ end)
 HAim:Slider1("Fov Thickness",1,100,1,function(thick)
 _G.Thickness = thick
 return "Thick Ness : " .. tostring(thick)
-end)
-
-HAim:Toggle("Enable Hit Box",_G.Disabled,function(hitbox)
- _G.Disabled = hitbox
-end)
-
-HAim:Slider1("Hit Box Size",1,1000,10,function(hit)
-_G.HeadSize = hit
-return "Size Fov : " .. tostring(hit)
 end)
 
 HAim:Seperator("PvP")
@@ -2349,7 +2322,7 @@ spawn(function()
 		end)
     
         
-HMisc:Button("Unlock FPS",function()
+HMisc:Button("Hai Hub Menu",function()
     loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/Hai"))()
     end)
     
