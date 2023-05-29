@@ -1834,8 +1834,6 @@ local HAim = Library:Tab("Pvp","rbxassetid://7044284832")
 
 HAim:Seperator(" Pvp ")
 
-HAim:Seperator(" Pvp ")
-
 HAim:Toggle("Aim Bot Skill And Gun",false,function(a)
 		AimBotFullFunction = a
 	end)
