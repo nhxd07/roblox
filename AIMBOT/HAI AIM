@@ -1680,7 +1680,7 @@ FOVCircle.Color = Color3.fromRGB(255, 0, 0)
 	
 game:GetService("RunService").Stepped:Connect(function()
 FOVCircle.Radius = _G.Select_Size_Fov
-FOVCircle.Thickness = 1
+FOVCircle.Thickness = _G.Thickness
 FOVCircle.NumSides = 11
 FOVCircle.Position = game:GetService('UserInputService'):GetMouseLocation()
 if _G.Show_Fov then
@@ -1720,6 +1720,8 @@ elseif game.PlaceId == 4442272183 then
 elseif game.PlaceId == 7449423635 then
 	World3 = true
 end
+
+AutoHaki = true
 
 function AutoHaki()
 	if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
@@ -1845,26 +1847,355 @@ local Library = Update:Window("HAI HUB AIMBOT ","")
 
 --------------------------------------------------------------------
 local HAim = Library:Tab("Pvp","rbxassetid://7044284832")
+local HMisc = Library:Tab("Misc","rbxassetid://11447063791")
 local HEsp = Library:Tab("Esp","rbxassetid://6035190846")
 --------------------------------------------------------------------
 
-HAim:Toggle("Show Fov",_G.Show_Fov,function(value)
- _G.Show_Fov = value
+local plyserv = HAim:Label("Players")
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+                if i == 12 then
+                    plyserv:Set("Players :".." "..i.." ".."/".." ".."12".." ".."(Max)")
+                elseif i == 1 then
+                    plyserv:Set("Player :".." "..i.." ".."/".." ".."12")
+                else
+                    plyserv:Set("Players :".." "..i.." ".."/".." ".."12")
+                end
+            end
+        end)
+    end
+end)
+
+HAim:Seperator("Aimbot")
+
+HAim:Toggle("Aimbot Gun",false,function(value)
+    _G.Aimbot_Gun = value
+end)
+
+spawn(function()
+    while task.wait() do
+        if _G.Aimbot_Gun and game:GetService("Players").LocalPlayer.Character:FindFirstChild(SelectWeaponGun) and game.Players:FindFirstChild(_G.SelectPly) then
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].Cooldown.Value = 0
+                local args = {
+                    [1] = game:GetService("Players"):FindFirstChild(_G.SelectPly).Character.HumanoidRootPart.Position,
+                    [2] = game:GetService("Players"):FindFirstChild(_G.SelectPly).Character.HumanoidRootPart
+                }
+                game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
+                game:GetService'VirtualUser':CaptureController()
+                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+            end)
+        end
+    end
+end)
+
+HAim:Toggle("Aimbot Skill",false,function(value)
+    _G.Aimbot_Skill = value
 end)
 
 HAim:Toggle("Aimbot Skill And Gun",_G.Aimbot_Skill_Fov,function(value)
  AimBotFullFunction = value
 end)
 
-HAim:Slider1("Select Size Fov",1,1000,200,function(value)
+HAim:Toggle("Show Fov",_G.Show_Fov,function(value)
+ _G.Show_Fov = value
+end)
+
+HAim:Slider1("Fov Size",1,1000,200,function(value)
 _G.Select_Size_Fov = value
 return "Size Fov : " .. tostring(value)
 end)
+
+HAim:Slider1("Fov Thickness",1,100,1,function(value)
+_G.Thickness = value
+return "Thick Ness : " .. tostring(value)
+end)
+
+
+HAim:Seperator("PvP")
+
+HAim:Toggle("Enabled PvP",false,function(value)
+    _G.EnabledPvP = value
+end)
+
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.EnabledPvP then
+                if game:GetService("Players").LocalPlayer.PlayerGui.Main.PvpDisabled.Visible == true then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EnablePvp")
+                end
+            end
+        end
+    end)
+end)
+
+HAim:Button("Respawn",function()
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Pirates") 
+    wait()
+end)
+
+HAim:Seperator("Other")
 
 HAim:Textbox("Jump Hack",true,function(jump)
   game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
   end)
   
+ HMisc:Seperator(" Joins ")
+ 
+ HMisc:Button("Join Pirates Team",function()
+ 		local args = {
+			[1] = "SetTeam",
+			[2] = "Pirates"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) 
+		local args = {
+			[1] = "BartiloQuestProgress"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+ 
+
+HMisc:Button("Join Marines Team",function()
+ local args = {
+			[1] = "SetTeam",
+			[2] = "Marines"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+		local args = {
+			[1] = "BartiloQuestProgress"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
+
+
+HMisc:Button("Rejoin",function()
+ local ts = game:GetService("TeleportService")
+		local p = game:GetService("Players").LocalPlayer
+		ts:Teleport(game.PlaceId, p)
+end)
+
+HMisc:Button("Sever Hop",function()
+ hop()
+end)
+    HMisc:Button("Hop To Lower Player",function()
+        local maxplayers, gamelink, goodserver, data_table = math.huge, "https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100"
+		if not _G.FailedServerID then _G.FailedServerID = {} end
+
+		local function serversearch()
+			data_table = game:GetService"HttpService":JSONDecode(game:HttpGetAsync(gamelink))
+			for _, v in pairs(data_table.data) do
+				pcall(function()
+					if type(v) == "table" and v.id and v.playing and tonumber(maxplayers) > tonumber(v.playing) and not table.find(_G.FailedServerID, v.id) then
+						maxplayers = v.playing
+						goodserver = v.id
+					end
+				end)
+			end
+		end
+
+		function getservers()
+			pcall(serversearch)
+			for i, v in pairs(data_table) do
+				if i == "nextPageCursor" then
+					if gamelink:find"&cursor=" then
+						local a = gamelink:find"&cursor="
+						local b = gamelink:sub(a)
+						gamelink = gamelink:gsub(b, "")
+					end
+					gamelink = gamelink .. "&cursor=" .. v
+					pcall(getservers)
+				end
+			end
+		end
+
+		pcall(getservers)
+		wait()
+		if goodserver == game.JobId or maxplayers == #game:GetService"Players":GetChildren() - 1 then
+		end
+		table.insert(_G.FailedServerID, goodserver)
+		game:GetService"TeleportService":TeleportToPlaceInstance(game.PlaceId, goodserver)
+    end)
+
+HMisc:Seperator(" Open Menu ")
+
+HMisc:Button("Inventory",function()
+ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
+		game.Players.localPlayer.PlayerGui.Main.Inventory.Visible = true
+end)
+
+HMisc:Button("Devil Fruit Shop",function()
+ local args = {
+			[1] = "GetFruits"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+		game.Players.localPlayer.PlayerGui.Main.FruitShop.Visible = true
+end)
+
+
+HMisc:Button("Title Name",function()
+ local args = {
+			[1] = "getTitles"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+		game.Players.localPlayer.PlayerGui.Main.Titles.Visible = true
+end)
+
+
+HMisc:Button("Color Haki",function()
+ game.Players.localPlayer.PlayerGui.Main.Colors.Visible = true
+end)
+
+HMisc:Seperator(" Codes ")
+    
+    
+local x2Code = {
+ "EXP_5B",
+ "CONTROL",
+ "UPDATE11",
+ "XMASEXP",
+ "1BILLION",
+ "ShutDownFix2",
+ "UPD14",
+ "STRAWHATMAINE",
+ "TantaiGaming",
+ "Colosseum",
+ "Axiore",
+ "Sub2Daigrock",
+ "Sky Island 3",
+ "Sub2OfficialNoobie",
+ "SUB2NOOBMASTER123",
+ "THEGREATACE",
+ "Fountain City",
+ "BIGNEWS",
+ "FUDD10",
+ "SUB2GAMERROBOT_EXP1",
+ "UPD15",
+ "2BILLION",
+ "UPD16",
+ "3BVISITS",
+ "fudd10_v2",
+ "Starcodeheo",
+ "Magicbus",
+ "JCWK",
+ "Bluxxy",
+ "Sub2Fer999",
+ "Enyu_is_Pro"
+}
+    
+    HMisc:Button("Redeem All Codes",function()
+        function RedeemCode(value)
+            game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
+        end
+        for i,v in pairs(x2Code) do
+            RedeemCode(v)
+        end
+    end)
+    
+    HMisc:Dropdown("Selected Codes",{"1MLIKES_RESET","THIRDSEA","SUB2GAMERROBOT_RESET1","SUB2UNCLEKIZARU"},function(value)
+        _G.CodeSelect = value
+    end)
+    
+    HMisc:Button("Redeem Code",function()
+        game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(_G.CodeSelect)
+    end)
+
+
+HMisc:Seperator(" Player Misc ")
+    
+    
+    HMisc:Dropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},function(value)
+        _G.SelectStateHaki = value
+    end)
+    
+    HMisc:Button("Change Buso Haki State",function()
+        if _G.SelectStateHaki == "State 0" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",0)
+        elseif _G.SelectStateHaki == "State 1" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",1)
+        elseif _G.SelectStateHaki == "State 2" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",2)
+        elseif _G.SelectStateHaki == "State 3" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",3)
+        elseif _G.SelectStateHaki == "State 4" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",4)
+        elseif _G.SelectStateHaki == "State 5" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",5)
+        end
+    end)
+
+HMisc:Toggle("No Clip",_G.No_clip,function(value)
+ _G.No_clip = value
+end)
+
+
+spawn(function()
+    pcall(function()
+        game:GetService("RunService").Stepped:Connect(function()
+            if _G.No_clip then
+                for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                    if v:IsA("BasePart") then
+                        v.CanCollide = false    
+                    end
+                end
+            end
+        end)
+    end)
+end)
+
+  function NoDodgeCool()
+        if nododgecool then
+            for i,v in next, getgc() do
+                if game:GetService("Players").LocalPlayer.Character.Dodge then
+                    if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.Character.Dodge then
+                        for i2,v2 in next, getupvalues(v) do
+                            if tostring(v2) == "0.1" then
+                            repeat wait(.1)
+                                setupvalue(v,i2,0)
+                            until not nododgecool
+                            end
+                        end
+                    end
+                end
+            end
+        end
+  end
+   
+    
+    local LocalPlayer = game:GetService'Players'.LocalPlayer
+    local originalstam = LocalPlayer.Character.Energy.Value
+    function infinitestam()
+        LocalPlayer.Character.Energy.Changed:connect(function()
+            if InfiniteEnergy then
+                LocalPlayer.Character.Energy.Value = originalstam
+            end 
+        end)
+    end
+    
+    spawn(function()
+        pcall(function()
+            while wait(.1) do
+                if InfiniteEnergy then
+                    wait(0.1)
+                    originalstam = LocalPlayer.Character.Energy.Value
+                    infinitestam()
+                end
+            end
+        end)
+    end)
+
+HMisc:Toggle("Dodge No Cooldown",false,function(value)
+        nododgecool = value
+        NoDodgeCool()
+    end)
+    
+    HMisc:Toggle("Auto Active Race",_G.AutoAgility,function(value)
+        _G.AutoAgility = value
+    end)
+    
     spawn(function()
         pcall(function()
             while wait() do
@@ -1875,7 +2206,7 @@ HAim:Textbox("Jump Hack",true,function(jump)
         end)
     end)
     
-    HAim:Toggle("Infinite Ability",false,function(value)
+    HMisc:Toggle("Infinite Ability",false,function(value)
         InfAbility = value
         if value == false then
             game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
@@ -1889,8 +2220,114 @@ HAim:Textbox("Jump Hack",true,function(jump)
             end
         end
     end)
-  
-  
+    
+    HMisc:Toggle("Infinite Obversation Range",getgenv().InfiniteObRange,function(value)
+        getgenv().InfiniteObRange = value
+        local VS = game:GetService("Players").LocalPlayer.VisionRadius.Value
+        while getgenv().InfiniteObRange do
+            wait()
+            local player = game:GetService("Players").LocalPlayer
+            local char = player.Character
+            local VisionRadius = player.VisionRadius
+            if player then
+                if char.Humanoid.Health <= 0 then 
+                    wait(5) 
+                end
+                VisionRadius.Value = math.huge
+            elseif getgenv().InfiniteObRange == false and player then
+                VisionRadius.Value = VS
+            end
+        end
+    end)
+    
+    HMisc:Toggle("Infinite Geppo",getgenv().InfGeppo,function(value)
+        getgenv().InfGeppo = value
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if getgenv().InfGeppo then
+                    for i,v in next, getgc() do
+                        if game:GetService("Players").LocalPlayer.Character.Geppo then
+                            if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.Character.Geppo then
+                                for i2,v2 in next, getupvalues(v) do
+                                    if tostring(i2) == "9" then
+                                        repeat wait(.1)
+                                            setupvalue(v,i2,0)
+                                        until not getgenv().InfGeppo or game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= 0 
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+    
+    HMisc:Toggle("Infinite Soru",getgenv().InfSoru,function(value)
+        getgenv().InfSoru = value
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if getgenv().InfSoru and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") ~= nil  then
+                    for i,v in next, getgc() do
+                        if game:GetService("Players").LocalPlayer.Character.Soru then
+                            if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.Character.Soru then
+                                for i2,v2 in next, getupvalues(v) do
+                                    if typeof(v2) == "table" then
+                                        repeat wait(.1)
+                                            v2.LastUse = 0
+                                        until not getgenv().InfSoru or game:GetService("Players").LocalPlayer.Character.Humanoid.Health <= 0
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+    
+    HMisc:Toggle("Walk on Water",true,function(value)
+        _G.WalkWater = value
+    end)
+    
+    if World2 then
+		HMisc:Button("Remove Lava",function()
+			for i,v in pairs(game.Workspace:GetDescendants()) do
+				if v.Name == "Lava" then   
+					v:Destroy()
+				end
+			end
+			for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
+				if v.Name == "Lava" then   
+					v:Destroy()
+				end
+			end
+		end)
+		end
+    
+spawn(function()
+			while task.wait() do
+				pcall(function()
+					if _G.WalkWater then
+						game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,112,1000)
+					else
+						game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,80,1000)
+					end
+				end)
+			end
+		end)
+    
+        
+HMisc:Button("Unlock FPS",function()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/Hai"))()
+    end)
+    
 	function isnil(thing)
 		return (thing == nil)
 	end
