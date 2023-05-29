@@ -1676,7 +1676,7 @@ FOVCircle.NumSides = 460
 FOVCircle.Filled = false
 FOVCircle.Transparency = 0.1
 FOVCircle.Radius = 200
-FOVCircle.Color = Color3.fromRGB(255, 0, 0)
+FOVCircle.Color = Color3.fromRGB(255, 255, 255)
 	
 game:GetService("RunService").Stepped:Connect(function()
 FOVCircle.Radius = _G.Select_Size_Fov
@@ -1903,7 +1903,7 @@ HAim:Toggle("Show Fov",_G.Show_Fov,function(value)
  _G.Show_Fov = value
 end)
 
-HAim:Slider1("Fov Size",1,1000,200,function(value)
+HAim:Slider1("Fov Size",1,1000,0,function(value)
 _G.Select_Size_Fov = value
 return "Size Fov : " .. tostring(value)
 end)
