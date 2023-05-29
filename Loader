@@ -343,10 +343,10 @@ UICorner_3.Parent = GetKey
 AutoChest.Name = "AutoChest"
 AutoChest.Parent = MAIN
 AutoChest.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-AutoChest.Position = UDim2.new(0.621898727, 0, 0.752407403, 0)
-AutoChest.Size = UDim2.new(0, 75, 0, 32)
+AutoChest.Position = UDim2.new(0.501898727, 0, 0.752407403, 0)
+AutoChest.Size = UDim2.new(0, 105, 0, 32)
 AutoChest.Font = Enum.Font.Gotham
-AutoChest.Text = "HitBox"
+AutoChest.Text = "Menu Aim"
 AutoChest.TextColor3 = Color3.fromRGB(255, 255, 255)
 AutoChest.TextSize = 14.000
 AutoChest.MouseButton1Click:Connect(function()
