@@ -1824,25 +1824,6 @@ local lp = game:GetService('Players').LocalPlayer
 	end)
 end
 
- local FOVCircle = Drawing.new("Circle")
-	FOVCircle.Thickness = 2
-	FOVCircle.NumSides = 460
-	FOVCircle.Filled = false
-	FOVCircle.Transparency = 0.5
-	FOVCircle.Radius = 200
-	FOVCircle.Color = Color3.fromRGB(255, 0, 0)
-	
-	game:GetService("RunService").Stepped:Connect(function()
-		FOVCircle.Radius = _G.FOVSize
-		FOVCircle.Thickness = _G.Thickness
-		FOVCircle.NumSides = 11
-		FOVCircle.Position = game:GetService('UserInputService'):GetMouseLocation()
-		if ShowFov then
-			FOVCircle.Visible = true
-		else
-			FOVCircle.Visible = false
-		end
-	end)
 --------------------------------------------------------------------
 local Library = Update:Window("HAI HUB AIMBOT ","")
 --------------------------------------------------------------------
@@ -1872,10 +1853,6 @@ HAim:Slider("Fov Size",1,700,_G.FOVSize,nil,function(v)
 HAim:Slider("Thick Ness",1,100,_G.Thickness,nil,function(v)
 		_G.Thickness = v
 	end)
-	
-	
-	
-	
 
 
 HAim:Textbox("Jump Hack",true,function(jump)
