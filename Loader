@@ -302,8 +302,7 @@ KeyHere.BorderSizePixel = 0
 KeyHere.Position = UDim2.new(0.501898727, 0, 0.236111104, 0)
 KeyHere.Size = UDim2.new(0, 170, 0, 35)
 KeyHere.Font = Enum.Font.SourceSans
-KeyHere.PlaceholderText = "Key here..."
-KeyHere.Text = ""
+KeyHere.Text = "PLEASE CHOOSE MENU"
 KeyHere.TextColor3 = Color3.fromRGB(255, 255,255)
 KeyHere.TextSize = 14.000
 
@@ -317,7 +316,7 @@ TextLabel.Position = UDim2.new(0.518987358, 0, 0.0725925565, 0)
 TextLabel.Size = UDim2.new(0, 174, 0, 25)
 TextLabel.ZIndex = 5
 TextLabel.Font = Enum.Font.Gotham
-TextLabel.Text = "HAI HUB KEY SYSTEM"
+TextLabel.Text = "HAI HUB | BLOX FRUIT"
 TextLabel.TextColor3 = Color3.fromRGB(130, 130, 130)
 TextLabel.TextSize = 20.000
 
@@ -328,48 +327,10 @@ GetKey.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 GetKey.Position = UDim2.new(0.501898727, 0, 0.532407403, 0)
 GetKey.Size = UDim2.new(0, 75, 0, 32)
 GetKey.Font = Enum.Font.Gotham
-GetKey.Text = "GetKey"
+GetKey.Text = "AIM MENU"
 GetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
 GetKey.TextSize = 14.000
 GetKey.MouseButton1Click:Connect(function()
-setclipboard("https://link1s.com/MKmzxUY8")
-DiscordLib:Notification("Key System" , "Key Copied to Your Clipboard\n& Paste on Your Browser" , 3)
-end)
-
-
-UICorner_3.CornerRadius = UDim.new(0, 4)
-UICorner_3.Parent = GetKey
-
-AutoChest.Name = "AutoChest"
-AutoChest.Parent = MAIN
-AutoChest.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-AutoChest.Position = UDim2.new(0.501898727, 0, 0.752407403, 0)
-AutoChest.Size = UDim2.new(0, 175, 0, 32)
-AutoChest.Font = Enum.Font.Gotham
-AutoChest.Text = "Menu Aim"
-AutoChest.TextColor3 = Color3.fromRGB(255, 255, 255)
-AutoChest.TextSize = 14.000
-AutoChest.MouseButton1Click:Connect(function()
-loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/hitbox"))()
-end)
-
-
-UICorner_3.CornerRadius = UDim.new(0, 4)
-UICorner_3.Parent = AutoChest
-
-Confirm.Name = "Confirm"
-Confirm.Parent = MAIN
-Confirm.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Confirm.Position = UDim2.new(0.739113948, 0, 0.532407403, 0)
-Confirm.Size = UDim2.new(0, 75, 0, 32)
-Confirm.Font = Enum.Font.Gotham
-Confirm.Text = "Submit"
-Confirm.TextColor3 = Color3.fromRGB(255, 255, 255)
-Confirm.TextSize = 14.000
-Confirm.MouseButton1Click:Connect(function()
-DiscordLib:Notification("Key System" , "Key Check, Executing Script..." , 3)
-if KeyHere.Text == "HaiXHub-745086acb9c8a7a434b3228ecbdc" then
-wait(3)
 Confirm:Destroy()
 KeyHere:Destroy()
 GetKey:Destroy()
@@ -389,7 +350,67 @@ AutoChest:Destroy()
 	LoadingTXT.TextSize = 14.000
 	LoadingTXT.TextScaled = true
     wait(1)
-    LoadingTXT.Text = "Getting Data..."
+    LoadingTXT.Text = "Hello " ..game.Players.LocalPlayer.DisplayName.. " From: ".. code
+	wait(1)
+	LoadingTXT.Text = ""..BInfo
+	wait(1)
+	LoadingTXT.Text = "Your Device is: Mobile"
+    wait(1)
+    LoadingTXT.Text = "Loading Menu..."
+    wait(1)
+ZENHUB:Destroy()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/Hai"))()
+end)
+
+
+UICorner_3.CornerRadius = UDim.new(0, 4)
+UICorner_3.Parent = GetKey
+
+AutoChest.Name = "AutoChest"
+AutoChest.Parent = MAIN
+AutoChest.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+AutoChest.Position = UDim2.new(0.501898727, 0, 0.752407403, 0)
+AutoChest.Size = UDim2.new(0, 170, 0, 32)
+AutoChest.Font = Enum.Font.Gotham
+AutoChest.Text = "Copy Link Discord"
+AutoChest.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoChest.TextSize = 14.000
+AutoChest.MouseButton1Click:Connect(function()
+setclipboard("https://discord.gg/4YDKcCSb")
+end)
+
+
+UICorner_3.CornerRadius = UDim.new(0, 4)
+UICorner_3.Parent = AutoChest
+
+Confirm.Name = "Confirm"
+Confirm.Parent = MAIN
+Confirm.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Confirm.Position = UDim2.new(0.739113948, 0, 0.532407403, 0)
+Confirm.Size = UDim2.new(0, 75, 0, 32)
+Confirm.Font = Enum.Font.Gotham
+Confirm.Text = "HAI HUB"
+Confirm.TextColor3 = Color3.fromRGB(255, 255, 255)
+Confirm.TextSize = 14.000
+Confirm.MouseButton1Click:Connect(function()
+Confirm:Destroy()
+KeyHere:Destroy()
+GetKey:Destroy()
+Logo:Destroy()
+AutoChest:Destroy()
+    local LoadingTXT = Instance.new("TextLabel")
+    LoadingTXT.Name = "LoadingTXT"
+	LoadingTXT.Parent = MAIN
+	LoadingTXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LoadingTXT.BackgroundTransparency = 1.000
+	LoadingTXT.BorderSizePixel = 0
+	LoadingTXT.Position = UDim2.new(0.1039113948, 0, 0.432407403, 0)
+	LoadingTXT.Size = UDim2.new(0.666666687, 0, 0.166666672, 0)
+	LoadingTXT.Font = Enum.Font.GothamSemibold
+	LoadingTXT.Text = "Loading..."
+	LoadingTXT.TextColor3 = Color3.fromRGB(180, 180, 180)
+	LoadingTXT.TextSize = 14.000
+	LoadingTXT.TextScaled = true
     wait(1)
     LoadingTXT.Text = "Hello " ..game.Players.LocalPlayer.DisplayName.. " From: ".. code
 	wait(1)
@@ -401,9 +422,6 @@ AutoChest:Destroy()
     wait(1)
 ZENHUB:Destroy()
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/HAI%20HUB"))()
-else
-DiscordLib:Notification("Key System" , "Key Wrong Try Again" , 3)
-end
 end)
 
 UICorner_4.CornerRadius = UDim.new(0, 4)
