@@ -1674,7 +1674,7 @@ local FOVCircle = Drawing.new("Circle")
 FOVCircle.Thickness = 2
 FOVCircle.NumSides = 460
 FOVCircle.Filled = false
-FOVCircle.Transparency = 0.1
+FOVCircle.Transparency = 0.2
 FOVCircle.Radius = 200
 FOVCircle.Color = Color3.fromRGB(255, 0, 0)
 	
@@ -1848,8 +1848,6 @@ local HAim = Library:Tab("Pvp","rbxassetid://7044284832")
 local HEsp = Library:Tab("Esp","rbxassetid://6035190846")
 --------------------------------------------------------------------
 
-HAim:Seperator(" Pvp ")
-
 HAim:Toggle("Show Fov",_G.Show_Fov,function(value)
  _G.Show_Fov = value
 end)
@@ -1891,8 +1889,7 @@ HAim:Textbox("Jump Hack",true,function(jump)
             end
         end
     end)
-    
-HEsp:Seperator(" ESP ")
+  
   
 	function isnil(thing)
 		return (thing == nil)
@@ -1902,43 +1899,43 @@ HEsp:Seperator(" ESP ")
 	end
 	Number = math.random(1, 1000000)
 	function UpdatePlayerChams()
-		for i,v in pairs(game:GetService'Players':GetChildren()) do
-			pcall(function()
-				if not isnil(v.Character) then
-					if ESPPlayer then
-						if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
-							local bill = Instance.new('BillboardGui',v.Character.Head)
-							bill.Name = 'NameEsp'..Number
-							bill.ExtentsOffset = Vector3.new(0, 1, 0)
-							bill.Size = UDim2.new(1,200,1,30)
-							bill.Adornee = v.Character.Head
-							bill.AlwaysOnTop = true
-							local name = Instance.new('TextLabel',bill)
-							name.Font = Enum.Font.Gotham
-							name.FontSize = "Size14"
-							name.TextWrapped = true
-							name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
-							name.Size = UDim2.new(1,0,1,0)
-							name.TextYAlignment = 'Top'
-							name.BackgroundTransparency = 1
-							name.TextStrokeTransparency = 0.5
-							if v.Team == game.Players.LocalPlayer.Team then
-								name.TextColor3 = Color3.new(0,255,0)
-							else
-								name.TextColor3 = Color3.new(255,0,0)
-							end
+	for i,v in pairs(game:GetService'Players':GetChildren()) do
+		pcall(function()
+			if not isnil(v.Character) then
+				if ESPPlayer then
+					if not isnil(v.Character.Head) and not v.Character.Head:FindFirstChild('NameEsp'..Number) then
+						local bill = Instance.new('BillboardGui',v.Character.Head)
+						bill.Name = 'NameEsp'..Number
+						bill.ExtentsOffset = Vector3.new(0, 1, 0)
+						bill.Size = UDim2.new(1,200,1,30)
+						bill.Adornee = v.Character.Head
+						bill.AlwaysOnTop = true
+						local name = Instance.new('TextLabel',bill)
+						name.Font = Enum.Font.Gotham
+						name.FontSize = "Size14"
+						name.TextWrapped = true
+						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
+						name.Size = UDim2.new(1,0,1,0)
+						name.TextYAlignment = 'Top'
+						name.BackgroundTransparency = 1
+						name.TextStrokeTransparency = 0.5
+						if v.Team == game.Players.LocalPlayer.Team then
+							name.TextColor3 = Color3.new(0,255,0)
 						else
-							v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
+							name.TextColor3 = Color3.new(255,0,0)
 						end
 					else
-						if v.Character.Head:FindFirstChild('NameEsp'..Number) then
-							v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
-						end
+						v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..' | '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M\nHealth : ' .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. '%')
+					end
+				else
+					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
+						v.Character.Head:FindFirstChild('NameEsp'..Number):Destroy()
 					end
 				end
-			end)
-		end
+			end
+		end)
 	end
+end
 	HEsp:Toggle("ESP Player",false,function(a)
 		ESPPlayer = a
 		while ESPPlayer do wait()
