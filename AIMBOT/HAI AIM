@@ -1721,16 +1721,6 @@ function main:Seperator(text)
  Sep3.Size = UDim2.new(0, 80, 0, 1)
  end
  
-local fov_circle = Drawing.new("Circle")
-fov_circle.Thickness = 1
-fov_circle.NumSides = 100
-fov_circle.Radius = _G.Select_Size_Fov
-fov_circle.Filled = false
-fov_circle.Visible = false
-fov_circle.ZIndex = 999
-fov_circle.Transparency = 1
-fov_circle.Color = Color3.fromRGB(54, 57, 241)
- 
 local FOVCircle = Drawing.new("Circle")
 FOVCircle.Thickness = 2
 FOVCircle.NumSides = 460
@@ -1756,7 +1746,7 @@ end)
 				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
 					pcall(function()
 						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
-						v.Character.HumanoidRootPart.Transparency = 0.9
+						v.Character.HumanoidRootPart.Transparency = _G.Trans
 						v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
 						v.Character.HumanoidRootPart.Material = Neon
 						v.Character.HumanoidRootPart.CanCollide = false
@@ -1980,7 +1970,7 @@ HAim:Toggle("Aimbot Skill And Gun",_G.Aimbot_Skill_Fov,function(value)
 end)
 
 HAim:Toggle("Show Fov",_G.Show_Fov,function(value)
- fov_circle.Visible = value
+ _G.Show_Fov = value
 end)
 
 HAim:Slider1("Fov Size",1,1000,50,function(value)
@@ -1993,6 +1983,8 @@ _G.Thickness = thick
 return "Thick Ness : " .. tostring(thick)
 end)
 
+HAim:Seperator("Hit Box")
+
 HAim:Toggle("Hit Box",_G.Disabled,function(value)
  _G.Disabled = value
 end)
@@ -2000,6 +1992,33 @@ end)
 HAim:Textbox("Hit Box Size",true,function(hit)
   _G.HeadSize = hit
   end)
+  
+--HAim:Textbox("Hit Box Transparent",true,function(trans)
+--  _G.Trans = trans
+--  end)
+
+local _G.Trans = {"20", "50", "70", "80"}
+_G.Trans = "20"
+HAim:Dropdown("Hit Box Transparent", _G.Trans, {""},function(trans)
+    _G.Trans = trans
+end)
+spawn(function()
+    while wait(.1) do
+        if _G.Trans then
+            pcall(function()
+                if _G.Trans == "20" then
+                    _G.Trans = 0.2
+                elseif _G.Trans == "50" then
+                    _G.Trans = 0.5
+                elseif _G.Trans == "70" then
+                    _G.Trans = 0.7
+                elseif _G.Trans == "80" then
+                    _G.Trans = 0.8
+                end
+            end)
+        end
+    end
+end)
 
 HAim:Seperator("PvP")
 
