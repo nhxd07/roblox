@@ -6451,7 +6451,13 @@ end)
                             end
                         end
                     else
-                        topos(CFrame.new(-4972, 336, -3719))
+                        topos(CFrame.new(-4972, 336, -3719)) --Snow White
+                        wait(1)
+                        topos(CFrame.new(-5414, 314, -2212)) --Pure Red
+                        wait(1)
+                        topos(CFrame.new(-5419, 1089, -2667)) --Winter Sky
+                        wait(1)
+                        topos(CFrame.new(-5566, 314, -2661)) --Summon Admin
                         wait(1)
                         topos(CFrame.new(-5344.822265625, 423.98541259766, -2725.0930175781))
                     end
@@ -6459,6 +6465,7 @@ end)
             end
         end)
     end)
+    
     
     Weapon:Toggle("Auto Kill Admin Boss Hop",_G.AutoDarkDagger_Hop,function(value)
         _G.AutoDarkDagger_Hop = value
