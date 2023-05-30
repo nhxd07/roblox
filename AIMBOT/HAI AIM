@@ -121,6 +121,7 @@ local HaiHubImageUI = Instance.new("ImageLabel")
  local currentpage = ""
  local keybind = keybind or Enum.KeyCode.RightControl
  local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
+ local executor = identifyexecutor() or "Unknown"
  
  local ZENHUB = Instance.new("ScreenGui")
  ZENHUB.Name = "ZENHUB"
@@ -175,6 +176,18 @@ local HaiHubImageUI = Instance.new("ImageLabel")
  Name.Text = text
  Name.TextColor3 = Color3.fromRGB(255, 255, 255)
  Name.TextSize = 14.000
+ 
+ local Exe = Instance.new("TextLabel")
+ Exe.Name = "Name"
+ Exe.Parent = Top
+ Exe.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Exe.BackgroundTransparency = 1.000
+ Exe.Position = UDim2.new(0.2909756112, 0, 0, 0)
+ Exe.Size = UDim2.new(0, 61, 0, 27)
+ Exe.Font = Enum.Font.GothamBold
+ Exe.Text = "Executor :"..executor
+ Exe.TextColor3 = Color3.fromRGB(255, 255, 255)
+ Exe.TextSize = 14.000
  
  local ServerTime = Instance.new("TextLabel")
 ServerTime.Name = "ServerTime"
@@ -1711,7 +1724,10 @@ function main:Seperator(text)
 local FOVCircle = Drawing.new("Circle")
 FOVCircle.Thickness = 2
 FOVCircle.NumSides = 460
+FOVCircle.Radius = 180
 FOVCircle.Filled = false
+FOVCircle.Visible = false
+fov_circle.ZIndex = 999
 FOVCircle.Transparency = 0.1
 FOVCircle.Radius = 0
 FOVCircle.Color = Color3.fromRGB(255, 255, 255)
@@ -1727,7 +1743,6 @@ else
 	FOVCircle.Visible = false
     end
 end)
- 
  
  game:GetService('RunService').RenderStepped:connect(function()
 		if _G.Disabled then
