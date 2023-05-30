@@ -1904,7 +1904,7 @@ function CheckAntiCheatBypass()
 
 CheckAntiCheatBypass()
 
-HAim("Anti Cheat Bypass(❗Do Not Turn Off❗)", true, function(value)
+HAim:Toggle("Anti Cheat Bypass(❗Do Not Turn Off❗)", true, function(value)
   _G.SafeFarm = value
 CheckAntiCheatBypass()
   Notification("Anti Cheat Bypass Activated ✅")
