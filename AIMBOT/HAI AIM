@@ -2396,14 +2396,13 @@ HMisc:Button("Hai Hub Menu",function()
 						ESP.BackgroundTransparency = 1
 						ESP.TextStrokeTransparency = 0.5
 						ESP.TextColor3 = Color3.fromRGB(255, 255, 255)
-						ESP.TextSize = 13
-						
+						ESP.TextSize = 13				
 						HealthESP.Name = "HealthESP"
                         HealthESP.Parent = ESP
 						HealthESP.Font = Enum.Font.SourceSansBold
 						HealthESP.FontSize = "Size14"
 						HealthESP.TextWrapped = true
-						HealthESP.Text = "Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth)
+						--HealthESP.Text = "Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth)
 						HealthESP.Position = UDim2.new(0, 25, 0, 15)
                         HealthESP.Size = UDim2.new(0, 200, 0, 30)
 						HealthESP.TextYAlignment = 'Top'
@@ -2413,7 +2412,7 @@ HMisc:Button("Hai Hub Menu",function()
 						HealthESP.TextSize = 13
 					else
 					    v.Character.Head['NameEsp'..Number].ESP.Text = (v.Name ..' '..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
-                        v.Character.Head['NameEsp'..Number].ESP.HealthESP.Text = "Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth)
+                        v.Character.Head['NameEsp'..Number].ESP.HealthESP.Text = ("Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth) .. "|" .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. "%")
 					end
 				else
 					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
