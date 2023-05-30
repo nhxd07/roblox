@@ -1724,7 +1724,7 @@ function main:Seperator(text)
 local fov_circle = Drawing.new("Circle")
 fov_circle.Thickness = 1
 fov_circle.NumSides = 100
-fov_circle.Radius = 180
+fov_circle.Radius = _G.Select_Size_Fov
 fov_circle.Filled = false
 fov_circle.Visible = false
 fov_circle.ZIndex = 999
