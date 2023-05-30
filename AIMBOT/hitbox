@@ -447,7 +447,7 @@ ONoff.MouseButton1Click:Connect(function()
 					pcall(function()
 						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
 						v.Character.HumanoidRootPart.Transparency = Trans.Text
-						v.Character.HumanoidRootPart.Color = Color3.new(255, 255, 255)
+						v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
 						v.Character.HumanoidRootPart.Material = Mat.Text
 						v.Character.HumanoidRootPart.CanCollide = false
 					end)
