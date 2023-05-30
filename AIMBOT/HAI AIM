@@ -2395,7 +2395,7 @@ HMisc:Button("Hai Hub Menu",function()
 						ESP.TextYAlignment = 'Top'
 						ESP.BackgroundTransparency = 1
 						ESP.TextStrokeTransparency = 0.5
-						HealthESP.TextColor3 = Color3.fromRGB(255, 255, 255)
+						ESP.TextColor3 = Color3.fromRGB(255, 255, 255)
 						ESP.TextSize = 13
 						
 						HealthESP.Name = "HealthESP"
@@ -2404,7 +2404,7 @@ HMisc:Button("Hai Hub Menu",function()
 						HealthESP.FontSize = "Size14"
 						HealthESP.TextWrapped = true
 						HealthESP.Text = "Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth)
-						HealthESP.Position = UDim2.new(0, -25, 0, 15)
+						HealthESP.Position = UDim2.new(0, 25, 0, 15)
                         HealthESP.Size = UDim2.new(0, 200, 0, 30)
 						HealthESP.TextYAlignment = 'Top'
 						HealthESP.BackgroundTransparency = 1
