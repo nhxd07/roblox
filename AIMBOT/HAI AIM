@@ -1728,6 +1728,22 @@ else
     end
 end)
  
+ 
+ game:GetService('RunService').RenderStepped:connect(function()
+		if _G.Disabled then
+			for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+						v.Character.HumanoidRootPart.Transparency = 0.9
+						v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
+						v.Character.HumanoidRootPart.Material = Neon
+						v.Character.HumanoidRootPart.CanCollide = false
+					end)
+				end
+			end
+		end
+	end)
  function main:Line()
  local Linee = Instance.new("Frame")
  local Line = Instance.new("Frame")
@@ -1876,55 +1892,6 @@ local lp = game:GetService('Players').LocalPlayer
 			end
 		end)
 	end)
-	
-	
-local lp = game:FindService("Players").LocalPlayer
-
-local function gplr(String)
-	local Found = {}
-	local strl = String:lower()
-	if strl == "all" then
-		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
-			table.insert(Found,v)
-		end
-	elseif strl == "others" then
-		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
-			if v.Name ~= lp.Name then
-				table.insert(Found,v)
-			end
-		end 
-	elseif strl == "me" then
-		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
-			if v.Name == lp.Name then
-				table.insert(Found,v)
-			end
-		end 
-	else
-		for i,v in pairs(game:FindService("Players"):GetPlayers()) do
-			if v.Name:lower():sub(1, #String) == String:lower() then
-				table.insert(Found,v)
-			end
-		end 
-	end
-	return Found 
-end
-	spawn(function()
-     while wait() do
-         pcall(function()
-            game:GetService('RunService').RenderStepped:connect(function()
-	      	if _G.Disabled then
-			for i,v in next, game:GetService('Players'):GetPlayers() do
-				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
-					pcall(function()
-						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
-						v.Character.HumanoidRootPart.Transparency = 0.9
-						v.Character.HumanoidRootPart.Color = Color3.fromRGB(255, 255, 255)
-						v.Character.HumanoidRootPart.Material = Neon
-						v.Character.HumanoidRootPart.CanCollide = false
-                end
-            end)
-        end
-    end)
 --------------------------------------------------------------------
 local Library = Update:Window("HAI HUB AIMBOT ","")
 --------------------------------------------------------------------
