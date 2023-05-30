@@ -2395,6 +2395,7 @@ HMisc:Button("Hai Hub Menu",function()
 						ESP.TextYAlignment = 'Top'
 						ESP.BackgroundTransparency = 1
 						ESP.TextStrokeTransparency = 0.5
+						HealthESP.TextColor3 = Color3.fromRGB(255, 255, 255)
 						ESP.TextSize = 13
 						
 						HealthESP.Name = "HealthESP"
@@ -2408,12 +2409,8 @@ HMisc:Button("Hai Hub Menu",function()
 						HealthESP.TextYAlignment = 'Top'
 						HealthESP.BackgroundTransparency = 1
 						HealthESP.TextStrokeTransparency = 0.5
+						HealthESP.TextColor3 = Color3.fromRGB(0, 255, 0)
 						HealthESP.TextSize = 13
-						if v.Team == game.Players.LocalPlayer.Team then
-							name.TextColor3 = Color3.new(0,255,0)
-						else
-							name.TextColor3 = Color3.new(255,0,0)
-						end
 					else
 					    v.Character.Head['NameEsp'..Number].ESP.Text = (v.Name ..' '..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
                         v.Character.Head['NameEsp'..Number].ESP.HealthESP.Text = "Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth)
