@@ -10347,7 +10347,7 @@ Teleport:Seperator(" NPC ")
  
  if World3 then
  Teleport:Dropdown("Select NPC", {
-  "Random Devil Fruit",
+  "Blox Fruits Gacha",
   "Blox Fruits Dealer",
   "Remove Devil Fruit",
   "Horned Man",
@@ -10367,8 +10367,8 @@ Teleport:Seperator(" NPC ")
   _G.TeleportNPC = value
   if _G.TeleportNPC == true then
   repeat wait()
-  if _G.SelectNPC == "Random Devil Fruit" then
-  topos(CFrame.new(-1436.19727, 61.8777695, 4.75247526, -0.557794094, 2.74216543e-08, 0.829979479, 5.83273234e-08, 1, 6.16037932e-09, -0.829979479, 5.18467118e-08, -0.557794094))
+  if _G.SelectNPC == "Blox Fruits Gacha" then
+  topos(CFrame.new(-12488.1376953125, 336.26239013671875, -7445.076171875))
   
   elseif _G.SelectNPC == "Blox Fruits Dealer" then
   topos(CFrame.new(-923.255066, 7.67800522, 1608.61011, 1, 0, 0, 0, 1, 0, 0, 0, 1))
