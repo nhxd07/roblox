@@ -6443,7 +6443,6 @@ end)
                                         EquipWeapon(_G.Select_Weapon)
                                         v.HumanoidRootPart.CanCollide = false
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                        topos(CFrame.new(-4972, 336, -3719))
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
                                         game:GetService("VirtualUser"):CaptureController()
                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670),workspace.CurrentCamera.CFrame)
@@ -6452,6 +6451,8 @@ end)
                             end
                         end
                     else
+                        topos(CFrame.new(-4972, 336, -3719))
+                        wait(1)
                         topos(CFrame.new(-5344.822265625, 423.98541259766, -2725.0930175781))
                     end
                 end
@@ -9835,6 +9836,10 @@ Teleport:Seperator(" WORLD ")
   end
  end)
  
+ Teleport:Button("White Haki",function()
+            topos(CFrame.new(-4972, 336, -3719))
+    end)
+    
  Teleport:Seperator(" Island ")
  
  if World1 then
