@@ -1721,13 +1721,20 @@ function main:Seperator(text)
  Sep3.Size = UDim2.new(0, 80, 0, 1)
  end
  
+local fov_circle = Drawing.new("Circle")
+fov_circle.Thickness = 1
+fov_circle.NumSides = 100
+fov_circle.Radius = 180
+fov_circle.Filled = false
+fov_circle.Visible = false
+fov_circle.ZIndex = 999
+fov_circle.Transparency = 1
+fov_circle.Color = Color3.fromRGB(54, 57, 241)
+ 
 local FOVCircle = Drawing.new("Circle")
 FOVCircle.Thickness = 2
 FOVCircle.NumSides = 460
-FOVCircle.Radius = 180
 FOVCircle.Filled = false
-FOVCircle.Visible = false
-FOVCircle.ZIndex = 999
 FOVCircle.Transparency = 0.1
 FOVCircle.Radius = 0
 FOVCircle.Color = Color3.fromRGB(255, 255, 255)
@@ -1743,7 +1750,6 @@ else
 	FOVCircle.Visible = false
     end
 end)
- 
  game:GetService('RunService').RenderStepped:connect(function()
 		if _G.Disabled then
 			for i,v in next, game:GetService('Players'):GetPlayers() do
@@ -1974,7 +1980,7 @@ HAim:Toggle("Aimbot Skill And Gun",_G.Aimbot_Skill_Fov,function(value)
 end)
 
 HAim:Toggle("Show Fov",_G.Show_Fov,function(value)
- _G.Show_Fov = value
+ fov_circle.Visible = value
 end)
 
 HAim:Slider1("Fov Size",1,1000,50,function(value)
