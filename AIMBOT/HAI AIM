@@ -1885,6 +1885,30 @@ local HAim = Library:Tab("Pvp","rbxassetid://7044284832")
 local HMisc = Library:Tab("Misc","rbxassetid://11447063791")
 local HEsp = Library:Tab("Esp","rbxassetid://6035190846")
 --------------------------------------------------------------------
+function CheckAntiCheatBypass()
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
+        if v:IsA("LocalScript") then
+            if v.Name == "General" or v.Name == "Shiftlock"  or v.Name == "FallDamage" or v.Name == "4444" or v.Name == "CamBob" or v.Name == "JumpCD" or v.Name == "Looking" or v.Name == "Run" then
+                v:Destroy()
+            end
+        end
+     end
+     for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerScripts:GetDescendants()) do
+        if v:IsA("LocalScript") then
+            if v.Name == "RobloxMotor6DBugFix" or v.Name == "Clans"  or v.Name == "Codes" or v.Name == "CustomForceField" or v.Name == "MenuBloodSp"  or v.Name == "PlayerList" then
+                v:Destroy()
+            end
+        end
+     end
+    end
+
+CheckAntiCheatBypass()
+
+HAim("Anti Cheat Bypass(❗Do Not Turn Off❗)", true, function(value)
+  _G.SafeFarm = value
+CheckAntiCheatBypass()
+  Notification("Anti Cheat Bypass Activated ✅")
+end)
 
 HAim:Seperator("Aimbot")
 
@@ -2449,3 +2473,18 @@ end
 			UpdateDevilChams() 
 		end
 	end)
+	HEsp:Toggle("Teleport To Spawn Fruit",false,function(value)
+ _G.Grabfruit = value
+end)
+
+spawn(function()
+			while wait(.1) do
+				if _G.Grabfruit then
+					for i,v in pairs(game.Workspace:GetChildren()) do
+						if string.find(v.Name, "Fruit") then
+							game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Handle.CFrame
+						end
+					end
+				end
+end
+end)
