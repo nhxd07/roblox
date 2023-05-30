@@ -1886,24 +1886,6 @@ local HMisc = Library:Tab("Misc","rbxassetid://11447063791")
 local HEsp = Library:Tab("Esp","rbxassetid://6035190846")
 --------------------------------------------------------------------
 
-local plyserv = HAim:Label("Players")
-
-spawn(function()
-    while wait() do
-        pcall(function()
-            for i,v in pairs(game:GetService("Players"):GetPlayers()) do
-                if i == 12 then
-                    plyserv:Set("Players :".." "..i.." ".."/".." ".."12".." ".."(Max)")
-                elseif i == 1 then
-                    plyserv:Set("Player :".." "..i.." ".."/".." ".."12")
-                else
-                    plyserv:Set("Players :".." "..i.." ".."/".." ".."12")
-                end
-            end
-        end)
-    end
-end)
-
 HAim:Seperator("Aimbot")
 
 HAim:Toggle("Aimbot Gun",false,function(value)
@@ -2390,12 +2372,12 @@ HMisc:Button("Hai Hub Menu",function()
 						ESP.TextWrapped = true
 						ESP.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
 						ESP.Size = UDim2.new(0, 200, 0, 30)
-                        ESP.Position = UDim2.new(0, 0, 0, 0) 
+                        ESP.Position = UDim2.new(0, 0, 0, 0)
 						ESP.TextYAlignment = 'Top'
 						ESP.BackgroundTransparency = 1
 						ESP.TextStrokeTransparency = 0.5
 						ESP.TextColor3 = Color3.fromRGB(255, 255, 255)
-						ESP.TextSize = 13				
+						ESP.TextSize = 13
 						HealthESP.Name = "HealthESP"
                         HealthESP.Parent = ESP
 						HealthESP.Font = Enum.Font.SourceSansSemibold
@@ -2410,7 +2392,7 @@ HMisc:Button("Hai Hub Menu",function()
 						HealthESP.TextSize = 13
 					else
 					    v.Character.Head['NameEsp'..Number].ESP.Text = (v.Name ..' '..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
-                        v.Character.Head['NameEsp'..Number].ESP.HealthESP.Text = ("Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth) .. "|" .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. "%")
+                        v.Character.Head['NameEsp'..Number].ESP.HealthESP.Text = ("Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth) .. " | " .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. "%")
 					end
 				else
 					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
@@ -2421,9 +2403,49 @@ HMisc:Button("Hai Hub Menu",function()
 		end)
 	end
 end
+function UpdateDevilChams() 
+	for i,v in pairs(game.Workspace:GetChildren()) do
+		pcall(function()
+			if DevilFruitESP then
+				if string.find(v.Name, "Fruit") then   
+					if not v.Handle:FindFirstChild('NameEsp'..Number) then
+						local bill = Instance.new('BillboardGui',v.Handle)
+						bill.Name = 'NameEsp'..Number
+						bill.ExtentsOffset = Vector3.new(0, 1, 0)
+						bill.Size = UDim2.new(1,200,1,30)
+						bill.Adornee = v.Handle
+						bill.AlwaysOnTop = true
+						local name = Instance.new('TextLabel',bill)
+						name.Font = Enum.Font.Gotham
+						name.FontSize = "Size14"
+						name.TextWrapped = true
+						name.Size = UDim2.new(1,0,1,0)
+						name.TextYAlignment = 'Top'
+						name.BackgroundTransparency = 1
+						name.TextStrokeTransparency = 0.5
+						name.TextColor3 = Color3.fromRGB(255, 0, 0)
+						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' M')
+					else
+						v.Handle['NameEsp'..Number].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Handle.Position).Magnitude/3) ..' M')
+					end
+				end
+			else
+				if v.Handle:FindFirstChild('NameEsp'..Number) then
+					v.Handle:FindFirstChild('NameEsp'..Number):Destroy()
+				end
+			end
+		end)
+	end
+end
 	HEsp:Toggle("ESP Player",false,function(a)
 		ESPPlayer = a
 		while ESPPlayer do wait()
 			UpdatePlayerChams()
+		end
+	end)
+	HEsp:Toggle("ESP Devil Fruit",false,function(a)
+		DevilFruitESP = a
+		while DevilFruitESP do wait()
+			UpdateDevilChams() 
 		end
 	end)
