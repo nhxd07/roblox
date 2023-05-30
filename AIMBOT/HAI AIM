@@ -1993,32 +1993,9 @@ HAim:Textbox("Hit Box Size",true,function(hit)
   _G.HeadSize = hit
   end)
   
---HAim:Textbox("Hit Box Transparent",true,function(trans)
---  _G.Trans = trans
---  end)
-
-local _G.Trans = {"20", "50", "70", "80"}
-_G.Trans = "20"
-HAim:Dropdown("Hit Box Transparent", _G.Trans, {""},function(trans)
-    _G.Trans = trans
-end)
-spawn(function()
-    while wait(.1) do
-        if _G.Trans then
-            pcall(function()
-                if _G.Trans == "20" then
-                    _G.Trans = 0.2
-                elseif _G.Trans == "50" then
-                    _G.Trans = 0.5
-                elseif _G.Trans == "70" then
-                    _G.Trans = 0.7
-                elseif _G.Trans == "80" then
-                    _G.Trans = 0.8
-                end
-            end)
-        end
-    end
-end)
+HAim:Textbox("Hit Box Transparent",true,function(trans)
+  _G.Trans = trans
+  end)
 
 HAim:Seperator("PvP")
 
