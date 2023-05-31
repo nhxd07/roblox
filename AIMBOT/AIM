@@ -20,7 +20,7 @@ Frame.Parent = ScreenGui
 Frame.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 Frame.BorderColor3 = Color3.fromRGB(16, 16, 16)
 Frame.Position = UDim2.new(0.326547235, 0, 0.442340851, 0)
-Frame.Size = UDim2.new(0.206905529, 0, 0.194492236, 0)
+Frame.Size = UDim2.new(0.156905529, 0, 0.194492236, 0)
 
 Frame_2.Parent = Frame
 Frame_2.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
@@ -32,7 +32,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.Size = UDim2.new(1.00234735, 0, 1.08253634, 0)
 TextLabel.Font = Enum.Font.SourceSansSemibold
-TextLabel.Text = "Aimbot | vantrungxoxo"
+TextLabel.Text = "Aimbot"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 16.000
 
@@ -64,7 +64,7 @@ TextLabel_2.BackgroundTransparency = 1.000
 TextLabel_2.Position = UDim2.new(1.54999995, 0, 0, 0)
 TextLabel_2.Size = UDim2.new(17.7999992, 0, 1, 0)
 TextLabel_2.Font = Enum.Font.SourceSansSemibold
-TextLabel_2.Text = "Aimbot"
+TextLabel_2.Text = "Enable"
 TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.TextSize = 16.000
 TextLabel_2.TextWrapped = true
