@@ -1721,26 +1721,25 @@ function main:Seperator(text)
  Sep3.Size = UDim2.new(0, 80, 0, 1)
  end
  
-local Circle = Drawing.new("Circle")
-    Circle.Color =  Color3.fromRGB(52, 190, 255)
-    Circle.Thickness = 1
-    Circle.Radius = 250
-    Circle.NumSides = 460
-    Circle.Filled = false
-    Circle.Transparency = 0.5
-    
-    game:GetService("RunService").Stepped:Connect(function()
-        Circle.Radius = _G.Select_Size_Fov
-        Circle.Thickness = 1
-        Circle.NumSides = 460
-        Circle.Position = game:GetService('UserInputService'):GetMouseLocation()
-        if _G.Show_Fov then
-            Circle.Visible = true
-        else
-            Circle.Visible = false
-        end
-    end)
-    
+local FOVCircle = Drawing.new("Circle")
+FOVCircle.Thickness = 2
+FOVCircle.NumSides = 460
+FOVCircle.Filled = false
+FOVCircle.Transparency = 0.1
+FOVCircle.Radius = 0
+FOVCircle.Color = Color3.fromRGB(255, 255, 255)
+	
+game:GetService("RunService").Stepped:Connect(function()
+FOVCircle.Radius = _G.Select_Size_Fov
+FOVCircle.Thickness = _G.Thickness
+FOVCircle.NumSides = 11
+FOVCircle.Position = game:GetService('UserInputService'):GetMouseLocation()
+if _G.Show_Fov then
+	FOVCircle.Visible = true
+else
+	FOVCircle.Visible = false
+    end
+end)
  game:GetService('RunService').RenderStepped:connect(function()
 		if _G.Disabled then
 			for i,v in next, game:GetService('Players'):GetPlayers() do
@@ -1904,7 +1903,6 @@ local lp = game:GetService('Players').LocalPlayer
 			end
 		end)
 	end)
-	
 --------------------------------------------------------------------
 local Library = Update:Window("HAI HUB AIMBOT ","")
 --------------------------------------------------------------------
