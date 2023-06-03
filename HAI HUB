@@ -11004,22 +11004,35 @@ if World2 then
 						bill.Size = UDim2.new(1,200,1,30)
 						bill.Adornee = v.Character.Head
 						bill.AlwaysOnTop = true
-						local name = Instance.new('TextLabel',bill)
-						name.Font = Enum.Font.Gotham
-						name.FontSize = "Size14"
-						name.TextWrapped = true
-						name.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
-						name.Size = UDim2.new(1,0,1,0)
-						name.TextYAlignment = 'Top'
-						name.BackgroundTransparency = 1
-						name.TextStrokeTransparency = 0.5
-						if v.Team == game.Players.LocalPlayer.Team then
-							name.TextColor3 = Color3.new(0,255,0)
-						else
-							name.TextColor3 = Color3.new(255,0,0)
-						end
+						local ESP = Instance.new("TextLabel")
+						local HealthESP = Instance.new("TextLabel")
+						ESP.Name = "ESP"
+						ESP.Parent = bill
+						ESP.Font = Enum.Font.SourceSansSemibold
+						ESP.TextWrapped = true
+						ESP.Text = (v.Name ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
+						ESP.Size = UDim2.new(0, 200, 0, 30)
+                        ESP.Position = UDim2.new(0, 0, 0, 0)
+						ESP.TextYAlignment = 'Top'
+						ESP.BackgroundTransparency = 1
+						ESP.TextStrokeTransparency = 0.5
+						ESP.TextColor3 = Color3.fromRGB(255, 255, 255)
+						ESP.TextSize = 13
+						HealthESP.Name = "HealthESP"
+                        HealthESP.Parent = ESP
+						HealthESP.Font = Enum.Font.SourceSansSemibold
+						HealthESP.TextWrapped = true
+						--HealthESP.Text = "Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth)
+						HealthESP.Position = UDim2.new(0, 0, 0, 15)
+                        HealthESP.Size = UDim2.new(0, 200, 0, 30)
+						HealthESP.TextYAlignment = 'Top'
+						HealthESP.BackgroundTransparency = 1
+						HealthESP.TextStrokeTransparency = 0.5
+						HealthESP.TextColor3 = Color3.fromRGB(0, 255, 0)
+						HealthESP.TextSize = 13
 					else
-						v.Character.Head['NameEsp'..Number].TextLabel.Text = (v.Name ..' | '.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M\nHealth : ' .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. '%')
+					    v.Character.Head['NameEsp'..Number].ESP.Text = (v.Name ..' '..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
+                        v.Character.Head['NameEsp'..Number].ESP.HealthESP.Text = ("Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth) .. " | " .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. "%")
 					end
 				else
 					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
