@@ -1843,6 +1843,7 @@ local lp = game:GetService('Players').LocalPlayer
 						local Pos, Vis = game.Workspace.CurrentCamera.WorldToScreenPoint(game.Workspace.CurrentCamera, Head.Position)
 						local MousePos, TheirPos = Vector2.new(mouse.X, mouse.Y), Vector2.new(Pos.X, Pos.Y)
 						local Dist = (TheirPos - MousePos).Magnitude
+						AutoHaki()
 						if Dist < MaxDist and Dist <= _G.Select_Size_Fov and v.Name ~= game.Players.LocalPlayer.Name then
 							MaxDist = Dist
 							_G.CharacterAimBot = v
@@ -1931,10 +1932,8 @@ function CheckAntiCheatBypass()
 
 CheckAntiCheatBypass()
 
-HAim:Toggle("Anti Cheat Bypass(❗Do Not Turn Off❗)", true, function(value)
+HAim:Toggle("Anti Cheat Bypass", true, function(value)
   _G.SafeFarm = value
-CheckAntiCheatBypass()
-  Notification("Anti Cheat Bypass Activated ✅")
 end)
 
 HAim:Seperator("Aimbot")
@@ -1966,7 +1965,6 @@ end)
 
 HAim:Toggle("Aimbot Skill And Gun",_G.Aimbot_Skill_Fov,function(value)
  AimBotFullFunction = value
- AutoHaki = value
 end)
 
 HAim:Toggle("Show Fov",_G.Show_Fov,function(value)
@@ -2022,6 +2020,49 @@ end)
 
 HAim:Seperator("Other")
 
+HAim:Toggle("Fast Attack",true,function(value)
+ _G.FastAttack = value
+end)
+
+require(game.ReplicatedStorage.Util.CameraShaker):Stop()
+
+xShadowFastAttackx = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+
+xShadowx = debug.getupvalues(xShadowFastAttackx)[2]
+
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.FastAttack then
+            if typeof(xShadowx) == "table" then
+                pcall(function()
+                    xShadowx.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
+                    xShadowx.activeController.timeToNextAttack = 0
+                    xShadowx.activeController.hitboxMagnitude = 200
+                    xShadowx.activeController.active = false
+                    xShadowx.activeController.timeToNextBlock = 0
+                    xShadowx.activeController.focusStart = 0
+                    xShadowx.activeController.increment = 4
+                    xShadowx.activeController.blocking = false
+                    xShadowx.activeController.attacking = false
+                    xShadowx.activeController.humanoid.AutoRotate = 50
+                end)
+            end
+        end
+    end)
+end)
+spawn(function()
+    while wait(.1) do
+        if _G.FastAttack then 
+            if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+                local args = {
+                    [1] = "Buso"
+                }
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+            end
+        end
+    end
+end)
+
 HAim:Textbox("Jump Hack",true,function(jump)
   game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
   end)
@@ -2052,55 +2093,6 @@ HMisc:Button("Join Marines Team",function()
 		}
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
-
-
-HMisc:Button("Rejoin",function()
- local ts = game:GetService("TeleportService")
-		local p = game:GetService("Players").LocalPlayer
-		ts:Teleport(game.PlaceId, p)
-end)
-
-HMisc:Button("Sever Hop",function()
- hop()
-end)
-    HMisc:Button("Hop To Lower Player",function()
-        local maxplayers, gamelink, goodserver, data_table = math.huge, "https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100"
-		if not _G.FailedServerID then _G.FailedServerID = {} end
-
-		local function serversearch()
-			data_table = game:GetService"HttpService":JSONDecode(game:HttpGetAsync(gamelink))
-			for _, v in pairs(data_table.data) do
-				pcall(function()
-					if type(v) == "table" and v.id and v.playing and tonumber(maxplayers) > tonumber(v.playing) and not table.find(_G.FailedServerID, v.id) then
-						maxplayers = v.playing
-						goodserver = v.id
-					end
-				end)
-			end
-		end
-
-		function getservers()
-			pcall(serversearch)
-			for i, v in pairs(data_table) do
-				if i == "nextPageCursor" then
-					if gamelink:find"&cursor=" then
-						local a = gamelink:find"&cursor="
-						local b = gamelink:sub(a)
-						gamelink = gamelink:gsub(b, "")
-					end
-					gamelink = gamelink .. "&cursor=" .. v
-					pcall(getservers)
-				end
-			end
-		end
-
-		pcall(getservers)
-		wait()
-		if goodserver == game.JobId or maxplayers == #game:GetService"Players":GetChildren() - 1 then
-		end
-		table.insert(_G.FailedServerID, goodserver)
-		game:GetService"TeleportService":TeleportToPlaceInstance(game.PlaceId, goodserver)
-    end)
 
 HMisc:Seperator(" Open Menu ")
 
@@ -2457,7 +2449,7 @@ HMisc:Button("Hai Hub Menu",function()
 						HealthESP.TextSize = 13
 					else
 					    v.Character.Head['NameEsp'..Number].ESP.Text = (v.Name ..' '..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
-                        v.Character.Head['NameEsp'..Number].ESP.HealthESP.Text = ("Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth) .. " | " .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. "%")
+                        v.Character.Head['NameEsp'..Number].ESP.HealthESP.Text = "Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth)
 					end
 				else
 					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
