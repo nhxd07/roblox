@@ -4266,12 +4266,6 @@ _G.DistanceMob = 20
 Setting:Slider("Farm Distance",1,100,20,function(value)
  _G.DistanceMob = value
  end)
-else
- _G.DistanceMob = 20
-Setting:Slider1("Farm Distance",1,100,20,function(value)
- _G.DistanceMob = value
- end)
-end
 
 Setting:Dropdown("Select Farm Method", {
  "Behind","Below","Upper"
@@ -4787,12 +4781,6 @@ _G.Kill_At = 25
 Setting:Slider("Kill Health [For Mastery]",1,100,25,function(value)
  _G.Kill_At = value
 end)
-else
-_G.Kill_At = 25
-Setting:Slider1("Kill Health [For Mastery]",1,100,25,function(value)
- _G.Kill_At = value
-end)
-end
 
 Setting:Toggle("Skill Z",true,function(a)
 		_G.SkillZ = a
@@ -9843,10 +9831,6 @@ Teleport:Seperator(" WORLD ")
   end
   end
  end)
- 
- Teleport:Button("White Haki",function()
-            topos(CFrame.new(-4972, 336, -3719))
-    end)
     
  Teleport:Seperator(" Island ")
  
