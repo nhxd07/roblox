@@ -9263,7 +9263,7 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-    Mirragecheck:Set('🏝️ : Mirage Island : Spawning ✅️')
+    Mirragecheck:Set('🏝️ : Mirage Island : Found ✅️')
     else
       Mirragecheck:Set('🏝️ : Mirage Island : Not Found ❎️')
     end
