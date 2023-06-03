@@ -11032,7 +11032,7 @@ if World2 then
 						HealthESP.TextSize = 13
 					else
 					    v.Character.Head['NameEsp'..Number].ESP.Text = (v.Name ..' '..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Character.Head.Position).Magnitude/3) ..' M')
-                        v.Character.Head['NameEsp'..Number].ESP.HealthESP.Text = ("Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth) .. " | " .. round(v.Character.Humanoid.Health*100/v.Character.Humanoid.MaxHealth) .. "%")
+                        v.Character.Head['NameEsp'..Number].ESP.HealthESP.Text = "Health "..math.floor(v.Character.Humanoid.Health).."/"..math.floor(v.Character.Humanoid.MaxHealth)
 					end
 				else
 					if v.Character.Head:FindFirstChild('NameEsp'..Number) then
