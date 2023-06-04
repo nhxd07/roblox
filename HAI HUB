@@ -3339,6 +3339,10 @@ function AutoHaki()
 	end
 end
  
+function Click()
+       game:GetService'VirtualUser':CaptureController()
+	   game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
+end
  
 function SlowtoTarget(CFgo)
 		local tween_s = game:service"TweenService"
@@ -3572,7 +3576,7 @@ end
 spawn(function()
 	pcall(function()
 		game:GetService("RunService").Stepped:Connect(function()
-		  	if _G.Auto_Farm_Level or _G.Auto_New_World or _G.AutoSeaBeats or _G.AutoSeaking or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.TeleportIsland or _G.TeleportNPC or _G.Auto_Farm_Boss or _G.AutoDarkDagger or _G.AutoFarmBossHallow or _G.Autotushita or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.d or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.AutoFarmMaterial or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.autoraid or AutoNextIsland or _G.Auto_Farm_Sword or _G.MeleeFarm or _G.AutoFarmSelectMonster or _G.AutoFarmKenHakivor or _G.AutoObservationHakiV2 or _G.GunMastery or _G.AutoFactory or _G.Mastery or _G.Auto_Kill_Law then
+		  	if _G.Auto_Farm_Level or _G.Auto_New_World or _G.AutoSeaBeats or _G.AutoSeaking or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.TeleportIsland or _G.TeleportNPC or _G.Auto_Farm_Boss or _G.AutoDarkDagger or _G.AutoRip or _G.AutoFarmBossHallow or _G.Autotushita or _G.Auto_Elite_Hunter or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.Auto_Rengoku or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.d or _G.Auto_Twin_Hook or _G.Auto_Serpent_Bow or _G.AutoFarmMaterial or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.Auto_Next_Island or _G.autoraid or AutoNextIsland or _G.Auto_Farm_Sword or _G.MeleeFarm or _G.AutoFarmSelectMonster or _G.AutoFarmKenHakivor or _G.AutoObservationHakiV2 or _G.GunMastery or _G.AutoFactory or _G.Mastery or _G.Auto_Kill_Law then
 			 	if not game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
 					local Noclip = Instance.new("BodyVelocity")
 					Noclip.Name = "BodyClip"
@@ -3592,7 +3596,7 @@ end)
 spawn(function()
 	pcall(function()
 		game:GetService("RunService").Stepped:Connect(function()
-			if _G.Auto_Farm_Level or _G.Auto_New_World or _G.AutoSeaBeats or _G.AutoSeaking or _G.AutoDarkDagger or _G.AutoFarmBossHallow or _G.TeleportIsland or _G.TeleportNPC or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.GunMastery or _G.Mastery or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.Auto_Elite_Hunter or _G.AutoFarmKenHaki or _G.AutoFactory or _G.AutoFarmSelectMonster or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.d or _G.Auto_Rengoku or _G.Autotushita or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.AutoFarmMaterial or _G.autoraid or _G.Auto_Twin_Hook or AutoNextIsland or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.AutoObservationHakiV2 or _G.d or _G.Auto_Next_Island or _G.Auto_Farm_Sword or _G.MeleeFarm or _G.Auto_Kill_Law then
+			if _G.Auto_Farm_Level or _G.Auto_New_World or _G.AutoSeaBeats or _G.AutoSeaking or _G.AutoDarkDagger or _G.AutoRip or _G.AutoFarmBossHallow or _G.TeleportIsland or _G.TeleportNPC or _G.Auto_Third_World or _G.Auto_Farm_Chest or _G.Auto_Farm_Boss or _G.GunMastery or _G.Mastery or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.Auto_Elite_Hunter or _G.AutoFarmKenHaki or _G.AutoFactory or _G.AutoFarmSelectMonster or _G.Auto_Cake_Prince or _G.Auto_Farm_All_Boss or _G.Auto_Saber or _G.Auto_Pole or _G.Auto_Farm_Scrap_and_Leather or _G.Auto_Farm_Angel_Wing or _G.Auto_Factory_Farm or _G.Auto_Farm_Ectoplasm or _G.Auto_Bartilo_Quest or _G.d or _G.Auto_Rengoku or _G.Autotushita or _G.Auto_Farm_Radioactive or _G.Auto_Farm_Vampire_Fang or _G.Auto_Farm_Mystic_Droplet or _G.Auto_Farm_GunPowder or _G.Auto_Farm_Dragon_Scales or _G.Auto_Evo_Race_V2 or _G.Auto_Swan_Glasses or _G.Auto_Dragon_Trident or _G.Auto_Soul_Reaper or _G.Auto_Farm_Fish_Tail or _G.Auto_Farm_Mini_Tusk or _G.Auto_Farm_Magma_Ore or _G.Auto_Farm_Bone or _G.Auto_Farm_Conjured_Cocoa or _G.Auto_Open_Dough_Dungeon or _G.Auto_Rainbow_Haki or _G.Auto_Musketeer_Hat or _G.Auto_Holy_Torch or _G.Auto_Canvander or _G.AutoFarmMaterial or _G.autoraid or _G.Auto_Twin_Hook or AutoNextIsland or _G.Auto_Serpent_Bow or _G.Auto_Fully_Death_Step or _G.Auto_Fully_SharkMan_Karate or _G.Teleport_to_Player or _G.Auto_Kill_Player_Melee or _G.Auto_Kill_Player_Gun or _G.Start_Tween_Island or _G.AutoObservationHakiV2 or _G.d or _G.Auto_Next_Island or _G.Auto_Farm_Sword or _G.MeleeFarm or _G.Auto_Kill_Law then
 				for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
 					if v:IsA("BasePart") then
 						v.CanCollide = false    
@@ -3764,6 +3768,7 @@ spawn(function()
   if string.find(v.Name, "Ship") then
   repeat wait()
   AutoHaki()
+  Click()
   EquipWeapon(_G.Select_Weapon)
   PosMonEctoplasm = v.HumanoidRootPart.CFrame
   v.HumanoidRootPart.CanCollide = false
@@ -3820,6 +3825,7 @@ spawn(function()
   if v.Humanoid.Health > 0 then
   repeat wait()
   AutoHaki()
+  Click()
   EquipWeapon(_G.Select_Weapon)
   StartMagnetBoneMon = true
   v.HumanoidRootPart.CanCollide = false
@@ -3916,6 +3922,7 @@ spawn(function()
 											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
 												EquipWeapon(_G.Select_Weapon)
 												AutoHaki()
+												Click()
 												PosMon = v.HumanoidRootPart.CFrame
 												v.HumanoidRootPart.CanCollide = false
 												v.Humanoid.WalkSpeed = 0
@@ -3964,6 +3971,7 @@ spawn(function()
 												if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) then
 													EquipWeapon(_G.Select_Weapon)
 													AutoHaki()
+													Click()
 													PosMon = v.HumanoidRootPart.CFrame
 													v.HumanoidRootPart.CanCollide = false
 													v.Humanoid.WalkSpeed = 0
@@ -4010,6 +4018,7 @@ spawn(function()
 										repeat wait()
 											EquipWeapon(_G.Select_Weapon)
 											AutoHaki()
+											Click()
 											PosMon = v.HumanoidRootPart.CFrame
 											v.HumanoidRootPart.CanCollide = false
 											v.Humanoid.WalkSpeed = 0
@@ -4039,6 +4048,7 @@ elseif _G.Select_Mode_Farm == "Near Farm Mode" then
   if v.Humanoid.Health > 0 then
   repeat game:GetService("RunService").Heartbeat:wait()
   EquipWeapon(_G.Select_Weapon)
+  Click()
   if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
   local args = {
    [1] = "Buso"
@@ -4085,6 +4095,7 @@ spawn(function()
   if v.Name == "Ice Admiral [Lv. 700] [Boss]" and v.Humanoid.Health > 0 then
   repeat wait()
   AutoHaki()
+  Click()
   EquipWeapon(_G.Select_Weapon)
   v.HumanoidRootPart.CanCollide = false
   v.HumanoidRootPart.Size = Vector3.new(60,60,60)
@@ -4127,6 +4138,7 @@ spawn(function()
   OldCFrameThird = v.HumanoidRootPart.CFrame
   repeat wait()
   AutoHaki()
+  Click()
   EquipWeapon(_G.Select_Weapon)
   v.HumanoidRootPart.CFrame = OldCFrameThird
   v.HumanoidRootPart.Size = Vector3.new(50,50,50)
@@ -4933,6 +4945,7 @@ spawn(function()
   if v.Name == "Core" and v.Humanoid.Health > 0 then
   repeat task.wait()
   AutoHaki()
+  Click()
   EquipWeapon(_G.Select_Weapon)
   topos(CFrame.new(448.46756, 199.356781, -441.389252))
   game:GetService("VirtualUser"):CaptureController()
@@ -5075,6 +5088,7 @@ Main:Toggle("Auto BF Mastery",_G.AutoFarmFruitMastery,function(value)
    else
     UseSkill = false
    AutoHaki()
+   Click()
    EquipWeapon(_G.Select_Weapon)
    topos(v.HumanoidRootPart.CFrame * MethodFarm)
    v.HumanoidRootPart.CanCollide = false
@@ -5325,6 +5339,7 @@ Main:Toggle("Auto BF Mastery",_G.AutoFarmFruitMastery,function(value)
     game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
     else
      AutoHaki()
+     Click()
     EquipWeapon(_G.Select_Weapon)
     v.Humanoid.WalkSpeed = 0
     v.HumanoidRootPart.CanCollide = false
@@ -5411,6 +5426,7 @@ spawn(function()
 								repeat wait()
 									EquipWeapon(_G.Select_Weapon)
 									AutoHaki()
+									Click()
 									topos(v.HumanoidRootPart.CFrame * MethodFarm)
 									v.HumanoidRootPart.CanCollide = false
 									v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
@@ -5442,6 +5458,7 @@ spawn(function()
 											if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameBoss) then
 												EquipWeapon(_G.Select_Weapon)
 												AutoHaki()
+												Click()
 												topos(v.HumanoidRootPart.CFrame * MethodFarm)
 												v.HumanoidRootPart.CanCollide = false
 												v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
@@ -5464,6 +5481,7 @@ spawn(function()
 									repeat wait()
 										EquipWeapon(_G.Select_Weapon)
 										AutoHaki()
+										Click()
 										topos(v.HumanoidRootPart.CFrame * MethodFarm)
 										v.HumanoidRootPart.CanCollide = false
 										v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
@@ -5498,6 +5516,7 @@ spawn(function()
 								topos(v.HumanoidRootPart.CFrame)
 							elseif v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 350 then
 								AutoHaki()
+								Click()
 								EquipWeapon(_G.Select_Weapon)
 								v.Humanoid.WalkSpeed = 0
 								v.HumanoidRootPart.CanCollide = false
@@ -5653,6 +5672,7 @@ spawn(function()
 									if v:FindFirstChild("HumanoidRootPart") then
 										repeat task.wait()
 											AutoHaki()
+											Click()
 											EquipWeapon(_G.Select_Weapon)
 												PosMon = v.HumanoidRootPart.CFrame
 												v.HumanoidRootPart.CanCollide = false
@@ -6203,6 +6223,7 @@ end)
 										if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
 											repeat wait()
 												AutoHaki()
+												Click()
 												EquipWeapon(_G.Select_Weapon)
 												v.HumanoidRootPart.CanCollide = false
 												v.Humanoid.WalkSpeed = 0
@@ -6315,6 +6336,7 @@ end)
 								if v.Name == "Cake Prince [Lv. 2300] [Raid Boss]" then
 									repeat wait()
 										AutoHaki()
+										Click()
 										EquipWeapon(_G.Select_Weapon)
 										v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
 										v.HumanoidRootPart.CanCollide = false
@@ -6333,6 +6355,7 @@ end)
 								if (v.Name == "Baking Staff [Lv. 2250]" or v.Name == "Head Baker [Lv. 2275]" or v.Name == "Cake Guard [Lv. 2225]" or v.Name == "Cookie Crafter [Lv. 2200]") and v.Humanoid.Health > 0 then
 									repeat wait()
 										AutoHaki()
+										Click()
 										EquipWeapon(_G.Select_Weapon)
 										StartCakeStartMagnet = true
 										v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)  
@@ -6368,6 +6391,7 @@ end)
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat task.wait()
                                         AutoHaki()
+                                        Click()
                                         EquipWeapon(_G.Select_Weapon)
                                         v.HumanoidRootPart.CanCollide = false
                                         v.Humanoid.WalkSpeed = 0
@@ -6406,6 +6430,7 @@ end)
                                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                     repeat task.wait()
                                         AutoHaki()
+                                        Click()
                                         EquipWeapon(_G.Select_Weapon)
                                         v.HumanoidRootPart.CanCollide = false
                                         v.Humanoid.WalkSpeed = 0
@@ -6427,6 +6452,212 @@ end)
 		
 		Weapon:Seperator("Dark Dagger")
     
+    Weapon:Toggle("Auto Rip Indra",_G.AutoRip,function(value)
+        _G.AutoRip = value
+        StopTween(_G.AutoRip)
+    end)
+        spawn(function()
+            while wait() do
+                pcall(function()
+                    if game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") then
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v.Name == "rip_indra True Form [Lv. 5000] [Raid Boss]" then
+                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                    repeat task.wait()
+                                        AutoHaki()
+                                        EquipWeapon(_G.SelectWeapon)
+                                        Click()
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.Humanoid.WalkSpeed = 0
+                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                                        game:GetService("VirtualUser"):CaptureController()
+                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                    until not _G.RipChan or not v.Parent or v.Humanoid.Health <= 0
+                                end
+                            end
+                        end
+                    else
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") then
+                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                        else
+                            if _G.RipChanH then
+                                Hop()
+                            end
+                        end
+                    end
+                end)
+            end
+        end)
+    
+        spawn(function()
+            while wait() do
+                pcall(function()
+                    
+                end)
+            end
+        end)
+    
+    spawn(function()
+        pcall(function()
+            while wait() do
+                if _G.AutoRip then
+                    if not game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") and not game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or not game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") then
+                    local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+                                if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+                                    repeat  wait()
+                                        topos(CFrame.new(-5418.892578125, 313.74130249023, -2826.2260742188)) 
+                                    until not _G.Auto_Elite_Hunter or (Vector3.new(-5418.892578125, 313.74130249023, -2826.2260742188)-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3
+                                    if (Vector3.new(-5418.892578125, 313.74130249023, -2826.2260742188)-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then
+                                        wait(1.1)
+                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
+                                        wait(0.5)
+                                    end
+                                elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+                                    if string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or string.find(QuestTitle,"Urban") then
+                                        if game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
+                                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                                if v.Name == "Diablo [Lv. 1750]" or v.Name == "Deandre [Lv. 1750]" or v.Name == "Urban [Lv. 1750]" then
+                                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                                        repeat task.wait()
+                                                            AutoHaki()
+                                                            EquipWeapon(_G.Select_Weapon)
+                                                            Click()
+                                                            v.HumanoidRootPart.CanCollide = false
+                                                            v.Humanoid.WalkSpeed = 0
+                                                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                                            topos(v.HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                                                            game:GetService("VirtualUser"):CaptureController()
+                                                            game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                                            sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
+                                                        until _G.AutoRip == false or v.Humanoid.Health <= 0 or not v.Parent
+                                                    end
+                                                end
+                                            end
+                                        else
+                                            if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") then
+                                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                                            elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") then
+                                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                                            elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") then
+                                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                                            else
+                                                if _G.Auto_Elite_Hunter_Hop then
+                                                    Hop()
+                                                else
+                                                    topos(CFrame.new(-5418.892578125, 313.74130249023, -2826.2260742188))
+                                                end
+                                            end
+                                        end                    
+                                    end
+                                end
+                        else
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") or game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") then
+                            _G.Auto_Elite_Hunter = false
+                        repeat
+                        wait(13)
+                        topos(CFrame.new(-5419.56641, 1090.33752, -2665.78589, 0.971406102, 1.70427565e-08, 0.237423971, -2.01854462e-08, 1, 1.08056044e-08, -0.237423971, -1.52891388e-08, 0.971406102))
+                        
+                        local args ={
+                            [1] = "activateColor",
+                            [2] = "Winter Sky"
+                        }
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+                        wait(14)
+                        topos(CFrame.new(-5414.27979, 314.837671, -2212.57007, -0.984678745, -4.57075764e-08, 0.174378246, -4.24506084e-08, 1, 2.24074217e-08, -0.174378246, 1.46616497e-08, -0.984678745))
+                        local args = {
+                            [1] = "activateColor",
+                            [2] = "Pure Red"
+                        }
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+                        
+                        wait(17)
+                        topos(CFrame.new(-4972.89502, 336.937714, -3720.4707, -0.738323092, -2.82306036e-08, 0.674447179, 5.20171852e-08, 1, 9.88010598e-08, -0.674447179, 1.08029944e-07, -0.738323092))
+                        local args = {
+                            [1] = "activateColor",
+                            [2] = "Snow White"
+                        }
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+                			wait(0.5)
+                			EquipWeapon("God's Chalice")
+                			wait(0.5)
+    				topos(CFrame.new(-5560.27295, 313.915466, -2663.89795))
+                        until game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]")
+				
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") then
+                                    repeat task.wait()
+                                        AutoHaki()
+                                        EquipWeapon(_G.Select_Weapon)
+                                        Click()
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.Humanoid.WalkSpeed = 0
+                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(0,-50,-29))
+                                        game:GetService("VirtualUser"):CaptureController()
+                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                    until not _G.RipChan or not v.Parent or v.Humanoid.Health <= 0
+                        if not game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or not game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") and not game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") then
+                                wait(1)
+                        local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+                                if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+                                    repeat  wait()
+                                        topos(CFrame.new(-5418.892578125, 313.74130249023, -2826.2260742188)) 
+                                    until not _G.Auto_Elite_Hunter or (Vector3.new(-5418.892578125, 313.74130249023, -2826.2260742188)-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3
+                                    if (Vector3.new(-5418.892578125, 313.74130249023, -2826.2260742188)-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then
+                                        wait(1.1)
+                                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
+                                        wait(0.5)
+                                    end
+                                elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+                                    if string.find(QuestTitle,"Diablo") or string.find(QuestTitle,"Deandre") or string.find(QuestTitle,"Urban") then
+                                        if game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
+                                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                                if v.Name == "Diablo [Lv. 1750]" or v.Name == "Deandre [Lv. 1750]" or v.Name == "Urban [Lv. 1750]" then
+                                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                                        repeat task.wait()
+                                                            AutoHaki()
+                                                            EquipWeapon(_G.Select_Weapon)
+                                                            Click()
+                                                            v.HumanoidRootPart.CanCollide = false
+                                                            v.Humanoid.WalkSpeed = 0
+                                                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                                            topos(v.HumanoidRootPart.CFrame * CFrame.new(0,-50,-29))
+                                                            game:GetService("VirtualUser"):CaptureController()
+                                                            game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                                            sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
+                                                        until _G.AutoRip == false or v.Humanoid.Health <= 0 or not v.Parent
+                                                    end
+                                                end
+                                            end
+                                        else
+                                            if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") then
+                                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                                            elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") then
+                                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                                            elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") then
+                                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]").HumanoidRootPart.CFrame * CFrame.new(5,10,7))
+                                            else
+                                                if _G.Auto_Elite_Hunter_Hop then
+                                                    Hop()
+                                                else
+                                                    topos(CFrame.new(-5418.892578125, 313.74130249023, -2826.2260742188))
+                                                end
+                                            end
+                                        end                    
+                                    end
+                                end
+                        end
+                        end
+                        end
+                    end
+                end
+            end
+        end)
+    end)
+    
     Weapon:Toggle("Auto Kill Admin Boss",_G.AutoDarkDagger,function(value)
         _G.AutoDarkDagger = value
         StopTween(_G.AutoDarkDagger)
@@ -6442,6 +6673,7 @@ end)
                                 repeat task.wait()
                                     pcall(function()
                                         AutoHaki()
+                                        Click()
                                         EquipWeapon(_G.Select_Weapon)
                                         v.HumanoidRootPart.CanCollide = false
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
@@ -6496,6 +6728,7 @@ end)
                                 repeat task.wait()
                                     EquipWeapon(_G.Select_Weapon)
                                     AutoHaki()
+                                    Click()
                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                     topos(v.HumanoidRootPart.CFrame*CFrame.new(2,20,2))
                                     game:GetService("VirtualUser"):CaptureController()
@@ -7433,6 +7666,7 @@ end)
 											if v.Name == "Swan Pirate [Lv. 775]" then
 												repeat wait()
 													AutoHaki()
+													Click()
 													EquipWeapon(_G.Select_Weapon)
 													topos(v.HumanoidRootPart.CFrame * MethodFarm)
 													v.HumanoidRootPart.CanCollide = false
@@ -7728,6 +7962,7 @@ end)
 							if (v.Name == "Snow Lurker [Lv. 1375]" or v.Name == "Arctic Warrior [Lv. 1350]") and v.Humanoid.Health > 0 then
 								repeat wait()
 									AutoHaki()
+									Click()
 									EquipWeapon(_G.Select_Weapon)
 									v.HumanoidRootPart.CanCollide = false
 									v.HumanoidRootPart.Size = Vector3.new(50,50,50)
@@ -7771,6 +8006,7 @@ end)
 								repeat wait()  
 									EquipWeapon(_G.Select_Weapon)
 									AutoHaki()
+									Click()
 									topos(v.HumanoidRootPart.CFrame * MethodFarm)
 									game:GetService'VirtualUser':CaptureController()
 									game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -7814,6 +8050,7 @@ end)
 									repeat wait()
 										EquipWeapon(_G.Select_Weapon)
 										AutoHaki()
+										Click()
 										topos(v.HumanoidRootPart.CFrame * MethodFarm)
 										game:GetService'VirtualUser':CaptureController()
 										game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
@@ -7864,6 +8101,7 @@ end)
 									if _G.Auto_Soul_Reaper and v.Name == "Soul Reaper [Lv. 2100] [Raid Boss]" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
 										repeat wait()
 											AutoHaki()
+											Click()
 											EquipWeapon(_G.Select_Weapon)
 											v.HumanoidRootPart.CanCollide = false
 											v.HumanoidRootPart.Size = Vector3.new(50,50,50)
@@ -7917,6 +8155,7 @@ end)
 									if (v.Name == "Baking Staff [Lv. 2250]" or v.Name == "Head Baker [Lv. 2275]" or v.Name == "Cake Guard [Lv. 2225]" or v.Name == "Cookie Crafter [Lv. 2200]") and v.Humanoid.Health > 0 then
 										repeat wait()
 											AutoHaki()
+											Click()
 											EquipWeapon(_G.Select_Weapon)
 											StartCakeStartMagnet = true
 											v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)  
@@ -7938,6 +8177,7 @@ end)
 								if v.Name == "Dough King [Lv. 2300] [Raid Boss]" then
 									repeat wait()
 										AutoHaki()
+										Click()
 										EquipWeapon(_G.Select_Weapon)
 										v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
 										v.HumanoidRootPart.CanCollide = false
@@ -7966,6 +8206,7 @@ end)
 											if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
 												repeat wait()
 													AutoHaki()
+													Click()
 													EquipWeapon(_G.Select_Weapon)
 													v.HumanoidRootPart.CanCollide = false
 													v.Humanoid.WalkSpeed = 0
@@ -8035,6 +8276,7 @@ spawn(function()
 									repeat wait()
 										StartMagnet = true
 										AutoHaki()
+										Click()
 										if not game.Players.LocalPlayer.Character:FindFirstChild(_G.Select_Weapon) then
 											wait()
 											EquipWeapon(_G.Select_Weapon)
@@ -8093,6 +8335,7 @@ end)
 										OldCFrameRainbow = v.HumanoidRootPart.CFrame
 										repeat wait()
 											AutoHaki()
+											Click()
 											EquipWeapon(_G.Select_Weapon)
 											topos(v.HumanoidRootPart.CFrame * MethodFarm)
 											v.HumanoidRootPart.CanCollide = false
@@ -8120,6 +8363,7 @@ end)
 										OldCFrameRainbow = v.HumanoidRootPart.CFrame
 										repeat wait()
 											AutoHaki()
+											Click()
 											EquipWeapon(_G.Select_Weapon)
 											topos(v.HumanoidRootPart.CFrame * MethodFarm)
 											v.HumanoidRootPart.CanCollide = false
@@ -8147,6 +8391,7 @@ end)
 										OldCFrameRainbow = v.HumanoidRootPart.CFrame
 										repeat wait()
 											AutoHaki()
+											Click()
 											EquipWeapon(_G.Select_Weapon)
 											topos(v.HumanoidRootPart.CFrame * MethodFarm)
 											v.HumanoidRootPart.CanCollide = false
@@ -8174,6 +8419,7 @@ end)
 										OldCFrameRainbow = v.HumanoidRootPart.CFrame
 										repeat wait()
 											AutoHaki()
+											Click()
 											EquipWeapon(_G.Select_Weapon)
 											topos(v.HumanoidRootPart.CFrame * MethodFarm)
 											v.HumanoidRootPart.CanCollide = false
@@ -8201,6 +8447,7 @@ end)
 										OldCFrameRainbow = v.HumanoidRootPart.CFrame
 										repeat wait()
 											AutoHaki()
+											Click()
 											EquipWeapon(_G.Select_Weapon)
 											topos(v.HumanoidRootPart.CFrame * MethodFarm)
 											v.HumanoidRootPart.CanCollide = false
@@ -8252,6 +8499,7 @@ end)
 								if v.Name == "Beautiful Pirate [Lv. 1950] [Boss]" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
 									repeat wait()
 										AutoHaki()
+										Click()
 										EquipWeapon(_G.Select_Weapon)
 										topos(v.HumanoidRootPart.CFrame * MethodFarm)
 										game:GetService'VirtualUser':CaptureController()
@@ -8296,6 +8544,7 @@ end)
 								if v.Name == "Captain Elephant [Lv. 1875] [Boss]" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
 									repeat wait()
 										AutoHaki()
+										Click()
 										EquipWeapon(_G.Select_Weapon)
 										topos(v.HumanoidRootPart.CFrame * MethodFarm)
 										game:GetService'VirtualUser':CaptureController()
@@ -8340,6 +8589,7 @@ end)
 								if v.Name == "Island Empress [Lv. 1675] [Boss]" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
 									repeat wait()
 										AutoHaki()
+										Click()
 										EquipWeapon(_G.Select_Weapon)
 										topos(v.HumanoidRootPart.CFrame * MethodFarm)
 										game:GetService'VirtualUser':CaptureController()
@@ -8409,6 +8659,7 @@ Weapon:Toggle("Auto Observation Haki V2",_G.AutoObservationHakiV2,function(x)
 										if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
 											game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
 										end
+										Click()
 										EquipWeapon(_G.Select_Weapon)
 										topos(v.HumanoidRootPart.CFrame * CFrame.new(1,20,1))
 										PosHee =  v.HumanoidRootPart.CFrame
@@ -8439,6 +8690,7 @@ Weapon:Toggle("Auto Observation Haki V2",_G.AutoObservationHakiV2,function(x)
 										if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
 											game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
 										end
+										Click()
 										EquipWeapon(_G.Select_Weapon)
 										topos(v.HumanoidRootPart.CFrame * CFrame.new(1,20,1))										
 										if sethiddenproperty then
@@ -8603,6 +8855,7 @@ Weapon:Toggle("Auto Observation Haki V2",_G.AutoObservationHakiV2,function(x)
 										pcall(function()
 											repeat wait()
 												AutoHaki()
+												Click()
 												EquipWeapon(_G.Select_Weapon)
 												v.HumanoidRootPart.Transparency = 1
 												v.HumanoidRootPart.CanCollide = false
@@ -8633,6 +8886,7 @@ Weapon:Toggle("Auto Observation Haki V2",_G.AutoObservationHakiV2,function(x)
 									repeat wait()
 										sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRadius", math.huge)
 										AutoHaki()
+										Click()
 										EquipWeapon(_G.Select_Weapon)
 										v.HumanoidRootPart.Transparency = 1
 										v.HumanoidRootPart.CanCollide = false
@@ -8717,6 +8971,7 @@ end)
 										repeat wait()
 											pcall(function()
 												AutoHaki()
+												Click()
 												EquipWeapon(_G.Select_Weapon)
 												v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 												topos(v.HumanoidRootPart.CFrame * MethodFarm)
@@ -8750,6 +9005,7 @@ end)
 										repeat wait()
 											pcall(function()
 												AutoHaki()
+												Click()
 												EquipWeapon(_G.Select_Weapon)
 												v.HumanoidRootPart.CanCollide = false
 												v.HumanoidRootPart.Size = Vector3.new(50,50,50)
@@ -8980,6 +9236,7 @@ spawn(function()
 									if v.Name == "Awakened Ice Admiral [Lv. 1400] [Boss]" then    
 										repeat wait()
 											AutoHaki()
+											Click()
 											EquipWeapon(_G.Select_Weapon)
 											v.Head.CanCollide = false
 											v.Humanoid.WalkSpeed = 0
@@ -9065,6 +9322,7 @@ spawn(function()
 									if v.Name == "Tide Keeper [Lv. 1475] [Boss]" then    
 										repeat wait()
 											AutoHaki()
+											Click()
 											EquipWeapon(_G.Select_Weapon)
 											v.Head.CanCollide = false
 											v.Humanoid.WalkSpeed = 0
@@ -9769,6 +10027,7 @@ spawn(function()
 									topos(v.HumanoidRootPart.CFrame * CFrame.new(0,5,0))
 								elseif (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 300 then
 									AutoHaki()
+									Click()
 									EquipWeapon(_G.Select_Weapon_Kill_Player_Melee)
 									topos(v.HumanoidRootPart.CFrame * CFrame.new(0,5,0))
 									game:GetService'VirtualUser':CaptureController()
@@ -10749,6 +11008,7 @@ spawn(function()
 						if _G.Auto_Kill_Law and v.Name == "Order [Lv. 1250] [Raid Boss]" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
 							repeat task.wait()
 								AutoHaki()
+								Click()
 								EquipWeapon(_G.Select_Weapon)
 								v.HumanoidRootPart.CanCollide = false
 								v.HumanoidRootPart.Size = Vector3.new(50,50,50)
