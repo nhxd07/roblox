@@ -1989,9 +1989,6 @@ spawn(function()
         end
     end)
     
-    HAim:Toggle("Aimbot Skill (Nearest)",false,function(value)
-        _G.Aim = value
-    end)
             
             
             spawn(function()
@@ -2101,7 +2098,9 @@ HAim:Seperator("Aimbot")
         _G.Aimbot_Gun = value
     end)
     
-    
+        HAim:Toggle("Aimbot Skill (Nearest)",false,function(value)
+        _G.Aim = value
+    end)
             
     HAim:Slider1("Aimbot Fov",1,500,70,function(value)
         _G.Fov = value
