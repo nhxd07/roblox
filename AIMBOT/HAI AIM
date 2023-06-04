@@ -32,7 +32,7 @@ local HaiHubImageUI = Instance.new("ImageLabel")
         HaiHubImageUI.BackgroundTransparency = 1.000
         HaiHubImageUI.BorderSizePixel = 0
         HaiHubImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
-        HaiHubImageUI.Size = UDim2.new(0, 45, 0, 45)
+        HaiHubImageUI.Size = UDim2.new(0, 30, 0, 30)
         HaiHubImageUI.Image = "http://www.roblox.com/asset/?id=13438920682"
         
  
