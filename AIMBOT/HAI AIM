@@ -2171,7 +2171,7 @@ HMisc:Toggle("Dodge No Cooldown",false,function(value)
         end
     end)
     
-    Misc:Toggle("Rainbow Yoru",false,function(value)
+    HMisc:Toggle("Rainbow Yoru",false,function(value)
 		RainbowYoru = value
 	end)
 
