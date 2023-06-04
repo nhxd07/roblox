@@ -666,6 +666,264 @@ end
   callback()
   end)
  end
+ 
+ function main.PlayerInfo()
+
+				local UserID = game.Players.LocalPlayer.UserId
+
+				local ThumbType = Enum.ThumbnailType.HeadShot
+				local ThumbSize = Enum.ThumbnailSize.Size420x420
+				local Content = game.Players:GetUserThumbnailAsync(UserID,ThumbType,ThumbSize)
+
+				local PlayerInfoFrame = Instance.new("Frame")
+				local PlayerInfoFrameUICorner = Instance.new("UICorner")
+				local ImageLabel = Instance.new("ImageLabel")
+				local UICorner = Instance.new("UICorner")
+				local Name = Instance.new("TextLabel")
+				local Lvl = Instance.new("TextLabel")
+				local Fruit = Instance.new("TextLabel")
+
+				local Line = Instance.new("Frame")
+				local UIGradient = Instance.new("UIGradient")
+
+				Line.Name = "Line"
+				Line.Parent = PlayerInfoFrame
+				Line.AnchorPoint = Vector2.new(0.5, 0.5)
+				Line.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Line.BorderSizePixel = 0
+				Line.Position = UDim2.new(0.5, 0, 0.311723471, 0)
+				Line.Size = UDim2.new(0, 454, 0, 1)
+
+				UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(30,30,30)), ColorSequenceKeypoint.new(0.29, Color3.fromRGB(131, 13, 72)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(255, 0, 127)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(170, 9, 89)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(30,30,30))}
+				UIGradient.Parent = Line
+
+				PlayerInfoFrame.Name = "PlayerInfoFrame"
+				PlayerInfoFrame.Parent = ScrollingPageFrame
+				PlayerInfoFrame.Active = true
+				PlayerInfoFrame.BackgroundColor3 = Color3.fromRGB(30,30,30)
+				PlayerInfoFrame.BorderSizePixel = 0
+				PlayerInfoFrame.Size = UDim2.new(0, 475, 0, 300)
+
+				PlayerInfoFrameUICorner.Name = "PlayerInfoFrameUICorner"
+				PlayerInfoFrameUICorner.Parent = PlayerInfoFrame
+
+				ImageLabel.Parent = PlayerInfoFrame
+				ImageLabel.Active = true
+				ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+				ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				ImageLabel.BackgroundTransparency = 1
+				ImageLabel.BorderSizePixel = 0
+				ImageLabel.Position = UDim2.new(0.0920833349, 0, 0.153858513, 0)
+				ImageLabel.Size = UDim2.new(0, 70, 0, 70)
+				ImageLabel.Image = Content
+
+				UICorner.Parent = ImageLabel
+
+				Name.Name = "Name"
+				Name.Parent = PlayerInfoFrame
+				Name.Active = true
+				Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Name.BackgroundTransparency = 1.000
+				Name.Position = UDim2.new(0.17916666, 0, 0.0283394177, 0)
+				Name.Size = UDim2.new(0, 200, 0, 27)
+				Name.Font = Enum.Font.GothamBold
+				Name.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Name.TextSize = 12.000
+				Name.Text = game.Players.LocalPlayer.Name.. " ("..game.Players.LocalPlayer.DisplayName..")"
+				Name.TextXAlignment = Enum.TextXAlignment.Left
+
+				Lvl.Name = "Lvl"
+				Lvl.Parent = PlayerInfoFrame
+				Lvl.Active = true
+				Lvl.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Lvl.BackgroundTransparency = 1.000
+				Lvl.Position = UDim2.new(0.17916666, 0, 0.113057934, 0)
+				Lvl.Size = UDim2.new(0, 200, 0, 27)
+				Lvl.TextTransparency = 0.8
+				Lvl.Font = Enum.Font.GothamBold
+				Lvl.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Lvl.TextSize = 12.000
+				Lvl.TextXAlignment = Enum.TextXAlignment.Left
+
+				Fruit.Name = "Fruit"
+				Fruit.Parent = PlayerInfoFrame
+				Fruit.Active = true
+				Fruit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Fruit.BackgroundTransparency = 1.000
+				Fruit.Position = UDim2.new(0.17916666, 0, 0.199820146, 0)
+				Fruit.Size = UDim2.new(0, 200, 0, 27)
+				Fruit.Font = Enum.Font.GothamBold
+				Fruit.TextTransparency = 0.8
+				Fruit.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Fruit.TextSize = 12.000
+				Fruit.TextXAlignment = Enum.TextXAlignment.Left
+
+				local id = game.PlaceId
+
+				if id == 2753915549 or id == 4442272183 or id == 7449423635 then
+					Fruit.Text = "Devil Fruit : "..game:GetService("Players").LocalPlayer.Data.DevilFruit.Value.. " / ".. "Race : " ..game:GetService("Players").LocalPlayer.Data.Race.Value
+				else
+					Fruit.Text = "Don't Find Your Database"
+					Lvl.Text = "Don't Find Your Database"
+				end
+--DestCommunity
+--https://discord.gg/mWyKB9GPbE
+
+				local HealthBar = Instance.new("Frame")
+				local HealthBarUICorner = Instance.new("UICorner")
+				local HealthText = Instance.new("TextLabel")
+				local Line = Instance.new("Frame")
+				local LineHealth = Instance.new("Frame")
+
+				HealthBar.Name = "HealthBar"
+				HealthBar.Parent = PlayerInfoFrame
+				HealthBar.BackgroundColor3 = Color3.fromRGB(40,40,40)
+				HealthBar.BorderSizePixel = 0
+				HealthBar.Position = UDim2.new(0.0187500007, 0, 0.340836018, 0)
+				HealthBar.Size = UDim2.new(0, 458, 0, 45)
+
+				HealthBarUICorner.CornerRadius = UDim.new(0, 4)
+				HealthBarUICorner.Name = "HealthBarUICorner"
+				HealthBarUICorner.Parent = HealthBar
+
+				HealthText.Name = "HealthText"
+				HealthText.Parent = HealthBar
+				HealthText.Active = true
+				HealthText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				HealthText.BackgroundTransparency = 1.000
+				HealthText.Position = UDim2.new(0.0260000005, 0, 0.100000001, 0)
+				HealthText.Size = UDim2.new(0, 446, 0, 22)
+				HealthText.Font = Enum.Font.GothamBold
+				HealthText.Text = "Health"
+				HealthText.TextColor3 = Color3.fromRGB(85, 255, 127)
+				HealthText.TextSize = 12.000
+				HealthText.TextWrapped = true
+				HealthText.TextXAlignment = Enum.TextXAlignment.Left
+
+				Line.Name = "Line"
+				Line.Parent = HealthBar
+				Line.AnchorPoint = Vector2.new(0.5, 0.5)
+				Line.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+				Line.BorderSizePixel = 0
+				Line.Position = UDim2.new(0.498908311, 0, 0.766666651, 0)
+				Line.Size = UDim2.new(0, 433, 0, 5)
+
+				LineHealth.Name = "LineHealth"
+				LineHealth.Parent = Line
+				LineHealth.BackgroundColor3 = Color3.fromRGB(85, 255, 127)
+				LineHealth.BorderSizePixel = 0
+				LineHealth.Size = UDim2.new(0, 433, 0, 5)
+
+				local StaminaBar = Instance.new("Frame")
+				local StaminaBarUICorner = Instance.new("UICorner")
+				local StaminaText = Instance.new("TextLabel")
+				local StaminaLine = Instance.new("Frame")
+				local LineStamina = Instance.new("Frame")
+
+				StaminaBar.Name = "StaminaBar"
+				StaminaBar.Parent = PlayerInfoFrame
+				StaminaBar.BackgroundColor3 = Color3.fromRGB(40,40,40)
+				StaminaBar.BorderSizePixel = 0
+				StaminaBar.Position = UDim2.new(0.0166666675, 0, 0.50803858, 0)
+				StaminaBar.Size = UDim2.new(0, 458, 0, 45)
+
+				StaminaBarUICorner.CornerRadius = UDim.new(0, 4)
+				StaminaBarUICorner.Name = "StaminaBarUICorner"
+				StaminaBarUICorner.Parent = StaminaBar
+
+				StaminaText.Name = "StaminaText"
+				StaminaText.Parent = StaminaBar
+				StaminaText.Active = true
+				StaminaText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				StaminaText.BackgroundTransparency = 1.000
+				StaminaText.Position = UDim2.new(0.0260000005, 0, 0.100000001, 0)
+				StaminaText.Size = UDim2.new(0, 446, 0, 22)
+				StaminaText.Font = Enum.Font.GothamBold
+				StaminaText.Text = "Stamina"
+				StaminaText.TextColor3 = Color3.fromRGB(85, 170, 255)
+				StaminaText.TextSize = 12.000
+				StaminaText.TextWrapped = true
+				StaminaText.TextXAlignment = Enum.TextXAlignment.Left
+
+				StaminaLine.Name = "StaminaLine"
+				StaminaLine.Parent = StaminaBar
+				StaminaLine.AnchorPoint = Vector2.new(0.5, 0.5)
+				StaminaLine.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+				StaminaLine.BorderSizePixel = 0
+				StaminaLine.Position = UDim2.new(0.498908311, 0, 0.766666651, 0)
+				StaminaLine.Size = UDim2.new(0, 433, 0, 5)
+
+				LineStamina.Name = "LineStamina"
+				LineStamina.Parent = StaminaLine
+				LineStamina.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
+				LineStamina.BorderSizePixel = 0
+				LineStamina.Size = UDim2.new(0, 433, 0, 5)
+
+				local Beli = Instance.new("TextLabel")
+				local Fragment = Instance.new("TextLabel")
+
+				Beli.Name = "Beli"
+				Beli.Parent = PlayerInfoFrame
+				Beli.Active = true
+				Beli.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Beli.BackgroundTransparency = 1.000
+				Beli.Position = UDim2.new(0.018749997, 0, 0.67897433, 0)
+				Beli.Size = UDim2.new(0, 200, 0, 27)
+				Beli.Font = Enum.Font.GothamBold
+				Beli.TextColor3 = Color3.fromRGB(85, 255, 127)
+				Beli.TextSize = 14.000
+				Beli.TextXAlignment = Enum.TextXAlignment.Left
+
+				Fragment.Name = "Fragment"
+				Fragment.Parent = PlayerInfoFrame
+				Fragment.Active = true
+				Fragment.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Fragment.BackgroundTransparency = 1.000
+				Fragment.Position = UDim2.new(0.018749997, 0, 0.765791059, 0)
+				Fragment.Size = UDim2.new(0, 200, 0, 27)
+				Fragment.Font = Enum.Font.GothamBold
+				Fragment.TextColor3 = Color3.fromRGB(170, 85, 255)
+				Fragment.TextSize = 14.000
+				Fragment.TextXAlignment = Enum.TextXAlignment.Left
+
+				local Bounty = Instance.new("TextLabel")
+
+				Bounty.Name = "Bounty"
+				Bounty.Parent = PlayerInfoFrame
+				Bounty.Active = true
+				Bounty.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Bounty.BackgroundTransparency = 1.000
+				Bounty.Position = UDim2.new(0.018749997, 0, 0.852607787, 0)
+				Bounty.Size = UDim2.new(0, 200, 0, 27)
+				Bounty.Font = Enum.Font.GothamBold
+				Bounty.TextColor3 = Color3.fromRGB(255, 170, 0)
+				Bounty.TextSize = 14.000
+				Bounty.TextXAlignment = Enum.TextXAlignment.Left
+
+				spawn(function()
+					while wait(0.001) do 
+						pcall(function()
+							Lvl.Text = "Level : "..game:GetService("Players").LocalPlayer.Data.Level.Value
+							Beli.Text = "Beli : "..game:GetService("Players").LocalPlayer.Data.Beli.Value
+							Fragment.Text = "Fragments : "..game:GetService("Players").LocalPlayer.Data.Fragments.Value
+							Bounty.Text = "Bounty : "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value
+							StaminaText.Text = "Stamina : "..game.Players.LocalPlayer.Character.Energy.Value.."/"..game.Players.LocalPlayer.Character.Energy.MaxValue
+							TweenService:Create(
+								LineStamina,
+								TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+								{Size = UDim2.new(game.Players.LocalPlayer.Character.Energy.Value/game.Players.LocalPlayer.Character.Energy.MaxValue, 0, 1, 0)} -- UDim2.new(0, 128, 0, 25)
+							):Play()
+
+							HealthText.Text = "Health : "..game.Players.LocalPlayer.Character.Humanoid.Health.."/"..game.Players.LocalPlayer.Character.Humanoid.MaxHealth
+							TweenService:Create(
+								LineHealth,
+								TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+								{Size = UDim2.new(game.Players.LocalPlayer.Character.Humanoid.Health/game.Players.LocalPlayer.Character.Humanoid.MaxHealth, 0, 0, 5)} -- UDim2.new(0, 128, 0, 25)
+							):Play()
+						end)
+					end
+				end)
+			end
  function main:Toggle(TogInfo,default,callback)
  local toggle = false
  local CheckFrame = Instance.new("Frame")
@@ -4165,6 +4423,7 @@ local Misc = Library:Tab("Misc","rbxassetid://11447063791")
 local Op = Library:Tab("Status", "rbxassetid://7040410130")
 --------------------------------------------------------------------
 
+Home:PlayerInfo()
 Home:Label("Welcome "..game.Players.LocalPlayer.DisplayName.. " To Hai Hub")
 Home:Label("Script By Nguyen Nhu Hai")
 
