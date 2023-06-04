@@ -1,3 +1,11 @@
+local _G = {}
+
+_G.setting = {
+    Fov = _G.Fov,
+    Color = Color3.fromRGB(191, 255, 209),
+    LockPlayers = _G.Aim,
+}
+
 local HaiHubScreen = Instance.new("ScreenGui")
 local HaiHubToggleUI = Instance.new("TextButton")
 local HaiHubCornerUI = Instance.new("UICorner")
@@ -1740,6 +1748,35 @@ else
 	FOVCircle.Visible = false
     end
 end)
+
+Playersaimbot = nil
+            local mouse = game.Players.LocalPlayer:GetMouse()
+            local guiservice = game.GetService(game, "GuiService")
+            local players = game.GetService(game, "Players")
+            local localPlayer = players.LocalPlayer
+            local currentCamera = game.GetService(game, "Workspace").CurrentCamera
+            local circle = Drawing.new("Circle")
+            
+            
+            function updateCircle(Fov,colorCircle)
+               if circle.__OBJECT_EXISTS then
+                   circle.Transparency = 1
+                   circle.Visible = true
+                   circle.Thickness = 2
+                   circle.Color = colorCircle
+                   circle.NumSides = 100
+                   circle.Radius = (Fov * 6) / 2
+                   circle.Filled = false
+                   circle.Position = Vector2.new(mouse.X, mouse.Y + (guiservice.GetGuiInset(guiservice).Y))
+               end
+            end
+            spawn(function()
+                game.GetService(game, "RunService").RenderStepped:Connect(function()
+                    pcall(function()
+                    updateCircle(_G.setting['Fov'],_G.setting['Color'])
+                    end)
+                end)
+            end)
  game:GetService('RunService').RenderStepped:connect(function()
 		if _G.Disabled then
 			for i,v in next, game:GetService('Players'):GetPlayers() do
@@ -1934,6 +1971,98 @@ spawn(function()
 		end)
 	end)
 end)
+
+spawn(function()
+        while task.wait() do
+            if _G.Aimbot_Gun and game:GetService("Players").LocalPlayer.Character:FindFirstChild(SelectWeaponGun) then
+                pcall(function()
+                    game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].Cooldown.Value = 0
+                    local args = {
+                        [1] = game:GetService("Players"):FindFirstChild(PlayerSelectAimbot).Character.HumanoidRootPart.Position,
+                        [2] = game:GetService("Players"):FindFirstChild(PlayerSelectAimbot).Character.HumanoidRootPart
+                    }
+                    game:GetService("Players").LocalPlayer.Character[SelectWeaponGun].RemoteFunctionShoot:InvokeServer(unpack(args))
+                    game:GetService'VirtualUser':CaptureController()
+                    game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                end)
+            end
+        end
+    end)
+    
+    HAim:Toggle("Aimbot Skill (Nearest)",false,function(value)
+        _G.Aim = value
+    end)
+            
+            
+            spawn(function()
+                pcall(function()
+                    while wait() do
+                        for i, v in pairs(players.GetPlayers(players)) do
+                            if game.Workspace.Characters:FindFirstChild(v.Name) or game.Workspace.Characters:FindFirstChild(v.DisplayName) then
+                                if v.Character:FindFirstChild('HumanoidRootPart') then
+                                    local pos = currentCamera.WorldToViewportPoint(currentCamera, v.Character.HumanoidRootPart.Position)
+                                    local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
+                                    if magnitude < (_G.setting['Fov'] * 6 -8) /2 then
+                                        if magnitude < math.huge then
+                                            if (v.Character.HumanoidRootPart.Position-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 500 then
+                                                if v.Name ~= game.Players.LocalPlayer.Name then
+                                                    if _G.setting['LockPlayers'] == false then
+                                                        Playersaimbot = v.Name
+                                                        PlayersPosition = v.Character.HumanoidRootPart.Position
+                                                        v.Character.HumanoidRootPart.Size = Vector3.new(10,10,10)
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end)
+            end)
+            
+            
+            spawn(function()
+                while wait() do
+                    for i,v in pairs(game.Players:GetChildren()) do
+                        if v.Name == Playersaimbot then
+                            PlayersPosition = v.Character.HumanoidRootPart.Position
+                        end
+                    end
+                end
+            end)
+            spawn(function()
+                local gg = getrawmetatable(game)
+                local old = gg.__namecall
+                setreadonly(gg,false)
+                gg.__namecall = newcclosure(function(...)
+                    local method = getnamecallmethod()
+                    local args = {...}
+                    if tostring(method) == "FireServer" then
+                        if tostring(args[1]) == "RemoteEvent" then
+                            if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
+                                if Playersaimbot ~= nil then
+                                    args[2] = PlayersPosition
+                                    return old(unpack(args))
+                                end
+                            end
+                        end
+                    end
+                    return old(...)
+                end)
+            end)
+            mouse.Button1Down:Connect(function()
+                pcall(function()
+                    if _G.Aim and Playersaimbot ~= nil then
+                        local args = {
+                          [1] = PlayersPosition,
+                          [2] = game:GetService("Players"):FindFirstChild(Playersaimbot).Character.HumanoidRootPart
+                        }
+                    game:GetService("Players").LocalPlayer.Character[game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteFunctionShoot:InvokeServer(unpack(args))
+                   end
+                end)
+            end)
 --------------------------------------------------------------------
 local Library = Update:Window("HAI HUB AIMBOT ","")
 --------------------------------------------------------------------
@@ -1968,27 +2097,15 @@ end)
 
 HAim:Seperator("Aimbot")
 
-HAim:Toggle("Aimbot Skill Nearest",false,function(vu)
-    AimSkillNearest = vu
-end)
-
-HAim:Toggle("Aimbot Skill And Gun",AimBotFullFunction,function(value)
- AimBotFullFunction = value
-end)
-
-HAim:Toggle("Show Fov",_G.Show_Fov,function(value)
- _G.Show_Fov = value
-end)
-
-HAim:Slider1("Fov Size",1,1000,50,function(value)
-_G.Select_Size_Fov = value
-return "Size Fov : " .. tostring(value)
-end)
-
-HAim:Slider1("Fov Thickness",1,100,1,function(thick)
-_G.Thickness = thick
-return "Thick Ness : " .. tostring(thick)
-end)
+    HAim:Toggle("Aimbot Gun (Nearest)",false,function(value)
+        _G.Aimbot_Gun = value
+    end)
+    
+    
+            
+    HAim:Slider1("Aimbot Fov",1,500,70,function(value)
+        _G.Fov = value
+    end)
 
 HAim:Seperator("Hit Box")
 
