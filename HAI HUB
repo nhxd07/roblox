@@ -3033,7 +3033,7 @@ end)
 
  
 --------------------------------------------------------------------
-local Library = Update:Window("HAI HUB ","")
+local Library = library:CreateWindow("HAI HUB ","")
 ------------------------------------------
 
 spawn(function()
