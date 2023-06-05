@@ -3338,12 +3338,12 @@ function AutoHaki()
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
 	end
 end
- 
+
 function Click()
-       game:GetService'VirtualUser':CaptureController()
-	   game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
+        game:GetService'VirtualUser':CaptureController()
+        game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 end
- 
+    
 function SlowtoTarget(CFgo)
 		local tween_s = game:service"TweenService"
 		local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude/250, Enum.EasingStyle.Linear)
@@ -4219,10 +4219,6 @@ spawn(function()
  end
  end)
 
-Home:Line()
-local logs = game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/logs")
-Home:Label("Logs:")
-Home:Label(""..logs.."")
 Home:Line()
 
 Home:Textbox("Speed Hack",true,function(speed)
@@ -9569,7 +9565,7 @@ spawn(function()
             while wait() do
              if _G.Mirage then
               if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/250,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace.Map.MysticIsland.PrimaryPart.CFrame*CFrame.new(0,250,0))
+                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/250,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace.Map.MysticIsland.PrimaryPart.CFrame*CFrame.new(0,500,-100))
                 else
 game.StarterGui:SetCore("SendNotification", {
         Title = "Hai Hub"; -- the title (ofc)
