@@ -4823,60 +4823,36 @@ Setting:Toggle("Skill Z",true,function(a)
 		_G.SkillV = a
 	end)
 
+function EquipWeapon(ToolSe)
+if not _G.NotAutoEquip then
+if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
+Tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
+wait(.1)
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(Tool)
+end
+end
+end
 
-local WeaponList = {
-  "Melee","Devil Fruit","Sword","Gun"
-}
+if _G.Select_Weapon == nil then
+for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if v.ToolTip == "Melee" then
+if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+_G.Select_Weapon = tostring(v.Name)
+end
+end
+end
+end
 
-Main:Dropdown("Select Weapon",WeaponList,{""},function(weaponfunc)
-  _G.Select_Weapon = weaponfunc
-  end)
+WeaponList = {}
 
-spawn(function()
-  while wait() do
-  pcall(function()
-    if _G.Select_Weapon == "Melee" then
-    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-    if v.ToolTip == "Melee" then
-    if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
-    _G.Select_Weapon = v.Name
-    end
-    end
-    end
-    elseif _G.Select_Weapon == "Sword" then
-    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-    if v.ToolTip == "Sword" then
-    if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
-    _G.Select_Weapon = v.Name
-    end
-    end
-    end
-    elseif _G.Select_Weapon == "Devil Fruit" then
-    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-    if v.ToolTip == "Blox Fruit" then
-    if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
-    _G.Select_Weapon = v.Name
-    end
-    end
-    end
-    elseif _G.Select_Weapon == "Gun" then
-    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-    if v.ToolTip == "Gun" then
-    if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
-    _G.Select_Weapon = v.Name
-    end
-    end
-    end
-    else
-      for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-    if v.ToolTip == _G.Select_Weapon then
-    _G.Select_Weapon = v.Name
-    end
-    end
-    end
-    end)
-  end
-end)
+for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if v:IsA("Tool") then
+table.insert(WeaponList ,v.Name)
+end
+end
+local SelectWeapona = Main:Dropdown("Select Weapon",WeaponList,function(value)
+ _G.Select_Weapon = value
+ end)
 
 Main:Button("Refresh Weapon",function()
  SelectWeapona:Clear()
@@ -4913,6 +4889,28 @@ Main:Toggle("Start Auto Farm",_G.Auto_Farm_Level,function(value)
  _G.Auto_Farm_Level = value
  StopTween(_G.Auto_Farm_Level)
 end)		
+
+function EquipWeaponSword()
+	pcall(function()
+		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v.ToolTip == "Sword" and v:IsA('Tool') then
+				local ToolHumanoid = game.Players.LocalPlayer.Backpack:FindFirstChild(v.Name) 
+				game.Players.LocalPlayer.Character.Humanoid:EquipTool(ToolHumanoid) 
+			end
+		end
+	end)
+end
+
+function EquipWeaponMelee()
+	pcall(function()
+		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v.ToolTip == "Melee" and v:IsA('Tool') then
+				local ToolHumanoid = game.Players.LocalPlayer.Backpack:FindFirstChild(v.Name) 
+				game.Players.LocalPlayer.Character.Humanoid:EquipTool(ToolHumanoid) 
+			end
+		end
+	end)
+end
 
 if World2 then
 
@@ -10760,7 +10758,19 @@ if World1 then
 end
 
 if World2 or World3 then
-Dungeon:Seperator("Use in Dungeon Only!")
+local TimeRaid = Dungeon:Label("Use in Raid First!")
+
+    spawn(function()
+        pcall(function()
+            while wait() do
+                if game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Visible == true then
+                    TimeRaid:Set(game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Text)
+                else
+                    TimeRaid:Set("Wait For Dungeon")
+                end
+            end
+        end)
+    end)
 
 chip = {
 	"Flame", 
