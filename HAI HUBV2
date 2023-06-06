@@ -89,7 +89,6 @@ local currenttab = ""
 local uihide = false
 local abc = false
 yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
-local executor = identifyexecutor() or "Unknown"
 
 local HeeNo = Instance.new("ScreenGui")
 HeeNo.Name = "HeeNo"
@@ -144,17 +143,18 @@ NameHub.TextColor3 = Color3.fromRGB(255,255,255)
 NameHub.TextSize = 20.000
 
 
-local Exe = Instance.new("TextLabel")
-Exe.Name = "Name"
-Exe.Parent = Top
-Exe.BackgroundColor3 = Color3.fromRGB(224,224,224)
-Exe.BackgroundTransparency = 1.000
-Exe.Position = UDim2.new(0.3509756112, 0, 0, 0)
-Exe.Size = UDim2.new(0, 61, 0, 27)
-Exe.Font = Enum.Font.GothamBold
-Exe.Text = "Executor :"..executor
-Exe.TextColor3 = Color3.fromRGB(255, 255, 255)
-Exe.TextSize = 14.000
+local NameHub2 = Instance.new("TextLabel")
+NameHub2.Name = "NameHub2"
+NameHub2.Parent = Top
+NameHub2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NameHub2.BackgroundTransparency = 1.000
+NameHub2.Position = UDim2.new(0, 210, 0, 5)
+NameHub2.Size = UDim2.new(0, 61, 0, 27)
+NameHub2.Font = Enum.Font.Code
+NameHub2.Text = BInfo
+NameHub2.TextColor3 = _G.Color
+NameHub2.TextSize = 15.000
+NameHub2.TextXAlignment = Enum.TextXAlignment.Left
 
 local Logo = Instance.new("ImageLabel")
 Logo.Name = "Logo"
@@ -175,13 +175,12 @@ close.BackgroundTransparency = 1.000
 close.BorderSizePixel = 0
 close.Position = UDim2.new(0, 540, 0, 0)
 close.Size = UDim2.new(0, 30, 0, 30)
-close.Image = "http://www.roblox.com/asset/?id=3926305904"
+close.Image = "http://www.roblox.com/asset/?id=13438920682"
 close.ImageRectOffset = Vector2.new(284, 4)
 close.ImageRectSize = Vector2.new(24, 24)
 close.ImageColor3 = Color3.fromRGB(255, 255, 255)
 close.MouseButton1Click:Connect(function()
- game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-  game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+ loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/HAI%20AIM"))()
 end)
 mainDiscord.Name = "mainDiscord"
 mainDiscord.Parent = Top
@@ -207,7 +206,7 @@ mainDiscord.MouseEnter:Connect(function()
   end)
 
 mainDiscord.MouseButton1Click:Connect(function()
-  setclipboard("https://discord.gg/4YDKcCSb")
+  setclipboard("https://discord.gg/EWYtVdbFXP")
   wait(.1)
   game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Discord",
@@ -340,9 +339,8 @@ UIPageLayout.TouchInputEnabled = false
 
 
 local Ui = {}
-function Ui:AddTab(text,options)
+function Ui:AddTab(options)
 local logo1 = options.LogoTab
-local text = options.TextMenu
 
 local TabButton = Instance.new("TextButton")
 TabButton.Name = "TabButton"
@@ -354,7 +352,7 @@ TabButton.Position = UDim2.new(0, 100, 0, 0)
 TabButton.Font = Enum.Font.GothamSemibold
 TabButton.TextColor3 = Color3.fromRGB(225, 225, 225)
 TabButton.TextSize = 15.000
-TabButton.Text = "text"..text
+TabButton.Text = ""
 TabButton.TextTransparency = 0.500
 
 local UIStroke6 = Instance.new("UIStroke")
@@ -1796,7 +1794,7 @@ local Swords = Farm:AddPage()
 local Swords1 = Farm:AddPage()
 
 local Stats1 = PP:AddTab({
-  TextMenu = "Main"
+  LogoTab = "11447069304"
 })
 
 local Stats2 = Stats1:AddPage()
@@ -2116,7 +2114,7 @@ spawn(function()
   end
   end)
 
-Main:Toggle('Bypass TeTeleport', BypassTP, function(vale)
+Main:Toggle('Bypass Teleport', BypassTP, function(vale)
   BypassTP = vale
 end)
 
@@ -8333,178 +8331,178 @@ Combat3:Label("Level : "..game.Players.localPlayer.Data.Level.Value)
 
 Combat3:Label("Bounty : "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value)
 
-Combat3:Seperator("\\\\\  Sword  //")
+Combat3:Seperator("Sword")
 
-local Saber = Combat3:Label("âŒ : Saber")
-local Rengoku = Combat3:Label("âŒ : Rengoku")
-local Midnight_Blade = Combat3:Label("âŒ : Midnight Blade")
-local Dragon_Trident = Combat3:Label("âŒ : Dragon Trident")
-local Yama = Combat3:Label("âŒ : Yama")
-local Buddy_Sword = Combat3:Label("âŒ : Buddy Sword")
-local Canvander = Combat3:Label("âŒ : Canvander")
-local Twin_Hooks = Combat3:Label("âŒ : Twin Hooks")
-local Spikey_Trident = Combat3:Label("âŒ : Spikey Trident")
-local Hallow_Scythe = Combat3:Label("âŒ : Hallow Scythe")
-local Dark_Dagger = Combat3:Label("âŒ : Dark Dagger")
-local Tushita = Combat3:Label("âŒ : Tushita")
+local Saber = Combat3:Label("Saber")
+local Rengoku = Combat3:Label("Rengoku")
+local Midnight_Blade = Combat3:Label("Midnight Blade")
+local Dragon_Trident = Combat3:Label("Dragon Trident")
+local Yama = Combat3:Label("Yama")
+local Buddy_Sword = Combat3:Label("Buddy Sword")
+local Canvander = Combat3:Label("Canvander")
+local Twin_Hooks = Combat3:Label("Twin Hooks")
+local Spikey_Trident = Combat3:Label("Spikey Trident")
+local Hallow_Scythe = Combat3:Label("Hallow Scythe")
+local Dark_Dagger = Combat3:Label("Dark Dagger")
+local Tushita = Combat3:Label("Tushita")
 
 spawn(function()
     while task.wait() do
         pcall(function()
             for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
                 if v.Name == "Saber" then
-                    Saber:UpdateLabel("âœ… : Saber")
+                    Saber:UpdateLabel("Saber")
                 end
                 if v.Name == "Rengoku" then
-                    Rengoku:UpdateLabel("âœ… : Rengoku")
+                    Rengoku:UpdateLabel("Rengoku")
                 end
                 if v.Name == "Midnight Blade" then
-                    Midnight_Blade:UpdateLabel("âœ… : Midnight Blade")
+                    Midnight_Blade:UpdateLabel("Midnight Blade")
                 end
                 if v.Name == "Dragon Trident" then
-                    Dragon_Trident:UpdateLabel("âœ… : Dragon Trident")
+                    Dragon_Trident:UpdateLabel("Dragon Trident")
                 end
                 if v.Name == "Yama" then
-                    Yama:UpdateLabel("âœ… : Yama")
+                    Yama:UpdateLabel("Yama")
                 end
                 if v.Name == "Buddy Sword" then
-                    Buddy_Sword:UpdateLabel("âœ… : Buddy Sword")
+                    Buddy_Sword:UpdateLabel("Buddy Sword")
                 end
                 if v.Name == "Canvander" then
-                    Canvander:UpdateLabel("âœ… : Canvander")
+                    Canvander:UpdateLabel("Canvander")
                 end
                 if v.Name == "Twin Hooks" then
-                    Twin_Hooks:UpdateLabel("âœ… : Twin Hooks")
+                    Twin_Hooks:UpdateLabel("Twin Hooks")
                 end
                 if v.Name == "Spikey Trident" then
-                    Spikey_Trident:UpdateLabel("âœ… : Spikey Trident")
+                    Spikey_Trident:UpdateLabel("Spikey Trident")
                 end
                 if v.Name == "Hallow Scythe" then
-                    Hallow_Scythe:UpdateLabel("âœ… : Hallow Scythe")
+                    Hallow_Scythe:UpdateLabel("Hallow Scythe")
                 end
                 if v.Name == "Dark Dagger" then
-                    Dark_Dagger:UpdateLabel("âœ… : Dark Dagger")
+                    Dark_Dagger:UpdateLabel("Dark Dagger")
                 end
                 if v.Name == "Tushita" then
-                    Tushita:UpdateLabel("âœ… : Tushita")
+                    Tushita:UpdateLabel("Tushita")
                  end
             end
         end)
     end
 end)
 
-Combat3:Seperator("\\\\\  Quest  //")
+Combat3:Seperator("Quest")
 
-local Bartilo_Quest = Combat3:Label("âŒ : Bartilo Quest")
-local Don_Swan_Quest = Combat3:Label("âŒ : Don Swan Quest")
-local Kill_Don_Swan = Combat3:Label("âŒ : Kill Don Swan")
+local Bartilo_Quest = Combat3:Label("Bartilo Quest")
+local Don_Swan_Quest = Combat3:Label("Don Swan Quest")
+local Kill_Don_Swan = Combat3:Label("Kill Don Swan")
 
 spawn(function()
     while task.wait() do
         if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 3 then
-            Bartilo_Quest:UpdateLabel("âœ… : Bartilo Quest")
+            Bartilo_Quest:UpdateLabel("Bartilo Quest")
         end
 
         if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetUnlockables").FlamingoAccess == nil then
             --Nothing
         else
-            Don_Swan_Quest:UpdateLabel("âœ… : Don Swan Quest")
+            Don_Swan_Quest:UpdateLabel("Don Swan Quest")
         end
 
         if game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("ZQuestProgress", "Check") == 1 then
-            Kill_Don_Swan:UpdateLabel("âœ… : Kill Don Swan")
+            Kill_Don_Swan:UpdateLabel("Kill Don Swan")
         end
     end
 end)
 
-Combat3:Seperator("\\\\\  Sword Legendary  //")
+Combat3:Seperator("Sword Legendary")
 
-local Shisui = Combat3:Label("âŒ : Shisui")
-local Saddi = Combat3:Label("âŒ : Saddi")
-local Wando = Combat3:Label("âŒ : Wando")
-local True_Triple_Katana = Combat3:Label("âŒ : True Triple Katana")
+local Shisui = Combat3:Label("Shisui")
+local Saddi = Combat3:Label("Saddi")
+local Wando = Combat3:Label("Wando")
+local True_Triple_Katana = Combat3:Label("True Triple Katana")
 
 spawn(function()
     while task.wait() do
         pcall(function()
             for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
                 if v.Name == "Shisui" then
-                    Shisui:UpdateLabel("âœ… : Shisui")
+                    Shisui:UpdateLabel("Shisui")
                 end
                 if v.Name == "Saddi" then
-                    Saddi:UpdateLabel("âœ… : Saddi")
+                    Saddi:UpdateLabel("Saddi")
                 end
                 if v.Name == "Wando" then
-                    Wando:UpdateLabel("âœ… : Wando")
+                    Wando:UpdateLabel("Wando")
                 end
                 if v.Name == "True Triple Katana" then
-                    True_Triple_Katana:UpdateLabel("âœ… : True Triple Katana")
+                    True_Triple_Katana:UpdateLabel("True Triple Katana")
                 end
             end
         end)
     end
 end)
 
-Combat3:Seperator("\\\\\  Melee  //")
+Combat3:Seperator("Melee")
 
-local Superhuman = Combat3:Label("âŒ : Superhuman")
-local Death_Step = Combat3:Label("âŒ : Death Step")
-local Sharkman_Karate = Combat3:Label("âŒ : Sharkman Karate")
-local Electric_Claw = Combat3:Label("âŒ : Electric Claw")
-local Dragon_Talon = Combat3:Label("âŒ : Dragon Talon")
-local God_Human = Combat3:Label("âŒ : God Human")
+local Superhuman = Combat3:Label("Superhuman")
+local Death_Step = Combat3:Label("Death Step")
+local Sharkman_Karate = Combat3:Label("Sharkman Karate")
+local Electric_Claw = Combat3:Label("Electric Claw")
+local Dragon_Talon = Combat3:Label("Dragon Talon")
+local God_Human = Combat3:Label("God Human")
 
 spawn(function()
     while task.wait() do
         if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman",true) == 1 then
-            Superhuman:UpdateLabel("âœ… : Superhuman")
+            Superhuman:UpdateLabel("Superhuman")
         end
         if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep",true) == 1 then
-            Death_Step:UpdateLabel("âœ… : Death Step")
+            Death_Step:UpdateLabel("Death Step")
         end
         if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true) == 1 then
-            Sharkman_Karate:UpdateLabel("âœ… : Sharkman Karate")
+            Sharkman_Karate:UpdateLabel("Sharkman Karate")
         end
         if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true) == 1 then
-            Electric_Claw:UpdateLabel("âœ… : Electric Claw")
+            Electric_Claw:UpdateLabel("Electric Claw")
         end
         if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon",true) == 1 then
-            Dragon_Talon:UpdateLabel("âœ… : Dragon Talon")
+            Dragon_Talon:UpdateLabel("Dragon Talon")
         end
     end
 end)
 
-Combat3:Seperator("\\\\\  Gun  //")
+Combat3:Seperator("Gun")
 
-local Kabu_cha = Combat3:Label("âŒ : Kabucha")
-local Acidum_Rifle = Combat3:Label("âŒ : Acidum Rifle")
-local Bizarre_Rifle = Combat3:Label("âŒ : Bizarre Rifle")
+local Kabu_cha = Combat3:Label("Kabucha")
+local Acidum_Rifle = Combat3:Label("Acidum Rifle")
+local Bizarre_Rifle = Combat3:Label("Bizarre Rifle")
 
 spawn(function()
     while task.wait() do
         pcall(function()
             for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
                 if v.Name == "Kabucha" then
-                    Kabu_cha:UpdateLabel("âœ… : Kabucha")
+                    Kabu_cha:UpdateLabel("Kabucha")
                 end
                 if v.Name == "Acidum Rifle" then
-                    Acidum_Rifle:UpdateLabel("âœ… : Acidum Rifle")
+                    Acidum_Rifle:UpdateLabel("Acidum Rifle")
                 end
                 if v.Name == "Bizarre Rifle" then
-                    Bizarre_Rifle:UpdateLabel("âœ… : Bizarre Rifle")
+                    Bizarre_Rifle:UpdateLabel("Bizarre Rifle")
                 end
             end
         end)
     end
 end)
 
-Combat3:Seperator("\\\\\  Accessory  //")
+Combat3:Seperator("Accessory")
 
-local Dark_Coat = Combat3:Label("âŒ : Dark Coat")
-local Ghoul_Mask = Combat3:Label("âŒ : Ghoul Mask")
-local Swan_Glass = Combat3:Label("âŒ : Swan Glass")
-local Pale_Scarf = Combat3:Label("âŒ : Pale Scarf")
-local Valkyrie_Helm = Combat3:Label("âŒ : Valkyrie Helm")
+local Dark_Coat = Combat3:Label("Dark Coat")
+local Ghoul_Mask = Combat3:Label("Ghoul Mask")
+local Swan_Glass = Combat3:Label("Swan Glass")
+local Pale_Scarf = Combat3:Label("Pale Scarf")
+local Valkyrie_Helm = Combat3:Label("Valkyrie Helm")
 
 
 spawn(function()
@@ -8512,45 +8510,45 @@ spawn(function()
         pcall(function()
             for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
                 if v.Name == "Saber" then
-                    Dark_Coat:UpdateLabel("âœ… : Dark Coat")
+                    Dark_Coat:UpdateLabel("Dark Coat")
                 end
                 if v.Name == "Ghoul Mask" then
-                    Ghoul_Mask:UpdateLabel("âœ… : Ghoul Mask")
+                    Ghoul_Mask:UpdateLabel("Ghoul Mask")
                 end
                 if v.Name == "Swan Glasses" then
-                    Swan_Glass:UpdateLabel("âœ… : Swan Glass")
+                    Swan_Glass:UpdateLabel("Swan Glass")
                 end
                 if v.Name == "Pale Scarf" then
-                    Pale_Scarf:UpdateLabel("âœ… : Pale Scarf")
+                    Pale_Scarf:UpdateLabel("Pale Scarf")
                 end
                 if v.Name == "Valkyrie Helmet" then
-                    Valkyrie_Helm:UpdateLabel("âœ… : Valkyrie Helmet")
+                    Valkyrie_Helm:UpdateLabel("Valkyrie Helmet")
                 end
             end
         end)
     end
 end)
 
-Teleport2:Seperator("\\\\\  Mirage Island  //")
+Teleport2:Seperator(" Mirage Island ")
 
-local FM = Teleport2:Label('Your Not In Third Sea!!')
-local Mirragecheck = Teleport2:Label('Yout Not In Third Sea!!')
+local FM = Race:Label('...')
+local Mirragecheck = Race:Label('...')
 
-task.spawn(function()
-            while task.wait() do
+spawn(function()
+            while wait() do
                 pcall(function()
                     if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
-                        FM:UpdateLabel("ðŸŒ•: Full Moon 100%")
+                        FM:Set("🌑 : Full Moon 5/5 (100%)")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
-                        FM:UpdateLabel("ðŸŒ–â€™ : Full Moon 75%")
+                        FM:Set("🌒 : Full Moon 4/5 (75%)")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
-                        FM:UpdateLabel("ðŸŒ—â€œ : Full Moon 50%")
+                        FM:Set("🌓 : Full Moon 3/5 (50%)")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
-                        FM:UpdateLabel("ðŸŒ˜ : Full Moon 25%")
+                        FM:Set("🌗 : Full Moon 2/5 (25%)")
                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
-                        FM:UpdateLabel("ðŸŒ˜: Full Moon 15%")
+                        FM:Set("🌖 : Full Moon 1/5 (15%)")
                     else
-                        FM:UpdateLabel("ðŸŒ‘: Full Moon 0%")
+                        FM:Set("🌚 : Full Moon 0/5 (0%)")
                     end
                 end)
             end
@@ -8560,9 +8558,10 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-    Mirragecheck:UpdateLabel('ðŸï¸: Mirage Island is Spawning')
+    Mirragecheck:Set('🏝️ : Mirage Island : Found ✅️')
     else
-      Mirragecheck:UpdateLabel('âŒ: Mirage Island Not Found ' )end
+      Mirragecheck:Set('🏝️ : Mirage Island : Not Found ❎️')
+    end
             end
         end)
 end)
@@ -8575,21 +8574,31 @@ StopTween(_G.Mirage)
 Teleport2:Toggle("Auto Mirage Island [HOP]",false,function(value)
   _G.MirageHop = value
   end)
-Teleport2:Toggle("Teleport To Gear[Beta]",false,function(value)
-  TP(game:GetService("Workspace").Map.MysticIsland:FindFirstChildOfClass("MeshPart").CFrame)
+  
+Teleport2:Toggle("Teleport To Gear",false,function(value)
+  TeleGear = value
 end)
 
 spawn(function()
         pcall(function()
             while wait() do
+                if TeleGear then
+                    topos(game:GetService("Workspace").Map.MysticIsland:FindFirstChildOfClass("MeshPart").CFrame)
+                end
+            end
+        end)
+    end)
+spawn(function()
+        pcall(function()
+            while wait() do
              if _G.Mirage then
               if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/250,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace.Map.MysticIsland.PrimaryPart.CFrame*CFrame.new(0,250,0))
+                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/250,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace.Map.MysticIsland.PrimaryPart.CFrame*CFrame.new(0,500,-100))
                 else
 game.StarterGui:SetCore("SendNotification", {
-        Title = "TrekHub"; -- the title (ofc)
+        Title = "Hai Hub"; -- the title (ofc)
         Text = "Mirage not Found!"; -- what the text says (ofc)
-        Icon = "rbxassetid://11354741327"; -- the image if u want. 
+        Icon = "rbxassetid://13438920682"; -- the image if u want. 
         Duration = 3; -- how long the notification should in secounds
         })
                 if _G.MirageHop then
@@ -8601,6 +8610,102 @@ end
 end
 end)
 end)
+
+if Third_Sea then
+local Moon = {
+['8'] = "http://www.roblox.com/asset/?id=9709149431", -- 🌕
+['7'] = "http://www.roblox.com/asset/?id=9709149052", -- 🌖
+['6'] = "http://www.roblox.com/asset/?id=9709143733", -- 🌗
+['5'] = "http://www.roblox.com/asset/?id=9709150401", -- 🌘
+['4'] = "http://www.roblox.com/asset/?id=9709135895",  -- 🌑
+['3'] = "http://www.roblox.com/asset/?id=9709139597", -- 🌒
+['2'] = "http://www.roblox.com/asset/?id=9709150086", -- 🌓
+['1'] = "http://www.roblox.com/asset/?id=9709149680", -- 🌔
+};
+for i,v in pairs(Moon) do
+	if game:GetService("Lighting").Sky.MoonTextureId == v then
+		MoonPercent = i / 8 * 100
+	end
+end
+
+for i,v in pairs(game.Players:GetPlayers()) do
+	PlayersMin = i
+end
+
+if game:GetService("Lighting").Sky.MoonTextureId == Moon['1'] then
+	MoonIcon = '🌔'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['2'] then
+	MoonIcon = '🌓'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['3'] then
+	MoonIcon = '🌒'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['4'] then
+	MoonIcon = '🌑'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['5'] then
+	MoonIcon = '🌘'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['6'] then
+	MoonIcon = '🌗'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['7'] then
+	MoonIcon = '🌖'
+elseif game:GetService("Lighting").Sky.MoonTextureId == Moon['8'] then
+	MoonIcon = '🌕'
+end
+if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
+	MirageMessage = '```Mirage is spawing : ✔```'
+else
+	MirageMessage = '```Mirage isn\'t spawn : ❌```'
+end
+
+MoonMessage = '```'..tostring(MoonPercent..'%'..' : '..MoonIcon)..'```'
+JoinServer = 'game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,'..'\''..tostring(game.JobId)..'\''..')'
+print('\n'..MoonMessage..'\n'..MirageMessage..'\n'..JoinServer)
+
+local url = "https://discord.com/api/webhooks/1109465227306741801/7O4bDoiVBQcrwQ0o2KtguH3zf_4zQPoJft68ISN7ijYukAgduhJovR3DPzVjBgJvXN9k" -- ur webhook url
+local data = {
+	["username"] = 'HAI HUB', -- Webhook name here
+	['content'] = '<@&1109455345589428224>', -- ping everyone if you want to ping role use this <@&1007291553074647132> 
+	["avatar_url"] = "https://cdn.discordapp.com/attachments/1109464841959243878/1109465057760391218/Picsart_23-05-14_13-15-03-852.png", -- ur discord logo url
+	["embeds"] = {
+		{
+			["description"] = "**__Moon and Mirage Webhook__**",
+			["color"] = tonumber(0xff0000), -- color id		
+			["type"] = "rich",
+			["fields"] =  {
+				{
+					["name"] = "[👥] Players Active",
+					["value"] = '```'..tostring(PlayersMin)..'/12```'
+				},
+				{
+					["name"] = "[📃] JobID",
+					["value"] = '```'..tostring(game.JobId)..'```'
+				},
+				{
+					["name"] = "[📁] Join Server",
+					["value"] = '```'..JoinServer..'```',
+				},
+				{
+					["name"] = "[🕑] Moon Check",
+					["value"] = MoonMessage,
+					["inline"] = true
+				},
+				{
+					["name"] = "[🌲] Mirage Check",
+					["value"] = MirageMessage,
+					["inline"] = true
+				}
+			},
+			["footer"] = {
+				["text"] = "Webhook By", -- you can remove this but it will hurt
+			},
+			["timestamp"] = DateTime.now():ToIsoDate(),
+		}
+	},
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+local headers = {["content-type"] = "application/json"}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+end
 
 Teleport:Seperator("World - Server")
 
@@ -8669,15 +8774,15 @@ Teleport:Button("Hop Server",function()
 end)
 
 --// World Teleport
-Teleport:Button("Travel to First Sea", function()
+Teleport:Button("Teleport to First Sea", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
 end)
     
-Teleport:Button("Travel to Second Sea", function()
+Teleport:Button("Teleport to Second Sea", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
 end)
     
-Teleport:Button("Travel to Third Sea", function()
+Teleport:Button("Teleport to Third Sea", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
 end) 
 
@@ -9140,7 +9245,7 @@ elseif Third_Sea then
 end
 
 
-    Teleport2:Seperator("\\\\\  NPC //")
+    Teleport2:Seperator("NPC")
 
  if First_Sea then
         Teleport2:Dropdown("Select NPC",{
@@ -9757,7 +9862,7 @@ spawn(function()
     end
 end)
 
-    DevilFruit:Seperator("\\\\\  Sniper  //")
+    DevilFruit:Seperator("Sniper")
     
     FruitList = {
         "Bomb-Bomb",
@@ -9804,7 +9909,7 @@ end)
         _G.AutoBuyFruitSniper = value
     end)
 
-    DevilFruit:Seperator("\\\\\  Others  //")
+    DevilFruit:Seperator("Others")
     
     DevilFruit:Dropdown("Select Fruits Eat",FruitList,function(value)
         _G.SelectFruitEat = value
@@ -9985,7 +10090,7 @@ end)
 
 
 
-    Shop:Seperator("\\\\\  Abilities  //")
+    Shop:Seperator("Abilities")
     
     Shop:Button("Buy Geppo [ $10,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
@@ -10012,7 +10117,7 @@ Shop:Toggle("Auto Buy Abilities", false, function(t)
     end
 end)
 
-Shop:Seperator("\\\\\  Boats  //")
+Shop:Seperator("Boats")
 
 BoatList = {
     "Pirate Sloop",
@@ -10057,7 +10162,7 @@ Shop:Button("Buy Boat",function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat",_G.SelectBoat)
 end)
 
-    Shop:Seperator("\\\\\  Fighting Style  //")
+    Shop:Seperator("Fighting Style")
     
     Shop:Button("Buy Black Leg [ $150,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
@@ -10102,7 +10207,7 @@ end)
     end)
     -----Shop----------------
     
-    Shop:Seperator("\\\\\  Sword  //")
+    Shop:Seperator("Sword")
     
     Shop:Button("Cutlass [ $1,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cutlass")
@@ -10161,7 +10266,7 @@ end)
     end)
 
 
-    Shop2:Seperator("\\\\\  Gun  //")
+    Shop2:Seperator("Gun")
     
     Shop2:Button("Slingshot [ $5,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Slingshot")
@@ -10196,7 +10301,7 @@ end)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","2")
     end)
 
-          Shop2:Button("Bizarre Rifle [ 250 Ectoplasm ]", function()
+    Shop2:Button("Bizarre Rifle [ 250 Ectoplasm ]", function()
                                     local A_1 = "Ectoplasm"
                                     local A_2 = "Buy"
                                     local A_3 = 1
@@ -10211,7 +10316,7 @@ end)
 
     ------------Bone------------------
     
-    Shop2:Seperator("\\\\\  Bones  //")
+    Shop2:Seperator("Bones")
     
     Shop2:Button("Buy Surprise [ $50 Bone ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
@@ -10227,7 +10332,7 @@ end)
     
     ------------Stat------------------
     
-    Shop2:Seperator("\\\\\  Stat  //")
+    Shop2:Seperator("Stat")
 
 Shop2:Button("Reset Stats (Use 2.5K Fragments)", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","1")
@@ -10239,7 +10344,7 @@ Shop2:Button("Random Race (Use 3K Fragments)", function()
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","2")
 end)
     --------------Accessories-----------------
-    	Shop2:Seperator("\\\\\  Accessories  //")
+    	Shop2:Seperator("Accessories")
 	Shop2:Button("Black Cape [ $50,000 Beli ]",function()
 		local args = {
 			[1] = "BuyItem",
@@ -10262,7 +10367,7 @@ end)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 	end)
 	
-	Shop2:Seperator("\\\\\  Race & etc  //")
+	Shop2:Seperator("Race & etc")
 	Shop2:Button("Race Ghoul (Use 2.5K Fragments)",function()
 		local args = {
 			[1] = "Ectoplasm",
@@ -10288,7 +10393,7 @@ end)
 	
 	
 
-    Misc:Seperator("\\\\\  Server - Main  //")
+    Misc:Seperator("Server - Main")
     
     Misc:Button("Rejoin Server",function()
         game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
@@ -10301,7 +10406,7 @@ end)
         end
     end)
 
-    Misc:Seperator("\\\\\  Main - Ui  //")
+    Misc:Seperator("Main - Ui")
     
     Misc:Button("Open Devil Shop",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
@@ -10335,7 +10440,7 @@ end)
      game.Players.LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
 end)
 
-    Misc:Seperator("\\\\\  Main - Teams  //")
+    Misc:Seperator("Main - Teams")
     
 Misc:Button("Join Pirates Team", function()
     local args = {
@@ -10363,7 +10468,7 @@ end)
     
     
 
-    Misc:Seperator("\\\\\  Abilities  //")
+    Misc:Seperator("Abilities")
     
     Misc:Button("Always Day",function()
     game:GetService("RunService").Heartbeat:wait() do
@@ -10513,7 +10618,7 @@ game:GetService("UserInputService").JumpRequest:connect(function()
 end) 
 end)
 
-    Misc:Seperator("\\\\\  Highlight  //")
+    Misc:Seperator("Highlight")
 
 Misc:Toggle("Show Chat disabled", _G.chat, function(value)
     _G.chat = value
@@ -10748,7 +10853,7 @@ Misc:Toggle("Graphic",false,function(v)
 		end
 	end)
 
-    Misc:Seperator("\\\\\  Misc  //")
+    Misc:Seperator("Misc")
 
 	   Misc:Toggle("Auto Haki", true,function(vu)
       _G.AutoHakiBuso = vu
@@ -10802,7 +10907,7 @@ end)
         _G.NoClip = value
     end)
     
-   Misc2:Seperator("\\\\\  Main - Mob  //")
+   Misc2:Seperator("Main - Mob")
     
     	Misc2:Button("Remove Lave",function()
 		for i,v in pairs(game.Workspace:GetDescendants()) do
@@ -11065,7 +11170,7 @@ end)
 		end)
 	end)
 
-    Misc2:Seperator("\\\\\  Codes  //")
+    Misc2:Seperator("Codes")
     
     local x2Code = {
         "FUDD10",
@@ -11104,7 +11209,7 @@ end)
         game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(_G.CodeSelect)
     end)
     
-    Misc2:Seperator("\\\\\  State  //")
+    Misc2:Seperator("State")
     
     Misc2:Dropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},function(value)
         _G.SelectStateHaki = value
@@ -11126,7 +11231,7 @@ end)
         end
     end)
     
-    Misc2:Seperator("\\\\\  Boost FPS   //")
+    Misc2:Seperator("Boost FPS")
     
     local a = game.Lighting
     local c = Instance.new("ColorCorrectionEffect", a)
@@ -11372,7 +11477,7 @@ end
 end
 end)
 
-    Misc2:Seperator("\\\\\  Race Boost  //")
+    Misc2:Seperator("Race Boost")
 
     Misc2:Toggle("Auto Active Race",_G.AutoAgility,function(value)
         _G.AutoAgility = value
