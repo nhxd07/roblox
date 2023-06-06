@@ -6453,14 +6453,14 @@ end)
     
     Weapon:Toggle("Auto Kill Admin Boss",_G.AutoDarkDagger,function(value)
         _G.AutoDarkDagger = value
+        _G.AutoRip = value
         StopTween(_G.AutoDarkDagger)
     end)
-        
+      
     spawn(function()
-        pcall(function()
-            while wait() do
-                if _G.AutoDarkDagger then
-                        if game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") or game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") then
+        while wait() do
+            if _G.AutoRip then
+                if game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") or game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") then
                         repeat
                         wait(13)
                         topos(CFrame.new(-5419.56641, 1090.33752, -2665.78589, 0.971406102, 1.70427565e-08, 0.237423971, -2.01854462e-08, 1, 1.08056044e-08, -0.237423971, -1.52891388e-08, 0.971406102))
@@ -6489,12 +6489,20 @@ end)
                 			wait(0.5)
                 			EquipWeapon("God's Chalice")
                 			wait(0.5)
-         				topos(CFrame.new(-5560.27295, 313.915466, -2663.89795))
-                        until game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or game:GetService("ReplicatedStorage"):FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]")
-				
+    		    		topos(CFrame.new(-5560.27295, 313.915466, -2663.89795))
+                    end
+                end)
+            end 
+        end
+          
+    spawn(function()
+        pcall(function()
+            while wait() do
+                if _G.AutoDarkDagger then
                     if game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form [Lv. 5000] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("rip_indra [Lv. 5000] [Raid Boss]") then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == ("rip_indra True Form [Lv. 5000] [Raid Boss]" or v.Name == "rip_indra [Lv. 5000] [Raid Boss]") and v.Humanoid.Health > 0 and v:IsA("Model") and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") then
+                            _G.AutoRip = false
                                 repeat task.wait()
                                     pcall(function()
                                         AutoHaki()
