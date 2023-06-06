@@ -361,7 +361,7 @@ function Update:Window(text,logo,keybind)
 			TextBtn.Size = UDim2.new(0, 468, 0, 29)
 			TextBtn.AutoButtonColor = false
 			TextBtn.Font = Enum.Font.GothamSemibold
-			TextBtn.Text = text
+			TextBtn.Text = "🖱️"..text.."🖱️"
 			TextBtn.TextColor3 = Color3.fromRGB(224,255,255)
 			TextBtn.TextSize = 14.000
 			
@@ -444,7 +444,7 @@ UIStroke.Name = "UIStroke"
                 ToggleLabel.Position = UDim2.new(0, 13, 0, 0)
                 ToggleLabel.Size = UDim2.new(0, 410, 0, 30)
                 ToggleLabel.Font = Enum.Font.Gotham
-                ToggleLabel.Text = text
+                ToggleLabel.Text = "🗡️ | "..text
                 ToggleLabel.TextColor3 = Color3.fromRGB(225, 225, 225)
                 ToggleLabel.TextSize = 15.000
                 ToggleLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -518,7 +518,7 @@ UIStroke.Name = "UIStroke"
                         ToggleImageCorner.CornerRadius = UDim.new(0, 100)
 UIStroke.Thickness = 1
                     else
-                        --Icon.Image = "http://www.roblox.com/asset/?id=13438920682"
+                        --Icon.Image = "http://www.roblox.com/asset/?id=6035047409"
                         toggled = false
                         ToggleImage2:TweenSize(UDim2.new(0, 0, 0, 0),"In","Quad",0.1,true)
                         ToggleImageCorner.CornerRadius = UDim.new(0, 5)
@@ -1441,7 +1441,7 @@ function main:PlayerInfo()
 			Sep2.Position = UDim2.new(0, 185, 0, 0)
 			Sep2.Size = UDim2.new(0, 100, 0, 20)
 			Sep2.Font = Enum.Font.GothamSemibold
-			Sep2.Text = text
+			Sep2.Text = "[ \\\\\  "..text.. "  // ]"
 			Sep2.TextColor3 = Color3.fromRGB(255, 255, 255)
 			Sep2.TextSize = 16.000
 			
@@ -1465,7 +1465,7 @@ function main:PlayerInfo()
 			Linee.Size = UDim2.new(0, 470, 0, 20)
 			Line.Name = "Line"
 			Line.Parent = Linee
-			Line.BackgroundColor3 = Color3.fromRGB(225, 225, 225,)
+			Line.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
 			Line.BorderSizePixel = 0
 			Line.Position = UDim2.new(0, 0, 0, 10)
 			Line.Size = UDim2.new(0, 470, 0, 1)
