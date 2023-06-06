@@ -88,6 +88,7 @@ local keybind = options.Keybind or Enum.KeyCode.RightControl
 local currenttab = ""
 local uihide = false
 local abc = false
+local executor = identifyexecutor() or "Unknown"
 yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
 
 local HeeNo = Instance.new("ScreenGui")
@@ -142,7 +143,6 @@ NameHub.Text = "HAI HUB"
 NameHub.TextColor3 = Color3.fromRGB(255,255,255)
 NameHub.TextSize = 20.000
 
-
 local NameHub2 = Instance.new("TextLabel")
 NameHub2.Name = "NameHub2"
 NameHub2.Parent = Top
@@ -165,21 +165,7 @@ Logo.Position = UDim2.new(0, 1, 0, 0)
 Logo.Size = UDim2.new(0, 30, 0, 30)
 Logo.Image = "rbxassetid://"..tostring(logo)
 
-local close = Instance.new("ImageButton")
 local mainDiscord = Instance.new("ImageButton")
-
-close.Name = "close"
-close.Parent = Top
-close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-close.BackgroundTransparency = 1.000
-close.Position = UDim2.new(0, 500, 0, 0)
-close.Size = UDim2.new(0, 30, 0, 30)
-close.Image = "http://www.roblox.com/asset/?id=13438920682"
-close.ImageColor3 = Color3.fromRGB(255, 255, 255)
-
-close.MouseButton1Click:Connect(function()
- loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/HaixD/roblox/main/AIMBOT/HAI%20AIM"))()
-end)
 
 mainDiscord.Name = "mainDiscord"
 mainDiscord.Parent = Top
@@ -11654,19 +11640,43 @@ end)
   Tween(CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188))
   end)
   
-
   Race2:Seperator("Auto Trials")
-Race2:Button("Auto Complete Angel Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame
-        end)
+  Race2:Toggle("Auto Complete Ghoul/Human Trial",AutoCom,function(value)
+  AutoCom = value  
+end)
 
-        Race2:Button("Auto Complete Rabbit Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.MinkTrial.Ceiling.CFrame * CFrame.new(0,-5,0)
-        end)
+spawn(function()
+    while wait() do
+        if AutoCom then
+            for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
+                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                    pcall(function()
+                        repeat wait(.1)
+                            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                            v.Humanoid.Health = 0
+                            v.HumanoidRootPart.CanCollide = false
+                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                            v.HumanoidRootPart.Transparency = 0.8
+                        until not AutoCom  or not v.Parent or v.Humanoid.Health <= 0
+                    end)
+                end
+            end
+        end
+    end
+end)
 
-        Race2:Button("Auto Complete Cyborg Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,300,0)
-        end)
+  Race2:Button("Auto Complete Angel Trial",function(t)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame
+  end)
+
+   
+  Race2:Button("Auto Complete Rabbit Trial",function(t)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.MinkTrial.Ceiling.CFrame * CFrame.new(0,-5,0)
+  end)
+
+  Race2:Button("Auto Complete Cyborg Trial",function(t)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,300,0)
+  end)
   
   
   Race2:Button("Teleport To Safe Zone When Pvp (Must Be in Temple Of Time!)",function()
