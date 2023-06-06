@@ -3339,9 +3339,15 @@ function AutoHaki()
 	end
 end
 
+--// Auto Click
+function ClickCamera()
+game:GetService("VirtualUser"):CaptureController()
+game:GetService("VirtualUser"):ClickButton1(Vector2.new(851,158),game:GetService("Workspace").Camera.CFrame)
+end
+
 function Click()
-        game:GetService'VirtualUser':CaptureController()
-        game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+game:GetService('VirtualUser'):CaptureController()
+game:GetService('VirtualUser'):Button1Down(Vector2.new(851, 158))
 end
     
 function SlowtoTarget(CFgo)
@@ -4512,10 +4518,10 @@ spawn(function()
                     xShadowx.activeController.active = false
                     xShadowx.activeController.timeToNextBlock = 0
                     xShadowx.activeController.focusStart = 0
-                    xShadowx.activeController.increment = 4
+                    xShadowx.activeController.increment = 3
                     xShadowx.activeController.blocking = false
                     xShadowx.activeController.attacking = false
-                    xShadowx.activeController.humanoid.AutoRotate = 50
+                    xShadowx.activeController.humanoid.AutoRotate = true
                 end)
             end
         end
@@ -12367,107 +12373,57 @@ spawn(function()
 				end)
 			end
 		end)
-		Misc:Seperator(" Boost FPS ")
-    
-    local a = game.Lighting
-    local c = Instance.new("ColorCorrectionEffect", a)
-    local e = Instance.new("ColorCorrectionEffect", a)
-    OldAmbient = a.Ambient
-    OldBrightness = a.Brightness
-    OldColorShift_Top = a.ColorShift_Top
-    OldBrightnessc = c.Brightness
-    OldContrastc = c.Contrast
-    OldTintColorc = c.TintColor
-    OldTintColore = e.TintColor
+		Misc:Toggle("Rainbow Yoru",false,function(value)
+		RainbowYoru = value
+	end)
 
-    Misc:Toggle("RTX Mode",_G.RTXMode,function(value)
-        _G.RTXMode = value
-        if not _G.RTXMode then return end
-        while _G.RTXMode do wait()
-            a.Ambient = Color3.fromRGB(33, 33, 33)
-            a.Brightness = 0.3
-            c.Brightness = 0.176
-            c.Contrast = 0.39
-            c.TintColor = Color3.fromRGB(217, 145, 57)
-            game.Lighting.FogEnd = 999
-            if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight") then
-                local a2 = Instance.new("PointLight")
-                a2.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-                a2.Range = 15
-                a2.Color = Color3.fromRGB(217, 145, 57)
-            end
-            if not _G.RTXMode then
-                a.Ambient = OldAmbient
-                a.Brightness = OldBrightness
-                a.ColorShift_Top = OldColorShift_Top
-                c.Contrast = OldContrastc
-                c.Brightness = OldBrightnessc
-                c.TintColor = OldTintColorc
-                e.TintColor = OldTintColore
-                game.Lighting.FogEnd = 2500
-                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight"):Destroy()
-            end
-        end
-    end)
-    
-    Misc:Toggle("Remove Fog",RemoveFog,function(value)
-        RemoveFog = value
-        if not RemoveFog then return end
-        while RemoveFog do wait()
-            game.Lighting.FogEnd = 9e9
-            if not RemoveFog then
-                game.Lighting.FogEnd = 2500
-            end
-        end
-    end)
-  
-    Misc:Button("FPS Boost",function()
-        pcall(function()
-            game:GetService("Lighting").FantasySky:Destroy()
-            local g = game
-            local w = g.Workspace
-            local l = g.Lighting
-            local t = w.Terrain
-            t.WaterWaveSize = 0
-            t.WaterWaveSpeed = 0
-            t.WaterReflectance = 0
-            t.WaterTransparency = 0
-            l.GlobalShadows = false
-            l.FogEnd = 9e9
-            l.Brightness = 0
-            settings().Rendering.QualityLevel = "Level01"
-            for i, v in pairs(g:GetDescendants()) do
-                if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then 
-                    v.Material = "Plastic"
-                    v.Reflectance = 0
-                elseif v:IsA("Decal") or v:IsA("Texture") then
-                    v.Transparency = 1
-                elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-                    v.Lifetime = NumberRange.new(0)
-                elseif v:IsA("Explosion") then
-                    v.BlastPressure = 1
-                    v.BlastRadius = 1
-                elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
-                    v.Enabled = false
-                elseif v:IsA("MeshPart") then
-                    v.Material = "Plastic"
-                    v.Reflectance = 0
-                    v.TextureID = 10385902758728957
-                end
-            end
-            for i, e in pairs(l:GetChildren()) do
-                if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-                    e.Enabled = false
-                end
-            end
-            for i, v in pairs(game:GetService("Workspace").Camera:GetDescendants()) do
-                if v.Name == ("Water;") then
-                    v.Transparency = 1
-                    v.Material = "Plastic"
-                end
-            end
-        end)
-    end)
+	---- [RainbowYoru]
+
+	spawn(function()
+		while wait() do
+			if RainbowYoru then
+				pcall(function()
+					for i,v in pairs(game.Players.LocalPlayer.Character.DarkBlade.Right:GetChildren()) do
+						if v.Name == "Runes" or v.Name == "Hold" or v.Name == "Bottom" or v.Name == "Gems" or v.Name == "Wings" or v.Name == "Blade" or v.Name == "Tape" then
+							v.Color = Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+							v.Material = "Neon"
+						end
+
+					end
+				end)
+			end
+		end
+	end)
+
+	spawn(function()
+		while wait(1) do
+			if RainbowYoru then
+				pcall(function()
+					for i,v in pairs(game.Players.LocalPlayer.Character.DarkBlade.Right.Handle:GetChildren()) do
+						if v.Name == "Trail" then
+							v.LightEmission = 1
+						end
+
+					end
+				end)
+			end
+		end
+	end)
+
+	spawn(function()
+		while wait(1) do
+			if RainbowYoru then
+				pcall(function()
+					for i,v in pairs(game.Players.LocalPlayer.Character.DarkBlade.Right.Handle.Attachment0:GetChildren()) do
+						if v.Name == "Beam" then
+							v.LightEmission = 1 v.Texture = 0 v.Width0 = 0 v.Width1 = 0
+						end
+
+					end
+				end)
+			end
+		end
+	end)
 
     Misc:Button("FPS delete color",function()
 for _,v in pairs(workspace:GetDescendants()) do
@@ -12495,12 +12451,6 @@ end
 end)
     Misc:Button("Auto Chest",function(Chest)
         local Chest loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/autochest'))()
-    end)
-    Misc:Button("HitBox",function(HitBox)
-        local HitBox loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/hitbox'))()
-    end)
-    Misc:Button("Fly",function(Fly)
-        local Fly loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/Fly'))()
     end)
             
     Misc:Button("Unlock FPS",function()
