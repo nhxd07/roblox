@@ -4823,15 +4823,6 @@ Setting:Toggle("Skill Z",true,function(a)
 		_G.SkillV = a
 	end)
 
-function EquipWeapon(ToolSe)
-if not _G.NotAutoEquip then
-if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
-Tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
-wait(.1)
-game.Players.LocalPlayer.Character.Humanoid:EquipTool(Tool)
-end
-end
-end
 
 local WeaponList = {
   "Melee","Devil Fruit","Sword","Gun"
@@ -4921,32 +4912,7 @@ end)
 Main:Toggle("Start Auto Farm",_G.Auto_Farm_Level,function(value)
  _G.Auto_Farm_Level = value
  StopTween(_G.Auto_Farm_Level)
-end)
-
-
-function EquipWeaponSword()
-	pcall(function()
-		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-			if v.ToolTip == "Sword" and v:IsA('Tool') then
-				local ToolHumanoid = game.Players.LocalPlayer.Backpack:FindFirstChild(v.Name) 
-				game.Players.LocalPlayer.Character.Humanoid:EquipTool(ToolHumanoid) 
-			end
-		end
-	end)
-end
-
-function EquipWeaponMelee()
-	pcall(function()
-		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-			if v.ToolTip == "Melee" and v:IsA('Tool') then
-				local ToolHumanoid = game.Players.LocalPlayer.Backpack:FindFirstChild(v.Name) 
-				game.Players.LocalPlayer.Character.Humanoid:EquipTool(ToolHumanoid) 
-			end
-		end
-	end)
-end
-
-			
+end)		
 
 if World2 then
 
