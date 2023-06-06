@@ -111,7 +111,7 @@ local HaiHubImageUI = Instance.new("ImageLabel")
  
  local Update = {}
  
- do  local ui =  game:GetService("CoreGui").RobloxGui.Modules:FindFirstChild("ZENHUB")  if ui then ui:Destroy() end end
+ do  local ui =  game:GetService("CoreGui").RobloxGui.Modules:FindFirstChild("HAIHUB")  if ui then ui:Destroy() end end
  
  function Update:Window(text,logo,keybind)
  local osfunc = {}
@@ -123,14 +123,14 @@ local HaiHubImageUI = Instance.new("ImageLabel")
  local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
  local executor = identifyexecutor() or "Unknown"
  
- local ZENHUB = Instance.new("ScreenGui")
- ZENHUB.Name = "ZENHUB"
- ZENHUB.Parent = game.CoreGui
- ZENHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ local HAIHUB = Instance.new("ScreenGui")
+ HAIHUB.Name = "HAIHUB"
+ HAIHUB.Parent = game.CoreGui
+ HAIHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
  
  local Main = Instance.new("Frame")
  Main.Name = "Main"
- Main.Parent = ZENHUB
+ Main.Parent = HAIHUB
  Main.ClipsDescendants = true
  Main.AnchorPoint = Vector2.new(0.5,0.5)
  Main.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
@@ -460,7 +460,7 @@ local NotifHolderUIStroke = Instance.new("UIStroke")
 local Line = Instance.new("Frame")
 
 NotificationHold.Name = "NotificationHold"
-NotificationHold.Parent = ZENHUB
+NotificationHold.Parent = HAIHUB
 NotificationHold.BackgroundColor3 = _G.WindowBackgroundColor
 NotificationHold.BackgroundTransparency = 1
 NotificationHold.BorderSizePixel = 0
@@ -4833,26 +4833,59 @@ end
 end
 end
 
-if _G.Select_Weapon == nil then
-for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
-if v.ToolTip == "Melee" then
-if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
-_G.Select_Weapon = tostring(v.Name)
-end
-end
-end
-end
+local WeaponList = {
+  "Melee","Devil Fruit","Sword","Gun"
+}
 
-WeaponList = {}
+Main:Dropdown("Select Weapon",WeaponList,{""},function(weaponfunc)
+  _G.Select_Weapon = weaponfunc
+  end)
 
-for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
-if v:IsA("Tool") then
-table.insert(WeaponList ,v.Name)
-end
-end
-local SelectWeapona = Main:Dropdown("Select Weapon",WeaponList,function(value)
- _G.Select_Weapon = value
- end)
+spawn(function()
+  while wait() do
+  pcall(function()
+    if _G.Select_Weapon == "Melee" then
+    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.ToolTip == "Melee" then
+    if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+    _G.Select_Weapon = v.Name
+    end
+    end
+    end
+    elseif _G.Select_Weapon == "Sword" then
+    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.ToolTip == "Sword" then
+    if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+    _G.Select_Weapon = v.Name
+    end
+    end
+    end
+    elseif _G.Select_Weapon == "Devil Fruit" then
+    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.ToolTip == "Blox Fruit" then
+    if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+    _G.Select_Weapon = v.Name
+    end
+    end
+    end
+    elseif _G.Select_Weapon == "Gun" then
+    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.ToolTip == "Gun" then
+    if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+    _G.Select_Weapon = v.Name
+    end
+    end
+    end
+    else
+      for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v.ToolTip == _G.Select_Weapon then
+    _G.Select_Weapon = v.Name
+    end
+    end
+    end
+    end)
+  end
+end)
 
 Main:Button("Refresh Weapon",function()
  SelectWeapona:Clear()
@@ -11784,172 +11817,285 @@ end)
   end
  end)
  
- Shop:Seperator(" Abilities ")
+ Shop:Seperator("Abilities")
     
-    Shop:Button("Buy Geppo",function()
+    Shop:Button("Buy Geppo [ $10,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
     end)
     
-    Shop:Button("Buy Buso Haki",function()
+    Shop:Button("Buy Buso Haki [ $25,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Buso")
     end)
     
-    Shop:Button("Buy Soru",function()
+    Shop:Button("Buy Soru [ $25,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Soru")
     end)
     
-    Shop:Button("Buy Observation(Ken) Haki",function()
+    Shop:Button("Buy Observation Haki [ $750,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk","Buy")
     end)
     
-    Shop:Seperator(" Fighting Style ")
+Shop:Toggle("Auto Buy Abilities", false, function(t)
+    Abilities = t
+    while Abilities do wait(.1)
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Buso")
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Soru")
+    end
+end)
+
+Shop:Seperator("Boats")
+
+BoatList = {
+    "Pirate Sloop",
+    "Enforcer",
+    "Rocket Boost",
+    "Dinghy",
+    "Pirate Basic",
+    "Pirate Brigade"
+}
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            if SelectBoat == "Pirate Sloop" then
+                _G.SelectBoat = "PirateSloop"
+            else
+                if SelectBoat == "Enforcer" then
+                    _G.SelectBoat = "Enforcer"
+                else
+                    if SelectBoat == "RocketBoost" then
+                        _G.SelectBoat = "RocketBoost"
+                    else
+                        if SelectBoat == "PirateBasic" then
+                            _G.SelectBoat = "PirateBasic"
+                        else
+                            if SelectBoat == "PirateBrigade" then
+                                _G.SelectBoat = "PirateBrigade"
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+Shop:Dropdown("Select Boats",BoatList,{""},function(value)
+    SelectBoat = value
+end)
+
+Shop:Button("Buy Boat",function()
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat",_G.SelectBoat)
+end)
+
+    Shop:Seperator("Fighting Style")
     
-    Shop:Button("Buy Black Leg",function()
+    Shop:Button("Buy Black Leg [ $150,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
     end)
     
-    Shop:Button("Buy Electro",function()
+    Shop:Button("Buy Electro [ $550,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
     end)
     
-    Shop:Button("Buy Fishman Karate",function()
+    Shop:Button("Buy Fishman Karate [ $750,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
     end)
     
-    Shop:Button("Buy Dragon Claw",function()
+    Shop:Button("Buy Dragon Claw [ $1,500 Fragments ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1")
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","2")
     end)
     
-    Shop:Button("Buy Superhuman",function()
+    Shop:Button("Buy Superhuman [ $3,000,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman")
     end)
     
-    Shop:Button("Buy Death Step",function()
+    Shop:Button("Buy Death Step [ $5,000 Fragments $5,000,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
     end)
     
-    Shop:Button("Buy Sharkman Karate",function()
+    Shop:Button("Buy Sharkman Karate [ $5,000 Fragments $2,500,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
     end)
     
-    Shop:Button("Buy Electric Claw",function()
+    Shop:Button("Buy Electric Claw [ $5,000 Fragments $3,000,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
     end)
     
-    Shop:Button("Buy Dragon Talon",function()
+    Shop:Button("Buy Dragon Talon [ $5,000 Fragments $3,000,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
     end)
-    
-    Shop:Button("Buy GodHuman",function()
+
+    Shop:Button("Buy God Human [ $5,000 Fragments $5,000,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
     end)
     -----Shop----------------
-    Shop:Seperator(" Accessory ")
     
-    Shop:Button("Tomoe Ring",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Tomoe Ring")
-    end)
+    Shop:Seperator("Sword")
     
-    Shop:Button("Black Cape",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Black Cape")
-    end)
-    
-    Shop:Button("Swordsman Hat",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Swordsman Hat")
-    end)
-    
-    Shop:Seperator(" Sword ")
-    
-    Shop:Button("Cutlass",function()
+    Shop:Button("Cutlass [ $1,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cutlass")
     end)
-    
-    Shop:Button("Katana",function()
+
+    Shop:Button("Katana [ $1,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Katana")
     end)
     
-    Shop:Button("Iron Mace",function()
+    Shop:Button("Iron Mace [ $25,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Iron Mace")
     end)
     
-    Shop:Button("Duel Katana",function()
+    Shop:Button("Dual Katana [ $12,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Duel Katana")
     end)
     
-    Shop:Button("Triple Katana", function()
+    Shop:Button("Triple Katana [ $60,000 Beli ]", function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Triple Katana")
     end)
     
-    Shop:Button("Pipe",function()
+    Shop:Button("Pipe [ $100,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Pipe")
     end)
     
-    Shop:Button("Dual Headed Blade",function()
+    Shop:Button("Dual-Headed Blade [ $400,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Dual-Headed Blade")
     end)
     
-    Shop:Button("Bisento",function()
+    Shop:Button("Bisento [ $1,200,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Bisento")
     end)
     
-    Shop:Button("Soul Cane",function()
+    Shop:Button("Soul Cane [ $750,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Soul Cane")
     end)
+
+    Shop:Button("Pole v.2 [ 5,000 Fragments ]",function()
+		game.ReplicatedStorage.Remotes.CommF_:InvokeServer("ThunderGodTalk")
+	end)
+
+    Shop:Toggle("Yama Sword [ Elite Hunter 30 ]",_G.AutoYama,function(value)
+        _G.AutoYama = value
+    end)
     
-    Shop:Seperator(" Gun ")
+    spawn(function()
+        while wait() do
+            if _G.AutoYama then
+                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress") >= 30 then
+                    repeat wait(.1)
+                        fireclickdetector(game:GetService("Workspace").Map.Waterfall.SealedKatana.Handle.ClickDetector)
+                    until game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Yama") or not _G.AutoYama
+                end
+            end
+        end
+    end)
+
+
+    Shop:Seperator("Gun")
     
-    Shop:Button("Slingshot",function()
+    Shop:Button("Slingshot [ $5,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Slingshot")
     end)
     
-    Shop:Button("Musket",function()
+    Shop:Button("Musket [ $8,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Musket")
     end)
     
-    Shop:Button("Flintlock",function()
+    Shop:Button("Flintlock [ $10,500 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Flintlock")
     end)
     
-    Shop:Button("Refined Flintlock",function()
+    Shop:Button("Refined Slingshot [ $30,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Refined Flintlock")
     end)
     
-    Shop:Button("Cannon",function()
+    Shop:Button("Refined Flintlock [ $65,000 Beli ]",function()
+		local args = {
+			[1] = "BuyItem",
+			[2] = "Refined Flintlock"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+	end)
+    
+    Shop:Button("Cannon [ $100,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cannon")
     end)
     
-    Shop:Button("Kabucha",function()
+    Shop:Button("Kabucha [ 1,500 Fragments]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","1")
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","2")
     end)
+
+          Shop:Button("Bizarre Rifle [ 250 Ectoplasm ]", function()
+                                    local A_1 = "Ectoplasm"
+                                    local A_2 = "Buy"
+                                    local A_3 = 1
+                                    local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
+                                    Event:InvokeServer(A_1, A_2, A_3) 
+                                    local A_1 = "Ectoplasm"
+                                    local A_2 = "Buy"
+                                    local A_3 = 1
+                                    local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
+                                    Event:InvokeServer(A_1, A_2, A_3)
+                                end)
+
     ------------Bone------------------
     
-    Shop:Seperator(" Bones ")
+    Shop:Seperator("Bones")
     
-    Shop:Button("Buy Surprise",function()
+    Shop:Button("Buy Surprise [ $50 Bone ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
     end)
     
-    Shop:Button("Stat Refund",function()
+    Shop:Button("Stat Refund [ $50 Bone ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,2)
     end)
         
-    Shop:Button("Race Reroll",function()
+    Shop:Button("Race Reroll [ $50 Bone ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,3)
     end)
-   
-   ------------Fragments--------------
-   
-    Shop:Seperator(" Race & etc ")
     
-    Shop:Button("Buy Refund Stat",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","1")
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","2")
-    end)
+    ------------Stat------------------
+    
+    Shop:Seperator("Stat")
 
-	Shop:Button("Race Ghoul",function()
+Shop:Button("Reset Stats (Use 2.5K Fragments)", function()
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","1")
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","2")
+end)
+
+Shop:Button("Random Race (Use 3K Fragments)", function()
+	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","1")
+	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","2")
+end)
+    --------------Accessories-----------------
+    	Shop:Seperator("Accessories")
+	Shop:Button("Black Cape [ $50,000 Beli ]",function()
+		local args = {
+			[1] = "BuyItem",
+			[2] = "Black Cape"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+	end)
+	Shop:Button("Swordsman Hat [ 150k Beli ]",function()
+		local args = {
+			[1] = "BuyItem",
+			[2] = "Swordsman Hat"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+	end)
+	Shop:Button("Tomoe Ring [ $500k Beli ]",function()
+		local args = {
+			[1] = "BuyItem",
+			[2] = "Tomoe Ring"
+		}
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+	end)
+	
+	Shop:Seperator("Race & etc")
+	Shop:Button("Race Ghoul (Use 2.5K Fragments)",function()
 		local args = {
 			[1] = "Ectoplasm",
 			[2] = "BuyCheck",
@@ -11963,314 +12109,158 @@ end)
 		}
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 	end)
-	Shop:Button("Race Cyborg",function()
+	Shop:Button("Race Cyborg (Use 2.5K Fragments)",function()
 		local args = {
 			[1] = "CyborgTrainer",
 			[2] = "Buy"
 		}
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 	end)
-    Shop:Button("Buy Random Race",function()
-    local args = {
-        [1] = "BlackbeardReward",
-        [2] = "Reroll",
-        [3] = "2"
-    }
     
-    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+    Misc:Seperator("Server - Main")
+    
+    Misc:Button("Rejoin Server",function()
+        game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
     end)
     
- Misc:Seperator(" Joins ")
- 
- Misc:Button("Join Pirates Team",function()
- 		local args = {
-			[1] = "SetTeam",
-			[2] = "Pirates"
-		}
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) 
-		local args = {
-			[1] = "BartiloQuestProgress"
-		}
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-end)
- 
-
-Misc:Button("Join Marines Team",function()
- local args = {
-			[1] = "SetTeam",
-			[2] = "Marines"
-		}
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-		local args = {
-			[1] = "BartiloQuestProgress"
-		}
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-end)
-
-
-Misc:Button("Rejoin",function()
- local ts = game:GetService("TeleportService")
-		local p = game:GetService("Players").LocalPlayer
-		ts:Teleport(game.PlaceId, p)
-end)
-
-Misc:Button("Sever Hop",function()
- hop()
-end)
-    Misc:Button("Hop To Lower Player",function()
-        local maxplayers, gamelink, goodserver, data_table = math.huge, "https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100"
-		if not _G.FailedServerID then _G.FailedServerID = {} end
-
-		local function serversearch()
-			data_table = game:GetService"HttpService":JSONDecode(game:HttpGetAsync(gamelink))
-			for _, v in pairs(data_table.data) do
-				pcall(function()
-					if type(v) == "table" and v.id and v.playing and tonumber(maxplayers) > tonumber(v.playing) and not table.find(_G.FailedServerID, v.id) then
-						maxplayers = v.playing
-						goodserver = v.id
-					end
-				end)
-			end
-		end
-
-		function getservers()
-			pcall(serversearch)
-			for i, v in pairs(data_table) do
-				if i == "nextPageCursor" then
-					if gamelink:find"&cursor=" then
-						local a = gamelink:find"&cursor="
-						local b = gamelink:sub(a)
-						gamelink = gamelink:gsub(b, "")
-					end
-					gamelink = gamelink .. "&cursor=" .. v
-					pcall(getservers)
-				end
-			end
-		end
-
-		pcall(getservers)
-		wait()
-		if goodserver == game.JobId or maxplayers == #game:GetService"Players":GetChildren() - 1 then
-		end
-		table.insert(_G.FailedServerID, goodserver)
-		game:GetService"TeleportService":TeleportToPlaceInstance(game.PlaceId, goodserver)
+    Misc:Button("Destroy Ui",function()
+        if game.CoreGui:FindFirstChild("Wing Hub") then
+            game.CoreGui:FindFirstChild("Wing Hub"):Destroy()
+            game.CoreGui:FindFirstChild("PADOXHUBMODILE"):Destroy()
+        end
     end)
 
-Misc:Seperator(" Open Menu ")
-
-Misc:Button("Inventory",function()
- game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
-		game.Players.localPlayer.PlayerGui.Main.Inventory.Visible = true
-end)
-
-Misc:Button("Devil Fruit Shop",function()
- local args = {
-			[1] = "GetFruits"
-		}
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-		game.Players.localPlayer.PlayerGui.Main.FruitShop.Visible = true
-end)
-
-Misc:Button("Open Inventory",function()
+    Misc:Seperator("Main - Ui")
+    
+    Misc:Button("Open Devil Shop",function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
+        game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = true
+    end)
+    
+    Misc:Button("Open Inventory",function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")
+        wait(1)
+        game:GetService("Players").LocalPlayer.PlayerGui.Main.Inventory.Visible = true
+    end)
+    
+  Misc:Button("Open Inventory Fruit",function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryFruits")
+        game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitInventory.Visible = true
+    end)
+  
+    Misc:Button("Open Title Name",function()
 		local args = {
-			[1] = "getInventoryWeapons"
-		}
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-		game.Players.localPlayer.PlayerGui.Main.Inventory.Visible = true
-end)
-
-Misc:Button("Open Fruit Inventory",function()
-		game.Players.localPlayer.PlayerGui.Main.FruitInventory.Visible = true
-end)
-
-Misc:Button("Title Name",function()
- local args = {
 			[1] = "getTitles"
 		}
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 		game.Players.localPlayer.PlayerGui.Main.Titles.Visible = true
+	end)
+	
+	Misc:Button("Open Color Haki",function()
+		game.Players.localPlayer.PlayerGui.Main.Colors.Visible = true
+	end)
+	
+	Misc:Button("Open Awakenings Expert",function()
+     game.Players.LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
 end)
 
-
-Misc:Button("Color Haki",function()
- game.Players.localPlayer.PlayerGui.Main.Colors.Visible = true
+    Misc:Seperator("👥 Main - Teams 👥")
+    
+Misc:Button("Join Pirates Team", function()
+    local args = {
+        [1] = "SetTeam",
+        [2] = "Pirates"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args)) 
+    local args = {
+        [1] = "BartiloQuestProgress"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
 
-Misc:Button("Awekening Fruit",function()
- game.Players.localPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
+Misc:Button("Join Marines Team",function()
+    local args = {
+        [1] = "SetTeam",
+        [2] = "Marines"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+    local args = {
+        [1] = "BartiloQuestProgress"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
+    
+    
 
-Misc:Seperator(" Codes ")
+    Misc:Seperator("Abilities")
     
-    
-local x2Code = {
- "EXP_5B",
- "CONTROL",
- "UPDATE11",
- "XMASEXP",
- "1BILLION",
- "ShutDownFix2",
- "UPD14",
- "STRAWHATMAINE",
- "TantaiGaming",
- "Colosseum",
- "Axiore",
- "Sub2Daigrock",
- "Sky Island 3",
- "Sub2OfficialNoobie",
- "SUB2NOOBMASTER123",
- "THEGREATACE",
- "Fountain City",
- "BIGNEWS",
- "FUDD10",
- "SUB2GAMERROBOT_EXP1",
- "UPD15",
- "2BILLION",
- "UPD16",
- "3BVISITS",
- "fudd10_v2",
- "Starcodeheo",
- "Magicbus",
- "JCWK",
- "Bluxxy",
- "Sub2Fer999",
- "Enyu_is_Pro"
-}
-    
-    Misc:Button("Redeem All Codes",function()
-        function RedeemCode(value)
-            game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
-        end
-        for i,v in pairs(x2Code) do
-            RedeemCode(v)
-        end
-    end)
-    
-    Misc:Dropdown("Selected Codes",{"1MLIKES_RESET","THIRDSEA","SUB2GAMERROBOT_RESET1","SUB2UNCLEKIZARU"},function(value)
-        _G.CodeSelect = value
-    end)
-    
-    Misc:Button("Redeem Code",function()
-        game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(_G.CodeSelect)
-    end)
-
-
-Misc:Seperator(" Player Misc ")
-    
-    
-    Misc:Dropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},function(value)
-        _G.SelectStateHaki = value
-    end)
-    
-    Misc:Button("Change Buso Haki State",function()
-        if _G.SelectStateHaki == "State 0" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",0)
-        elseif _G.SelectStateHaki == "State 1" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",1)
-        elseif _G.SelectStateHaki == "State 2" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",2)
-        elseif _G.SelectStateHaki == "State 3" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",3)
-        elseif _G.SelectStateHaki == "State 4" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",4)
-        elseif _G.SelectStateHaki == "State 5" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",5)
-        end
-    end)
-
-Misc:Toggle("No Clip",_G.No_clip,function(value)
- _G.No_clip = value
-end)
-
-
-spawn(function()
-    pcall(function()
-        game:GetService("RunService").Stepped:Connect(function()
-            if _G.No_clip then
-                for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-                    if v:IsA("BasePart") then
-                        v.CanCollide = false    
-                    end
-                end
-            end
-        end)
-    end)
-end)
-
-  function NoDodgeCool()
-        if nododgecool then
-            for i,v in next, getgc() do
-                if game:GetService("Players").LocalPlayer.Character.Dodge then
-                    if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.Character.Dodge then
-                        for i2,v2 in next, getupvalues(v) do
-                            if tostring(v2) == "0.1" then
-                            repeat wait(.1)
-                                setupvalue(v,i2,0)
-                            until not nododgecool
-                            end
-                        end
-                    end
-                end
-            end
-        end
-  end
-   
-    
-    local LocalPlayer = game:GetService'Players'.LocalPlayer
-    local originalstam = LocalPlayer.Character.Energy.Value
-    function infinitestam()
-        LocalPlayer.Character.Energy.Changed:connect(function()
-            if InfiniteEnergy then
-                LocalPlayer.Character.Energy.Value = originalstam
-            end 
-        end)
+    Misc:Button("Always Day",function()
+    game:GetService("RunService").Heartbeat:wait() do
+        game:GetService("Lighting").ClockTime = 12
     end
-    
-    spawn(function()
-        pcall(function()
-            while wait(.1) do
-                if InfiniteEnergy then
-                    wait(0.1)
-                    originalstam = LocalPlayer.Character.Energy.Value
-                    infinitestam()
-                end
-            end
-        end)
+end)
+    Misc:Toggle("Infinite Energy",false,function(value)
+        InfiniteEnergy = value
+        originalstam = LocalPlayer.Character.Energy.Value
     end)
 
-Misc:Toggle("Dodge No Cooldown",false,function(value)
-        nododgecool = value
-        NoDodgeCool()
+local LocalPlayer = game:GetService'Players'.LocalPlayer
+local originalstam = LocalPlayer.Character.Energy.Value
+function infinitestam()
+    LocalPlayer.Character.Energy.Changed:connect(function()
+        if InfinitsEnergy then
+            LocalPlayer.Character.Energy.Value = originalstam
+        end 
     end)
-    
-    Misc:Toggle("Auto Active Race",_G.AutoAgility,function(value)
-        _G.AutoAgility = value
-    end)
-    
-    spawn(function()
-        pcall(function()
-            while wait() do
-                if _G.AutoAgility then
-                    game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("ActivateAbility")
-                end
-            end
-        end)
-    end)
-    
-    Misc:Toggle("Infinite Ability",true,function(value)
-        InfAbility = value
-        if value == false then
-            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("Agility"):Destroy()
+end
+spawn(function()
+    while wait(.1) do
+        if InfinitsEnergy then
+            wait(0.3)
+            originalstam = LocalPlayer.Character.Energy.Value
+            infinitestam()
         end
-    end)
-    
-    spawn(function()
-        while wait() do
-            if InfAbility then
-                InfAb()
-            end
-        end
-    end)
+    end
+end)
+
+Misc:Toggle("Infinite Ability",false,function(infA)
+if infA then
+	    local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+	    local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+		local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+		local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+		local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+		local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+		local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+		local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+		local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+		local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+		local Agility = game:GetService("ReplicatedStorage").FX["Agility"]:Clone()
+	Agility.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+else
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+	game:GetService("Players").LocalPlayer.Character.HumanoidRootPart["Agility"]:Destroy()
+end
+end)
     
     Misc:Toggle("Infinite Obversation Range",getgenv().InfiniteObRange,function(value)
         getgenv().InfiniteObRange = value
@@ -12342,38 +12332,200 @@ Misc:Toggle("Dodge No Cooldown",false,function(value)
             end)
         end
     end)
-    
-    Misc:Toggle("Walk on Water",true,function(value)
-        _G.WalkWater = value
+
+ Misc:Toggle("Infinite Jump", nil, function(State)
+Infinite = State
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if Infinite then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end) 
+end)
+
+    Misc:Seperator("Highlight")
+
+Misc:Toggle("Show Chat disabled", _G.chat, function(value)
+    _G.chat = value
+    if _G.chat == true then
+local StarterGui = game:GetService('StarterGui')
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)    
+elseif _G.chat == false then
+local StarterGui = game:GetService('StarterGui')
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)    
+end
+  end)
+
+  Misc:Toggle("Show leaderboard disabled", _G.leaderboard, function(a)
+    _G.leaderboard = a
+    if _G.leaderboard == true then
+local StarterGui = game:GetService('StarterGui')
+game:GetService('StarterGui'):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)   
+elseif _G.leaderboard == false then
+local StarterGui = game:GetService('StarterGui')
+game:GetService('StarterGui'):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, true)   
+end
+  end)
+
+    Misc:Toggle("Highlight Mode",false,function(value)
+        if value == true then
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Beli.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.HP.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Energy.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.StatsButton.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.ShopButton.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Skills.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Level.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.MenuButton.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Code.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Settings.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Mute.Visible = false
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = false
+        else
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Beli.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.HP.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Energy.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.StatsButton.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.ShopButton.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Skills.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Level.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.MenuButton.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Code.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Settings.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Mute.Visible = true
+            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = true
+        end
     end)
-    
-    if World2 then
-		Misc:Button("Remove Lava",function()
-			for i,v in pairs(game.Workspace:GetDescendants()) do
-				if v.Name == "Lava" then   
-					v:Destroy()
+
+Misc:Toggle("Graphic",false,function(v)
+			if v then
+				getgenv().mode = "Autumn" -- Choose from Summer and Autumn
+				local a = game.Lighting
+				a.Ambient = Color3.fromRGB(33, 33, 33)
+				a.Brightness = 0.3
+				a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+				a.ColorShift_Top = Color3.fromRGB(255, 247, 237)
+				a.EnvironmentDiffuseScale = 0.105
+				a.EnvironmentSpecularScale = 0.522
+				a.GlobalShadows = true
+				a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)
+				a.ShadowSoftness = 0.04
+				a.GeographicLatitude = -15.525
+				a.ExposureCompensation = 0.75
+				local b = Instance.new("BloomEffect", a)
+				b.Name = "BloomEffect_Graphic"
+				b.Enabled = true
+				b.Intensity = 0.04
+				b.Size = 1900
+				b.Threshold = 0.915
+				local c = Instance.new("ColorCorrectionEffect", a)
+				c.Name = 'ColorCorrectionEffect1_Graphic'
+				c.Brightness = 0.176
+				c.Contrast = 0.39
+				c.Enabled = true
+				c.Saturation = 0.2
+				c.TintColor = Color3.fromRGB(217, 145, 57)
+				if getgenv().mode == "Summer" then
+					c.TintColor = Color3.fromRGB(255, 220, 148)
+				elseif getgenv().mode == "Autumn" then
+					c.TintColor = Color3.fromRGB(242, 193, 79)
 				end
-			end
-			for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
-				if v.Name == "Lava" then   
-					v:Destroy()
-				end
+				local d = Instance.new("DepthOfFieldEffect", Graphic)
+				d.Name =  'DepthOfFieldEffect_Graphic'
+				d.Enabled = true
+				d.FarIntensity = 0.077
+				d.FocusDistance = 21.54
+				d.InFocusRadius = 20.77
+				d.NearIntensity = 0.277
+				local e = Instance.new("ColorCorrectionEffect", a)
+				e.Name = 'ColorCorrectionEffect2_Graphic'
+				e.Brightness = 0
+				e.Contrast = -0.07
+				e.Saturation = 0
+				e.Enabled = true
+				e.TintColor = Color3.fromRGB(255, 247, 239)
+				local e2 = Instance.new("ColorCorrectionEffect", a)
+				e2.Name = 'ColorCorrectionEffect3_Graphic'
+				e2.Brightness = 0.2
+				e2.Contrast = 0.45
+				e2.Saturation = -0.1
+				e2.Enabled = true
+				e2.TintColor = Color3.fromRGB(255, 255, 255)
+				local s = Instance.new("SunRaysEffect", a)
+				s.Name = 'SunRaysEffect_Graphic'
+				s.Enabled = false
+				s.Intensity = 0.01
+				s.Spread = 0.146
+			else
+				local a = game.Lighting
+				a.Ambient = Color3.fromRGB(170, 170, 170)
+				a.Brightness = 2
+				a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+				a.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+				a.EnvironmentDiffuseScale = 0.105
+				a.EnvironmentSpecularScale = 0.522
+				a.GlobalShadows = false
+				a.OutdoorAmbient = Color3.fromRGB(127, 127, 127)
+				a.ShadowSoftness = 0
+				a.GeographicLatitude = 66
+				a.ExposureCompensation = 0.2
+				game:GetService("Lighting")["BloomEffect_Graphic"]:Destroy()
+				game:GetService("Lighting")["ColorCorrectionEffect1_Graphic"]:Destroy()
+				game:GetService("Lighting")["ColorCorrectionEffect2_Graphic"]:Destroy()
+				game:GetService("Lighting")["ColorCorrectionEffect3_Graphic"]:Destroy()
+				game:GetService("Lighting")["SunRaysEffect_Graphic"]:Destroy()
 			end
 		end)
+
+	Misc:Toggle("Xray",false,function(value)
+		NoWorld = value
+		if NoWorld == true then
+			transparent = true
+			x(transparent)
+		elseif NoWorld == false then
+			transparent = false
+			x(transparent)
 		end
-    
-spawn(function()
-			while task.wait() do
+	end)
+
+	local transparent = false -- xray
+	function x(v)
+		if v then
+			for _,i in pairs(workspace:GetDescendants()) do
+				if i:IsA("BasePart") and not i.Parent:FindFirstChild("Humanoid") and not i.Parent.Parent:FindFirstChild("Humanoid") then
+					i.LocalTransparencyModifier = 0.7
+				end
+			end
+		else
+			for _,i in pairs(workspace:GetDescendants()) do
+				if i:IsA("BasePart") and not i.Parent:FindFirstChild("Humanoid") and not i.Parent.Parent:FindFirstChild("Humanoid") then
+					i.LocalTransparencyModifier = 0
+				end
+			end
+		end
+	end
+
+	---- [RainbowHaki]
+	spawn(function()
+		while wait() do
+			if RainbowHaki then
 				pcall(function()
-					if _G.WalkWater then
-						game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,112,1000)
-					else
-						game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,80,1000)
+					if game.Players.LocalPlayer.Character.HasBuso then
+						for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetChildren()) do
+							if v.Name == "RightLowerArm_BusoLayer1" or v.Name == "RightLowerArm_BusoLayer2" or v.Name == "RightHand_BusoLayer1" or v.Name == "RightHand_BusoLayer2" or v.Name == "LeftLowerArm_BusoLayer1" or v.Name == "LeftLowerArm_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "LeftHand_BusoLayer2" or v.Name == "LeftHand_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer1" or v.Name == "RightUpperArm_BusoLayer2" or v.Name == "LeftUpperArm_BusoLayer1" or v.Name == "LeftUpperArm_BusoLayer2" or v.Name == "UpperTorso_BusoLayer1" or v.Name == "UpperTorso_BusoLayer2" or v.Name == "LowerTorso_BusoLayer1" or v.Name == "LowerTorso_BusoLayer2" or v.Name == "Head_BusoLayer1" or v.Name == "Head_BusoLayer2" or v.Name == "RightUpperLeg_BusoLayer1" or v.Name == "RightUpperLeg_BusoLayer2" or v.Name == "LeftUpperLeg_BusoLayer1" or v.Name == "LeftUpperLeg_BusoLayer2" or v.Name == "RightLowerLeg_BusoLayer1" or v.Name == "RightLowerLeg_BusoLayer2" or v.Name == "LeftLowerLeg_BusoLayer1" or v.Name == "LeftLowerLeg_BusoLayer2" or v.Name == "LeftFoot_BusoLayer1" or v.Name == "LeftFoot_BusoLayer2" or v.Name == "RightFoot_BusoLayer1" or v.Name == "RightFoot_BusoLayer2" then
+								v.Color = Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+							end
+						end
 					end
 				end)
 			end
-		end)
-		Misc:Toggle("Rainbow Yoru",false,function(value)
+		end
+	end)
+
+	Misc:Toggle("Rainbow Haki",false,function(value)
+		RainbowHaki = value
+	end)
+
+	Misc:Toggle("Rainbow Yoru",false,function(value)
 		RainbowYoru = value
 	end)
 
@@ -12425,6 +12577,605 @@ spawn(function()
 		end
 	end)
 
+    Misc:Seperator("Misc")
+
+	   Misc:Toggle("Auto Haki", true,function(vu)
+      _G.AutoHakiBuso = vu
+   end)
+
+     spawn(function()
+      while wait(.1) do
+         if _G.AutoHakiBuso then
+            if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+               game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+            end
+         end
+      end
+     end)
+ 
+ function Click()
+    game:GetService("RunService").RenderStepped:Connect(function()
+                game:GetService'VirtualUser':CaptureController()
+            end)
+			    game:GetService'VirtualUser':Button1Down(Vector2.new(0,1,0,1))
+        end
+
+Misc:Toggle("Anti AFK", true, function()
+local vu = game:GetService("VirtualUser")
+repeat wait() until game:IsLoaded() 
+	game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):ClickButton2(Vector2.new())
+		vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		wait(1)
+		vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   end)
+end)
+
+	Misc:Toggle("Auto Rejoin",true,function(value)
+		_G.AutoRejoin = value
+	end)
+
+	spawn(function()
+	    while wait() do
+	        if _G.AutoRejoin then
+	                getgenv().rejoin = game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
+                        if child.Name == 'ErrorPrompt' and child:FindFirstChild('MessageArea') and child.MessageArea:FindFirstChild("ErrorFrame") then
+                            game:GetService("TeleportService"):Teleport(game.PlaceId)
+                        end
+                     end)
+	            end
+	        end
+	    end)
+    
+    Misc:Toggle("No Clip",_G.NoClip,function()
+        _G.NoClip = value
+    end)
+    
+   Misc:Seperator("Main - Mob")
+    
+    	Misc:Button("Remove Lave",function()
+		for i,v in pairs(game.Workspace:GetDescendants()) do
+			if v.Name == "Lava" then   
+				v:Destroy()
+			end
+		end
+		for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
+			if v.Name == "Lava" then   
+				v:Destroy()
+			end
+		end
+	end)
+
+    Misc:Button("Invisible (lag)",function()
+	game.Players.LocalPlayer.Character.LowerTorso.Root:Destroy()
+end)
+	
+    Misc:Button("Invisible [Remove]",function()
+local removeNametags = true -- remove custom billboardgui nametags from hrp, could trigger anticheat
+
+local plr = game:GetService("Players").LocalPlayer
+local character = plr.Character
+local hrp = character.HumanoidRootPart
+local old = hrp.CFrame
+
+if not character:FindFirstChild("LowerTorso") or character.PrimaryPart ~= hrp then
+return print("unsupported")
+end
+
+if removeNametags then
+local tag = hrp:FindFirstChildOfClass("BillboardGui")
+if tag then tag:Destroy() end
+
+hrp.ChildAdded:Connect(function(item)
+if item:IsA("BillboardGui") then
+task.wait()
+item:Destroy()
+end
+end)
+end
+
+local newroot = character.LowerTorso.Root:Clone()
+hrp.Parent = workspace
+character.PrimaryPart = hrp
+character:MoveTo(Vector3.new(old.X,9e9,old.Z))
+hrp.Parent = character
+task.wait(0.5)
+newroot.Parent = hrp
+hrp.CFrame = old
+end)
+  
+
+	Misc:Button("Max Zoom", function()
+		while wait() do
+			game.Players.LocalPlayer.CameraMaxZoomDistance = 9223372036854718
+			end
+	end)
+
+	Misc:Button("Buddha Big", function()
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+function rm()
+	for i,v in pairs(Character:GetDescendants()) do
+		if v:IsA("BasePart") then
+			if v.Name == "Handle" or v.Name == "Head" then
+				if Character.Head:FindFirstChild("OriginalSize") then
+					Character.Head.OriginalSize:Destroy()
+				end
+			else
+				for i,cav in pairs(v:GetDescendants()) do
+					if cav:IsA("Attachment") then
+						if cav:FindFirstChild("OriginalPosition") then
+							cav.OriginalPosition:Destroy()  
+						end
+					end
+				end
+				v:FindFirstChild("OriginalSize"):Destroy()
+				if v:FindFirstChild("AvatarPartScaleType") then
+					v:FindFirstChild("AvatarPartScaleType"):Destroy()
+				end
+			end
+		end
+	end
+end
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(1)
+end)
+
+	Misc:Button("Kaitun Cap", function(value)
+		local cac = require(game:GetService("Players").LocalPlayer.PlayerGui.Main.UIController.Inventory)
+		local Inventory = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")
+		local Items = {}
+		local RaityLevel = {"Mythical","Legendary","Rare","Uncommon","Common"}
+		local RaityColor =  {
+			["Common"] = Color3.fromRGB(179, 179, 179),
+			["Uncommon"] = Color3.fromRGB(92, 140, 211),
+			["Rare"] =  Color3.fromRGB(140, 82, 255),
+			["Legendary"] = Color3.fromRGB(213, 43, 228) ,
+			["Mythical"] =  Color3.fromRGB(238, 47, 50)
+		}
+		function GetRaity(color)
+			for k,v in pairs(RaityColor) do 
+				if v==color then return k end
+			end
+		end
+
+		for k,v in pairs(Inventory) do 
+			Items[v.Name] = v
+		end
+
+		local total = #getupvalue(cac.UpdateRender,4)
+		local rac = {}
+		local allitem = {}
+		local total2 = 0
+		while total2<total do 
+			local i = 0
+			while i < 25000 and total2<total do 
+				game:GetService("Players").LocalPlayer.PlayerGui.Main.InventoryContainer.Right.Content.ScrollingFrame.CanvasPosition = Vector2.new(0,i)
+				for k,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main.InventoryContainer.Right.Content.ScrollingFrame.Frame:GetChildren()) do 
+					if v:IsA("Frame") and not rac[v.ItemName.Text] and v.ItemName.Visible==true then 
+						local vaihuhu = GetRaity(v.Background.BackgroundColor3)
+						if vaihuhu then
+							print("Rac")
+							if not allitem[vaihuhu] then 
+								allitem[vaihuhu] = {}
+							end
+							table.insert(allitem[vaihuhu],v:Clone())
+						end
+						total2=total2+1
+						rac[v.ItemName.Text] = true
+					end
+				end
+				i=i+20
+			end
+			wait()
+		end
+		function GetXY(vec) 
+			return vec*100
+		end
+
+		local tvk = Instance.new("UIListLayout")
+		tvk.FillDirection = Enum.FillDirection.Vertical
+		tvk.SortOrder = 2
+		tvk.Padding = UDim.new(0,10)
+
+		local Left = Instance.new("Frame",game.Players.LocalPlayer.PlayerGui.BubbleChat)
+		Left.BackgroundTransparency = 1
+		Left.Size = UDim2.new(.5,0,1,0) 
+		tvk.Parent = Left
+
+		local Right = Instance.new("Frame",game.Players.LocalPlayer.PlayerGui.BubbleChat)
+		Right.BackgroundTransparency = 1
+		Right.Size = UDim2.new(.5,0,1,0) 
+		Right.Position = UDim2.new(.6,0,0,0)
+		tvk:Clone().Parent = Right
+		for k,v in pairs(allitem) do 
+			local cac = Instance.new("Frame",Left)
+			cac.BackgroundTransparency = 1
+			cac.Size = UDim2.new(1,0,0,0) 
+			cac.LayoutOrder = table.find(RaityLevel,k)
+
+			local cac2 = Instance.new("Frame",Right)
+			cac2.BackgroundTransparency = 1
+			cac2.Size = UDim2.new(1,0,0,0) 
+			cac2.LayoutOrder = table.find(RaityLevel,k)
+
+			local tvk = Instance.new("UIGridLayout",cac)
+			tvk.CellPadding = UDim2.new(.005,0,.005,0)
+			tvk.CellSize =  UDim2.new(0,70,0,70)
+			tvk.FillDirectionMaxCells = 100
+			tvk.FillDirection = Enum.FillDirection.Horizontal
+
+			local ccc = tvk:Clone()
+			ccc.Parent = cac2
+			for k,v in pairs(v) do 
+				if Items[v.ItemName.Text] and Items[v.ItemName.Text].Mastery then 
+					if v.ItemLine2.Text~="Accessory" then 
+						local bucac = v.ItemName:Clone()
+						bucac.BackgroundTransparency = 1
+						bucac.TextSize = 10
+						bucac.TextXAlignment  = 2
+						bucac.TextYAlignment  = 2
+						bucac.ZIndex  = 5
+						bucac.Text = Items[v.ItemName.Text].Mastery
+						bucac.Size = UDim2.new(.5,0,.5,0)
+						bucac.Position = UDim2.new(.5,0,.5,0)
+						bucac.Parent = v
+					end
+					v.Parent = cac
+				elseif v.ItemLine2.Text == "Blox Fruit" then 
+					v.Parent = cac2
+				end
+			end
+			cac.AutomaticSize = 2
+			cac2.AutomaticSize = 2
+		end
+		local ListHuhu = {
+			["Superhuman"] = Vector2.new(3,2),
+			["GodHuman"] = Vector2.new(3,2),
+			["DeathStep"] = Vector2.new(4,3),
+			["ElectricClaw"] = Vector2.new(2,0),
+			["SharkmanKarate"] = Vector2.new(0,0),
+			["DragonTalon"] = Vector2.new(1,5)
+		}
+		local MeleeG = Instance.new("Frame",Left)
+		MeleeG.BackgroundTransparency = 1
+		MeleeG.Size = UDim2.new(1,0,0,0) 
+		MeleeG.LayoutOrder = table.find(RaityLevel,k)
+		MeleeG.AutomaticSize=2
+		MeleeG.LayoutOrder = 100
+		local tvk = Instance.new("UIGridLayout",MeleeG)
+		tvk.CellPadding = UDim2.new(.005,0,.005,0)
+		tvk.CellSize =  UDim2.new(0,70,0,70)
+		tvk.FillDirectionMaxCells = 100
+		tvk.FillDirection = Enum.FillDirection.Horizontal
+
+		local cac = {"Superhuman","ElectricClaw","DragonTalon","SharkmanKarate","DeathStep","GodHuman"}
+		for k,v in pairs(cac) do
+			if ListHuhu[v] and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buy"..v,true) == 1 then 
+				local huhu = Instance.new("ImageLabel",MeleeG)
+				huhu.Image = "rbxassetid://9945562382"
+				huhu.ImageRectSize = Vector2.new(100,100)
+				huhu.ImageRectOffset = ListHuhu[v]*100
+			end
+		end
+		function formatNumber(v)
+			return tostring(v):reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
+		end
+		game:GetService("Players").LocalPlayer.PlayerGui.Main.Beli.Position = UDim2.new(0,800,0,500)
+		game:GetService("Players").LocalPlayer.PlayerGui.Main.Level.Position = UDim2.new(0,800,0,550)
+
+		local thieunang = game:GetService("Players").LocalPlayer.PlayerGui.Main.Fragments:Clone()
+		thieunang.Parent = game:GetService("Players").LocalPlayer.PlayerGui.BubbleChat
+		thieunang.Position = UDim2.new(0,800,0.63,0)
+		local n = formatNumber(game.Players.LocalPlayer.Data.Fragments.Value)
+		thieunang.Text = "Ã†â€™"..n
+		print("Done")
+		pcall(function() 
+			game:GetService("Players").LocalPlayer.PlayerGui.Main.MenuButton:Destroy()
+		end)
+		pcall(function() 
+			game:GetService("Players").LocalPlayer.PlayerGui.Main.HP:Destroy()
+		end)
+		pcall(function() 
+			game:GetService("Players").LocalPlayer.PlayerGui.Main.Energy:Destroy()
+		end)
+		for k,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main:GetChildren()) do 
+			if v:IsA("ImageButton") then 
+				v:Destroy()
+			end
+		end
+		pcall(function() 
+			game:GetService("Players").LocalPlayer.PlayerGui.Main.Compass:Destroy()
+		end)
+	end)
+
+    Misc:Seperator("Codes")
+    
+    local x2Code = {
+        "FUDD10",
+        "BIGNEWS",
+        "THEGREATACE",
+        "SUB2GAMERROBOT_EXP1",
+        "StrawHatMaine",
+        "Sub2OfficialNoobie",
+        "SUB2NOOBMASTER123",
+        "Sub2Daigrock",
+        "Axiore",
+        "TantaiGaming",
+        "JCWK",
+        "Starcodeheo",
+        "Sub2Fer999",
+        "Magicbus",
+        "Enyu_is_Pro",
+        "Bluxxy",
+        "KittGaming",
+       }
+    
+    Misc:Button("Redeem All Codes",function()
+        function RedeemCode(value)
+            game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
+        end
+        for i,v in pairs(x2Code) do
+            RedeemCode(v)
+        end
+    end)
+    
+    Misc:Dropdown("Selected Codes",{"FUDD10","KittGaming","BIGNEWS","THEGREATACE","SUB2GAMERROBOT_EXP1","StrawHatMaine","Sub2OfficialNoobie","SUB2NOOBMASTER123","Sub2Daigrock","Axiore","TantaiGaming","JCWK","Starcodeheo","Sub2Fer999","Magicbus","Enyu_is_Pro","Bluxxy"},{""},function(value)
+        _G.CodeSelect = value
+    end)
+    
+    Misc:Button("Redeem Code",function()
+        game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(_G.CodeSelect)
+    end)
+    
+    Misc:Seperator("State")
+    
+    Misc:Dropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},{""},function(value)
+        _G.SelectStateHaki = value
+    end)
+    
+    Misc:Button("Change Buso Haki State",function()
+        if _G.SelectStateHaki == "State 0" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",0)
+        elseif _G.SelectStateHaki == "State 1" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",1)
+        elseif _G.SelectStateHaki == "State 2" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",2)
+        elseif _G.SelectStateHaki == "State 3" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",3)
+        elseif _G.SelectStateHaki == "State 4" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",4)
+        elseif _G.SelectStateHaki == "State 5" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",5)
+        end
+    end)
+    
+    Misc:Seperator("Boost FPS")
+    
+    local a = game.Lighting
+    local c = Instance.new("ColorCorrectionEffect", a)
+    local e = Instance.new("ColorCorrectionEffect", a)
+    OldAmbient = a.Ambient
+    OldBrightness = a.Brightness
+    OldColorShift_Top = a.ColorShift_Top
+    OldBrightnessc = c.Brightness
+    OldContrastc = c.Contrast
+    OldTintColorc = c.TintColor
+    OldTintColore = e.TintColor
+
+    Misc:Toggle("RTX Mode",_G.RTXMode,function(value)
+        _G.RTXMode = value
+        if not _G.RTXMode then return end
+        while _G.RTXMode do wait()
+            a.Ambient = Color3.fromRGB(33, 33, 33)
+            a.Brightness = 0.3
+            c.Brightness = 0.176
+            c.Contrast = 0.39
+            c.TintColor = Color3.fromRGB(217, 145, 57)
+            game.Lighting.FogEnd = 999
+            if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight") then
+                local a2 = Instance.new("PointLight")
+                a2.Parent = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                a2.Range = 15
+                a2.Color = Color3.fromRGB(217, 145, 57)
+            end
+            if not _G.RTXMode then
+                a.Ambient = OldAmbient
+                a.Brightness = OldBrightness
+                a.ColorShift_Top = OldColorShift_Top
+                c.Contrast = OldContrastc
+                c.Brightness = OldBrightnessc
+                c.TintColor = OldTintColorc
+                e.TintColor = OldTintColore
+                game.Lighting.FogEnd = 2500
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("PointLight"):Destroy()
+            end
+        end
+    end)
+    
+    Misc:Toggle("Remove Fog",RemoveFog,function(value)
+        RemoveFog = value
+        if not RemoveFog then return end
+        while RemoveFog do wait()
+            game.Lighting.FogEnd = 9e9
+            if not RemoveFog then
+                game.Lighting.FogEnd = 2500
+            end
+        end
+    end)
+    
+Misc:Toggle("Super FPS boost",false,function(value)
+		 _G.SuperFPSboost = value
+	end)
+
+	spawn(function()
+		while wait() do
+	   if _G.SuperFPSboost then
+		for i,v in pairs(game.Workspace.Map:GetDescendants()) do
+			if v.Name == "Tavern" or v.Name == "SmileFactory" or v.Name == "Tree" or v.Name == "Rocks" or v.Name == "PartHouse" or v.Name == "Hotel" or v.Name == "WallPiece" or v.Name == "MiddlePillars" or v.Name == "Cloud" or v.Name == "PluginGrass" or v.Name == "BigHouse" or v.Name == "SmallHouse" or v.Name == "Detail" then
+				v:Destroy()
+			end
+		end 
+		for i,v in pairs(game.ReplicatedStorage.Unloaded:GetDescendants()) do
+			if v.Name == "Tavern" or v.Name == "SmileFactory" or v.Name == "Tree" or v.Name == "Rocks" or v.Name == "PartHouse" or v.Name == "Hotel" or v.Name == "WallPiece" or v.Name == "MiddlePillars" or v.Name == "Cloud" or v.Name == "PluginGrass" or v.Name == "BigHouse" or v.Name == "SmallHouse" or v.Name == "Detail" then
+				v:Destroy()
+			end
+		end
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v:IsA("Accessory") or v.Name == "Pants" or v.Name == "Shirt" then
+				v:Destroy()
+			end
+		end
+		local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+		local g = game
+		local w = g.Workspace
+		local l = g.Lighting
+		local t = w.Terrain
+		t.WaterWaveSize = 0
+		t.WaterWaveSpeed = 0
+		t.WaterReflectance = 0
+		t.WaterTransparency = 0
+		l.GlobalShadows = false
+		l.FogEnd = 9e9
+		l.Brightness = 0
+		settings().Rendering.QualityLevel = "Level01"
+		for i, v in pairs(g:GetDescendants()) do
+			if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+				v.Material = "Plastic"
+				v.Reflectance = 0
+			elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+				v.Transparency = 1
+			elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+				v.Lifetime = NumberRange.new(0)
+			elseif v:IsA("Explosion") then
+				v.BlastPressure = 1
+				v.BlastRadius = 1
+			elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+				v.Enabled = false
+			elseif v:IsA("MeshPart") then
+				v.Material = "Plastic"
+				v.Reflectance = 0
+				v.TextureID = 10385902758728957
+			end
+		end
+		for i, e in pairs(l:GetChildren()) do
+			if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+				e.Enabled = false
+			end
+		end
+	end
+end
+end)
+if not game:GetService("UserInputService").TouchEnabled and not game:GetService("UserInputService").KeyboardEnabled == false then
+    Misc:Slider("FPS Lock",0,499,60,function(K)setfpscap(tonumber(K));
+    end)
+    else
+Misc:Slider("FPS Lock",0,499,60,function(K)setfpscap(tonumber(K));
+    end)
+end
+  
+    Misc:Button("FPS Boost",function()
+        pcall(function()
+            game:GetService("Lighting").FantasySky:Destroy()
+            local g = game
+            local w = g.Workspace
+            local l = g.Lighting
+            local t = w.Terrain
+            t.WaterWaveSize = 0
+            t.WaterWaveSpeed = 0
+            t.WaterReflectance = 0
+            t.WaterTransparency = 0
+            l.GlobalShadows = false
+            l.FogEnd = 9e9
+            l.Brightness = 0
+            settings().Rendering.QualityLevel = "Level01"
+            for i, v in pairs(g:GetDescendants()) do
+                if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then 
+                    v.Material = "Plastic"
+                    v.Reflectance = 0
+                elseif v:IsA("Decal") or v:IsA("Texture") then
+                    v.Transparency = 1
+                elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+                    v.Lifetime = NumberRange.new(0)
+                elseif v:IsA("Explosion") then
+                    v.BlastPressure = 1
+                    v.BlastRadius = 1
+                elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+                    v.Enabled = false
+                elseif v:IsA("MeshPart") then
+                    v.Material = "Plastic"
+                    v.Reflectance = 0
+                    v.TextureID = 10385902758728957
+                end
+            end
+            for i, e in pairs(l:GetChildren()) do
+                if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+                    e.Enabled = false
+                end
+            end
+            for i, v in pairs(game:GetService("Workspace").Camera:GetDescendants()) do
+                if v.Name == ("Water;") then
+                    v.Transparency = 1
+                    v.Material = "Plastic"
+                end
+            end
+        end)
+    end)
+
+     Misc:Button("Unlock Portal",function()
+        _G.UnlockPortal = true
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if _G.UnlockPortal == true then
+                    for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Notifications:GetChildren()) do
+                        if v.Name == "NotificationTemplate" then
+                            if string.find(v.Text,"cannot") then
+                                v:Destroy()
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if _G.UnlockPortal == true then
+                    CastlePostoMansion = CFrame.new(-5084.8447265625, 316.48101806641, -3145.3752441406)
+                    MansiontoCastlePos = CFrame.new(-12464.596679688, 376.30590820312, -7567.2626953125)
+                    Castletophydra = CFrame.new(-5095.33984375, 316.48101806641, -3168.3134765625)
+                    HydratoCastle = CFrame.new(5741.869140625, 611.94750976562, -282.61154174805)
+                    if (CastlePostoMansion.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-12471.169921875, 374.94024658203, -7551.677734375))
+                    end
+                    if (MansiontoCastlePos.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5072.08984375, 314.5412902832, -3151.1098632812))
+                    end
+                    if (Castletophydra.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(5748.7587890625, 610.44982910156, -267.81704711914))
+                    end
+                    if (HydratoCastle.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5072.08984375, 314.5412902832, -3151.1098632812))
+                    end
+                end
+            end)
+        end
+    end)
+    
+    Misc:Button("Unlock FPS",function()
+        setfpscap(500)
+    end)
+
     Misc:Button("FPS delete color",function()
 for _,v in pairs(workspace:GetDescendants()) do
 if v.ClassName == "Part"
@@ -12449,15 +13200,51 @@ v.Material = "Plastic"
 end
 end
 end)
-    Misc:Button("Auto Chest",function(Chest)
-        local Chest loadstring(game:HttpGet('https://raw.githubusercontent.com/HaixD/roblox/main/autochest'))()
+
+    Misc:Seperator("Race Boost")
+
+    Misc:Toggle("Auto Active Race",_G.AutoAgility,function(value)
+        _G.AutoAgility = value
     end)
-            
-    Misc:Button("Unlock FPS",function()
-        setfpscap(100)
+    
+    spawn(function()
+        pcall(function()
+            while wait() do
+                if _G.AutoAgility then
+                    game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("ActivateAbility")
+                end
+            end
+        end)
     end)
-    Misc:Button("Invisible",function()
-        game:GetService("Players").LocalPlayer.Character.LowerTorso:Destroy()
+
+	if game.workspace:FindFirstChild("WaterWalk") then
+		game.workspace:FindFirstChild("WaterWalk"):Destroy()
+	end
+	platform = Instance.new("Part")
+	platform.Name = "WaterWalk"
+	platform.Size = Vector3.new(math.huge, 1, math.huge)
+	platform.Transparency = 1
+	platform.Anchored = true
+	platform.Parent = game.workspace
+Misc:Toggle("Walk on Water",true,function(value)
+        _G.WalkWater = value
+end)
+  
+spawn(function()
+			while task.wait() do
+				pcall(function()
+					if _G.WalkWater then
+						game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,112,1000)
+					else
+						game:GetService("Workspace").Map["WaterBase-Plane"].Size = Vector3.new(1000,80,1000)
+					end
+				end)
+			end
+		end)
+
+  Misc:Toggle("Dodge No Cooldown",false,function(value)
+        nododgecool = value
+        NoDodgeCool()
     end)
 
 
