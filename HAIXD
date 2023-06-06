@@ -123,7 +123,7 @@ function Update:Window(text,logo,keybind)
 	Name.Parent = Main
 	Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Name.BackgroundTransparency = 1.000
-	Name.Position = UDim2.new(0.97756112, 0, 0, 0)
+	Name.Position = UDim2.new(0.097756112, 0, 0, 0)
 	Name.Size = UDim2.new(0, 50, 0, 27)
 	Name.Font = Enum.Font.GothamSemibold
 	Name.Text = "Hai Hub"
