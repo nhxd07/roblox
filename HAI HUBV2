@@ -342,6 +342,7 @@ UIPageLayout.TouchInputEnabled = false
 local Ui = {}
 function Ui:AddTab(text,options)
 local logo1 = options.LogoTab
+local text = options.TextMenu
 
 local TabButton = Instance.new("TextButton")
 TabButton.Name = "TabButton"
@@ -353,7 +354,7 @@ TabButton.Position = UDim2.new(0, 100, 0, 0)
 TabButton.Font = Enum.Font.GothamSemibold
 TabButton.TextColor3 = Color3.fromRGB(225, 225, 225)
 TabButton.TextSize = 15.000
-TabButton.Text = text
+TabButton.Text = "text"..text
 TabButton.TextTransparency = 0.500
 
 local UIStroke6 = Instance.new("UIStroke")
@@ -1795,7 +1796,7 @@ local Swords = Farm:AddPage()
 local Swords1 = Farm:AddPage()
 
 local Stats1 = PP:AddTab({
-  Label = "Main",
+  TextMenu = "Main"
 })
 
 local Stats2 = Stats1:AddPage()
