@@ -1399,7 +1399,7 @@ Main:Button("Rejoin Server", "Rejoin on Server", function()
   game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
   end)
 
-Main:Button("servers Hop", function()
+Main:Button("Servers Hop", function()
   Hop()
   end)
 function Hop()
