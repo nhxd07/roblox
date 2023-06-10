@@ -96,17 +96,17 @@ getgenv()['JsonDecode'] = function(msg)
     return game:GetService("HttpService"):JSONDecode(msg)
 end
 getgenv()['Check_Setting'] = function(Name)
-    if not _G.Dis and not isfolder('Nub Saves') then
-        makefolder('Nub Saves')
+    if not _G.Dis and not isfolder('Hai Saves') then
+        makefolder('Hai Saves')
     end
-    if not _G.Dis and not isfile('Nub Saves/'..Name..'.json') then
-        writefile('Nub Saves/'..Name..'.json',JsonEncode(_G.Setting_table))
+    if not _G.Dis and not isfile('Hai Saves/'..Name..'.json') then
+        writefile('Hai Saves/'..Name..'.json',JsonEncode(_G.Setting_table))
     end
 end
 
 getgenv()['Get_Setting'] = function(Name)
-    if not _G.Dis and isfolder('Nub Saves') and isfile('Nub Saves/'..Name..'.json') then
-        _G.Setting_table = JsonDecode(readfile('Nub Saves/'..Name..'.json'))
+    if not _G.Dis and isfolder('Hai Saves') and isfile('Hai Saves/'..Name..'.json') then
+        _G.Setting_table = JsonDecode(readfile('Hai Saves/'..Name..'.json'))
         return _G.Setting_table
 	elseif not _G.Dis then
         Check_Setting(Name)
@@ -114,8 +114,8 @@ getgenv()['Get_Setting'] = function(Name)
 end
 
 getgenv()['Update_Setting'] = function(Name)
-    if not _G.Dis and isfolder('Nub Saves') and isfile('Nub Saves/'..Name..'.json') then
-        writefile('Nub Saves/'..Name..'.json',JsonEncode(_G.Setting_table))
+    if not _G.Dis and isfolder('Hai Saves') and isfile('Hai Saves/'..Name..'.json') then
+        writefile('Hai Saves/'..Name..'.json',JsonEncode(_G.Setting_table))
 	elseif not _G.Dis then
         Check_Setting(Name)
     end
@@ -125,7 +125,7 @@ end
 local DINOHUB = Instance.new("ScreenGui")
 local OPENCLOSE = Instance.new("TextButton")
 
-DINOHUB.Name = "Nub Hub"
+DINOHUB.Name = "HAI HUB"
 DINOHUB.Parent = game.CoreGui        --CoreGui
 DINOHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -193,6 +193,7 @@ local Update = {}
 local pfp = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
 
 function Update:Window(text,logo,keybind)
+    local osfunc = {}
 	local uihide = false
 	local abc = false
 	local logo = logo or 7072707647
@@ -202,7 +203,7 @@ function Update:Window(text,logo,keybind)
 	local executor = identifyexecutor() or "Unknown"
 	
 	local SOMEXHUB = Instance.new("ScreenGui")
-	SOMEXHUB.Name = "Nub Hub"
+	SOMEXHUB.Name = "HAI HUB"
 	SOMEXHUB.Parent = game.CoreGui
 	SOMEXHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
