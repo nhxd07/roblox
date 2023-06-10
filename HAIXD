@@ -11755,11 +11755,11 @@ RaceV4:Button("Teleport To Top Of GreatTree",function()
     end)
     
 RaceV4:Button("Teleport To Lever Pull",function()
-  Tween(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
+  Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734)
 end)
 
 RaceV4:Button("Teleport To Acient One (Must Be in Temple Of Time!)",function()
-  Tween(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
+  Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375)
 end)
    
    RaceV4:Button("Unlock Lever.", function()
@@ -11825,27 +11825,27 @@ RaceV4:Toggle("Disabled Inf Stairs", nil, function(value)
 end)
  
   RaceV4:Button("Teleport Cyborg Door (Must Be in Temple Of Time!)",function()
-  Tween(CFrame.new(28492.4140625, 14894.4267578125, -422.1100158691406))
+    Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28492.4140625, 14894.4267578125, -422.1100158691406)
   end)
   
   RaceV4:Button("Teleport Fish Door (Must Be in Temple Of Time!)",function()
-  Tween(CFrame.new(28224.056640625, 14889.4267578125, -210.5872039794922))
+    Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28224.056640625, 14889.4267578125, -210.5872039794922)
   end)
   
   RaceV4:Button("Teleport Ghoul Door (Must Be in Temple Of Time!)",function()
-  Tween(CFrame.new(28672.720703125, 14889.1279296875, 454.5961608886719))
+    Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28672.720703125, 14889.1279296875, 454.5961608886719)
   end)
   
   RaceV4:Button("Teleport Human Door (Must Be in Temple Of Time!)",function()
-  Tween(CFrame.new(29237.294921875, 14889.4267578125, -206.94955444335938))
+    Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(29237.294921875, 14889.4267578125, -206.94955444335938)
   end)
   
   RaceV4:Button("Teleport Mink Door (Must Be in Temple Of Time!)",function()
-  Tween(CFrame.new(29020.66015625, 14889.4267578125, -379.2682800292969))
+    Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(29020.66015625, 14889.4267578125, -379.2682800292969)
   end)
   
   RaceV4:Button("Teleport Sky Door (Must Be in Temple Of Time!)",function()
-  Tween(CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188))
+    Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188)
   end)
 
   RaceV4:Seperator("🍃 Auto Complete Trials 🍃")
@@ -11853,8 +11853,6 @@ end)
   RaceV4:Button("Auto Upgrade Tier",function(t)
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('UpgradeRace','Buy')
   end)
-  
-  RaceV4:Seperator("Auto Trials")
   
   RaceV4:Toggle("Auto Complete Ghoul/Human Trial",AutoCom,function(value)
  AutoCom = value  
