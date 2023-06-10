@@ -3459,7 +3459,7 @@ spawn(function()
     if v.Humanoid.Health <= 0 and v.Humanoid:FindFirstChild("Animator") then
     v.Humanoid.Animator:Destroy()
     end
-    until not AutoFarmQuest or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
+    until not _G.Auto_Farm_Level or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
     end
     end
     end
