@@ -1554,7 +1554,7 @@ local WeaponList = {
   "Melee","Devil Fruit","Sword","Gun"
 }
 
-Main:Dropdown("Select Weapon",WeaponList,{""},function(weaponfunc)
+Main:Dropdown("Select Weapon",WeaponList,function(weaponfunc)
   SelectWeapon = weaponfunc
   end)
 
@@ -1607,7 +1607,7 @@ end)
 --// Fast Attack
 local AttackList = {"Slow", "Default", "Fast", "Super Fast (Risk)"}
 _G.FastAttackDelay = "Default"
-Main:Dropdown("Fast Attack Mode", AttackList, {""},function(adl)
+Main:Dropdown("Fast Attack Mode", AttackList,function(adl)
     _G.FastAttackDelay = adl
 end)
 spawn(function()
@@ -1634,7 +1634,7 @@ FarmTable = {
 "Behind"
 }
 
-Main:Dropdown("Select Farm Type", FarmTable,{""},function(value)
+Main:Dropdown("Select Farm Type", FarmTable,function(value)
     AutoFarmType = value
 end)
 spawn(function()
@@ -1673,6 +1673,8 @@ end
 task.wait()
 end
 end)
+
+DisFarm = 20
 
 Main:Textbox("Distance", DisFarm, function(a)
     DisFarm = a
