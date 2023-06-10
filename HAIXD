@@ -199,6 +199,7 @@ function Update:Window(text,logo,keybind)
 	local currentpage = ""
 	local keybind = keybind or Enum.KeyCode.RightControl
 	local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
+	local executor = identifyexecutor() or "Unknown"
 	
 	local SOMEXHUB = Instance.new("ScreenGui")
 	SOMEXHUB.Name = "Nub Hub"
@@ -237,7 +238,7 @@ function Update:Window(text,logo,keybind)
 	Logo.BackgroundTransparency = 1.000
 	Logo.Position = UDim2.new(0, 10, 0, 1)
 	Logo.Size = UDim2.new(0, 25, 0, 25)
-	Logo.Image = "rbxassetid://7072707647"
+	Logo.Image = "rbxassetid://13438920682"
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
@@ -250,73 +251,57 @@ function Update:Window(text,logo,keybind)
 	Name.Text = text
 	Name.TextColor3 = Color3.fromRGB(225, 225, 225)
 	Name.TextSize = 17.000
-
-	local Hub = Instance.new("TextLabel")
-	Hub.Name = "Hub"
-	Hub.Parent = Top
-	Hub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Hub.BackgroundTransparency = 1.000
-	Hub.Position = UDim2.new(0, 086, 0, 0)
-	Hub.Size = UDim2.new(0, 81, 0, 27)
-	Hub.Font = Enum.Font.GothamSemibold
-	Hub.Text = ".xyz"
-	Hub.TextColor3 = Color3.fromRGB(255, 20, 0)
-	Hub.TextSize = 17.000
-	Hub.TextXAlignment = Enum.TextXAlignment.Left
-
-local version = game:HttpGet("https://raw.githubusercontent.com/accountnop/magmaisgay/main/version")
-local ver = Instance.new("TextLabel")
-	ver.Name = "ver"
-	ver.Parent = Top
-	ver.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ver.BackgroundTransparency = 1.000
-	ver.Position = UDim2.new(0.697561002, 0, 0, 0)
-	ver.Size = UDim2.new(0, 81, 0, 27)
-	ver.Font = Enum.Font.RobotoMono
-	ver.Text = "Version: "..version
-	ver.TextColor3 = Color3.fromRGB(255,255,255)
-	ver.TextSize = 13.000
-	ver.TextXAlignment = Enum.TextXAlignment.Left
-	local ver1 = Instance.new("TextLabel")
-	ver1.Name = "ver"
-	ver1.Parent = Top
-	ver1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ver1.BackgroundTransparency = 1.000
-	ver1.Position = UDim2.new(0.497561002, 0, 0, 0)
-	ver1.Size = UDim2.new(0, 81, 0, 27)
-	ver1.Font = Enum.Font.RobotoMono
-	ver1.Text = "N/A"
-	ver1.TextColor3 = Color3.fromRGB(255,255,255)
-	ver1.TextSize = 13.000
-	ver1.TextXAlignment = Enum.TextXAlignment.Left
-	 spawn(function()
-	while wait() do
-	ver1.Text = "Hours:"..os.date("%H")..":"..os.date("%M")..":"..os.date("%S")
-	end
-	end)
-
-	local BindButton = Instance.new("TextButton")
-	BindButton.Name = "BindButton"
-	BindButton.Parent = Top
-	BindButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	BindButton.BackgroundTransparency = 1.000
-	BindButton.Position = UDim2.new(0.847561002, 0, 0, 0)
-	BindButton.Size = UDim2.new(0, 100, 0, 27)
-	BindButton.Font = Enum.Font.GothamSemibold
-	BindButton.Text = "[ "..string.gsub(tostring(keybind),"Enum.KeyCode.","").." ]"
-	BindButton.TextColor3 = Color3.fromRGB(100, 100, 100)
-	BindButton.TextSize = 11.000
 	
-	BindButton.MouseButton1Click:Connect(function ()
-		BindButton.Text = "[ ... ]"
-		local inputwait = game:GetService("UserInputService").InputBegan:wait()
-		local shiba = inputwait.KeyCode == Enum.KeyCode.Unknown and inputwait.UserInputType or inputwait.KeyCode
+ local Exe = Instance.new("TextLabel")
+ Exe.Name = "Name"
+ Exe.Parent = Top
+ Exe.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Exe.BackgroundTransparency = 1.000
+ Exe.Position = UDim2.new(0.3509756112, 0, 0, 0)
+ Exe.Size = UDim2.new(0, 61, 0, 27)
+ Exe.Font = Enum.Font.GothamBold
+ Exe.Text = "Executor :"..executor
+ Exe.TextColor3 = Color3.fromRGB(255, 255, 255)
+ Exe.TextSize = 14.000
 
-		if shiba.Name ~= "Focus" and shiba.Name ~= "MouseMovement" then
-			BindButton.Text = "[ "..shiba.Name.." ]"
-			yoo = shiba.Name
-		end
-	end)
+local ServerTime = Instance.new("TextLabel")
+ServerTime.Name = "ServerTime"
+ServerTime.Parent = Top
+ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
+ServerTime.BackgroundTransparency = 1.000
+ServerTime.Position = UDim2.new(0.897561002, 0, 0, 0)
+ServerTime.Size = UDim2.new(0, 225, 0, 25)
+ServerTime.Font = Enum.Font.GothamSemibold
+ServerTime.Text = ""
+ServerTime.TextSize = 11.000
+ServerTime.TextColor3 = Color3.fromRGB(255,255,255)
+ServerTime.TextXAlignment = Enum.TextXAlignment.Left
+
+function osfunc:Set(textadd)
+ServerTime.Text = textadd
+end
+
+local function UpdateOS()
+local date = os.date("*t")
+local hour = (date.hour) % 24
+local ampm = hour < 12 and "AM" or "PM"
+local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
+local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
+local LocalizationService = game:GetService("LocalizationService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local name = player.Name
+local result, code = pcall(function()
+ return LocalizationService:GetCountryRegionForPlayerAsync(player)
+ end)
+osfunc:Set(datetime.." - "..timezone.." [ " .. code .. " ]")
+end
+spawn(function()
+ while true do
+ UpdateOS()
+ game:GetService("RunService").RenderStepped:Wait()
+ end
+ end)
 
 	local Tab = Instance.new("Frame")
 	Tab.Name = "Tab"
