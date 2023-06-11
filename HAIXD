@@ -270,7 +270,7 @@ ServerTime.Name = "ServerTime"
 ServerTime.Parent = Top
 ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
 ServerTime.BackgroundTransparency = 1.000
-ServerTime.Position = UDim2.new(0.897561002, 0, 0, 0)
+ServerTime.Position = UDim2.new(0.707561002, 0, 0, 0)
 ServerTime.Size = UDim2.new(0, 225, 0, 25)
 ServerTime.Font = Enum.Font.GothamSemibold
 ServerTime.Text = ""
@@ -1246,10 +1246,10 @@ ScreenGui1.Parent = game.CoreGui
 ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ImageButton1.Parent = ScreenGui1
-ImageButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageButton1.BorderSizePixel = 0
 ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-ImageButton1.Size = UDim2.new(0, 50, 0, 50)
+ImageButton1.Size = UDim2.new(0, 40, 0, 40)
 ImageButton1.Draggable = true
 ImageButton1.Image = "http://www.roblox.com/asset/?id=13438920682"
 ImageButton1.MouseButton1Down:connect(function()
@@ -1272,6 +1272,14 @@ Misc = Library:Tab("Misc",11447063791)
 RaceV4 = Library:Tab("RaceV4",11446900930)
 
 Main:Seperator("Server")
+
+PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+spawn(function()
+    while wait() do
+        PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+        wait(5)
+    end
+end)
 
 Time = Main:Label("Executer Time")
 
@@ -3173,7 +3181,7 @@ end)
 
 Main:Dropdown("Select Mode Farm", {
  "Level Farm","No Quest","Near Farm Mode"
-},{""},function(value)
+},function(value)
  _G.Select_Mode_Farm = value
 end)
 
@@ -3827,7 +3835,7 @@ end
 
 Main:Seperator("👥 Other Mobs 👥")
 
-Main:Dropdown("Select Monster",tableMon,{""}, function(monsterlistfunc)
+Main:Dropdown("Select Monster",tableMon, function(monsterlistfunc)
   SelectMonster = monsterlistfunc
   end)
 
@@ -3973,7 +3981,7 @@ MaterialList = {
 }
 end
 
-Main:Dropdown('Select Material', MaterialList, {""}, function(matelist)
+Main:Dropdown('Select Material', MaterialList, function(matelist)
   SelectMaterial = matelist
   end)
 
@@ -4076,7 +4084,7 @@ end
 end
 end
 
-local selectedBoss = Main:Dropdown('Select Boss', Boss, {""},function(bosslist)
+local selectedBoss = Main:Dropdown('Select Boss', Boss,function(bosslist)
   SelectBoss = bosslist
   end)
 
@@ -4224,7 +4232,7 @@ Main:Seperator("🍃 Mastery Farm 🍃")
 local MasteryType = {
   'Quest', 'No Quest', 'Boss', 'Nearest'
 }
-Main:Dropdown('Select type', MasteryType,{""},function(typefunc)
+Main:Dropdown('Select type', MasteryType,function(typefunc)
   TypeMastery = typefunc
   end)
 
@@ -7758,7 +7766,7 @@ for i,v in pairs(game.Players:GetChildren()) do
     table.insert(PlayerList ,v.Name)
 end
 
-local SelectedPly = Combat:Dropdown('Player List', PlayerList,{""}, function(SelectPlyfunc)
+local SelectedPly = Combat:Dropdown('Player List', PlayerList, function(SelectPlyfunc)
     SelectPly = SelectPlyfunc
 end)
 
@@ -8375,7 +8383,7 @@ end)
             "Dark Step", 
             "Electro",
             "Fishman Karate"
-            },{""},function(value)
+            },function(value)
             _G.SelectNPC = value
         end)
     end
@@ -8400,7 +8408,7 @@ end)
             "El Admin",
             "El Rodolfo",
             "Arowe"
-            },{""},function(value)
+            },function(value)
             _G.SelectNPC = value
         end)
     end
@@ -8418,7 +8426,7 @@ end)
             "Elite Hunter",
             "Player Hunter",
             "Uzoth"
-            },{""},function(value)
+            },function(value)
             _G.SelectNPC = value
         end)
     end
@@ -9327,7 +9335,7 @@ end
 
 if World2 or World3 then
     
-    Dungeon:Dropdown("Select Chips",{"Flame","Ice","Quake","Light","Dark","String","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix","Dough"},{""},function(value)
+    Dungeon:Dropdown("Select Chips",{"Flame","Ice","Quake","Light","Dark","String","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix","Dough"},function(value)
         _G.SelectChip = value
     end)
                                                                                             
@@ -9866,7 +9874,7 @@ function UpdateIslandESP()
     }
     
     _G.SelectFruit = ""
-    Fruit:Dropdown("Select Fruits Sniper",FruitList,{""},function(value)
+    Fruit:Dropdown("Select Fruits Sniper",FruitList,function(value)
         _G.SelectFruit = value
     end)
     
@@ -9876,7 +9884,7 @@ function UpdateIslandESP()
 
     Fruit:Seperator("⚙️ Others ⚙️")
     
-    Fruit:Dropdown("Select Fruits Eat",FruitList,{""},function(value)
+    Fruit:Dropdown("Select Fruits Eat",FruitList,function(value)
         _G.SelectFruitEat = value
     end)
     
@@ -10119,7 +10127,7 @@ spawn(function()
     end
 end)
 
-Shop:Dropdown("Select Boats",BoatList,{""},function(value)
+Shop:Dropdown("Select Boats",BoatList,function(value)
     SelectBoat = value
 end)
 
@@ -11181,7 +11189,7 @@ end)
         end
     end)
     
-    Misc:Dropdown("Selected Codes",{"FUDD10","KittGaming","BIGNEWS","THEGREATACE","SUB2GAMERROBOT_EXP1","StrawHatMaine","Sub2OfficialNoobie","SUB2NOOBMASTER123","Sub2Daigrock","Axiore","TantaiGaming","JCWK","Starcodeheo","Sub2Fer999","Magicbus","Enyu_is_Pro","Bluxxy"},{""},function(value)
+    Misc:Dropdown("Selected Codes",{"FUDD10","KittGaming","BIGNEWS","THEGREATACE","SUB2GAMERROBOT_EXP1","StrawHatMaine","Sub2OfficialNoobie","SUB2NOOBMASTER123","Sub2Daigrock","Axiore","TantaiGaming","JCWK","Starcodeheo","Sub2Fer999","Magicbus","Enyu_is_Pro","Bluxxy"},function(value)
         _G.CodeSelect = value
     end)
     
@@ -11191,7 +11199,7 @@ end)
     
     Misc:Seperator("📊 State 📊")
     
-    Misc:Dropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},{""},function(value)
+    Misc:Dropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},function(value)
         _G.SelectStateHaki = value
     end)
     
