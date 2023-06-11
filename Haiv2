@@ -1,7 +1,7 @@
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/ui"))()
 local Window = library:CreateWindow("HAI HUB - BLOX FRUIT", "i suck at scripting", 10044538000)
-local Tab = Window:CreateTab("Scripts")
-local Page = Tab:CreateFrame("Autofarm")
+local Page = Tab:CreateFrame("Home")
+local Main = Tab:CreateFrame("Main")
 
 Toggle = Page:CreateToggle("Start Farming", "yay", function(boob)
 getgenv().toggle = boob
@@ -43,3 +43,7 @@ Button = Page:CreateButton("Anti Afk", "why am i making this a button? idk", fun
         v:Disable()
     end
 end)
+
+Slider = Main:CreateSlider("Speed Hack",true,function(speed)
+  game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
+  end)
