@@ -1246,7 +1246,7 @@ ScreenGui1.Parent = game.CoreGui
 ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ImageButton1.Parent = ScreenGui1
-ImageButton1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton1.BackgroundColor3 = Color3.fromRGB(255, 255, 255, 0)
 ImageButton1.BorderSizePixel = 0
 ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton1.Size = UDim2.new(0, 40, 0, 40)
@@ -1273,7 +1273,7 @@ RaceV4 = Library:Tab("RaceV4",11446900930)
 
 Main:Seperator("Server")
 
-PlayerServer = Home:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
+PlayerServer = Main:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
 spawn(function()
     while wait() do
         PlayerServer:Refresh("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
