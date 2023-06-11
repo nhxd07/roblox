@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/main/ui"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/HaixD/roblox/main/ui"))()
 local Window = library:CreateWindow("HAI HUB - BLOX FRUIT", "i suck at scripting", 10044538000)
 local Tab = Window:CreateTab("Scripts")
 local Page = Tab:CreateFrame("Autofarm")
