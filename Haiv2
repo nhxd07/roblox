@@ -44,6 +44,6 @@ Button = Page:CreateButton("Anti Afk", "why am i making this a button? idk", fun
     end
 end)
 
-Slider = Main:CreateSlider("Speed Hack",true,function(speed)
+TextBox = Main:CreateBox("Speed Hack",true,function(speed)
   game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
   end)
