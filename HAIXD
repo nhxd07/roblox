@@ -257,12 +257,25 @@ function Update:Window(text,logo,keybind)
  Exe.Parent = Top
  Exe.BackgroundColor3 = Color3.fromRGB(224,224,224)
  Exe.BackgroundTransparency = 1.000
- Exe.Position = UDim2.new(0.3509756112, 0, 0, 0)
+ Exe.Position = UDim2.new(0.3009756112, 0, 0, 0)
  Exe.Size = UDim2.new(0, 61, 0, 27)
  Exe.Font = Enum.Font.GothamBold
  Exe.Text = "Executor :"..executor
  Exe.TextColor3 = Color3.fromRGB(255, 255, 255)
  Exe.TextSize = 14.000
+ 
+ players = Players:GetPlayers()
+ local Player = Instance.new("TextLabel")
+ Player.Name = "Name"
+ Player.Parent = Top
+ Player.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Player.BackgroundTransparency = 1.000
+ Player.Position = UDim2.new(0.5009756112, 0, 0, 0)
+ Player.Size = UDim2.new(0, 61, 0, 27)
+ Player.Font = Enum.Font.GothamBold
+ Player.Text = "Players :"..players
+ Player.TextColor3 = Color3.fromRGB(255, 255, 255)
+ Player.TextSize = 14.000
 
 local ServerTime = Instance.new("TextLabel")
 ServerTime.Name = "ServerTime"
