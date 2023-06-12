@@ -239,7 +239,6 @@ function Update:Window(text,logo,keybind)
 	Logo.BackgroundTransparency = 1.000
 	Logo.Position = UDim2.new(0, 10, 0, 1)
 	Logo.Size = UDim2.new(0, 25, 0, 25)
-	Logo.Image = "rbxassetid://13438920682"
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
@@ -402,7 +401,7 @@ spawn(function()
 		TabButton.TextSize = 15.000
 		TabButton.TextTransparency = 0.500
 
-		    local PageImage = Instance.new("ImageLabel")
+	        local PageImage = Instance.new("ImageLabel")
             PageImage.Name = "PageImage"
             PageImage.Parent = TabButton
             PageImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -602,7 +601,7 @@ account_circle.BackgroundTransparency = 1.000
 account_circle.Position = UDim2.new(0, 5, 0, 4)
 account_circle.Size = UDim2.new(0, 24, 0, 21)
 account_circle.ZIndex = 2
-account_circle.Text = "🍅"
+account_circle.Image = "rbxassetid://3926307971"
 account_circle.ImageRectOffset = Vector2.new(124, 204)
 account_circle.ImageRectSize = Vector2.new(36, 36)
 
@@ -748,7 +747,7 @@ person.LayoutOrder = 6
 person.Position = UDim2.new(0, 400, 0, 1)
 person.Size = UDim2.new(0, 19, 0, 19)
 person.ZIndex = 2
-person.Text = "🍅"
+person.Image = "rbxassetid://3926307971"
 person.ImageTransparency = 0.500
 person.ImageRectOffset = Vector2.new(884, 4)
 person.ImageRectSize = Vector2.new(36, 36)
@@ -829,7 +828,7 @@ person.LayoutOrder = 6
 person.Position = UDim2.new(0, 400, 0, 1)
 person.Size = UDim2.new(0, 19, 0, 19)
 person.ZIndex = 2
-person.Text = "🍅"
+person.Image = "rbxassetid://3926307971"
 person.ImageTransparency = 0.500
 person.ImageRectOffset = Vector2.new(884, 4)
 person.ImageRectSize = Vector2.new(36, 36)
@@ -882,7 +881,7 @@ person.LayoutOrder = 6
 person.Position = UDim2.new(0, 400, 0, 1)
 person.Size = UDim2.new(0, 19, 0, 19)
 person.ZIndex = 2
-person.Text = "🍅"
+person.Image = "rbxassetid://3926307971"
 person.ImageTransparency = 0.500
 person.ImageRectOffset = Vector2.new(884, 4)
 person.ImageRectSize = Vector2.new(36, 36)
@@ -1246,7 +1245,7 @@ ScreenGui1.Parent = game.CoreGui
 ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ImageButton1.Parent = ScreenGui1
-ImageButton1.BackgroundColor3 = Color3.fromRGB(255, 255, 255, 0)
+ImageButton1.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 ImageButton1.BorderSizePixel = 0
 ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton1.Size = UDim2.new(0, 40, 0, 40)
@@ -1258,7 +1257,7 @@ ImageButton1.MouseButton1Down:connect(function()
 end)
 UICorner.Parent = ImageButton1
 
-local Library = Update:Window("Tomato Hub","",Enum.KeyCode.RightControl);
+local Library = Update:Window("🍅 Tomato Hub","",Enum.KeyCode.RightControl);
 
 Main = Library:Tab("Main",11446825283)
 Farm = Library:Tab("Farm/Quest",9260732790)
