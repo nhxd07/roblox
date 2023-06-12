@@ -203,7 +203,7 @@ function Update:Window(text,logo,keybind)
 	local executor = identifyexecutor() or "Unknown"
 	
 	local SOMEXHUB = Instance.new("ScreenGui")
-	SOMEXHUB.Name = "Tomati Hub"
+	SOMEXHUB.Name = "Tomato Hub"
 	SOMEXHUB.Parent = game.CoreGui
 	SOMEXHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -1266,6 +1266,8 @@ ImageButton1.Draggable = true
 ImageButton1.Font = Enum.Font.Code
 ImageButton1.Text = "🍅"
 ImageButton1.TextColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton1.TextScaled = true
+ImageButton1.TextSize = 16.000
 ImageButton1.MouseButton1Down:connect(function()
   game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
   game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
