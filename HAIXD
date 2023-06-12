@@ -1,4 +1,4 @@
-do local GUI = game.CoreGui:FindFirstChild("SOMEXHUB");if GUI then GUI:Destroy();end;if _G.Color == nil then
+"do local GUI = game.CoreGui:FindFirstChild("SOMEXHUB");if GUI then GUI:Destroy();end;if _G.Color == nil then
        _G.Color = Color3.fromRGB(225, 225, 225)
    end 
 end
@@ -1348,12 +1348,10 @@ Main:Line()
 --// Setting Player
 Main:Seperator("👤 Local Player 👤")
 
-speed = 100
 Main:Textbox("Speed Hack", speed, function(speed)
     game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
 end)
 
-jump = 100
 Main:Textbox("Jump Hack", jump, function(jump)
     game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
 end)
@@ -10408,14 +10406,9 @@ end)
     setclipboard(tostring(game.JobId))
     end)
     
-    _G.Job = nil
-	Misc:Textbox("Paste Your Job-Id Here","Jobid",function(l)
-        _G.Job = l
-        end)
-        
-    Misc:Button("Join Job-Id",function()
-        game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, _G.Job, game.Players.LocalPlayer)
-        end)
+	Misc:Textbox("Paste Your Job-Id Here", Jobid, function(Jobid)
+    	game:GetService("TeleportService"):TeleportToPlaceInstance(game.placeId, Jobid, game.Players.LocalPlayer)
+    end)
         
     Misc:Button("Rejoin Server",function()
         game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
