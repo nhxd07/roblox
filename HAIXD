@@ -8265,13 +8265,12 @@ end)
      spawn(function()
 	    while wait() do
 	        if RemoveFog then
+	        for i,v in pairs(Lighting:GetDescendants()) do
         	Lighting.FogEnd = 100000
-        	for i,v in pairs(Lighting:GetDescendants()) do
 	      	if v:IsA("Atmosphere") then
 			v:Destroy()
-                    end
                 end
-            end)
+            end
         end
     end)
 end)
