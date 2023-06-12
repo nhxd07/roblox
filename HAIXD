@@ -1348,15 +1348,22 @@ Main:Line()
 --// Setting Player
 Main:Seperator("👤 Local Player 👤")
 
+speed = 100
 Main:Textbox("Speed Hack", speed, function(speed)
     game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
 end)
 
+jump = 100
 Main:Textbox("Jump Hack", jump, function(jump)
     game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
 end)
 
-Main:Slider('Bring Mob',1, 1000,1000,function(value)
+Main:Textbox("Fov", fov, function(fov)
+    game.Workspace.CurrentCamera.FieldOfView = fov
+end)
+
+bringfrec = 1000
+Main:Textbox('Bring Mob', value, function(value)
   bringfrec = value
   end)
 
@@ -1686,7 +1693,7 @@ end)
 
 DisFarm = 20
 
-Main:Textbox("Distance", DisFarm, function(a)
+Main:Textbox("Distance", a, function(a)
     DisFarm = a
 end)
 
