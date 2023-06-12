@@ -1348,14 +1348,13 @@ Main:Line()
 --// Setting Player
 Main:Seperator("👤 Local Player 👤")
 
-Main:Slider("Speed Hack", 0, 150, 150, function(speed)
-  game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
-  end)
-
-Main:Slider("Jump Hack", 0, 150, 150, function(jump)
-  game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
+Main:Textbox("Speed Hack", speed, function(speed)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
 end)
 
+Main:Textbox("Jump Hack", jump, function(jump)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
+end)
 
 Main:Slider('Bring Mob',1, 1000,1000,function(value)
   bringfrec = value
