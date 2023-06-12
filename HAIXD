@@ -601,9 +601,22 @@ spawn(function()
 			Label.Position = UDim2.new(0, 1, 0, 1)
 			Label.Size = UDim2.new(0, 468, 0, 29)
 			Label.Font = Enum.Font.GothamSemibold
-			Label.Text = "🗡️ | "..text
+			Label.Text = text
 			Label.TextColor3 = Color3.fromRGB(225, 225, 225)
 			Label.TextSize = 15.000
+			
+			local Icon = Instance.new("TextLabel")
+
+			Icon.Name = "Icon"
+			Icon.Parent = Toggle
+			Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Icon.BackgroundTransparency = 1.000
+			Icon.Position = UDim2.new(0, 5, 0, 4)
+			Icon.Size = UDim2.new(0, 24, 0, 21)
+			Icon.Font = Enum.Font.GothamSemibold
+			Icon.Text = "🍅 | "
+			Icon.TextColor3 = Color3.fromRGB(225, 225, 225)
+			Icon.TextSize = 15.000
 
 			ToggleImage.Name = "ToggleImage"
 			ToggleImage.Parent = Toggle
