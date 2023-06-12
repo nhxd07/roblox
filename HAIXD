@@ -217,16 +217,6 @@ function Update:Window(text,logo,keybind)
 	Main.Size = UDim2.new(0, 0, 0, 0)
 	
 	Main:TweenSize(UDim2.new(0, 656, 0, 400),"Out","Quad",0.4,true)
-	
-local account_circle = Instance.new("ImageLabel")
-
-account_circle.Name = "account_circle"
-account_circle.Parent = Toggle
-account_circle.BackgroundTransparency = 1.000
-account_circle.Position = UDim2.new(0, 0, 0, 0)
-account_circle.Size = UDim2.new(0, 656, 0, 400)
-account_circle.ZIndex = 2
-account_circle.Image = "rbxassetid://13438920682"
 
 	local MCNR = Instance.new("UICorner")
 	MCNR.Name = "MCNR"
@@ -614,18 +604,6 @@ spawn(function()
 			Label.Text = text
 			Label.TextColor3 = Color3.fromRGB(225, 225, 225)
 			Label.TextSize = 15.000
-
-local account_circle = Instance.new("ImageLabel")
-
-account_circle.Name = "account_circle"
-account_circle.Parent = Toggle
-account_circle.BackgroundTransparency = 1.000
-account_circle.Position = UDim2.new(0, 5, 0, 4)
-account_circle.Size = UDim2.new(0, 21, 0, 21)
-account_circle.ZIndex = 2
-account_circle.Image = "rbxassetid://3926307971"
-account_circle.ImageRectOffset = Vector2.new(124, 204)
-account_circle.ImageRectSize = Vector2.new(36, 36)
 
 			ToggleImage.Name = "ToggleImage"
 			ToggleImage.Parent = Toggle
@@ -1268,7 +1246,7 @@ ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ImageButton1.Parent = ScreenGui1
 ImageButton1.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-ImageButton1.BackgroundTransparency = 0.5
+ImageButton1.BackgroundTransparency = 0.2
 ImageButton1.BorderSizePixel = 0
 ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton1.Size = UDim2.new(0, 40, 0, 40)
