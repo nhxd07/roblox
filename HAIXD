@@ -601,21 +601,9 @@ spawn(function()
 			Label.Position = UDim2.new(0, 1, 0, 1)
 			Label.Size = UDim2.new(0, 468, 0, 29)
 			Label.Font = Enum.Font.GothamSemibold
-			Label.Text = text
+			Label.Text = "🍅 | "..text
 			Label.TextColor3 = Color3.fromRGB(225, 225, 225)
 			Label.TextSize = 15.000
-
-			local account_circle = Instance.new("ImageLabel")
-
-account_circle.Name = "account_circle"
-account_circle.Parent = Toggle
-account_circle.BackgroundTransparency = 1.000
-account_circle.Position = UDim2.new(0, 5, 0, 4)
-account_circle.Size = UDim2.new(0, 24, 0, 21)
-account_circle.ZIndex = 2
-account_circle.Text = "🍅 | "..text
-account_circle.ImageRectOffset = Vector2.new(124, 204)
-account_circle.ImageRectSize = Vector2.new(36, 36)
 
 			ToggleImage.Name = "ToggleImage"
 			ToggleImage.Parent = Toggle
