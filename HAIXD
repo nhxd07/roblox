@@ -605,6 +605,18 @@ spawn(function()
 			Label.TextColor3 = Color3.fromRGB(225, 225, 225)
 			Label.TextSize = 15.000
 
+			local account_circle = Instance.new("ImageLabel")
+
+account_circle.Name = "account_circle"
+account_circle.Parent = Toggle
+account_circle.BackgroundTransparency = 1.000
+account_circle.Position = UDim2.new(0, 5, 0, 4)
+account_circle.Size = UDim2.new(0, 21, 0, 21)
+account_circle.ZIndex = 2
+account_circle.Image = "rbxassetid://3926307971"
+account_circle.ImageRectOffset = Vector2.new(124, 204)
+account_circle.ImageRectSize = Vector2.new(36, 36)
+
 			ToggleImage.Name = "ToggleImage"
 			ToggleImage.Parent = Toggle
 			ToggleImage.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
@@ -1237,7 +1249,7 @@ end
 
 
 local ScreenGui1 = Instance.new("ScreenGui")
-local ImageButton1 = Instance.new("ImageButton")
+local ImageButton1 = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
 
 ScreenGui1.Name = "ImageButton"
@@ -1251,7 +1263,9 @@ ImageButton1.BorderSizePixel = 0
 ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton1.Size = UDim2.new(0, 40, 0, 40)
 ImageButton1.Draggable = true
+ImageButton1.Font = Enum.Font.Code
 ImageButton1.Text = "🍅"
+ImageButton1.TextColor3 = Color3.fromRGB(255, 0, 0)
 ImageButton1.MouseButton1Down:connect(function()
   game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
   game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
