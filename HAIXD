@@ -385,6 +385,15 @@ function Update:Window(text,logo,keybind)
 	Name.TextColor3 = Color3.fromRGB(225, 225, 225)
 	Name.TextSize = 17.000
 	
+	local LogoHub = Instance.new("ImageLabel")
+	LogoHub.Name = "LogoHub"
+	LogoHub.Parent = Main
+	LogoHub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LogoHub.BackgroundTransparency = 1.000
+	LogoHub.Position = UDim2.new(0, 0, 0, 0)
+	LogoHub.Size = UDim2.new(0, 656, 0, 400)
+	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(9614132122)
+	
  local Exe = Instance.new("TextLabel")
  Exe.Name = "Name"
  Exe.Parent = Top
