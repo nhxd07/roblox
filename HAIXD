@@ -68,7 +68,7 @@ local function loading()
 
 	BAR1.Name = "BAR1"
 	BAR1.Parent = Bar
-	BAR1.BackgroundColor3 = Color3.fromRGB(147,112,219)
+	BAR1.BackgroundColor3 = Color3.fromRGB(255, 51, 51)
 	BAR1.Size = UDim2.new(0, 0, 0, 15)
 
 	UICorner_5.CornerRadius = UDim.new(0, 5)
@@ -81,7 +81,7 @@ local function loading()
 	TextLabel.Size = UDim2.new(0, 440, 0, 25)
 	TextLabel.Font = Enum.Font.GothamSemibold
 	TextLabel.Text = "Loading"
-	TextLabel.TextColor3 = Color3.fromRGB(147,112,219)
+	TextLabel.TextColor3 = Color3.fromRGB(255, 51, 51)
 	TextLabel.TextSize = 16.000
 	spawn(function()
 		for i = 1,5 do 
@@ -108,7 +108,7 @@ local function loading()
 	TextLabel_2.Size = UDim2.new(0, 61, 0, 30)
 	TextLabel_2.Font = Enum.Font.GothamSemibold
 	TextLabel_2.Text = "  Tomato"
-	TextLabel_2.TextColor3 = Color3.fromRGB(147,112,219)
+	TextLabel_2.TextColor3 = Color3.fromRGB(255, 51, 51)
 	TextLabel_2.TextSize = 17.000
 
 	TextLabel_3.Parent = Top
