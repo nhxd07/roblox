@@ -118,7 +118,7 @@ local function loading()
 	TextLabel_3.Size = UDim2.new(0, 61, 0, 30)
 	TextLabel_3.Font = Enum.Font.GothamSemibold
 	TextLabel_3.Text = "  Hub"
-	TextLabel_3.TextColor3 = Color3.fromRGB(147,112,219)
+	TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextLabel_3.TextSize = 17.000
 	TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 	
@@ -387,7 +387,7 @@ function Update:Window(text,logo,keybind)
 	
 	local LogoHub = Instance.new("ImageLabel")
 	LogoHub.Name = "LogoHub"
-	LogoHub.Parent = Main
+	LogoHub.Parent = SOMEXHUB
 	LogoHub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	LogoHub.BackgroundTransparency = 1.000
 	LogoHub.Position = UDim2.new(0, 0, 0, 0)
@@ -397,7 +397,7 @@ function Update:Window(text,logo,keybind)
  local Exe = Instance.new("TextLabel")
  Exe.Name = "Name"
  Exe.Parent = Top
- Exe.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Exe.BackgroundColor3 = Color3.fromRGB(0,0,0)
  Exe.BackgroundTransparency = 1.000
  Exe.Position = UDim2.new(0.3009756112, 0, 0, 0)
  Exe.Size = UDim2.new(0, 61, 0, 27)
@@ -461,6 +461,7 @@ spawn(function()
 	Tab.Name = "Tab"
 	Tab.Parent = Main
 	Tab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	Tab.BackgroundTransparency = 0
 	Tab.Position = UDim2.new(0, 5, 0, 30)
 	Tab.Size = UDim2.new(0, 150, 0, 365)
 
@@ -473,7 +474,7 @@ spawn(function()
 	ScrollTab.Parent = Tab
 	ScrollTab.Active = true
 	ScrollTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ScrollTab.BackgroundTransparency = 1.000
+	ScrollTab.BackgroundTransparency = 0
 	ScrollTab.Size = UDim2.new(0, 150, 0, 365)
 	ScrollTab.CanvasSize = UDim2.new(0, 0, 0, 0)
 	ScrollTab.ScrollBarThickness = 0
@@ -494,6 +495,7 @@ spawn(function()
 	Page.Name = "Page"
 	Page.Parent = Main
 	Page.BackgroundColor3 = Color3.fromRGB(20,20,20)
+	Page.BackgroundTransparency = 0
 	Page.Position = UDim2.new(0.245426834, 0, 0.075000003, 0)
 	Page.Size = UDim2.new(0, 490, 0, 365)
 
@@ -506,7 +508,7 @@ spawn(function()
 	MainPage.Parent = Page
 	MainPage.ClipsDescendants = true
 	MainPage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	MainPage.BackgroundTransparency = 1.000
+	MainPage.BackgroundTransparency = 0
 	MainPage.Size = UDim2.new(0, 490, 0, 365)
 
 	local PageList = Instance.new("Folder")
