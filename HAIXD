@@ -388,7 +388,7 @@ function Update:Window(text,logo,keybind)
 	local LogoHub = Instance.new("ImageLabel")
 	LogoHub.Name = "LogoHub"
 	LogoHub.Parent = Main
-	LogoHub.BackgroundTransparency = 1.000
+	LogoHub.BackgroundTransparency = 0
 	LogoHub.Position = UDim2.new(0, 0, 0, 0)
 	LogoHub.Size = UDim2.new(0, 656, 0, 400)
 	LogoHub.Image = "http://www.roblox.com/asset/?id="..tostring(9614132122)
@@ -396,7 +396,7 @@ function Update:Window(text,logo,keybind)
  local Exe = Instance.new("TextLabel")
  Exe.Name = "Name"
  Exe.Parent = Top
- Exe.BackgroundColor3 = Color3.fromRGB(0,0,0)
+ Exe.BackgroundColor3 = Color3.fromRGB(224, 224, 224)
  Exe.BackgroundTransparency = 1.000
  Exe.Position = UDim2.new(0.3009756112, 0, 0, 0)
  Exe.Size = UDim2.new(0, 61, 0, 27)
@@ -408,7 +408,7 @@ function Update:Window(text,logo,keybind)
  local Player = Instance.new("TextLabel")
  Player.Name = "Name"
  Player.Parent = Top
- Player.BackgroundColor3 = Color3.fromRGB(224,224,224)
+ Player.BackgroundColor3 = Color3.fromRGB(224, 224, 224)
  Player.BackgroundTransparency = 1.000
  Player.Position = UDim2.new(0.5009756112, 0, 0, 0)
  Player.Size = UDim2.new(0, 61, 0, 27)
@@ -420,7 +420,7 @@ function Update:Window(text,logo,keybind)
 local ServerTime = Instance.new("TextLabel")
 ServerTime.Name = "ServerTime"
 ServerTime.Parent = Top
-ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
+ServerTime.BackgroundColor3 = Color3.fromRGB(224, 224, 224)
 ServerTime.BackgroundTransparency = 1.000
 ServerTime.Position = UDim2.new(0.677561002, 0, 0, 0)
 ServerTime.Size = UDim2.new(0, 225, 0, 25)
@@ -549,7 +549,7 @@ spawn(function()
 		TabButton.Name = text.."Server"
 		TabButton.Text = text
 		TabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		TabButton.BackgroundTransparency = 1.000
+		TabButton.BackgroundTransparency = 0
 		TabButton.Size = UDim2.new(0, 130, 0, 23)
 		TabButton.Font = Enum.Font.GothamSemibold
 		TabButton.TextColor3 = Color3.fromRGB(225, 225, 225)
@@ -560,7 +560,7 @@ spawn(function()
             PageImage.Name = "PageImage"
             PageImage.Parent = TabButton
             PageImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            PageImage.BackgroundTransparency = 1.000
+            PageImage.BackgroundTransparency = 0
             PageImage.Position = UDim2.new(0, 5, 0, 5)
             PageImage.Size = UDim2.new(0, 19, 0, 19)
             PageImage.Image = "rbxassetid://"..tostring(icon)
