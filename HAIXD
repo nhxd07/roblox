@@ -1361,25 +1361,6 @@ Main:Textbox('Bring Mob', value, function(value)
   bringfrec = value
   end)
 
-local GC = getconnections or get_signal_cons
-if GC then
-for i,v in pairs(GC(game.Players.LocalPlayer.Idled)) do
-if v["Disable"] then
-v["Disable"](v)
-elseif v["Disconnect"] then
-v["Disconnect"](v)
-end
-end
-else
-  print("Unlucky.")
-local vu = game:GetService("VirtualUser")
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-  vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-  wait(1)
-  vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-  end)
-end
-
 Main:Button("Boost Your FPS", function()
   local decalsyeeted = true
   local g = game
@@ -1836,25 +1817,6 @@ spawn(function()
 end)
 
 ------ Main Farm
-
-local GC = getconnections or get_signal_cons
-if GC then
-for i,v in pairs(GC(game.Players.LocalPlayer.Idled)) do
-if v["Disable"] then
-v["Disable"](v)
-elseif v["Disconnect"] then
-v["Disconnect"](v)
-end
-end
-else
-  print("Unlucky.")
-local vu = game:GetService("VirtualUser")
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-  vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-  wait(1)
-  vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-  end)
-end
 
 ------// BLOX FRUIT
 --// Sea world
@@ -3052,27 +3014,6 @@ spawn(function()
   end)
 
 --// Delete Effect Audio, Death, Respawn
-spawn(function()
-  while task.wait() do
-  for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"]:GetChildren()) do
-  pcall(function()
-    if v.Name == ("CurvedRing") or v.Name == ("SlashHit") or v.Name == ("SwordSlash") or v.Name == ("SlashTail") or v.Name == ("Sounds") then
-    v:Destroy()
-    end
-    end)
-  end
-  for i,v in pairs(game:GetService("ReplicatedStorage").Effect.Container.Death:GetChildren()) do
-  pcall(function()
-    v:Destroy()
-    end)
-  end
-  for i,v in pairs(game:GetService("ReplicatedStorage").Effect.Container.Respawn:GetChildren()) do
-  pcall(function()
-    v:Destroy()
-    end)
-  end
-  end
-  end)
 
 --// Stun Player
 task.spawn(function()
