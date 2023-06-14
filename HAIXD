@@ -107,7 +107,7 @@ local function loading()
 	TextLabel_2.Position = UDim2.new(0.0299999993, 0, 0, 0)
 	TextLabel_2.Size = UDim2.new(0, 61, 0, 30)
 	TextLabel_2.Font = Enum.Font.GothamSemibold
-	TextLabel_2.Text = "  Tomato"
+	TextLabel_2.Text = "  Pixel"
 	TextLabel_2.TextColor3 = Color3.fromRGB(255, 51, 51)
 	TextLabel_2.TextSize = 17.000
 
@@ -254,16 +254,7 @@ getgenv()['Update_Setting'] = function(Name)
     end
 end
 
-
-local DINOHUB = Instance.new("ScreenGui")
-local OPENCLOSE = Instance.new("TextButton")
-
-DINOHUB.Name = "Tomato Hub"
-DINOHUB.Parent = game.CoreGui        --CoreGui
-DINOHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-
-do local GUI = game.CoreGui:FindFirstChild("Tomato Hub");if GUI then GUI:Destroy();end;if _G.Color == Color3.fromRGB(255, 0, 0) then
+do local GUI = game.CoreGui:FindFirstChild("Pixel Hub");if GUI then GUI:Destroy();end;if _G.Color == Color3.fromRGB(0, 255, 255) then
        _G.Color = Color3.fromRGB(255, 255, 255)
    end 
 end
@@ -336,7 +327,7 @@ function Update:Window(text,logo,keybind)
 	local executor = identifyexecutor() or "Unknown"
 	
 	local SOMEXHUB = Instance.new("ScreenGui")
-	SOMEXHUB.Name = "Tomato Hub"
+	SOMEXHUB.Name = "Pixel Hub"
 	SOMEXHUB.Parent = game.CoreGui
 	SOMEXHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	
@@ -644,7 +635,7 @@ spawn(function()
 			
 			Button.Name = "Button"
 			Button.Parent = MainFramePage
-			Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			Button.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			Button.Size = UDim2.new(0, 470, 0, 31)
 			
 			UICorner.CornerRadius = UDim.new(0, 5)
@@ -652,7 +643,7 @@ spawn(function()
 			
 			TextBtn.Name = "TextBtn"
 			TextBtn.Parent = Button
-			TextBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			TextBtn.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			TextBtn.Position = UDim2.new(0, 1, 0, 1)
 			TextBtn.Size = UDim2.new(0, 468, 0, 29)
 			TextBtn.AutoButtonColor = false
@@ -714,7 +705,7 @@ spawn(function()
 
 			Toggle.Name = "Toggle"
 			Toggle.Parent = MainFramePage
-			Toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
+			Toggle.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			Toggle.Size = UDim2.new(0, 470, 0, 31)
 
 			UICorner.CornerRadius = UDim.new(0, 5)
@@ -746,19 +737,6 @@ spawn(function()
 			Label.TextColor3 = Color3.fromRGB(225, 225, 225)
 			Label.TextSize = 15.000
 			
-			local Icon = Instance.new("TextLabel")
-
-			Icon.Name = "Icon"
-			Icon.Parent = Toggle
-			Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			Icon.BackgroundTransparency = 1.000
-			Icon.Position = UDim2.new(0, 5, 0, 4)
-			Icon.Size = UDim2.new(0, 24, 0, 21)
-			Icon.Font = Enum.Font.GothamSemibold
-			Icon.Text = "🍅 | "
-			Icon.TextColor3 = Color3.fromRGB(225, 225, 225)
-			Icon.TextSize = 15.000
-
 			ToggleImage.Name = "ToggleImage"
 			ToggleImage.Parent = Toggle
 			ToggleImage.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
@@ -1070,7 +1048,7 @@ person.ImageRectSize = Vector2.new(36, 36)
 
 			Slider.Name = "Slider"
 			Slider.Parent = MainFramePage
-			Slider.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			Slider.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			Slider.BackgroundTransparency = 0
 			Slider.Size = UDim2.new(0, 470, 0, 51)
 
@@ -1104,7 +1082,7 @@ person.ImageRectSize = Vector2.new(36, 36)
 
 			HAHA.Name = "HAHA"
 			HAHA.Parent = sliderr
-			HAHA.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			HAHA.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			HAHA.BackgroundTransparency = 1.000
 			HAHA.Size = UDim2.new(0, 468, 0, 29)
 
@@ -1126,7 +1104,7 @@ person.ImageRectSize = Vector2.new(36, 36)
 
 			bar1.Name = "bar1"
 			bar1.Parent = bar
-			bar1.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			bar1.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			bar1.BackgroundTransparency = 0
 			bar1.Size = UDim2.new(set/max, 0, 0, 5)
 
@@ -1149,7 +1127,7 @@ person.ImageRectSize = Vector2.new(36, 36)
 
 			slidervalue.Name = "slidervalue"
 			slidervalue.Parent = sliderr
-			slidervalue.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			slidervalue.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			slidervalue.BackgroundTransparency = 0
 			slidervalue.Position = UDim2.new(0, 395, 0, 5)
 			slidervalue.Size = UDim2.new(0, 65, 0, 18)
@@ -1240,7 +1218,7 @@ person.ImageRectSize = Vector2.new(36, 36)
 
 			Textbox.Name = "Textbox"
 			Textbox.Parent = MainFramePage
-			Textbox.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			Textbox.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			Textbox.BackgroundTransparency = 0
 			Textbox.Size = UDim2.new(0, 470, 0, 31)
 
@@ -1339,13 +1317,13 @@ person.ImageRectSize = Vector2.new(36, 36)
 			
 			Seperator.Name = "Seperator"
 			Seperator.Parent = MainFramePage
-			Seperator.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			Seperator.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			Seperator.BackgroundTransparency = 1.000
 			Seperator.Size = UDim2.new(0, 470, 0, 20)
 			
 			Sep1.Name = "Sep1"
 			Sep1.Parent = Seperator
-			Sep1.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			Sep1.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			Sep1.BorderSizePixel = 0
 			Sep1.Position = UDim2.new(0, 0, 0, 10)
 			Sep1.Size = UDim2.new(0, 80, 0, 1)
@@ -1363,7 +1341,7 @@ person.ImageRectSize = Vector2.new(36, 36)
 			
 			Sep3.Name = "Sep3"
 			Sep3.Parent = Seperator
-			Sep3.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			Sep3.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			Sep3.BorderSizePixel = 0
 			Sep3.Position = UDim2.new(0, 390, 0, 10)
 			Sep3.Size = UDim2.new(0, 80, 0, 1)
@@ -1375,14 +1353,14 @@ person.ImageRectSize = Vector2.new(36, 36)
 			
 			Linee.Name = "Linee"
 			Linee.Parent = MainFramePage
-			Linee.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			Linee.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			Linee.BackgroundTransparency = 1.000
 			Linee.Position = UDim2.new(0, 0, 0.119999997, 0)
 			Linee.Size = UDim2.new(0, 470, 0, 20)
 			
 			Line.Name = "Line"
 			Line.Parent = Linee
-			Line.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			Line.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			Line.BorderSizePixel = 0
 			Line.Position = UDim2.new(0, 0, 0, 10)
 			Line.Size = UDim2.new(0, 470, 0, 1)
@@ -1403,14 +1381,13 @@ ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ImageButton1.Parent = ScreenGui1
 ImageButton1.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-ImageButton1.BackgroundTransparency = 0.2
 ImageButton1.BorderSizePixel = 0
 ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton1.Size = UDim2.new(0, 40, 0, 40)
 ImageButton1.Draggable = true
 ImageButton1.Font = Enum.Font.Code
 ImageButton1.Text = "🍅"
-ImageButton1.TextColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton1.TextColor3 = Color3.fromRGB(0, 255, 255)
 ImageButton1.TextScaled = true
 ImageButton1.TextSize = 16.000
 ImageButton1.MouseButton1Down:connect(function()
@@ -1419,7 +1396,7 @@ ImageButton1.MouseButton1Down:connect(function()
 end)
 UICorner.Parent = ImageButton1
 
-local Library = Update:Window("🍅 Tomato Hub","",Enum.KeyCode.RightControl);
+local Library = Update:Window("Pixel Hub","",Enum.KeyCode.RightControl);
 
 Main = Library:Tab("Main",11446825283)
 Farm = Library:Tab("Farm/Quest",9260732790)
