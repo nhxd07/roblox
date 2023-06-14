@@ -1348,6 +1348,22 @@ person.ImageRectSize = Vector2.new(36, 36)
 			Sep3.Position = UDim2.new(0, 390, 0, 10)
 			Sep3.Size = UDim2.new(0, 80, 0, 1)
 		end
+		
+		game:GetService('RunService').RenderStepped:connect(function()
+		if _G.Disabled then
+			for i,v in next, game:GetService('Players'):GetPlayers() do
+				if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+					pcall(function()
+						v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+						v.Character.HumanoidRootPart.Transparency = _G.Trans
+						v.Character.HumanoidRootPart.Color = Color3.fromHSV(tick() * 24 % 255/255, 1, 1)
+						v.Character.HumanoidRootPart.Material = Neon
+						v.Character.HumanoidRootPart.CanCollide = false
+					end)
+				end
+			end
+		end
+	end)
 
 		function main:Line()
 			local Linee = Instance.new("Frame")
@@ -7869,9 +7885,56 @@ end)
 Combat:Toggle("Aimbot Skill Nearest", false, function(vu)
 
 	AimSkillNearest = vu
-
 end)
 
+Combat:Seperator("🎯 Hit Box 🎯")
+
+Combat:Toggle("Hit Box",_G.Disabled,function(value)
+ _G.Disabled = value
+end)
+
+HitSize = {
+"20",
+"50",
+"80"
+}
+
+Combat:Dropdown("Hit Box Size", HitSize,function(value)
+    HitBoxSize = value
+end)
+spawn(function()
+    while wait(.1) do
+        if HitBoxSize == "20" then
+            _G.HeadSize = 20
+        elseif HitBoxSize == "50" then
+            _G.HeadSize = 50
+        elseif HitBoxSize == "80" then
+            _G.HeadSize = 80
+        end
+    end
+end)
+
+HitTrans = {
+"20",
+"50",
+"80"
+}
+
+Combat:Dropdown("Hit Box Transparent", HitTrans,function(value)
+    HitBoxTrans = value
+end)
+spawn(function()
+    while wait(.1) do
+        if HitBoxTrans == "20%" then
+            _G.Trans = 25
+        elseif HitBoxTrans == "50%" then
+            _G.Trans = 50
+        elseif HitBoxTrans == "80%" then
+            _G.Trans = 80
+        end
+    end
+end)
+  
 spawn(function()
 	while wait(.1) do
 		pcall(function()
