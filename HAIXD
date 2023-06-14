@@ -1461,7 +1461,7 @@ UIStroke.Name = "UIStroke"
             end -- final
             
 			
-            function Elements:Textbox(boxtitle, desc, callback,def)
+            function Elements:Textbox(boxtitle, desc, callback)
                 boxtitle = boxtitle or "Textbox"
                 desc = desc or "Enter here!"
                 callback = callback or function() end
@@ -1554,7 +1554,7 @@ UIStroke.Name = "UIStroke"
 
         
 
-			function Elements:Dropdown(Name, list, default, callback)
+			function Elements:Dropdown(Name, list, callback)
 				local Dropfunc = {}
 
 				local MainDropDown = Instance.new("Frame")
@@ -2379,18 +2379,6 @@ UIStroke.Name = "UIStroke"
     return Tabs
 end
 
-World1 = false
-World2 = false
-World3 = false
-local placeId = game.PlaceId
-if placeId == 2753915549 then
-World1 = true
-elseif placeId == 4442272183 then
-World2 = true
-elseif placeId == 7449423635 then
-World3 = true
-end
-
 local ScreenGui1 = Instance.new("ScreenGui")
 local Closed = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
@@ -2414,50 +2402,32 @@ UICorner.Parent = Closed
 
 local Library = CFAHub:CreateWindow("🍅 Tomato Hub","",Enum.KeyCode.RightControl);
 
-RaceV4 = Library:TabFrame("RaceV4",11446900930)
+RaceV4 = Library:CreatePage("RaceV4",11446900930)
 
-
-if World3 then
-  RaceV4:Seperator("👾 Race V4 👾")
-
-  RaceV4:Seperator("🍃 Auto Complete Trials 🍃")
-  
-  RaceV4:Button("Auto Upgrade Tier",function(t)
-  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('UpgradeRace','Buy')
-  end)
-  
-  RaceV4:Toggle("Auto Complete Ghoul/Human Trial",AutoCom,function(value)
- AutoCom = value  
+    RaceV4:Button("FPS delete color",function()
+for _,v in pairs(workspace:GetDescendants()) do
+if v.ClassName == "Part"
+or v.ClassName == "SpawnLocation"
+or v.ClassName == "WedgePart"
+or v.ClassName == "Terrain"
+or v.ClassName == "MeshPart" then
+v.BrickColor = BrickColor.new(155, 155, 155)
+v.Material = "Plastic"
+end
+end
 end)
 
-spawn(function()
-    while wait() do
-        if AutoCom then
-            for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
-                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                    pcall(function()
-                        repeat wait(.1)
-                            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
-                            v.Humanoid.Health = 0
-                            v.HumanoidRootPart.CanCollide = false
-                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                            v.HumanoidRootPart.Transparency = 0.8
-                        until not AutoCom  or not v.Parent or v.Humanoid.Health <= 0
-                    end)
-                end
-            end
-        end
-    end
+    RaceV4:Button("FPS Fast Mode",function()
+for _,v in pairs(workspace:GetDescendants()) do
+if v.ClassName == "Part"
+or v.ClassName == "SpawnLocation"
+or v.ClassName == "WedgePart"
+or v.ClassName == "Terrain"
+or v.ClassName == "MeshPart" then
+v.Material = "Plastic"
+end
+end
 end)
-RaceV4:Button("Auto Complete Angel Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame
-        end)
 
-        RaceV4:Button("Auto Complete Rabbit Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.MinkTrial.Ceiling.CFrame * CFrame.new(0,-5,0)
-        end)
-
-        RaceV4:Button("Auto Complete Cyborg Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,300,0)
-        end)
-        end
+    RaceV4:Seperator("👾 Race V4 👾")
+    
