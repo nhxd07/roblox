@@ -723,6 +723,7 @@ spawn(function()
 			Button.Name = "Button"
 			Button.Parent = Toggle
 			Button.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			Button.BackgroundTransparency = 0.8
 			Button.Position = UDim2.new(0, 1, 0, 1)
 			Button.Size = UDim2.new(0, 468, 0, 29)
 			Button.AutoButtonColor = false
@@ -769,7 +770,7 @@ spawn(function()
 
 			Circle.Name = "Circle"
 			Circle.Parent = ToggleImage
-			Circle.BackgroundColor3 = Color3.fromRGB(227, 60, 60)
+			Circle.BackgroundColor3 = Color3.fromRGB(227, 255, 255)
 			Circle.Position = UDim2.new(0, 2, 0, 2)
 			Circle.Size = UDim2.new(0, 16, 0, 16)
 
@@ -822,6 +823,7 @@ spawn(function()
 			Dropdown.Name = "Dropdown"
 			Dropdown.Parent = MainFramePage
 			Dropdown.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			Dropdown.BackgroundTransparency = 0.8
 			Dropdown.ClipsDescendants = true
 			Dropdown.Size = UDim2.new(0, 470, 0, 31)
 			
@@ -1079,6 +1081,7 @@ person.ImageRectSize = Vector2.new(36, 36)
 			sliderr.Name = "sliderr"
 			sliderr.Parent = Slider
 			sliderr.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			sliderr.BackgroundTransparency = 0.8
 			sliderr.Position = UDim2.new(0, 1, 0, 1)
 			sliderr.Size = UDim2.new(0, 468, 0, 49)
 
@@ -1248,6 +1251,7 @@ person.ImageRectSize = Vector2.new(36, 36)
 			Textboxx.Name = "Textboxx"
 			Textboxx.Parent = Textbox
 			Textboxx.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			Textboxx.BackgroundTransparency = 0.8
 			Textboxx.Position = UDim2.new(0, 1, 0, 1)
 			Textboxx.Size = UDim2.new(0, 468, 0, 29)
 
