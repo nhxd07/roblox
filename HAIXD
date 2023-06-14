@@ -456,7 +456,7 @@ spawn(function()
 	Tab.Name = "Tab"
 	Tab.Parent = Main
 	Tab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	Tab.BackgroundTransparency = 0.200
+	Tab.BackgroundTransparency = 0.000
 	Tab.Position = UDim2.new(0, 5, 0, 30)
 	Tab.Size = UDim2.new(0, 150, 0, 365)
 
@@ -469,7 +469,7 @@ spawn(function()
 	ScrollTab.Parent = Tab
 	ScrollTab.Active = true
 	ScrollTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ScrollTab.BackgroundTransparency = 0.200
+	ScrollTab.BackgroundTransparency = 0.000
 	ScrollTab.Size = UDim2.new(0, 150, 0, 365)
 	ScrollTab.CanvasSize = UDim2.new(0, 0, 0, 0)
 	ScrollTab.ScrollBarThickness = 0
@@ -490,7 +490,7 @@ spawn(function()
 	Page.Name = "Page"
 	Page.Parent = Main
 	Page.BackgroundColor3 = Color3.fromRGB(20,20,20)
-	Page.BackgroundTransparency = 0.200
+	Page.BackgroundTransparency = 0.000
 	Page.Position = UDim2.new(0.245426834, 0, 0.075000003, 0)
 	Page.Size = UDim2.new(0, 490, 0, 365)
 
@@ -503,7 +503,7 @@ spawn(function()
 	MainPage.Parent = Page
 	MainPage.ClipsDescendants = true
 	MainPage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	MainPage.BackgroundTransparency = 0.200
+	MainPage.BackgroundTransparency = 0.000
 	MainPage.Size = UDim2.new(0, 490, 0, 365)
 
 	local PageList = Instance.new("Folder")
