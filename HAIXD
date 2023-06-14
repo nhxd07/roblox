@@ -351,17 +351,6 @@ function Update:Window(text,logo,keybind)
     Main.Active = true
     Main.Draggable = true
     Main.Image = "rbxassetid://13728869947"
-    
-local posto4 = Instance.new("UIStroke")
-posto4.Name = "posto"
-posto4.Parent = Main
-posto4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-posto4.Color = Color3.fromRGB(79, 195, 247)
-posto4.LineJoinMode = Enum.LineJoinMode.Round
-posto4.Thickness = 3
-posto4.Transparency = 0
-posto4.Enabled = true
-posto4.Archivable = true
 	
 	Main:TweenSize(UDim2.new(0, 656, 0, 400),"Out","Quad",0.4,true)
 
@@ -411,6 +400,7 @@ posto4.Archivable = true
  Exe.TextColor3 = Color3.fromRGB(255, 255, 255)
  Exe.TextSize = 14.000
  
+ local Players = Players:GetPlayers()
  local Player = Instance.new("TextLabel")
  Player.Name = "Name"
  Player.Parent = Top
@@ -419,7 +409,7 @@ posto4.Archivable = true
  Player.Position = UDim2.new(0.5009756112, 0, 0, 0)
  Player.Size = UDim2.new(0, 61, 0, 27)
  Player.Font = Enum.Font.GothamBold
- Player.Text = "Players :"..game.Players.NumPlayers
+ Player.Text = "Players :"..Players
  Player.TextColor3 = Color3.fromRGB(255, 255, 255)
  Player.TextSize = 14.000
 
