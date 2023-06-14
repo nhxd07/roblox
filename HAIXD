@@ -353,13 +353,17 @@ function Update:Window(text,logo,keybind)
 
 	local Main = Instance.new("ImageLabel")
 	Main.Name = "Main"
-	Main.Parent = SOMEXHUB
-	Main.ClipsDescendants = true
-	Main.AnchorPoint = Vector2.new(0.5,0.5)
-	Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-	Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Main.Size = UDim2.new(0, 656, 0, 400)
-	Main.Image = "rbxassetid://13728869947"
+    Main.Parent = SOMEXHUB
+    Main.ClipsDescendants = true
+    Main.AnchorPoint = Vector2.new(0.5, 0.5)
+    Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    Main.BorderSizePixel = 0
+    Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+    --Main.Size = UDim2.new(0, 656, 0, 400)
+    Main.Size = UDim2.nee(0, 0, 0, 0)
+    Main.Active = true
+    Main.Draggable = true
+    Main.Image = "rbxassetid://13728869947"
 	
 	Main:TweenSize(UDim2.new(0, 656, 0, 400),"Out","Quad",0.4,true)
 
