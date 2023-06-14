@@ -340,14 +340,27 @@ function Update:Window(text,logo,keybind)
 	SOMEXHUB.Parent = game.CoreGui
 	SOMEXHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-	local Main = Instance.new("Frame")
-	Main.Name = "Main"
-	Main.Parent = SOMEXHUB
-	Main.ClipsDescendants = true
-	Main.AnchorPoint = Vector2.new(0.5,0.5)
-	Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-	Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Main.Size = UDim2.new(0, 0, 0, 0)
+    Main.Name = "Main"
+    Main.Parent = SOMEXHUB
+    Main.AnchorPoint = Vector2.new(0.5, 0.5)
+    Main.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+    Main.BorderSizePixel = 0
+    Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Main.Size = UDim2.new(0, 656, 0, 400)
+    Main.Active = true
+    Main.Draggable = true
+    Main.Image = "rbxassetid://13728869947"
+    
+local posto4 = Instance.new("UIStroke")
+posto4.Name = "posto"
+posto4.Parent = Main
+posto4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+posto4.Color = Color3.fromRGB(79, 195, 247)
+posto4.LineJoinMode = Enum.LineJoinMode.Round
+posto4.Thickness = 3
+posto4.Transparency = 0
+posto4.Enabled = true
+posto4.Archivable = true
 	
 	Main:TweenSize(UDim2.new(0, 656, 0, 400),"Out","Quad",0.4,true)
 
