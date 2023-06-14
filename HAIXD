@@ -339,7 +339,8 @@ function Update:Window(text,logo,keybind)
 	SOMEXHUB.Name = "Tomato Hub"
 	SOMEXHUB.Parent = game.CoreGui
 	SOMEXHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
+	
+	local Main = Instance.new("ImageLabel")
     Main.Name = "Main"
     Main.Parent = SOMEXHUB
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
