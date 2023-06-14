@@ -322,17 +322,6 @@ local function MakeDraggable(topbarobject, object)
 	)
 end
 
-function Update:ToggleUI()
-        if Main.Visible == true then
-            Utility:TweenObject(UIScale, {Scale = 0.95}, 0.25)
-            wait(0.25)
-            Main.Visible = false
-        else
-            Utility:TweenObject(UIScale, {Scale = 1.0}, 0.25)
-            Main.Visible = true
-        end
-    end
-
 local Update = {}
 local pfp = "https://www.roblox.com/headshot-thumbnail/image?userId=".. game.Players.LocalPlayer.UserId .."&width=420&height=420&format=png"
 
@@ -350,7 +339,7 @@ function Update:Window(text,logo,keybind)
 	SOMEXHUB.Name = "Tomato Hub"
 	SOMEXHUB.Parent = game.CoreGui
 	SOMEXHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
+	
 	local Main = Instance.new("ImageLabel")
 	Main.Name = "Main"
     Main.Parent = SOMEXHUB
@@ -359,8 +348,7 @@ function Update:Window(text,logo,keybind)
     Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
     Main.BorderSizePixel = 0
     Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-    --Main.Size = UDim2.new(0, 656, 0, 400)
-    Main.Size = UDim2.nee(0, 0, 0, 0)
+    Main.Size = UDim2.new(0, 0, 0, 0)
     Main.Active = true
     Main.Draggable = true
     Main.Image = "rbxassetid://13728869947"
@@ -1970,7 +1958,6 @@ spawn(function()
 end)
 
 ------ Main Farm
-
 ------// BLOX FRUIT
 --// Sea world
 World1 = false
