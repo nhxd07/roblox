@@ -451,9 +451,66 @@ spawn(function()
  game:GetService("RunService").RenderStepped:Wait()
  end
  end)
+    
+    local Tab = Instance.new("Frame")
+	Tab.Name = "Tab"
+	Tab.Parent = Main
+	Tab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	Tab.BackgroundTransparency = 0.8
+	Tab.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	Tab.Position = UDim2.new(0, 5, 0, 30)
+	Tab.Size = UDim2.new(0, 150, 0, 365)
 
+	local TCNR = Instance.new("UICorner")
+	TCNR.Name = "TCNR"
+	TCNR.Parent = Tab
+
+	local ScrollTab = Instance.new("ScrollingFrame")
+	ScrollTab.Name = "ScrollTab"
+	ScrollTab.Parent = Tab
+	ScrollTab.Active = true
+	ScrollTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ScrollTab.BackgroundTransparency = 1.000
+	ScrollTab.Size = UDim2.new(0, 150, 0, 365)
+	ScrollTab.CanvasSize = UDim2.new(0, 0, 0, 0)
+	ScrollTab.ScrollBarThickness = 0
+
+	local PLL = Instance.new("UIListLayout")
+	PLL.Name = "PLL"
+	PLL.Parent = ScrollTab
+	PLL.SortOrder = Enum.SortOrder.LayoutOrder
+	PLL.Padding = UDim.new(0, 15)
+
+	local PPD = Instance.new("UIPadding")
+	PPD.Name = "PPD"
+	PPD.Parent = ScrollTab
+	PPD.PaddingLeft = UDim.new(0, 10)
+	PPD.PaddingTop = UDim.new(0, 10)
+
+	local Page = Instance.new("Frame")
+	Page.Name = "Page"
+	Page.Parent = Main
+	Page.BackgroundColor3 = Color3.fromRGB(20,20,20)
+	Page.BackgroundTransparency = 0.8
+	Page.Position = UDim2.new(0.245426834, 0, 0.075000003, 0)
+	Page.Size = UDim2.new(0, 490, 0, 365)
+
+	local PCNR = Instance.new("UICorner")
+	PCNR.Name = "PCNR"
+	PCNR.Parent = Page
+
+	local MainPage = Instance.new("Frame")
+	MainPage.Name = "MainPage"
+	MainPage.Parent = Page
+	MainPage.ClipsDescendants = true
+	MainPage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	MainPage.BackgroundTransparency = 1.000
+	MainPage.Size = UDim2.new(0, 490, 0, 365)
+
+	local PageList = Instance.new("Folder")
+	PageList.Name = "PageList"
+	PageList.Parent = MainPage
 	
-
 	local UIPageLayout = Instance.new("UIPageLayout")
 
 	UIPageLayout.Parent = PageList
