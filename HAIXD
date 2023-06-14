@@ -2414,11 +2414,11 @@ UICorner.Parent = Closed
 
 local Library = CFAHub:CreateWindow("🍅 Tomato Hub","",Enum.KeyCode.RightControl);
 
-RaceV4 = Library:CreatePage("RaceV4",11446900930)
+RaceV4 = Library:TabFrame("RaceV4",11446900930)
 
 
 if World3 then
-    RaceV4:Seperator("👾 Race V4 👾")
+  RaceV4:Seperator("👾 Race V4 👾")
 
   RaceV4:Seperator("🍃 Auto Complete Trials 🍃")
   
