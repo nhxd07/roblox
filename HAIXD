@@ -636,7 +636,6 @@ spawn(function()
 			Button.Name = "Button"
 			Button.Parent = MainFramePage
 			Button.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-			Button.BackgroundTransparency = 0.8
 			Button.Size = UDim2.new(0, 470, 0, 31)
 			
 			UICorner.CornerRadius = UDim.new(0, 5)
