@@ -400,7 +400,6 @@ function Update:Window(text,logo,keybind)
  Exe.TextColor3 = Color3.fromRGB(255, 255, 255)
  Exe.TextSize = 14.000
  
- local Players = Players:GetPlayers()
  local Player = Instance.new("TextLabel")
  Player.Name = "Name"
  Player.Parent = Top
@@ -409,7 +408,7 @@ function Update:Window(text,logo,keybind)
  Player.Position = UDim2.new(0.5009756112, 0, 0, 0)
  Player.Size = UDim2.new(0, 61, 0, 27)
  Player.Font = Enum.Font.GothamBold
- Player.Text = "Players :"..Players
+ Player.Text = "Players :"..game.Players.NumPlayers
  Player.TextColor3 = Color3.fromRGB(255, 255, 255)
  Player.TextSize = 14.000
 
