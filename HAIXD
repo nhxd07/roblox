@@ -706,6 +706,7 @@ spawn(function()
 			Toggle.Name = "Toggle"
 			Toggle.Parent = MainFramePage
 			Toggle.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+			Toggle.BackgroundTransparency = 0.8
 			Toggle.Size = UDim2.new(0, 470, 0, 31)
 
 			UICorner.CornerRadius = UDim.new(0, 5)
@@ -1219,7 +1220,7 @@ person.ImageRectSize = Vector2.new(36, 36)
 			Textbox.Name = "Textbox"
 			Textbox.Parent = MainFramePage
 			Textbox.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-			Textbox.BackgroundTransparency = 0
+			Textbox.BackgroundTransparency = 0.8
 			Textbox.Size = UDim2.new(0, 470, 0, 31)
 
 			TextboxCorner.CornerRadius = UDim.new(0, 5)
