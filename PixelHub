@@ -1175,7 +1175,7 @@ Misc = Library:Tab("Misc",11447063791)
 RaceV4 = Library:Tab("RaceV4",11446900930)
 
 Main:Seperator("Infomation")
-Setting:Label("Made By Nguyễn Như Hải")
+Main:Label("Made By Nguyễn Như Hải")
 Main:Seperator("Server")
 
 PlayerServer = Main:Label("Players in Server : "..game.Players.NumPlayers .. "/"..game.Players.MaxPlayers)
