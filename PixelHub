@@ -1571,8 +1571,7 @@ task.wait()
 end
 end)
 
-
-a = 20
+DisFarm = 20
 
 Main:Textbox("Distance", a, function(a)
     DisFarm = a
