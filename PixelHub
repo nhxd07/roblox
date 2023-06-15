@@ -1558,7 +1558,8 @@ task.wait()
 end
 end)
 
-DisFarm = 20
+
+a = 20
 
 Main:Textbox("Distance", a, function(a)
     DisFarm = a
@@ -2957,6 +2958,7 @@ end
 end
 return false
 end
+
 Main:Seperator("Main Farm")
 --// main farming
 
