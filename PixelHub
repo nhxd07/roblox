@@ -1654,27 +1654,15 @@ task.spawn(function()
     v.Humanoid.WalkSpeed = 0
     v.HumanoidRootPart.Size = Vector3.new(60,60,60)
     v.HumanoidRootPart.CanCollide = false
-    v.Head.CanCollide = false
---v.Humanoid:ChangeState(11)
---v.Humanoid:ChangeState(14)
     if v.Humanoid:FindFirstChild("Animator") then
     v.Humanoid.Animator:Destroy()
+    end
+	sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
     end
     end
     end
     end)
   end)
-  end)
-
-task.spawn(function()
-  while true do wait()
-  if setscriptable then
-  setscriptable(game.Players.LocalPlayer,"SimulationRadius",true)
-  end
-  if sethiddenproperty then
-  sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
-  end
-  end
   end)
 
 Main:Toggle("Auto Set Spawn Point",true, function(setspawnfunc)
