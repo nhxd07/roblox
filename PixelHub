@@ -8718,12 +8718,9 @@ elseif World3 then
         end
         
     end)
+    
     Teleport:Button("Mansion",function()
-        if BypassTP then
-            BTP(CFrame.new(-12553.8125, 332.403961, -7621.91748))
-        else
-            TP2(CFrame.new(-12553.8125, 332.403961, -7621.91748))
-        end
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-12553.8125, 332.403961, -7621.91748))
         
     end)
     Teleport:Button("Secret Temple",function()
@@ -8807,11 +8804,7 @@ elseif World3 then
         
     end)
     Teleport:Button("Raid Lab",function()
-        if BypassTP then
-            BTP(CFrame.new(-5057.146484375, 314.54132080078, -2934.7995605469))
-        else
-            TP2(CFrame.new(-5057.146484375, 314.54132080078, -2934.7995605469))
-        end
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5057.146484375, 314.54132080078, -2934.7995605469))
         
     end)
     Teleport:Button("Mini Sky",function()
@@ -11460,14 +11453,26 @@ end)
   RaceV4:Button("Auto Upgrade Tier",function(t)
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('UpgradeRace','Buy')
   end)
-  
-  RaceV4:Toggle("Auto Complete Ghoul/Human Trial",AutoCom,function(value)
- AutoCom = value  
+RaceV4:Button("Auto Complete Angel Trial",function(t)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame
+        end)
+
+        RaceV4:Button("Auto Complete Rabbit Trial",function(t)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.MinkTrial.Ceiling.CFrame * CFrame.new(0,-5,0)
+        end)
+
+        RaceV4:Button("Auto Complete Cyborg Trial",function(t)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,300,0)
+        end)
+        end
+        
+RaceV4:Toggle("Auto Complete Ghoul Trial",AutoGhoul,function(value)
+ AutoGhoul = value  
 end)
 
 spawn(function()
     while wait() do
-        if AutoCom then
+        if AutoGhoul then
             for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
                 if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                     pcall(function()
@@ -11484,15 +11489,27 @@ spawn(function()
         end
     end
 end)
-RaceV4:Button("Auto Complete Angel Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame
-        end)
 
-        RaceV4:Button("Auto Complete Rabbit Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.MinkTrial.Ceiling.CFrame * CFrame.new(0,-5,0)
-        end)
+RaceV4:Toggle("Auto Complete Human Trial",AutoHuman,function(value)
+ AutoHuman = value  
+end)
 
-        RaceV4:Button("Auto Complete Cyborg Trial",function(t)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,300,0)
-        end)
+spawn(function()
+    while wait() do
+        if AutoHuman then
+            for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
+                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                    pcall(function()
+                        repeat wait(.1)
+                            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+                            v.Humanoid.Health = 0
+                            v.HumanoidRootPart.CanCollide = false
+                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                            v.HumanoidRootPart.Transparency = 0.8
+                        until not AutoCom  or not v.Parent or v.Humanoid.Health <= 0
+                    end)
+                end
+            end
         end
+    end
+end)
