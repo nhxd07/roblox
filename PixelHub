@@ -104,14 +104,27 @@ function Update:Window(text,logo,keybind)
 	TCNR.Name = "TCNR"
 	TCNR.Parent = Top
 
-	local Logo = Instance.new("ImageLabel")
+	--local Logo = Instance.new("ImageLabel")
+	--Logo.Name = "Logo"
+	--Logo.Parent = Top
+	--Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	--Logo.BackgroundTransparency = 1.000
+	--Logo.Position = UDim2.new(0, 10, 0, 1)
+	--Logo.Size = UDim2.new(0, 25, 0, 25)
+	--Logo.Image = "rbxassetid://13755190794"
+	
+	local Logo = Instance.new("TextLabel")
 	Logo.Name = "Logo"
 	Logo.Parent = Top
 	Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Logo.BackgroundTransparency = 1.000
 	Logo.Position = UDim2.new(0, 10, 0, 1)
 	Logo.Size = UDim2.new(0, 25, 0, 25)
-	Logo.Image = "rbxassetid://13755190794"
+	Logo.Font = Enum.Font.Creepster
+    Logo.Text = "P"
+    Logo.TextColor3 = Color3.fromRGB(0, 255, 255)
+    Logo.TextScaled = true
+    Logo.TextSize = 16.000
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
