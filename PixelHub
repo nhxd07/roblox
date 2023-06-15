@@ -8804,7 +8804,11 @@ elseif World3 then
         
     end)
     Teleport:Button("Raid Lab",function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5057.146484375, 314.54132080078, -2934.7995605469))
+        if BypassTP then
+            BTP(CFrame.new(-5057.146484375, 314.54132080078, -2934.7995605469))
+        else
+            TP2(CFrame.new(-5057.146484375, 314.54132080078, -2934.7995605469))
+        end
         
     end)
     Teleport:Button("Mini Sky",function()
