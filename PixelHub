@@ -124,7 +124,7 @@ function Update:Window(text,logo,keybind)
     Logo.Text = "P"
     Logo.TextColor3 = Color3.fromRGB(0, 255, 255)
     Logo.TextScaled = true
-    Logo.TextSize = 16.000
+    Logo.TextSize = 18.000
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
