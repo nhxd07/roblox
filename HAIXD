@@ -35,7 +35,7 @@ local function loading()
 	Main.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 	Main.ClipsDescendants = true
 	Main.Position = UDim2.new(0.5, 0, 0.499241263, 0)
-	Main.Size = UDim2.new(0, 500, 0, 300)
+	Main.Size = UDim2.new(0, 500, 0, 250)
 
 	UICorner.Parent = Main
 
@@ -135,124 +135,6 @@ local function loading()
 	end
 end
 loading()
-local queue_on_teleport = queue_on_teleport
-
-if syn then queue_on_teleport = syn.queue_on_teleport end
-queue_on_teleport([[   loadstring(game:HttpGet("https://raw.githubusercontent.com/accountnop/magmaisgay/main/magma"))()
-]])
-
-local plr = game.Players.LocalPlayer
-
-local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
-local CbFw2 = CbFw[2]
-
-function GetCurrentBlade() 
-    local p13 = CbFw2.activeController
-    local ret = p13.blades[1]
-    if not ret then return end
-    while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-    return ret
-end
-
-function AttackNoCD() 
-    local AC = CbFw2.activeController
-    for i = 1, 1 do 
-        local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
-            plr.Character,
-            {plr.Character.HumanoidRootPart},
-            60
-        )
-        local cac = {}
-        local hash = {}
-        for k, v in pairs(bladehit) do
-            if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
-                table.insert(cac, v.Parent.HumanoidRootPart)
-                hash[v.Parent] = true
-            end
-        end
-        bladehit = cac
-        if #bladehit > 0 then
-            local u8 = debug.getupvalue(AC.attack, 5)
-            local u9 = debug.getupvalue(AC.attack, 6)
-            local u7 = debug.getupvalue(AC.attack, 4)
-            local u10 = debug.getupvalue(AC.attack, 7)
-            local u12 = (u8 * 798405 + u7 * 727595) % u9
-            local u13 = u7 * 798405
-            (function()
-                u12 = (u12 * u9 + u13) % 1099511627776
-                u8 = math.floor(u12 / u9)
-                u7 = u12 - u8 * u9
-            end)()
-            u10 = u10 + 1
-            debug.setupvalue(AC.attack, 5, u8)
-            debug.setupvalue(AC.attack, 6, u9)
-            debug.setupvalue(AC.attack, 4, u7)
-            debug.setupvalue(AC.attack, 7, u10)
-            pcall(function()
-                for k, v in pairs(AC.animator.anims.basic) do
-                    v:Play()
-                end                  
-            end)
-            if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-                game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
-            end
-        end
-    end
-end
-
-_G.Setting_table = {
-    Auto_Farm = false,
-    FastAttack = true,
-	Auto_Buso = true,
-	Auto_Ken = true,
-	Show_Damage = true,
-	NoClip = true,
-	Save_Member = true,
-	Melee_A = true,
-	Defense_A = true,
-	SkillZ = true,
-	Rejoin = true,
-	Anti_AFK = true,
-	K_MAX = 50,
-	Chest_Lock = 50,
-	Delay_C = 15
-}
-
-_G.Check_Save_Setting = "CheckSaveSetting"
-
-getgenv()['JsonEncode'] = function(msg)
-    return game:GetService("HttpService"):JSONEncode(msg)
-end
-getgenv()['JsonDecode'] = function(msg)
-    return game:GetService("HttpService"):JSONDecode(msg)
-end
-getgenv()['Check_Setting'] = function(Name)
-    if not _G.Dis and not isfolder('Hai Saves') then
-        makefolder('Hai Saves')
-    end
-    if not _G.Dis and not isfile('Hai Saves/'..Name..'.json') then
-        writefile('Hai Saves/'..Name..'.json',JsonEncode(_G.Setting_table))
-    end
-end
-
-getgenv()['Get_Setting'] = function(Name)
-    if not _G.Dis and isfolder('Hai Saves') and isfile('Hai Saves/'..Name..'.json') then
-        _G.Setting_table = JsonDecode(readfile('Hai Saves/'..Name..'.json'))
-        return _G.Setting_table
-	elseif not _G.Dis then
-        Check_Setting(Name)
-    end
-end
-
-getgenv()['Update_Setting'] = function(Name)
-    if not _G.Dis and isfolder('Hai Saves') and isfile('Hai Saves/'..Name..'.json') then
-        writefile('Hai Saves/'..Name..'.json',JsonEncode(_G.Setting_table))
-	elseif not _G.Dis then
-        Check_Setting(Name)
-    end
-end
 
 do local GUI = game.CoreGui:FindFirstChild("Pixel Hub");if GUI then GUI:Destroy();end;if _G.Color == Color3.fromRGB(0, 255, 255) then
        _G.Color = Color3.fromRGB(255, 255, 255)
@@ -326,14 +208,14 @@ function Update:Window(text,logo,keybind)
 	local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
 	local executor = identifyexecutor() or "Unknown"
 	
-	local SOMEXHUB = Instance.new("ScreenGui")
-	SOMEXHUB.Name = "Pixel Hub"
-	SOMEXHUB.Parent = game.CoreGui
-	SOMEXHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	local PIXELHUB = Instance.new("ScreenGui")
+	PIXELHUB.Name = "Pixel Hub"
+	PIXELHUB.Parent = game.CoreGui
+	PIXELHUB.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	
 	local Main = Instance.new("ImageLabel")
 	Main.Name = "Main"
-    Main.Parent = SOMEXHUB
+    Main.Parent = PIXELHUB
     Main.ClipsDescendants = true
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
@@ -1485,7 +1367,7 @@ spawn(function()
 Main:Line()
 
 --// Setting Player
-Main:Seperator("👤 Local Player 👤")
+Main:Seperator("Local Player")
 
 Main:Textbox("Speed Hack", speed, function(speed)
     game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
@@ -1677,7 +1559,7 @@ spawn(function()
   end
 end)
 
-Main:Seperator("⚙️ Config ⚙️")
+Main:Seperator("Config")
 
 --// Setting Farm
 local bringfrec = 350
@@ -1815,7 +1697,7 @@ Main:Textbox("Distance", a, function(a)
     DisFarm = a
 end)
 
-Main:Toggle('Bypass TeTeleport', BypassTP, function(vale)
+Main:Toggle('Bypass Teleport', BypassTP, function(vale)
   BypassTP = vale
 end)
 
@@ -3208,25 +3090,9 @@ end
 end
 return false
 end
-Main:Seperator("🗡️ Main Farm 🗡️")
+Main:Seperator("Main Farm")
 --// main farming
-local MonsterStatus = Main:Label("")
-local QuestStatus = Main:Label("")
 
-spawn(function()
-  while task.wait() do
-  if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-  MonsterStatus:Set("[Monster] : ...")
-  QuestStatus:Set("[Quest] : ...".." | [Level] : ...")
-  elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-  pcall(function()
-    CheckLevel()
-    MonsterStatus:Set("[Monster] : "..Ms)
-    QuestStatus:Set("[Quest] : "..NameQuest.." | [Level] : "..QuestLv)
-    end)
-  end
-  end
-  end)
 spawn(function()
   while wait(.8) do
   if _G.GrabChested then
@@ -3273,10 +3139,9 @@ function CheckAntiCheatBypass()
 
 CheckAntiCheatBypass()
 
-Main:Toggle("Anti Cheat Bypass(❗Do Not Turn Off❗)", true, function(value)
+Main:Toggle("Anti Cheat Bypasss", true, function(value)
   _G.SafeFarm = value
 CheckAntiCheatBypass()
-  Notification("Anti Cheat Bypass Activated ✅")
 end)
 
 Main:Dropdown("Select Mode Farm", {
@@ -3742,7 +3607,7 @@ spawn(function()
 end)
 end
 
-Main:Seperator("🎁 Chest 🎁")
+Main:Seperator("Chest")
 
 Main:Toggle("Auto Farm Chest (Tween)",false,function(t)
 
@@ -3821,7 +3686,7 @@ Main:Toggle('Auto Farm Instant + Hop', _G.GrabChested, function(gacf)
 end)
 
 if World3 then
-Main:Seperator("🦴 Bones 🦴")
+Main:Seperator("Bones")
 
 Main:Toggle("Auto Farm Bone",AutoFarmBone, function(bonefarn)
   AutoFarmBone = bonefarn
@@ -3933,7 +3798,7 @@ Main:Toggle('Auto Try Luck', TryLuck, function(gravefunc)
     end)
 end
 
-Main:Seperator("👥 Other Mobs 👥")
+Main:Seperator("Other Mobs")
 
 Main:Dropdown("Select Monster",tableMon, function(monsterlistfunc)
   SelectMonster = monsterlistfunc
@@ -4066,7 +3931,7 @@ spawn(function()
   end)
 
 
-Main:Seperator("⚔️ Material Farm ⚔️")
+Main:Seperator("Material Farm")
 --// Material List
 
 if World1 then
@@ -4142,27 +4007,9 @@ spawn(function()
   end
 end)
 
-Main:Seperator("🎃 Boss Farm 🎃")
+Main:Seperator("Boss Farm")
 
 --// Boss Farming
-local BossStatus = Main:Label("")
-local BossQuest = Main:Label("")
-
-spawn(function()
-  while task.wait() do
-  pcall(function()
-    CheckBossQuest()
-    if SelectBoss == nil then
-    BossStatus:Set("[Boss] : ...".." | [Distance] : ...")
-    BossQuest:Set("[Quest] : ...".." | [Level] : ...")
-    elseif SelectBoss == BossMon then
-    local posBos = math.floor((game.Players.LocalPlayer.Character.HumanoidRootPart.Position - game:GetService("ReplicatedStorage"):FindFirstChild(BossMon).HumanoidRootPart.Position).Magnitude)
-    BossStatus:Set("[Boss] : "..BossMon.." | [Distance] : "..posBos.." M")
-    BossQuest:Set("[Quest] : "..NameQuestBoss.." | [Level] : "..QuestLvBoss)
-    end
-    end)
-  end
-  end)
 
 local Boss = {}
 for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
@@ -4325,7 +4172,7 @@ spawn(function()
   end
 end)
 
-Main:Seperator("🍃 Mastery Farm 🍃")
+Main:Seperator("Mastery Farm")
 
 --// Mastery Farm
 
@@ -4815,7 +4662,7 @@ Main:Toggle('Use Skill F', SkillF, function(ffunc)
   SkillF = ffunc
 end)
 
-    Main:Seperator("🤺 Observation Haki 🤺")
+    Main:Seperator("Observation Haki")
 
 local ObservationRange = Main:Label("")
 
@@ -4966,7 +4813,7 @@ end
 
 
 
-Farm:Seperator("🦾 Fighting Style 🦾")
+Farm:Seperator("Fighting Style")
 
 Farm:Toggle('Auto Death Step', AutoDeathStep, function(ads)
     AutoDeathStep = ads
@@ -5459,7 +5306,7 @@ end)
 
 if World3 then
 
-Farm:Seperator("🫅 Cake Prince 🫅")
+Farm:Seperator("Cake Prince")
 
 local CakePrinceStatus = Farm:Label("")
 spawn(function()
@@ -5472,7 +5319,7 @@ spawn(function()
     elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 86 then
     CakePrinceStatus:Set("Killed : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,39)..' / 500')
     else
-      CakePrinceStatus:Set("Cake Prince Has Been Spawned ✅")
+      CakePrinceStatus:Set("Cake Prince : No Spawned.")
     end
     end)
   end
@@ -5553,7 +5400,7 @@ spawn(function()
   end
   end)
 
-Farm:Seperator("👾 Elite Hunter 👾")
+Farm:Seperator("Elite Hunter")
 local EliteProgress = Farm:Label("")
     local BosstElite = Farm:Label("")
     spawn(function()
@@ -5562,9 +5409,9 @@ local EliteProgress = Farm:Label("")
                 local progelit = tostring(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))
                 EliteProgress:Set("[Total Elite Killed : "..progelit.."]")
                 if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre [Lv. 1750]") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre [Lv. 1750]") or game:GetService("Workspace").Enemies:FindFirstChild("Urban [Lv. 1750]") then
-                    BosstElite:Set("Elite Boss : Spawned.")
+                    BosstElite:Set("Elite Hunter : Spawned.")
                 else
-                    BosstElite:Set("Elite Hunter Has Been Spawned ✅")
+                    BosstElite:Set("Elite Hunter : No Spawned.")
                 end
             end)
         end
@@ -5620,7 +5467,7 @@ local EliteProgress = Farm:Label("")
     end
 
 if World2 then
-Farm:Seperator("🗡️ Auto Rengoku 🗡️")
+Farm:Seperator("Auto Rengoku")
 
 Farm:Toggle('Auto Rengoku', AutoRengoku, function(autorengokufunc)
     AutoRengoku = autorengokufunc
@@ -5678,15 +5525,7 @@ end)
 end
 
 if World3 then
-Farm:Seperator("🗡️ Buddy Sword 🗡️")
-
-local queen = Farm:Label("")
-
-if game:GetService("Workspace").Enemies:FindFirstChild("Cake Queen [Lv. 2175] [Boss]") then
-queen:Set("Status : Cake Queen Has Been Spawn ✅")
-else
-queen:Set("Status : Cake Queen Not Spawn ❌")
-end
+Farm:Seperator("Buddy Sword")
 
 Farm:Toggle('Auto Buddy Sword', AutoBuddySword, function(autobuddyswordfunc)
     AutoBuddySword = autobuddyswordfunc
@@ -5732,14 +5571,7 @@ end)
 end
 
 if World1 then
-Farm:Seperator("🗡️ Pole Sword 🗡️")
-
-local pole = Farm:Label("")
-if game:GetService("Workspace").Enemies:FindFirstChild("Thunder God [Lv. 575] [Boss]") then
-pole:Set("Status : Thunder God Has Been Spawn ✅")
-else
-pole:Set("Status : Thunder God Not Spawn ❌")
-end
+Farm:Seperator("Pole Sword")
 
 Farm:Toggle('Auto Pole', AutoPole, function(autopolefunc)
     AutoPole = autopolefunc
@@ -5794,7 +5626,7 @@ Farm:Toggle('Auto Pole [HOP]' , false, function(value)
 end)
 end
 if World3 then
-Farm:Seperator("🗡️ Yama Sword 🗡️")
+Farm:Seperator("Yama Sword")
 
 local Total_Elite_Hunter = Farm:Label("")
 
@@ -5821,14 +5653,8 @@ spawn(function()
     end
 end)
 
-Farm:Seperator("⛏️ Hallow Sycthe ⛏️")
+Farm:Seperator("Hallow Sycthe")
 
-local hallow = Farm:Label("")
-if game:GetService("Workspace").Enemies:FindFirstChild("Soul Reaper [Lv. 2100] [Raid Boss]") then
-hallow:Set("Status : Soul Reaper Boss Has Been Spawn ✅")
-else
-hallow:Set("Status : Soul Reaper Boss Not Spawn ❌")
-end
 Farm:Toggle('Auto Hallow Sycthe', AutoHallowSycthe, function(autohallowsycthefunc)
     AutoHallowSycthe = autohallowsycthefunc
     CancelTween(AutoHallowSycthe)
@@ -5882,13 +5708,6 @@ Farm:Toggle('Auto Hallow Sycthe [HOP]', false, function(value)
 Hop()
 end)
 
-Farm:Seperator("🗡️ Cavander Sword 🗡️")
-local cavander = Farm:Label("")
-if game:GetService("Workspace").Enemies:FindFirstChild("Beautiful Pirate [Lv. 1950] [Boss]") then
-cavander:Set("Status : Beautiful Pirate Has Been Spawn ✅")
-else
-cavander:Set("Status : Beautiful Pirate Not Spawn ❌")
-end
 Farm:Toggle('Auto Cavander', AutoCavander, function(autocavanderfunc)
     AutoCavander = autocavanderfunc
     CancelTween(AutoCavander)
@@ -5931,7 +5750,7 @@ Farm:Toggle('Auto Canvander [HOP]', false, function(value)
 Hop()
 end)
 
-Farm:Seperator("🗡️ Tushita Sword 🗡️")
+Farm:Seperator("Tushita Sword")
 
 Farm:Toggle('Auto Tushita', AutoTushita, function(autotushitafunc)
     AutoTushita = autotushitafunc
@@ -6078,7 +5897,7 @@ Farm:Toggle('Auto Tushita [HOP]', false, function(value)
 Hop()
 end)
 
-Farm:Seperator("🔪 Dark Dagger 🔪")
+Farm:Seperator("Dark Dagger")
 
 Farm:Toggle('Auto Dark Dagger', AutoDarkDagger, function(autodarkdaggerfunc)
     AutoDarkDagger = autodarkdaggerfunc
@@ -6123,7 +5942,7 @@ Farm:Toggle('Auto Dark Dagger [HOP]', false, function(value)
 Hop()
 end)
 
-Farm:Seperator("⚔️ Dual Cursed Katana ⚔️")
+Farm:Seperator("Dual Cursed Katana")
 
 local Yama = Farm:Label("❌ : Yama")
 
@@ -6587,7 +6406,7 @@ Farm:Toggle('Auto Cursed Dual Katana', false, function(autocdkf)
 Hop()
 end)
     
-    Farm:Seperator("🎸 Soul Guitar 🎸")
+    Farm:Seperator("Soul Guitar")
 
     Farm:Toggle('Auto Soul Guitar', false, function(soulguiutarf)
         AutoSoulGuitar = soulguiutarf
@@ -6719,15 +6538,6 @@ Farm:Toggle('Auto Soul Guitar [HOP]', false, function(value)
 Hop()
 end)
 
-
-Farm:Seperator("🏹 Serpent Bow 🏹")
-
-local serpent = Farm:Label("")
-if game.Workspace.Enemies:FindFirstChild("Island Empress [Lv. 1675] [Boss]") then
-serpent:Set("Status : Island Impress Boss Has Been Spawn ✅")
-else
-serpent:Set("Status : Island Impress Boss Not Spawn ❌")
-end
 Farm:Toggle('Auto Serpent Bow', false, function(asbgh)
     Auto_Serpent_Bow = asbgh
     CancelTween(Auto_Serpent_Bow)
@@ -6771,7 +6581,7 @@ end)
 end
 
 if World1 then
-Farm:Seperator("🗡️ Saber Sword 🗡️")
+Farm:Seperator("Saber Sword")
     Farm:Toggle('Auto Saber', false, function(autosaberfunc)
         AutoSaber = autosaberfunc
         CancelTween(AutoSaber)
@@ -6892,7 +6702,7 @@ Hop()
 end)
 end
 
-Farm:Seperator("📜 Other Quest 📜")
+Farm:Seperator("Other Quest")
 
 if World2 then
 Farm:Toggle('Auto Citizen', AutoCitizen, function(aef)
@@ -7648,7 +7458,7 @@ if World2 then
         end
     end)
     end
-Stats:Seperator("📊 Auto Stats 📊")
+Stats:Seperator("Auto Stats")
 
 Stats:Toggle("Auto Stats Kaitun",_G.Auto_Stats_Kaitun,function(value)
 _G.Auto_Stats_Kaitun = value
@@ -7794,7 +7604,7 @@ end)
 
     
     
-    Stats:Seperator("📝 Fake 📝")
+    Stats:Seperator("Fake")
     
     Stats:Toggle("Enabled Fake",true,function(value)
         _G.EnabledStat = value
@@ -7859,7 +7669,7 @@ end)
         end
     end)
 
-Combat:Seperator("🤺 Players Combat 🤺")
+Combat:Seperator("Players Combat")
 PlayerList = {}
 
 for i,v in pairs(game.Players:GetChildren()) do  
@@ -7887,7 +7697,7 @@ Combat:Toggle("Aimbot Skill Nearest", false, function(vu)
 	AimSkillNearest = vu
 end)
 
-Combat:Seperator("🎯 Hit Box 🎯")
+Combat:Seperator("Hit Box")
 
 Combat:Toggle("Hit Box",_G.Disabled,function(value)
  _G.Disabled = value
@@ -8131,7 +7941,7 @@ spawn(function()
     end)
 end)
 
-Combat:Seperator("📈 Player Status 📈")
+Combat:Seperator("Player Status")
 
 Combat:Label("Name : "..game.Players.LocalPlayer.Name)
 
@@ -8156,7 +7966,7 @@ Combat:Label("Level : "..game.Players.localPlayer.Data.Level.Value)
 
 Combat:Label("Bounty : "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value)
 
-Combat:Seperator("🗡️ Sword 🗡️")
+Combat:Seperator("Sword")
 
 local Saber = Combat:Label("❌ : Saber")
 local Rengoku = Combat:Label("❌ : Rengoku")
@@ -8216,7 +8026,7 @@ spawn(function()
     end
 end)
 
-Combat:Seperator("🗡️ Quest 🗡️")
+Combat:Seperator("Quest")
 
 local Bartilo_Quest = Combat:Label("❌ : Bartilo Quest")
 local Don_Swan_Quest = Combat:Label("❌ : Don Swan Quest")
@@ -8240,7 +8050,7 @@ spawn(function()
     end
 end)
 
-Combat:Seperator("🗡️ Sword Legendary 🗡️")
+Combat:Seperator("Sword Legendary")
 
 local Shisui = Combat:Label("❌ : Shisui")
 local Saddi = Combat:Label("❌ : Saddi")
@@ -8268,7 +8078,7 @@ spawn(function()
     end
 end)
 
-Combat:Seperator("🔪 Melee 🔪")
+Combat:Seperator("Melee")
 
 local Superhuman = Combat:Label("❌ : Superhuman")
 local Death_Step = Combat:Label("❌ : Death Step")
@@ -8297,7 +8107,7 @@ spawn(function()
     end
 end)
 
-Combat:Seperator("🔫 Gun 🔫")
+Combat:Seperator("Gun")
 
 local Kabu_cha = Combat:Label("❌ : Kabucha")
 local Acidum_Rifle = Combat:Label("❌ : Acidum Rifle")
@@ -8321,7 +8131,7 @@ spawn(function()
     end
 end)
 
-Combat:Seperator("⚙️ Accessory ⚙️")
+Combat:Seperator("Accessory")
 
 local Dark_Coat = Combat:Label("❌ : Dark Coat")
 local Ghoul_Mask = Combat:Label("❌ : Ghoul Mask")
@@ -8450,7 +8260,7 @@ end)
 end)
 end
 
-Teleport:Seperator("🗺️ World - Server 🗺️")
+Teleport:Seperator("World - Server")
 
 Teleport:Button("Hop Server",function()
     local PlaceID = game.PlaceId
@@ -8530,7 +8340,7 @@ Teleport:Button("Travel to Third Sea", function()
 end) 
 
 
-    Teleport:Seperator("👤 NPC Teleport 👤")
+    Teleport:Seperator("NPC Teleport")
 
  if World1 then
         Teleport:Dropdown("Select NPC",{
@@ -8673,7 +8483,7 @@ end)
         StopTween(_G.TeleportNPC)
     end)
 
-Teleport:Seperator("🏝️ Island Teleport 🏝️")
+Teleport:Seperator("Island Teleport")
 
 --// Island Teleport
 Teleport:Button('Stop Tween', function()
@@ -9628,7 +9438,7 @@ end
         end)
     end
 
-Dungeon:Seperator("🧿 Esp Section 🧿")
+Dungeon:Seperator("Esp Section")
   
 if World2 then
 		Dungeon:Toggle("TP Flower Red",function()
@@ -9993,7 +9803,7 @@ function UpdateIslandESP()
 		end
 	end)
 
-    Fruit:Seperator("❌ Sniper  ❌//")
+    Fruit:Seperator("Sniper")
     
     FruitList = {
         "Bomb-Bomb",
@@ -10040,7 +9850,7 @@ function UpdateIslandESP()
         _G.AutoBuyFruitSniper = value
     end)
 
-    Fruit:Seperator("⚙️ Others ⚙️")
+    Fruit:Seperator("Others")
     
     Fruit:Dropdown("Select Fruits Eat",FruitList,function(value)
         _G.SelectFruitEat = value
@@ -10221,7 +10031,7 @@ end)
 
 
 
-    Shop:Seperator("🦾 Abilities 🦾")
+    Shop:Seperator("Abilities")
     
     Shop:Button("Buy Geppo [ $10,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
@@ -10248,7 +10058,7 @@ Shop:Toggle("Auto Buy Abilities", false, function(t)
     end
 end)
 
-Shop:Seperator("⛵ Boats  ⛵//")
+Shop:Seperator("Boats")
 
 BoatList = {
     "Pirate Sloop",
@@ -10293,7 +10103,7 @@ Shop:Button("Buy Boat",function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat",_G.SelectBoat)
 end)
 
-    Shop:Seperator("🤺 Fighting Style 🤺")
+    Shop:Seperator("Fighting Style")
     
     Shop:Button("Buy Black Leg [ $150,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
@@ -10338,7 +10148,7 @@ end)
     end)
     -----Shop----------------
     
-    Shop:Seperator(" Sword ")
+    Shop:Seperator("Sword")
     
     Shop:Button("Cutlass [ $1,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cutlass")
@@ -10397,7 +10207,7 @@ end)
     end)
 
 
-    Shop:Seperator("🔫 Gun 🔫")
+    Shop:Seperator("Gun")
     
     Shop:Button("Slingshot [ $5,000 Beli ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Slingshot")
@@ -10447,7 +10257,7 @@ end)
 
     ------------Bone------------------
     
-    Shop:Seperator("🦴 Bones 🦴")
+    Shop:Seperator("Bones")
     
     Shop:Button("Buy Surprise [ $50 Bone ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Buy",1,1)
@@ -10463,7 +10273,7 @@ end)
     
     ------------Stat------------------
     
-    Shop:Seperator("📊 Stat 📊")
+    Shop:Seperator("Stat")
 
 Shop:Button("Reset Stats (Use 2.5K Fragments)", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","1")
@@ -10475,7 +10285,7 @@ Shop:Button("Random Race (Use 3K Fragments)", function()
 	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","2")
 end)
     --------------Accessories-----------------
-    	Shop:Seperator("⚙️ Accessories ⚙️")
+    	Shop:Seperator("Accessories")
 	Shop:Button("Black Cape [ $50,000 Beli ]",function()
 		local args = {
 			[1] = "BuyItem",
@@ -10498,7 +10308,7 @@ end)
 		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 	end)
 	
-	Shop:Seperator("👾 Race & etc 👾")
+	Shop:Seperator("Race & etc")
 	Shop:Button("Race Ghoul (Use 2.5K Fragments)",function()
 		local args = {
 			[1] = "Ectoplasm",
@@ -10524,7 +10334,7 @@ end)
 	
 	
 
-    Misc:Seperator("🗺️ Server - Main 🗺️ ")
+    Misc:Seperator("Server - Main")
     
     Misc:Seperator("Job-Id")   
 
@@ -10541,13 +10351,13 @@ end)
     end)
     
     Misc:Button("Destroy Ui",function()
-        if game.CoreGui:FindFirstChild("Wing Hub") then
-            game.CoreGui:FindFirstChild("Wing Hub"):Destroy()
-            game.CoreGui:FindFirstChild("PADOXHUBMODILE"):Destroy()
+        if game.CoreGui:FindFirstChild("PIXELHUB") then
+            game.CoreGui:FindFirstChild("PIXELHUB"):Destroy()
+            game.CoreGui:FindFirstChild("PIXELHUB"):Destroy()
         end
     end)
 
-    Misc:Seperator("⚙️ Main - Ui ⚙️")
+    Misc:Seperator("Main - Ui")
     
     Misc:Button("Open Devil Shop",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
@@ -10581,7 +10391,7 @@ end)
      game.Players.LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
 end)
 
-    Misc:Seperator("👥 Main - Teams 👥")
+    Misc:Seperator("Main - Teams")
     
 Misc:Button("Join Pirates Team", function()
     local args = {
@@ -10609,7 +10419,7 @@ end)
     
     
 
-    Misc:Seperator("🍃 Abilities 🍃")
+    Misc:Seperator("Abilities")
     
     Misc:Button("Always Day",function()
     game:GetService("RunService").Heartbeat:wait() do
@@ -10759,7 +10569,7 @@ game:GetService("UserInputService").JumpRequest:connect(function()
 end) 
 end)
 
-    Misc:Seperator("🧿 Highlight 🧿")
+    Misc:Seperator("Highlight")
 
 Misc:Toggle("Show Chat disabled", _G.chat, function(value)
     _G.chat = value
@@ -10994,7 +10804,7 @@ Misc:Toggle("Graphic",false,function(v)
 		end
 	end)
 
-    Misc:Seperator("⚙️ Misc ⚙️")
+    Misc:Seperator("Misc")
 
 	   Misc:Toggle("Auto Haki", true,function(vu)
       _G.AutoHakiBuso = vu
@@ -11048,7 +10858,7 @@ end)
         _G.NoClip = value
     end)
     
-   Misc:Seperator("👥 Main - Mob 👥")
+   Misc:Seperator("Main - Mob")
     
     	Misc:Button("Remove Lave",function()
 		for i,v in pairs(game.Workspace:GetDescendants()) do
@@ -11311,7 +11121,7 @@ end)
 		end)
 	end)
 
-    Misc:Seperator("📜 Codes 📜")
+    Misc:Seperator("Codes")
     
     local x2Code = {
         "FUDD10",
@@ -11350,7 +11160,7 @@ end)
         game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(_G.CodeSelect)
     end)
     
-    Misc:Seperator("📊 State 📊")
+    Misc:Seperator("State")
     
     Misc:Dropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},function(value)
         _G.SelectStateHaki = value
@@ -11372,7 +11182,7 @@ end)
         end
     end)
     
-    Misc:Seperator("✈️ Boost FPS  ✈️")
+    Misc:Seperator("Boost FPS")
     
     local a = game.Lighting
     local c = Instance.new("ColorCorrectionEffect", a)
@@ -11608,7 +11418,7 @@ end
 end
 end)
 
-    Misc:Seperator("👾 Race Boost 👾")
+    Misc:Seperator("Race Boost")
 
     Misc:Toggle("Auto Active Race",_G.AutoAgility,function(value)
         _G.AutoAgility = value
@@ -11658,7 +11468,7 @@ RaceV4:Label("You Are Not in Third Sea!!")
 end
 
 if World3 then
-    RaceV4:Seperator("👾 Race V4 👾")
+    RaceV4:Seperator("Race V4")
     
 RaceV4:Button("Teleport To Top Of GreatTree",function()
   Tween(CFrame.new(2947.556884765625, 2281.630615234375, -7213.54931640625))
@@ -11762,7 +11572,7 @@ end)
     Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188)
   end)
 
-  RaceV4:Seperator("🍃 Auto Complete Trials 🍃")
+  RaceV4:Seperator("Auto Complete Trials")
   
   RaceV4:Button("Auto Upgrade Tier",function(t)
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('UpgradeRace','Buy')
