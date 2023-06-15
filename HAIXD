@@ -86,7 +86,7 @@ function Update:Window(text,logo,keybind)
     Main.Size = UDim2.new(0, 0, 0, 0)
     Main.Active = true
     Main.Draggable = true
-    Main.Image = "rbxassetid://13728869947"
+    Main.Image = "rbxassetid://13755223840"
 	
 	Main:TweenSize(UDim2.new(0, 656, 0, 400),"Out","Quad",0.4,true)
 
@@ -111,6 +111,7 @@ function Update:Window(text,logo,keybind)
 	Logo.BackgroundTransparency = 1.000
 	Logo.Position = UDim2.new(0, 10, 0, 1)
 	Logo.Size = UDim2.new(0, 25, 0, 25)
+	Logo.Image = "rbxassetid://13755190794"
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
@@ -1135,29 +1136,25 @@ end
 
 
 local ScreenGui1 = Instance.new("ScreenGui")
-local ImageButton1 = Instance.new("TextButton")
+local Closed = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
 
 ScreenGui1.Name = "ImageButton"
 ScreenGui1.Parent = game.CoreGui
 ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-ImageButton1.Parent = ScreenGui1
-ImageButton1.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-ImageButton1.BorderSizePixel = 0
-ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-ImageButton1.Size = UDim2.new(0, 40, 0, 40)
-ImageButton1.Draggable = true
-ImageButton1.Font = Enum.Font.Code
-ImageButton1.Text = "🍅"
-ImageButton1.TextColor3 = Color3.fromRGB(0, 255, 255)
-ImageButton1.TextScaled = true
-ImageButton1.TextSize = 16.000
-ImageButton1.MouseButton1Down:connect(function()
+Closed.Parent = ScreenGui1
+Closed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Closed.BorderSizePixel = 0
+Closed.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+Closed.Size = UDim2.new(0, 50, 0, 50)
+Closed.Draggable = true
+Closed.Image = "http://www.roblox.com/asset/?id=13755190794"
+Closed.MouseButton1Down:connect(function()
   game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
   game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
 end)
-UICorner.Parent = ImageButton1
+UICorner.Parent = Closed
 
 local Library = Update:Window("Pixel Hub","",Enum.KeyCode.RightControl);
 
