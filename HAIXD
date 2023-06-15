@@ -5568,6 +5568,8 @@ Farm:Toggle('Auto Hallow Sycthe [HOP]', false, function(value)
 Hop()
 end)
 
+Farm:Seperator("Cavander")
+
 Farm:Toggle('Auto Cavander', AutoCavander, function(autocavanderfunc)
     AutoCavander = autocavanderfunc
     CancelTween(AutoCavander)
@@ -8104,7 +8106,7 @@ spawn(function()
                 function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/250,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace.Map.MysticIsland.PrimaryPart.CFrame*CFrame.new(0,250,0))
                 else
 game.StarterGui:SetCore("SendNotification", {
-        Title = "HaiHub"; -- the title (ofc)
+        Title = "PixelHub"; -- the title (ofc)
         Text = "Mirage not Found!"; -- what the text says (ofc)
         Icon = "rbxassetid://13438920682"; -- the image if u want. 
         Duration = 3; -- how long the notification should in secounds
