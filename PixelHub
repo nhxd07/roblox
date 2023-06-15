@@ -1261,11 +1261,6 @@ Main:Textbox("Fov", fov, function(fov)
     game.Workspace.CurrentCamera.FieldOfView = fov
 end)
 
-bringfrec = 1000
-Main:Textbox('Bring Mob', value, function(value)
-  bringfrec = value
-  end)
-
 Main:Button("Boost Your FPS", function()
   local decalsyeeted = true
   local g = game
@@ -1442,7 +1437,6 @@ end)
 Main:Seperator("Config")
 
 --// Setting Farm
-local bringfrec = 350
 local posX = 0
 local posY = 30
 local posZ = 0
@@ -1654,8 +1648,7 @@ task.spawn(function()
   if BringMobs or _G.Auto_Farm_Level then
   pcall(function()
     for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-    if v.Name == MonFarm and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= bringfrec then
-    if InMyNetWork(v.HumanoidRootPart) then
+    if v.Name == MonFarm and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
     v.HumanoidRootPart.CFrame = FarmPos
     v.Humanoid.JumpPower = 0
     v.Humanoid.WalkSpeed = 0
@@ -1672,7 +1665,6 @@ task.spawn(function()
     end
     end)
   end
-  end
   end)
 
 task.spawn(function()
@@ -1685,17 +1677,6 @@ task.spawn(function()
   end
   end
   end)
-
-function InMyNetWork(object)
-if isnetworkowner then
-return isnetworkowner(object)
-else
-  if (object.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= bringfrec then
-return true
-end
-return false
-end
-end
 
 Main:Toggle("Auto Set Spawn Point",true, function(setspawnfunc)
   AutoSetSpawn = setspawnfunc
