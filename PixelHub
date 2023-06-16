@@ -5354,7 +5354,7 @@ spawn(function()
   end
   end
   end)
-    
+
 Farm:Seperator("Elite Hunter")
 local EliteProgress = Farm:Label("")
     local BosstElite = Farm:Label("")
@@ -5856,45 +5856,6 @@ end)
 
 Farm:Seperator("Rip Indra")
 
-Farm:Toggle("Auto Spawn Rip Indra",Open_Color_Haki,function(vu)
-	Open_Color_Haki = vu
-end)
-
-spawn(function()
-    while wait(.3) do
-        pcall(function()
-            if Open_Color_Haki then
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("activateColor","Winter Sky")
-            	wait(0.5)
-            	repeat Tween(CFrame.new(-5420.16602, 1084.9657, -2666.8208)) wait() 
-                until CancelTween == true or Open_Color_Haki == false or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-5420.16602, 1084.9657, -2666.8208)).Magnitude <= 10
-                wait(0.5)
-                
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("activateColor","Pure Red")
-                wait(0.5)
-                repeat Tween(CFrame.new(-5414.41357, 309.865753, -2212.45776)) wait() 
-                until CancelTween == true or Open_Color_Haki == false or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-5414.41357, 309.865753, -2212.45776)).Magnitude <= 10
-                wait(0.5)
-                
-                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("activateColor","Snow White")
-                wait(0.5)
-                repeat Tween(CFrame.new(-4971.47559, 331.565765, -3720.02954)) wait() 
-                until CancelTween == true or Open_Color_Haki == false or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-4971.47559, 331.565765, -3720.02954)).Magnitude <= 10
-                wait(0.5)
-                
-                EquipWeapon("God's Chalice")
-		    	wait(0.5)
-	    		repeat Tween(CFrame.new(-5560.27295, 313.915466, -2663.89795))
-	    		until CancelTween == true or Open_Color_Haki == false or (game.Players.LocalPlayer.Character.HumanoidRootPart.Position-Vector3.new(-5560.27295, 313.915466, -2663.89795)).Magnitude <= 10
-                wait(0.5)
-                
-                game:GetService'VirtualUser':Button1Down(Vector2.new(1280,600))
-                wait(3)
-                game:GetService'VirtualUser':Button1Down(Vector2.new(1280,600))
-            end
-        end) 
-    end
-end)
 
 Farm:Toggle('Auto Rip Indra', AutoDarkDagger, function(autodarkdaggerfunc)
     AutoDarkDagger = autodarkdaggerfunc
