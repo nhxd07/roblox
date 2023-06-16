@@ -5185,8 +5185,6 @@ spawn(function()
     end
 end)
 
-if World2 then
-
 Farm:Seperator("Order Sword")
 
 Farm:Toggle("Auto Buy Microchip Order",_G.Auto_Buy_Law_Chip,function(value)
@@ -5255,7 +5253,6 @@ spawn(function()
 		end
 	end
 end)
-end
 end
 
 if World3 then
