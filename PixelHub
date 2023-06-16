@@ -1663,7 +1663,7 @@ task.spawn(function()
     v.HumanoidRootPart.CanCollide = false
     v.Head.CanCollide = false
 --v.Humanoid:ChangeState(11)
-    v.Humanoid:ChangeState(14)
+--v.Humanoid:ChangeState(14)
     if v.Humanoid:FindFirstChild("Animator") then
     v.Humanoid.Animator:Destroy()
     end
