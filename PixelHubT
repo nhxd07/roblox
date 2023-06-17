@@ -5353,7 +5353,8 @@ end)
 			pcall(function()
 				for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 					if _G.Auto_Open_Dough_Dungeon and StartCakeStartMagnet and (v.Name == "Cookie Crafter [Lv. 2200]" or v.Name == "Cake Guard [Lv. 2225]" or v.Name == "Baking Staff [Lv. 2250]" or v.Name == "Head Baker [Lv. 2275]") and (v.HumanoidRootPart.Position - POSCAKE.Position).magnitude <= 350 then
-						v.HumanoidRootPart.CFrame = POSCAKE
+						FarmPos = v.HumanoidRootPart.CFrame
+                        MonFarm = v.Name
 						v.HumanoidRootPart.CanCollide = false
 						v.HumanoidRootPart.Size = Vector3.new(50,50,50)
 						if v.Humanoid:FindFirstChild("Animator") then
@@ -5392,7 +5393,8 @@ end)
 											EquipWeapon(SelectWeapon)
 											StartCakeStartMagnet = true
 											v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)  
-											POSCAKE = v.HumanoidRootPart.CFrame
+											FarmPos = v.HumanoidRootPart.CFrame
+                                            MonFarm = v.Name
 											Tween(v.HumanoidRootPart.CFrame * Farm_Mode)
 											game:GetService'VirtualUser':CaptureController()
 											game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
