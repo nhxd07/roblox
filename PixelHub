@@ -5185,7 +5185,6 @@ spawn(function()
     end
 end)
 
-if World2 then
     Farm:Seperator("Dark Coat")
 
     local BlackBeardStatus = Swords:Label("Status : N/Q")
