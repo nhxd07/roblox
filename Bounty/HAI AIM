@@ -2002,6 +2002,10 @@ end)
 
 HAim:Seperator("Other")
 
+HAim:Button("Fly",function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/NhuHai07/roblox/main/Bounty/Fly"))()
+ end)
+
 HAim:Textbox("Jump Hack",true,function(jump)
   game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = jump
   end)
