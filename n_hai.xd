@@ -12,7 +12,7 @@ ImageButton1.BorderSizePixel = 0
 ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton1.Size = UDim2.new(0, 50, 0, 50)
 ImageButton1.Draggable = true
-ImageButton1.Image = "http://www.roblox.com/asset/?id=13755223840"
+ImageButton1.Image = "http://www.roblox.com/asset/?id=7072707647"
 ImageButton1.MouseButton1Down:connect(function()
   game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
   game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
@@ -277,7 +277,7 @@ function Update:Window(text,logo,keybind)
 	Logo.BackgroundTransparency = 1.000
 	Logo.Position = UDim2.new(0, -5, 0, -5)
 	Logo.Size = UDim2.new(0, 135, 0, 135)
-	Logo.Image = "rbxassetid://13755223840"
+	Logo.Image = "rbxassetid://7072707647"
     local Tab = Instance.new("Frame")
     Tab.Name = "Tab"
     Tab.Parent = Main
@@ -642,7 +642,7 @@ function Update:Window(text,logo,keybind)
     local main = {}
     function main:AddButton(text, callback)
         if logo == nil then
-            logo = "13755223840"
+            logo = "7072707647"
         end
         local Button = Instance.new("Frame")
         local UICorner = Instance.new("UICorner")
@@ -679,7 +679,7 @@ function Update:Window(text,logo,keybind)
         ImageButton.BorderSizePixel = 0
         ImageButton.Position = UDim2.new(0, 350, 0, 6)
         ImageButton.Size = UDim2.new(0, 20, 0, 20)
-        ImageButton.Image = "rbxassetid://13755223840"
+        ImageButton.Image = "rbxassetid://7072707647"
         ImageButton.ImageColor3 = Color3.fromRGB(255, 255, 255)
 
         UICorner_2.CornerRadius = UDim.new(0, 5)
@@ -742,7 +742,7 @@ function Update:Window(text,logo,keybind)
     function main:AddToggle(TogInfo ,default, callback)
         local toggle = false
         if logo == nil then
-            logo = "13755223840"
+            logo = "7072707647"
         end
         local CheckFrame = Instance.new("Frame")
         local CheckFrame2 = Instance.new("Frame")
@@ -789,7 +789,7 @@ function Update:Window(text,logo,keybind)
         ImageLabel.BorderSizePixel = 0
         ImageLabel.Position = UDim2.new(0, 5, 0, 6)
         ImageLabel.Size = UDim2.new(0, 20, 0, 20)
-        ImageLabel.Image = "rbxassetid://13755223840"
+        ImageLabel.Image = "rbxassetid://7072707647"
         ImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 255)
 
         Space.Name = "Space"
@@ -1143,7 +1143,7 @@ function Update:Window(text,logo,keybind)
         ImageLabel.BorderSizePixel = 0
         ImageLabel.Position = UDim2.new(0, 7.5, 0, 7.5)
         ImageLabel.Size = UDim2.new(0, 30, 0, 30)
-        ImageLabel.Image = "rbxassetid://13755223840"
+        ImageLabel.Image = "rbxassetid://7072707647"
             
         Title.Parent = SliderFrame_2
         Title.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
@@ -6864,7 +6864,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Superhuman" ,
-							Icon = "http://www.roblox.com/asset/?id=13755223840",
+							Icon = "http://www.roblox.com/asset/?id=7072707647",
 							Duration = 2.5
 						})
 					end
@@ -6876,7 +6876,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Death Step" ,
-							Icon = "http://www.roblox.com/asset/?id=13755223840",
+							Icon = "http://www.roblox.com/asset/?id=7072707647",
 							Duration = 2.5
 						})
 					end
@@ -6888,7 +6888,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have SharkMan Karate" ,
-							Icon = "http://www.roblox.com/asset/?id=13755223840",
+							Icon = "http://www.roblox.com/asset/?id=7072707647",
 							Duration = 2.5
 						})
 					end
@@ -6900,7 +6900,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Electric Claw" ,
-							Icon = "http://www.roblox.com/asset/?id=13755223840",
+							Icon = "http://www.roblox.com/asset/?id=7072707647",
 							Duration = 2.5
 						})
 					end
@@ -6910,7 +6910,7 @@ spawn(function()
 								game.StarterGui:SetCore("SendNotification", {
 									Title = "Notification", 
 									Text = "Not Have Enough Material" ,
-									Icon = "http://www.roblox.com/asset/?id=13755223840",
+									Icon = "http://www.roblox.com/asset/?id=7072707647",
 									Duration = 2.5
 								})
 							else
@@ -6921,7 +6921,7 @@ spawn(function()
 						game.StarterGui:SetCore("SendNotification", {
 							Title = "Notification", 
 							Text = "Not Have Dragon Talon" ,
-							Icon = "http://www.roblox.com/asset/?id=13755223840",
+							Icon = "http://www.roblox.com/asset/?id=7072707647",
 							Duration = 2.5
 						})
 					end
@@ -16193,15 +16193,15 @@ spawn(function()
 print("N_Hai.xD Hub Load Complete")
 
 game.StarterGui:SetCore("SendNotification", {
-      Icon = "http://www.roblox.com/asset/?id=13755223840";
+      Icon = "http://www.roblox.com/asset/?id=7072707647";
       Title = "N_Hai.xD Hub", 
       Text = "Welcome To Script!!";
 })
 wait(3)
 game.StarterGui:SetCore("SendNotification", {
-      Icon = "http://www.roblox.com/asset/?id=13755223840";
+      Icon = "http://www.roblox.com/asset/?id=7072707647";
       Title = "N_Hai.xD Hub", 
-      Text = "made by @miidraayeerng อยาก Yed Owner Zps วะ";
+      Text = "";
 })
 
    
