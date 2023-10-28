@@ -12004,41 +12004,6 @@ end
 
 if World3 then
 
-local FM = Teleport:Label('Your Not In Third Sea!!')
-local Mirragecheck = Teleport:Label('Yout Not In Third Sea!!')
-    
-    task.spawn(function()
-            while task.wait() do
-                pcall(function()
-                    if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
-                        FM:Set("🌕: Full Moon 100%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
-                        FM:Set("🌖’ : Full Moon 75%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
-                        FM:Set("🌗“ : Full Moon 50%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
-                        FM:Set("🌘 : Full Moon 25%")
-                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
-                        FM:Set("🌘: Full Moon 15%")
-                    else
-                        FM:Set("Wait For Moon")
-                    end
-                end)
-            end
-    end)
-      
-spawn(function()
-        pcall(function()
-            while wait() do
-    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-    Mirragecheck:Set('🏝️: Mirage Island is Spawning')
-    else
-      Mirragecheck:Set('❌: Mirage Island Not Found ' )end
-            end
-        end
-    end)
-end)
-
     RaceV4:AddSeperator("Race V4")
     
 RaceV4:AddButton("Teleport To Top Of GreatTree",function()
