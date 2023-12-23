@@ -228,7 +228,7 @@ spawn(function()
 	PLL.Name = "PLL"
 	PLL.Parent = ScrollTab
 	PLL.SortOrder = Enum.SortOrder.LayoutOrder
-	PLL.Padding = UDim.new(0, 15)
+	PLL.Padding = UDim.new(0, 15)"
 
 	local PPD = Instance.new("UIPadding")
 	PPD.Name = "PPD"
@@ -5698,7 +5698,7 @@ end)
 
 
     PosY = 35
-    Main:AddSlider("Pos Y Distance Farm ",0,50,35,function(value)
+    Main:Slider("Pos Y Distance Farm ",0,50,35,function(value)
     PosY = value
     end)
     
@@ -5707,7 +5707,7 @@ end)
     
     _G.Kill_At = 25
 
-    Main:AddSlider("Kill At %",1,100,25,function(value)
+    Main:Slider("Kill At %",1,100,25,function(value)
 
         _G.Kill_At = value
     end)
@@ -11809,7 +11809,7 @@ demonfruit = value
 end)
 
 PointStats = 1
-Ss:AddSlider("Point",1,100,PointStats,nil,function(value)
+Ss:Slider("Point",1,100,PointStats,nil,function(value)
 PointStats = value
 end)
 
@@ -11862,23 +11862,23 @@ spawn(function()
 	
 	Ss:Seperator("Fake Mode")
 	
-	Ss:AddTextbox("Fake Level",true,function(value)
+	Ss:Textbox("Fake Level",true,function(value)
         game:GetService("Players").LocalPlayer.Data.Level.Value = value
     end)
     
-    Ss:AddTextbox("Fake Exp",true,function(value)
+    Ss:Textbox("Fake Exp",true,function(value)
         game:GetService("Players").LocalPlayer.Data.Exp.Value = value
     end)
     
-    Ss:AddTextbox("Fake Money",true,function(value)
+    Ss:Textbox("Fake Money",true,function(value)
         game:GetService("Players").LocalPlayer.Data.Beli.Value = value
     end)
     
-    Ss:AddTextbox("Fake Points",true,function(value)
+    Ss:Textbox("Fake Points",true,function(value)
         game:GetService("Players").LocalPlayer.Data.Points.Value = value
     end)
     
-    Ss:AddTextbox("Fake Bounty",true,function(value)
+    Ss:Textbox("Fake Bounty",true,function(value)
         game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value = value
     end)
     
@@ -12986,7 +12986,7 @@ end)
         NextplySelect = false
     end)
     
-    P:AddSlider("Lock Bounty",1,25000000,750000,function(value)
+    P:Slider("Lock Bounty",1,25000000,750000,function(value)
         _G.BountyLock = value
     end)
     
@@ -14749,7 +14749,7 @@ spawn(function()
 	setclipboard(tostring(game.JobId))
 	end)
 	
-    Misc:AddTextbox("Place Job Id", true, function(value)
+    Misc:Textbox("Place Job Id", true, function(value)
 	_G.Job = value
 	end)
 
@@ -15084,7 +15084,7 @@ end)
 	
 LockLevelValue = 2450
 OldLevel = game.Players.localPlayer.Data.Level.Value
-Misc:AddSlider("Select Level Lock Farm",1,LockLevelValue,LockLevelValue,nil,function(value)
+Misc:Slider("Select Level Lock Farm",1,LockLevelValue,LockLevelValue,nil,function(value)
 	LockLevelValue = value
 end)
 
@@ -15102,7 +15102,7 @@ end)
 		end
 	end)
 
-	Misc:AddTextbox("Lock Beli", true, function(value)
+	Misc:Textbox("Lock Beli", true, function(value)
 		_G.LevelcloseBeli = value
 	end)
 
@@ -15110,7 +15110,7 @@ end)
 		_G.LockFragments = value
 	end)
 
-	Misc:AddSlider("Fragments Lock",0,_G.LevelcloseFragments,_G.LevelcloseFragments,100000,function(value)
+	Misc:Slider("Fragments Lock",0,_G.LevelcloseFragments,_G.LevelcloseFragments,100000,function(value)
 		_G.LevelcloseFragments = value
 	end)
 
@@ -15124,7 +15124,7 @@ end)
 		_G.Open_LockBone = vv
 	end)
 
-	Misc:AddSlider("Lock Bone",1,5000,100,_G.Lock_Bone,_G.Lock_Bone,function(value)
+	Misc:Slider("Lock Bone",1,5000,100,_G.Lock_Bone,_G.Lock_Bone,function(value)
 		_G.Lock_Bone = value
 	end)
 	
@@ -15140,7 +15140,7 @@ end)
     end)
     
     LockPls = 600
-    Misc:AddSlider(" Kick at Mastery",0,600,600,function(value)
+    Misc:Slider(" Kick at Mastery",0,600,600,function(value)
     LockPls = value
     end)
     
