@@ -3649,7 +3649,7 @@ end)
 
 print("Load Script")
 
-local Library = Update:Window("NH.exe","13756755376",Enum.KeyCode.RightControl);
+local Library = Lib:Window("NH.exe","13756755376",Enum.KeyCode.RightControl);
 
 local H = Library:Tab("Home","6026568198")
 local Main = Library:Tab("Level Farm","13075651575")
