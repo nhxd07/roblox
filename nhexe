@@ -3312,7 +3312,7 @@ H:Seperator("UpdLog")
 
 H:Label("[+] Reduce Tween Speed | 5/4/2566|10:02")
 H:Label("[+] Added Super Fast Attack | 8/4/2566|00:30")
-H:Tab("[+] Added Anti Afk | 8/4/2566|00:30")
+H:Label("[+] Added Anti Afk | 8/4/2566|00:30")
 H:Label("[+] New Ui | 20/4/2566|19:40")
 H:Label("[+] Reduce Cpu | 20/4/2566|22:39")
 H:Label("[+] Added Auto Click | 22/4/2566|12:16")
