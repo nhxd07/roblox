@@ -3287,24 +3287,24 @@ print("Load Script")
 
 local Library = Update:Window("NH.exe","",Enum.KeyCode.RightControl);
 
-H = Library:Tab("Home","6026568198")
-Main = Library:Tab("Level Farm","13075651575")
-M = Library:Tab("Auto Item Quest","13075622619")
-Ss = Library:Tab("Stats","7040410130")
-RaceV4 = Library:Tab("RaceV4","11162889532")
-P = Library:Tab("Player","7251993295")
-R = Library:Tab("Raid","11155986081")
-T = Library:Tab("Teleport","11155851001")
-S = Library:Tab("Shop","6031265976")
-D = Library:Tab("Devil Fruit","7044233235")
-Misc = Library:Tab("Misc","11156061121")
+H = Library:Tab("","6026568198")
+Main = Library:Tab("","13075651575")
+M = Library:Tab("","13075622619")
+Ss = Library:Tab("","7040410130")
+RaceV4 = Library:Tab("","11162889532")
+P = Library:Tab("","7251993295")
+R = Library:Tab("","11155986081")
+T = Library:Tab("","11155851001")
+S = Library:Tab("","6031265976")
+D = Library:Tab("","7044233235")
+Misc = Library:Tab("","11156061121")
 
 Time = H:Label("Executor Time");spawn(function() getgenv().Time = true;while true do wait(.1) UpdateTime() end end);function UpdateTime() local date = os.date("*t");local hour = (date.hour) % 24;local ampm = hour < 12 and "AM" or "PM";local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm);local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year);local LocalizationService = game:GetService("LocalizationService");local Players = game:GetService("Players");local player = Players.LocalPlayer;local name = player.Name;local result, code = pcall(function()   return LocalizationService:GetCountryRegionForPlayerAsync(player)  end);Time:Set(" : " .. timezone);Time:Set("Executor Time: " .. datetime .. " [ " .. code .. " ]");spawn(function() if getgenv().Time then pcall(function()  while wait() do  Time()  end end) end end) end
 
 H:Label("Script PC/Mobile")
 H:Label("Wellcone To Script NH.exe")
 
-H:AddLine()
+H:Line()
 
 
 H:Seperator("UpdLog")
@@ -3765,7 +3765,7 @@ Main:Dropdown("Farm Mode", ListF,function(value)
     FarmMode = value
 end)
     
-    Main:AddLine()
+    Main:Line()
    
 local MonsterStatus = Main:Label("")
 local QuestStatus = Main:Label("")
@@ -6042,7 +6042,7 @@ spawn(function()
     end)
 end
     
-    M:AddLine()
+    M:Line()
 
     M:Seperator("Fighting Style")
     
@@ -13014,7 +13014,7 @@ end)
     local Island4 = R:Label(": lsland 4")
     local Island5 = R:Label(": lsland 5")
     
-    R:AddLine()
+    R:Line()
     
     spawn(function()
         pcall(function()
@@ -13186,7 +13186,7 @@ spawn(function()
     end)
 
     
-    R:AddLine()
+    R:Line()
 
     _G.SelectChip = selectraids or ""
 	Raidslist = {}
@@ -13310,7 +13310,7 @@ spawn(function()
         end)
     end)
     
-    R:AddLine()
+    R:Line()
     
     if World2 then
         R:Button("Teleport to Lab",function()
@@ -15181,7 +15181,7 @@ end)
 		end
 	end)
 	
-	Misc:AddLine()
+	Misc:Line()
 	
     Misc:Seperator("Hack")
     Misc:Button("Unlock Buso",function()
