@@ -1147,8 +1147,6 @@ person.ImageRectSize = Vector2.new(36, 36)
 	return uitab
 end
 
-return Update
-
 local ScreenGui1 = Instance.new("ScreenGui")
 local Closed = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
