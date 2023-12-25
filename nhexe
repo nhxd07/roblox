@@ -3291,6 +3291,7 @@ local H = Library:Tab("Home","6026568198")
 local Main = Library:Tab("Level Farm","13075651575")
 local M = Library:Tab("Auto Item Quest","13075622619")
 local Ss = Library:Tab("Stats","7040410130")
+local K = Library:Tab("Kitsune Sea Event","11446859498")
 local RaceV4 = Library:Tab("RaceV4","11162889532")
 local P = Library:Tab("Player","7251993295")
 local R = Library:Tab("Raid","11155986081")
@@ -12305,6 +12306,356 @@ end)
 		end)
     end
     end)
+    
+    
+    
+if World3 then
+
+K:Seperator("Kitsune Island")
+local FullMoon = K:Label("")
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+             if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+                        FullMoon:Set("🌑 : Full Moon 100%")
+            elseif game:GetService("Lighting").Sky.MoonTextureId=="rbxassetid://15493317929" then
+                        FullMoon:Set("🌌 : Blue Moon 100%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
+                        FullMoon:Set("🌒 : Full Moon 75%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
+                        FullMoon:Set("🌓 : Full Moon 50%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
+                        FullMoon:Set("🌗 : Full Moon 25%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
+                        FullMoon:Set("🌖 : Full Moon 15%")
+                    else
+                        FullMoon:Set("🌚 : Full Moon 0%")
+                    end
+                end)
+            end
+end)
+
+
+
+local TimeKitsune= K:Label("🧭 Waiting For Kitsune Island")
+
+spawn(function()
+        pcall(function()
+            while wait() do
+                if game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Visible == true then
+                    TimeKitsune:Set(game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Text)
+                else
+                    TimeKitsune:Set("🧭 Waiting For Kitsune Island")
+                end
+            end
+        end)
+    end)
+
+
+
+local mo = K:Label("")
+
+task.spawn(function()
+	while task.wait() do
+		pcall(function()
+			if game.Workspace._WorldOrigin.Locations:FindFirstChild("Kitsune Island") then
+				mo:Set("🎇 Check Kitsune Island : Spawned✅")
+			else
+				mo:Set("🎇 Check Kitsune Island : Not Spawned❌")
+			end
+		end)
+	end
+end) 
+
+
+
+
+K:Toggle("Auto Teleport to Kitsune Island",AutoKit,function(W)
+    AutoKit = W
+    end)
+    spawn(function()
+    while wait() do
+		pcall(function()
+			if AutoKit then
+				if game:GetService("Workspace").Map:FindFirstChild("KitsuneIsland") then
+                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/310,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace._WorldOrigin.Locations:FindFirstChild("Kitsune Island").CFrame*CFrame.new(0,250,0))
+                else
+
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Nhexe"; -- the title (ofc)
+        Text = "Kitsune Island Not Found!"; -- what the text says (ofc)
+        Duration = 3; -- how long the notification should in secounds
+        }) end
+			end
+		end)
+    end
+    end)
+
+
+
+
+K:Toggle("Auto Collect Azure Ember",AutoCollectAzure,function(L)
+    AutoCollectAzure = L
+    end)
+    spawn(function()
+    while wait() do
+		pcall(function()
+			if AutoCollectAzure then
+			  local Players = game.Players
+local Player = Players.LocalPlayer
+local toMe = game:GetService("Workspace").EmberTemplate.Part
+function telePlr() 
+   Player.Character.HumanoidRootPart.CFrame = CFrame.new(toMe.Position)   
+   end
+telePlr()
+			end
+		end)
+    end
+    end)
+
+
+
+K:Toggle("Auto Trade Azure Ember",AutoTrade,function(J)
+    AutoTrade = J
+    end)
+    spawn(function()
+    while wait() do
+		pcall(function()
+			if AutoTrade then
+			wait(0.6)
+			game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RF/KitsuneStatuePray"):InvokeServer()
+			end
+		end)
+    end
+    end)
+
+
+
+K:Toggle("Bright sky", _G.Troisangvcl, function(value)
+    _G.Troisangvcl = value
+    StopTween(_G.Troisangvcl)
+end)
+
+
+
+spawn(function()
+    while true do
+        if _G.Troisangvcl then
+            game.Lighting.ClockTime = 14
+        end
+        wait(0.0000000000000000000000000000000000000000000000000000000001)  -- Chờ một lát trước khi kiểm tra lại
+    end
+end)
+
+
+
+K:Button("Tween to Kitsune Island",function()
+    if game:GetService("Workspace").Map:FindFirstChild("KitsuneIsland") then
+                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/310,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace._WorldOrigin.Locations:FindFirstChild("Kitsune Island").CFrame*CFrame.new(0,250,0))
+                else
+
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Nhexe"; -- the title (ofc)
+        Text = "Kitsune Island Not Found!"; -- what the text says (ofc)
+        Duration = 3; -- how long the notification should in secounds
+        }) end
+end)
+
+
+
+K:Button("Clear Fog",function()
+    game:GetService("Lighting").BaseAtmosphere:Destroy()
+    game:GetService("Lighting").SeaTerrorCC:Destroy()
+    game.Lighting.LightingLayers.Atmosphere:Destroy()
+wait()
+game.Lighting.LightingLayers.DarkFog:Destroy()
+wait()
+game.Lighting.FogEnd = 100000
+end)
+
+
+
+K:Button("Go to Zone 6",function()
+    topos(CFrame.new(-47335.4609375, 8.1976900100708, -13788.5126953125))
+end)
+
+
+
+K:Seperator("Boats Speed")
+local boatsFolder = game.Workspace.Boats
+local sizeChange = Vector3.new(0, 0, 0)
+
+
+
+-- Tạo một Dropdown cho tốc độ thuyền
+
+local boatSpeeds = {
+    "150",
+    "200",
+    "250",
+    "300",
+    "350",
+    "400",
+    "450",
+    "500",
+    "550",
+    "600"
+}
+
+local selectedSpeed = boatSpeeds[1] -- Chọn tốc độ mặc định
+
+
+-- Tạo một Dropdown cho độ cao của thuyền
+
+local boatHeights = {
+    "25",
+    "50",
+    "75",
+    "100",
+    "150",
+    "200",
+    "250",
+    "300"
+}
+
+
+
+local selectedHeight = boatHeights[1] -- Chọn độ cao mặc định
+
+local function AdjustBoatSettings()
+    local speedIndex = table.find(boatSpeeds, selectedSpeed)
+    local heightIndex = table.find(boatHeights, selectedHeight)
+    local newSpeed = 150 + 50 * (speedIndex - 1)
+    local newHeight = 25 + 25 * (heightIndex - 1)
+
+    for _, boat in pairs(boatsFolder:GetChildren()) do
+        if boat:IsA("Model") then
+            for _, child in pairs(boat:GetChildren()) do
+                if child:IsA("VehicleSeat") then
+                    child.MaxSpeed = newSpeed
+                    child.Size = Vector3.new(0, newHeight, 0)
+                end
+            end
+        end
+    end
+end
+
+
+
+-- Tạo Dropdowns cho tốc độ và độ cao
+
+K:Dropdown("Select Speed Boat", boatSpeeds, function(value)
+    selectedSpeed = value
+    AdjustBoatSettings()
+end)
+
+
+
+K:Dropdown("Select Height", boatHeights, function(value)
+    selectedHeight = value
+    AdjustBoatSettings()
+end)
+
+
+
+K:Toggle("Auto Drive",AutoW,function(W)
+    AutoW = W
+    end)
+    spawn(function()
+    while wait() do
+		pcall(function()
+			if AutoW then
+				game:service('VirtualInputManager'):SendKeyEvent(true, "W", false, game)
+				wait(0.35)
+				game:service('VirtualInputManager'):SendKeyEvent(false, "W", false, game)
+				wait(1.5)
+				game:service('VirtualInputManager'):SendKeyEvent(true, "S", false, game)
+				wait(0.35)
+				game:service('VirtualInputManager'):SendKeyEvent(false, "S", false, game)
+				wait(1.5)
+			end
+		end)
+    end
+    end)
+
+
+
+K:Seperator("Boats")
+
+BoatsName = {}
+for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
+  table.insert(BoatsName ,v.Name)
+end
+
+
+
+local Boats = K:Dropdown("Selected Boats",BoatsName,function(plys)
+  _G.SelectB = plys
+end)
+
+
+
+K:Button("Refrsh Boats",function()
+  BoatsName = {}
+  Boats:Clear()
+  for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
+     Boats:Add(v.Name)
+  end
+end)
+
+
+
+K:Button("Bring Boats",function()
+   game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.CFrame
+end)
+
+
+
+K:Toggle("Teleport to Boats",_G.TPB,function(bool)
+   _G.TPB = bool       
+ StopTween(_G.TPB)
+   if _G.TPB then
+       _G.Boats = true
+       while _G.Boats do wait()
+           Distance = (game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+           Speed = 220
+           tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear)
+           tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.CFrame})
+           tween:Play()
+           _G.Clip = true
+           wait(Distance/Speed)
+       end
+   elseif _G.TPB == false then
+       _G.Boats = false
+       while _G.Boats do wait()
+           Distance = (game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+           Speed = 220
+           tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear)
+           tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.CFrame})
+           tween:Play()
+           _G.Clip = true
+           wait(Distance/Speed)
+       end
+       tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(.1, Enum.EasingStyle.Linear)
+       tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame})
+       tween:Play()
+       _G.Clip = false
+   end
+end)
+
+
+
+K:Toggle("Spectate Boats",false,function(bool)
+  Sp = bool
+  local plr1 = game.Players.LocalPlayer.Character.Humanoid
+  local plr2 = game:GetService("Workspace").Boats:FindFirstChild(_G.SelectB)
+  repeat wait(.1)
+  game.Workspace.Camera.CameraSubject = game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat
+  until Sp == false 
+  game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+end)
+end
 
 	
     local plyserv = P:Label("Players")
