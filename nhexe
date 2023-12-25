@@ -120,9 +120,9 @@ function Update:Window(text,logo,keybind)
 	Logo.BackgroundTransparency = 1.000
 	Logo.Position = UDim2.new(0, 10, 0, 1)
 	Logo.Size = UDim2.new(0, 25, 0, 25)
-	Logo.Font = Enum.Font.GothamBold
-    Logo.Text = "H"
-    Logo.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Logo.Font = Enum.Font.Creepster
+    Logo.Text = "P"
+    Logo.TextColor3 = Color3.fromRGB(160, 160, 160)
     Logo.TextScaled = true
     Logo.TextSize = 18.000
 
@@ -1163,14 +1163,14 @@ Closed.BorderSizePixel = 0
 Closed.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 Closed.Size = UDim2.new(0, 50, 0, 50)
 Closed.Draggable = true
-Closed.Font = Enum.Font.GothamBold
-Closed.Text = "H"
+Closed.Font = Enum.Font.Creepster
+Closed.Text = "NH"
 Closed.TextColor3 = Color3.fromRGB(255, 255, 255)
 Closed.TextScaled = true
 Closed.TextSize = 16.000
 UICorner.CornerRadius = UDim.new(0, 30)
 UICorner.Parent = Closed
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(119, 255, 214)), ColorSequenceKeypoint.new(0.32, Color3.fromRGB(146, 255, 251)), ColorSequenceKeypoint.new(0.65, Color3.fromRGB(18160, 160, 160)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(96, 255, 231))}
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(119, 255, 214)), ColorSequenceKeypoint.new(0.32, Color3.fromRGB(146, 255, 251)), ColorSequenceKeypoint.new(0.65, Color3.fromRGB(160, 160, 160)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(96, 255, 231))}
 UIGradient.Parent = Closed
 UIAspectRatioConstraint.Parent = Closed
 UIAspectRatioConstraint.AspectRatio = 0.988
@@ -12123,7 +12123,7 @@ end)
   RaceV4:Button("Buy Ancient One Quest",function(t)
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('UpgradeRace','Buy')
   end)
-  RaceV4:Toggle("Auto Kill Player in Trail",false,function(Val)
+  RaceV4:Toggle("Auto Kill Player in Trail Fully [Beta]",false,function(Val)
   _G.AutoKillTial = Val
   StopTween(_G.AutoKillTial)
   end)
@@ -12261,76 +12261,57 @@ end)
         end)
     end
     
-if _G.AutoKillTial then
-for i,v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
-if v.Name ~= game.Players.LocalPlayer.Name then
-if v:WaitForChild("Humanoid").Health > 0 and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude <= 100 then
-plyselecthunthelpold = v.Humanoid.Health
-repeat task.wait()
-NameTarget = v.Name
-AutoHaki()
-EquipWeapon(_G.SelectWeapon)
-NameTarget = v.Name
-TP1(v.HumanoidRootPart.CFrame * CFrame.new(0,0,3))
-v.HumanoidRootPart.CanCollide = false
-v.HumanoidRootPart.Size = Vector3.new(100, 100, 100)
-Click()
-UseskillKill = true
-if tostring(game.Players.LocalPlayer.Team) == "Pirates" then
-    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,0,3))
-            elseif tostring(game.Players.LocalPlayer.Team) == "Marines" then
-if game.Players[NameTarget].Team ~= game.Players.LocalPlayer.Team then
-    topos(v.HumanoidRootPart.CFrame * CFrame.new(0,0,3))
-end
-end
-spawn(function()
-if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
     spawn(function()
-        Z()
-        X()
-        C()
+	while wait() do
+		if _G.AutoKillTial then
+			for i,v in pairs(game:GetService("Workspace").Characters:GetChildren()) do
+			    if v.Name and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 100 then
+			        if v.Humanoid.Health > 0 then
+			            repeat wait()
+			              EquipWeapon(_G.SelectWeapon)
+			                if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+			                	local args = {
+				                	[1] = "Buso"
+			                	}
+			                	game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+			               	end
+			                topos(v.HumanoidRootPart.CFrame * CFrame.new(0,0,5))
+			                UseskillKill = true
+			                v.HumanoidRootPart.CanCollide = false
+			                v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+						    game:GetService("VirtualUser"):CaptureController()
+				       	    game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 672), game.Workspace.CurrentCamera.CFrame)
+			            until not _G.AutoKillTial or not v.Parent or v.Humanoid.Health <= 0 
+			            UseskillKill = false
+			        end
+			    end
+			end
+		end
+	end
     end)
-end
-end)
-v.HumanoidRootPart.CanCollide = false
-TargetSelectHunt = v.Humanoid
-until _G.AutoKillTial == false or v.Humanoid.Health == 0 or not v:FindFirstChild("HumanoidRootPart") or not v:FindFirstChild("Humanoid") or not v.Parent or NextplySelect == true
-NextplySelect = false
-StartCheckTarget = false
-end
-end
-end
-end
-end)
-end
-end)
 
-spawn(function()
+    spawn(function()
     while wait() do
-        pcall(function()
-            if _G.AutoKillTial then
-            if Distance < 10 then
-            if UseskillKill then
-                game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
-                wait(0.1)
+		pcall(function()
+			if UseskillKill then
+				game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
+				wait(0.1)
                 game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
                 wait(0.1)
                 game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
-                wait(0.1)
+				wait(0.1)
                 game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
                 wait(0.1)
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"C",false,game)
+				wait(0.1)
                 game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
                 wait(0.1)
-                game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
-                wait(0.1)
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"V",false,game)
+				wait(0.1)
                 game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game)
-                wait(0.1)
-                game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game)
-            end
-            end
-            end
-        end)
-        end
+			end
+		end)
+    end
     end)
     
     
