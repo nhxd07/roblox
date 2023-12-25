@@ -1150,6 +1150,8 @@ end
 local ScreenGui1 = Instance.new("ScreenGui")
 local Closed = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
 ScreenGui1.Name = "ImageButton"
 ScreenGui1.Parent = game.CoreGui
@@ -1159,14 +1161,19 @@ Closed.Parent = ScreenGui1
 Closed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Closed.BorderSizePixel = 0
 Closed.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-Closed.BackgroundTransparency = 0.300
 Closed.Size = UDim2.new(0, 50, 0, 50)
 Closed.Draggable = true
 Closed.Font = Enum.Font.Creepster
 Closed.Text = "NH"
-Closed.TextColor3 = Color3.fromRGB(0, 255, 255)
+Closed.TextColor3 = Color3.fromRGB(255, 255, 255)
 Closed.TextScaled = true
 Closed.TextSize = 16.000
+UICorner.CornerRadius = UDim.new(0, 30)
+UICorner.Parent = Closed
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(119, 255, 214)), ColorSequenceKeypoint.new(0.32, Color3.fromRGB(146, 255, 251)), ColorSequenceKeypoint.new(0.65, Color3.fromRGB(180, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(96, 255, 231))}
+UIGradient.Parent = Closed
+UIAspectRatioConstraint.Parent = Closed
+UIAspectRatioConstraint.AspectRatio = 0.988
 --Closed.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
 Closed.MouseButton1Down:connect(function()
   game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
