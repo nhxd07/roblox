@@ -162,22 +162,44 @@ function Update:Window(text,logo,keybind)
  Player.TextColor3 = Color3.fromRGB(255, 255, 255)
  Player.TextSize = 14.000
 
-local close = Instance.new("ImageButton")
-close.Name = "close"
-close.Parent = Top
-close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-close.BackgroundTransparency = 1.000
-close.BorderSizePixel = 0
-close.Position = UDim2.new(0, 600, 0, 0)
-close.Size = UDim2.new(0, 30, 0, 30)
-close.Image = "http://www.roblox.com/asset/?id=3926305904"
-close.ImageRectOffset = Vector2.new(284, 4)
-close.ImageRectSize = Vector2.new(24, 24)
-close.ImageColor3 = Color3.fromRGB(255, 255, 255)
-close.MouseButton1Click:Connect(function()
-game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
-end)
+local ServerTime = Instance.new("TextLabel")
+ServerTime.Name = "ServerTime"
+ServerTime.Parent = Top
+ServerTime.BackgroundColor3 = Color3.fromRGB(255,255,255)
+ServerTime.BackgroundTransparency = 1.000
+ServerTime.Position = UDim2.new(0.677561002, 0, 0, 0)
+ServerTime.Size = UDim2.new(0, 225, 0, 25)
+ServerTime.Font = Enum.Font.GothamSemibold
+ServerTime.Text = ""
+ServerTime.TextSize = 14.000
+ServerTime.TextColor3 = Color3.fromRGB(255,255,255)
+ServerTime.TextXAlignment = Enum.TextXAlignment.Left
+
+function osfunc:Set(textadd)
+ServerTime.Text = textadd
+end
+
+local function UpdateOS()
+local date = os.date("*t")
+local hour = (date.hour) % 24
+local ampm = hour < 12 and "AM" or "PM"
+local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
+local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
+local LocalizationService = game:GetService("LocalizationService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local name = player.Name
+local result, code = pcall(function()
+ return LocalizationService:GetCountryRegionForPlayerAsync(player)
+ end)
+osfunc:Set(datetime.." - "..timezone.." [ " .. code .. " ]")
+end
+spawn(function()
+ while true do
+ UpdateOS()
+ game:GetService("RunService").RenderStepped:Wait()
+ end
+ end)
 
     local Tab = Instance.new("Frame")
 	Tab.Name = "Tab"
@@ -1141,8 +1163,7 @@ Closed.BorderSizePixel = 0
 Closed.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 Closed.Size = UDim2.new(0, 50, 0, 50)
 Closed.Draggable = true
-Closed.Font = Enum.Font.Creepster
-Closed.Image = "rbxassetid://15754756916"
+Closed.Image = "rbxassetid://15754761048"
 UICorner.CornerRadius = UDim.new(0, 30)
 UICorner.Parent = Closed
 UIGradient.Parent = Closed
