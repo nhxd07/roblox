@@ -3280,7 +3280,7 @@ local M = Library:Tab("Auto Item Quest","13075622619")
 local Ss = Library:Tab("Stats","7040410130")
 local K = Library:Tab("Kitsune Event","11446859498")
 local RaceV4 = Library:Tab("RaceV4","11162889532")
-local P = Library:Tab("Player","7251993295")
+local P = Library:Tab("Combat + Esp","7251993295")
 local R = Library:Tab("Raid","11155986081")
 local T = Library:Tab("Teleport","11155851001")
 local S = Library:Tab("Shop","6031265976")
@@ -13063,73 +13063,6 @@ end
 		game:service('VirtualInputManager'):SendKeyEvent(false, "X", false, game)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[_G.SelectPly].Character.HumanoidRootPart.CFrame	
     end)
-    
-    P:Seperator("Boats")
-
-BoatsName = {}
-
-for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
-  table.insert(BoatsName ,v.Name)
-end
-
-local Boats = P:Dropdown("Selected Boats",BoatsName,function(plys)
-  _G.SelectB = plys
-end)
-    
-P:Button("Refrsh Boats",function()
-  BoatsName = {}
-  Boats:Clear()
-  for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do  
-     Boats:Add(v.Name)
-  end
-end)
-
-P:Button("Bring Boats",function()
-   game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.CFrame
-end)
-
-P:Toggle("Teleport to Boats",_G.TPB,function(bool)
-   _G.TPB = bool       
- StopTween(_G.TPB)
-
-   if _G.TPB then
-       _G.Boats = true
-       while _G.Boats do wait()
-           Distance = (game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-           Speed = 220
-           tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear)
-           tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.CFrame})
-           tween:Play()
-           _G.Clip = true
-           wait(Distance/Speed)
-       end
-   elseif _G.TPB == false then
-       _G.Boats = false
-       while _G.Boats do wait()
-           Distance = (game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-           Speed = 220
-           tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear)
-           tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat.CFrame})
-           tween:Play()
-           _G.Clip = true
-           wait(Distance/Speed)
-       end
-       tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(.1, Enum.EasingStyle.Linear)
-       tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame})
-       tween:Play()
-       _G.Clip = false
-   end
-end)
-
-P:Toggle("Spectate Boats",false,function(bool)
-  Sp = bool
-  local plr1 = game.Players.LocalPlayer.Character.Humanoid
-  local plr2 = game:GetService("Workspace").Boats:FindFirstChild(_G.SelectB)
-  repeat wait(.1)
-     game.Workspace.Camera.CameraSubject = game:GetService("Workspace").Boats[_G.SelectB].VehicleSeat
-  until Sp == false 
-  game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-end)
 
     P:Seperator("Quest Player")
     
@@ -13641,6 +13574,93 @@ end)
                     end
                 end)
             end
+        end
+    end)
+    
+    P:Seperator("Esp Menu")
+    
+    P:Toggle("ESP Player",false,function(a)
+        ESPPlayer = a
+	UpdatePlayerChams()
+    end)
+    
+    P:Toggle("ESP Chest",false,function(a)
+        ChestESP = a
+	UpdateChestChams() 
+    end)
+    
+    P:Toggle("ESP Fruit",false,function(a)
+        DevilFruitESP = a
+        while DevilFruitESP do wait()
+            UpdateDevilChams() 
+        end
+    end)
+    
+    P:Toggle("ESP Real Fruit",RealFruitESP,function(a)
+        RealFruitESP = a
+	UpdateRealFruitChams() 
+    end)
+    
+    P:Toggle("ESP Flower",false,function(a)
+        FlowerESP = a
+	UpdateFlowerChams() 
+    end)
+    spawn(function()
+	    while wait(2) do
+		    if FlowerESP then
+			    UpdateFlowerChams() 
+		    end
+		    if DevilFruitESP then
+			    UpdateDevilChams() 
+		    end
+		    if ChestESP then
+			    UpdateChestChams() 
+		    end
+		    if ESPPlayer then
+			    UpdatePlayerChams()
+		    end
+		    if RealFruitESP then
+			    UpdateRealFruitChams()
+		    end
+	    end
+    end)
+P:Toggle("ESP Island",IslandESP,function(value)
+        IslandESP = value
+        while IslandESP do wait()
+            UpdateIslandESP() 
+        end
+    end)
+    P:Toggle("Esp Npc", false, function(nec)
+    NpcESP = nec
+end)
+
+P:Toggle("Esp Sea Beast", false, function(nec)
+    SeaESP = nec
+end)
+
+
+P:Toggle("Esp Mob", false, function(nec)
+    MobESP = nec
+end)
+
+P:Toggle("Esp Mystic Island", false, function(value)
+    MirageIslandESP = value
+        while MirageIslandESP do wait()
+            UpdateIslandMirageESP()
+        end
+    end)
+
+P:Toggle("Esp Advanced Fruit Dealer", false, function(value)
+    AfdESP = value
+        while AfdESP do wait()
+            UpdateAfdESP()
+        end
+    end)
+    
+P:Toggle("Esp Gear [Beta]", false, function(value)
+    GearESP = value
+        while GearESP do wait()
+            UpdateGeaESP() 
         end
     end)
     
@@ -15434,168 +15454,6 @@ Misc:Seperator("Teams")
     Misc:Button("Join Marines Team",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Marines") 
     end)
-    
-    Misc:Seperator("Highlight")
-
-Misc:Toggle("Show Chat disabled", _G.chat, function(value)
-    _G.chat = value
-    if _G.chat == true then
-local StarterGui = game:GetService('StarterGui')
-StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)    
-elseif _G.chat == false then
-local StarterGui = game:GetService('StarterGui')
-StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)    
-end
-  end)
-
-  Misc:Toggle("Show leaderboard disabled", _G.leaderboard, function(a)
-    _G.leaderboard = a
-    if _G.leaderboard == true then
-local StarterGui = game:GetService('StarterGui')
-game:GetService('StarterGui'):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)   
-elseif _G.leaderboard == false then
-local StarterGui = game:GetService('StarterGui')
-game:GetService('StarterGui'):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, true)   
-end
-  end)
-
-    Misc:Toggle("Highlight Mode",false,function(value)
-        if value == true then
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Beli.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.HP.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Energy.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.StatsButton.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.ShopButton.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Skills.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Level.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.MenuButton.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Code.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Settings.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Mute.Visible = false
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = false
-        else
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Beli.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.HP.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Energy.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.StatsButton.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.ShopButton.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Skills.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Level.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.MenuButton.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Code.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Settings.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Mute.Visible = true
-            game:GetService("Players")["LocalPlayer"].PlayerGui.Main.CrewButton.Visible = true
-        end
-    end)
-
-Misc:Toggle("Graphic",false,function(v)
-			if v then
-				getgenv().mode = "Autumn" -- Choose from Summer and Autumn
-				local a = game.Lighting
-				a.Ambient = Color3.fromRGB(33, 33, 33)
-				a.Brightness = 0.3
-				a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
-				a.ColorShift_Top = Color3.fromRGB(255, 247, 237)
-				a.EnvironmentDiffuseScale = 0.105
-				a.EnvironmentSpecularScale = 0.522
-				a.GlobalShadows = true
-				a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)
-				a.ShadowSoftness = 0.04
-				a.GeographicLatitude = -15.525
-				a.ExposureCompensation = 0.75
-				local b = Instance.new("BloomEffect", a)
-				b.Name = "BloomEffect_Graphic"
-				b.Enabled = true
-				b.Intensity = 0.04
-				b.Size = 1900
-				b.Threshold = 0.915
-				local c = Instance.new("ColorCorrectionEffect", a)
-				c.Name = 'ColorCorrectionEffect1_Graphic'
-				c.Brightness = 0.176
-				c.Contrast = 0.39
-				c.Enabled = true
-				c.Saturation = 0.2
-				c.TintColor = Color3.fromRGB(217, 145, 57)
-				if getgenv().mode == "Summer" then
-					c.TintColor = Color3.fromRGB(255, 220, 148)
-				elseif getgenv().mode == "Autumn" then
-					c.TintColor = Color3.fromRGB(242, 193, 79)
-				end
-				local d = Instance.new("DepthOfFieldEffect", Graphic)
-				d.Name =  'DepthOfFieldEffect_Graphic'
-				d.Enabled = true
-				d.FarIntensity = 0.077
-				d.FocusDistance = 21.54
-				d.InFocusRadius = 20.77
-				d.NearIntensity = 0.277
-				local e = Instance.new("ColorCorrectionEffect", a)
-				e.Name = 'ColorCorrectionEffect2_Graphic'
-				e.Brightness = 0
-				e.Contrast = -0.07
-				e.Saturation = 0
-				e.Enabled = true
-				e.TintColor = Color3.fromRGB(255, 247, 239)
-				local e2 = Instance.new("ColorCorrectionEffect", a)
-				e2.Name = 'ColorCorrectionEffect3_Graphic'
-				e2.Brightness = 0.2
-				e2.Contrast = 0.45
-				e2.Saturation = -0.1
-				e2.Enabled = true
-				e2.TintColor = Color3.fromRGB(255, 255, 255)
-				local s = Instance.new("SunRaysEffect", a)
-				s.Name = 'SunRaysEffect_Graphic'
-				s.Enabled = false
-				s.Intensity = 0.01
-				s.Spread = 0.146
-			else
-				local a = game.Lighting
-				a.Ambient = Color3.fromRGB(170, 170, 170)
-				a.Brightness = 2
-				a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
-				a.ColorShift_Top = Color3.fromRGB(0, 0, 0)
-				a.EnvironmentDiffuseScale = 0.105
-				a.EnvironmentSpecularScale = 0.522
-				a.GlobalShadows = false
-				a.OutdoorAmbient = Color3.fromRGB(127, 127, 127)
-				a.ShadowSoftness = 0
-				a.GeographicLatitude = 66
-				a.ExposureCompensation = 0.2
-				game:GetService("Lighting")["BloomEffect_Graphic"]:Destroy()
-				game:GetService("Lighting")["ColorCorrectionEffect1_Graphic"]:Destroy()
-				game:GetService("Lighting")["ColorCorrectionEffect2_Graphic"]:Destroy()
-				game:GetService("Lighting")["ColorCorrectionEffect3_Graphic"]:Destroy()
-				game:GetService("Lighting")["SunRaysEffect_Graphic"]:Destroy()
-			end
-		end)
-
-	Misc:Toggle("Xray",false,function(value)
-		NoWorld = value
-		if NoWorld == true then
-			transparent = true
-			x(transparent)
-		elseif NoWorld == false then
-			transparent = false
-			x(transparent)
-		end
-	end)
-
-	local transparent = false -- xray
-	function x(v)
-		if v then
-			for _,i in pairs(workspace:GetDescendants()) do
-				if i:IsA("BasePart") and not i.Parent:FindFirstChild("Humanoid") and not i.Parent.Parent:FindFirstChild("Humanoid") then
-					i.LocalTransparencyModifier = 0.7
-				end
-			end
-		else
-			for _,i in pairs(workspace:GetDescendants()) do
-				if i:IsA("BasePart") and not i.Parent:FindFirstChild("Humanoid") and not i.Parent.Parent:FindFirstChild("Humanoid") then
-					i.LocalTransparencyModifier = 0
-				end
-			end
-		end
-	end
 
 	---- [RainbowHaki]
 	spawn(function()
@@ -16378,93 +16236,6 @@ Misc:Toggle("Remove Fog",RemoveFog,function(value)
     game.Players.LocalPlayer.Character.Pants:Destroy()
     game.Players.LocalPlayer.Character.Animate.Disabled = true 
 end)
-
-Misc:Seperator("ESP MENU")
-    
-    Misc:Toggle("ESP Player",false,function(a)
-        ESPPlayer = a
-	UpdatePlayerChams()
-    end)
-    
-    Misc:Toggle("ESP Chest",false,function(a)
-        ChestESP = a
-	UpdateChestChams() 
-    end)
-    
-    Misc:Toggle("ESP Fruit",false,function(a)
-        DevilFruitESP = a
-        while DevilFruitESP do wait()
-            UpdateDevilChams() 
-        end
-    end)
-    
-    Misc:Toggle("ESP Real Fruit",RealFruitESP,function(a)
-        RealFruitESP = a
-	UpdateRealFruitChams() 
-    end)
-    
-    Misc:Toggle("ESP Flower",false,function(a)
-        FlowerESP = a
-	UpdateFlowerChams() 
-    end)
-    spawn(function()
-	    while wait(2) do
-		    if FlowerESP then
-			    UpdateFlowerChams() 
-		    end
-		    if DevilFruitESP then
-			    UpdateDevilChams() 
-		    end
-		    if ChestESP then
-			    UpdateChestChams() 
-		    end
-		    if ESPPlayer then
-			    UpdatePlayerChams()
-		    end
-		    if RealFruitESP then
-			    UpdateRealFruitChams()
-		    end
-	    end
-    end)
-Misc:Toggle("ESP Island",IslandESP,function(value)
-        IslandESP = value
-        while IslandESP do wait()
-            UpdateIslandESP() 
-        end
-    end)
-    Misc:Toggle("Esp Npc", false, function(nec)
-    NpcESP = nec
-end)
-
-Misc:Toggle("Esp Sea Beast", false, function(nec)
-    SeaESP = nec
-end)
-
-
-Misc:Toggle("Esp Mob", false, function(nec)
-    MobESP = nec
-end)
-
-Misc:Toggle("Esp Mystic Island", false, function(value)
-    MirageIslandESP = value
-        while MirageIslandESP do wait()
-            UpdateIslandMirageESP()
-        end
-    end)
-
-Misc:Toggle("Esp Advanced Fruit Dealer", false, function(value)
-    AfdESP = value
-        while AfdESP do wait()
-            UpdateAfdESP()
-        end
-    end)
-    
-Misc:Toggle("Esp Gear [Beta]", false, function(value)
-    GearESP = value
-        while GearESP do wait()
-            UpdateGeaESP() 
-        end
-    end)
 
     Misc:Seperator("Abilities")
     
