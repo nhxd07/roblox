@@ -1163,7 +1163,7 @@ Closed.BorderSizePixel = 0
 Closed.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 Closed.Size = UDim2.new(0, 50, 0, 50)
 Closed.Draggable = true
-Closed.Image = "rbxassetid://15754761048"
+Closed.Image = "rbxassetid://11816162894"
 UICorner.CornerRadius = UDim.new(0, 30)
 UICorner.Parent = Closed
 UIGradient.Parent = Closed
@@ -3293,7 +3293,7 @@ local H = Library:Tab("Home","6026568198")
 local Main = Library:Tab("Level Farm","13075651575")
 local M = Library:Tab("Auto Item Quest","13075622619")
 local Ss = Library:Tab("Stats","7040410130")
-local K = Library:Tab("Kitsune Sea Event","11446859498")
+local K = Library:Tab("Kitsune Event","11446859498")
 local RaceV4 = Library:Tab("RaceV4","11162889532")
 local P = Library:Tab("Player","7251993295")
 local R = Library:Tab("Raid","11155986081")
@@ -6046,6 +6046,209 @@ spawn(function()
 end
     
     M:Line()
+
+M:Seperator(" Christmas Event ")
+
+local TimeCandy  = M:Label("Total")
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            TimeCandy:Set("Time For Event Start : "..(game:GetService("Workspace").Countdown.SurfaceGui.TextLabel.Text))
+        end)
+    end
+end)
+
+
+
+local  CandyCheck  = M:Label("Total")
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            CandyCheck:Set("Candy : "..(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Candies","Check")))
+        end)
+    end
+end)
+
+
+
+if World3 then
+
+M:Toggle("Auto Farm Candy",Cocoafarm,function(value)
+ Cocoafarm = value
+ _G.AutoClick = value
+StopTween(Cocoafarm)
+end)
+
+spawn(function()
+ game:GetService("RunService").Heartbeat:Connect(function()
+  pcall(function()
+   for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+   if Cocoafarm and StartMagnetBoneMon and (v.Name == "Candy Pirate" or v.Name == "Snow Demon")  and (v.HumanoidRootPart.Position - PosMonBone.Position).magnitude <= 350 then
+   v.HumanoidRootPart.CFrame = PosMonBone
+   v.HumanoidRootPart.CanCollide = false
+   v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+   if v.Humanoid:FindFirstChild("Animator") then
+   v.Humanoid.Animator:Destroy()
+   end
+   sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
+   end
+   end
+   end)
+  end)
+end)
+
+spawn(function()
+ while wait() do
+ if Cocoafarm and World3 then
+ pcall(function()
+  if game:GetService("Workspace").Enemies:FindFirstChild("Candy Pirate") or game:GetService("Workspace").Enemies:FindFirstChild("Snow Demon") then
+  for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+  if v.Name == "Candy Pirate" or v.Name == "Snow Demon" then
+  if v.Humanoid.Health > 0 then
+  repeat wait()
+  AutoHaki()
+  EquipWeapon(_G.Select_Weapon)
+  StartMagnetBoneMon = true
+  v.HumanoidRootPart.CanCollide = false
+  v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+  PosMonBone = v.HumanoidRootPart.CFrame
+  topos(v.HumanoidRootPart.CFrame * MethodFarm)
+  game:GetService'VirtualUser':CaptureController()
+  game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+  until Cocoafarm == false or not v.Parent or v.Humanoid.Health <= 0
+  end
+  end
+  end
+  else
+   StartMagnetBoneMon = true
+  for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
+  if v.Name == "Candy Pirate" then
+  topos(v.HumanoidRootPart.CFrame * MethodFarm)
+  elseif v.Name == "Snow Demon" then
+  topos(v.HumanoidRootPart.CFrame * MethodFarm)
+  end
+  end
+  topos(CFrame.new(-1014.4241943359375, 149.11068725585938, -14555.962890625))
+  end
+  end)
+ end
+ end
+ end)
+ end
+ 
+ 
+	
+M:Toggle("Auto Buy Sleigh [ Candies ]", false, function(vu)
+    AutopBuyEXPBone = vu
+end)
+
+spawn(function()
+    pcall(function()
+        while wait(.1) do
+            if AutopBuyEXPBone then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Candies", "Buy", 3, 3)
+            end
+        end
+    end)
+end)
+
+
+
+M:Toggle("Auto Buy Santa Hat [ Candies ]", false, function(vu)
+    AutoBuEXPBone = vu
+end)
+
+spawn(function()
+    pcall(function()
+        while wait(.1) do
+            if AutoBuEXPBone then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Candies", "Buy", 3, 2)
+            end
+        end
+    end)
+end)
+
+
+
+M:Toggle("Auto Buy Elf Hat [ Candies ]", false, function(vu)
+    AutoBuyEXPone = vu
+end)
+
+spawn(function()
+    pcall(function()
+        while wait(.1) do
+            if AutoBuyEXPone then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Candies", "Buy", 3, 1)
+            end
+        end
+    end)
+end)
+
+
+
+M:Toggle("Auto Buy 500 Fragments [ Candies ]", false, function(vu)
+    AutoBuyXPBone = vu
+end)
+
+spawn(function()
+    pcall(function()
+        while wait(.1) do
+            if AutoBuyXPBone then
+                local args = {
+    [1] = "Candies",
+    [2] = "Buy",
+    [3] = 2,
+    [4] = 2
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+            end
+        end
+    end)
+end)
+
+
+
+M:Toggle("Auto Buy 200 Fragments [ Candies ]", false, function(vu)
+    AutoBuyEXBone = vu
+end)
+
+spawn(function()
+    pcall(function()
+        while wait(.1) do
+            if AutoBuyEXBone then
+                local args = {
+    [1] = "Candies",
+    [2] = "Buy",
+    [3] = 2,
+    [4] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+            end
+        end
+    end)
+end)
+
+
+
+M:Toggle("Auto Buy EXP x2 [ Candies ]", false, function(vu)
+    AutoBuyEXPBone = vu
+end)
+
+spawn(function()
+    pcall(function()
+        while wait(.1) do
+            if AutoBuyEXPBone then
+                if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Level.Exp.Text, "2x") then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Candies","Buy",1,1)
+                end
+            end
+        end
+    end)
+end)
 
     M:Seperator("Fighting Style")
     
@@ -11892,6 +12095,49 @@ end
 if World3 then
     RaceV4:Seperator("Race V4")
     
+    function CheckAcientOneStatus()
+    if not game.Players.LocalPlayer.Character:FindFirstChild("RaceTransformed") then
+        return "You have yet to achieve greatness"
+    end
+    local v227 = nil
+    local v228 = nil
+    local v229 = nil
+    v229, v228, v227 = game.ReplicatedStorage.Remotes.CommF_:InvokeServer("UpgradeRace", "Check")
+    if v229 == 1 then
+        return "Required Train More"
+    elseif v229 == 2 or v229 == 4 or v229 == 7 then
+        return "Can Buy Gear With " .. v227 .. " Fragments"
+    elseif v229 == 3 then
+        return "Required Train More"
+    elseif v229 == 5 then
+        return "You Are Done Your Race."
+    elseif v229 == 6 then
+        return "Upgrades completed: " .. v228 - 2 .. "/3, Need Trains More"
+    end
+    if v229 ~= 8 then
+        if v229 == 0 then
+            return "Ready For Trial"
+        else
+            return "You have yet to achieve greatness"
+        end
+    end
+    return "Remaining " .. 10 - v228 .. " training sessions."
+end
+
+
+local  V4  = RaceV4:Label("Total")
+
+
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            V4:Set("Anclient One Status : " .. tostring(CheckAcientOneStatus()))
+        end)
+    end
+end)
+   
+ 
 RaceV4:Button("Teleport To Top Of GreatTree",function()
   topos(CFrame.new(2947.556884765625, 2281.630615234375, -7213.54931640625))
     end)
@@ -12118,10 +12364,64 @@ end)
   RaceV4:Button("Buy Ancient One Quest",function(t)
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('UpgradeRace','Buy')
   end)
-  RaceV4:Toggle("Auto Kill Player in Trail Fully [Beta]",false,function(Val)
+  RaceV4:Toggle("Auto Kill Player in Trail",false,function(Val)
   _G.AutoKillTial = Val
   StopTween(_G.AutoKillTial)
   end)
+  
+  spawn(function()
+    while wait() do
+        if _G.AutoKillTial then
+-- Lấy danh sách tất cả người chơi trong trò chơi
+if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+  local args = {
+   [1] = "Buso"
+  }
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+  end
+EquipWeapon(_G.Select_Weapon)
+local player = game.Players.LocalPlayer
+local character = player.Character
+local maxDistance = 400 -- Khoảng cách tối đa để xem xét
+    -- Đợi 1 giây trước mỗi lần cập nhật
+if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+  local args = {
+   [1] = "Buso"
+  }
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+  end
+    local playerHead = character:FindFirstChild("Head")
+    local nearestPlayer = nil
+    local nearestDistance = maxDistance
+    for _, otherPlayer in pairs(game.Players:GetPlayers()) do
+        if otherPlayer ~= player then
+            local otherCharacter = otherPlayer.Character
+            if otherCharacter then
+                local targetHead = otherCharacter:FindFirstChild("Head")
+                if targetHead then
+                    local distance = (playerHead.Position - targetHead.Position).Magnitude
+                    if distance < nearestDistance then
+                        nearestDistance = distance
+                        nearestPlayer = otherPlayer
+                    end
+                end
+            end
+        end
+    end
+
+
+    if nearestPlayer then
+        local targetHead = nearestPlayer.Character:FindFirstChild("Head")
+        if targetHead then
+            local direction = (targetHead.Position - playerHead.Position).unit
+            local newPosition = targetHead.Position - direction * 10,10,10,10 -- Điều chỉnh khoảng cách di chuyển
+            character:MoveTo(newPosition)
+        end
+    end
+end
+end
+end)
+
   RaceV4:Toggle("Auto Trail RaceV4",false,function(v)
   _G.AutoQuestRace = v
   StopTween(_G.AutoQuestRace)
