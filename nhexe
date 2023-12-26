@@ -64,7 +64,7 @@ function Update:Window(text,logo,keybind)
     local osfunc = {}
 	local uihide = false
 	local abc = false
-	local logo = logo or 15754756916
+	local logo = logo or 15754761048
 	local currentpage = ""
 	local keybind = keybind or Enum.KeyCode.RightControl
 	local yoo = string.gsub(tostring(keybind),"Enum.KeyCode.","")
@@ -104,27 +104,14 @@ function Update:Window(text,logo,keybind)
 	TCNR.Name = "TCNR"
 	TCNR.Parent = Top
 
-	--local Logo = Instance.new("ImageLabel")
-	--Logo.Name = "Logo"
-	--Logo.Parent = Top
-	--Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	--Logo.BackgroundTransparency = 1.000
-	--Logo.Position = UDim2.new(0, 10, 0, 1)
-	--Logo.Size = UDim2.new(0, 25, 0, 25)
-	--Logo.Image = "rbxassetid://13755190794"
-	
-	local Logo = Instance.new("TextLabel")
+	local Logo = Instance.new("ImageLabel")
 	Logo.Name = "Logo"
 	Logo.Parent = Top
 	Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Logo.BackgroundTransparency = 1.000
+	--Logo.BackgroundTransparency = 1.000
 	Logo.Position = UDim2.new(0, 10, 0, 1)
 	Logo.Size = UDim2.new(0, 25, 0, 25)
-	Logo.Font = Enum.Font.Creepster
-    Logo.Text = "H"
-    Logo.TextColor3 = Color3.fromRGB(160, 160, 160)
-    Logo.TextScaled = true
-    Logo.TextSize = 18.000
+	Logo.Image = "rbxassetid://15754761048"
 
 	local Name = Instance.new("TextLabel")
 	Name.Name = "Name"
@@ -302,14 +289,14 @@ spawn(function()
 		TabButton.TextSize = 15.000
 		TabButton.TextTransparency = 0.500
 
-	        local PageImage = Instance.new("ImageLabel")
-            PageImage.Name = "PageImage"
-            PageImage.Parent = TabButton
-            PageImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            PageImage.BackgroundTransparency = 1.000
-            PageImage.Position = UDim2.new(0, 5, 0, 5)
-            PageImage.Size = UDim2.new(0, 19, 0, 19)
-            PageImage.Image = "rbxassetid://"..tostring(icon)
+	    local PageImage = Instance.new("ImageLabel")
+        PageImage.Name = "PageImage"
+        PageImage.Parent = TabButton
+        PageImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        PageImage.BackgroundTransparency = 1.000
+        PageImage.Position = UDim2.new(0, 5, 0, 5)
+        PageImage.Size = UDim2.new(0, 19, 0, 19)
+        PageImage.Image = "rbxassetid://"..tostring(icon)
 
 		local MainFramePage = Instance.new("ScrollingFrame")
 		MainFramePage.Name = text.."_Page"
@@ -618,19 +605,19 @@ spawn(function()
 			DropButton.TextSize = 14.000
 
 			for i,v in next,option do
-				local Item = Instance.new("TextButton")
+			local Item = Instance.new("TextButton")
 
-				Item.Name = "Item"
-				Item.Parent = DropScroll
-				Item.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				Item.BackgroundTransparency = 1.000
-				Item.Size = UDim2.new(0, 460, 0, 26)
-				Item.Font = Enum.Font.GothamSemibold
-				Item.Text = tostring(v)
-				Item.TextColor3 = Color3.fromRGB(225, 225, 225)
-				Item.TextSize = 13.000
-				Item.TextTransparency = 0.500
-				local person = Instance.new("ImageLabel")
+			Item.Name = "Item"
+			Item.Parent = DropScroll
+			Item.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Item.BackgroundTransparency = 1.000
+			Item.Size = UDim2.new(0, 460, 0, 26)
+			Item.Font = Enum.Font.GothamSemibold
+			Item.Text = tostring(v)
+			Item.TextColor3 = Color3.fromRGB(225, 225, 225)
+			Item.TextSize = 13.000
+			Item.TextTransparency = 0.500
+			local person = Instance.new("ImageLabel")
 
 --Properties:
 
@@ -699,19 +686,19 @@ person.ImageRectSize = Vector2.new(36, 36)
 
 			local dropfunc = {}
 			function dropfunc:Add(t)
-				local Item = Instance.new("TextButton")
-				Item.Name = "Item"
-				Item.Parent = DropScroll
-				Item.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-				Item.BackgroundTransparency = 1.000
-				Item.Size = UDim2.new(0, 470, 0, 26)
-				Item.Font = Enum.Font.GothamSemibold
-				Item.Text = tostring(t)
-				Item.TextColor3 = Color3.fromRGB(225, 225, 225)
-				Item.TextSize = 13.000
-				Item.TextTransparency = 0.500
+			local Item = Instance.new("TextButton")
+			Item.Name = "Item"
+			Item.Parent = DropScroll
+			Item.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Item.BackgroundTransparency = 1.000
+			Item.Size = UDim2.new(0, 470, 0, 26)
+			Item.Font = Enum.Font.GothamSemibold
+			Item.Text = tostring(t)
+			Item.TextColor3 = Color3.fromRGB(225, 225, 225)
+			Item.TextSize = 13.000
+			Item.TextTransparency = 0.500
 
-							local person = Instance.new("ImageLabel")
+			local person = Instance.new("ImageLabel")
 
 --Properties:
 
@@ -1158,21 +1145,19 @@ ScreenGui1.Parent = game.CoreGui
 ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Closed.Parent = ScreenGui1
-Closed.BackgroundColor3 = Color3.fromRGB(0, 0, 0, 0)
-Closed.BorderSizePixel = 0
+Closed.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Closed.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 Closed.Size = UDim2.new(0, 50, 0, 50)
 Closed.Draggable = true
-Closed.Image = "rbxassetid://11816162894"
+Closed.Image = "rbxassetid://15754761048"
 UICorner.CornerRadius = UDim.new(0, 30)
 UICorner.Parent = Closed
 UIGradient.Parent = Closed
 UIAspectRatioConstraint.Parent = Closed
 UIAspectRatioConstraint.AspectRatio = 0.988
---Closed.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
 Closed.MouseButton1Down:connect(function()
-  game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-  game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
 end)
 UICorner.Parent = Closed
 ;
