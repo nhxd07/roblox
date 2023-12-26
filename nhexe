@@ -6125,6 +6125,38 @@ spawn(function()
  
  
 	
+M:Toggle("Auto Collect Gift",false,function(value)
+    _G.ChristmasBox = value 
+    spawn(function()
+        while wait() do
+            if _G.ChristmasBox then
+                local player = game.Players.LocalPlayer
+                local rootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+                if rootPart then
+                    for _, proximityPrompt in pairs(game.workspace:GetDescendants()) do
+                        if proximityPrompt:IsA("ProximityPrompt") and (proximityPrompt.Parent.Position - rootPart.Position).magnitude < 500 then
+                            player.Character.HumanoidRootPart.CFrame = proximityPrompt.Parent.CFrame
+                            wait(0.1)
+                            fireproximityprompt(proximityPrompt, 20)
+                        end
+                    end
+                end
+            end
+        end
+    end)
+end)
+
+M:Toggle("Teleport To Event Island",false,function(value)
+    _G.TptoEventIsland = value
+    spawn(function()
+            if _G.TptoEventIsland then
+            toTarget(CFrame.new(-1067.02246, 14.6404228, -14448.1455, 0.907635272, -7.29340499e-08, 0.419759721, 6.73669618e-08, 1, 2.8086113e-08, -0.419759721, 2.78598944e-09, 0.907635272))
+            else
+                topos(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) 
+            end
+    end)
+end)
+
 M:Toggle("Auto Buy Sleigh [ Candies ]", false, function(vu)
     AutopBuyEXPBone = vu
 end)
