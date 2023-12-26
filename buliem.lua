@@ -1,7 +1,7 @@
 repeat wait() until game.Players.LocalPlayer
 
 local GamePlayerGITHUB = "https://raw.githubusercontent.com/"
-local GameGETHUBFUNCTION = "bot21333/C-/main/BotGUIlua"
+local GameGETHUBFUNCTION = "bot21333/C-/main/C__##.lua"
 local URLGITHUB = GamePlayerGITHUB..GameGETHUBFUNCTION
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SaltyHB/Poggers/main/Public"))()
