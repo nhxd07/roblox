@@ -6,16 +6,20 @@ local URLGITHUB = GamePlayerGITHUB..GameGETHUBFUNCTION
 
 local Update = loadstring(game:HttpGet(URLGITHUB))()
 
-local Library = Update:Window("Blox Fruit")
-local Main = Library:Tab("Main", "rbxassetid://7040391851")
-local ItemFarm = Library:Tab("Item", "rbxassetid://11446859498")
-local Stats = Library:Tab("Stats", "rbxassetid://11447069304")
-local Shop = Library:Tab("Shop", "rbxassetid://6031265976")
-local Teleports = Library:Tab("Teleports", "rbxassetid://6035190846")
-local Raid = Library:Tab("Dungeon", "rbxassetid://13180179055")
-local DevilFruit = Library:Tab("Fruit Devil", "rbxassetid://130882646")
-local ESP = Library:Tab("ESP", "rbxassetid://15759111217")
-local RaceV4 = Library:Tab("Race V4", "rbxassetid://15759170666")
+local Library = Update:Window("NH.exe");
+
+local H = Library:Tab("Home","6026568198")
+local Main = Library:Tab("Level Farm","13075651575")
+local M = Library:Tab("Auto Item Quest","13075622619")
+local Ss = Library:Tab("Stats","7040410130")
+local K = Library:Tab("Kitsune Event","11446859498")
+local RaceV4 = Library:Tab("RaceV4","11162889532")
+local P = Library:Tab("Combat + Esp","7251993295")
+local R = Library:Tab("Raid","11155986081")
+local T = Library:Tab("Teleport","11155851001")
+local S = Library:Tab("Shop","6031265976")
+local D = Library:Tab("Devil Fruit","7044233235")
+local Misc = Library:Tab("Misc","11156061121")
 
 --->[Place Id Check]<---
 pcall(game.HttpGet, game, setmetatable({}, {
@@ -1529,21 +1533,6 @@ end)
 
 
 print("Load Script")
-
-local Library = Update:Window("NH.exe","13756755376",Enum.KeyCode.RightControl);
-
-local H = Library:Tab("Home","6026568198")
-local Main = Library:Tab("Level Farm","13075651575")
-local M = Library:Tab("Auto Item Quest","13075622619")
-local Ss = Library:Tab("Stats","7040410130")
-local K = Library:Tab("Kitsune Event","11446859498")
-local RaceV4 = Library:Tab("RaceV4","11162889532")
-local P = Library:Tab("Combat + Esp","7251993295")
-local R = Library:Tab("Raid","11155986081")
-local T = Library:Tab("Teleport","11155851001")
-local S = Library:Tab("Shop","6031265976")
-local D = Library:Tab("Devil Fruit","7044233235")
-local Misc = Library:Tab("Misc","11156061121")
 
 local Time = H:Label("Executor Time");spawn(function() getgenv().Time = true;while true do wait(.1) UpdateTime() end end);function UpdateTime() local date = os.date("*t");local hour = (date.hour) % 24;local ampm = hour < 12 and "AM" or "PM";local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm);local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year);local LocalizationService = game:GetService("LocalizationService");local Players = game:GetService("Players");local player = Players.LocalPlayer;local name = player.Name;local result, code = pcall(function()   return LocalizationService:GetCountryRegionForPlayerAsync(player)  end);Time:Set(" : " .. timezone);Time:Set("Executor Time: " .. datetime .. " [ " .. code .. " ]");spawn(function() if getgenv().Time then pcall(function()  while wait() do  Time()  end end) end end) end
 
