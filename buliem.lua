@@ -1,7 +1,7 @@
 repeat wait() until game.Players.LocalPlayer
 
 local GamePlayerGITHUB = "https://raw.githubusercontent.com/"
-local GameGETHUBFUNCTION = "bot21333/C-/main/C__%20%20.lua"
+local GameGETHUBFUNCTION = "bot21333/C-/main/GetGenv(function().lua"
 local URLGITHUB = GamePlayerGITHUB..GameGETHUBFUNCTION
 
 local Update = loadstring(game:HttpGet(URLGITHUB))()
