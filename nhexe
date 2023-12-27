@@ -6150,7 +6150,7 @@ M:Toggle("Teleport To Event Island",false,function(value)
     _G.TptoEventIsland = value
     spawn(function()
             if _G.TptoEventIsland then
-            toTarget(CFrame.new(-1067.02246, 14.6404228, -14448.1455, 0.907635272, -7.29340499e-08, 0.419759721, 6.73669618e-08, 1, 2.8086113e-08, -0.419759721, 2.78598944e-09, 0.907635272))
+            topos(CFrame.new(-1067.02246, 14.6404228, -14448.1455, 0.907635272, -7.29340499e-08, 0.419759721, 6.73669618e-08, 1, 2.8086113e-08, -0.419759721, 2.78598944e-09, 0.907635272))
             else
                 topos(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame) 
             end
