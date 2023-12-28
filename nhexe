@@ -1,4 +1,4 @@
-local Update = loadstring(game:HttpGet"https://raw.githubusercontent.com/nhxd07/roblox/main/UIVip")()
+local Update = loadstring(game:HttpGet"https://raw.githubusercontent.com/nhxd07/roblox/main/UiVip")()
 
 local ScreenGui1 = Instance.new("ScreenGui")
 local Closed = Instance.new("ImageButton")
