@@ -127,7 +127,7 @@ ImageButton.Draggable = true
 ImageButton.Active = true
 ImageButton.Selectable = true
 ImageButton.BackgroundTransparency = .1
-ImageButton.Image = "rbxassetid://0925755493"
+ImageButton.Image = "rbxassetid://13756755376"
 ImageButton.Visible = false
 local MCNRb = Instance.new("UICorner")
 MCNRb.Name = "MCNR"
@@ -198,7 +198,7 @@ Logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Logo.BorderSizePixel = 0
 Logo.Position = UDim2.new(0.0246521216, 0, 0.0482814126, 0)
 Logo.Size = UDim2.new(0, 23, 0, 18)
-Logo.Image = "rbxassetid://0925755493"
+Logo.Image = "rbxassetid://13756755376"
 
 Avatra.Name = "Avatra"
 Avatra.Parent = Frame_Chest
