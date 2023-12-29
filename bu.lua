@@ -251,7 +251,7 @@ Title.BackgroundTransparency = 1.000
 Title.Position = UDim2.new(0.05, 0, 0.04, 0)
 Title.Size = UDim2.new(0, 483, 0, 31)
 Title.Font = Enum.Font.GothamBold
-Title.Text = "NhuHai Exe ".."<font color='rgb(178, 102, 255)'>New Version</font>".."- "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+Title.Text = "Astroc Hub ".."<font color='rgb(178, 102, 255)'>New Version</font>".."- "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 Title.RichText = true;
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextSize = 15.000
@@ -746,7 +746,7 @@ Text2.Position = UDim2.new(0.5, 0, 0.5, 0)
 Text2.Size = UDim2.new(0, 40, 0, 12)
 Text2.ZIndex = 16
 Text2.Font = Enum.Font.GothamBold
-Text2.Text = "Join NhuHai Exe Discord!"
+Text2.Text = "Join Astrox Hub Discord!"
 Text2.TextColor3 = Color3.fromRGB(255, 255, 255)
 Text2.TextSize = 14.000
 
