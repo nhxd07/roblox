@@ -6561,8 +6561,6 @@ end)
         _G.SkillV = value
     end)
 
-    if World3 then
-
 
 local plyserv = Com1:Label("Players")
 
