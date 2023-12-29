@@ -4468,7 +4468,7 @@ end)
 
     
 local Win = library:Evil()
-local Main = Win:Tab("Main",14477284625)
+local MainH = Win:Tab("Main",14477284625)
 local AutoItem = Win:Tab("Auto Item",14477543197)
 local Combat = Win:Tab("Combat",14477563495)
 local RaceMirage = Win:Tab("Race",14477517268)
@@ -4479,22 +4479,22 @@ local Misc = Win:Tab("Misc",14477663692)
 local Setting = Win:Tab("Setting",14477673361)
 
 -------------[Main]-------------
-local Main1 = Main:CraftPage(1)
+local Main1 = MainH:CraftPage(1)
 Main1:Seperator("Main Farm")
 
-local Main2 = Main:CraftPage(1)
+local Main2 = MainH:CraftPage(1)
 Main2:Seperator("Near Farm")
 
-local Main3 = Main:CraftPage(1)
+local Main3 = MainH:CraftPage(1)
 Main3:Seperator("Mastery Function")
 
-local Main4 = Main:CraftPage("Bosses",1)
+local Main4 = MainH:CraftPage("Bosses",1)
 Main4:Seperator("Bosses")
 
-local Main5 = Farms:CraftPage(1)
+local Main5 = MainH:CraftPage(1)
 Main5:Seperator("Fighting Styles")
 
-local Main6 = Main:CraftPage(2)
+local Main6 = MainH:CraftPage(2)
 Main6:Seperator("Configs")
 
 -------------[AutoItem]-------------
@@ -4528,6 +4528,7 @@ local Misc2 = Misc:CraftPage(2)
 -------------[Setting]-------------
 local Setting1 = Setting:CraftPage(1)
 local Setting2 = Setting:CraftPage(2)
+
 
     Main1:Toggle("Auto Farm Level",_G.AutoFarm,function(value)
         _G.AutoFarm = value
