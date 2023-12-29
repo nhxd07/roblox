@@ -4568,8 +4568,6 @@ Page1:Dropdown("Farm Mode", ListF, "Farm Mode",function(value)
     FarmMode = value
 end)
     
-    Page1:Line()
-
     Page1:Toggle("Auto Farm Level",_G.AutoFarm,function(value)
         _G.AutoFarm = value
         StopTween(_G.AutoFarm)
