@@ -4908,7 +4908,7 @@ task.spawn(function()
 	end
     end)
     
-Page3:Dropdown("Farm Mode", {"Normal", "Not Tween To Npc Quest"},function(value)
+Page3:Dropdown("Farm Mode", {"Normal", "Not Tween To Npc Quest"}, "Normal",function(value)
     FarmMode = value
 end)
     
@@ -4920,6 +4920,6 @@ elseif World3 then
 	tableMon = {"Pirate Millionaire","Dragon Crew Warrior","Dragon Crew Archer","Female Islander","Giant Islander","Marine Commodore","Marine Rear Admiral","Fishman Raider","Fishman Captain","Forest Pirate","Mythological Pirate","Jungle Pirate","Musketeer Pirate","Reborn Skeleton","Living Zombie","Demonic Soul","Posessed Mummy","Peanut Scout","Peanut President","Ice Cream Chef","Ice Cream Commander","Cookie Crafter","Cake Guard","Baking Staff","Head Baker","Cocoa Warrior","Chocolate Bar Battler","Sweet Thief","Candy Rebel","Candy Pirate","Snow Demon","Isle Outlaw","Island Boy","Sun-kissed Warrior","Isle Champion"}
 end
 
-Page3:Dropdown("Select Mob",tableMon,function(vu)
+Page3:Dropdown("Select Mob",tableMon, "Select Mob",function(vu)
     _G.SelectMob = vu
 end)
