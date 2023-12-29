@@ -7262,6 +7262,345 @@ Com2:Toggle("Esp Gear [Beta]", false, function(value)
         end
     end)
 
+if World1 or World2 then
+Race1:Label("Go to Third Sea")
+end
+
+if World3 then
+    Race1:Seperator("Race V4")
+    
+    function CheckAcientOneStatus()
+    if not game.Players.LocalPlayer.Character:FindFirstChild("RaceTransformed") then
+        return "You have yet to achieve greatness"
+    end
+    local v227 = nil
+    local v228 = nil
+    local v229 = nil
+    v229, v228, v227 = game.ReplicatedStorage.Remotes.CommF_:InvokeServer("UpgradeRace", "Check")
+    if v229 == 1 then
+        return "Required Train More"
+    elseif v229 == 2 or v229 == 4 or v229 == 7 then
+        return "Can Buy Gear With " .. v227 .. " Fragments"
+    elseif v229 == 3 then
+        return "Required Train More"
+    elseif v229 == 5 then
+        return "You Are Done Your Race."
+    elseif v229 == 6 then
+        return "Upgrades completed: " .. v228 - 2 .. "/3, Need Trains More"
+    end
+    if v229 ~= 8 then
+        if v229 == 0 then
+            return "Ready For Trial"
+        else
+            return "You have yet to achieve greatness"
+        end
+    end
+    return "Remaining " .. 10 - v228 .. " training sessions."
+end
+
+
+local  V4  = Race1:Label("Total")
+
+
+
+spawn(function()
+    while wait() do
+        pcall(function()
+            V4:Set("Anclient One Status : " .. tostring(CheckAcientOneStatus()))
+        end)
+    end
+end)
+   
+ 
+Race1:Button("Teleport To Top Of GreatTree",function()
+  topos(CFrame.new(2947.556884765625, 2281.630615234375, -7213.54931640625))
+    end)
+    
+    Race1:Button("Teleport To Timple Of Time",function()
+  Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
+    end)
+    
+Race1:Button("Teleport To Lever Pull",function()
+  topos(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
+end)
+
+Race1:Button("Teleport To Acient One",function()
+  topos(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
+end)
+   
+Race1:Button("Clock Acces", function()
+    game:GetService("Workspace").Map["Temple of Time"].DoNotEnter:Remove()
+    game:GetService("Workspace").Map["Temple of Time"].ClockRoomExit:Remove()
+end)
+
+Race1:Toggle("Auto Look Moon",false,function(v)
+  _G.AutoDooHee = v
+  end)
+spawn(function()
+    while wait() do
+		pcall(function()
+			if _G.AutoDooHee then
+			    wait(0.5)
+				local moonDir = game.Lighting:GetMoonDirection()
+                local lookAtPos = game.Workspace.CurrentCamera.CFrame.p + moonDir * 100
+                game.Workspace.CurrentCamera.CFrame = CFrame.lookAt(game.Workspace.CurrentCamera.CFrame.p, lookAtPos)
+			end
+		end)
+    end
+end)
+
+  Race1:Button("Teleport Cyborg Door",function()
+  topos(CFrame.new(28492.4140625, 14894.4267578125, -422.1100158691406))
+  end)
+  
+  Race1:Button("Teleport Fish Door",function()
+  topos(CFrame.new(28224.056640625, 14889.4267578125, -210.5872039794922))
+  end)
+  
+  Race1:Button("Teleport Ghoul Door",function()
+  topos(CFrame.new(28672.720703125, 14889.1279296875, 454.5961608886719))
+  end)
+  
+  Race1:Button("Teleport Human Door",function()
+  topos(CFrame.new(29237.294921875, 14889.4267578125, -206.94955444335938))
+  end)
+  
+  Race1:Button("Teleport Mink Door",function()
+  topos(CFrame.new(29020.66015625, 14889.4267578125, -379.2682800292969))
+  end)
+  
+  Race1:Button("Teleport Sky Door",function()
+  topos(CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188))
+  end)
+
+  Race1:Seperator("Auto Complete Trials")
+  
+  Race1:Button("Buy Ancient One Quest",function(t)
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('UpgradeRace','Buy')
+  end)
+  
+ Race1:Button("Auto Complete Angel Trial",function(t)
+        topos(game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame)
+        end)
+
+        Race1:Button("Auto Complete Rabbit Trial",function(t)
+        topos(game:GetService("Workspace").Map.MinkTrial.Ceiling.CFrame * CFrame.new(0,-5,0))
+        end)
+
+        Race1:Button("Auto Complete Cyborg Trial",function(t)
+        topos(CFrame.new(0,300,0))
+        end)
+
+Race2:Seperator("Kitsune Island")
+
+local FullMoon = Race2:Label("")
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+             if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+                        FullMoon:Set("🌑 : Full Moon 100%")
+            elseif game:GetService("Lighting").Sky.MoonTextureId=="rbxassetid://15493317929" then
+                        FullMoon:Set("🌌 : Blue Moon 100%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" then
+                        FullMoon:Set("🌒 : Full Moon 75%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
+                        FullMoon:Set("🌓 : Full Moon 50%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
+                        FullMoon:Set("🌗 : Full Moon 25%")
+                    elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
+                        FullMoon:Set("🌖 : Full Moon 15%")
+                    else
+                        FullMoon:Set("🌚 : Full Moon 0%")
+                    end
+                end)
+            end
+end)
+
+
+
+local TimeKitsune= Race2:Label("🧭 Waiting For Kitsune Island")
+
+spawn(function()
+        pcall(function()
+            while wait() do
+                if game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Visible == true then
+                    TimeKitsune:Set(game:GetService("Players").LocalPlayer.PlayerGui.Main.Timer.Text)
+                else
+                    TimeKitsune:Set("🧭 Waiting For Kitsune Island")
+                end
+            end
+        end)
+    end)
+
+
+
+local mo = Race2:Label("")
+
+task.spawn(function()
+	while task.wait() do
+		pcall(function()
+			if game.Workspace._WorldOrigin.Locations:FindFirstChild("Kitsune Island") then
+				mo:Set("🎇 Check Kitsune Island : Spawned✅")
+			else
+				mo:Set("🎇 Check Kitsune Island : Not Spawned❌")
+			end
+		end)
+	end
+end) 
+
+
+
+
+Race2:Toggle("Auto Teleport to Kitsune Island",AutoKit,function(W)
+    AutoKit = W
+    end)
+    spawn(function()
+    while wait() do
+		pcall(function()
+			if AutoKit then
+				if game:GetService("Workspace").Map:FindFirstChild("KitsuneIsland") then
+                function toTargetWait(a)local b=(a.p-game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position).Magnitude;tweenrach=game:GetService('TweenService'):Create(game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart"),TweenInfo.new(b/310,Enum.EasingStyle.Linear),{CFrame=a})tweenrach:Play()end;toTargetWait(workspace._WorldOrigin.Locations:FindFirstChild("Kitsune Island").CFrame*CFrame.new(0,250,0))
+                else
+                game.StarterGui:SetCore("SendNotification", {
+                Title = "Nhexe";
+                Text = "Kitsune Island Not Found!";
+                Duration = 3;
+                }) end
+			end
+		end)
+    end
+end)
+
+
+
+
+Race2:Toggle("Auto Collect Azure Ember",AutoCollectAzure,function(L)
+    AutoCollectAzure = L
+    end)
+    spawn(function()
+    while wait() do
+		pcall(function()
+			if AutoCollectAzure then
+			  local Players = game.Players
+              local Player = Players.LocalPlayer
+              local toMe = game:GetService("Workspace").EmberTemplate.Part
+              function telePlr() 
+              Player.Character.HumanoidRootPart.CFrame = CFrame.new(toMe.Position)   
+              end
+              telePlr()
+			end
+		end)
+    end
+end)
+
+
+
+Race2:Toggle("Auto Trade Azure Ember",AutoTrade,function(J)
+    AutoTrade = J
+    end)
+    spawn(function()
+    while wait() do
+		pcall(function()
+			if AutoTrade then
+			wait(0.6)
+			game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RF/KitsuneStatuePray"):InvokeServer()
+			end
+		end)
+    end
+end)
+
+Race2:Button("Clear Fog",function()
+    game:GetService("Lighting").BaseAtmosphere:Destroy()
+    game:GetService("Lighting").SeaTerrorCC:Destroy()
+    game.Lighting.LightingLayers.Atmosphere:Destroy()
+wait()
+game.Lighting.LightingLayers.DarkFog:Destroy()
+wait()
+game.Lighting.FogEnd = 100000
+end)
+
+
+
+Race2:Button("Go to Zone 6",function()
+    topos(CFrame.new(-47335.4609375, 8.1976900100708, -13788.5126953125))
+end)
+
+
+
+Race2:Seperator("Boats Speed")
+local boatsFolder = game.Workspace.Boats
+local sizeChange = Vector3.new(0, 0, 0)
+
+
+
+-- Tạo một Dropdown cho tốc độ thuyền
+
+local boatSpeeds = {
+    "150",
+    "200",
+    "250",
+    "300",
+    "350",
+    "400",
+    "450",
+    "500",
+    "550",
+    "600"
+}
+
+local selectedSpeed = boatSpeeds[1] -- Chọn tốc độ mặc định
+
+
+-- Tạo một Dropdown cho độ cao của thuyền
+
+local boatHeights = {
+    "25",
+    "50",
+    "75",
+    "100",
+    "150",
+    "200",
+    "250",
+    "300"
+}
+
+
+
+local selectedHeight = boatHeights[1] -- Chọn độ cao mặc định
+
+local function AdjustBoatSettings()
+    local speedIndex = table.find(boatSpeeds, selectedSpeed)
+    local heightIndex = table.find(boatHeights, selectedHeight)
+    local newSpeed = 150 + 50 * (speedIndex - 1)
+    local newHeight = 25 + 25 * (heightIndex - 1)
+
+    for _, boat in pairs(boatsFolder:GetChildren()) do
+        if boat:IsA("Model") then
+            for _, child in pairs(boat:GetChildren()) do
+                if child:IsA("VehicleSeat") then
+                    child.MaxSpeed = newSpeed
+                    child.Size = Vector3.new(0, newHeight, 0)
+                end
+            end
+        end
+    end
+end
+
+
+
+-- Tạo Dropdowns cho tốc độ và độ cao
+
+Race2:Dropdown("Select Speed Boat", boatSpeeds, "Select Speed Boat",function(value)
+    selectedSpeed = value
+    AdjustBoatSettings()
+end)
+
+Race2:Dropdown("Select Height Boat", boatHeights, "Select Height Boat",function(value)
+    selectedHeight = value
+    AdjustBoatSettings()
+end)
+end
 
 Tele1:Seperator("World")
     
