@@ -4873,9 +4873,7 @@ spawn(function()
 	end
     end)
 
-local WeaponList = {"Melee","Sword","Fruit","Gun"}
-_G.SelectWeapon = "Melee"
-Page9:Dropdown("Select Weapon",WeaponList,function(value)
+Page3:Dropdown("Weapon",{"Melee","Sword","Fruit","Gun"},"Melee",function(value)
 _G.SelectWeapon = value
 end)
 
@@ -4921,10 +4919,10 @@ task.spawn(function()
     
 local ListF = {"Normal", "Not Tween To Npc Quest"}
 FarmMode = "Normal"
-Page9:Dropdown("Farm Mode", ListF,function(value)
+Page3:Dropdown("Farm Mode", ListF,function(value)
     FarmMode = value
 end)
     
-Page9:Dropdown("Select Mob",tableMon,function(vu)
+Page3:Dropdown("Select Mob",tableMon,function(vu)
     _G.SelectMob = vu
 end)
