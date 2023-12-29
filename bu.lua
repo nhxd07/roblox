@@ -12352,12 +12352,12 @@ end
 
 -- Tạo Dropdowns cho tốc độ và độ cao
 
-Race2:Dropdown("Select Speed Boat", boatSpeeds, function(value)
+Race2:Dropdown("Select Speed Boat", boatSpeeds, "Select Speed Boat",function(value)
     selectedSpeed = value
     AdjustBoatSettings()
 end)
 
-Race2:Dropdown("Select Height", boatHeights, function(value)
+Race2:Dropdown("Select Height Boat", boatHeights, "Select Height Boat",function(value)
     selectedHeight = value
     AdjustBoatSettings()
 end)
@@ -12390,7 +12390,7 @@ local plyserv = Com1:Label("Players")
         table.insert(Playerslist,v.Name)
     end
     
-    local SelectedPly = Com1:Dropdown("Select Player",Playerslist,function(value)
+    local SelectedPly = Com1:Dropdown("Select Player",Playerslist, "Select Player",function(value)
         _G.SelectPly = value
     end)
     
@@ -13123,7 +13123,7 @@ Tele1:Seperator("World")
             "Fountain City",
             "Shank Room",
             "Mob Island"
-            },function(value)
+            }, "Select Island",function(value)
             _G.SelectIsland = value
         end)
     end
@@ -13146,7 +13146,7 @@ Tele1:Seperator("World")
             "Forgotten Island",
             "Ussop Island",
             "Mini Sky Island"
-            },function(value)
+            }, "Select Island",function(value)
             _G.SelectIsland = value
         end)
     end
@@ -13166,7 +13166,7 @@ Tele1:Seperator("World")
             "Cake Island",
             "Cocoa Island",
             "Candy Island New⛄"
-            },function(value)
+            }, "Select Island",function(value)
             _G.SelectIsland = value
         end)
     end
@@ -13284,7 +13284,7 @@ Tele1:Seperator("World")
             "Dark Step", 
             "Electro",
             "Fishman Karate"
-            },function(value)
+            }, "Select NPC",function(value)
             _G.SelectNPC = value
         end)
     end
@@ -13309,7 +13309,7 @@ Tele1:Seperator("World")
             "El Admin",
             "El Rodolfo",
             "Arowe"
-            },function(value)
+            }, "Select NPC",function(value)
             _G.SelectNPC = value
         end)
     end
@@ -13327,7 +13327,7 @@ Tele1:Seperator("World")
             "Elite Hunter",
             "Player Hunter",
             "Uzoth"
-            },function(value)
+            }, "Select NPC",function(value)
             _G.SelectNPC = value
         end)
     end
@@ -13433,7 +13433,7 @@ if World1 then
 		"Magma Village",
 		"Under Water Island",
 		"Fountain City"
-	},function(value)
+	}, "Select Island Bypass TP",function(value)
 		_G.SelectWarp = value
 	end)
 end
@@ -13450,7 +13450,7 @@ if World2 then
 		"Cursed Ship",
 		"Ice Castle",
 		"Forgotten Island"
-	},function(value)
+	}, "Select Island Bypass TP",function(value)
 		_G.SelectWarp = value
 	end)
 end
@@ -13468,7 +13468,7 @@ if World3 then
 		"Cake Island",
 		"Sea to Treats",
 		"Sea to Treats New"
-	},function(value)
+	}, "Select Island Bypass TP",function(value)
 		_G.SelectWarp = value
 	end)
 end
@@ -13824,7 +13824,7 @@ spawn(function()
 		table.insert(Raidslist,v)
 	end
 	
-    Tele2:Dropdown("Select Chips",Raidslist,function(value)
+    Tele2:Dropdown("Select Chips",Raidslist, "Select Chips",function(value)
         _G.SelectChip = value
     end)
     
