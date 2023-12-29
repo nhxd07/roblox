@@ -1,39 +1,3 @@
-do
-local ui = game:GetService("CoreGui"):FindFirstChild("UILibrary")
-if ui then
-ui:Destroy()
-end
-end
-local library = {}
-local titlefunc = {}
-local UIConfig = {
-  Bind = Enum.KeyCode.RightControl
-}
-local chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-local length = 20
-local randomString = ""
-math.randomseed(os.time())
-charTable = {}
-for c in chars:gmatch "." do
-table.insert(charTable, c)
-end
-for i = 1, length do
-randomString = randomString .. charTable[math.random(1, #charTable)]
-end
-for i, v in pairs(game.CoreGui:WaitForChild("RobloxGui"):WaitForChild("Modules"):GetChildren()) do
-if v.ClassName == "ScreenGui" then
-for i1, v1 in pairs(v:GetChildren()) do
-if v1.Name == "Main" then
-do
-local ui = v
-if ui then
-ui:Destroy()
-end
-end
-end
-end
-end
-end
 _G.Color = Color3.fromRGB(178, 102, 255)
 function CircleClick(Button, X, Y)
 coroutine.resume(
