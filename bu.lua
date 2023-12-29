@@ -4558,24 +4558,24 @@ local Race1 = RaceMirage:CraftPage(1)
 local Race2 = RaceMirage:CraftPage(2)
     
 -------------[Fruit]-------------
-local Fruit1 = RaceMirage:CraftPage(1)
-local Fruit2 = RaceMirage:CraftPage(2)
+local Fruit1 = Fruit:CraftPage(1)
+local Fruit2 = Fruit:CraftPage(2)
 
 -------------[Teleport]-------------
-local Tele1 = RaceMirage:CraftPage(1)
-local Tele2 = RaceMirage:CraftPage(2)
+local Tele1 = Teleport:CraftPage(1)
+local Tele2 = Teleport:CraftPage(2)
 
 -------------[Shop]-------------
-local Shop1 = RaceMirage:CraftPage(1)
-local Shop2 = RaceMirage:CraftPage(2)
+local Shop1 = Shop:CraftPage(1)
+local Shop2 = Shop:CraftPage(2)
 
 -------------[Misc]-------------
-local Misc1 = RaceMirage:CraftPage(1)
-local Misc2 = RaceMirage:CraftPage(2)
+local Misc1 = Misc:CraftPage(1)
+local Misc2 = Misc:CraftPage(2)
 
 -------------[Setting]-------------
-local Setting1 = RaceMirage:CraftPage(1)
-local Setting2 = RaceMirage:CraftPage(2)
+local Setting1 = Setting:CraftPage(1)
+local Setting2 = Setting:CraftPage(2)
 
     Main1:Toggle("Auto Farm Level",_G.AutoFarm,function(value)
         _G.AutoFarm = value
