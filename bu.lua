@@ -2391,10 +2391,10 @@ local Page10 = Tab3:CraftPage(1)
 local Page11 = Tab3:CraftPage(2)
 
 
-Page1Seperator("Farm")
+Page1:Seperator("Farm")
 
 
-Page1Toggle("Auto SetSpawn Point [open it If you use Bypass Tp]",true,function(value)
+Page1:Toggle("Auto SetSpawn Point [open it If you use Bypass Tp]",true,function(value)
     _G.Set = value
 end)
 
@@ -2413,7 +2413,7 @@ end)
 
 local WeaponList = {"Melee","Sword","Fruit","Gun"}
 _G.SelectWeapon = "Melee"
-Page1Dropdown("Select Weapon",WeaponList,function(value)
+Page1:Dropdown("Select Weapon",WeaponList,function(value)
 _G.SelectWeapon = value
 end)
 
@@ -2459,14 +2459,14 @@ task.spawn(function()
     
 local ListF = {"Normal", "Not Tween To Npc Quest"}
 FarmMode = "Normal"
-Page1Dropdown("Farm Mode", ListF,function(value)
+Page1:Dropdown("Farm Mode", ListF,function(value)
     FarmMode = value
 end)
     
-    Page1Line()
+    Page1:Line()
   
 
-    Page1Toggle("Auto Farm Level",_G.AutoFarm,function(value)
+    Page1:Toggle("Auto Farm Level",_G.AutoFarm,function(value)
         _G.AutoFarm = value
         StopTween(_G.AutoFarm)
     end)
