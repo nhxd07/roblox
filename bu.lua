@@ -7174,25 +7174,6 @@ end)
         NextplySelect = false
     end)
     
-    Com1:Slider("Lock Bounty",1,25000000,750000,function(value)
-        _G.BountyLock = value
-    end)
-    
-    Com1:Toggle("Start Bounty Lock",false,function(value)
-        _G.StartBountyLock = value
-    end)
-    
-    spawn(function()
-        while wait() do
-            if _G.StartBountyLock then
-                pcall(function()
-                    if game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value >= _G.BountyLock then
-                        game:GetService("Players").LocalPlayer:Kick("Successfully! Bounty Farm")
-                    end
-                end)
-            end
-        end
-    end)
     
     Com2:Seperator("Esp Menu")
     
