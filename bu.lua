@@ -3766,54 +3766,54 @@ spawn(function()
     end
 end)
 
-function isnil(thing)
-    return (thing == nil)
-end
-local function round(n)
-    return math.floor(tonumber(n) + 0.5)
-end
-Number = math.random(1, 1000000)
-    function ESPKisuneIsland()
-    pcall(function()
-        if _G.EspKitsuneIsland then
-            for i,v in pairs(game:GetService("Workspace").Map.KitsuneIsland:GetChildren()) do
-                pcall(function()
-                    if v.Name == 'NeonShrinePart' then 
-                        if not v:FindFirstChild('EspKitsune') then
-                            local bill = Instance.new('BillboardGui',v)
-                            bill.Name = 'EspKitsune'
-                            bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                            bill.Size = UDim2.new(1,200,1,30)
-                            bill.Adornee = v
-                            bill.AlwaysOnTop = true
-                            local name = Instance.new('TextLabel',bill)
-                            name.Font = "GothamBold"
-                            name.FontSize = "Size14"
-                            name.TextWrapped = true
-                            name.Size = UDim2.new(1,0,1,0)
-                            name.TextYAlignment = 'Top'
-                            name.BackgroundTransparency = 1
-                            name.TextStrokeTransparency = 0.5
-                            name.TextColor3 = Color3.fromRGB(255, 255, 255)
-                            name.Text = ("Kitsune Island" ..' \n'.." [ "..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M'.." ] ")
-                        else
-                            v.EspKitsune.TextLabel.Text = ("Kitsune Island" ..' \n'.." [ "..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M'.." ] ")
-                            v.EspKitsune.TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-                        end
-                    end
-                end)
-            end
-        else
-            for i,v in pairs(game:GetService("Workspace").Map.KitsuneIsland:GetChildren()) do
-                if v.Name == 'Center' then
-                    if v:FindFirstChild('EspKitsune') then
-                        v:FindFirstChild('EspKitsune'):Destroy()
-                    end
-                end
-            end
-        end
-    end)
-    end
+-- function isnil(thing)
+    -- return (thing == nil)
+-- end
+-- local function round(n)
+    -- return math.floor(tonumber(n) + 0.5)
+-- end
+-- Number = math.random(1, 1000000)
+    -- function ESPKisuneIsland()
+    -- pcall(function()
+        -- if _G.EspKitsuneIsland then
+            -- for i,v in pairs(game:GetService("Workspace").Map.KitsuneIsland:GetChildren()) do
+                -- pcall(function()
+                    -- if v.Name == 'NeonShrinePart' then 
+                        -- if not v:FindFirstChild('EspKitsune') then
+                            -- local bill = Instance.new('BillboardGui',v)
+                            -- bill.Name = 'EspKitsune'
+                            -- bill.ExtentsOffset = Vector3.new(0, 1, 0)
+                            -- bill.Size = UDim2.new(1,200,1,30)
+                            -- bill.Adornee = v
+                            -- bill.AlwaysOnTop = true
+                            -- local name = Instance.new('TextLabel',bill)
+                            -- name.Font = "GothamBold"
+                            -- name.FontSize = "Size14"
+                            -- name.TextWrapped = true
+                            -- name.Size = UDim2.new(1,0,1,0)
+                            -- name.TextYAlignment = 'Top'
+                            -- name.BackgroundTransparency = 1
+                            -- name.TextStrokeTransparency = 0.5
+                            -- name.TextColor3 = Color3.fromRGB(255, 255, 255)
+                            -- name.Text = ("Kitsune Island" ..' \n'.." [ "..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M'.." ] ")
+                        -- else
+                            -- v.EspKitsune.TextLabel.Text = ("Kitsune Island" ..' \n'.." [ "..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M'.." ] ")
+                            -- v.EspKitsune.TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        -- end
+                    -- end
+                -- end)
+            -- end
+        -- else
+            -- for i,v in pairs(game:GetService("Workspace").Map.KitsuneIsland:GetChildren()) do
+                -- if v.Name == 'Center' then
+                    -- if v:FindFirstChild('EspKitsune') then
+                        -- v:FindFirstChild('EspKitsune'):Destroy()
+                    -- end
+                -- end
+            -- end
+        -- end
+    -- end)
+    -- end
     
 function isnil(thing)
     return (thing == nil)
@@ -12258,18 +12258,18 @@ Race2:Toggle("Auto Trade Azure Ember",AutoTrade,function(J)
     end
     end)
     
-    spawn(function()
-    while wait() do 
-        if _G.EspKitsuneIsland then
-            EspKitsuneIsland()
-        end
-    end
-    end)
+    -- spawn(function()
+    -- while wait() do 
+        -- if _G.EspKitsuneIsland then
+            -- EspKitsuneIsland()
+        -- end
+    -- end
+    -- end)
 
-    Race2:Toggle("ESP Kitsune Island",false,function(value)
-        _G.EspKitsuneIsland = value
-        EspKitsuneIsland()
-    end)
+    -- Race2:Toggle("ESP Kitsune Island",false,function(value)
+        -- _G.EspKitsuneIsland = value
+        -- EspKitsuneIsland()
+    -- end)
 
 Race2:Button("Clear Fog",function()
     game:GetService("Lighting").BaseAtmosphere:Destroy()
