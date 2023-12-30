@@ -7241,7 +7241,7 @@ Com2:Toggle("Esp Mob", false, function(nec)
     MobESP = nec
 end)
 
-Com2:Toggle("Esp Mystic Island", false, function(value)
+Com2:Toggle("Esp Mirage Island", false, function(value)
     MirageIslandESP = value
         while MirageIslandESP do wait()
             UpdateIslandMirageESP()
@@ -7404,6 +7404,7 @@ if World1 or World2 then
 Race2:Label("Go to Third Sea")
 end
 
+Race2:Seperator("Mirage Island")
     if World3 then
     spawn(function()
         pcall(function()
