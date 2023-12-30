@@ -7390,8 +7390,7 @@ end)
         Race1:Button("Auto Complete Cyborg Trial",function(t)
         topos(CFrame.new(0,300,0))
         end)
-
-Race2:Seperator("Kitsune Island")
+        end
 
 local FullMoon = Race2:Label("")
 
@@ -7416,8 +7415,202 @@ spawn(function()
                 end)
             end
 end)
+    
+if World1 or World2 then
+Race2:Label("Go to Third Sea")
+end
+
+    if World3 then
+    spawn(function()
+        pcall(function()
+            while wait() do
+    if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
+    Mirragecheck:Set('🏝️: Mirage Island is Spawning')
+    else
+      Mirragecheck:Set('❌: Mirage Island Not Found ' )end
+            end
+        end)
+end)
+Mirragecheck = Race2:Label("")
+Race2:Toggle("Auto Mystic Island",_G.AutoMysticIsland,function(value)
+        _G.AutoMysticIsland = value
+        StopTween(_G.AutoMysticIsland)
+        end)
+    
+        spawn(function()
+            pcall(function()
+                while wait() do
+                    if _G.AutoMysticIsland then
+                        if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                            topos(CFrame.new(game:GetService("Workspace").Map.MysticIsland.Center.Position.X,500,game:GetService("Workspace").Map.MysticIsland.Center.Position.Z))
+                        end
+                    end
+                end
+            end)
+        end)
+    Race2:Toggle("Auto Drive",AutoW,function(W)
+    AutoW = W
+    end)
+    spawn(function()
+    while wait() do
+		pcall(function()
+			if AutoW then
+				game:service('VirtualInputManager'):SendKeyEvent(true, "W", false, game)
+				wait(0.35)
+				game:service('VirtualInputManager'):SendKeyEvent(false, "W", false, game)
+				wait(1.5)
+				game:service('VirtualInputManager'):SendKeyEvent(true, "S", false, game)
+				wait(0.35)
+				game:service('VirtualInputManager'):SendKeyEvent(false, "S", false, game)
+				wait(1.5)
+			end
+		end)
+    end
+    end)
+    Race2:Toggle("Auto Summon Mirage Island",_G.dao,function(state)
+    if state then
+        _G.dao = true
+    else
+        _G.dao = false
+    end
 
 
+if _G.dao then
+
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5411.22021, 778.609863, -2682.27759, 0.927179396, 0, 0.374617696, 0, 1, 0, -0.374617696, 0, 0.927179396)
+wait(0)
+local args = {
+    [1] = "BuyBoat",
+    [2] = "PirateBrigade"
+}
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+function two(gotoCFrame) --- Tween
+      pcall(function()
+          game.Players.LocalPlayer.Character.Humanoid.Sit = false
+          game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+      end)
+      if (game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - gotoCFrame.Position).Magnitude <= 200 then
+          pcall(function() 
+              tweenz:Cancel()
+          end)
+          game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.CFrame = gotoCFrame
+      else
+          local tween_s = game:service"TweenService"
+          local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - gotoCFrame.Position).Magnitude/325, Enum.EasingStyle.Linear)
+           tween, err = pcall(function()
+              tweenz = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = gotoCFrame})
+              tweenz:Play()
+          end)
+          if not tween then return err end
+      end
+      function _TweenCanCle()
+          tweenz:Cancel()
+      end
+end
+two(CFrame.new(-5100.7085, 29.968586, -6792.45459, -0.33648631, -0.0396691673, 0.940852463, -6.40461678e-07, 0.999112308, 0.0421253517, -0.941688359, 0.0141740013, -0.336187631))
+
+wait(13)
+for _,v in next, workspace.Boats.PirateBrigade:GetDescendants() do
+    if v.Name:find("VehicleSeat") then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+     if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                           topos(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
+    end
+    end
+end
+end
+end) 
+Race2:Toggle("Teleport Advanced Fruit Dealer",_G.TPNPC,function(value)
+             _G.Miragenpc = value
+             StopTween(_G.Miragenpc)
+        end)
+
+spawn(function()
+    pcall(function()
+    while wait() do
+        if _G.Miragenpc then
+            if game:GetService("Workspace").NPCs:FindFirstChild("Advanced Fruit Dealer") then
+                topos(CFrame.new(game:GetService("Workspace").NPCs["Advanced Fruit Dealer"].HumanoidRootPart.Position))
+                end
+            end
+        end
+    end)
+end)
+Race2:Button("Teleport Advanced Fruit Dealer", function()
+                TweenNpc()
+                end)
+
+                function TweenNpc()
+                    repeat
+                        wait()
+                    until game:GetService("Workspace").Map:FindFirstChild("MysticIsland")
+                    if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                        AllNPCS = getnilinstances()
+                        for r, v in pairs(game:GetService("Workspace").NPCs:GetChildren()) do
+                            table.insert(AllNPCS, v)
+                        end
+                        for r, v in pairs(AllNPCS) do
+                            if v.Name == "Advanced Fruit Dealer" then
+                                topos(v.HumanoidRootPart.CFrame)
+                                end
+                            end
+                        end
+                    end
+Race2:Toggle("Auto Farm Chest Mirage island",false,function(value)
+ _G.AutoChestMirage = value
+ StopTween(_G.AutoChestMirage)
+ end)
+ 
+_G.MagnitudeAdd = 0
+spawn(function()
+	while wait() do 
+		if _G.AutoChestMirage then
+			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do 
+				if v.Name:find("FragChest") then
+					if game:GetService("Workspace"):FindFirstChild(v.Name) then
+						if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000+_G.MagnitudeAdd then
+							repeat wait()
+								if game:GetService("Workspace"):FindFirstChild(v.Name) then
+									topos(v.CFrame)
+								end
+							until _G.AutoChestMirage == false or not v.Parent
+							TP(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+							_G.MagnitudeAdd = _G.MagnitudeAdd+1500
+							break
+						end
+					end
+				end
+			end
+		end
+	end
+end)
+Race2:Toggle("Tween Gear",_G.TweenMGear,function(value)
+_G.TweenMGear = value
+StopTween(_G.TweenMGear)
+end)
+
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.TweenMGear then
+				if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+					for i,v in pairs(game:GetService("Workspace").Map.MysticIsland:GetChildren()) do 
+						if v:IsA("MeshPart")then 
+                            if v.Material ==  Enum.Material.Neon then  
+                                topos(v.CFrame)
+                            end
+                        end
+					end
+				end
+			end
+        end
+    end)
+end)
+
+Race2:Seperator("Kitsune Island")
 
 local TimeKitsune= Race2:Label("🧭 Waiting For Kitsune Island")
 
