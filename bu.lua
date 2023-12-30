@@ -7795,6 +7795,121 @@ Race2:Dropdown("Select Height Boat", boatHeights, "Select Height Boat",function(
 end)
 end
 
+
+Fruit1:Seperator("Sniper")
+    
+    FruitList = {
+        "Bomb-Bomb",
+        "Spike-Spike",
+        "Chop-Chop",
+        "Spring-Spring",
+        "Kilo-Kilo",
+        "Spin-Spin",
+        "Bird: Falcon",
+        "Smoke-Smoke",
+        "Flame-Flame",
+        "Ice-Ice",
+        "Sand-Sand",
+        "Dark-Dark",
+        "Revive-Revive",
+        "Diamond-Diamond",
+        "Light-Light",
+        "Love-Love",
+        "Rubber-Rubber",
+        "Barrier-Barrier",
+        "Magma-Magma",
+        "Door-Door",
+        "Quake-Quake",
+        "Human-Human: Buddha",
+        "String-String",
+        "Bird-Bird: Phoenix",
+        "Rumble-Rumble",
+        "Paw-Paw",
+        "Gravity-Gravity",
+        "Dough-Dough",
+        "Venom-Venom",
+        "Shadow-Shadow",
+        "Control-Control",
+        "Soul-Soul",
+        "Dragon-Dragon",
+        "Leopard-Leopard"
+    }
+    
+    local Remote_GetFruits = game.ReplicatedStorage:FindFirstChild("Remotes").CommF_:InvokeServer("GetFruits");
+	Table_DevilFruitSniper = {}
+	ShopDevilSell = {}
+	for i,v in next,Remote_GetFruits do
+		table.insert(Table_DevilFruitSniper,v.Name)
+		if v.OnSale then 
+			table.insert(ShopDevilSell,v.Name)
+		end
+	end
+	
+    _G.SelectFruit = ""
+    Fruit1:Dropdown("Select Fruits Sniper",Table_DevilFruitSniper, "Select Fruit Sniper",function(value)
+        _G.SelectFruit = value
+    end)
+    
+    Fruit1:Toggle("Auto Buy Fruit Sniper",_G.AutoBuyFruitSniper,function(value)
+        _G.AutoBuyFruitSniper = value
+    end)
+    
+    
+    spawn(function()
+        pcall(function()
+            while wait(.1) do
+                if _G.AutoBuyFruitSniper then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("PurchaseRawFruit","_G.SelectFruit",false)
+                end 
+            end
+        end)
+    end)
+    
+    Fruit1:Button("Random Fruit",function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Cousin","Buy")
+    end)
+    
+        Fruit1:Button("Open Devil Shop",function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
+        game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = true
+    end)
+    
+    Fruit1:Toggle("Fruit Notification",_G.Grabfruit,function(value)
+    _G.FruitCheck = value
+    end)
+    
+    spawn(function()
+			while wait(.1) do
+				if _G.FruitCheck then
+					for i,v in pairs(game.Workspace:GetChildren()) do
+						if string.find(v.Name, "Fruit") then
+							require(game:GetService("ReplicatedStorage").Notification).new("Fruit Spawn"):Display();
+                            wait()
+                            setthreadcontext(5)
+						end
+					end
+				end
+    end
+    end)
+    
+    Fruit1:Toggle("Tween to Fruit",_G.Tweenfruit,function(value)
+    _G.Tweenfruit = value
+    StopTween(_G.Tweenfruit)
+    end)
+    spawn(function()
+			while wait(.1) do
+				if _G.Tweenfruit then
+					for i,v in pairs(game.Workspace:GetChildren()) do
+						if string.find(v.Name, "Fruit") then
+							topos(v.Handle.CFrame)
+						end
+					end
+				end
+    end
+    end)
+    
+
 Tele1:Seperator("World")
     
     Tele1:Button("Teleport To Old World",function()
