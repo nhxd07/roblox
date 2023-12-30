@@ -14223,7 +14223,7 @@ Misc1:Seperator("Server")
 	setclipboard(tostring(game.JobId))
 	end)
 	
-    Misc1:Textbox("Place Job Id", true, function(value)
+    Misc1:Textbox("Place Job Id","", function(value)
 	_G.Job = value
 	end)
 
