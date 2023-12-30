@@ -251,7 +251,7 @@ Title.BackgroundTransparency = 1.000
 Title.Position = UDim2.new(0.05, 0, 0.04, 0)
 Title.Size = UDim2.new(0, 483, 0, 31)
 Title.Font = Enum.Font.GothamBold
-Title.Text = "Astrox Hub ".."<font color='rgb(178, 102, 255)'>New Version</font>".."- "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+Title.Text = "Astrox ".."<font color='rgb(178, 102, 255)'>Hub</font>"..""
 Title.RichText = true;
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextSize = 15.000
