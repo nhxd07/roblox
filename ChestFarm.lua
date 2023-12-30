@@ -110,7 +110,7 @@ task.spawn(function()
 end)
 
 local ScreenGui = Instance.new("ScreenGui")
-local ImageButton = Instance.new("ImageButton")
+local ImageButton = Instance.new("TextButton")
 
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -127,7 +127,11 @@ ImageButton.Draggable = true
 ImageButton.Active = true
 ImageButton.Selectable = true
 ImageButton.BackgroundTransparency = .1
-ImageButton.Image = "rbxassetid://13756755376"
+ImageButton.Font = Enum.Font.Creepster
+ImageButton.Text = "A"
+ImageButton.TextColor3 = Color3.fromRGB(, 255, 255)
+ImageButton.TextScaled = true
+ImageButton.TextSize = 16.000
 ImageButton.Visible = false
 local MCNRb = Instance.new("UICorner")
 MCNRb.Name = "MCNR"
@@ -314,7 +318,7 @@ NameHub.BorderSizePixel = 0
 NameHub.Position = UDim2.new(0.0790036023, 0, -0.00593120279, 0)
 NameHub.Size = UDim2.new(0, 65, 0, 35)
 NameHub.Font = Enum.Font.SourceSansBold
-NameHub.Text = "Nhexe"
+NameHub.Text = "Astrox Hub"
 NameHub.TextColor3 = Color3.fromRGB(255, 255, 255)
 NameHub.TextSize = 14.000
 
