@@ -14378,23 +14378,6 @@ Misc2:Seperator("State")
         end)
     end)
     
-    Misc2:Toggle("Remove Damage",function()
-		for i,v in pairs(game.Workspace:GetDescendants()) do
-			if v.Name == "DamageCounter" then   
-				v:Destroy()
-			end
-		end
-		for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
-			if v.Name == "DamageCounter" then   
-				v:Destroy()
-			end
-		end
-	end)
-    
-    Misc2:Button("Unlock FPS",function()
-        setfpscap(9999999)
-    end)
-    
     Misc2:Button("Reduce Cpu", function()
 	for i,v in pairs(game.Workspace.Map:GetDescendants()) do
 		if v.Name == "Tavern" or v.Name == "SmileFactory" or v.Name == "Tree" or v.Name == "Rocks" or v.Name == "PartHouse" or v.Name == "Hotel" or v.Name == "WallPiece" or v.Name == "MiddlePillars" or v.Name == "Cloud" or v.Name == "PluginGrass" or v.Name == "BigHouse" or v.Name == "SmallHouse" or v.Name == "Detail" then
