@@ -251,7 +251,7 @@ Title.BackgroundTransparency = 1.000
 Title.Position = UDim2.new(0.05, 0, 0.04, 0)
 Title.Size = UDim2.new(0, 483, 0, 31)
 Title.Font = Enum.Font.GothamBold
-Title.Text = "Astroc Hub ".."<font color='rgb(178, 102, 255)'>New Version</font>".."- "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+Title.Text = "Astrox Hub ".."<font color='rgb(178, 102, 255)'>New Version</font>".."- "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 Title.RichText = true;
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextSize = 15.000
@@ -7333,22 +7333,6 @@ Race1:Button("Clock Acces", function()
     game:GetService("Workspace").Map["Temple of Time"].ClockRoomExit:Remove()
 end)
 
-Race1:Toggle("Auto Look Moon",false,function(v)
-  _G.AutoDooHee = v
-  end)
-spawn(function()
-    while wait() do
-		pcall(function()
-			if _G.AutoDooHee then
-			    wait(0.5)
-				local moonDir = game.Lighting:GetMoonDirection()
-                local lookAtPos = game.Workspace.CurrentCamera.CFrame.p + moonDir * 100
-                game.Workspace.CurrentCamera.CFrame = CFrame.lookAt(game.Workspace.CurrentCamera.CFrame.p, lookAtPos)
-			end
-		end)
-    end
-end)
-
   Race1:Button("Teleport Cyborg Door",function()
   topos(CFrame.new(28492.4140625, 14894.4267578125, -422.1100158691406))
   end)
@@ -7586,6 +7570,21 @@ spawn(function()
 			end
 		end
 	end
+end)
+Race2:Toggle("Auto Lock Moon",false,function(v)
+  _G.AutoDooHee = v
+  end)
+spawn(function()
+    while wait() do
+		pcall(function()
+			if _G.AutoDooHee then
+			    wait(0.5)
+				local moonDir = game.Lighting:GetMoonDirection()
+                local lookAtPos = game.Workspace.CurrentCamera.CFrame.p + moonDir * 100
+                game.Workspace.CurrentCamera.CFrame = CFrame.lookAt(game.Workspace.CurrentCamera.CFrame.p, lookAtPos)
+			end
+		end)
+    end
 end)
 Race2:Toggle("Tween Gear",_G.TweenMGear,function(value)
 _G.TweenMGear = value
