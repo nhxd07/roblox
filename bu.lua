@@ -3767,48 +3767,103 @@ spawn(function()
     end
 end)
 
+local function round(n)
+    return math.floor(tonumber(n) + 0.5)
+    end
+    
+    Number = math.random(1, 1000000)
+    function UpdateIslandMirageESP()
+    pcall(function()
+        if MirageIslandESP then
+            for i,v in pairs(game:GetService("Workspace").Map.MysticIsland:GetChildren()) do
+                pcall(function()
+                    if v.Name == 'Center' then
+                        if not v:FindFirstChild('EspMirage') then
+                            local bill = Instance.new('BillboardGui',v)
+                            bill.Name = 'EspMirage'
+                            bill.ExtentsOffset = Vector3.new(0, 1, 0)
+                            bill.Size = UDim2.new(1,200,1,30)
+                            bill.Adornee = v
+                            bill.AlwaysOnTop = true
+                            local name = Instance.new('TextLabel',bill)
+                            name.Font = "Code"
+                            name.FontSize = "Size14"
+                            name.TextWrapped = true
+                            name.Size = UDim2.new(1,0,1,0)
+                            name.TextYAlignment = 'Top'
+                            name.BackgroundTransparency = 1
+                            name.TextStrokeTransparency = 0.5
+                            name.TextColor3 = Color3.fromRGB(255, 255, 255)
+                            name.Text = ("Mirage Island" ..' \n'.." [ "..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M'.." ] ")
+                        else
+                            v.EspMirage.TextLabel.Text = ("Mirage Island" ..' \n'.." [ "..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M'.." ] ")
+                            v.EspMirage.TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        end
+                    end
+                end)
+            end
+        else
+            for i,v in pairs(game:GetService("Workspace").Map.MysticIsland:GetChildren()) do
+                if v.Name == 'Center' then
+                    if v:FindFirstChild('EspMirage') then
+                        v:FindFirstChild('EspMirage'):Destroy()
+                    end
+                end
+            end
+        end
+    end)
+    end
+
 function isnil(thing)
     return (thing == nil)
 end
 local function round(n)
-    return math.floor(tonumber(n) + 0.5)
-end
-Number = math.random(1, 1000000)
-
-function UpdateIslandMirageESP() 
-    for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].Locations:GetChildren()) do
+        return math.floor(tonumber(n) + 0.5)
+        end
+        
+        Number = math.random(1, 1000000)
+        function EspKitsuneIsland_1()
         pcall(function()
-            if MirageIslandESP then 
-                if v.Name == "Mirage Island" then
-                    if not v:FindFirstChild('NameEsp') then
-                        local bill = Instance.new('BillboardGui',v)
-                        bill.Name = 'NameEsp'
-                        bill.ExtentsOffset = Vector3.new(0, 1, 0)
-                        bill.Size = UDim2.new(1,200,1,30)
-                        bill.Adornee = v
-                        bill.AlwaysOnTop = true
-                        local name = Instance.new('TextLabel',bill)
-                        name.Font = "Code"
-                        name.FontSize = "Size14"
-                        name.TextWrapped = true
-                        name.Size = UDim2.new(1,0,1,0)
-                        name.TextYAlignment = 'Top'
-                        name.BackgroundTransparency = 1
-                        name.TextStrokeTransparency = 0.5
-                        name.TextColor3 = Color3.fromRGB(80, 245, 245)
-                    else
-                        v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
-                    end
+            if _G.EspKitsuneIsland then
+                for i,v in pairs(game:GetService("Workspace").Map.KitsuneIsland:GetChildren()) do
+                    pcall(function()
+                        if v.Name == 'Center' then
+                            if not v:FindFirstChild('EspKitsune') then
+                                local bill = Instance.new('BillboardGui',v)
+                                bill.Name = 'EspKitsune'
+                                bill.ExtentsOffset = Vector3.new(0, 1, 0)
+                                bill.Size = UDim2.new(1,200,1,30)
+                                bill.Adornee = v
+                                bill.AlwaysOnTop = true
+                                local name = Instance.new('TextLabel',bill)
+                                name.Font = "Code"
+                                name.FontSize = "Size14"
+                                name.TextWrapped = true
+                                name.Size = UDim2.new(1,0,1,0)
+                                name.TextYAlignment = 'Top'
+                                name.BackgroundTransparency = 1
+                                name.TextStrokeTransparency = 0.5
+                                name.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                name.Text = ("Kitsune Island" ..' \n'.." [ "..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M'.." ] ")
+                            else
+                                v.EspKitsune.TextLabel.Text = ("Kitsune Island" ..' \n'.." [ "..round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M'.." ] ")
+                                v.EspKitsune.TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                            end
+                        end
+                    end)
                 end
             else
-                if v:FindFirstChild('NameEsp') then
-                    v:FindFirstChild('NameEsp'):Destroy()
+                for i,v in pairs(game:GetService("Workspace").Map.KitsuneIsland:GetChildren()) do
+                    if v.Name == 'Center' then
+                        if v:FindFirstChild('EspKitsune') then
+                            v:FindFirstChild('EspKitsune'):Destroy()
+                        end
+                    end
                 end
             end
         end)
-    end
-end
-
+        end
+        
 function isnil(thing)
     return (thing == nil)
 end
@@ -6711,6 +6766,382 @@ end
 end
 
 if World3 then
+Auto1:Seperator("Dought Boss")
+    
+local ListC = {"NoQuest", "AcceptQuest", "MasteryFruit"}
+CakeFMode = "Accept Quest"
+Auto1:Dropdown("Select Cake Farm Mode", ListC,function(value)
+    CakeFMode = value
+end)
+
+        local MobKilled = Auto1:Label("Killed")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 88 then
+                    MobKilled:Set("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,41))
+                elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 87 then
+                    MobKilled:Set("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,40))
+                elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 86 then
+                    MobKilled:Set("Defeat : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,39))
+                else
+                    MobKilled:Set("Boss Is Spawning")
+                end
+            end)
+        end
+    end)
+    
+    Auto1:Toggle("Auto Farm Cake Prince",_G.AutoDoughtBoss,function(value)
+        _G.AutoDoughtBoss = value
+        StopTween(_G.AutoDoughtBoss)
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 88 then
+                    KillMob = (tonumber(string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,41)) - 500)
+                elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 87 then
+                    KillMob = (tonumber(string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),40,41)) - 500)
+                elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 86 then
+                    KillMob = (tonumber(string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),41,41)) - 500)
+                end
+            end)
+        end
+    end)
+    
+    local CakePos = CFrame.new(-2091.911865234375, 70.00884246826172, -12142.8359375)
+    spawn(function()
+        while wait() do
+            if CakeFMode == "NoQuest" and _G.AutoDoughtBoss then
+                pcall(function()
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v.Name == "Cake Prince" then
+                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                    repeat task.wait()
+                                        AutoHaki()
+                                        EquipWeapon(_G.SelectWeapon)
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.Humanoid.WalkSpeed = 0
+                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        topos(v.HumanoidRootPart.CFrame * Pos)
+                                        game:GetService("VirtualUser"):CaptureController()
+                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                    until not _G.AutoDoughtBoss or not v.Parent or v.Humanoid.Health <= 0
+                                end
+                            end
+                        end
+                    else
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
+                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                        else
+                            if KillMob == 0 then
+                            end                    
+                            if game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 1 then
+                                if game:GetService("Workspace").Enemies:FindFirstChild("Cookie Crafter") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Guard") or game:GetService("Workspace").Enemies:FindFirstChild("Baking Staff") or game:GetService("Workspace").Enemies:FindFirstChild("Head Baker") then
+                                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                        if v.Name == "Cookie Crafter" or v.Name == "Cake Guard" or v.Name == "Baking Staff" or v.Name == "Head Baker" then
+                                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                                repeat task.wait()
+                                                    AutoHaki()
+                                                    EquipWeapon(_G.SelectWeapon)
+                                                    v.HumanoidRootPart.CanCollide = false
+                                                    v.Humanoid.WalkSpeed = 0
+                                                    v.Head.CanCollide = false 
+                                                    v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                                    MagnetDought = true
+                                                    PosMonDoughtOpenDoor = v.HumanoidRootPart.CFrame
+                                                    topos(v.HumanoidRootPart.CFrame * Pos)
+                                                    game:GetService("VirtualUser"):CaptureController()
+                                                    game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                                until not _G.AutoDoughtBoss or not v.Parent or v.Humanoid.Health <= 0 or game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 0 or game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or KillMob == 0
+                                            end
+                                        end
+                                    end
+                                else
+                                if BypassTP then
+                                if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakePos.Position).Magnitude > 1500 then
+						        BTP(CakePos)
+						        elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakePos.Position).Magnitude < 1500 then
+						        topos(CakePos)
+						        end
+					        else
+						        topos(CakePos)
+					        end
+                                    MagnetDought = false
+                                    UnEquipWeapon(_G.SelectWeapon)
+                                    topos(CFrame.new(-2091.911865234375, 70.00884246826172, -12142.8359375))
+                                    if game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter") then
+                                        topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter").HumanoidRootPart.CFrame * CFrame.new(2,20,2)) 
+                                    else
+                                        if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Guard") then
+                                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Guard").HumanoidRootPart.CFrame * CFrame.new(2,20,2)) 
+                                        else
+                                            if game:GetService("ReplicatedStorage"):FindFirstChild("Baking Staff") then
+                                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Baking Staff").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                            else
+                                                if game:GetService("ReplicatedStorage"):FindFirstChild("Head Baker") then
+                                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Head Baker").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                                end
+                                            end
+                                        end
+                                    end                       
+                                end
+                            else
+                                if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
+                                    topos(game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                else
+                                    if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince") then
+                                        topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    end)    
+    
+    local CakeQuestPos = CFrame.new(-2021.32007, 37.7982254, -12028.7295, 0.957576931, -8.80302053e-08, 0.288177818, 6.9301187e-08, 1, 7.51931211e-08, -0.288177818, -5.2032135e-08, 0.957576931)
+      
+spawn(function()
+        while wait() do
+            if CakeFMode == "AcceptQuest" and _G.AutoDoughtBoss and World3  then
+                pcall(function()
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Dough King") then
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v.Name == "Cake Prince" or v.Name == "Dough King" then
+                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                    repeat task.wait()
+                                        AutoHaki()
+                                        EquipWeapon(_G.SelectWeapon)
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.Humanoid.WalkSpeed = 0
+                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        topos(v.HumanoidRootPart.CFrame * Pos)
+                                        game:GetService("VirtualUser"):CaptureController()
+                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                    until not _G.AutoDoughtBoss or not v.Parent or v.Humanoid.Health <= 0
+                                end
+                            end
+                        end
+                    else
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
+                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]").HumanoidRootPart.CFrame * CFrame.new(5,10,2))
+                        end
+                    end
+                end)
+            end
+        end
+    end)
+    
+    spawn(function()
+        while wait() do
+            if CakeFMode == "AcceptQuest" and _G.AutoDoughtBoss and World3 and not game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince")  then
+                pcall(function()
+                    local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+                    if not string.find(QuestTitle, "Cookie Crafter") then
+                        MagnetDought = false
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                    end
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+                        MagnetDought = false
+                        if BypassTP then
+                        if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakeQuestPos.Position).Magnitude > 1500 then
+						BTP(CakeQuestPos)
+						elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakeQuestPos.Position).Magnitude < 1500 then
+						topos(CakeQuestPos)
+						end
+					else
+						topos(CakeQuestPos)
+					end
+                    if (CakeQuestPos.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then                            
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest","CakeQuest1",1)
+					end
+                    elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Cookie Crafter") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Guard") or game:GetService("Workspace").Enemies:FindFirstChild("Baking Staff") or game:GetService("Workspace").Enemies:FindFirstChild("Head Baker") then
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                                    if v.Name == "Cookie Crafter" or v.Name == "Cake Guard" or v.Name == "Baking Staff" or v.Name == "Head Baker" then
+                                        if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Cookie Crafter") then
+                                            repeat task.wait()
+                                                EquipWeapon(_G.SelectWeapon)
+                                                AutoHaki()                                            
+                                                PosMonCake = v.HumanoidRootPart.CFrame
+                                                topos(v.HumanoidRootPart.CFrame * Pos)
+                                                v.HumanoidRootPart.CanCollide = false
+                                                v.Humanoid.WalkSpeed = 0
+                                                v.Head.CanCollide = false
+                                                v.HumanoidRootPart.Size = Vector3.new(70,70,70)
+                                                MagnetDought = true
+                                                PosMonDoughtOpenDoor = v.HumanoidRootPart.CFrame
+                                                game:GetService'VirtualUser':CaptureController()
+                                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                            until not _G.AutoDoughtBoss or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false or v.Humanoid.Health <= 0 or game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 0 or game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or KillMob == 0
+                                        else
+                                            MagnetDought = false
+                                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                                        end
+                                    end
+                                end
+                            end
+                        else
+                            MagnetDought = false
+                            if game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter") then
+                             topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter").HumanoidRootPart.CFrame * CFrame.new(15,10,2))
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    end)
+    
+    --UseSkillMasFCakeandBoneAtLine8076-8238
+    
+    spawn(function()
+        while wait() do
+            if CakeFMode == "MasteryFruit" and _G.AutoDoughtBoss and World3 and not game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince")  then
+                pcall(function()
+                    local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+                    if not string.find(QuestTitle, "Cookie Crafter") then
+                        Magnet = false
+                        UseSkillKub = false
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                    end
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
+                        MagnetDought = false
+                        UseSkill = false
+                        if BypassTP then
+                        if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakeQuestPos.Position).Magnitude > 1500 then
+						BTP(CakeQuestPos)
+						elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakeQuestPos.Position).Magnitude < 1500 then
+						topos(CakeQuestPos)
+						end
+					else
+						topos(CakeQuestPos)
+					end
+                    if (CakeQuestPos.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then                            
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest","CakeQuest1",1)
+					end
+                    elseif game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Cookie Crafter") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Guard") or game:GetService("Workspace").Enemies:FindFirstChild("Baking Staff") or game:GetService("Workspace").Enemies:FindFirstChild("Head Baker") then
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+                                    if v.Name == "Cookie Crafter" or v.Name == "Cake Guard" or v.Name == "Baking Staff" or v.Name == "Head Baker" then
+                                        if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, "Cookie Crafter") then
+                                            HealthMs = v.Humanoid.MaxHealth * _G.Kill_At/100
+                                            repeat task.wait()
+                                                if v.Humanoid.Health <= HealthMs then
+                                                    AutoHaki()
+                                                    EquipWeapon(game:GetService("Players").LocalPlayer.Data.DevilFruit.Value)
+                                                    TP1(v.HumanoidRootPart.CFrame * CFrame.new(0,10,0))
+                                                    v.HumanoidRootPart.CanCollide = false
+                                                    PosMonCake = v.HumanoidRootPart.CFrame
+                                                    PosMonDoughtOpenDoor = v.HumanoidRootPart.CFrame
+                                                    v.Humanoid.WalkSpeed = 0
+                                                    v.Head.CanCollide = false
+                                                    UseSkillKub = true
+                                                else           
+                                                    UseSkillKub = false 
+                                                    AutoHaki()
+                                                    EquipWeapon(_G.SelectWeapon)
+                                                    TP1(v.HumanoidRootPart.CFrame * Pos)
+                                                    v.HumanoidRootPart.CanCollide = false
+                                                    v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                                    PosMonCake = v.HumanoidRootPart.CFrame
+                                                    v.Humanoid.WalkSpeed = 0
+                                                    v.Head.CanCollide = false
+                                                end
+                                                MagnetDought = true
+                                                PosMonDoughtOpenDoor = v.HumanoidRootPart.CFrame
+                                                game:GetService'VirtualUser':CaptureController()
+                                                game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
+                                            until not _G.AutoDoughtBoss or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
+                                        else
+                                            UseSkillKub = false
+                                            MagnetDought = false
+                                            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+                                        end
+                                    end
+                                end
+                            end
+                        else
+                            MagnetDought = false   
+                            UseSkillKub = false 
+                            local Mob = game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter") 
+                            if Mob then
+                                TP1(Mob.HumanoidRootPart.CFrame * CFrame.new(0,0,10))
+                            else
+                                if game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame.Y <= 1 then
+                                    game:GetService("Players").LocalPlayer.Character.Humanoid.Jump = true
+                                    task.wait()
+                                    game:GetService("Players").LocalPlayer.Character.Humanoid.Jump = false
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    end)
+    
+    Auto1:Toggle("Auto Spawn Cake Prince",true,function(value)
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner",value)
+    end)
+    
+    Auto1:Toggle("Auto Dough Boss V2", _G.Autodoughking,function(value)
+         _G.Autodoughking = value
+        StopTween( _G.Autodoughking)
+    end)
+    
+    Auto1:Toggle("Auto Dough Boss V2 Hop", _G.AutodoughkingHop,function(value)
+         _G.AutodoughkingHop = value
+    end)
+    
+    spawn(function()
+        while wait() do
+            if  _G.Autodoughking and World3 then
+                pcall(function()
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Dough King") then
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v.Name == "Dough King" then
+                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                    repeat task.wait()
+                                        AutoHaki()
+                                        EquipWeapon(_G.SelectWeapon)
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.Humanoid.WalkSpeed = 0
+                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        topos(v.HumanoidRootPart.CFrame * Pos)
+                                        game:GetService("VirtualUser"):CaptureController()
+                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                    until not  _G.Autodoughking or not v.Parent or v.Humanoid.Health <= 0
+                                end
+                            end
+                        end
+                    else
+                    UnEquipWeapon(_G.SelectWeapon)
+                    topos(CFrame.new(-2662.818603515625, 1062.3480224609375, -11853.6953125))
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("Dough King") then
+                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Dough King").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                        else
+                            if  _G.AutodoughkingHop then
+                                Hop()
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    end)
+    
 Auto1:Seperator("Dark Dagger")
     
     Auto1:Toggle("Auto Kill Admin Boss",_G.AutoDarkDagger,function(value)
@@ -6805,12 +7236,13 @@ end)
 
 Auto1:Seperator("Elite Hunter")
     
-    local EliteProgress = Auto1:Label("Progress")
-    
+    local EliteProgress = Auto1:Label("")
+
     spawn(function()
         pcall(function()
-            while wait() do
-                EliteProgress:Set("Elite Progress : "..game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress"))
+            while task.wait() do
+                EliteProgress:Set("Elite Progress : " ..
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter", "Progress"))
             end
         end)
     end)
@@ -11800,26 +12232,41 @@ Com2:Toggle("Esp Mob", false, function(nec)
     MobESP = nec
 end)
 
-Com2:Toggle("Esp Mirage Island", false, function(value)
-    MirageIslandESP = value
-        while MirageIslandESP do wait()
-            UpdateIslandMirageESP()
-        end
+    Com2:Toggle("ESP Advanced Fruit Dealer", false, function(value)
+        AfdESP = value
     end)
 
-Com2:Toggle("Esp Advanced Fruit Dealer", false, function(value)
-    AfdESP = value
-        while AfdESP do wait()
+    Com2:Toggle("ESP Master of Enhancement", false, function(value)
+        UpdateAuraESP = value
+    end)
+
+    Com2:Toggle("ESP Legendary Sword Dealer", false, function(value)
+        LADESP = value
+    end)
+
+    spawn(function()
+        while wait() do
+          if LADESP then
+            UpdateLSDESP()
+              end
+          end
+      end)
+
+    spawn(function()
+        while wait() do
+          if AfdESP then
             UpdateAfdESP()
-        end
-    end)
-    
-Com2:Toggle("Esp Gear [Beta]", false, function(value)
-    GearESP = value
-        while GearESP do wait()
-            UpdateGeaESP() 
-        end
-    end)
+              end
+          end
+      end)
+
+    spawn(function()
+        while wait() do
+          if UpdateAuraESP then
+            AuraESP()
+              end
+          end
+      end)
 
 if World1 or World2 then
 Race1:Label("Go to Third Sea")
@@ -11922,7 +12369,10 @@ end)
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer('UpgradeRace','Buy')
   end)
   
- Race1:Button("Auto Complete Angel Trial",function(t)
+        Race1:Toggle("Auto Human & Ghoul Trial",false, function(value)
+        _G.Kill_Aura = value
+        end)
+         Race1:Button("Auto Complete Angel Trial",function(t)
         topos(game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame)
         end)
 
@@ -12203,6 +12653,18 @@ end)
 
 
 
+Race2:Toggle("ESP Kitsune Island",false,function(value)
+        _G.EspKitsuneIsland = value
+        EspKitsuneIsland_1()
+    end)
+
+    spawn(function()
+        while wait() do 
+            if _G.EspKitsuneIsland then
+                EspKitsuneIsland_1()
+            end
+        end
+        end)
 
 Race2:Toggle("Auto Teleport to Kitsune Island",AutoKit,function(W)
     AutoKit = W
@@ -12657,6 +13119,10 @@ Tele1:Seperator("World")
         StopTween(_G.TeleportIsland)
     end)
     
+Tele1:Button("Stop Teleport", function()
+    toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+end)
+
     if World1 then
         Tele1:Dropdown("Select NPC",{
             "Random Devil Fruit",
