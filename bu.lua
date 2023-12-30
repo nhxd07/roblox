@@ -13565,6 +13565,8 @@ Tele1:Button("Bypass TP",function(value)
 end)    
 
 
+Tele2:Seperator("Raid")
+
 local TimeRaid = Tele2:Label("Wait For Dungeon")
     
     spawn(function()
