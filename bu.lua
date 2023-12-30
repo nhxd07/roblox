@@ -2992,51 +2992,6 @@ if game.PlaceId == 2753915549 then
             end
         end
     end
-    
-_G.SaveSettingTRUE then
-function LoadSettings()
-    if readfile and writefile and isfile and isfolder then
-        if not isfolder("AstroxHub_New") then
-            makefolder("AstroxHub_New")
-        end
-        if not isfolder("AstroxHub_New/Blox Fruits/") then
-            makefolder("AstroxHub_New/Blox Fruits/")
-        end
-        if not isfile("AstroxHub_New/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
-            writefile("AstroxHub_New/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json",
-                game:GetService("HttpService"):JSONEncode(_G.Settings))
-        else
-            local Decode = game:GetService("HttpService"):JSONDecode(readfile("AstroxHub_New/Blox Fruits/" ..
-                game.Players.LocalPlayer.Name .. ".json"))
-            for i, v in pairs(Decode) do
-                _G.Settings[i] = v
-            end
-        end
-    else
-        return warn("Status : Undetected Executor")
-    end
-end
-
-function SaveSettings()
-    if readfile and writefile and isfile and isfolder then
-        if not isfile("AstroxHub_New/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
-            LoadSettings()
-        else
-            local Decode = game:GetService("HttpService"):JSONDecode(readfile("AstroxHub_New/Blox Fruits/" ..
-                game.Players.LocalPlayer.Name .. ".json"))
-            local Array = {}
-            for i, v in pairs(_G.Settings) do
-                Array[i] = v
-            end
-            writefile("AstroxHub_New/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json",
-                game:GetService("HttpService"):JSONEncode(Array))
-        end
-    else
-        return warn("Status : Undetected Executor")
-    end
-end
-LoadSettings()
-end
 
     function Hop()
         local PlaceID = game.PlaceId
@@ -14735,9 +14690,3 @@ spawn(function()
     
 
 Setting1:Seperator("Ui")
-
-
-            Setting1:Toggle("Save Ui Setting",_G.Settings.SaveSettingTRUE, function(value)
-                _G.SaveSettingTRUE = value
-                _G.Settings.SaveSettingTRUE = value
-            end)
