@@ -5256,6 +5256,7 @@ Main3:Toggle("Auto Fruit Mastery",_G.AutoFarmFruitMastery,function(value)
                                 game:GetService("Players").LocalPlayer.Character[game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Tool").Name].RemoteEvent:FireServer(unpack(args))
                                 game:GetService("VirtualInputManager"):SendKeyEvent(true,"V",false,game)
                                 game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game)
+                            end
                             if _G.SkillF then
                                 local args = {
                                     [1] = PosMonMasteryFruit.Position
