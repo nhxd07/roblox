@@ -8768,8 +8768,6 @@ end)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
     end)
        
-        r
-        sư0
     Shop1:Button("Buy Dragon Claw [ $1,500 Fragments ]",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","1")
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","2")
@@ -8949,7 +8947,7 @@ Shop2:Dropdown("Select Boats",BoatList, "Select Boats",function(value)
     SelectBoat = value
 end)
 
-Shop2:Button("Buy Boat",function()p;'
+Shop2:Button("Buy Boat",function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat",_G.SelectBoat)
 end)
 
