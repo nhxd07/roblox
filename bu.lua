@@ -6561,7 +6561,7 @@ end)
         _G.SkillV = value
     end)
 
-
+if World1 or World2 then
 Auto1:Seperator("World")
 
     if World1 then
@@ -6707,7 +6707,7 @@ Auto1:Seperator("World")
             end
         end)
 end
-
+end
 Auto1:Seperator(" Materials ")
 
 if World2 then
