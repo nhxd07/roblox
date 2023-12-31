@@ -1115,6 +1115,7 @@ function tabs:Tab(Name, icon)
 local FrameTab = Instance.new("Frame")
 local Tab = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
+local UICorner_Tab = Instance.new("UICorner")
 local TextLabel = Instance.new("TextLabel")
 FrameTab.Name = "FrameTab"
 FrameTab.Parent = Tab
@@ -1135,12 +1136,10 @@ Tab.BackgroundTransparency = 0
 Tab.Text = ""
 UICorner_3.CornerRadius = UDim.new(0, 3)
 UICorner_3.Parent = Tab
-
-local UiTab_UiStroke1 = Instance.new("UIStroke")
-UiTab_UiStroke1.Color = Color3.fromRGB(178, 102, 255)
-UiTab_UiStroke1.Thickness = 1
-UiTab_UiStroke1.Name = "UiTab_UiStroke1"
-UiTab_UiStroke1.Parent = Tab
+local UIGradient2 = Instance.new("UIGradient")
+UIGradient2.Color = ColorSequence.new {
+  ColorSequenceKeypoint.new(0.00, Color3.fromRGB(29, 29, 29)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+UIGradient2.Parent = Tab
 
 local ImageLabel1 = Instance.new("ImageLabel")
 ImageLabel1.Name = "ImageLabel"
