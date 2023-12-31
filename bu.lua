@@ -145,8 +145,8 @@ local NhuHaiImageUI = Instance.new("ImageLabel")
         NhuHaiToggleUI.Size = UDim2.new(0, 50, 0, 50)
         NhuHaiToggleUI.Font = Enum.Font.Creepster
         NhuHaiToggleUI.Text = "A"
-        NhuHaiToggleUI.TextColor3 = Color3.fromRGB(0, 0, 0)
-        NhuHaiToggleUI.TextSize = 14.000
+        NhuHaiToggleUI.TextColor3 = Color3.fromRGB(178, 102, 255)
+        NhuHaiToggleUI.TextSize = 17.000
         NhuHaiToggleUI.Draggable = true
         NhuHaiToggleUI.MouseButton1Click:Connect(function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
