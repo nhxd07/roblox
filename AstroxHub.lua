@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet"https://raw.githubusercontent.com/nhxd07/roblox/main/AstroxHubUI")()
+local library = loadstring(game:HttpGet"https://raw.githubusercontent.com/nhxd07/roblox/main/AstroxHubUI.lua")()
 
 local Win = library:Evil()
 local MainH = Win:Tab("Main",14477284625)
