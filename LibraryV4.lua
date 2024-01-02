@@ -57,4 +57,3 @@ Tab:AddDiscordInvite({
   DiscordIcon = "rbxassetid://15298567397",
   DiscordLink = "https://discord.gg/7aR7kNVt4g"
 })
-```
