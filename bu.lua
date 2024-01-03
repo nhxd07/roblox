@@ -300,7 +300,7 @@ local NhuHaiImageUI = Instance.new("ImageLabel")
         NhuHaiToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
         NhuHaiToggleUI.Size = UDim2.new(0, 50, 0, 50)
         NhuHaiToggleUI.Font = Enum.Font.Creepster
-        NhuHaiToggleUI.Text = "A"
+        NhuHaiToggleUI.Text = ""
         NhuHaiToggleUI.TextColor3 = Color3.fromRGB(178, 102, 255)
         NhuHaiToggleUI.TextSize = 17.000
         NhuHaiToggleUI.Draggable = true
@@ -319,7 +319,7 @@ local NhuHaiImageUI = Instance.new("ImageLabel")
         NhuHaiImageUI.BorderSizePixel = 0
         NhuHaiImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
         NhuHaiImageUI.Size = UDim2.new(0, 50, 0, 50)
-        NhuHaiImageUI.Image = "http://www.roblox.com/asset/?id=0388878876"
+        NhuHaiImageUI.Image = "http://www.roblox.com/asset/?id=15817656729"
 
 local UI = Instance.new("ScreenGui")
 UI.Name = randomString
