@@ -284,54 +284,31 @@ game:GetService("UserInputService").InputChanged:Connect(
 )
 end
 
-local NhuHaiScreen = Instance.new("ScreenGui")
-local NhuHaiToggleUI = Instance.new("TextButton")
-local NhuHaiCornerUI = Instance.new("UICorner")
-local NhuHaiImageUI = Instance.new("ImageLabel")
-
+local ScreenGui1 = Instance.new("ScreenGui")
+local NhuHai = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
 local UIGradient = Instance.new("UIGradient")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
-        NhuHaiScreen.Name = "NhuHaiScreen"
-        NhuHaiScreen.Parent = game.CoreGui
-        NhuHaiScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui1.Name = "ImageButton"
+ScreenGui1.Parent = game.CoreGui
+ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-        NhuHaiToggleUI.Name = "NhuHaiToggleUI"
-        NhuHaiToggleUI.Parent = NhuHaiScreen
-        NhuHaiToggleUI.BackgroundColor3 = Color3.fromRGB(31,31,31)
-        NhuHaiToggleUI.BorderSizePixel = 0
-        NhuHaiToggleUI.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-        NhuHaiToggleUI.Size = UDim2.new(0, 50, 0, 50)
-        NhuHaiToggleUI.Font = Enum.Font.Creepster
-        NhuHaiToggleUI.Text = ""
-        NhuHaiToggleUI.TextColor3 = Color3.fromRGB(178, 102, 255)
-        NhuHaiToggleUI.TextSize = 17.000
-        NhuHaiToggleUI.Draggable = true
-        NhuHaiToggleUI.MouseButton1Click:Connect(function()
-        game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
-        game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
-        end)
-
-        NhuHaiCornerUI.Name = "NhuHaiCornerUI"
-        NhuHaiCornerUI.Parent = NhuHaiToggleUI
-
-        NhuHaiImageUI.Name = "MODILEMAGE"
-        NhuHaiImageUI.Parent = NhuHaiToggleUI
-        NhuHaiImageUI.BackgroundColor3 = Color3.fromRGB(192,192,192)
-        NhuHaiImageUI.BackgroundTransparency = 1.000
-        NhuHaiImageUI.BorderSizePixel = 0
-        NhuHaiImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
-        NhuHaiImageUI.Size = UDim2.new(0, 50, 0, 50)
-        NhuHaiImageUI.Image = "http://www.roblox.com/asset/?id=15754756916"
-        
-        UICorner.CornerRadius = UDim.new(0, 30)
-        UICorner.Parent = NhuHaiImageUI
-        UIGradient.Color = ColorSequence.new {
-        ColorSequenceKeypoint.new(0.00, Color3.fromRGB(29, 29, 29)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
-        UIGradient.Parent = NhuHaiImageUI
-        UIAspectRatioConstraint.Parent = NhuHaiImageUI
-        UIAspectRatioConstraint.AspectRatio = 0.988
+NhuHai.Parent = ScreenGui1
+NhuHai.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+NhuHai.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+NhuHai.Size = UDim2.new(0, 50, 0, 50)
+NhuHai.Draggable = true
+NhuHai.Image = "rbxassetid://15754756916"
+UICorner.CornerRadius = UDim.new(0, 30)
+UICorner.Parent = NhuHai
+UIGradient.Parent = NhuHai
+UIAspectRatioConstraint.Parent = NhuHai
+UIAspectRatioConstraint.AspectRatio = 0.988
+NhuHai.MouseButton1Down:connect(function()
+game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+end)
 
 local UI = Instance.new("ScreenGui")
 UI.Name = randomString
@@ -1150,7 +1127,9 @@ UICorner_3.CornerRadius = UDim.new(0, 3)
 UICorner_3.Parent = Tab
 local UIGradient2 = Instance.new("UIGradient")
 UIGradient2.Color = ColorSequence.new {
-  ColorSequenceKeypoint.new(0.00, Color3.fromRGB(29, 29, 29)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(85.0000025331974, 93.00000205636024, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(70.00000342726707, 246.0000005364418, 255))
+}
 UIGradient2.Parent = Tab
 
 local ImageLabel1 = Instance.new("ImageLabel")
