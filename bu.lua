@@ -319,7 +319,7 @@ local NhuHaiImageUI = Instance.new("ImageLabel")
         NhuHaiImageUI.BorderSizePixel = 0
         NhuHaiImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
         NhuHaiImageUI.Size = UDim2.new(0, 50, 0, 50)
-        NhuHaiImageUI.Image = "http://www.roblox.com/asset/?id=15817656729"
+        NhuHaiImageUI.Image = "http://www.roblox.com/asset/?id=15754756916"
 
 local UI = Instance.new("ScreenGui")
 UI.Name = randomString
