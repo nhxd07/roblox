@@ -289,6 +289,10 @@ local NhuHaiToggleUI = Instance.new("TextButton")
 local NhuHaiCornerUI = Instance.new("UICorner")
 local NhuHaiImageUI = Instance.new("ImageLabel")
 
+local UICorner = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
         NhuHaiScreen.Name = "NhuHaiScreen"
         NhuHaiScreen.Parent = game.CoreGui
         NhuHaiScreen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -320,6 +324,14 @@ local NhuHaiImageUI = Instance.new("ImageLabel")
         NhuHaiImageUI.Position = UDim2.new(0.0, 0, 0.0, 0)
         NhuHaiImageUI.Size = UDim2.new(0, 50, 0, 50)
         NhuHaiImageUI.Image = "http://www.roblox.com/asset/?id=15754756916"
+        
+        UICorner.CornerRadius = UDim.new(0, 30)
+        UICorner.Parent = NhuHaiImageUI
+        UIGradient.Color = ColorSequence.new {
+        ColorSequenceKeypoint.new(0.00, Color3.fromRGB(29, 29, 29)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(50, 50, 50))}
+        UIGradient.Parent = NhuHaiImageUI
+        UIAspectRatioConstraint.Parent = NhuHaiImageUI
+        UIAspectRatioConstraint.AspectRatio = 0.988
 
 local UI = Instance.new("ScreenGui")
 UI.Name = randomString
