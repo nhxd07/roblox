@@ -6925,7 +6925,7 @@ Auto1:Seperator("Dought Boss")
     
 local ListC = {"NoQuest", "AcceptQuest", "MasteryFruit"}
 CakeFMode = "Accept Quest"
-Auto1:Dropdown("Select Cake Farm Mode", ListC,function(value)
+Auto1:Dropdown("Select Cake Farm Mode", ListC, "Select Cake Farm Mode",function(value)
     CakeFMode = value
 end)
 
